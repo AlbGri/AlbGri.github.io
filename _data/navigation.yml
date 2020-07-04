@@ -1,8 +1,6 @@
 # main links
 main:
-  - title: "_data/navigation.yml"
-    url: https://wwww.google.com/
-  - title: "_data/navigation.yml"
+  - title: "about"
     url: https://wwww.google.com/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
