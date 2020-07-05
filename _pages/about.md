@@ -1,7 +1,6 @@
 ---
 title: "about"
 layout: single
-author_profile: true
 permalink: /about/
 header:
   image: "/assets/images/IMG_20180811_102013_2.jpg"
