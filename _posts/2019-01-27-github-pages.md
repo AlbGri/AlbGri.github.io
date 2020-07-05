@@ -38,14 +38,14 @@ Settings → GitHub Pages → Custom domain → Enforce HTTPS
 </span>
 
 N.B. *_Enforce HTTPS_* si sblocca dopo qualche minuto (e refresh), segue qualche comando per vedere se il sito e DNS sono up  
-````console
+```console
 dig albgri.com +noall +answer  
 dig www.albgri.com +nostats +nocomments +nocmd  
 ping albgri.com  
-````
+```
 
 ### Note Pages
-**Jakyll e Minimal Mistakes**  
+Jakyll e Minimal Mistakes  
 [Cambiare le dimensioni del testo](https://github.com/mmistakes/minimal-mistakes/issues/1043)  
 [Aggiugnere data agli articoli](https://github.com/dvhart/dvhart.github.io/blob/master/_includes/archive-single.html)
 
