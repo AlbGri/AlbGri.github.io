@@ -99,6 +99,9 @@ author:
   location         : "Rome, Italy"
   email            : 
   links:
+    - label: "Home"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.albgri.com"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:alberto.grippaldi@gmail.com"
