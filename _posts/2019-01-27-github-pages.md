@@ -51,28 +51,12 @@ Jakyll e Minimal Mistakes
 1. [Aggiugnere data agli articoli](https://github.com/dvhart/dvhart.github.io/blob/master/_includes/archive-single.html)  
 1. Math $$\LaTeX$$  
 dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in cui si vogliono includere le forme, nell'header va aggiunto *mathjax: "true"*  
-{% highlight html %}
+```html
 {% raw %}{% if page.mathjax %}{% endraw %}
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-<script
-  type="text/javascript"
-  charset="utf-8"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
->
-</script>
-<script
-  type="text/javascript"
-  charset="utf-8"
-  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 {% raw %}{% endif %}{% endraw %}
-{% endhighlight %}
+```
+
 
