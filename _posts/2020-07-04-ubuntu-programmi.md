@@ -75,7 +75,7 @@ ffmpeg -i /path/out-1.ogv /path/out-1.mp4
 
 1. Thunderbird con accesso a Google Calendar  
 [Guida ufficiale](https://support.mozilla.org/en-US/kb/using-lightning-google-calendar)  
-[Download]((https://addons.thunderbird.net/en-US/thunderbird/addon/provider-for-google-calendar/) del componente aggiuntivo  
+[Download](https://addons.thunderbird.net/en-US/thunderbird/addon/provider-for-google-calendar/) del componente aggiuntivo  
 Da Thunderbird → App Manager → Installa componente aggiuntivo da file
 
 
