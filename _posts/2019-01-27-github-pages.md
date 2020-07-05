@@ -1,6 +1,6 @@
 ---
-title: "GitHub Pages"
-excerpt: "How to"
+title: "gitHub pages"
+excerpt: "how to"
 date: 2019-01-27
 tags: [github, pages, ubuntu, utils]
 mathjax: "true"

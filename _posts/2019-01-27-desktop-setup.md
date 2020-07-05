@@ -1,5 +1,5 @@
 ---
-title: "Desktop"
+title: "desktop"
 excerpt: "build desktop 04/2017"
 date: 2019-01-27
 tags: [desktop, hardware]
