@@ -78,6 +78,7 @@ ffmpeg -i /path/out-1.ogv /path/out-1.mp4
 
 
 ### R-statistical software
+Come aggiornare R su Ubuntu (18.04)  
 Idenficare la [versione](https://cloud.r-project.org/bin/linux/ubuntu) da installare (es. bionic-cran40)  
 
 1. Pulizia versione precedente  
