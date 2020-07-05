@@ -59,9 +59,11 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
 ```
 1. Aggiungere la favicon  
 Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la seguente riga1  
- ````html
- <link rel="shortcut icon" type="image/png" href="favicon.png">
- ````
+
+1. test
+```html
+<asd rel="shortcut icon" asd="image/png" asd="favicon.png">
+```
 
 
 
