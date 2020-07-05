@@ -6,7 +6,8 @@ tags: [github, pages, ubuntu, utils]
 mathjax: "true"
 ---
 
-*funzionanti con Ubuntu 18-04*
+*funzionanti con Ubuntu 18-04*  
+
 Installa Git Desktop per [Linux](https://aur.archlinux.org/packages/github-desktop-bin/)  
 è sufficiente scaricare il .deb ed installarlo.
 
@@ -37,11 +38,11 @@ DNS → Custom resource records → [www][CNAME][][AlbGri.github.io]
 Settings → GitHub Pages → Custom domain → Enforce HTTPS  
 </span>
 
-N.B. *_Enforce HTTPS_* si sblocca dopo qualche minuto (e refresh), segue qualche comando per vedere se il sito e DNS sono up  
+Verifica se sito e DNS sono up  
 ```console
-dig albgri.com +noall +answer  
-dig www.albgri.com +nostats +nocomments +nocmd  
-ping albgri.com  
+dig albgri.com +noall +answer
+dig www.albgri.com +nostats +nocomments +nocmd
+ping albgri.com
 ```
 
 ### Note Pages

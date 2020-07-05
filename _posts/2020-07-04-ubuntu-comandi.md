@@ -6,7 +6,7 @@ tags: [utils, linux, ubuntu]
 mathjax: "true"
 ---
 
-*funzionanti con Ubuntu 18-04*
+*funzionanti con Ubuntu 18-04*  
 
 ### Utili
 1. Trova interattivamente il PID di un programma e terminarlo  

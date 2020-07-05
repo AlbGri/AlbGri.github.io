@@ -6,7 +6,7 @@ tags: [utils, linux, ubuntu]
 mathjax: "true"
 ---
 
-*funzionanti con Ubuntu 18-04*
+*funzionanti con Ubuntu 18-04*  
 
 ### Customizzazione ambiente
 1. Aggiungi data, minuti e secondi nella barra superiore  

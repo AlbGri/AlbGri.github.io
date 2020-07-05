@@ -6,7 +6,7 @@ tags: [utils, linux, ubuntu]
 mathjax: "true"
 ---
 
-*funzionanti con Ubuntu 18-04*
+*funzionanti con Ubuntu 18-04*  
 
 ### Programmi
 1. [Miniconda](https://conda.io/miniconda.html) e Jupyter Notebook  
