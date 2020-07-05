@@ -1,6 +1,5 @@
 ---
 title: "Desktop build"
-excerpt: "lista della spesa"
 date: 2020-07-04
 tags: [desktop]
 header:
