@@ -1,0 +1,115 @@
+conky.config = {
+    alignment = 'top_right',
+    background = false,
+    border_width = 1,
+    cpu_avg_samples = 2,
+	default_color = 'yellow',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    draw_borders = false,
+    draw_graph_borders = false,
+    draw_outline = false,
+    draw_shades = false,
+    use_xft = true,
+    font = 'AvantGardeLTMedium:bold:size=9',
+    gap_x = 10,
+    gap_y = 42,
+    minimum_height = 510,
+    minimum_width = 270,
+	maximum_width = 270,
+    net_avg_samples = 2,
+    no_buffers = true,
+	double_buffer = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = false,
+    own_window = true,
+	own_window_transparent = true,
+	own_window_class = 'Conky',
+    own_window_type = 'normal',
+	own_window_hints = 'undecorated,below,skip_pager,skip_taskbar',
+    stippled_borders = 0,
+    update_interval = 1.0,
+    uppercase = false,
+    use_spacer = 'none',
+    show_graph_scale = false,
+    show_graph_range = false,
+	own_window_argb_visual = true,
+	own_window_argb_value = 0
+}
+
+conky.text = [[
+${font AvantGardeLTMedium:bold:size=10}${color Tan1}Date and time ${color slate grey}${hr 2}${font}
+${font AvantGardeLTMedium:bold:size=16}${alignr}${color}${time %a %B %e  %G}${font}
+${font AvantGardeLTMedium:bold:size=16}${alignr}${color}${time %k:%M}${font}
+
+${font AvantGardeLTMedium:bold:size=10}${color Tan1}System ${color slate grey}${hr 2}${font}
+${color1}Computer	    ${alignr}${color}${nodename}
+${color1}Kernel version     ${alignr}${color}${kernel}-${machine}
+${color1}Uptime             ${alignr}${color}${uptime}
+${color1}CPU freq      ${alignr}${color}${freq_g}GHz
+#${color1}Load (average)     ${alignr}${color}${loadavg 1}
+${color1}CPU temperature    ${alignr}${color}${hwmon temp 1}°C
+#${color1}Disk temperature
+#${font AvantGardeLTMedium:bold:size=7}${color}${alignr}${execi 60 sudo hddtemp -u C /dev/sda | awk '{print $0}'}
+#${alignr}${execi 60 sudo hddtemp -u C /dev/sdb | awk '{print $0}'}
+#${alignr}${execi 60 sudo hddtemp -u C /dev/sdc | awk '{print $0}'}${font}
+#${execi 15 nvidia-settings -q  [gpu:0]/GPUCoreTemp -t} C #GPU
+
+${font AvantGardeLTMedium:bold:size=10}${color Tan1}Processors ${color slate grey}${hr 2}${font}
+${color1}CPU 1   ${color}${cpu cpu1}%  ${cpubar cpu1}
+${color1}CPU 2   ${color}${cpu cpu2}%  ${cpubar cpu2}
+${color1}CPU 3   ${color}${cpu cpu3}%  ${cpubar cpu3}
+${color1}CPU 4   ${color}${cpu cpu4}%  ${cpubar cpu4}
+${color1}CPU 5   ${color}${cpu cpu5}%  ${cpubar cpu5}
+${color1}CPU 6   ${color}${cpu cpu6}%  ${cpubar cpu6}
+${color1}CPU 7   ${color}${cpu cpu7}%  ${cpubar cpu7}
+${color1}CPU 8   ${color}${cpu cpu8}%  ${cpubar cpu8}
+${color1}CPU 9   ${color}${cpu cpu9}%  ${cpubar cpu9}
+${color1}CPU 10  ${color}${cpu cpu10}%  ${cpubar cpu10}
+${color1}CPU 11  ${color}${cpu cpu11}%  ${cpubar cpu11}
+${color1}CPU 12  ${color}${cpu cpu12}%  ${cpubar cpu12}
+
+${font AvantGardeLTMedium:bold:size=10}${color Tan1}Memory ${color slate grey}${hr 2}${font}
+${color1}RAM       ${alignc}${color}${mem} / ${memmax} ${color}${alignr}${memperc /}% used
+${color1}SWAP     ${alignc}${color}${swap} / ${swapmax} ${color}${alignr}${swapperc}% used
+${color1}Cache RAM  ${alignc}${color}${cached}
+${color1}Buffers    ${alignc}${color}${buffers}
+
+${font AvantGardeLTMedium:bold:size=10}${color Tan1}Storage ${color slate grey}${hr 2}${font}
+${color1}Linux     ${alignc}${color}${fs_used /} / ${fs_size /} ${color}${alignr}${fs_used_perc /}% used
+${color1}Win10    ${alignc}${color}${if_mounted /media/unknown/9A1A695A1A693503}${fs_used /media/unknown/9A1A695A1A693503} / ${fs_size /media/unknown/9A1A695A1A693503} ${color}${alignr}${fs_used_perc /media/unknown/9A1A695A1A693503}% used${else}${color red}${alignr}to mount${endif}
+${color1}HDD       ${alignc}${color}${if_mounted /media/unknown/HDD}${fs_used /media/unknown/HDD} / ${fs_size /media/unknown/HDD} ${color}${alignr}${fs_used_perc /media/unknown/HDD}% used${else}${color red}${alignr}to mount${endif}
+
+${font AvantGardeLTMedium:bold:size=10}${color Tan1}TOP ${color slate grey}${hr 2}${font}
+${color1}Name ${alignr} PID   CPU%   MEM%${font AvantGardeLTMedium:normal:size=10}
+${color}${top name 1} ${alignr} ${top pid 1} ${top cpu 1}% ${top mem 1}%
+${color}${top name 2} ${alignr} ${top pid 2} ${top cpu 2}% ${top mem 2}%
+${color}${top name 3} ${alignr} ${top pid 3} ${top cpu 3}% ${top mem 3}%
+${color}${top name 4} ${alignr} ${top pid 4} ${top cpu 4}% ${top mem 4}%
+${color}${top name 5} ${alignr} ${top pid 5} ${top cpu 5}% ${top mem 5}%
+${color}${top name 6} ${alignr} ${top pid 6} ${top cpu 6}% ${top mem 6}%
+${color1}Running / Loaded Processes:${color} $running_processes / $processes 
+
+# sostituire enp29s0f3u3 con X da ifconfig sul terminale
+${font AvantGardeLTMedium:bold:size=10}${color Tan1}NET ${color slate grey}${hr 2}${font}
+${color1}Total Connections ${color}${tcp_portmon 1 65535 count}
+${color1}Active Interface	${color}${alignr}${gw_iface}
+${color1}Local IP 	${color}${alignr}${addr enp29s0f3u3}
+${color1}Public IP ${color}${alignr}${execi 60 curl  ipinfo.io/ip}
+${color1}DNS 		${color}${alignr}$nameserver
+${color1}Ping (G-DNS) 	${color}${alignr}${execpi 4 echo "$(ping -W 1 -c 1 8.8.8.8 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1) ms"}
+${color1}Download ${color1}${alignr}Upload
+${color}${downspeedf enp29s0f3u3} kB/s ${color}${alignr}${upspeedf enp29s0f3u3} kB/s
+
+${color}${downspeedgraph enp29s0f3u3 30,100} ${color}${alignr}${upspeedgraph enp29s0f3u3 30,100}
+${color1}Total ${color}${totaldown enp29s0f3u3} ${color1}${alignr}Total ${color}${totalup enp29s0f3u3}
+
+
+
+${scroll 65 ${color red}Alberto Grippaldi       Alberto Grippaldi       Alberto Grippaldi       Alberto Grippaldi}
+]]
+
+
+
+

@@ -1,5 +1,5 @@
 ---
-title: "(Ubuntu) comandi utili"
+title: "(ubuntu) useful commands and bugfixes"
 excerpt: "utils, issues"
 date: 2020-07-04
 tags: [utils, linux, ubuntu, issues, bugfix, goal]

@@ -1,5 +1,5 @@
 ---
-title: "(Ubuntu) environment"
+title: "(ubuntu) environment"
 excerpt: "improving it"
 date: 2020-07-04
 tags: [utils, linux, ubuntu]
