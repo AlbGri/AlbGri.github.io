@@ -1,6 +1,6 @@
 ---
-title: "Ubuntu-Ambiente"
-excerpt: "improving the environment"
+title: "(Ubuntu) environment"
+excerpt: "improving it"
 date: 2020-07-04
 tags: [utils, linux, ubuntu]
 mathjax: "true"

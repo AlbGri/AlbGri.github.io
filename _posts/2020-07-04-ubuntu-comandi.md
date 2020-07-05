@@ -1,8 +1,8 @@
 ---
-title: "Ubuntu-Comandi"
-excerpt: "a bunch of useful commands"
+title: "(Ubuntu) comandi utili"
+excerpt: "utils, issues"
 date: 2020-07-04
-tags: [utils, linux, ubuntu]
+tags: [utils, linux, ubuntu, issues, bugfix, goal]
 mathjax: "true"
 ---
 
