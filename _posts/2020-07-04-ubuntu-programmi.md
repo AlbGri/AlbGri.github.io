@@ -1,5 +1,5 @@
 ---
-title: "(ubuntu) useful programs"
+title: "(ubuntu) programs"
 excerpt: "must have.. for me"
 date: 2020-07-04
 tags: [utils, linux, ubuntu]
@@ -25,8 +25,8 @@ Per delay dopo l'avvio del PC, aggiungo in
 <span style="font-size: 3mm">
 Startup Applications Preferences → sh -c "sleep 10 && conky"  
 </span>
-Preview della [configurazione](https://github.com/AlbGri/AlbGri.github.io/assets/files/.conkyrc) che uso:  
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/Conky_20190309.png" 
+Preview della [configurazione](https://github.com/AlbGri/AlbGri.github.io/blob/master/assets/files/.conkyrc) che uso:  
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/Conky_20200705.png" 
 alt="testo IMG"
 align="center"
 height="328"
