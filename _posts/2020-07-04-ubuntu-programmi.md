@@ -1,5 +1,5 @@
 ---
-title: "(ubuntu) programs"
+title: "ubuntu-programs"
 excerpt: "must have.. for me"
 date: 2020-07-04
 tags: [utils, linux, ubuntu]
