@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "about"
-    url: /_pages/aboutmd
+    url: /about/
   - title: "free cookie"
     url: https://youtu.be/dQw4w9WgXcQ
   # - title: "Sample Posts"
