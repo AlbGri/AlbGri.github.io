@@ -60,8 +60,20 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
 1. Aggiungere la favicon  
 Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la seguente riga  
 ```html
-test
+<link rel="shortcut icon" type="image/png" href="favicon.png">
 ```
+
+```html
+<link rel='shortcut icon' href='favicon.ico'>
+<link rel='icon' sizes='16x16' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-16x16.png'>
+<link rel='icon' sizes='32x32' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-32x32.png'>
+<link rel='icon' sizes='64x64' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-64x64.png'>
+<meta name='msapplication-config' content='/jekyll-favicon-example/browserconfig.xml'>
+<link rel='manifest' href='/jekyll-favicon-example/manifest.webmanifest'>
+```
+
+
+
 
 ...
 
