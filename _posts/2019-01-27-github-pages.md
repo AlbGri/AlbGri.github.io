@@ -37,8 +37,7 @@ DNS → Custom resource records → [www][CNAME][][AlbGri.github.io]
 <span style="font-size: 3mm">
 Settings → GitHub Pages → Custom domain → Enforce HTTPS  
 </span>
-
-Verifica se sito e DNS sono up  
+6. Verifica se sito e DNS sono up  
 ```console
 dig albgri.com +noall +answer
 dig www.albgri.com +nostats +nocomments +nocmd
