@@ -64,6 +64,9 @@ sudo apt-get autoremove
 1. BugFix  
 "System program problem detected"  
 "Do you want to report the problem now?"  
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/SystemProgBUG.png" 
+alt="testo IMG"
+align="center">
 ```console
 sudo gedit /etc/default/apport
 enabled=0
