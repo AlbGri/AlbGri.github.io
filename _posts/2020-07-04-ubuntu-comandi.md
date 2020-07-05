@@ -34,6 +34,11 @@ sudo find / -type d -name "nome"
 sudo find . -type d | grep nome
 ```
 
+1. Trova testo dentro il path  
+```console
+grep -r WORD *
+```
+
 1. Screenshots  
 Prt Scrn to take a screenshot of the desktop.  
 Alt + Prt Scrn to take a screenshot of a window.  
