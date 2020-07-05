@@ -58,7 +58,8 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
 {% raw %}{% endif %}{% endraw %}
 ```
 1. Aggiungere la favicon  
-```html
+Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la seguente riga1  
+```console
 <link rel="shortcut icon" type="imagepng" href="favicon.png">
 ```
 
