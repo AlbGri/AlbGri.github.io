@@ -46,8 +46,11 @@ ping albgri.com
 
 ### Note Pages
 Jakyll e Minimal Mistakes  
+
 1. [Cambiare le dimensioni del testo](https://github.com/mmistakes/minimal-mistakes/issues/1043)  
+
 1. [Aggiugnere data agli articoli](https://github.com/dvhart/dvhart.github.io/blob/master/_includes/archive-single.html)  
+
 1. Math $$\LaTeX$$  
 dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in cui si vogliono includere le formule, nell'header va aggiunto *mathjax: "true"*  
 ```html
@@ -57,19 +60,11 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
 </script>
 {% raw %}{% endif %}{% endraw %}
 ```
-1. Aggiungere la favicon  
-Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la seguente riga1  
-```console
-<link rel="shortcut icon" type="imagepng" href="favicon.png">
-```
 
+1. Aggiungere la favicon  
+Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la seguente riga  
 ```html
-<link rel='shortcut icon' href='favicon.ico'>
-<link rel='icon' sizes='16x16' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-16x16.png'>
-<link rel='icon' sizes='32x32' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-32x32.png'>
-<link rel='icon' sizes='64x64' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-64x64.png'>
-<meta name='msapplication-config' content='/jekyll-favicon-example/browserconfig.xml'>
-<link rel='manifest' href='/jekyll-favicon-example/manifest.webmanifest'>
+<link rel="shortcut icon" type="image/png" href="favicon.png">
 ```
 
 
