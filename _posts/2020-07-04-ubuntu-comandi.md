@@ -2,7 +2,7 @@
 title: "ubuntu-commands"
 excerpt: "utils, issues"
 date: 2020-07-04
-tags: [utils, linux, ubuntu, issues, bugfix, goal]
+tags: [utils, linux, ubuntu, issues]
 mathjax: "true"
 ---
 
