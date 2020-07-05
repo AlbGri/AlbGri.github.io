@@ -64,7 +64,7 @@ sudo apt-get autoremove
 1. BugFix  
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/SystemProgBUG.png" 
 alt="testo IMG"
-align="center">
+align="center">  
 "System program problem detected"  
 "Do you want to report the problem now?"  
 ```console
