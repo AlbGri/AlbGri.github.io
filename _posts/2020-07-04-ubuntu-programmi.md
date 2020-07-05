@@ -80,12 +80,13 @@ ffmpeg -i /path/out-1.ogv /path/out-1.mp4
 ### R-statistical software
 Idenficare la [versione](https://cloud.r-project.org/bin/linux/ubuntu) da installare (es. bionic-cran40)  
 
-**Pulizia versione precedente**  
+1. Pulizia versione precedente  
 ```console
 sudo apt-get remove r-base
 sudo apt-get remove r-base-core
 ```
-**(Facoltativo) pulizia più aggressiva**  
+
+1. (Facoltativo) pulizia più aggressiva  
 ```console
 dpkg --get-selections | grep "^r\-"
 sudo apt-get purge r-*
@@ -93,7 +94,7 @@ dpkg -l | grep ^ii | awk '$2 ~ /^r-/ { print $2 }'
 dpkg -l | grep ^ii | awk '$2 ~ /^r-/ { print $2 }' | sudo xargs apt-get remove --purge -y
 ```
 
-**Install key e repository**  
+1. Install key e repository  
 ```console
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/'
@@ -101,22 +102,22 @@ sudo apt update
 sudo apt upgrade
 ```
 
-**Identificare il codice versione da installare**  
+1. Identificare il codice versione da installare  
 ```console
 apt-cache showpkg r-base
 apt-cache policy r-base
 apt-cache madison r-base
 ```
 
-**Installare la versione identificata**  
+1. Installare la versione identificata  
 ```console
 sudo apt-get install -f r-base=4.0.0-1.1804.0
 ```
 
-**Dopo l'istallazione**  
+1. Dopo l'istallazione  
 ```R
-update.packages(checkBuilt = TRUE, ask = FALSE)
-.libPaths()
+update.packages(checkBuilt = TRUE, ask = FALSE) # Update packages
+.libPaths()	# path dei packages
 ```
 
 

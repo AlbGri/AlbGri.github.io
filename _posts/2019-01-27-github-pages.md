@@ -8,7 +8,7 @@ mathjax: "true"
 
 *funzionanti con Ubuntu 18-04*  
 
-Installa Git Desktop per [Linux](https://aur.archlinux.org/packages/github-desktop-bin/)  
+Installa GitHub Desktop per [Linux](https://aur.archlinux.org/packages/github-desktop-bin/)  
 è sufficiente scaricare il .deb ed installarlo.
 
 ### GitHub
@@ -16,7 +16,7 @@ Trova il repository per la web page che ti [interessa](https://github.com/mmista
 **Fork!** In alto a destra, il comando Fork ne farà una copia nel tuo profilo GitHub  
 Imposta il repo come la tua page  
 <span style="font-size: 3mm">
-Settings →  Repository name "AlbGri.github.io"  
+Settings →  Repository name → "AlbGri.github.io"  
 </span>
 
 ### Configurare il dominio (google domain)

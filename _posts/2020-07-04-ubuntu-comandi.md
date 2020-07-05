@@ -44,7 +44,7 @@ Shift + Prt Scrn to take a screenshot of an area you select.
 sudo gedit /etc/apt/sources.list
 ```
 
-1. Rimuovi cache  
+1. Rimuovi cache (da usare solo se necessario)  
 ```console
 sudo apt-get update
 sudo apt-get clean --dry-run
@@ -56,7 +56,7 @@ sudo apt-get autoremove
 
 
 ### Issues & Bugs
-1. BugFix 
+1. BugFix  
 "System program problem detected"  
 "Do you want to report the problem now?"  
 ```console
@@ -64,10 +64,10 @@ sudo gedit /etc/default/apport
 enabled=0
 ```
 
-1. Windows Partition Permissions
-Da Ubuntu, con i permessi di scrittura sul disco con partizione Windows 10 non riuscivo a fare modifiche ai file.
-Problema: ibernazione attiva.  
-[Soluzione](https://support.microsoft.com/it-it/help/920730/how-to-disable-and-re-enable-hibernation-on-a-computer-that-is-running): cmd con privilegi d'amministratore  
+1. Windows Partition Permissions  
+Da Ubuntu, con i permessi di scrittura sul disco con partizione Windows 10 non riuscivo a fare modifiche ai file.  
+Problema *ibernazione attiva*.  
+[Soluzione](https://support.microsoft.com/it-it/help/920730/how-to-disable-and-re-enable-hibernation-on-a-computer-that-is-running) cmd con privilegi d'amministratore  
 ```bash
 powercfg.exe /hibernate off
 ```

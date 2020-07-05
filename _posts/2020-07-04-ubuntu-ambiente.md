@@ -38,9 +38,9 @@ System →  Keyboard → Switch windows direcly → Alt+Tab
 </span>
 
 1. Aggiungi tasto destro create nuovo .txt  
-<span style="font-size: 3mm;background-color:black;color:white">
+```console
 touch ~/Templates/Empty\ Document
-</span>
+```
 
 1. Disabilita aggiornamenti  
 <span style="font-size: 3mm">
