@@ -97,26 +97,28 @@ author:
   avatar           : "/images/IMG_20180816_172523_2.jpg"
   bio              : "<i>Experience is not what <br/>happens to a man; <br/>it is what a man does <br/>with what happens to him.<br/>-Aldous Huxley<br/></i>"
   location         : "Rome, Italy"
-  email            : "alberto.grippaldi@gmail.com"
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:alberto.grippaldi@gmail.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/AlbGri"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/albgri/"
+
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://www.albgri.com/"
+      # url: "https://www.albgri.com/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url: "https://github.com/AlbGri"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+
 
 # Site Footer
 footer:
