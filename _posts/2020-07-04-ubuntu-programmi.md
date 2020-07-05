@@ -43,9 +43,11 @@ Ubuntu Software → P7Zip - Desktop
 </span>
 
 1. <span style="text-decoration: line-through">Pinta</span>  
-su Ubuntu 18.04 crasha frequentemente, meglio KolourPaint:  
+su Ubuntu 18.04 crasha frequentemente  
+<span style="text-decoration: line-through">KolourPaint</span>:  
+su Ubuntu 18.04 è esploso dopo un'aggiornamento, meglio il buon vecchio GIMP  
 <span style="font-size: 3mm">
-Ubuntu Software → KolourPaint
+Ubuntu Software → GNU Image Manipulation Program
 </span>
 
 1. LaTeX  
