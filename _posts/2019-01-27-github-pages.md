@@ -48,15 +48,13 @@ ping albgri.com
 ### Note Pages
 Jakyll e Minimal Mistakes  
 1. [Cambiare le dimensioni del testo](https://github.com/mmistakes/minimal-mistakes/issues/1043)  
-
 1. [Aggiugnere data agli articoli](https://github.com/dvhart/dvhart.github.io/blob/master/_includes/archive-single.html)  
-
 1. Math $$\LaTeX$$  
 dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in cui si vogliono includere le forme, nell'header va aggiunto *mathjax: "true"*  
-```console
+{% highlight html %}
 {% if page.mathjax %}
 <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
-```
+{% endhighlight %}
 
