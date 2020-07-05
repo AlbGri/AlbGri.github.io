@@ -101,10 +101,10 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:alberto.grippaldi@gmail.com"
+      url: "mailto:alberto.grippaldi@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://www.albgri.com/"
+      url: "https://www.albgri.com/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
