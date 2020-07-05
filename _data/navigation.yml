@@ -1,9 +1,9 @@
 # main links
 main:
   - title: "about"
+    url: /_pages/aboutmd
+  - title: "free cookie"
     url: https://youtu.be/dQw4w9WgXcQ
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
