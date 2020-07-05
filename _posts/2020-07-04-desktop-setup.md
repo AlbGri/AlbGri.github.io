@@ -1,5 +1,6 @@
 ---
-title: "Desktop build"
+title: "Desktop"
+excerpt: "build desktop 04/2017"
 date: 2020-07-04
 tags: [desktop]
 header:
