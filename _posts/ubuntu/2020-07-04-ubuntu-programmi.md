@@ -53,14 +53,16 @@ Ubuntu Software → GNU Image Manipulation Program
 1. LaTeX  
 [Ottima guida](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux) per LaTeX su 18.04  
 ```console
-sudo apt install texlive-latex-extra  
-sudo apt install kile  
+sudo apt install texlive-latex-extra
+sudo apt install kile
+pdflatex hello-world.tex
+evince hello-world.pdf
 ```
 
 1. NetHogs  
 Programma utile simil firewall per monitorare programmi in entrata e uscita  
 ```console
-sudo apt-get install nethogs  
+sudo apt-get install nethogs
 ```
 
 1. Screen recording  
