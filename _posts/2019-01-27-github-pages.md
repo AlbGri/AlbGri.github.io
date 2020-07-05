@@ -14,6 +14,21 @@ Installa GitHub Desktop per [Linux](https://aur.archlinux.org/packages/github-de
 ### GitHub
 Trova il repository per la web page che ti [interessa](https://github.com/mmistakes/minimal-mistakes)  
 **Fork!** In alto a destra, il comando Fork ne farà una copia nel tuo profilo GitHub  
+Nota: il fork te lo porti a vita, quindi forse meglio clonare il repository, almeno nella condivisone social non ti appare la preview di minimal mistakes invece del proprio sito (e che cazz).  
+Clonare un Git da Ubuntu 18.04:  
+1. Crea il repo da github (es clone.git)
+2. Scarica il repo che ti interessa
+```console
+cd Downloads
+git clone --bare https://github.com/AlbGri/AlbGri.github.io.git
+```
+3. Terminale nella cartella del repo e mirror it
+```console
+cd AlbGri.github.io.git
+git push --mirror https://github.com/AlbGri/clone.git
+```
+4. Rimuovi la cartella del vecchio .git
+
 Imposta il repo come la tua page  
 <span style="font-size: 3mm">
 Settings →  Repository name → "AlbGri.github.io"  
