@@ -72,8 +72,10 @@ Problema *ibernazione attiva*.
 powercfg.exe /hibernate off
 ```
 
-
-
+2. Bugged Thunderbird connection  
+<span style="font-size: 3mm">
+Edit → Preferences → General Tab → General screen → "Advanced" tab → "General" subtab → lower right corner find the button "Config Editor" → ok the warning → set "general.useragent.compatMode.firefox" to true (found in Edit/Preferences/Advanced/General/Config Editor)
+</span>
 
 
 ### In cerca di una soluzione

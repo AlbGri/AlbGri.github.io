@@ -25,7 +25,7 @@ Ubuntu Software → Show Desktop Button
 1. Aggiungi Shortcut per mostra desktop  
 <span style="font-size: 3mm">
 Settings → Keyboard → Navigation → Hide all normal windows → Super and D
-</span>  
+</span>
 
 1. Aggiungi widget weather  
 <span style="font-size: 3mm">

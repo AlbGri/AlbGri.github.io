@@ -73,6 +73,11 @@ sudo apt-get install ffmpeg
 ffmpeg -i /path/out-1.ogv /path/out-1.mp4
 ```
 
+1. Thunderbird con accesso a Google Calendar  
+[Guida ufficiale](https://support.mozilla.org/en-US/kb/using-lightning-google-calendar)  
+Download dell'[estensione](https://addons.thunderbird.net/en-US/thunderbird/addon/provider-for-google-calendar/)  
+Da Thunderbird → App Manager → Installa estensione da file
+
 
 
 
@@ -120,8 +125,6 @@ sudo apt-get install -f r-base=4.0.0-1.1804.0
 update.packages(checkBuilt = TRUE, ask = FALSE) # Update packages
 .libPaths()	# path dei packages
 ```
-
-
 
 
 
