@@ -57,57 +57,22 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
 </script>
 {% raw %}{% endif %}{% endraw %}
 ```
+1. Math $$\LaTeX$$  
+dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in cui si vogliono includere le formule, nell'header va aggiunto *mathjax: "true"*  
+```html
+<!-- {% raw %} -->
+{% if page.mathjax %}
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+{% endif %}
+<!-- {% endraw %} -->
+```
 1. Aggiungere la favicon  
 Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la seguente riga  
-
-```html
-<link rel="shortcut icon" type="image/png" href="favicon.png">
-ttest
-```
-
-aaaaaaaaaa  
-
-
-
-
-
-<!-- {% raw %} -->
-```html
-<head>
-  <!-- your other head content goes here -->
-  {% favicon %}
-</head>
-```
-<!-- {% endraw %} -->
-
-Jekyll Favicon will generate tags for all the new resources:
-
-```html
-<link rel='shortcut icon' href='favicon.ico'>
-<link rel='icon' sizes='16x16' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-16x16.png'>
-<link rel='icon' sizes='32x32' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-32x32.png'>
-<link rel='icon' sizes='64x64' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-64x64.png'>
-<meta name='msapplication-config' content='/jekyll-favicon-example/browserconfig.xml'>
-<link rel='manifest' href='/jekyll-favicon-example/manifest.webmanifest'>
-```
-```html
-<link rel='shortcut icon' href='favicon.ico'>
-<link rel='icon' sizes='16x16' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-16x16.png'>
-<link rel='icon' sizes='32x32' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-32x32.png'>
-<link rel='icon' sizes='64x64' type='image/png' href='/jekyll-favicon-example/assets/images/favicon-64x64.png'>
-<meta name='msapplication-config' content='/jekyll-favicon-example/browserconfig.xml'>
-<link rel='manifest' href='/jekyll-favicon-example/manifest.webmanifest'>
-```
-```html
-<link rel='shortcut icon' href='favicon.ico'>
-```
 ```html
 <link rel="shortcut icon" type="image/png" href="favicon.png">
 ```
-```html
-<link rel="shortcut icon" type="image png" href="favicon.png">
-```
-
 
 
 
