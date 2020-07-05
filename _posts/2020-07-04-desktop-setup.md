@@ -2,9 +2,7 @@
 title: "Desktop"
 excerpt: "build desktop 04/2017"
 date: 2020-07-04
-tags: [desktop]
-header:
-  image: "/assets/images/IMG_20180811_102013_2.jpg"
+tags: [desktop, hardware]
 ---
 
 ## Setup fisso  

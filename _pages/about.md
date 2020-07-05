@@ -1,8 +1,10 @@
 ---
 title: "about"
+layout: home
+author_profile: true
 permalink: /about/
 header:
-  image: "/images/IMG_20180811_102013_2.jpg"
+  image: "/assets/images/IMG_20180811_102013_2.jpg"
 ---
 
 
