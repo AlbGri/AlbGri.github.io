@@ -57,23 +57,14 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
 </script>
 {% raw %}{% endif %}{% endraw %}
 ```
-1. Math $$\LaTeX$$  
-dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in cui si vogliono includere le formule, nell'header va aggiunto *mathjax: "true"*  
-```html
-{% raw %}
-{% if page.mathjax %}
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-{% endif %}
-{% endraw %}
-```
 1. Aggiungere la favicon  
 Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la seguente riga  
 ```html
 <link rel="shortcut icon" type="image/png" href="favicon.png">
 ```
-asd
+
+...
+
 
 
 
