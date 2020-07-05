@@ -50,7 +50,7 @@ Jakyll e Minimal Mistakes
 1. [Cambiare le dimensioni del testo](https://github.com/mmistakes/minimal-mistakes/issues/1043)  
 1. [Aggiugnere data agli articoli](https://github.com/dvhart/dvhart.github.io/blob/master/_includes/archive-single.html)  
 1. Math $$\LaTeX$$  
-dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in cui si vogliono includere le forme, nell'header va aggiunto *mathjax: "true"*  
+dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in cui si vogliono includere le formule, nell'header va aggiunto *mathjax: "true"*  
 ```html
 {% raw %}{% if page.mathjax %}{% endraw %}
 <script type="text/javascript" async
