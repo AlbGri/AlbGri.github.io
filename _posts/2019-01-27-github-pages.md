@@ -46,11 +46,8 @@ ping albgri.com
 
 ### Note Pages
 Jakyll e Minimal Mistakes  
-
 1. [Cambiare le dimensioni del testo](https://github.com/mmistakes/minimal-mistakes/issues/1043)  
-
 1. [Aggiugnere data agli articoli](https://github.com/dvhart/dvhart.github.io/blob/master/_includes/archive-single.html)  
-
 1. Math $$\LaTeX$$  
 dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in cui si vogliono includere le formule, nell'header va aggiunto *mathjax: "true"*  
 ```html
@@ -61,9 +58,8 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
 {% raw %}{% endif %}{% endraw %}
 ```
 1. Aggiungere la favicon  
-Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la seguente riga  
 ```html
-<link rel="sh>
+<link rel="shortcut icon" type="image/png" href="favicon.png">
 ```
 
 
