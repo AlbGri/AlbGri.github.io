@@ -1,5 +1,5 @@
 ---
-title: "gitHub pages"
+title: "github pages"
 excerpt: "how to"
 date: 2019-01-27
 tags: [github, pages, ubuntu, utils]
