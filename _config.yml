@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Alberto"
-  avatar           : "/images/IMG_20180816_172523_2.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/IMG_20180816_172523_2.jpg"
   bio              : "<i>Experience is not what <br/>happens to a man; <br/>it is what a man does <br/>with what happens to him.<br/>-Aldous Huxley<br/></i>"
   location         : "Rome, Italy"
   email            : "alberto.grippaldi@gmail.com"
@@ -104,7 +104,7 @@ author:
       # url: "mailto:alberto.grippaldi@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      # url: "https://www.albgri.com/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -113,7 +113,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      # url: "https://github.com/AlbGri"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
