@@ -1,7 +1,7 @@
 # main links
 main:
-  - title: "about"
-    url: /about/
+  - title: "About"
+    url: /About/
   - title: "free cookie"
     url: https://youtu.be/dQw4w9WgXcQ
   # - title: "Sample Posts"

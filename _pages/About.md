@@ -1,7 +1,8 @@
 ---
-title: "about"
+title: "About"
 layout: single
-permalink: /about/
+author_profile: true
+permalink: /About/
 header:
   image: "/assets/images/IMG_20180811_102013_2.jpg"
 ---
