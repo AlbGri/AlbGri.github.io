@@ -69,8 +69,8 @@ align="center">
 "Do you want to report the problem now?"  
 ```console
 sudo gedit /etc/default/apport
-enabled=0
 ```
+enabled=0
 
 1. Windows Partition Permissions  
 Da Ubuntu, con i permessi di scrittura sul disco con partizione Windows 10 non riuscivo a fare modifiche ai file.  
