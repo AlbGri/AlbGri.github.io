@@ -59,9 +59,13 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
 ```
 1. Aggiungere la favicon  
 Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la seguente riga  
-{% highlight html %}
-<link rel="shortcut icon" type="image/png" href="favicon.png">
-{% endhighlight %}
+```html
+{% raw %}{% if page.mathjax %}{% endraw %}
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+{% raw %}{% endif %}{% endraw %}
+```
 
 
 
