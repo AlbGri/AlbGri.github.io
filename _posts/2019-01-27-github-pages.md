@@ -13,9 +13,7 @@ Installa Git Desktop per [Linux](https://aur.archlinux.org/packages/github-deskt
 ### GitHub
 Trova il repository per la web page che ti [interessa](https://github.com/mmistakes/minimal-mistakes)  
 **Fork!** In alto a destra, il comando Fork ne farà una copia nel tuo profilo GitHub  
-Da GitHub nelle impostazioni del repository:  
-- Repository name : [Nome].github.io  
-- In basso, GitHub Pages ->  Custom domain -> www.[nomedominio.com]
+Per rendere il repository la base della GitHub Page, sarà necessario cambiareil nome del repository in *AlbGri.github.io* &rarr →
 
 ### Configurare il dominio (google domain)
 1. Google Domain, compro il dominio, 12 euro all'anno. [Questo mi piace](https://support.google.com/domains/answer/3251242?hl=en).
