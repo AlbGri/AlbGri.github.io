@@ -1,10 +1,10 @@
 ---
 title: "Desktop build"
+excerpt: "lista della spesa"
 date: 2020-07-04
 tags: [desktop]
 header:
-  image: "/images/IMG_20180811_102013_2.jpg"
-excerpt: "Computer"
+  image: "/assets/images/IMG_20180811_102013_2.jpg"
 ---
 
 ## Setup fisso  
