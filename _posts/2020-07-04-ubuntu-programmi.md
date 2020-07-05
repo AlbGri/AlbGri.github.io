@@ -100,7 +100,7 @@ dpkg -l | grep ^ii | awk '$2 ~ /^r-/ { print $2 }'
 dpkg -l | grep ^ii | awk '$2 ~ /^r-/ { print $2 }' | sudo xargs apt-get remove --purge -y
 ```
 
-1. Install key e repository  
+1. Install key e il repository della versione d'interesse  
 ```console
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/'
