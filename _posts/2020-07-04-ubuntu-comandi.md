@@ -87,6 +87,9 @@ Edit → Preferences → General Tab → General screen → "Advanced" tab → "
 1. Custom Nautilus  
 Aggiungere "up" button sulla toolbar di Nautilus per Ubuntu 18.04, per ora il backspace è sufficiente :(
 
+2. Escape buggato di Markdown  
+se uso `html block highlight e inizio con "<link" si spacca tutto
+
 
 
 ...

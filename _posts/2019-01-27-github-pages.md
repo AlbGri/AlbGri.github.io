@@ -58,11 +58,8 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
 {% raw %}{% endif %}{% endraw %}
 ```
 1. Aggiungere la favicon  
-Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la seguente riga1  
-```html  
-<link rel="shortcut icon" type="image/png" href="favicon.png">  
-```
-
+Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la stringa [linkata](https://stackoverflow.com/a/30552322).  
+Non ho potuto fare l'highlight html block perché è buggato con l'inizio di quella stringa :(
 
 
 
