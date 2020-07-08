@@ -14,23 +14,22 @@ $masthead-link-color-hover: $text-color !default;
 $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
 
 /* contrast syntax highlighting (base16) */
-$base00: #002b36;
-$base01: #073642;
-$base02: #586e75;
-$base03: #657b83;
-$base04: #839496;
-$base05: #93a1a1;
-$base06: #eee8d5;
-$base07: #fdf6e3;
-
-$base08: #dc322f;
-$base09: #cb4b16;
-$base0A: #b58900;
-$base0B: #859900;
-$base0C: #2aa198;
-$base0D: #268bd2;
-$base0E: #6c71c4;
-$base0F: #d33682;
+set $base00 #101218
+set $base01 #1f222d
+set $base02 #252936
+set $base03 #7780a1
+set $base04 #C0C5CE
+set $base05 #d1d4e0
+set $base06 #C9CCDB
+set $base07 #ffffff
+set $base08 #ee829f
+set $base09 #f99170
+set $base0a #ffefcc
+set $base0b #a5ffe1
+set $base0c #97e0ff
+set $base0d #97bbf7
+set $base0e #c0b7f9
+set $base0f #fcc09e
 
 .page__content {
   .notice,
