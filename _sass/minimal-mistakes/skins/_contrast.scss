@@ -14,15 +14,15 @@ $masthead-link-color-hover: $text-color !default;
 $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
 
 /* contrast syntax highlighting (base16) */
-$base00: #101218 !default;
+$base00: #101218 !default;  // background
 $base01: #1f222d !default;
 $base02: #252936 !default;
 $base03: #7780a1 !default;
-$base04: #33bf2e !default;
-$base05: #d1d4e0 !default;
+$base04: #33bf2e !default;  // commenti
+$base05: #ffffff !default;
 $base06: #C9CCDB !default;
 $base07: #ffffff !default;
-$base08: #ee829f !default;
+$base08: #ee829f !default;  // error
 $base09: #f99170 !default;
 $base0a: #ffefcc !default;
 $base0b: #a5ffe1 !default;
