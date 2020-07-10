@@ -68,7 +68,7 @@ align="center">
 "System program problem detected"  
 "Do you want to report the problem now?"  
 ```console
-sudo gedit /etc/default/apport
+~$ sudo gedit /etc/default/apport
 ```
 enabled=0
 
