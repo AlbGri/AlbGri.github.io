@@ -11,11 +11,11 @@ mathjax: "true"
 ### Programmi
 1. [Miniconda](https://conda.io/miniconda.html) e Jupyter Notebook  
 ```console
-bash Miniconda3-latest-Linux-x86_64.sh  
-sudo apt-get update  
-conda update conda  
-pip install --upgrade pip  
-conda install jupyter
+~$ bash Miniconda3-latest-Linux-x86_64.sh  
+~$ sudo apt-get update  
+~$ conda update conda  
+~$ pip install --upgrade pip  
+~$ conda install jupyter
 ```
 
 1. [Conky](https://wiki.ubuntu-it.org/AmbienteGrafico/Conky)  
@@ -53,28 +53,28 @@ Ubuntu Software → GNU Image Manipulation Program
 1. LaTeX  
 [Ottima guida](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux) per LaTeX su 18.04  
 ```console
-sudo apt install texlive-latex-extra
-sudo apt install kile
-pdflatex hello-world.tex
-evince hello-world.pdf
+~$ sudo apt install texlive-latex-extra
+~$ sudo apt install kile
+~$ pdflatex hello-world.tex
+~$ evince hello-world.pdf
 ```
 
 1. NetHogs  
 Programma utile simil firewall per monitorare programmi in entrata e uscita  
 ```console
-sudo apt-get install nethogs
+~$ sudo apt-get install nethogs
 ```
 
 1. Screen recording  
 ```console
-sudo apt-get update
-sudo apt-get install gtk-recordmydesktop
+~$ sudo apt-get update
+~$ sudo apt-get install gtk-recordmydesktop
 ```
 
 1. Video conversion  
 ```console
-sudo apt-get install ffmpeg
-ffmpeg -i /path/out-1.ogv /path/out-1.mp4
+~$ sudo apt-get install ffmpeg
+~$ ffmpeg -i /path/out-1.ogv /path/out-1.mp4
 ```
 
 1. Thunderbird con accesso a Google Calendar  
@@ -92,36 +92,36 @@ Idenficare la [versione](https://cloud.r-project.org/bin/linux/ubuntu) da instal
 
 1. Pulizia versione precedente  
 ```console
-sudo apt-get remove r-base
-sudo apt-get remove r-base-core
+~$ sudo apt-get remove r-base
+~$ sudo apt-get remove r-base-core
 ```
 
 1. (Facoltativo) pulizia più aggressiva  
 ```console
-dpkg --get-selections | grep "^r\-"
-sudo apt-get purge r-*
-dpkg -l | grep ^ii | awk '$2 ~ /^r-/ { print $2 }'
-dpkg -l | grep ^ii | awk '$2 ~ /^r-/ { print $2 }' | sudo xargs apt-get remove --purge -y
+~$ dpkg --get-selections | grep "^r\-"
+~$ sudo apt-get purge r-*
+~$ dpkg -l | grep ^ii | awk '$2 ~ /^r-/ { print $2 }'
+~$ dpkg -l | grep ^ii | awk '$2 ~ /^r-/ { print $2 }' | sudo xargs apt-get remove --purge -y
 ```
 
 1. Install key e il repository della versione d'interesse  
 ```console
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/'
-sudo apt update
-sudo apt upgrade
+~$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+~$ sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/'
+~$ sudo apt update
+~$ sudo apt upgrade
 ```
 
 1. Identificare il codice versione da installare  
 ```console
-apt-cache showpkg r-base
-apt-cache policy r-base
-apt-cache madison r-base
+~$ apt-cache showpkg r-base
+~$ apt-cache policy r-base
+~$ apt-cache madison r-base
 ```
 
 1. Installare la versione identificata  
 ```console
-sudo apt-get install -f r-base=4.0.0-1.1804.0
+~$ sudo apt-get install -f r-base=4.0.0-1.1804.0
 ```
 
 1. Dopo l'istallazione  

@@ -11,32 +11,32 @@ mathjax: "true"
 ### Utili
 1. Trova interattivamente il PID di un programma e terminarlo  
 ```console
-xprop _NET_WM_PID
-kill -9 5186
+~$ xprop _NET_WM_PID
+~$ kill -9 5186
 ```
 
 1. Controlla tutti i programmi installati  
 ```console
-dpkg -l
-sudo dpkg -l | grep -i nomeprogramma
+~$ dpkg -l
+~$ sudo dpkg -l | grep -i nomeprogramma
 ```
 
 1. Trova e modifica PATH  
 ```console
-echo $PATH
-sudo gedit /etc/environment
+~$ echo $PATH
+~$ sudo gedit /etc/environment
 ```
 
 1. Trova file/cartelle  
 ```console
-cd /
-sudo find / -type d -name "nome"
-sudo find . -type d | grep nome
+~$ cd /
+~$ sudo find / -type d -name "nome"
+~$ sudo find . -type d | grep nome
 ```
 
 1. Trova testo dentro il path  
 ```console
-grep -r WORD *
+~$ grep -r WORD *
 ```
 
 1. Screenshots  
@@ -46,17 +46,17 @@ Shift + Prt Scrn to take a screenshot of an area you select.
 
 1. Modifica sources  
 ```console
-sudo gedit /etc/apt/sources.list
+~$ sudo gedit /etc/apt/sources.list
 ```
 
 1. Rimuovi cache (da usare solo se necessario)  
 ```console
-sudo apt-get update
-sudo apt-get clean --dry-run
-sudo apt-get clean
-sudo apt-get autoclean --dry-run
-sudo apt-get autoclean
-sudo apt-get autoremove
+~$ sudo apt-get update
+~$ sudo apt-get clean --dry-run
+~$ sudo apt-get clean
+~$ sudo apt-get autoclean --dry-run
+~$ sudo apt-get autoclean
+~$ sudo apt-get autoremove
 ```
 
 

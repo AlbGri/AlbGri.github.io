@@ -11,8 +11,8 @@ mathjax: "true"
 ### Customizzazione ambiente
 1. Aggiungi data, minuti e secondi nella barra superiore  
 ```console
-sudo apt install gnome-tweak-tool
-gnome-tweaks
+~$ sudo apt install gnome-tweak-tool
+~$ gnome-tweaks
 ```
 <span style="font-size: 3mm">
 → Top Bar → Date</span>
@@ -49,22 +49,22 @@ Software & Updates →  Updates → Automatically... → Never!
 
 1. Disabilita aggiornamenti secondari  
 ```console
-sudo dpkg-reconfigure unattended-upgrades
+~$ sudo dpkg-reconfigure unattended-upgrades
 ```
 
 1. Cambia velocità cursore  
 ```console
-xset m 3/2 1
+~$ xset m 3/2 1
 ```
 
 1. Rimuovi Mozilla Thunderbird  
 ```console
-sudo apt-get remove --purge thunderbird -y
+~$ sudo apt-get remove --purge thunderbird -y
 ```
 
 1. Nautilus top address bar  
 ```console
-dconf write /org/gnome/nautilus/preferences/always-use-location-entry true
+~$ dconf write /org/gnome/nautilus/preferences/always-use-location-entry true
 ```
 
 
