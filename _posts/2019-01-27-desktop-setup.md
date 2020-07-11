@@ -2,7 +2,7 @@
 title: "desktop"
 excerpt: "build desktop 04/2017"
 date: 2019-01-27
-tags: [desktop, hardware]
+tags: [hardware]
 ---
 
 ## Setup fisso  
@@ -33,6 +33,5 @@ Amazon (gennaio-2019)
 
 **Totale: 1006.55€**
 
-<br/>
 (*) Prodotto arrivato sbagliato, avevo ordinato "Cooler Master Storm Devastator II" e mi è arrivato un altro modello più costoso. Va bene così :)  
 ps: il mouse si è rotto dopo un mese e la barra spaziatrice dopo un anno e mezzo si stacca facilmente :(
