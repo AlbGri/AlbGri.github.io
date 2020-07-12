@@ -61,18 +61,29 @@ Shift + Prt Scrn to take a screenshot of an area you select.
 ~$ sudo apt-get autoremove
 ```
 
+1. Tilde, Backtick, Accento grave, simboli  
+Alt destro + ì 		~~~~~  
+Alt destro + ' 		````  
+Alt destro + i 		→→→→  
+
+1. Rimozione autocompletamento specifico da pagina web (sia Linux che Windows)  
+Seleziono l'autocompletamento da eliminare nel box di immissione testo e  
+Shift+DEL (oppure Shift+Canc)  
+
+
+
 ## Bash
-1. Per i file con estensione ".txt" sostituisci ".txt" con ".csv"
+1. Per i file con estensione ".txt" sostituisci ".txt" con ".csv"  
 ```bash
 for i in *.txt; do mv "$i" "${i/.txt/.csv}"; done
 ```
 
-1. Per i file con estensione ".png" sostituisci spazi con vuoto
+1. Per i file con estensione ".png" sostituisci spazi con vuoto  
 ```bash
 for i in *\ *.png; do mv "$i" "${i// /_}"; done
 ```
 
-1. Per i file con estensione ".png" aggiungi numero progressivo (rimuovere gli spazi prima)
+1. Per i file con estensione ".png" aggiungi numero progressivo (rimuovere gli spazi prima)  
 ```bash
 n=1
 for i in *.png; do
