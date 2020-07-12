@@ -96,21 +96,20 @@ ModuleNotFoundError: No module named 'conda'
 ```
 Se [si ha fortuna](http://stackoverflow.com/a/20516579/5948656) è solo un problema di path  
 Se [non si ha fortuna](https://github.com/conda/conda/issues/2463), risolve reinstallando anaconda :(   
-Da ora in poi userò gli ambienti virtuali di Anaconda!  
+Da ora in poi userò gli [ambienti virtuali](https://www.albgri.com/section-004/#conda-enviroments) di Anaconda!  
 [Miniconda](https://docs.conda.io/en/latest/miniconda.html)  
 ```console
-cd Documents
-bash Miniconda3-latest-Linux-x86_64.sh
-sudo apt update
-conda update conda
-pip install --upgrade pip
-conda create --name py3 python=3.7
+~$ cd Documents
+~$ bash Miniconda3-latest-Linux-x86_64.sh
+~$ sudo apt update
+~$ conda update conda
+~$ pip install --upgrade pip
 ```
 
 4. Apparso (base) fisso nel terminale, per disattivarlo
 ```console
-conda config --set auto_activate_base False
-source ~/.bashrc
+~$ conda config --set auto_activate_base False
+~$ source ~/.bashrc
 ```
 per riattivarlo è sufficiente reimpostare *True*
 
