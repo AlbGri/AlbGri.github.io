@@ -10,7 +10,7 @@ mathjax: "true"
 
 *funzionanti con Ubuntu 18-04*  
 
-### Utili
+## Utili
 1. Trova interattivamente il PID di un programma e terminarlo  
 ```console
 ~$ xprop _NET_WM_PID
@@ -61,8 +61,29 @@ Shift + Prt Scrn to take a screenshot of an area you select.
 ~$ sudo apt-get autoremove
 ```
 
+## Bash
+1. Per i file con estensione ".txt" sostituisci ".txt" con ".csv"
+```bash
+for i in *.txt; do mv "$i" "${i/.txt/.csv}"; done
+```
 
-### Issues & Bugs
+1. Per i file con estensione ".png" sostituisci spazi con vuoto
+```bash
+for i in *\ *.png; do mv "$i" "${i// /_}"; done
+```
+
+1. Per i file con estensione ".png" aggiungi numero progressivo (rimuovere gli spazi prima)
+```bash
+n=1
+for i in *.png; do
+    p=$(printf "%04d_$i" ${n})
+    mv ${i} ${p}
+    let n=n+1
+done
+```
+
+
+## Issues & Bugs
 1. BugFix  
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/SystemProgBUG.png" 
 alt="testo IMG"
@@ -120,7 +141,7 @@ per riattivarlo è sufficiente reimpostare *True*
 
 
 
-### In cerca di una soluzione
+## In cerca di una soluzione
 1. Custom Nautilus  
 Aggiungere "up" button sulla toolbar di Nautilus per Ubuntu 18.04, per ora il backspace è sufficiente :(
 
