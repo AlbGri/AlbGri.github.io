@@ -95,7 +95,7 @@ Deselezionare il file con *F5*, quindi *Shift+F10* per funzionalità tasto destr
 ~$ for i in *\ *.png; do mv "$i" "${i// /_}"; done
 ```
 
-1. Per i file con estensione ".png" aggiungi numero progressivo (rimuovere gli spazi prima)  
+1. Per i file con estensione ".png" aggiungi numero progressivo (prima rimuovere gli spazi)  
 ```console
 ~$ cd /home/user/Documents/cartella
 ~$ n=1
