@@ -100,8 +100,8 @@ Deselezionare il file con *F5*, quindi *Shift+F10* per funzionalità tasto destr
 ~$ cd /home/user/Documents/cartella
 ~$ n=1
 ~$ for i in *.png; do
-    p=$(printf "%04d_$i" ${n})
-    mv ${i} ${p}
+&nbsp;    p=$(printf "%04d_$i" ${n})
+&emsp;    mv ${i} ${p}
     let n=n+1
 done
 ```
