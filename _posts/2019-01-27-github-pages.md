@@ -103,7 +103,10 @@ $base0f: #fcc09e !default;
 ```
 
 1. Abilitare il numero riga  
-[Line number con rougue, minimal mistakes, jakyll](https://github.com/jekyll/jekyll/issues/4619#issuecomment-191267346)  
+[Line number con rouge, minimal mistakes, jakyll](https://github.com/jekyll/jekyll/issues/4619#issuecomment-191267346)  
+
+1. Markdown Link  
+*(BUG/Feature)* Se non si specifica 'https://' il link indirizza in un sotto percorso del sito. [Esempio](www.google.com)
 
 
 
