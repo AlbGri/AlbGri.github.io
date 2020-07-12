@@ -90,7 +90,7 @@ Edit → Preferences → General Tab → General screen → "Advanced" tab → "
 3. Errore dopo l'install di numpy  
 ```console
 Traceback (most recent call last):
-  File "/home/unknown/miniconda3/bin/conda", line 7, in <module>
+  File "/home/user/miniconda3/bin/conda", line 7, in <module>
     from conda.cli import main
 ModuleNotFoundError: No module named 'conda'
 ```
