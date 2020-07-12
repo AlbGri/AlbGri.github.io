@@ -69,7 +69,7 @@ Software & Updates →  Updates → Automatically... → Never!
 
 1. Gedit Themes/Styles  
 ```console
-sudo nautilus '/usr/share/gtksourceview-3.0/styles'
+~$ sudo nautilus '/usr/share/gtksourceview-3.0/styles'
 ```
 [Qui](https://github.com/AlbGri/AlbGri.github.io/raw/master/assets/files/gedit_themes.zip) una collezione oppure [qui](https://raw.githubusercontent.com/AlbGri/AlbGri.github.io/master/assets/files/alb_gedit_theme.xml) quello che uso io.
 
