@@ -84,19 +84,19 @@ Deselezionare il file con *F5*, quindi *Shift+F10* per funzionalità tasto destr
 
 ## Bash
 1. Per i file con estensione ".txt" sostituisci ".txt" con ".csv"  
-```bash
+```console
 ~$ cd /home/user/Documents/cartella
 ~$ for i in *.txt; do mv "$i" "${i/.txt/.csv}"; done
 ```
 
 1. Per i file con estensione ".png" sostituisci spazi con vuoto  
-```bash
+```console
 ~$ cd /home/user/Documents/cartella
 ~$ for i in *\ *.png; do mv "$i" "${i// /_}"; done
 ```
 
 1. Per i file con estensione ".png" aggiungi numero progressivo (rimuovere gli spazi prima)  
-```bash
+```console
 ~$ cd /home/user/Documents/cartella
 ~$ n=1
 ~$ for i in *.png; do
