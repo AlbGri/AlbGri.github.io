@@ -102,7 +102,7 @@ Deselezionare il file con *F5*, quindi *Shift+F10* per funzionalità tasto destr
 ~$ for i in *.png; do
 &nbsp;    p=$(printf "%04d_$i" ${n})
 &emsp;    mv ${i} ${p}
-    let n=n+1
+\ \ \    let n=n+1
 done
 ```
 
