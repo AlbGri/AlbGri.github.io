@@ -74,7 +74,29 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
 ```
 1. Aggiungere la favicon  
 Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la stringa [linkata](https://stackoverflow.com/a/30552322).  
-Non ho potuto fare l'highlight html block perché è buggato con l'inizio di quella stringa :(
+Non ho potuto fare l'highlight html block perché è buggato con l'inizio di quella stringa :(  
+1. Personalizzare il Markdown flavour  
+Definita una skin nel *'_config.yml'* (es. minimal_mistakes_skin: "contrast" )  
+andiamo a personalizzare il file *'_sass/minimal-mistakes/skin/_contrast.scss'* le cui variabili influenzeranno i parametri di *'_sass/minimal-mistakes/_variables.scss'*  
+```scss
+/* contrast syntax highlighting (base16) */
+$base00: #101218 !default;  // background
+$base01: #1f222d !default;
+$base02: #252936 !default;
+$base03: #7780a1 !default;
+$base04: #33bf2e !default;  // commenti
+$base05: #ffffff !default;  // testo, punteggiatura
+$base06: #C9CCDB !default;
+$base07: #ffffff !default;
+$base08: #ee829f !default;  // error
+$base09: #f99170 !default;
+$base0a: #ffefcc !default;
+$base0b: #a5ffe1 !default;
+$base0c: #97e0ff !default;
+$base0d: #97bbf7 !default;
+$base0e: #c0b7f9 !default;
+$base0f: #fcc09e !default;
+```
 
 
 
