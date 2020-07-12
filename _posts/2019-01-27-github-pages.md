@@ -11,7 +11,7 @@ mathjax: "true"
 Installa GitHub Desktop per [Linux](https://aur.archlinux.org/packages/github-desktop-bin/)  
 è sufficiente scaricare il .deb ed installarlo.
 
-### GitHub
+## GitHub
 Trova il repository per la web page che ti [interessa](https://github.com/mmistakes/minimal-mistakes)  
 **Fork!** In alto a destra, il comando Fork ne farà una copia nel tuo profilo GitHub  
 Nota: il fork te lo porti a vita, quindi forse meglio clonare il repository, almeno nella condivisone social non ti appare la preview di minimal mistakes invece del proprio sito (e che cazz).  
@@ -34,7 +34,7 @@ Imposta il repo come la tua page
 Settings →  Repository name → "AlbGri.github.io"  
 </span>
 
-### Configurare il dominio (google domain)
+## Configurare il dominio (google domain)
 1. Google Domain, compro il dominio, 12 euro all'anno. [Questo mi piace](https://support.google.com/domains/answer/3251242?hl=en).
 2. da GitHub repository  
 <span style="font-size: 3mm">
@@ -59,10 +59,12 @@ dig www.albgri.com +nostats +nocomments +nocmd
 ping albgri.com
 ```
 
-### Note Pages
+## Note Pages
 Jakyll e Minimal Mistakes  
 1. [Cambiare le dimensioni del testo](https://github.com/mmistakes/minimal-mistakes/issues/1043)  
+
 1. [Aggiugnere data agli articoli](https://github.com/dvhart/dvhart.github.io/blob/master/_includes/archive-single.html)  
+
 1. Math $$\LaTeX$$  
 dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in cui si vogliono includere le formule, nell'header va aggiunto *mathjax: "true"*  
 ```html
@@ -71,10 +73,12 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 {% raw %}{% endif %}{% endraw %}
+
 ```
 1. Aggiungere la favicon  
 Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la stringa [linkata](https://stackoverflow.com/a/30552322).  
 Non ho potuto fare l'highlight html block perché è buggato con l'inizio di quella stringa :(  
+
 1. Personalizzare il Markdown flavour  
 Definita una skin nel *'_config.yml'* (es. minimal_mistakes_skin: "contrast" )  
 andiamo a personalizzare il file *'_sass/minimal-mistakes/skin/_contrast.scss'* le cui variabili influenzeranno i parametri di *'_sass/minimal-mistakes/_variables.scss'*  
