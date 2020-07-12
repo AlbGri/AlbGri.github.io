@@ -6,6 +6,8 @@ tags: [utils, linux, ubuntu, issues]
 mathjax: "true"
 ---
 
+*Aggiornato il 2020-07-12*  
+
 *funzionanti con Ubuntu 18-04*  
 
 ### Utili
@@ -84,6 +86,39 @@ powercfg.exe /hibernate off
 <span style="font-size: 3mm">
 Edit → Preferences → General Tab → General screen → "Advanced" tab → "General" subtab → lower right corner find the button "Config Editor" → ok the warning → set "general.useragent.compatMode.firefox" to true (found in Edit/Preferences/Advanced/General/Config Editor)
 </span>
+
+3. Errore dopo l'install di numpy  
+```console
+Traceback (most recent call last):
+  File "/home/unknown/miniconda3/bin/conda", line 7, in <module>
+    from conda.cli import main
+ModuleNotFoundError: No module named 'conda'
+```
+Se [si ha fortuna](http://stackoverflow.com/a/20516579/5948656) è solo un problema di path  
+Se [non si ha fortuna](https://github.com/conda/conda/issues/2463), risolve reinstallando anaconda :(   
+Da ora in poi userò gli ambienti virtuali di Anaconda!  
+[Miniconda](https://docs.conda.io/en/latest/miniconda.html)  
+```console
+cd Documents
+bash Miniconda3-latest-Linux-x86_64.sh
+sudo apt update
+conda update conda
+pip install --upgrade pip
+conda create --name py3 python=3.7
+```
+
+4. Apparso (base) fisso nel terminale, per disattivarlo
+```console
+conda config --set auto_activate_base False
+source ~/.bashrc
+```
+per riattivarlo è sufficiente reimpostare *True*
+
+5. Se si ha fatto danno sul .bashrc e lo si vuole ripristinare  
+[Soluzione](https://askubuntu.com/a/404428/1092300)  
+*There exist backup copies of .bashrc, .profile etc. in /etc/skel/. So one could replace a corrupt .bashrc simply by overwitting from there.*  
+
+
 
 
 ### In cerca di una soluzione
