@@ -39,7 +39,7 @@ System →  Keyboard → Switch windows direcly → Alt+Tab
 
 1. Aggiungi tasto destro create nuovo .txt  
 ```console
-touch ~/Templates/Empty\ Document
+~$ touch ~/Templates/Empty\ Document
 ```
 
 1. Disabilita aggiornamenti  
