@@ -2,7 +2,7 @@
 title: "ubuntu-commands"
 excerpt: "utils, issues"
 date: 2020-07-04
-tags: [utils, linux, ubuntu, issues]
+tags: [utils, linux, ubuntu, bugs, bash]
 mathjax: "true"
 ---
 
@@ -62,13 +62,23 @@ Shift + Prt Scrn to take a screenshot of an area you select.
 ```
 
 1. Tilde, Backtick, Accento grave, simboli  
-Alt destro + ì 		~~~~~  
-Alt destro + ' 		````  
-Alt destro + i 		→→→→  
+Alt destro + ì (~)  
+Alt destro + ' (`)  
+Alt destro + i (→)  
 
 1. Rimozione autocompletamento specifico da pagina web (sia Linux che Windows)  
 Seleziono l'autocompletamento da eliminare nel box di immissione testo e  
-Shift+DEL (oppure Shift+Canc)  
+*Shift+DEL* (oppure *Shift+Canc*)  
+
+1. Funzione tasto destro su nautilus dentro la cartella
+Deselezionare il file con *F5* e poi *Shift+F10* per funzionalità tasto destro
+
+
+
+
+
+
+
 
 
 
@@ -92,6 +102,11 @@ for i in *.png; do
     let n=n+1
 done
 ```
+
+
+
+
+
 
 
 ## Issues & Bugs
