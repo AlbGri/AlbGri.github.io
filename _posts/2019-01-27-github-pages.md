@@ -73,8 +73,8 @@ dentro *"_includes\script.html"* aggiungere questo script alla fine. Nei post in
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 {% raw %}{% endif %}{% endraw %}
-
 ```
+
 1. Aggiungere la favicon  
 Incolli "favicon.png" nella root del repository, poi in *_includes/head.html* aggiungi la stringa [linkata](https://stackoverflow.com/a/30552322).  
 Non ho potuto fare l'highlight html block perché è buggato con l'inizio di quella stringa :(  
@@ -101,6 +101,10 @@ $base0d: #97bbf7 !default;
 $base0e: #c0b7f9 !default;
 $base0f: #fcc09e !default;
 ```
+
+1. Abilitare il numero riga  
+[Line number con rougue, minimal mistakes, jakyll](https://github.com/jekyll/jekyll/issues/4619#issuecomment-191267346)  
+
 
 
 
