@@ -123,13 +123,6 @@ $base0f: #fcc09e !default;
 ```scss
 $spotify-color: #00d867 !default;
 ```
-* */_sass/minimal-mistakes/_utilities.scss*  
-```scss
-  .fa-spotify,
-  .fa-spotify-square {
-    color: $xing-color;
-  }
-```
 * */_config.yml*  
 ```python
 # Site Author1
