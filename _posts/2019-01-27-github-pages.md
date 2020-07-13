@@ -131,7 +131,7 @@ $spotify-color: #00d867 !default;
   }
 ```
 * *_config.yml*  
-```scss
+```python
 # Site Author1
     - label: "Spotify"
       icon: "fab fa-fw fa-spotify"
