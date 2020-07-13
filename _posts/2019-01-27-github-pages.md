@@ -130,7 +130,7 @@ $spotify-color: #00d867 !default;
     color: $xing-color;
   }
 ```
-* *_config.yml*  
+* */_config.yml*  
 ```python
 # Site Author1
     - label: "Spotify"
