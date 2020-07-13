@@ -129,8 +129,10 @@ $spotify-color: #00d867 !default;
   .fa-spotify-square {
     color: $xing-color;
   }
-```  
+```
+
 * */_config.yml*  
+
 ```xml
 # Site Author3
     - label: "Spotify"
