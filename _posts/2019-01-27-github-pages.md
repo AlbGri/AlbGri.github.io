@@ -132,9 +132,9 @@ $spotify-color: #00d867 !default;
 ```
 * */_config.yml*  
 ```xml
-# Site Author3
     - label: "Spotify"
       icon: "fab fa-fw fa-spotify"
+      url: "https://open.spotify.com/user/albgri"
 ```
 
 
