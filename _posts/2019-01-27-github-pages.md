@@ -131,16 +131,43 @@ $spotify-color: #00d867 !default;
   }
 ```
 * *_config.yml*  
-```yml
+```scss
+# Site Author1
+    - label: "Spotify"
+      icon: "fab fa-fw fa-spotify"
+      url: "https://open.spotify.com/user/albgri"
+```
+asd
+```xml
 {% raw %}
-# Site Author
+# Site Author2
     - label: "Spotify"
       icon: "fab fa-fw fa-spotify"
       url: "https://open.spotify.com/user/albgri"
 {% endraw %}
 ```
+asd
+
+```xml
+# Site Author3
+    - label: "Spotify"
+      icon: "fab fa-fw fa-spotify"
+      url: "https://open.spotify.com/user/albgri"
+```
 
 
+```python
+# Site Author4
+    - label: "Spotify"
+      icon: "fab fa-fw fa-spotify"
+      url: "https://open.spotify.com/user/albgri"
+```
+```python
+# Site Author5
+    - label: "Spotify"
+      icon: "fab fa-fw fa-spotify"
+      url: "https://open.spotify.com/user/albgri"
+```
 
 
 
