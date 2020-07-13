@@ -108,8 +108,8 @@ $base0f: #fcc09e !default;
 1. Markdown Link  
 *(BUG/Feature)* Se non si specifica 'https://' il link indirizza in un sotto percorso del sito. [Esempio](www.google.com)
 
-1. Aggiungere icona spotify (o altro) alla home
-	*. */_includes/author-profile.html*  
+1. Aggiungere icona spotify (o altro) alla home  
+*. */_includes/author-profile.html*  
 ```html
 {% raw %}{% if author.spotify %}{% endraw %}
         <li>
@@ -119,24 +119,25 @@ $base0f: #fcc09e !default;
         </li>
 {% raw %}{% endif %}{% endraw %}
 ```
-	*. */_sass/minimal-mistakes/_variables.scss*  
+*. */_sass/minimal-mistakes/_variables.scss*  
 ```scss
 $spotify-color: #00d867 !default;
 ```
-	*. */_sass/minimal-mistakes/_utilities.scss*  
+*. */_sass/minimal-mistakes/_utilities.scss*  
 ```scss
   .fa-spotify,
   .fa-spotify-square {
     color: $xing-color;
   }
 ```
-	*. *_config.yml*  
+*. *_config.yml*  
 ```yml
 # Site Author
     - label: "Spotify"
       icon: "fab fa-fw fa-spotify"
       url: "https://open.spotify.com/user/albgri"
 ```
+
 
 
 
