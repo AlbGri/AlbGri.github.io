@@ -129,16 +129,8 @@ $spotify-color: #00d867 !default;
   .fa-spotify-square {
     color: $xing-color;
   }
-```
+```  
 * */_config.yml*  
-```xml
-{% raw %}# Site Author2{% endraw %}
-    - label: "Spotify"
-      icon: "fab fa-fw fa-spotify"
-      url: "https://open.spotify.com/user/albgri"
-```
-
-
 ```xml
 # Site Author3
     - label: "Spotify"
@@ -146,13 +138,6 @@ $spotify-color: #00d867 !default;
       url: "https://open.spotify.com/user/albgri"
 ```
 
-
-```python
-# Site Author4
-    - label: "Spotify"
-      icon: "fab fa-fw fa-spotify"
-      url: "https://open.spotify.com/user/albgri"
-```
 
 
 
