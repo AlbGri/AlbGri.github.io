@@ -131,8 +131,7 @@ $spotify-color: #00d867 !default;
   }
 ```
 
-* */_config.yml*  
-
+* test  
 ```xml
 # Site Author3
     - label: "Spotify"
