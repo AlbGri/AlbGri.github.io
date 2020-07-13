@@ -246,6 +246,14 @@
         </li>
       {% endif %}
 
+      {% if author.spotify %}
+        <li>
+          <a href="https://open.spotify.com/user/{{ author.spotify }}" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-spotify" aria-hidden="true"></i><span class="label">Spotify</span>
+          </a>
+        </li>
+      {% endif %}
+
       {% include author-profile-custom-links.html %}
     </ul>
   </div>
