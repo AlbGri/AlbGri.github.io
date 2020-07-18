@@ -150,7 +150,7 @@ $spotify-color: #00d867 !default;
 search_provider        : google
 search_engine_id       : 000000000000000000000:xxxxxxxxxxx
 ```
-1. Configura priprietario sito  
+1. Configura proprietario sito  
 [Search Console Google](https://search.google.com/search-console/about)  
 Nel caso non riconosce in automatico che si è proprietari, prova [questa](https://victor2code.github.io/blog/2019/07/04/jekyll-github-pages-appear-on-Google.html) guida  
 1. Remove cached broken pages
