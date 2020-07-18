@@ -138,6 +138,24 @@ $spotify-color: #00d867 !default;
       url: "https://open.spotify.com/user/albgri"
 ```
 
+## Google Setup
+1. Search Engine Google: utilizzo google search nel search bar del sito  
+* Crea il tuo [Search Engine Google](https://programmablesearchengine.google.com/cse/all)  
+* Ottieni il tuo cx  
+```xml
+000000000000000000000:xxxxxxxxxxx
+```
+* Modifica il *_config.yml* sostituendo  
+```xml
+search_provider        : google
+search_engine_id       : 000000000000000000000:xxxxxxxxxxx
+```
+1. Configura priprietario sito  
+[Search Console Google](https://search.google.com/search-console/about)  
+Nel caso non riconosce in automatico che si è proprietari, prova [questa](https://victor2code.github.io/blog/2019/07/04/jekyll-github-pages-appear-on-Google.html) guida  
+1. Remove cached broken pages
+[Removal Google](https://www.google.com/webmasters/tools/removals)  
+Cerca su google "site:*tuodominio*" per trovare le pagine scadute indicizzate e richiederne la rimozione  
 
 
 
