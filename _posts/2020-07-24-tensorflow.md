@@ -124,14 +124,18 @@ Continue
 ..unmark Driver  
 ..Install  
 ```console
-
+Summary
+Driver:   Not Selected
+Toolkit:  Installed in /usr/local/cuda-10.1/
+Samples:  Installed in /home/unknown/, but missing recommended libraries
+Please make sure that
+PATH includes /usr/local/cuda-10.1/bin
+LD_LIBRARY_PATH includes /usr/local/cuda-10.1/lib64, or, add /usr/local/cuda-10.1/lib64 to /etc/ld.so.conf and run ldconfig as root
 To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-10.1/bin
-
 Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-10.1/doc/pdf for detailed information on setting up CUDA.
 WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 418.00 is required for CUDA 10.1 functionality to work.
 To install the driver using this installer, run the following command, replacing CudaInstaller with the name of this run file:
-    sudo CudaInstaller.run --silent --driver
-
+sudo CudaInstaller.run --silent --driver
 Logfile is /var/log/cuda-installer.log
 ```
 
@@ -224,28 +228,15 @@ Downloading tensorflow-2.2.0-cp37-cp37m-manylinux2010_x86_64.whl (516.2 MB)
 1. Verifico l'installazione (l'ho lanciato prima di fare qualsiasi tipo di setup)
 ```console
 ~$ python -c "import tensorflow as tf; x = [[2.]]; print('Tensorflow Version ', tf.__version__); print('hello TF world, {}'.format(tf.matmul(x, x)))"
-```
-<details>
-<summary>
-<p style="text-decoration: underline;">Tensorflow Version  2.2.0 (click to view)</p>
-</summary>
-```console
 2020-07-23 00:23:46.566744: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
-
 2020-07-23 00:23:46.566765: E tensorflow/stream_executor/cuda/cuda_driver.cc:313] failed call to cuInit: UNKNOWN ERROR (303)
-
 2020-07-23 00:23:46.566786: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (unknown): /proc/driver/nvidia/version does not exist
-
 2020-07-23 00:23:46.567045: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-
 2020-07-23 00:23:46.591079: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3199620000 Hz
-
 2020-07-23 00:23:46.591771: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fe094000b20 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-
 2020-07-23 00:23:46.591789: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
 hello TF world, [[4.]]
 ```
-</details>
 
 
 
@@ -254,7 +245,7 @@ hello TF world, [[4.]]
 
 
 ## Link utili
-[install-cuda-10-and-cudnn-on-ubuntu-18](https://medium.com/@patrickorcl/install-cuda-10-and-cudnn-on-ubuntu-18-b28b59bae279)  
+[Install-cuda-10-and-cudnn-on-ubuntu-18](https://medium.com/@patrickorcl/install-cuda-10-and-cudnn-on-ubuntu-18-b28b59bae279)  
 [How-To-Install-CUDA-10-1-on-Ubuntu-19-04](https://www.pugetsystems.com/labs/hpc/How-To-Install-CUDA-10-1-on-Ubuntu-19-04-1405)  
 
 
