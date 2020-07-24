@@ -12,8 +12,6 @@ mathjax: "true"
 * Java: assente
 * Nvidia drivers: assente
 * gcc 7.5
-* Libreria Tensorflow installata in ambiente virtuale Anaconda
-
 
 ## Steps
 Requisiti [Cuda 11](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html) li ho presi per buoni anche per Cuda 10.1.  
@@ -44,8 +42,8 @@ product: GP107 GeForce GTX 1050 Ti
 1. Non ho java installato, quindi lo installo  
 Le due versioni principali sono la 8 e la 11, istallo quella più recente
 ```console
-sudo apt update
-sudo apt install openjdk-11-jdk
+~$ sudo apt update
+~$ sudo apt install openjdk-11-jdk
 ```
 
 1. Verifico Java (non so se sarà un problema la 11 invece della 8)  
@@ -165,9 +163,9 @@ Non l'ho provato e personalmente eviterei. Se *rompi* il bashrc è una rottura d
 
 1. Cuda test example
 ```console
-cd ~/NVIDIA_CUDA-10.1_Samples/5_Simulations/nbody
-make
-./nbody
+~$ cd ~/NVIDIA_CUDA-10.1_Samples/5_Simulations/nbody
+~$ make
+~$ ./nbody
 ```
 <img src="/assets/images/Udemy/Python for DS and ML Bootcamp/section-025/004-Cuda1012Sample.png" width="400">
 
