@@ -467,7 +467,7 @@ print(test_acc)
 
 
 ## Dubbi
-1. Perché devo vincolare la memoria della GPU?
+1. Il fatto che debba limitare la memoria della CPU in modo forzato comporta una perdita di performace?
 1. Usare il OpenJDK 11 invece del 8 può dare problemi?
 1. Usare il compilatore gcc 7.5 invece del 7.4 può dare problemi?
 1. Con una GPU così di basso livello conviene rispetto ad usare la CPU? e Colab? Dovrò fare dei benchmark!
