@@ -310,7 +310,7 @@ import matplotlib.pyplot as plt
 
 
 ```python
-# verifico numero GPU
+# Verifico numero GPU
 print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
 ```
 
@@ -319,7 +319,7 @@ print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('
 
 
 ```python
-# limito GPU (https://www.tensorflow.org/guide/gpu#limiting_gpu_memory_growth)
+# Limito GPU (https://www.tensorflow.org/guide/gpu#limiting_gpu_memory_growth)
 gpus = tf.config.experimental.list_physical_devices('GPU')
 if gpus:
     # Restrict TensorFlow to only allocate 1GB * 3 of memory on the first GPU
@@ -339,19 +339,19 @@ if gpus:
 
 
 ```python
-# Train and test while downloading data (trick per evitare di scaricarlo ogni volta)
+# Train and test nel mentre che scarichi il dataset (o trick descritto all'inizio per evitare di scaricarlo ogni volta)
 (train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
 ```
 
 
 ```python
-# Normalize pixel values to be between 0 and 1
+# Normalizza i valori dei pixel tra 0 e 1
 train_images, test_images = train_images / 255.0, test_images / 255.0
 ```
 
 
 ```python
-# Verify the data
+# Verifiche del dato
 class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer',
                'dog', 'frog', 'horse', 'ship', 'truck']
 plt.figure(figsize=(10,10))
@@ -377,7 +377,7 @@ Ottenevo un errore di memoria che ho risolto limitando i CPU con i parametri des
 ```
 
 ```python
-# Create the convolutional base
+# Crea base convolutional
 model = models.Sequential()
 model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)))
 model.add(layers.MaxPooling2D((2, 2)))
@@ -385,15 +385,15 @@ model.add(layers.Conv2D(64, (3, 3), activation='relu'))
 model.add(layers.MaxPooling2D((2, 2)))
 model.add(layers.Conv2D(64, (3, 3), activation='relu'))
 
-# Architecture
+# Architettura
 # model.summary()
 
-# Add Dense layers on top
+# Aggiungi il Dense layers on top
 model.add(layers.Flatten())
 model.add(layers.Dense(64, activation='relu'))
 model.add(layers.Dense(10))
 
-# Architecture complete
+# Architettura completa
 model.summary()
 ```
 
@@ -425,7 +425,7 @@ model.summary()
 
 
 ```python
-# Compile and train the model
+# Compila and addestra il modello
 model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
@@ -444,7 +444,7 @@ history = model.fit(train_images, train_labels, epochs=50,
 
 
 ```python
-# Evaluate model
+# Valutazioni
 plt.plot(history.history['accuracy'], label='accuracy')
 plt.plot(history.history['val_accuracy'], label = 'val_accuracy')
 plt.xlabel('Epoch')
