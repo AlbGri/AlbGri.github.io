@@ -112,7 +112,6 @@ Me ne ero dimenticato e le ho installate dopo, infatti il Summary dell'installaz
 Tensorflow 2.2 supporta cuda 10.1, non superiore, pesa circa 2.4GB.  
 [Download](https://developer.nvidia.com/cuda-10.1-download-archive-update2) dal sito Nvidia, necessita della registrazione il portale developer  
 Apparirà un messaggio che avvisa che i driver Nvidia sono già installati, è suffiente continuare ma dopo bisogna rimuovere dall'elenco che propone l'installazione dei Nvidia drivers (es. 418.87.00).  
-
 ```console
 ~$ cd Downloads
 ~$ wget http://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run
@@ -122,12 +121,10 @@ recommended that you remove this before continuing.
 Abort
 Continue
 ```
-..Continue
-..Accept
-..unmark Driver
-..Install
-
-
+..Continue  
+..Accept  
+..unmark Driver  
+..Install  
 ```console
 Summary
 
@@ -201,19 +198,16 @@ libcudnn7-doc_7.6.5.32-1%2Bcuda10.1_amd64.deb (Code Samples)
 ~$ sudo make
 ~$ ./deviceQuery
 ```
-
 ```console
 ~$ cd /usr/local/cuda/samples/1_Utilities/bandwidthTest 
 ~$ sudo make
 ~$ ./bandwidthTest
 ```
-
 ```console
 ~$ cd /usr/src/cudnn_samples_v7/mnistCUDNN/
 ~$ sudo make clean && sudo make
 ~$ ./mnistCUDNN
 ```
-
 ```console
 ~$ cd /usr/src/cudnn_samples_v7/conv_sample/
 ~$ sudo make clean && sudo make
