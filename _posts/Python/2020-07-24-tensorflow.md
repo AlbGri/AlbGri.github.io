@@ -246,7 +246,10 @@ if tf.test.gpu_device_name():
 else:
     print("Please install GPU version of TF")
 ```
-Please install GPU version of TF
+
+    Please install GPU version of TF
+
+
 
 1. Verifico post-installazione (1/2)
 ```console
@@ -306,7 +309,9 @@ if tf.test.gpu_device_name():
 else:
     print("Please install GPU version of TF")
 ```
-Default GPU Device:/device:GPU:0
+
+    Default GPU Device:/device:GPU:0
+
 
 
 ## Link utili
@@ -325,6 +330,7 @@ Inserisco il file nella folder dataset di keras dell'environment py3_tf
 
 
 ```python
+# lib
 import tensorflow as tf
 from tensorflow.keras import datasets, layers, models
 import matplotlib.pyplot as plt
@@ -458,7 +464,7 @@ history = model.fit(train_images, train_labels, epochs=50,
     1563/1563 [==============================] - 8s 5ms/step - loss: 1.5013 - accuracy: 0.4530 - val_loss: 1.2679 - val_accuracy: 0.5394
     Epoch 2/50
     1563/1563 [==============================] - 8s 5ms/step - loss: 1.1445 - accuracy: 0.5941 - val_loss: 1.0954 - val_accuracy: 0.6096
-[...]
+    ..removed some Epoch prints
     Epoch 50/50
     1563/1563 [==============================] - 8s 5ms/step - loss: 0.1199 - accuracy: 0.9592 - val_loss: 2.4962 - val_accuracy: 0.6881
 
