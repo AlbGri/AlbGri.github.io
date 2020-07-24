@@ -16,25 +16,25 @@ mathjax: "true"
 ## Steps
 Requisiti [Cuda 11](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html) li ho presi per buoni anche per Cuda 10.1.  
 
-1. Verifico versione di Ubuntu (OK)
+1. Verifico versione di Ubuntu
 ```console
 ~$ lsb_release -d
 Description:	Ubuntu 18.04.4 LTS
 ```
 
-1. Verifico versione kernel di Ubuntu (OK)  
+1. Verifico versione kernel di Ubuntu
 ```console
 ~$ uname -r
 4.15.0-112-generic
 ```
 
-1. Verifico scheda video se adatta a CUDA (OK)  
+1. Verifico scheda video se adatta a CUDA
 ```console
 ~$ sudo lshw -C display
 product: GP107 GeForce GTX 1050 Ti
 ```
 
-1. Verifico Java (PROBLEMA)  
+1. Verifico Java (PROBLEMA)
 ```console
 ~$ java --version
 ```
@@ -46,7 +46,7 @@ Le due versioni principali sono la 8 e la 11, istallo quella più recente
 ~$ sudo apt install openjdk-11-jdk
 ```
 
-1. Verifico Java (non so se sarà un problema la 11 invece della 8)  
+1. Verifico Java (non so se sarà un problema la 11 invece della 8)
 ```console
 ~$ java --version
 openjdk 11.0.7 2020-04-14
@@ -54,7 +54,7 @@ OpenJDK Runtime Environment (build 11.0.7+10-post-Ubuntu-2ubuntu218.04)
 OpenJDK 64-Bit Server VM (build 11.0.7+10-post-Ubuntu-2ubuntu218.04, mixed mode, sharing)
 ```
 
-1. Verifico che gcc sia installato (non so se sarà un problema la 7.5 invece della 7.4 come requisito)  
+1. Verifico che gcc sia installato (non so se sarà un problema la 7.5 invece della 7.4 come requisito)
 ```console
 ~$ gcc –version
 gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
@@ -100,16 +100,16 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 
 ### CUDA
 1. Installa [CUDA dependencies](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#install-libraries)  
-Me ne ero dimenticato e le ho installate dopo, infatti il Summary dell'installazione di cuda mi ha avvisato 'missing recommended libraries'  
+Me ne ero dimenticato e le ho installate dopo, infatti il Summary dell'installazione di cuda mi ha avvisato 'missing recommended libraries'
 ```console
 ~$ sudo apt install freeglut3-dev libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
 ~$ sudo apt install g++ build-essential # non li ho installati
 ```
 
-1. Installo CUDA  
+1. Installo CUDA
 Tensorflow 2.2 supporta cuda 10.1, non superiore, pesa circa 2.4GB.  
 [Download](https://developer.nvidia.com/cuda-10.1-download-archive-update2) dal sito Nvidia, necessita della registrazione il portale developer  
-Apparirà un messaggio che avvisa che i driver Nvidia sono già installati, è suffiente continuare ma dopo bisogna rimuovere dall'elenco che propone l'installazione dei Nvidia drivers (es. 418.87.00).  
+Apparirà un messaggio che avvisa che i driver Nvidia sono già installati, è suffiente continuare ma dopo bisogna rimuovere dall'elenco che propone l'installazione dei Nvidia drivers (es. 418.87.00).
 ```console
 ~$ cd Downloads
 ~$ wget http://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run
@@ -124,7 +124,15 @@ Continue
 ..unmark Driver  
 ..Install  
 ```console
-test
+Summary
+
+Driver:   Not Selected
+Toolkit:  Installed in /usr/local/cuda-10.1/
+Samples:  Installed in /home/unknown/, but missing recommended libraries
+
+Please make sure that
+PATH includes /usr/local/cuda-10.1/bin
+LD_LIBRARY_PATH includes /usr/local/cuda-10.1/lib64, or, add /usr/local/cuda-10.1/lib64 to /etc/ld.so.conf and run ldconfig as root
 ```
 
 1. Cuda Path
@@ -138,7 +146,7 @@ Mi assicuro che il path in cui stia cuda sia quello corretto.
 ```
 
 1. Cuda Path Permanent  
-Non l'ho provato e personalmente eviterei. Se *rompi* il bashrc è una rottura di scatole, un giorno imparerò a manipolarlo.. forse  
+Non l'ho provato e personalmente eviterei. Se *rompi* il bashrc è una rottura di scatole, un giorno imparerò a manipolarlo.. forse
 ```console
 ~$ echo "export PATH=/usr/local/cuda-10.1/bin:$PATH" >> ~/.bashrc
 ~$ echo "export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH" >> ~/.bashrc 
@@ -160,7 +168,7 @@ Non l'ho provato e personalmente eviterei. Se *rompi* il bashrc è una rottura d
 Download cuDNN v7.6.5 (November 5th, 2019), for CUDA 10.1  
 libcudnn7_7.6.5.32-1%2Bcuda10.1_amd64.deb (Runtime Library)  
 libcudnn7-dev_7.6.5.32-1%2Bcuda10.1_amd64.deb (Developer Library)  
-libcudnn7-doc_7.6.5.32-1%2Bcuda10.1_amd64.deb (Code Samples)  
+libcudnn7-doc_7.6.5.32-1%2Bcuda10.1_amd64.deb (Code Samples)
 ```console
 ~$ cd Downloads/
 ~$ sudo dpkg -i libcudnn7_7.6.5.32-1+cuda10.1_amd64.deb
@@ -197,7 +205,7 @@ libcudnn7-doc_7.6.5.32-1%2Bcuda10.1_amd64.deb (Code Samples)
 
 ## Python
 
-1. Costruisco un conda environment apposito per TensorFlow  
+1. Costruisco un conda environment apposito per TensorFlow
 ```console
 ~$ conda-env list
 base                  *  /home/user/miniconda3
@@ -213,8 +221,7 @@ py3                      /home/user/miniconda3/envs/py3
 Downloading tensorflow-2.2.0-cp37-cp37m-manylinux2010_x86_64.whl (516.2 MB)
 ```
 
-1. Verifico l'installazione (l'ho lanciato prima di fare qualsiasi tipo di setup)  
-*Test command*  
+1. Verifico l'installazione (l'ho lanciato prima di fare qualsiasi tipo di setup)
 ```console
 ~$ python -c "import tensorflow as tf; x = [[2.]]; print('Tensorflow Version ', tf.__version__); print('hello TF world, {}'.format(tf.matmul(x, x)))"
 ```
