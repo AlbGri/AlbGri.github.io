@@ -246,9 +246,7 @@ if tf.test.gpu_device_name():
 else:
     print("Please install GPU version of TF")
 ```
-```console
 Please install GPU version of TF
-```
 
 1. Verifico post-installazione (1/2)
 ```console
@@ -301,8 +299,14 @@ coreClock: 1.43GHz coreCount: 6 deviceMemorySize: 3.94GiB deviceMemoryBandwidth:
 hello TF world, [[4.]]
 ```
 
-
 1. Verifico post-installazione (2/2)
+```python
+if tf.test.gpu_device_name(): 
+    print('Default GPU Device:{}'.format(tf.test.gpu_device_name()))
+else:
+    print("Please install GPU version of TF")
+```
+Default GPU Device:/device:GPU:0
 
 
 
