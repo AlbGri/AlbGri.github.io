@@ -139,9 +139,9 @@ Please make sure that
 To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-10.1/bin
 
 Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-10.1/doc/pdf for detailed information on setting up CUDA.
-***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 418.00 is required for CUDA 10.1 functionality to work.
-To install the driver using this installer, run the following command, replacing <CudaInstaller> with the name of this run file:
-    sudo <CudaInstaller>.run --silent --driver
+WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 418.00 is required for CUDA 10.1 functionality to work.
+To install the driver using this installer, run the following command, replacing CudaInstaller with the name of this run file:
+    sudo CudaInstaller.run --silent --driver
 
 Logfile is /var/log/cuda-installer.log
 ```
@@ -212,6 +212,7 @@ libcudnn7-doc_7.6.5.32-1%2Bcuda10.1_amd64.deb (Code Samples)
 ~$ cd /usr/src/cudnn_samples_v7/conv_sample/
 ~$ sudo make clean && sudo make
 ~$ ./conv_sample
+```
 
 ## Python
 
@@ -234,9 +235,8 @@ Downloading tensorflow-2.2.0-cp37-cp37m-manylinux2010_x86_64.whl (516.2 MB)
 1. Verifico l'installazione (l'ho lanciato prima di fare qualsiasi tipo di setup)  
 *Test command*  
 ```console
-python -c "import tensorflow as tf; x = [[2.]]; print('Tensorflow Version ', tf.__version__); print('hello TF world, {}'.format(tf.matmul(x, x)))"
+~$ python -c "import tensorflow as tf; x = [[2.]]; print('Tensorflow Version ', tf.__version__); print('hello TF world, {}'.format(tf.matmul(x, x)))"
 ```
-```bash
 <details>
 <summary>
 <p style="text-decoration: underline;">Tensorflow Version  2.2.0 (click to view)</p>
@@ -254,9 +254,9 @@ python -c "import tensorflow as tf; x = [[2.]]; print('Tensorflow Version ', tf.
 2020-07-23 00:23:46.591771: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fe094000b20 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
 
 2020-07-23 00:23:46.591789: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-</details>
 hello TF world, [[4.]]
-```
+</details>
+
 
 
 
