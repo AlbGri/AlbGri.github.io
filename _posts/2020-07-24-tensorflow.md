@@ -124,24 +124,7 @@ Continue
 ..unmark Driver  
 ..Install  
 ```console
-Summary
-
-Driver:   Not Selected
-Toolkit:  Installed in /usr/local/cuda-10.1/
-Samples:  Installed in /home/unknown/, but missing recommended libraries
-
-Please make sure that
-   PATH includes /usr/local/cuda-10.1/bin
-   LD_LIBRARY_PATH includes /usr/local/cuda-10.1/lib64, or, add /usr/local/cuda-10.1/lib64 to /etc/ld.so.conf and run ldconfig as root
-
-To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-10.1/bin
-
-Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-10.1/doc/pdf for detailed information on setting up CUDA.
-WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 418.00 is required for CUDA 10.1 functionality to work.
-To install the driver using this installer, run the following command, replacing CudaInstaller with the name of this run file:
-    sudo CudaInstaller.run --silent --driver
-
-Logfile is /var/log/cuda-installer.log
+test
 ```
 
 1. Cuda Path
@@ -239,6 +222,7 @@ Downloading tensorflow-2.2.0-cp37-cp37m-manylinux2010_x86_64.whl (516.2 MB)
 <summary>
 <p style="text-decoration: underline;">Tensorflow Version  2.2.0 (click to view)</p>
 </summary>
+```console
 2020-07-23 00:23:46.566744: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
 
 2020-07-23 00:23:46.566765: E tensorflow/stream_executor/cuda/cuda_driver.cc:313] failed call to cuInit: UNKNOWN ERROR (303)
@@ -253,6 +237,7 @@ Downloading tensorflow-2.2.0-cp37-cp37m-manylinux2010_x86_64.whl (516.2 MB)
 
 2020-07-23 00:23:46.591789: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
 hello TF world, [[4.]]
+```
 </details>
 
 
