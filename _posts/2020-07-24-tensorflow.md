@@ -106,7 +106,7 @@ Me ne ero dimenticato e le ho installate dopo, infatti il Summary dell'installaz
 ~$ sudo apt install g++ build-essential # non li ho installati
 ```
 
-1. Installo CUDA
+1. Installo CUDA  
 Tensorflow 2.2 supporta cuda 10.1, non superiore, pesa circa 2.4GB.  
 [Download](https://developer.nvidia.com/cuda-10.1-download-archive-update2) dal sito Nvidia, necessita della registrazione il portale developer  
 Apparirà un messaggio che avvisa che i driver Nvidia sono già installati, è suffiente continuare ma dopo bisogna rimuovere dall'elenco che propone l'installazione dei Nvidia drivers (es. 418.87.00).
@@ -124,18 +124,18 @@ Continue
 ..unmark Driver  
 ..Install  
 ```console
-Summary
 
-Driver:   Not Selected
-Toolkit:  Installed in /usr/local/cuda-10.1/
-Samples:  Installed in /home/unknown/, but missing recommended libraries
+To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-10.1/bin
 
-Please make sure that
-PATH includes /usr/local/cuda-10.1/bin
-LD_LIBRARY_PATH includes /usr/local/cuda-10.1/lib64, or, add /usr/local/cuda-10.1/lib64 to /etc/ld.so.conf and run ldconfig as root
+Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-10.1/doc/pdf for detailed information on setting up CUDA.
+WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 418.00 is required for CUDA 10.1 functionality to work.
+To install the driver using this installer, run the following command, replacing CudaInstaller with the name of this run file:
+    sudo CudaInstaller.run --silent --driver
+
+Logfile is /var/log/cuda-installer.log
 ```
 
-1. Cuda Path
+1. Cuda Path  
 Ho l'impressione che sia inutile perché così sono temporanei. Ho sempre avuto estremo fastidio ad impostare le variabili d'ambiente con Ubuntu perché sembrano esserci 3 file diversi in cui si potrebbero impostare e nella storia delle versioni di ubuntu hanno spesso cambiato nome/percorso.  
 Mi assicuro che il path in cui stia cuda sia quello corretto.
 ```console
@@ -163,7 +163,7 @@ Non l'ho provato e personalmente eviterei. Se *rompi* il bashrc è una rottura d
 
 ### cuDNN
 
-1. Installa cuDNN
+1. Installa cuDNN  
 [Download](https://developer.nvidia.com/rdp/cudnn-download) cuDNN dal sito Nvidia, necessita della registrazione il portale developer  
 Download cuDNN v7.6.5 (November 5th, 2019), for CUDA 10.1  
 libcudnn7_7.6.5.32-1%2Bcuda10.1_amd64.deb (Runtime Library)  
