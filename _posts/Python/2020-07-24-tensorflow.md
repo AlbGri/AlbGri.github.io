@@ -97,6 +97,8 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 ```console
 ~$ nvidia-smi
 ```
+<img src="/assets/images/Python/TensorFlow_Nvidia450.png" width="400">
+
 
 ### CUDA
 1. Installa [CUDA dependencies](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#install-libraries)  
@@ -162,7 +164,7 @@ Non l'ho provato e personalmente eviterei. Se *rompi* il bashrc è una rottura d
 ~$ make
 ~$ ./nbody
 ```
-<img src="/assets/images/Udemy/Python for DS and ML Bootcamp/section-025/004-Cuda1012Sample.png" width="400">
+<img src="/assets/images/Python/TensorFlow_Cuda1012Sample.png" width="400">
 
 
 ### cuDNN
@@ -367,7 +369,7 @@ for i in range(25):
 plt.show()
 ```
 
-![png](/assets/images/TensorFlow_CIFAR-10_df.png)
+![png](/assets/images/Python/TensorFlow_CIFAR-10_df.png)
 
 
 Prima di lanciare i comandi successivi è importante monitorare le risorse della CPU.  
@@ -461,7 +463,7 @@ print(test_acc)
 
 
 
-![png](/assets/images/TensorFlow_CIFAR-10_metrics.png)
+![png](/assets/images/Python/TensorFlow_CIFAR-10_metrics.png)
 
 
 
