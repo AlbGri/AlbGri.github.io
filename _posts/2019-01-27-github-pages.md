@@ -137,6 +137,9 @@ $spotify-color: #00d867 !default;
       icon: "fab fa-fw fa-spotify"
       url: "https://open.spotify.com/user/albgri"
 ```
+1. Evitare il doppio slash nell'url del post  
+nel *_config.yml* nella voce url ci stava il proprio sito con slash "/" finale. Va rimosso!
+
 
 ## Google Setup
 1. Search Engine Google: utilizzo google search nel search bar del sito  
