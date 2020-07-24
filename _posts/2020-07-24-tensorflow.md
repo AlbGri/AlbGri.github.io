@@ -225,7 +225,7 @@ py3                      /home/user/miniconda3/envs/py3
 Downloading tensorflow-2.2.0-cp37-cp37m-manylinux2010_x86_64.whl (516.2 MB)
 ```
 
-1. Verifico l'installazione (l'ho lanciato prima di fare qualsiasi tipo di setup)
+1. Verifico l'installazione (1/2) (l'ho lanciato prima di fare qualsiasi tipo di setup)
 ```console
 ~$ python -c "import tensorflow as tf; x = [[2.]]; print('Tensorflow Version ', tf.__version__); print('hello TF world, {}'.format(tf.matmul(x, x)))"
 2020-07-23 00:23:46.566744: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
@@ -237,6 +237,16 @@ Downloading tensorflow-2.2.0-cp37-cp37m-manylinux2010_x86_64.whl (516.2 MB)
 2020-07-23 00:23:46.591789: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
 hello TF world, [[4.]]
 ```
+
+1. Verifico l'installazione (2/2)
+```python
+if tf.test.gpu_device_name(): 
+    print('Default GPU Device:{}'.format(tf.test.gpu_device_name()))
+else:
+    print("Please install GPU version of TF")
+```
+
+    Please install GPU version of TF
 
 
 
