@@ -309,12 +309,198 @@ else:
 Default GPU Device:/device:GPU:0
 
 
-
-
-
 ## Link utili
 [Install-cuda-10-and-cudnn-on-ubuntu-18](https://medium.com/@patrickorcl/install-cuda-10-and-cudnn-on-ubuntu-18-b28b59bae279)  
 [How-To-Install-CUDA-10-1-on-Ubuntu-19-04](https://www.pugetsystems.com/labs/hpc/How-To-Install-CUDA-10-1-on-Ubuntu-19-04-1405)  
+
+
+# CIFAR-10 dataset
+**Verifichiamo che il setup di TensorFlow 2.2.0 sia andato a buon fine**  
+[Informazioni](https://www.cs.toronto.edu/~kriz/cifar.html) e [download](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz)  
+Rinomimo il file scaricato in  
+*'cifar-10-batches-py.tar.gz'*  
+Inserisco il file nella folder dataset di keras dell'environment py3_tf  
+*'/home/unknown/miniconda3/envs/py3_tf/lib/python3.7/site-packages/tensorflow/python/keras/datasets/cifar-10-batches-py.tar.gz'*  
+..così si evita ogni volta che si lancia il codice di riscaricarlo
+
+
+```python
+import tensorflow as tf
+from tensorflow.keras import datasets, layers, models
+import matplotlib.pyplot as plt
+```
+
+
+```python
+# verifico numero GPU
+print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
+```
+
+    Num GPUs Available:  1
+
+
+
+```python
+# limito GPU (https://www.tensorflow.org/guide/gpu#limiting_gpu_memory_growth)
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    # Restrict TensorFlow to only allocate 1GB * 3 of memory on the first GPU
+    try:
+        tf.config.experimental.set_virtual_device_configuration(
+            gpus[0],
+            [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=1024 * 3)])
+        logical_gpus = tf.config.experimental.list_logical_devices('GPU')
+        print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
+    except RuntimeError as e:
+        # Virtual devices must be set before GPUs have been initialized
+        print(e)
+```
+
+    1 Physical GPUs, 1 Logical GPUs
+
+
+
+```python
+# Train and test while downloading data (trick per evitare di scaricarlo ogni volta)
+(train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
+```
+
+
+```python
+# Normalize pixel values to be between 0 and 1
+train_images, test_images = train_images / 255.0, test_images / 255.0
+```
+
+
+```python
+# Verify the data
+class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer',
+               'dog', 'frog', 'horse', 'ship', 'truck']
+plt.figure(figsize=(10,10))
+for i in range(25):
+    plt.subplot(5,5,i+1)
+    plt.xticks([])
+    plt.yticks([])
+    plt.grid(False)
+    plt.imshow(train_images[i], cmap=plt.cm.binary)
+    # The CIFAR labels happen to be arrays, 
+    # which is why you need the extra index
+    plt.xlabel(class_names[train_labels[i][0]])
+plt.show()
+```
+
+![png](/assets/images/TensorFlow_CIFAR-10_df.png)
+
+
+Prima di lanciare il comando è utile monitorare le risorse della CPU, prima di limitare la memoria della GPU ottenevo errori.
+```console
+~$ nvidia-smi
+```
+
+```python
+# Create the convolutional base
+model = models.Sequential()
+model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+
+# Architecture
+# model.summary()
+
+# Add Dense layers on top
+model.add(layers.Flatten())
+model.add(layers.Dense(64, activation='relu'))
+model.add(layers.Dense(10))
+
+# Architecture complete
+model.summary()
+```
+
+    Model: "sequential"
+    _________________________________________________________________
+    Layer (type)                 Output Shape              Param #   
+    =================================================================
+    conv2d (Conv2D)              (None, 30, 30, 32)        896       
+    _________________________________________________________________
+    max_pooling2d (MaxPooling2D) (None, 15, 15, 32)        0         
+    _________________________________________________________________
+    conv2d_1 (Conv2D)            (None, 13, 13, 64)        18496     
+    _________________________________________________________________
+    max_pooling2d_1 (MaxPooling2 (None, 6, 6, 64)          0         
+    _________________________________________________________________
+    conv2d_2 (Conv2D)            (None, 4, 4, 64)          36928     
+    _________________________________________________________________
+    flatten (Flatten)            (None, 1024)              0         
+    _________________________________________________________________
+    dense (Dense)                (None, 64)                65600     
+    _________________________________________________________________
+    dense_1 (Dense)              (None, 10)                650       
+    =================================================================
+    Total params: 122,570
+    Trainable params: 122,570
+    Non-trainable params: 0
+    _________________________________________________________________
+
+
+
+```python
+# Compile and train the model
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
+history = model.fit(train_images, train_labels, epochs=50, 
+                    validation_data=(test_images, test_labels))
+```
+
+    Epoch 1/50
+    1563/1563 [==============================] - 8s 5ms/step - loss: 1.5013 - accuracy: 0.4530 - val_loss: 1.2679 - val_accuracy: 0.5394
+    Epoch 2/50
+    1563/1563 [==============================] - 8s 5ms/step - loss: 1.1445 - accuracy: 0.5941 - val_loss: 1.0954 - val_accuracy: 0.6096
+[...]
+    Epoch 50/50
+    1563/1563 [==============================] - 8s 5ms/step - loss: 0.1199 - accuracy: 0.9592 - val_loss: 2.4962 - val_accuracy: 0.6881
+
+
+
+```python
+# Evaluate model
+plt.plot(history.history['accuracy'], label='accuracy')
+plt.plot(history.history['val_accuracy'], label = 'val_accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.ylim([0.5, 1])
+plt.legend(loc='lower right')
+
+test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
+print(test_acc)
+```
+
+    313/313 - 1s - loss: 2.4962 - accuracy: 0.6881
+    0.6880999803543091
+
+
+
+![png](/assets/images/TensorFlow_CIFAR-10_metrics.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
