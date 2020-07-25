@@ -176,7 +176,7 @@ plt.show()
 ![png](/assets/images/Python/TensorFlow_CIFAR-10_df.png)
 
 Prima di lanciare i comandi successivi è importante monitorare le risorse della CPU.  
-Ottenevo un errore di memoria che ho risolto limitando i CPU con i parametri descritti precedentemente.
+Ottenevo un errore di memoria che ho risolto limitando la CPU con i parametri descritti precedentemente.
 ```console
 ## da terminale
 ~$ nvidia-smi
