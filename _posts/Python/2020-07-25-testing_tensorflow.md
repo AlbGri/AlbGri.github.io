@@ -35,8 +35,7 @@ Inserisco il file nella folder dataset di keras dell'environment py3_tf
 *'/home/user/miniconda3/envs/py3_tf/lib/python3.7/site-packages/tensorflow/python/keras/datasets/cifar-10-batches-py.tar.gz'*  
 ..così si evita ogni volta che si lancia il codice di riscaricarlo
 
-## Local
-
+## Locally
 
 ```python
 ## HW Specs
@@ -473,7 +472,7 @@ Wall time: 23.5 s
 
 # Benchmarks
 
-CIFAR-10 dataset, Neural Networks, 5 Epochs
+CIFAR-10 dataset, Deep Neural Networks, 5 Epochs
 1. **Locale Desktop: default GPU (verbose 1, 2 o 3 sono simili)**  
 Epoch 5/5
 1563/1563 [==============] - 8s 5ms/step - loss: 0.6739 - accuracy: 0.7649 - val_loss: 0.8258 - val_accuracy: 0.7148  
@@ -487,7 +486,7 @@ Wall time: 28.9 s
 1. **Locale Desktop: default CPU (no verbose)**  
 CPU times: user 12min 24s, sys: 9.39 s, total: 12min 34s  
 Wall time: 1min 29s  
-*note: 6 core fisici 6 virtuali, 12 totali stavano in media circa al 70% di utilizzo*
+*note: tutti e 12 core stavano in media circa al 70% di utilizzo*
 1. **Google Colab: default GPU (verbose 1)**  
 Epoch 5/5
 1563/1563 [==============] - 6s 4ms/step - loss: 0.2377 - accuracy: 0.9148 - val_loss: 1.4661 - val_accuracy: 0.6927  
@@ -497,7 +496,6 @@ Wall time: 29.2 s
 CPU times: user 25.9 s, sys: 2.9 s, total: 28.8 s  
 Wall time: 21.3 s
 1.  **Google Colab: default CPU (no verbose)**  
-...
 CPU times: user 7min 50s, sys: 24.7 s, total: 8min 15s  
 Wall time: 4min 24s
 
