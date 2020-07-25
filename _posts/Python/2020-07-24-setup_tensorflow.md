@@ -308,7 +308,6 @@ Default GPU Device:/device:GPU:0
 1. Usare il OpenJDK 11 invece del 8 può dare problemi?
 1. Usare il compilatore gcc 7.5 invece del 7.4 può dare problemi?
 1. Perché se ho installato Cuda 10.1 il comando *'nvidia-smi'* mi restituisce *Cuda Version: 11.0*
-1. Con una GPU così di basso livello conviene rispetto ad usare la CPU? e Colab? Dovrò fare dei benchmark!
 
 
 
