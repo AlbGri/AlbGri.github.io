@@ -39,7 +39,7 @@ Inserisco il file nella folder dataset di keras dell'environment py3_tf
 
 
 ```python
-# HW Specs
+## HW Specs
 print('GPU count and name')
 !nvidia-smi -L
 print('\nCPU model name')
@@ -93,7 +93,7 @@ print('\nDisk space')
 
 
 ```python
-# controllo risorse GPU (pre-utilizzo)
+## controllo risorse GPU (pre-utilizzo)
 !nvidia-smi
 # watch -n 1 nvidia-smi
 ```
@@ -124,7 +124,7 @@ print('\nDisk space')
 
 
 ```python
-# lib
+## lib
 # per lavorare solo in CPU
 # import os
 # os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
@@ -135,7 +135,7 @@ import matplotlib.pyplot as plt
 
 
 ```python
-# Verifico numero GPU
+## Verifico numero GPU
 print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
 ```
 
@@ -144,36 +144,36 @@ print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('
 
 
 ```python
-# (opzionale) Limito GPU (https://www.tensorflow.org/guide/gpu#limiting_gpu_memory_growth)
-# gpus = tf.config.experimental.list_physical_devices('GPU')
-# if gpus:
-#     # Restrict TensorFlow to only allocate 1GB * 3 of memory on the first GPU
-#     try:
-#         tf.config.experimental.set_virtual_device_configuration(
-#             gpus[0],
-#             [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=1024 * 3)])
-#         logical_gpus = tf.config.experimental.list_logical_devices('GPU')
-#         print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
-#     except RuntimeError as e:
-#         # Virtual devices must be set before GPUs have been initialized
-#         print(e)
+## (opzionale) Limito GPU (https://www.tensorflow.org/guide/gpu#limiting_gpu_memory_growth)
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    # Restrict TensorFlow to only allocate 1GB * 3 of memory on the first GPU
+    try:
+        tf.config.experimental.set_virtual_device_configuration(
+            gpus[0],
+            [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=1024 * 3)])
+        logical_gpus = tf.config.experimental.list_logical_devices('GPU')
+        print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
+    except RuntimeError as e:
+        # Virtual devices must be set before GPUs have been initialized
+        print(e)
 ```
 
 
 ```python
-# Train and test nel mentre che scarichi il dataset (o trick descritto all'inizio per evitare di scaricarlo ogni volta)
+## Train and test nel mentre che scarichi il dataset (o trick descritto all'inizio per evitare di scaricarlo ogni volta)
 (train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
 ```
 
 
 ```python
-# Normalizza i valori dei pixel tra 0 e 1
+## Normalizza i valori dei pixel tra 0 e 1
 train_images, test_images = train_images / 255.0, test_images / 255.0
 ```
 
 
 ```python
-# Verifiche del dato
+## Verifiche del dato
 class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer',
                'dog', 'frog', 'horse', 'ship', 'truck']
 plt.figure(figsize=(10,10))
@@ -193,11 +193,13 @@ plt.show()
 Prima di lanciare i comandi successivi è importante monitorare le risorse della CPU.  
 Ottenevo un errore di memoria che ho risolto limitando i CPU con i parametri descritti precedentemente.
 ```console
+## da terminale
 ~$ nvidia-smi
 ```
 
 
 ```python
+## Neural Networks
 # Crea base convolutional
 model = models.Sequential()
 model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)))
@@ -244,7 +246,7 @@ model.summary()
 
 ```python
 %%time
-# Compila and addestra il modello
+## Compila and addestra il modello
 model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
@@ -258,7 +260,7 @@ history = model.fit(train_images, train_labels, epochs=5, verbose=0,
 
 
 ```python
-# Valutazioni (il plot è su 50 epochs)
+## Valutazioni (il plot è su 50 epochs)
 plt.plot(history.history['accuracy'], label='accuracy')
 plt.plot(history.history['val_accuracy'], label = 'val_accuracy')
 plt.xlabel('Epoch')
@@ -271,7 +273,7 @@ plt.legend(loc='lower right')
 
 
 ```python
-# accuracy
+## accuracy
 test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
 print(test_acc)
 ```
@@ -282,7 +284,7 @@ print(test_acc)
 
 
 ```python
-# controllo risorse GPU (post-utilizzo)
+## controllo risorse GPU (post-utilizzo)
 !nvidia-smi
 ```
 
@@ -314,13 +316,14 @@ print(test_acc)
 ## Google Colab
 
 **Enabling and testing the GPU**  
-First, you'll need to enable GPUs for the notebook:
-
-    Navigate to Edit → Notebook Settings
-    select GPU from the Hardware Accelerator drop-down
+Prima di tutto bisogna abilitare la GPU:
+1. Navigate to Edit → Notebook Settings
+2. Seleziona GPU dal Hardware Accelerator drop-down
     
-Note: For every 12hrs or so Disk, RAM, VRAM, CPU cache etc data that is on this alloted virtual machine will get erased 
+Note: ogni 12 ore circa il Disk, RAM, VRAM, CPU cache etc data verranno azzerati da questa macchina 
+
 ```python
+## HW Specs
 print('GPU count and name')
 !nvidia-smi -L
 print('\nCPU model name')
@@ -383,7 +386,11 @@ x = int(1e1)**int(1e7)
 
 ```console
 CPU times: user 8.59 s, sys: 25.2 ms, total: 8.61 s
-Wall time: 8.6 s## VERIFICO SETUP
+Wall time: 8.6 s
+```
+
+```python
+## VERIFICO SETUP
 %tensorflow_version 2.x
 import tensorflow as tf
 device_name = tf.test.gpu_device_name()
@@ -400,7 +407,6 @@ Found GPU at: /device:GPU:0
 !nvidia-smi
 ```
 ```console
-# OUTPUT
 Sat Jul 25 11:39:56 2020       
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 450.51.05    Driver Version: 418.67       CUDA Version: 10.1     |
@@ -446,7 +452,6 @@ model.add(layers.Dense(64, activation='relu'))
 model.add(layers.Dense(10))
 ```
 ```console
-# OUTPUT
 Downloading data from https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
 170500096/170498071 [==============================] - 4s 0us/step
 ```
