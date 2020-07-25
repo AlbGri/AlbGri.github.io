@@ -11,20 +11,6 @@ tags: [python, utils, tensorflow, ubuntu, colab]
 ~$ conda deactivate
 ```
 
-*Versione modulo installato*  
-```console
-~$ pip show wandb
-Name: wandb
-Version: 0.9.4
-Summary: A CLI and library for interacting with the Weights and Biases API.
-Home-page: https://github.com/wandb/client
-Author: Weights & Biases
-Author-email: support@wandb.com
-License: MIT license
-Location: /home/unknown/miniconda3/envs/py3_tf/lib/python3.7/site-packages
-Requires: python-dateutil, PyYAML, psutil, watchdog, nvidia-ml-py3, gql, requests, sentry-sdk, subprocess32, GitPython, six, docker-pycreds, Click, shortuuid, configparser
-Required-by: 
-```
 
 # CIFAR-10 dataset
 **Verifichiamo che il setup di TensorFlow 2.2.0 sia andato a buon fine e facciamo qualche benchmark**  
