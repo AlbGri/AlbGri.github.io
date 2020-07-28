@@ -12,7 +12,7 @@ tags: [python, utils, tensorflow, ubuntu, colab]
 ```
 
 
-# CIFAR-10 dataset
+# CIFAR-10 dataset 
 **Verifichiamo che il setup di TensorFlow 2.2.0 sia andato a buon fine e facciamo qualche benchmark**  
 [Informazioni](https://www.cs.toronto.edu/~kriz/cifar.html) e [download](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz)  
 Rinomimo il file scaricato in  
