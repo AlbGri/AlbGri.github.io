@@ -484,6 +484,8 @@ Wall time: 21.3 s
 1.  **Google Colab: default CPU (no verbose)**  
 CPU times: user 7min 50s, sys: 24.7 s, total: 8min 15s  
 Wall time: 4min 24s
+1. **Locale Laptop: default CPU (no verbose)**  
+Wall time: 7min 36s
 
 %%time  
 x = int(1e1)**int(1e7)
