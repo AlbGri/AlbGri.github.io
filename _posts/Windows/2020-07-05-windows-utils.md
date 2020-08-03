@@ -31,15 +31,14 @@ findstr /M /S /c:"testo da cercare" *
 
 
 ### Altro
-1. Costruisco file BAT eseguibile per lanciare uno specifico conda environment da un percorso specifico
-	* Creo un file .bat contenente il seguente codice (nota: modificare i path con i propri percorsi e il nome dell'ambiente)
-	```bash
-	@echo off    
-	set PATH=%PATH%;C:\Users\miniconda3\Scripts
-	cd /d F:\Python\Course 001\
-	%windir%\system32\cmd.exe "/K" C:\Users\miniconda3\Scripts\activate.bat py3_tf
-	```
-...
+1. Costruisco un collegamento per lanciare velocemente uno specifico conda environment da un percorso specifico  
+Creo un file .bat (nuovo file di testo e poi rinomino l'estensione) contenente il seguente codice (nota: modificare i path con i propri percorsi e il nome dell'ambiente)
+```bash
+@echo off    
+set PATH=%PATH%;C:\Users\miniconda3\Scripts
+cd /d F:\Python\Course 001\
+%windir%\system32\cmd.exe "/K" C:\Users\miniconda3\Scripts\activate.bat py3_tf
+```
 
 
 
