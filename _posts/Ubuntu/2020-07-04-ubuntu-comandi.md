@@ -42,9 +42,9 @@ mathjax: "true"
 ```
 
 1. Screenshots  
-Prt Scrn to take a screenshot of the desktop.  
-Alt + Prt Scrn to take a screenshot of a window.  
-Shift + Prt Scrn to take a screenshot of an area you select.  
+Prt Scrn: ottieni lo screen del destkop.  
+Alt + Prt Scrn: ottieni lo screen del programma attivo.  
+Shift + Prt Scrn: ottieni lo screen dell'area interattivamente.  
 
 1. Modifica sources  
 ```console
