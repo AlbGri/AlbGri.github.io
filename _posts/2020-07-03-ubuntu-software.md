@@ -1,5 +1,5 @@
 ---
-title: "Ubuntu: useful software"
+title: "Ubuntu: software"
 excerpt: "must have.. for me"
 date: 2020-07-03
 tags: [utils, linux, ubuntu, r, setup]

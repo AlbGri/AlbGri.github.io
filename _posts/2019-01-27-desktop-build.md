@@ -1,6 +1,6 @@
 ---
-title: "desktop"
-excerpt: "build desktop 04/2017"
+title: "desktop configuration"
+excerpt: "(not expensive) build 04/2017"
 date: 2019-01-27
 tags: [hardware]
 ---

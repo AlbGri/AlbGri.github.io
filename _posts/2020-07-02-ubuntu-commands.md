@@ -1,6 +1,6 @@
 ---
-title: "Ubuntu: useful commands"
-excerpt: "utils, issues"
+title: "Ubuntu: commands"
+excerpt: "useful commands"
 date: 2020-07-02
 tags: [utils, linux, ubuntu, bugs, bash]
 mathjax: "true"
