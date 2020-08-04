@@ -1,8 +1,8 @@
 ---
-title: "ubuntu-programs"
+title: "Ubuntu: useful software"
 excerpt: "must have.. for me"
-date: 2020-07-04
-tags: [utils, linux, ubuntu, r]
+date: 2020-07-03
+tags: [utils, linux, ubuntu, r, setup]
 mathjax: "true"
 ---
 

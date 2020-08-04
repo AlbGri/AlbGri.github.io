@@ -1,8 +1,8 @@
 ---
-title: "TensorFlow: some tests"
+title: "Python: TensorFlow"
 excerpt: "TF locally and through Google Colab -- CIFAR10 dataset"
 date: 2020-07-27
-tags: [python, utils, tensorflow, ubuntu, colab]
+tags: [python, tensorflow, ubuntu, colab, benchmarks]
 ---
 
 *Utilizzo l'environment conda py3_tf*  

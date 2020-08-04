@@ -1,7 +1,7 @@
 ---
-title: "ubuntu-environment"
+title: "Ubuntu: environment"
 excerpt: "improving it"
-date: 2020-07-04
+date: 2020-07-01
 tags: [utils, linux, ubuntu]
 mathjax: "true"
 ---

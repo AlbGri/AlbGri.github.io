@@ -2,7 +2,7 @@
 title: "Python: Amazon Web Services and Spark"
 excerpt: "Cloud Computing with Amazon"
 date: 2020-08-03
-tags: [python, utils, aws, spark]
+tags: [python, setup, aws, spark]
 mathjax: "true"
 ---
 
