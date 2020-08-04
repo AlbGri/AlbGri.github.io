@@ -1,7 +1,7 @@
 ---
-title: "Python: Pandas with Matplotlib"
+title: "Python: Matplotlib"
 excerpt: "Data Visualization"
-date: 2020-07-11
+date: 2020-07-09
 tags: [learning, python, coding]
 ---
 
@@ -13,20 +13,364 @@ tags: [learning, python, coding]
 
 *Versione modulo installato*  
 ```console
-~$ pip show pandas
-Name: pandas
-Version: 1.0.5
-Summary: Powerful data structures for data analysis, time series, and statistics
-Home-page: https://pandas.pydata.org
-Author: None
-Author-email: None
-License: BSD
+~$ pip show matplotlib
+Name: matplotlib
+Version: 3.2.2
+Summary: Python plotting package
+Home-page: https://matplotlib.org
+Author: John D. Hunter, Michael Droettboom
+Author-email: matplotlib-users@python.org
+License: PSF
 Location: /home/user/miniconda3/envs/py3/lib/python3.7/site-packages
-Requires: pytz, python-dateutil, numpy
-Required-by: seaborn, cufflinks
+Requires: pyparsing, numpy, cycler, kiwisolver, python-dateutil
+Required-by: seaborn
 ```
 
-# Pandas
+
+# Matplotlib
+
+Documentazione [Matplotlib](https://matplotlib.org/gallery.html)  
+Documentazione Matplotlib [rougier](https://www.labri.fr/perso/nrougier/teaching/matplotlib)  
+
+
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+```
+
+
+```python
+# per plottare sul notebook
+%matplotlib inline
+# per plottare senza notebook
+# plt.show()
+```
+
+
+```python
+x = np.linspace(0,5,11)
+y = x**2
+```
+
+## Functional method
+
+
+```python
+plt.plot(x,y, 'r-') # r- red
+plt.xlabel('X Label')
+plt.ylabel('Y Label')
+plt.title('Title')
+# plt.show() # non è necessario se si è specificato %matplotlib inline
+```
+
+
+
+
+    Text(0.5, 1.0, 'Title')
+
+
+
+
+![png](/assets/images/Python/Course 001/section-008/output_7_1.png)
+
+
+
+```python
+# multiple plot same canvas
+plt.subplot(1,2,1)
+plt.plot(x,y,'r-')
+
+plt.subplot(1,2,2) # 1 row, by 2 columns, 2nd plot
+plt.plot(y,x,'b')
+```
+
+
+
+
+    [<matplotlib.lines.Line2D at 0x7f4e6c5409d0>]
+
+
+
+
+![png](/assets/images/Python/Course 001/section-008/output_8_1.png)
+
+
+## Object Oriented method
+
+
+```python
+fig = plt.figure()
+
+axes = fig.add_axes([0.1,0.1,0.8,0.8]) # left axsis, bottom, width, height
+
+axes.plot(x,y)
+axes.set_xlabel('X Label')
+axes.set_ylabel('Y Label')
+axes.set_title('Title')
+```
+
+
+
+
+    Text(0.5, 1.0, 'Title')
+
+
+
+
+![png](/assets/images/Python/Course 001/section-008/output_10_1.png)
+
+
+
+```python
+# multi plot
+fig = plt.figure()
+
+axes1 = fig.add_axes([0.1,0.1,0.8,0.8])
+axes2 = fig.add_axes([0.2,0.5,0.4,0.3])
+
+axes1.plot(x,y)
+axes1.set_title('Larger Plot')
+
+axes2.plot(y,x)
+axes2.set_title('Smaller Plot')
+```
+
+
+
+
+    Text(0.5, 1.0, 'Smaller Plot')
+
+
+
+
+![png](/assets/images/Python/Course 001/section-008/output_11_1.png)
+
+
+## subplots
+
+
+```python
+fig,axes = plt.subplots(nrows=1,ncols=2)
+# axes è un array (list) di due oggetti matplotlib, che potrei iterare
+for current_ax in axes:
+    current_ax.plot(x,y)
+```
+
+
+![png](/assets/images/Python/Course 001/section-008/output_13_0.png)
+
+
+
+```python
+# quindi si può lavorare anche sugli index
+fig,axes = plt.subplots(nrows=1,ncols=2)
+
+axes[0].plot(x,y)
+axes[0].set_title('First Plot')
+
+axes[1].plot(x,y)
+axes[1].set_title('Second Plot')
+
+plt.tight_layout() # pulisce le eventuali sovrapposizioni
+```
+
+
+![png](/assets/images/Python/Course 001/section-008/output_14_0.png)
+
+
+## Figure Size and DPI
+
+
+```python
+fig = plt.figure(figsize=(8,2),dpi=100) # 8 inches
+
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y)
+```
+
+
+
+
+    [<matplotlib.lines.Line2D at 0x7f4e60dc8750>]
+
+
+
+
+![png](/assets/images/Python/Course 001/section-008/output_16_1.png)
+
+
+
+```python
+fig,axes = plt.subplots(nrows=2,ncols=1,figsize=(8,2),dpi=100) # 8 inches
+
+axes[0].plot(x,y)
+axes[1].plot(y,x)
+
+plt.tight_layout()
+```
+
+
+![png](/assets/images/Python/Course 001/section-008/output_17_0.png)
+
+
+
+```python
+pwd
+```
+
+
+
+
+    '/media/user/Public/Python/Course 001'
+
+
+
+
+```python
+# salvare plot, png, jpg, svg
+fig.savefig('my_picture.png',dpi=200)
+```
+
+
+```python
+# legends
+fig = plt.figure()
+
+ax = fig.add_axes([0,0,1,1])
+
+ax.plot(x,x**2,label='X Squared')
+ax.plot(x,x**3,label='X Cubed')
+
+# per il parametro loc vedi la guida
+# https://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.legend
+ax.legend(loc=(0.1,0.1)) # una tupla che specifica la posizione
+```
+
+
+
+
+    <matplotlib.legend.Legend at 0x7f4e5bae5950>
+
+
+
+
+![png](/assets/images/Python/Course 001/section-008/output_20_1.png)
+
+
+
+```python
+# colors, line width, trasparenza
+fig = plt.figure()
+
+ax = fig.add_axes([0,0,1,1])
+
+ax.plot(x,y,color='purple',lw=2,alpha=0.5,ls='-.',marker='o',markersize=20,markerfacecolor='red',markeredgewidth=5,markeredgecolor='black') # Color #FF8C00, etc RGB Hex Code; lwd o linewidth; ls o linestyle step, --, :, etc.
+```
+
+
+
+
+    [<matplotlib.lines.Line2D at 0x7fa306796610>]
+
+
+
+
+![png](/assets/images/Python/Course 001/section-008/output_21_1.png)
+
+
+
+```python
+# plot range
+fig = plt.figure()
+
+ax = fig.add_axes([0,0,1,1])
+
+ax.plot(x,y,color='purple',lw=2,ls='--')
+
+ax.set_xlim([0,1])
+ax.set_ylim([0,2])
+```
+
+
+
+
+    (0.0, 2.0)
+
+
+
+
+![png](/assets/images/Python/Course 001/section-008/output_22_1.png)
+
+
+## Special Plot Types
+
+
+```python
+plt.scatter(x,y)
+```
+
+
+
+
+    <matplotlib.collections.PathCollection at 0x7fa305280190>
+
+
+
+
+![png](/assets/images/Python/Course 001/section-008/output_24_1.png)
+
+
+
+```python
+# scatterplot, histogram, boxplot
+```
+
+# Altro
+
+
+```python
+x = np.arange(0,100)
+y = x*2
+z = x**2
+```
+
+
+```python
+fig = plt.figure()
+
+axes1 = fig.add_axes([0,0,1,1])
+axes2 = fig.add_axes([0.2,0.5,0.2,0.2])
+```
+
+
+![png](/assets/images/Python/Course 001/section-008/output_28_0.png)
+
+
+
+```python
+axes1.plot(x,z,color='red', ls='-.', lw=3)
+axes1.set_xlabel('x')
+axes1.set_ylabel('y')
+axes1.set_title('full')
+
+axes2.plot(x,y,color='blue')
+axes2.set_xlabel('x')
+axes2.set_ylabel('y')
+axes2.set_title('zoom')
+axes2.set_xlim([20,22])
+axes2.set_ylim([30,50])
+
+fig # si può anche richiamare alla fine invece di reinizializzare la fig all'inizio della cella
+```
+
+
+
+
+![png](/assets/images/Python/Course 001/section-008/output_29_0.png)
+
+
+# Matplotlib with Pandas
 
 
 ```python
