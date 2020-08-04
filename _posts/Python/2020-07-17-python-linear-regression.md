@@ -1,15 +1,14 @@
 ---
-title: "Python: Linear Model"
-excerpt: "Supervised Methods -- USAhousing dataset"
-date: 2020-07-16
-tags: [learning, python, coding]
+title: "Python: Linear Regression"
+excerpt: "Machine Learning -- USAhousing dataset, Boston dataset"
+date: 2020-07-17
+tags: [python, ml]
 mathjax: "true"
 ---
 
 *Utilizzo l'environment conda py3*  
 ```console
 ~$ conda activate py3
-~$ conda deactivate
 ```
 
 *Versione modulo installato*  
@@ -28,7 +27,7 @@ Required-by:
 ```
 
 
-# Linear Regression
+# USA Housing
 
 
 ```python

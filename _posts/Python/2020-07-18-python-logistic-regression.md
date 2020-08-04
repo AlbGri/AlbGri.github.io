@@ -2,7 +2,7 @@
 title: "Python: Logistic Regression"
 excerpt: "Machine Learning -- Titanic dataset"
 date: 2020-07-18
-tags: [learning, python, coding]
+tags: [python, ml]
 mathjax: "true"
 ---
 
@@ -14,7 +14,26 @@ mathjax: "true"
 
 
 
-# Titanic dataset
+
+# Logistic Regression
+
+Sigmoid o Logistic
+
+$$
+\forall x \in \mathbb{R} \\
+f\left (x\right ) \in \left [0,1\right ] \\
+f\left (x\right )=\frac{1}{1+e^{-x}}=\frac{e^{x}}{e^{x}+1}
+$$
+
+Linear regression to Logistic
+
+$$
+y=b_{0}+b_{1}\cdot x \\
+p=\frac{1}{1+e^{-\left (b_{0}+b_{1}\cdot x\right )}}
+$$
+
+
+## Titanic dataset
 
 
 ```python

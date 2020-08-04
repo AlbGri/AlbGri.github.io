@@ -1,8 +1,8 @@
 ---
-title: "AWS setup and testing Spark"
-excerpt: "Learning Python (017)"
-date: 2020-08-02
-tags: [learning, python, coding, AWS]
+title: "Python: Amazon Web Services and Spark"
+excerpt: "Cloud Computing with Amazon"
+date: 2020-08-03
+tags: [python, utils, aws, spark]
 mathjax: "true"
 ---
 

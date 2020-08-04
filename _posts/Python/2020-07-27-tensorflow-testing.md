@@ -1,14 +1,13 @@
 ---
-title: "Testing TensorFlow"
-excerpt: "Testing Tensorflow setup locally and Google Colab"
-date: 2020-07-25
+title: "TensorFlow: some tests"
+excerpt: "TF locally and through Google Colab -- CIFAR10 dataset"
+date: 2020-07-27
 tags: [python, utils, tensorflow, ubuntu, colab]
 ---
 
 *Utilizzo l'environment conda py3_tf*  
 ```console
 ~$ conda activate py3_tf
-~$ conda deactivate
 ```
 
 

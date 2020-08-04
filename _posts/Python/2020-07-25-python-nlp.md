@@ -1,15 +1,14 @@
 ---
-title: "NLP"
-excerpt: "Learning Python (015) -- Yelp Review Dataset"
-date: 2020-07-22
-tags: [learning, python, coding]
+title: "Python: Natural Language Processing"
+excerpt: "Machine Learning -- Yelp Review dataset"
+date: 2020-07-25
+tags: [python, ml, theory]
 mathjax: "true"
 ---
 
 *Utilizzo l'environment conda py3*  
 ```console
 ~$ conda activate py3
-~$ conda deactivate
 ```
 
 *Versione modulo installato*  
@@ -27,7 +26,7 @@ Requires: click, regex, joblib, tqdm
 Required-by:
 ```
 
-# Natural Language Processing
+# NLP
 
 Il vettore contenente il conteggio delle parole è il "Bag of Words"  
 Per analizzarne la similarità tra i vettori è frequente utilizzare il [Coseno di similitudine](https://en.wikipedia.org/wiki/Cosine_similarity)  

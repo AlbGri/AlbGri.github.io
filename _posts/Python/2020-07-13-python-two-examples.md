@@ -1,14 +1,13 @@
 ---
-title: "Python: 911 Calls and Finance Projects"
-excerpt: "Exploratory Data Analysis"
+title: "Python: two examples"
+excerpt: "Exploratory Data Analysis -- 911 Calls and Finance datasets"
 date: 2020-07-13
-tags: [learning, python, coding]
+tags: [python, finance]
 ---
 
 *Utilizzo l'environment conda py3*  
 ```console
 ~$ conda activate py3
-~$ conda deactivate
 ```
 
 *Versione modulo installato*  
@@ -29,8 +28,8 @@ Required-by:
 # Indice
 
 Due laboratori
-1. [911 Calls Project](https://www.albgri.com/section-013/#911-calls-project)
-2. [Finance Project](https://www.albgri.com/section-013/#finance-project)
+1. [911 Calls Project](https://www.albgri.com/python-two-examples/#911-calls-project)
+2. [Finance Project](https://www.albgri.com/python-two-examples/#finance-project)
 
 # 911 Calls Project
 

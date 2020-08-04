@@ -2,10 +2,8 @@
 title: "Python: the beginning"
 excerpt: "Jupyter Notebook, Conda Environments, Basic Python"
 date: 2020-07-05
-tags: [learning, python, coding]
+tags: [python, utils]
 ---
-
-*Aggiornato il 2020-07-12*  
 
 *Versione di python*  
 ```console

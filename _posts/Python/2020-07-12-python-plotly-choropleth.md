@@ -1,14 +1,13 @@
 ---
 title: "Python: Plotly and Choropleth"
 excerpt: "Data Visualization -- Covid19 dataset"
-date: 2020-07-11
-tags: [learning, python, coding]
+date: 2020-07-12
+tags: [python, covid19]
 ---
 
 *Utilizzo l'environment conda py3*  
 ```console
 ~$ conda activate py3
-~$ conda deactivate
 ```
 
 *Versione modulo installato*  

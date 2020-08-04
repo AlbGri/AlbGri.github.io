@@ -1,8 +1,8 @@
 ---
-title: "Python: Machine Learning"
-excerpt: "Introduction to ML"
+title: "Machine Learning Theory"
+excerpt: "Some concepts and metrics"
 date: 2020-07-16
-tags: [learning, python, coding]
+tags: [ml, theory]
 mathjax: "true"
 ---
 
@@ -102,22 +102,7 @@ $$
 
 L'overfitting si genera riducendo il bias perché si introducono più parametri, ma la varianza della stima aumenta.
 
-# Logistic Regression
 
-Sigmoid o Logistic
-
-$$
-\forall x \in \mathbb{R} \\
-f\left (x\right ) \in \left [0,1\right ] \\
-f\left (x\right )=\frac{1}{1+e^{-x}}=\frac{e^{x}}{e^{x}+1}
-$$
-
-Linear regression to Logistic
-
-$$
-y=b_{0}+b_{1}\cdot x \\
-p=\frac{1}{1+e^{-\left (b_{0}+b_{1}\cdot x\right )}}
-$$
 
 
 

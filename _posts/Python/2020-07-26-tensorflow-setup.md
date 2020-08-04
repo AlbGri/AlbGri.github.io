@@ -1,7 +1,7 @@
 ---
-title: "Setup TensorFlow"
-excerpt: "TensorFlow 2.2.0 on Ubuntu 18.04 with CUDA 10.1, cuDNN v7.6.5 and Nvidia 450"
-date: 2020-07-24
+title: "TensorFlow: setup"
+excerpt: "TF 2.2.0 on Ubuntu 18.04 with CUDA 10.1, cuDNN v7.6.5 and Nvidia 450"
+date: 2020-07-26
 tags: [python, utils, tensorflow, ubuntu]
 mathjax: "true"
 ---

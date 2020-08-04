@@ -2,13 +2,12 @@
 title: "Python: Seaborn"
 excerpt: "Data Visualization"
 date: 2020-07-10
-tags: [learning, python, coding]
+tags: [python]
 ---
 
 *Utilizzo l'environment conda py3*  
 ```console
 ~$ conda activate py3
-~$ conda deactivate
 ```
 
 *Versione modulo installato*  
