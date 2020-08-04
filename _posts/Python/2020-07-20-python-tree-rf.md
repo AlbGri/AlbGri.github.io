@@ -1,8 +1,8 @@
 ---
 title: "Python: Tree and Random Forest"
-excerpt: "Machine Learning"
+excerpt: "Machine Learning -- Kyphosis dataset"
 date: 2020-07-20
-tags: [python, ml]
+tags: [python, ml, theory]
 mathjax: "true"
 ---
 

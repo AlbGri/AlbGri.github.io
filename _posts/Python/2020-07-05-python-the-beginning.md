@@ -1,6 +1,6 @@
 ---
 title: "Python: the beginning"
-excerpt: "Jupyter Notebook, Conda Environments, Basic Python"
+excerpt: "Jupyter Notebook, Conda Environments and Basic Python"
 date: 2020-07-05
 tags: [python, utils]
 ---

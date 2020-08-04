@@ -1,8 +1,8 @@
 ---
 title: "Python: Support Vector Machine"
-excerpt: "Machine Learning -- Iris dataset"
+excerpt: "Machine Learning -- Breast cancer dataset and Iris dataset"
 date: 2020-07-21
-tags: [python, ml]
+tags: [python, ml, theory]
 mathjax: "true"
 
 ---
