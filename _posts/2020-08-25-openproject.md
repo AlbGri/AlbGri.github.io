@@ -11,7 +11,8 @@ Non supportano [Windows](https://docs.openproject.org/installation-and-operation
 quindi lavoriamo con una macchina virtuale con la versione unofficial di Bitnami.  
 1. Download [OpenProject 10.6.5-0](https://bitnami.com/stack/openproject/virtual-machine)  
 1. Download & Install [VMware Workstation 15.5.6 Player for Windows 64-bit Operating Systems](https://my.vmware.com/web/vmware/downloads/#all_products)  
-1. Avvia *bitnami-openproject-10.6.5-0-linux-debian-10-x86_64.vmx*  
+1. Avvia *bitnami-openproject-10.6.5-0-linux-debian-10-x86_64.vmx* (al primo avvio di VMWare chiede di installare tools utili per la macchina, nb. CTRL+ALT per liberare il cursore)  
+1. Login e password: 'bitnami', invio per non cambiare la password e si fa reboot... CONTINUA
 
 
 
