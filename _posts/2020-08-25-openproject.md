@@ -28,7 +28,7 @@ user.password = 'PASSWORD10'
 user.password_confirmation = 'PASSWORD10'
 user.save!
 ```
-1. Enjoy
+1. Enjoy 
 
 
 **Resources**  
