@@ -13,6 +13,8 @@ quindi lavoriamo con una macchina virtuale con la versione unofficial di Bitnami
 1. Download & Install [VMware Workstation 15.5.6 Player for Windows 64-bit Operating Systems](https://my.vmware.com/web/vmware/downloads/#all_products)  
 1. Avvia *bitnami-openproject-10.6.5-0-linux-debian-10-x86_64.vmx* (al primo avvio di VMWare chiede di installare tools utili per la macchina, nb. CTRL+ALT per liberare il cursore)  
 1. Login e password: 'bitnami', invio per non cambiare la password e si fa reboot... CONTINUA
+1. Avviata il vmx, con un po' di pazienza si avvierà il servizio e restituisce un link in locale da accedere via browser (es. http://192.168.1.240), richiederà il login e necessita 2-5 minuti prima che tutto si avvii.
+<img src="/assets/images/OpenProject_1.png" width="400">
 
 
 
