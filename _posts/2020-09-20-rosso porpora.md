@@ -9,7 +9,7 @@ mathjax: "true"
 
 
 
-<span style="font-size: 20em;">svegliaaaaaaaaaaaaaaaa</span>
+<span style="font-size: 10em;">svegliaaaaaaaaaaaaaaaa</span>
 
 
 
