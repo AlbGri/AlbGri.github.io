@@ -1,6 +1,6 @@
 ---
-title: "Browser"
-excerpt: "Firefox.. and what else"
+title: "Browser configuration"
+excerpt: "Must have extensions and utilities"
 date: 2020-09-20
 tags: [ubuntu, windows, utils]
 mathjax: "true"
@@ -9,7 +9,7 @@ mathjax: "true"
 
 ## Firefox 81.0
 **Estensioni must have**  
-1. [uBlock Origin](https://addons.mozilla.org/it/firefox/addon/ublock-origin/): efficiente, efficace, opensource e aggiornato blocker per la pubblicità, tracker e siti malevoli
+1. [uBlock Origin](https://addons.mozilla.org/it/firefox/addon/ublock-origin/): efficiente, efficace, opensource e aggiornato blocker per la pubblicità, tracker e siti malevoli. Abbandonate Adblock.. ora! (qualche messaggio più in basso spiego perché rimuovere Adblock)
 1. [ClearURLs](https://addons.mozilla.org/it/firefox/addon/clearurls/): rimuove il redirect di Google e altri siti. Richiede diversi permessi ma è tutto [giustificato](https://gitlab.com/KevinRoebert/ClearUrls/-/issues/159). Il redirect consiste in una estensione automatica dei link (ad esempio una ricerca su Google) in modo tale da tracciare chi usa quel collegamento. Questo significa che oltre a regalare i dati di dove navighi, rallenti la tua connessione perché prima di raggiungere il sito d'interesse passi dall'intermediario che ti sta tracciando con il link "sporco". Hai mai notato che ogni tanto se copi un collegamento risultante dalla ricerca su Google, questo è molto più lungo e contorto di quello che ti aspettavi?
 1. [Privacy Badger](https://addons.mozilla.org/it/firefox/addon/privacy-badger17/): blocca trackers
 1. [HTTPS Everywhere](https://addons.mozilla.org/it/firefox/addon/https-everywhere/): il protocollo HTTP manca dei meccanismi di sicurezza, questa estensione forza il sito alla versione HTTPS se presente ma non è il default
@@ -22,9 +22,11 @@ mathjax: "true"
 
 **Estensioni abbandonate**
 1. [Ghostery](https://addons.mozilla.org/it/firefox/addon/ghostery/): blocca trackers e velocizza la navigazione, ma a quanto pare è opensource solo dal 2018 e raccoglieva un bel po' di dati. uBlock dicono sia sufficiente, ma Privacy Badger è una buona alternativa ed è più sicuro e non va in conflitto con uBlock.
+1. [Adblock](https://addons.mozilla.org/it/firefox/addon/adblock-plus/): per una serie di motivi, quali la cattiva gestione della RAM, il parziale blocco delle pubblicità, il fatto che non sia opensource e l'assenza di molteplici security features che ha uBlock, sono motivi sufficienti per rimuoverlo. [Qui](https://www.reddit.com/r/privacy/comments/9a6v0c/why_is_ublock_origin_better_than_adblock/) qualche spunto. Rimuovete Adblock! Amen!
+
 
 **about:config**
-1. Stop autoplay video
+1. Stop autoplay video (must have!)
 ```raw
 media.autoplay.default	5	
 media.autoplay.blocking_policy 2
