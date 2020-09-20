@@ -21,7 +21,7 @@ mathjax: "true"
 1. [Facebook Container](https://addons.mozilla.org/it/firefox/addon/facebook-container/): non necessario per me perché uso un browser a parte per usare solo facebook, ma è essenziale per chi usa un solo browser per limitare che facebook tracci la tua attività web.
 
 **Estensioni abbandonate**
-1. [Ghostery](https://addons.mozilla.org/it/firefox/addon/ghostery/): blocca trackers e velocizza la navigazione, ma a quanto pare è opensource solo dal 2018 e raccoglieva un bel po' di dati. uBlock dicono sia sufficiente, ma Privacy Badger è una buona alternativa ed è più sicuro e non va in conflitto con uBlock.
+1. [Ghostery](https://addons.mozilla.org/it/firefox/addon/ghostery/): blocca trackers e velocizza la navigazione, ma a quanto pare è opensource solo dal 2018 e raccoglieva un bel po' di dati. uBlock dicono sia sufficiente, ma Privacy Badger è una buona alternativa, è più sicuro e non va in conflitto con uBlock.
 1. [Adblock](https://addons.mozilla.org/it/firefox/addon/adblock-plus/): per una serie di motivi, quali la cattiva gestione della RAM, il parziale blocco delle pubblicità, il fatto che non sia opensource e l'assenza di molteplici security features che ha uBlock, sono motivi sufficienti per rimuoverlo. [Qui](https://www.reddit.com/r/privacy/comments/9a6v0c/why_is_ublock_origin_better_than_adblock/) qualche spunto. Rimuovete Adblock! Amen!
 
 
