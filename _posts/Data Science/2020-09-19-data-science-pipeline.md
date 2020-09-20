@@ -20,7 +20,7 @@ mathjax: "true"
     1. Exploratory Data Analysis
     2. Feature engineering
     3. Feature selection
-5. **M**odeling data
+5. **M**odeling data (loop 3-4-5)
     1. Estimation
     2. Evaluation
     3. Benchmarks
