@@ -141,7 +141,6 @@ align="center"
 height="426"
 width="408">
 
-
 1. Orologio sfasato al cambio Ubuntu/Windows  
 ```console
 timedatectl
