@@ -8,7 +8,7 @@ mathjax: "true"
 
 *funzionanti con Ubuntu 18-04*  
 
-# Customizzazione ambiente
+## Customizzazione ambiente
 1. Aggiungi data, minuti e secondi nella barra superiore  
 ```console
 ~$ sudo apt install gnome-tweak-tool
@@ -78,7 +78,7 @@ Software & Updates →  Updates → Automatically... → Never!
 
 
 
-# Issues & Bugs
+## Issues & Bugs
 1. BugFix  
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/SystemProgBUG.png" 
 alt="testo IMG"

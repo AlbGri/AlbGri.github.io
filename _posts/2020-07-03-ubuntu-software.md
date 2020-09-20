@@ -8,7 +8,7 @@ mathjax: "true"
 
 *funzionanti con Ubuntu 18-04*  
 
-### Programmi
+## Programmi
 1. [Miniconda](https://conda.io/miniconda.html) e Jupyter Notebook  
 ```console
 ~$ bash Miniconda3-latest-Linux-x86_64.sh  
@@ -90,7 +90,7 @@ Da Thunderbird → App Manager → Installa componente aggiuntivo da file
 
 
 
-### R-statistical software
+## R-statistical software
 Come aggiornare R su Ubuntu (18.04)  
 Idenficare la [versione](https://cloud.r-project.org/bin/linux/ubuntu) da installare (es. bionic-cran40)  
 
