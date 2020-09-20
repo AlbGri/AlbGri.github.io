@@ -31,7 +31,24 @@ Amazon (gennaio-2019)
 - **3.99€** 2x SATA Cavo 55 cm [link](https://www.amazon.it/dp/B00F9417Y0/ref=cm_sw_r_tw_dp_U_x_vTBtCbXYKZN26)
 - **24.87€** Kingston A400 SSD Drive a Stato Solido da 120 GB, 2.5" [link](https://www.amazon.it/dp/B01N6JQS8C/ref=cm_sw_r_tw_dp_U_x_uTBtCbN78HJK4)
 
-**Totale: 1006.55€**
+Amazon (agosto-2020)
+- **15.85€** TITANWOLF - XXL Tappetino per Mouse da Gioco - Gaming Mousepad Extra Grande 900 x 400mm [link](https://www.amazon.it/gp/product/B087RBYWWH)
+- **19.97€** KLIMTM Bungee Tendi Cavo per Mouse da Gaming - Multi Funzione [link](https://www.amazon.it/gp/product/B01M0UV86N)
+- **10.99€** TP-Link UB400 Adattatore Bluetooth USB 2.0 Dongle Bluetooth 4.0 Wireless [link](https://www.amazon.it/gp/product/B07NQ5YGDW)
+- **29.99€** Logitech G203 LIGHTSYNC Mouse Gaming con Illuminazione RGB [link](https://www.amazon.it/gp/product/B07W5JKFQC)
+- **49.98€** PlayStation 4 - Dualshock 4 Controller Wireless V2, Nero [link](https://www.amazon.it/gp/product/B01GVQUX3U)
+
+
+**Totale: 1133.33€**
 
 (*) Prodotto arrivato sbagliato, avevo ordinato "Cooler Master Storm Devastator II" e mi è arrivato un altro modello più costoso. Va bene così :)  
-ps: il mouse si è rotto dopo un mese e la barra spaziatrice dopo un anno e mezzo si stacca facilmente :(
+ps: il mouse si è rotto dopo un mese e la barra spaziatrice dopo un anno e mezzo si stacca facilmente :(  
+
+
+Foto (2020-09-08)  
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/Desktop_Setup_20200908.jpg" 
+alt="testo IMG"
+align="center"
+height="397"
+width="298">
+
