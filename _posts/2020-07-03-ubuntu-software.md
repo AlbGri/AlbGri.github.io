@@ -106,16 +106,46 @@ sudo add-apt-repository ppa:alessandro-strada/ppa
 sudo apt-get update
 sudo apt-get install google-drive-ocamlfuse
 ```
-Stabilisco path per la cartella di google drive da sincronizzare
+Stabilisco path per la cartella di google drive da sincronizzare  
 ```console
 mkdir ~/Documents/google-drive
 google-drive-ocamlfuse ~/Documents/google-drive
 ```
-Per smontare il collegamento
+Per smontare il collegamento  
 ```console
 fusermount -u ~/Documents/google-drive
 ```
 Questo tool permette anche di sincronizzare più account Google Drive, ma non mi interessa.
+
+
+### KeePass
+Installazione KeePass su Ubuntu 18.04 con configurazione [Kee](https://forum.kee.pm/t/installing-kee-with-keepassrpc-for-keepass-password-safe-instructions/23) nel browser  
+```console
+sudo apt-add-repository ppa:jtaylor/keepass
+sudo apt-get update
+sudo apt-get install mono-complete
+sudo apt-get install keepass2
+```
+Per il corretto funzionamento via browser bisogna scaricare [KeePassRPC.plgx](https://github.com/kee-org/keepassrpc/releases/latest) e aggiungerlo alla cartella Plugins  
+```console
+cd /usr/lib/keepass2/Plugins
+sudo wget https://github.com/kee-org/keepassrpc/releases/download/v1.14.0/KeePassRPC.plgx
+```
+Estensione [Firefox](https://addons.mozilla.org/firefox/addon/keefox/) o [Chrome](https://chrome.google.com/webstore/detail/kee/mmhlniccooihdimnnjhamobppdhaolme)
+
+
+![Foo](https://imgs.xkcd.com/comics/password_strength.png)
+
+<img src="https://imgs.xkcd.com/comics/password_strength.png" width="400">
+
+[![Foo](https://imgs.xkcd.com/comics/password_strength.png)](http://google.com.au/)
+
+
+Installata l'estensione mi chiede di creare un nuovo db o caricarne uno, in questo caso ne creo uno e lo sincronizzo su Google Drive mediante la cartella precedentemente costruita in documents. Conviene seguire il [tutorial](https://tutorial-addon.kee.pm/) di kee se è la prima volta che lo si utilizza.  
+Tutte le password create verranno automaticamente sincronizzate nel db creato su Google Drive.
+
+
+
 
 
 
