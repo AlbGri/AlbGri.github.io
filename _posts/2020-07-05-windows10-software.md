@@ -30,8 +30,8 @@ Dopo anni di utilizzo sto provando ad abbandonarlo a favore di TinyWall o simple
 **Pro**  
 &nbsp;&nbsp;- permette di bloccare programmi in uscita e/o entrata  
 &nbsp; &nbsp; - permette di bloccare azioni che stanno modificando il registro di Windows  
-&nbsp; - identifica potenziali malaware  
-    - permette di utilizzare un servizio di sandbox per avviare i programmi in modo "inoffensivo"  
+&nbsp;  - identifica potenziali malaware  
+&nbsp;   - permette di utilizzare un servizio di sandbox per avviare i programmi in modo "inoffensivo"  
     - è poco invadente  
     - non va in conflitto con Windows Defender
 
