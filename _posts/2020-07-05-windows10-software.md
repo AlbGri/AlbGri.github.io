@@ -24,24 +24,24 @@ Il firewall permette di gestire le connessioni in uscita o entrata. Per diversi 
 
 ### [Comodo Firewall](https://www.comodo.com/home/internet-security/firewall.php)
 Dopo anni di utilizzo sto provando ad abbandonarlo a favore di TinyWall o simplewall.  
-**Contro**  
-&nbsp; &nbsp; - quando lo installi se non clicchi sulle voci di personalizzazione setup ti installa bloatware  
-&nbsp; &nbsp; - è un mondo chiuso e non si sa cosa fanno dei tuoi dati  
-**Pro**  
-&nbsp; &nbsp; - permette di bloccare programmi in uscita e/o entrata  
-- permette di bloccare azioni che stanno modificando il registro di Windows  
-&nbsp; &nbsp; - identifica potenziali malaware  
-&nbsp; &nbsp; - permette di utilizzare un servizio di sandbox per avviare i programmi in modo "inoffensivo"  
-&nbsp; &nbsp; - è poco invadente  
-&nbsp; &nbsp; - non va in conflitto con Windows Defender
+**Contro**
+- quando lo installi se non clicchi sulle voci di personalizzazione setup ti installa bloatware
+- è un mondo chiuso e non si sa cosa fanno dei tuoi dati
+**Pro**
+- permette di bloccare programmi in uscita e/o entrata
+- permette di bloccare azioni che stanno modificando il registro di Windows
+- identifica potenziali malaware
+- permette di utilizzare un servizio di sandbox per avviare i programmi in modo "inoffensivo"
+- è poco invadente
+- non va in conflitto con Windows Defender
 
 ### [KeePass 2.x](https://keepass.info/download.html)
-Software multiplatform per gestione password:  
+Software multiplatform per gestione password  
 &nbsp; &nbsp; - [Google Drive Sync Plugin](https://sourceforge.net/p/kp-googlesync/support/Getting%20Started/)  
-&nbsp; &nbsp; - [Estensione Mozilla](https://addons.mozilla.org/en-US/firefox/addon/keefox/)  
+&nbsp; &nbsp; - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/keefox/)  
 &nbsp; &nbsp; - [Chrome](https://chrome.google.com/webstore/detail/kee/mmhlniccooihdimnnjhamobppdhaolme)  
 &nbsp; &nbsp; - [Android](https://play.google.com/store/apps/details?id=keepass2android.keepass2android)  
-nb. la sincronizzazione con Google Drive non è banale ma è simile a quella di [Ubuntu](https://www.albgri.com/ubuntu-software/#keepass).
+nb. la sincronizzazione con Google Drive su Windows non è banale ma è simile a quella di [Ubuntu](https://www.albgri.com/ubuntu-software/#keepass).
 
 ## Utili 
 1. [Locate32](https://locate32.cogit.net/)  
