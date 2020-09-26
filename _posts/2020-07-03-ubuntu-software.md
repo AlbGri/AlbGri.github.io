@@ -86,11 +86,40 @@ Programma utile simil firewall per monitorare programmi in entrata e uscita
 [Download](https://addons.thunderbird.net/en-US/thunderbird/addon/provider-for-google-calendar/) del componente aggiuntivo  
 Da Thunderbird → App Manager → Installa componente aggiuntivo da file
 
+1. Audacity  
+```
+~$ sudo add-apt-repository ppa:ubuntuhandbook1/audacity
+~$ sudo apt-get update
+~$ sudo apt-get install audacity
+```
+note utili:  
+SHIFT+SPACE → Loop  
+CTRL+S → Save  
+CTR+B → Aggiungi Label Track  
+
+
+### Google Drive
+Mi sarebbe piaciuto usare il default di GNOME (Settings → Online Accounts → Google) per la sincronizzazione di Drive, ma la cartella che crea ha dei path non leggibili da KeePass (/run/user/1000/gvfs/google-drive:host=gmail.com,user=nomeutente).  
+Usiamo quindi [google-drive-ocamlfuse](https://github.com/astrada/google-drive-ocamlfuse) che non sincronizza il contenuto in locale ma monta Google Drive remoto in una cartella del file system integrandosi perfettamente con tutti i file manager (Nautilus, Dolphin, Nemo, ...)  
+```console
+sudo add-apt-repository ppa:alessandro-strada/ppa
+sudo apt-get update
+sudo apt-get install google-drive-ocamlfuse
+```
+Stabilisco path per la cartella di google drive da sincronizzare
+```console
+mkdir ~/Documents/google-drive
+google-drive-ocamlfuse ~/Documents/google-drive
+```
+Per smontare il collegamento
+```console
+fusermount -u ~/Documents/google-drive
+```
+Questo tool permette anche di sincronizzare più account Google Drive, ma non mi interessa.
 
 
 
-
-## R-statistical software
+### R-statistical software
 Come aggiornare R su Ubuntu (18.04)  
 Idenficare la [versione](https://cloud.r-project.org/bin/linux/ubuntu) da installare (es. bionic-cran40)  
 

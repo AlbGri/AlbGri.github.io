@@ -14,10 +14,16 @@ mathjax: "true"
 ~$ mkdir -p ~/Downloads/nuova_cartella/nuova_sottocartella
 ```
 
-1. Trova interattivamente il PID di un programma e terminarlo  
+1. Trova interattivamente il processo PID di un programma e terminarlo  
 ```console
 ~$ xprop _NET_WM_PID
 ~$ kill -9 5186
+```
+
+1. Processi attivi su USB
+```console
+~$ lsof | grep /media/usaTabPerAutocompletamento
+~$ lsof +f -- /media/unknown/usaTabPerAutocompletamento
 ```
 
 1. Controlla tutti i programmi installati  
@@ -26,10 +32,9 @@ mathjax: "true"
 ~$ sudo dpkg -l | grep -i nomeprogramma
 ```
 
-1. Trova e modifica PATH  
+1. Verifica se il programma specifico è installato  
 ```console
-~$ echo $PATH
-~$ sudo gedit /etc/environment
+~$ apt list --installed firefox
 ```
 
 1. Trova file/cartelle  
@@ -39,9 +44,9 @@ mathjax: "true"
 ~$ sudo find . -type d | grep nome
 ```
 
-1. Trova testo dentro il path  
+1. Trova testo dentro tutti i documenti nel path  
 ```console
-~$ grep -r WORD *
+~$ grep -r testoDaCercare *
 ```
 
 1. Screenshots  
@@ -52,6 +57,12 @@ Shift + Prt Scrn: ottieni lo screen dell'area interattivamente.
 1. Modifica sources  
 ```console
 ~$ sudo gedit /etc/apt/sources.list
+```
+
+1. Trova e modifica PATH  
+```console
+~$ echo $PATH
+~$ sudo gedit /etc/environment
 ```
 
 1. Rimuovi cache (da usare solo se necessario)  
