@@ -40,7 +40,8 @@ Ubuntu Software → Spotify
 1. 7ZIP  
 <span style="font-size: 3mm">
 Ubuntu Software → P7Zip - Desktop  
-oppure in alternativa:  
+</span>
+in alternativa:  
 ```console
 sudo apt-get install p7zip-full
 ```
