@@ -20,7 +20,7 @@ mathjax: "true"
 
 1. [Conky](https://wiki.ubuntu-it.org/AmbienteGrafico/Conky)  
 Comandi ([1](http://conky.sourceforge.net/conkyrc-gon), [2](http://conky.sourceforge.net/variables.html)) utili dal sito ufficiale.    
-Per l'auto avvio, aggiungo in 
+Per l'auto avvio, aggiungo in  
 <span style="font-size: 3mm">
 Startup Applications Preferences → sh -c "sleep 10 && conky"  
 </span>
@@ -115,7 +115,7 @@ Per smontare il collegamento
 ```console
 fusermount -u ~/Documents/google-drive
 ```
-Per fare il mount in automatico segui [questa](https://github.com/astrada/google-drive-ocamlfuse/wiki/Automounting) guida oppure aggiungo in 
+Per fare il mount in automatico segui [questa](https://github.com/astrada/google-drive-ocamlfuse/wiki/Automounting) guida oppure aggiungi  
 <span style="font-size: 3mm">
 Startup Applications Preferences → sh -c "sleep 30 && google-drive-ocamlfuse ~/Documents/google-drive"  
 </span>
