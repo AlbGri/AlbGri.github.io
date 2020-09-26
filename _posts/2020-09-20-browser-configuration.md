@@ -7,7 +7,7 @@ mathjax: "true"
 ---
 
 
-## Firefox 81.0
+## Firefox
 **Estensioni must have**  
 1. [uBlock Origin](https://addons.mozilla.org/it/firefox/addon/ublock-origin/): efficiente, efficace, opensource e aggiornato blocker per la pubblicità, tracker e siti malevoli. Abbandonate Adblock.. ora! (qualche messaggio più in basso spiego perché rimuovere Adblock)
 1. [ClearURLs](https://addons.mozilla.org/it/firefox/addon/clearurls/): rimuove il redirect di Google e altri siti. Richiede diversi permessi ma è tutto [giustificato](https://gitlab.com/KevinRoebert/ClearUrls/-/issues/159). Il redirect consiste in una estensione automatica dei link (ad esempio una ricerca su Google) in modo tale da tracciare chi usa quel collegamento. Questo significa che oltre a regalare i dati di dove navighi, rallenti la tua connessione perché prima di raggiungere il sito d'interesse passi dall'intermediario che ti sta tracciando con il link "sporco". Hai mai notato che ogni tanto se copi un collegamento risultante dalla ricerca su Google, questo è molto più lungo e contorto di quello che ti aspettavi?
@@ -19,7 +19,7 @@ mathjax: "true"
 1. [Gesturefy](https://addons.mozilla.org/it/firefox/addon/gesturefy): permette d'impostare alcuni comandi via mouse, e.g. click dx + click sx torna indietro o click sx + click dx vai avanti etc.
 1. [Hard Refresh Button](https://addons.mozilla.org/it/firefox/addon/hard-refresh-button/): refresh della pagina senza uso cache
 1. [Facebook Container](https://addons.mozilla.org/it/firefox/addon/facebook-container/): non necessario per me perché uso un browser a parte per usare solo facebook, ma è essenziale per chi usa un solo browser per limitare che facebook tracci la tua attività web.
-1. [KeePass](https://addons.mozilla.org/firefox/addon/keefox/): ottimo gestore di password opensource. Non è semplicemente un'estensione ma si incronizza con il programma in locale. Su Ubuntu 18.04 l'installazione è un po' più complessa se si vuole usare [Google Drive](https://www.albgri.com/ubuntu-software/#keepass) per mantenere il database di password online. Su [Windows](https://www.albgri.com/windows10-software) c'è una procedura analoga se lo si vuole sincronizzare con Google Drive.
+1. [KeePass](https://addons.mozilla.org/firefox/addon/keefox/): ottimo gestore di password opensource. Non è semplicemente un'estensione ma si incronizza con il programma in locale. Su Ubuntu 18.04 l'installazione è un po' più complessa se si vuole usare [Google Drive](https://www.albgri.com/ubuntu-software/#keepass) per mantenere il database di password online. Su [Windows](https://www.albgri.com/windows10-software/#keepass-2x) c'è una procedura analoga se lo si vuole sincronizzare con Google Drive.
 
 **Estensioni abbandonate**
 1. [Ghostery](https://addons.mozilla.org/it/firefox/addon/ghostery/): blocca trackers e velocizza la navigazione, ma a quanto pare è opensource solo dal 2018 e raccoglieva un bel po' di dati. uBlock dicono sia sufficiente, ma Privacy Badger è una buona alternativa, è più sicuro e non va in conflitto con uBlock.
