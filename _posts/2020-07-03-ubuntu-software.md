@@ -100,7 +100,7 @@ CTR+B → Aggiungi Label Track
 
 ### Google Drive
 Mi sarebbe piaciuto usare il default di GNOME (Settings → Online Accounts → Google) per la sincronizzazione di Drive, ma la cartella che crea ha dei path non leggibili da KeePass (/run/user/1000/gvfs/google-drive:host=gmail.com,user=nomeutente).  
-Usiamo quindi [google-drive-ocamlfuse](https://github.com/astrada/google-drive-ocamlfuse) che non sincronizza il contenuto in locale ma monta Google Drive remoto in una cartella del file system integrandosi perfettamente con tutti i file manager (Nautilus, Dolphin, Nemo, ...)  
+Uso quindi [google-drive-ocamlfuse](https://github.com/astrada/google-drive-ocamlfuse) che non sincronizza il contenuto in locale ma monta Google Drive remoto in una cartella del file system integrandosi perfettamente con tutti i file manager (Nautilus, Dolphin, Nemo, ...)  
 ```console
 sudo add-apt-repository ppa:alessandro-strada/ppa
 sudo apt-get update
