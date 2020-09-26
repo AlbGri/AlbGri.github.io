@@ -24,9 +24,11 @@ Il firewall permette di gestire le connessioni in uscita o entrata. Per diversi 
 
 ### [Comodo Firewall](https://www.comodo.com/home/internet-security/firewall.php)
 Dopo anni di utilizzo sto provando ad abbandonarlo a favore di TinyWall o simplewall.  
-**Contro**  
-    - quando lo installi se non clicchi sulle voci di personalizzazione setup ti installa bloatware
-- è un mondo chiuso e non si sa cosa fanno dei tuoi dati  
+**Contro**
+
+- quando lo installi se non clicchi sulle voci di personalizzazione setup ti installa bloatware
+- è un mondo chiuso e non si sa cosa fanno dei tuoi dati
+
 **Pro**
 - permette di bloccare programmi in uscita e/o entrata
 - permette di bloccare azioni che stanno modificando il registro di Windows
