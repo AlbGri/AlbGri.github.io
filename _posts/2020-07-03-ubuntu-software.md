@@ -45,7 +45,6 @@ in alternativa:
 ```console
 sudo apt-get install p7zip-full
 ```
-</span>
 
 1. <span style="text-decoration: line-through">Pinta</span>  
 su Ubuntu 18.04 crasha frequentemente  
