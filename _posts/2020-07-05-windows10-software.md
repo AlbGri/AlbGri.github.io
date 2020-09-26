@@ -24,16 +24,16 @@ Il firewall permette di gestire le connessioni in uscita o entrata. Per diversi 
 
 ### [Comodo Firewall](https://www.comodo.com/home/internet-security/firewall.php)
 Dopo anni di utilizzo sto provando ad abbandonarlo a favore di TinyWall o simplewall.  
-**Contro**
-&nbsp; &nbsp; - Installa bloatware se non si sta attenti in fase di install
-&nbsp; &nbsp; - Non è opensource e non è noto cosa fanno dei tuoi dati
-**Pro**
-&nbsp; &nbsp; - Consente di bloccare programmi in uscita e/o entrata
-&nbsp; &nbsp; - Consente di bloccare azioni che stanno modificando il registro di Windows
-&nbsp; &nbsp; - Identifica potenziali malaware
-&nbsp; &nbsp; - Servizio di sandbox per avviare i programmi in modo "inoffensivo"
-&nbsp; &nbsp; - Consuma poche risorse
-&nbsp; &nbsp; - Non va in conflitto con Windows Defender
+**Contro**  
+&nbsp; &nbsp; - Installa bloatware se non si sta attenti in fase di install  
+&nbsp; &nbsp; - Non è opensource e non è noto cosa fanno dei tuoi dati  
+**Pro**  
+&nbsp; &nbsp; - Consente di bloccare programmi in uscita e/o entrata  
+&nbsp; &nbsp; - Consente di bloccare azioni che stanno modificando il registro di Windows  
+&nbsp; &nbsp; - Identifica potenziali malaware  
+&nbsp; &nbsp; - Servizio di sandbox per avviare i programmi in modo "inoffensivo"  
+&nbsp; &nbsp; - Consuma poche risorse  
+&nbsp; &nbsp; - Non va in conflitto con Windows Defender  
 &nbsp; &nbsp; - Widget per monitoraggio velocità download/upload
 
 ### [KeePass 2.x](https://keepass.info/download.html)

@@ -20,7 +20,7 @@ findstr /M /S /c:"testo da cercare" *
 ## Websites
 1. [Web Flow Charts](https://app.diagrams.net/)
 1. [Ping Site](https://ping.canbeuseful.com/en#ping)
-
+1. [Check Site UP](https://www.uptrends.com/tools/uptime)
 
 ## Altro
 1. Costruisco un collegamento per lanciare velocemente uno specifico conda environment da un percorso specifico  
