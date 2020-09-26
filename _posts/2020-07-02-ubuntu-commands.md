@@ -54,6 +54,11 @@ Prt Scrn: ottieni lo screen del destkop.
 Alt + Prt Scrn: ottieni lo screen del programma attivo.  
 Shift + Prt Scrn: ottieni lo screen dell'area interattivamente.  
 
+1. Apri il cestino con privilegi root  
+```console
+~$ sudo nautilus /home/unknown/.local/share/Trash
+```
+
 1. Modifica sources  
 ```console
 ~$ sudo gedit /etc/apt/sources.list

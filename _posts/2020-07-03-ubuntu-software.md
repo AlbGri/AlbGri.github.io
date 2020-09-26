@@ -20,8 +20,7 @@ mathjax: "true"
 
 1. [Conky](https://wiki.ubuntu-it.org/AmbienteGrafico/Conky)  
 Comandi ([1](http://conky.sourceforge.net/conkyrc-gon), [2](http://conky.sourceforge.net/variables.html)) utili dal sito ufficiale.    
-<span style="font-size: 3mm">
-Per delay dopo l'avvio del PC, aggiungo in 
+Per l'auto avvio, aggiungo in 
 <span style="font-size: 3mm">
 Startup Applications Preferences → sh -c "sleep 10 && conky"  
 </span>
@@ -101,7 +100,7 @@ CTR+B → Aggiungi Label Track
 
 ### Google Drive
 Mi sarebbe piaciuto usare il default di GNOME (Settings → Online Accounts → Google) per la sincronizzazione di Drive, ma la cartella che crea ha dei path non leggibili da KeePass (/run/user/1000/gvfs/google-drive:host=gmail.com,user=nomeutente).  
-Uso quindi [google-drive-ocamlfuse](https://github.com/astrada/google-drive-ocamlfuse) che non sincronizza il contenuto in locale ma monta Google Drive remoto in una cartella del file system integrandosi perfettamente con tutti i file manager (Nautilus, Dolphin, Nemo, ...)  
+Uso quindi [google-drive-ocamlfuse](https://github.com/astrada/google-drive-ocamlfuse) che non sincronizza il contenuto in locale ma monta Google Drive remoto in una cartella del file system integrandosi perfettamente con tutti i file manager (Nautilus, Dolphin, Nemo, ...). Inoltre, consente di sincronizzare più account Google Drive.  
 ```console
 sudo add-apt-repository ppa:alessandro-strada/ppa
 sudo apt-get update
@@ -116,7 +115,13 @@ Per smontare il collegamento
 ```console
 fusermount -u ~/Documents/google-drive
 ```
-Questo tool permette anche di sincronizzare più account Google Drive, ma non mi interessa.
+Per fare il mount in automatico segui [questa](https://github.com/astrada/google-drive-ocamlfuse/wiki/Automounting) guida oppure aggiungo in 
+<span style="font-size: 3mm">
+Startup Applications Preferences → sh -c "sleep 30 && google-drive-ocamlfuse ~/Documents/google-drive"  
+</span>
+
+<img src="/assets/images/automount_gdrive.png" width="400">
+
 
 
 ### KeePass 2.x

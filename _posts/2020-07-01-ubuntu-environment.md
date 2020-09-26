@@ -168,7 +168,8 @@ se uso `html block highlight e inizio con "<link" si spacca il block.. ci sarà 
 1. Escape buggato di Markdown  
 se uso qualsiasi block highlight e inizio con " -" si spacca il block.. ci sarà un escape?
 
-
+1. Le icone del desktop si sovrappongono.  
+Sembra essere un bug esistente dal 2005 che non è stato risolto.. fantastico /s.
 
 
 
