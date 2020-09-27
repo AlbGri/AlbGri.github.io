@@ -11,7 +11,6 @@ mathjax: "true"
 - Windows Photo Viewer
 - Search Everything
 - TinyWall/simplewall (o Comodo Firewall)
-- KeePass 2.x
 
 ### [Windows Photo Viewer](https://github.com/AlbGri/AlbGri.github.io/blob/master/assets/files/photo_viewer.reg)
 Il codice (visionabile con un file di testo) modifica il registro per consentire a Windows 10 di visualizzare con "tasto destro apri con.." il vecchio visualizzatore di immagini e impostarlo come default. Il nuovo di Windows 10 è fin troppo lento. Da provare l'alternativa [nomacs](https://nomacs.org/).
@@ -36,13 +35,6 @@ Dopo anni di utilizzo sto provando ad abbandonarlo a favore di TinyWall o simple
 &nbsp; &nbsp; - Non va in conflitto con Windows Defender  
 &nbsp; &nbsp; - Widget per monitoraggio velocità download/upload
 
-### [KeePass 2.x](https://keepass.info/download.html)
-Software multiplatform per gestione password  
-&nbsp; &nbsp; - [Google Drive Sync Plugin](https://sourceforge.net/p/kp-googlesync/support/Getting%20Started/)  
-&nbsp; &nbsp; - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/keefox/)  
-&nbsp; &nbsp; - [Chrome](https://chrome.google.com/webstore/detail/kee/mmhlniccooihdimnnjhamobppdhaolme)  
-&nbsp; &nbsp; - [Android](https://play.google.com/store/apps/details?id=keepass2android.keepass2android)  
-nb. la sincronizzazione con Google Drive su Windows non è banale ma è simile a quella di [Ubuntu](https://www.albgri.com/ubuntu-software/#keepass).
 
 ## Utili 
 1. [Locate32](https://locate32.cogit.net/)  
@@ -92,9 +84,20 @@ cd /d "E:\path"
 jupyter notebook
 ```
 
+## [KeePass 2.x](https://keepass.info/download.html)
+Software multiplatform per gestione password  
+&nbsp; &nbsp; - [Google Drive Sync Plugin](https://sourceforge.net/p/kp-googlesync/support/Getting%20Started/)  
+&nbsp; &nbsp; - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/keefox/)  
+&nbsp; &nbsp; - [Chrome](https://chrome.google.com/webstore/detail/kee/mmhlniccooihdimnnjhamobppdhaolme)  
+&nbsp; &nbsp; - [Android](https://play.google.com/store/apps/details?id=keepass2android.keepass2android)  
+nb. la sincronizzazione con Google Drive su Windows non è banale ma è simile a quella di [Ubuntu](https://www.albgri.com/ubuntu-software/#keepass).
 
 
-
+## Opera Browser
+Un browser che ho "amato". Ma nel 2016 diventa cinese e i creatori di Opera rilasciano Vivaldi.  
+[Qui](https://www.reddit.com/r/operabrowser/comments/ajmbox/opera_is_spyware/) un link interessante che mostra una breve analisi sul problema che sia controllato da un consorzio cinese.  
+Si apre un tema etico molto interessante e a me molto vicino: [Nothing to Hide, Nothing to Fear](https://www.openrightsgroup.org/blog/responding-to-nothing-to-hide-nothing-to-fear/).  
+Comunque sia Opera, si basa su Chromium, si può scaricare [questa](https://addons.opera.com/en/extensions/details/install-chrome-extensions/) estensione che permette di installare i componenti aggiuntivi direttamente dal webstore di Chrome. Ad esempio [ClearUrls](https://chrome.google.com/webstore/detail/clearurls/lckanjgmijmafbedllaakclkaicjfmnk) non c'è nello store di Opera, ma [uBlock](https://addons.opera.com/en/extensions/details/ublock/) è presente. Per le estensioni must-have rimando a [questo](https://www.albgri.com/browser-configuration/) link.  
 
 
 

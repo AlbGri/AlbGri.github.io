@@ -18,12 +18,11 @@ findstr /M /S /c:"testo da cercare" *
 
 ## Scorciatoie
 1. Strumento di cattura  
-<span style="font-size: 3mm">
 Windows Key + Shift + S  
+Gli screen si salvano in automatico in  
+<span style="font-size: 3mm">
+C:\Users\nomeUtente\AppData\Local\Packages\Microsoft.Windows.ShellExperienceHost_cw5n1h2txyewy\TempState\ScreenClip  
 </span>
-Gli screen si salvano in automatico in '*C:\Users\nomeUtente\AppData\Local\Packages\Microsoft.Windows.ShellExperienceHost_cw5n1h2txyewy\TempState\ScreenClip*'
-
-
 
 
 ## Websites
