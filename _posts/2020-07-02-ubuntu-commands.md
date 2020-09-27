@@ -50,9 +50,7 @@ mathjax: "true"
 ```
 
 1. Screenshots  
-Prt Scrn: ottieni lo screen del destkop.  
-Alt + Prt Scrn: ottieni lo screen del programma attivo.  
-Shift + Prt Scrn: ottieni lo screen dell'area interattivamente.  
+![png](/assets/images/screenshot_ubuntu.png)
 
 1. Apri il cestino con privilegi root  
 ```console

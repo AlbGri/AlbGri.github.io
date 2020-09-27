@@ -16,11 +16,21 @@ findstr /S /c:"testo da cercare" *
 findstr /M /S /c:"testo da cercare" *
 ```
 
+## Scorciatoie
+1. Strumento di cattura  
+<span style="font-size: 3mm">
+Windows Key + Shift + S  
+</span>
+Gli screen si salvano in automatico in '*C:\Users\nomeUtente\AppData\Local\Packages\Microsoft.Windows.ShellExperienceHost_cw5n1h2txyewy\TempState\ScreenClip*'
+
+
+
 
 ## Websites
-1. [Web Flow Charts](https://app.diagrams.net/)
+1. [Web Flow Charts](https://app.diagrams.net)
 1. [Ping Site](https://ping.canbeuseful.com/en#ping)
 1. [Check Site UP](https://www.uptrends.com/tools/uptime)
+1. [Paste IMG](https://snipboard.io)
 
 ## Altro
 1. Costruisco un collegamento per lanciare velocemente uno specifico conda environment da un percorso specifico  
