@@ -14,7 +14,9 @@ mathjax: "true"
 1. [Privacy Badger](https://addons.mozilla.org/it/firefox/addon/privacy-badger17/): blocca trackers
 1. [HTTPS Everywhere](https://addons.mozilla.org/it/firefox/addon/https-everywhere/): il protocollo HTTP manca dei meccanismi di sicurezza, questa estensione forza il sito alla versione HTTPS se presente ma non è il default
 1. [Swift Selection Search](https://addons.mozilla.org/en-US/firefox/addon/swift-selection-search/): evidenzia una parola con doppio click, si aprirà un popup che ti da delle opzioni configurabili, come cerca su Google, traduci etc. Qui la mia semplice configurazione, ho modificato solo "Translate to IT" sostituendo la parte finale "en&text={searchTerms}" in "it&text={searchTerms}", così da poter tradurre la parola evidenziata in italiano.  
+
 ![png](/assets/images/swift_selection_search.png)
+
 1. (Avanzato) [NoScript](https://addons.mozilla.org/it/firefox/addon/noscript/): ogni volta che si naviga un sito si sceglie se considerarlo come TRUSTED oppure si concedono solo alcune caratteristiche. Al primo utilizzo ho configurato tutti i siti pre-impostati TRUSTED in Default e in Appereance ho attivato High contrast per rendere più fruibile il popup. NB: se non si abilita come TRUSTED Google, ClearURLS non funge da clear link (immagino valga anche per Facebook e altri trash-redirect-linkers).
 
 **Estensioni secondarie**  
