@@ -13,9 +13,15 @@ mathjax: "true"
 1. [ClearURLs](https://addons.mozilla.org/it/firefox/addon/clearurls/): rimuove il redirect di Google e altri siti. Richiede diversi permessi ma è tutto [giustificato](https://gitlab.com/KevinRoebert/ClearUrls/-/issues/159). Il redirect consiste in una estensione automatica dei link (ad esempio una ricerca su Google) in modo tale da tracciare chi usa quel collegamento. Questo significa che oltre a regalare i dati di dove navighi, rallenti la tua connessione perché prima di raggiungere il sito d'interesse passi dall'intermediario che ti sta tracciando con il link "sporco". Hai mai notato che ogni tanto se copi un collegamento risultante dalla ricerca su Google, questo è molto più lungo e contorto di quello che ti aspettavi?
 1. [Privacy Badger](https://addons.mozilla.org/it/firefox/addon/privacy-badger17/): blocca trackers
 1. [HTTPS Everywhere](https://addons.mozilla.org/it/firefox/addon/https-everywhere/): il protocollo HTTP manca dei meccanismi di sicurezza, questa estensione forza il sito alla versione HTTPS se presente ma non è il default
-1. [Swift Selection Search](https://addons.mozilla.org/en-US/firefox/addon/swift-selection-search/): evidenzia una parola con doppio click, si aprirà un popup che ti da delle opzioni configurabili, come cerca su Google, traduci etc. Qui la mia semplice configurazione, ho modificato solo "Translate to IT" sostituendo la parte finale *en&text={searchTerms}*" in "*it&text={searchTerms}*", così da poter tradurre la parola evidenziata in italiano. Si può aggiungere facilmente anche Context Reverso con la stringa "*https://context.reverso.net/traduzione/inglese-italiano/{searchTerms}*". Personalmente preferisco attivare l'opzione 
+1. [Swift Selection Search](https://addons.mozilla.org/en-US/firefox/addon/swift-selection-search/): evidenzia una parola con doppio click, si aprirà un popup che ti da delle opzioni configurabili, come cerca su Google, traduci etc. Qui la mia semplice configurazione, ho modificato solo "Translate to IT" sostituendo la parte finale 
+<span style="font-size: 3mm">en&text={searchTerms}</span> 
+in 
+<span style="font-size: 3mm">it&text={searchTerms}</span>
+, così da poter tradurre la parola evidenziata in italiano. Si può aggiungere facilmente anche Context Reverso con la stringa 
+<span style="font-size: 3mm">https://context.reverso.net/traduzione/inglese-italiano/{searchTerms}</span>
+. Personalmente preferisco attivare la seguente opzione per aprire il risultato della ricerca in una nuova finestra: 
 <span style="font-size: 3mm">
-Popup/icons behaviour → Left mouse button click → Open in new tab (next to current)   
+Popup/icons behaviour → Left mouse button click → Open in new tab (next to current) 
 </span>
 così si apre in una nuova finestra.
 ![png](/assets/images/swift_selection_search.png)
