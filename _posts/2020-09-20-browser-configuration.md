@@ -41,7 +41,7 @@ media.autoplay.blocking_policy 2
 1. [ClearURLs](https://chrome.google.com/webstore/detail/clearurls/lckanjgmijmafbedllaakclkaicjfmnk)
 1. [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp)
 1. [HTTPS Everywhere](https://chrome.google.com/webstore/detail/https-everywhere/gcbommkclmclpchllfjekcdonpmejbdp)
-1. [Selection Search](https://chrome.google.com/webstore/detail/selection-search/gipnlpdeieaidmmeaichnddnmjmcakoe) alternativa valida a "Swift Selection Search" di Firefox, [qui](https://github.com/CanisLupus/swift-selection-search/issues/148#issuecomment-517942416) il suo creatore spiega perché non ha fatto una versione per Chrome. In alternativa a "Selection Search" ci sono "Trufflepiggy" ma lo eviterei dato che non è opensource e "Simple = Select + Search" però mi sembra troppo rudimentale.
+1. [Selection Search](https://chrome.google.com/webstore/detail/selection-search/gipnlpdeieaidmmeaichnddnmjmcakoe) alternativa valida a "Swift Selection Search" di Firefox, [qui](https://github.com/CanisLupus/swift-selection-search/issues/148#issuecomment-517942416) il suo creatore spiega perché non ha fatto una versione per Chrome. In alternativa a "Selection Search" ci sono "Trufflepiggy" ma lo eviterei dato che non è opensource e "Simple = Select + Search" però mi sembra troppo rudimentale. Per migliorare la funzione di ricerca di "Selection Search" per Google Translate sostituire la default "https://translate.google.it/?hl=it" in "https://translate.google.com/#view=home&op=translate&sl=auto&tl=it&text=%s".
 1. (Avanzato) [NoScript](https://chrome.google.com/webstore/detail/noscript/doojmbjmlfjjnbmnoijecmcbfeoakpjm)
 
 
