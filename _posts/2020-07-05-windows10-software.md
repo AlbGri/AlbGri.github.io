@@ -73,9 +73,14 @@ Lettore pdf gratuito e leggero
 Gestore file compressi
 
 
-## Python
-[Miniconda](https://docs.conda.io/en/latest/miniconda.html) e Jupyter Notebook  
-Una volta installato apro l'Anaconda Prompt (miniconda3)  
+## [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+1. Ci assicuriamo di avere rimosso la precedente installazione (eg. Uninstall-Miniconda3.exe)
+1. Installazione
+<img src="/assets/images/miniconda_1.png" width="400">
+<img src="/assets/images/miniconda_2.png" width="400">
+![png](/assets/images/miniconda_3.png)
+1. altro
+1. Una volta installato apro l'Anaconda Prompt (miniconda3)  
 ```console
 conda install -c conda-forge notebook
 conda install -c anaconda numpy
@@ -83,6 +88,9 @@ conda install -c anaconda pandas
 cd /d "E:\path"
 jupyter notebook
 ```
+
+
+
 
 ## [KeePass 2.x](https://keepass.info/download.html)
 Software multiplatform per gestione password  
