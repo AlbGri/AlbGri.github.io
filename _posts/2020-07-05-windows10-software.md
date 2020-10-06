@@ -79,7 +79,7 @@ Gestore file compressi
 <img src="/assets/images/miniconda_1.png" width="200">
 <img src="/assets/images/miniconda_2.png" width="200">
 <img src="/assets/images/miniconda_3.png" width="200">
-1. Una volta installato apro l'Anaconda Prompt (miniconda3), la differenza con il Powershell è che quest'ultimo ha funzioni in più di Windows che non mi interessano  
+1. Una volta installato apro l'Anaconda Prompt (miniconda3), la differenza con il Powershell è che quest'ultimo ha funzioni in più di Windows che non mi interessano
 1. Costruiamo il nostro enviroment Conda
 ```console
 conda deactivate
