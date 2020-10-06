@@ -38,15 +38,6 @@ cd %USERPROFILE%\Documents
 1. [True format](https://www.toolsley.com/file.html) riconosce la tipologia di file ed è sicuro perché gira in locale il JavaScript, infatti funziona velocemente anche su file molto grandi. Il [sito](https://www.toolsley.com/) contiene altri tool interessanti.
 
 ## Altro
-1. Costruisco un collegamento per lanciare velocemente uno specifico conda environment da un percorso specifico  
-Creo un file .bat (nuovo file di testo e poi rinomino l'estensione) contenente il seguente codice (nota: modificare i path con i propri percorsi e il nome dell'ambiente)
-```bash
-@echo off    
-set PATH=%PATH%;C:\Users\miniconda3\Scripts
-cd /d C:\path\
-%windir%\system32\cmd.exe "/K" C:\Users\miniconda3\Scripts\activate.bat py3_tf
-```
-
 1. Google Drive Fix Folder  
 Google Drive sembra avere rimosso la possibilità di aggiugnere una cartella condivisa in locale.  
 Da browser tra i file condivisi, selezionare la cartella da portare sul client di Google Drive → shift+z → aggiungi a Drive

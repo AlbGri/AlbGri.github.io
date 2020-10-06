@@ -74,18 +74,46 @@ Gestore file compressi
 
 
 ## [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
-1. Ci assicuriamo di avere rimosso la precedente installazione (eg. Uninstall-Miniconda3.exe)
-1. Installazione  
-<img src="/assets/images/miniconda_1.png" width="400">
-<img src="/assets/images/miniconda_2.png" width="400">
-<img src="/assets/images/miniconda_3.png" width="400">
-1. altro
-1. Una volta installato apro l'Anaconda Prompt (miniconda3)  
+1. Ci assicuriamo di avere rimosso la precedente installazione (eg. Uninstall-Miniconda3.exe e una ricerca con [Everything](https://www.albgri.com/windows10-software/#search-everything) male non fa)
+1. Preferisco installare miniconda con i privilegi d'amministratore così da poterlo installare nella cartella programmi  
+<img src="/assets/images/miniconda_1.png" width="200">
+<img src="/assets/images/miniconda_2.png" width="200">
+<img src="/assets/images/miniconda_3.png" width="200">
+1. Una volta installato apro l'Anaconda Prompt (miniconda3), la differenza con il Powershell è che quest'ultimo ha funzioni in più di Windows che non mi interessano  
+1. Costruiamo il nostro enviroment Conda
 ```console
-conda install -c conda-forge notebook
-conda install -c anaconda numpy
-conda install -c anaconda pandas
-cd /d "E:\path"
+conda deactivate
+conda env list
+conda create --name py3.8_windows10 python=3.8
+```
+1. Costruisco un collegamento per lanciare velocemente lo specifico conda environment da un percorso specifico  
+Creo un file .bat (nuovo file di testo e poi rinomino l'estensione) contenente il seguente codice (nota: modificare i path con i propri percorsi e il nome dell'environment)
+```bash
+@echo off
+set PATH=%PATH%;C:\ProgramData\Miniconda3\Scripts
+cd /d C:\
+%windir%\system32\cmd.exe "/K" C:\ProgramData\Miniconda3\Scripts\activate.bat py3.8_windows10
+```
+1. Avvio l'environment manualmente (tramite Anaconda Prompt) o via .bat
+```console
+conda activate py3.8_windows10
+```
+1. Installo i moduli d'interesse dentro l'ambiente
+```console
+conda install pandas
+conda install jupyter
+```
+1. [Wrap Code](https://www.albgri.com/python-the-beginning/#wrap-code)
+1. Genero il file di configurazione
+```console
+jupyter notebook --generate-config
+```
+1. Per impostare Chrome come browser all'apertura di Jupyter Notebook, modifico il file '*jupyter_notebook_config.py*'
+```raw
+c.NotebookApp.browser = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+```
+1. Per avviare Jupyter Notebook si usa il collegamento che si è generato post installazione, il link sarà Jupyter Notebook (py3.8_windows10). In alternativa uso il .bat o Anaconda Prompt attivando manualmente l'environment e lanciando il comando
+```console
 jupyter notebook
 ```
 
