@@ -21,7 +21,6 @@ mathjax: "true"
 
 1. Trova file/cartelle  
 ```console
-~$ cd /
 ~$ sudo find / -type d -name "nome"
 ~$ sudo find . -type d | grep nome
 ```

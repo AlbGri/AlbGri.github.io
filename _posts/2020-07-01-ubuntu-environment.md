@@ -76,7 +76,6 @@ Software & Updates →  Updates → Automatically... → Never!
 1. Come montare unità exFAT su Ubuntu Linux  
 ```console
 ~$ sudo apt-get install exfat-fuse exfat-utils
-~$ sudo apt install exfat-fuse exfat-utils
 ```
 
 

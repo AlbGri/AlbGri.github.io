@@ -111,16 +111,15 @@ Elimina i doppioni
 ~$ sudo apt-get update
 ~$ sudo apt-get install dupeguru
 ```
-<span style="font-size: 3mm">
 * View → Options → Language: Italian → Ok → Riavvia programma
-* + → Aggiungi Cartella 
+* [+] → Aggiungi Cartella 
 * Più Opzioni: [v] Includi tipi diversi di file
 * Più Opzioni: [v] Rimuovi le cartelle vuote dopo aver cancellato o spostato
 * Scansiona
 * In alto: [v] Solo duplicati
 * Marca → Marca tutti
 * Azioni → Sposta elementi marcati nel Cestino... → [v] Elimina file direttamente
-</span>
+
 
 
 ### Google Drive
