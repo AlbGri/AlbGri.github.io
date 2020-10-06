@@ -12,7 +12,7 @@ mathjax: "true"
 findstr /S /c:"testo da cercare" *
 ```
 1. Cerca in tutte le subfolders, mostra solo nome file
-```
+```console
 findstr /M /S /c:"testo da cercare" *
 ```
 
@@ -24,12 +24,18 @@ Gli screen si salvano in automatico in
 C:\Users\nomeUtente\AppData\Local\Packages\Microsoft.Windows.ShellExperienceHost_cw5n1h2txyewy\TempState\ScreenClip  
 </span>
 
+1. Scorciatoia documents
+```console
+cd %USERPROFILE%\Documents
+```
+
 
 ## Websites
 1. [Web Flow Charts](https://app.diagrams.net)
 1. [Ping Site](https://ping.canbeuseful.com/en#ping)
 1. [Check Site UP](https://www.uptrends.com/tools/uptime)
 1. [Paste IMG](https://snipboard.io)
+1. [Natura file](https://www.toolsley.com/file.html) è sicuro perché gira in locale il JavaScript, infatti funziona velocemente anche su file molto grandi. Il [sito](https://www.toolsley.com/) contiene altri tool interessanti.
 
 ## Altro
 1. Costruisco un collegamento per lanciare velocemente uno specifico conda environment da un percorso specifico  

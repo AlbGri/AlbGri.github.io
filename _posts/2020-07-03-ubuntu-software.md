@@ -97,6 +97,31 @@ SHIFT+SPACE → Loop
 CTRL+S → Save  
 CTR+B → Aggiungi Label Track  
 
+1. PIGZ Compressore Multicore  
+```console
+~$ sudo apt-get update
+~$ sudo apt install pigz
+~$ tar --use-compress-program="pigz -9 -k " -cf cartella_compressa.tar.gz cartella
+```
+
+1. DupeGuru  
+Elimina i doppioni  
+```console
+~$ sudo add-apt-repository ppa:dupeguru/ppa
+~$ sudo apt-get update
+~$ sudo apt-get install dupeguru
+```
+<span style="font-size: 3mm">
+* View → Options → Language: Italian → Ok → Riavvia programma
+* + → Aggiungi Cartella 
+* Più Opzioni: [v] Includi tipi diversi di file
+* Più Opzioni: [v] Rimuovi le cartelle vuote dopo aver cancellato o spostato
+* Scansiona
+* In alto: [v] Solo duplicati
+* Marca → Marca tutti
+* Azioni → Sposta elementi marcati nel Cestino... → [v] Elimina file direttamente
+</span>
+
 
 ### Google Drive
 Mi sarebbe piaciuto usare il default di GNOME (Settings → Online Accounts → Google) per la sincronizzazione di Drive, ma la cartella che crea ha dei path non leggibili da KeePass (/run/user/1000/gvfs/google-drive:host=gmail.com,user=nomeutente).  

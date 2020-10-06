@@ -14,6 +14,29 @@ mathjax: "true"
 ~$ mkdir -p ~/Downloads/nuova_cartella/nuova_sottocartella
 ```
 
+1. Trova testo dentro tutti i documenti nel path  
+```console
+~$ grep -r testoDaCercare *
+```
+
+1. Trova file/cartelle  
+```console
+~$ cd /
+~$ sudo find / -type d -name "nome"
+~$ sudo find . -type d | grep nome
+```
+
+1. Trova cartella  
+```console
+~$ find -name "nomeCartella"
+```
+
+1. Elimina caretelle vuote  
+```console
+~$ cd ~/Downloads
+~$ find . -empty -type d -delete
+```
+
 1. Trova interattivamente il processo PID di un programma e terminarlo  
 ```console
 ~$ xprop _NET_WM_PID
@@ -35,18 +58,6 @@ mathjax: "true"
 1. Verifica se il programma specifico è installato  
 ```console
 ~$ apt list --installed firefox
-```
-
-1. Trova file/cartelle  
-```console
-~$ cd /
-~$ sudo find / -type d -name "nome"
-~$ sudo find . -type d | grep nome
-```
-
-1. Trova testo dentro tutti i documenti nel path  
-```console
-~$ grep -r testoDaCercare *
 ```
 
 1. Screenshots  
