@@ -75,10 +75,10 @@ Gestore file compressi
 
 ## [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 1. Ci assicuriamo di avere rimosso la precedente installazione (eg. Uninstall-Miniconda3.exe)
-1. Installazione
+1. Installazione  
 <img src="/assets/images/miniconda_1.png" width="400">
 <img src="/assets/images/miniconda_2.png" width="400">
-![png](/assets/images/miniconda_3.png)
+<img src="/assets/images/miniconda_3.png" width="400">
 1. altro
 1. Una volta installato apro l'Anaconda Prompt (miniconda3)  
 ```console
