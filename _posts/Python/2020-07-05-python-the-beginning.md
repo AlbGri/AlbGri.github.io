@@ -555,6 +555,7 @@ print(list(filter(lambda parola: parola[0] == "a", vettore)))
 
 
 # Utili
+## L'imprecisione del float
 Il problema dei linguaggi dinamici: non hai controllo sui type casting e si perdono dati senza sapere da dove. Evita il float se ti interessa la precisione (cit. Luca).  
 Segue un esempio problema:  
 ```python
