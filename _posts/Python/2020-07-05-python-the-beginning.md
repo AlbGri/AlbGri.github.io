@@ -572,5 +572,5 @@ int(((10**9-1)/9))**2
     12345678987654321
 
 
-Il float di default in Python (3.7) perde dati oltre la 16esima cifra decimale, quindi assegnando l'int a posteriori la perdita d'informazione già c'è stata. Invece, l'int prima del quadrato consente di lavorare sempre su int prima del raggiungimento della 16esima cifra decimale.
+Il float di default in Python (3.7) perde dati oltre la 16esima cifra, quindi assegnando l'int a posteriori la perdita d'informazione già c'è stata. Invece, l'int prima del quadrato consente di lavorare sempre su int prima del raggiungimento della 16esima cifra.
 
