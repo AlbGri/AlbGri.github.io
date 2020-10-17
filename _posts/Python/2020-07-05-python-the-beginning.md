@@ -552,3 +552,24 @@ def countDog(st):
 # trova gli elementi di un vettore che iniziano con la 'a'
 print(list(filter(lambda parola: parola[0] == "a", vettore)))
 ```
+
+
+# Utili
+Il problema dei linguaggi dinamici: non hai controllo sui type casting e si perdono dati senza sapere da dove. Evita il float se ti interessa la precisione (cit. Luca).  
+Segue un esempio problema:  
+```python
+int(((10**9-1)/9)**2)
+```
+
+    12345678987654320
+
+
+```python
+int(((10**9-1)/9))**2
+```
+
+    12345678987654321
+
+
+Il float di default in Python (3.7) perde dati oltre la 16esima cifra decimale, quindi assegnando l'int a posteriori la perdita d'informazione già c'è stata. Invece, l'int prima del quadrato consente di lavorare sempre su int prima del raggiungimento della 16esima cifra decimale.
+
