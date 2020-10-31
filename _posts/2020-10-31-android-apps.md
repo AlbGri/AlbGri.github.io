@@ -42,13 +42,13 @@ mathjax: "true"
 1. [Nike Training Club](https://play.google.com/store/apps/details?id=com.nike.ntc) allenamento casalingo della Nike
 1. [Fitprime](https://play.google.com/store/apps/details?id=com.checkmoov) app per fare abbonamenti mensili convenienti (se usi il mio codice amico abbiamo degli sconti: [ALB_GRI_S7Q](https://fitprime.com/magiclink))
 
-### Altre (usate in passato/interessanti)
+### Altre (usate in passato o interessanti)
 1. [Moovit](https://play.google.com/store/apps/details?id=com.tranzmate) per percorso autobus e metro Roma
 1. [Probus Roma](https://play.google.com/store/apps/details?id=org.probusdev) per orari affidabili autobus Roma
 1. [Screen Filter](https://play.google.com/store/apps/details?id=com.haxor) ridurre maggiormente la luminosità dello schermo
 1. [Dizionario Inglese Offline](https://play.google.com/store/apps/details?id=livio.pack.lang.en_US)
 1. [Dizionario Italiano Offline](https://play.google.com/store/apps/details?id=livio.pack.lang.it_IT)
-1. [Taskwik is a task list, scheduler and day planner](https://play.google.com/store/apps/details?id=com.mishuto.todo.taskwik.alarm)
+1. [Taskwik is a task list, scheduler and day planner](https://play.google.com/store/apps/details?id=com.mishuto.todo.taskwik.alarm) to do list senza pubblicità, né acquisti in app
 
 
 

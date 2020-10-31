@@ -1,6 +1,6 @@
 ---
 title: "Windows 10: utilities"
-excerpt: ""
+excerpt: "ho inserito anche alcuni siti molto utili"
 date: 2020-10-30
 tags: [utils, windows, setup]
 mathjax: "true"
