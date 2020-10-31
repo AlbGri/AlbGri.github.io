@@ -16,7 +16,7 @@ mathjax: "true"
 1. [Network Cell Info](https://play.google.com/store/apps/details?id=com.wilysis.cellinfolite) adatta per capire dove l'intensità del segnale telefonico è migliore
 
 ### Pagamenti
-1. [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) prepagata smart, veloce e gratuita (se usi il mio link referral puoi non pagare la carta fisica: [albert9u1r](https://revolut.com/referral/albert9u1r)). Prima aveva IBAN GB, ma con la Brexit si stanno trasferendo a LT (Lituania). Il vantaggio principale di questa carta è che la ricarica è istantanea da qualsiasi conto, puoi prelevare gratuitamente in tutta l'europa (max 200 euro per la versione gratuita) e altri vantaggi come la creazione di carte virtuali usa e getta e il dettaglio non da poco che è tutto a costo zero con il pacchetto base.
+1. [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) prepagata smart, veloce e gratuita (se usi il mio link referral puoi non pagare la carta fisica: [albert9u1r](https://revolut.com/referral/albert9u1r)). Prima aveva IBAN GB, ma con la Brexit stanno trasferendo a LT (Lituania) i clienti europei. Il vantaggio principale di questa carta è che la ricarica è istantanea da qualsiasi conto, puoi prelevare gratuitamente in tutta l'europa (max 200 euro per la versione gratuita) e altri vantaggi come la creazione di carte virtuali usa e getta e il dettaglio non da poco che è tutto a costo zero con il pacchetto base.
 
 
 ### Utilities
@@ -30,7 +30,7 @@ mathjax: "true"
 
 ### Giochi
 1. [Jungle Music](https://play.google.com/store/apps/details?id=air.junglemusicfree) impara a leggere le note. Ho acquistato (a pochi euro) la [versione senza pubblicità](https://play.google.com/store/apps/details?id=air.junglemusic) ma non è assolutamente necessario
-1. [The Great Tournament](https://play.google.com/store/apps/details?id=org.hostedgames.greattournament) app storia davvero bella
+1. [The Great Tournament](https://play.google.com/store/apps/details?id=org.hostedgames.greattournament) gioco-storia testuale davvero bello
 
 ### Spostamenti
 1. [Orario Treni](https://play.google.com/store/apps/details?id=org.paoloconte.treni_lite) per orario treni e metropolitane in Italia. Ho acquistato (a pochi euro) la [versione premium](https://play.google.com/store/apps/details?id=it.itentropy.fswidget) ma non è assolutamente necessario
