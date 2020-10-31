@@ -24,10 +24,17 @@ Gli screen si salvano in automatico in
 C:\Users\nomeUtente\AppData\Local\Packages\Microsoft.Windows.ShellExperienceHost_cw5n1h2txyewy\TempState\ScreenClip  
 </span>
 
+1. Video cattura (Xbox)  
+Windows Key + Alt + R  
+I video si salvano in documents/video
+
 1. Scorciatoia documents
 ```console
 cd %USERPROFILE%\Documents
 ```
+
+1. Elimina [autocompletamento](https://superuser.com/questions/171198/remove-auto-complete-field-entries-in-google-chrome) nei box di testo per i login e ricerche  
+Shift + Del
 
 
 ## Websites
@@ -39,6 +46,8 @@ cd %USERPROFILE%\Documents
 1. [True format](https://www.toolsley.com/file.html) riconosce la tipologia di file ed è sicuro perché gira in locale il JavaScript, infatti funziona velocemente anche su file molto grandi. Il [sito](https://www.toolsley.com/) contiene altri tool interessanti.
 1. [Troll link](https://matias.ma/nsfw/)
 1. [Mail to RSS](https://notifier.in/integrations/email-to-rss)
+1. [Cronometro](https://www.timeanddate.com/stopwatch/)
+1. [Proxy1](https://hidester.com/proxy/), [Proxy2](https://www.proxysite.com/)
 1. Sito streaming molto poco legale: afdah[dot]info
 
 
