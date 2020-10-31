@@ -58,8 +58,18 @@ media.autoplay.blocking_policy 2
 **Google ha rimosso da Chrome la possibilità di interrompere l'autoplay dei video e occorre installare una [estensione](https://chrome.google.com/webstore/detail/autoplaystopper/ejddcgojdblidajhngkogefpkknnebdh) di dubbia provenienza e di dubbia efficacia! Disinstallate Chrome!**
 
 
+## Incognito
+Per creare un collegamento sul desktop/dove si vuole, che apra direttamente il browser in modalità anonima, prima bisogna copiare il collegamento del browser d'interesse e modificarne le proprietà in *Destinazione*  
+```raw
+Firefox: "path\firefox.exe" -private-window
+Chrome: "path\chrome.exe" -incognito
+Edge: "path\msedge.exe" -inprivate
+Opera: "path\Opera\launcher.exe" -private
+Explorer: "path\iexplore.exe" -private
+```
 
-
+test  
+<span title="I am hovering over the text">This is the text I want to have a mousover</span>
 
 
 
