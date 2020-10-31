@@ -136,6 +136,15 @@ Si apre un tema etico molto interessante e a me molto vicino: [Nothing to Hide, 
 Comunque sia Opera, si basa su Chromium, si può scaricare [questa](https://addons.opera.com/en/extensions/details/install-chrome-extensions/) estensione che permette di installare i componenti aggiuntivi direttamente dal webstore di Chrome. Ad esempio [ClearUrls](https://chrome.google.com/webstore/detail/clearurls/lckanjgmijmafbedllaakclkaicjfmnk) non c'è nello store di Opera, ma [uBlock](https://addons.opera.com/en/extensions/details/ublock/) è presente. Per le estensioni must-have rimando a [questo](https://www.albgri.com/browser-configuration/) link.  
 
 
+## R-statistical software
+### Aggiornare R su Windows 10
+Da R base (non R Studio)  
+```r
+install.packages("installr")
+library(installr)
+updateR()
+```
+Sì, sì, sì... e la versione precedente la si disinstalla manualmente.
 
 
 

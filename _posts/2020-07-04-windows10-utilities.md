@@ -31,11 +31,16 @@ cd %USERPROFILE%\Documents
 
 
 ## Websites
-1. [Web Flow Charts](https://app.diagrams.net)
-1. [Ping Site](https://ping.canbeuseful.com/en#ping)
-1. [Check Site UP](https://www.uptrends.com/tools/uptime)
-1. [Paste IMG](https://snipboard.io)
+1. [Web Flow Charts](https://app.diagrams.net) per i flow-chart
+1. [Ping Site](https://ping.canbeuseful.com/en#ping) per monitorare la rete
+1. [Check Site UP](https://www.uptrends.com/tools/uptime) per verificare se il sito è down
+1. [Paste IMG](https://snipboard.io) incolla e condividi immagini
 1. [True format](https://www.toolsley.com/file.html) riconosce la tipologia di file ed è sicuro perché gira in locale il JavaScript, infatti funziona velocemente anche su file molto grandi. Il [sito](https://www.toolsley.com/) contiene altri tool interessanti.
+1. [Troll link](https://matias.ma/nsfw/)
+1. [Mail to RSS](https://notifier.in/integrations/email-to-rss)
+1. Sito streaming molto poco legale: afdah[dot]info
+
+
 
 ## Altro
 1. Google Drive Fix Folder  
