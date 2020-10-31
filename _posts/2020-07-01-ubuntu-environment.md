@@ -119,7 +119,7 @@ ModuleNotFoundError: No module named 'conda'
 ```
 Se [si ha fortuna](http://stackoverflow.com/a/20516579/5948656) è solo un problema di path  
 Se [non si ha fortuna](https://github.com/conda/conda/issues/2463), risolve reinstallando anaconda :(   
-Da ora in poi userò gli [ambienti virtuali](https://www.albgri.com/section-004/#conda-enviroments) di Anaconda!  
+Da ora in poi userò gli [ambienti virtuali](https://www.albgri.com/python-the-beginning/#conda-enviroments) di Anaconda!  
 [Miniconda](https://docs.conda.io/en/latest/miniconda.html)  
 ```console
 ~$ cd Documents
