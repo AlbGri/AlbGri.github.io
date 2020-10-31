@@ -43,11 +43,12 @@ Shift + Del
 1. [Ping Site](https://ping.canbeuseful.com/en#ping) per monitorare la rete
 1. [Check Site UP](https://www.uptrends.com/tools/uptime) per verificare se il sito è down
 1. [Paste IMG](https://snipboard.io) incolla e condividi immagini
-1. [True format](https://www.toolsley.com/file.html) riconosce la tipologia di file ed è sicuro perché gira in locale il JavaScript, infatti funziona velocemente anche su file molto grandi. Il [sito](https://www.toolsley.com/) contiene altri tool interessanti.
+1. [True format](https://www.toolsley.com/file.html) riconosce la tipologia di file ed è sicuro perché gira in locale il JavaScript, infatti funziona velocemente anche su file molto grandi. Il [sito](https://www.toolsley.com/) contiene altri tool interessanti
 1. [Troll link](https://matias.ma/nsfw/)
 1. [Mail to RSS](https://notifier.in/integrations/email-to-rss)
 1. [Cronometro](https://www.timeanddate.com/stopwatch/)
 1. [Proxy1](https://hidester.com/proxy/), [Proxy2](https://www.proxysite.com/)
+1. [AWW board](https://awwapp.com/) lavagna condivisa
 1. Sito streaming molto poco legale: afdah[dot]info
 
 
