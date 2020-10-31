@@ -218,7 +218,7 @@ update.packages(checkBuilt = TRUE, ask = FALSE) # Update packages
 
 #### Errore Signature Verification
 L'apt get update restituisce errore sulla signature verification, [qui](https://cran.r-project.org/bin/linux/ubuntu/README.html#secure-apt) e [qua](https://www.bentoh.my/post/gpg-key-problem/) link utili.  
-```raw
+```console
 W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/ InRelease: The following signatures were invalid: EXPKEYSIG 51716619E084DAB9 Michael Rutter <marutter@gmail.com>
 W: Failed to fetch https://cloud.r-project.org/bin/linux/ubuntu/bionic-cran40/InRelease  The following signatures were invalid: EXPKEYSIG 51716619E084DAB9 Michael Rutter <marutter@gmail.com>
 W: Some index files failed to download. They have been ignored, or old ones used instead.
@@ -228,7 +228,7 @@ W: Some index files failed to download. They have been ignored, or old ones used
 sudo apt-key list
 ```
 
-```raw
+```console
 pub   rsa2048 2010-10-19 [SCA] [expired: 2020-10-16]
       E298 A3A8 25C0 D65D FD57  CBB6 5171 6619 E084 DAB9
 uid           [ expired] Michael Rutter <marutter@gmail.com>
@@ -244,7 +244,7 @@ sudo apt-key list
 ```
 
 Ora è aggiornato
-```raw
+```console
 pub   rsa2048 2010-10-19 [SCA] [expires: 2027-09-30]
       E298 A3A8 25C0 D65D FD57  CBB6 5171 6619 E084 DAB9
 uid           [ unknown] Michael Rutter <marutter@gmail.com>
