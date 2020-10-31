@@ -31,6 +31,7 @@ cd %USERPROFILE%\Documents
 
 
 ## Websites
+1. [Down detector](https://downdetector.it/) permette di verificare anomalie tra i principali siti e servizi usati in Italia 
 1. [Web Flow Charts](https://app.diagrams.net) per i flow-chart
 1. [Ping Site](https://ping.canbeuseful.com/en#ping) per monitorare la rete
 1. [Check Site UP](https://www.uptrends.com/tools/uptime) per verificare se il sito è down
