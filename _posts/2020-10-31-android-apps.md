@@ -13,10 +13,10 @@ mathjax: "true"
 
 ### Network
 1. [Pingmon](https://play.google.com/store/apps/details?id=com.mishuto.pingtest) app gratuita, senza pubblicità né acquisti in app che consente di monitorare la qualità della rete tramite un ping continuo verso l'host che si vuole. Non serve tenere l'app aperta perché è presente un widget nella barra in alto per il monitoraggio
-1. [Network Cell Info](https://play.google.com/store/apps/details?id=com.wilysis.cellinfolite) adatta per capire dove è migliore l'intensità del segnale telefonico
+1. [Network Cell Info](https://play.google.com/store/apps/details?id=com.wilysis.cellinfolite) adatta per capire dove l'intensità del segnale telefonico è migliore
 
 ### Pagamenti
-1. [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) prepagata smart, veloce e gratuita (se usi il mio link referral puoi non pagare la carta fisica: [albert9u1r](https://revolut.com/referral/albert9u1r))
+1. [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) prepagata smart, veloce e gratuita (se usi il mio link referral puoi non pagare la carta fisica: [albert9u1r](https://revolut.com/referral/albert9u1r)). Prima aveva IBAN GB, ma con la Brexit si stanno trasferendo a LT (Lituania). Il vantaggio principale di questa carta è che la ricarica è istantanea da qualsiasi conto, puoi prelevare gratuitamente in tutta l'europa (max 200 euro per la versione gratuita) e altri vantaggi come la creazione di carte virtuali usa e getta e il dettaglio non da poco che è tutto a costo zero con il pacchetto base.
 
 
 ### Utilities
