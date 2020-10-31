@@ -40,9 +40,6 @@ Dopo anni di utilizzo sto provando ad abbandonarlo a favore di TinyWall o simple
 1. [Locate32](https://locate32.cogit.net/)  
 Tool di ricerca simile a Search Everything, meno potente ma permette di indicizzare bene anche server remoti.
 
-1. [Greenshot](https://getgreenshot.org/)  
-Permette di fare gli screenshot stile linux con scorciatoie come shift+print etc.
-
 1. [WizTree](https://wiztreefree.com/download)  
 Software per controllo spazio su periferiche di massa. Utile per pulire il proprio disco. Consiglio di scaricare la versione portable senza installazione. Questo è un tool da tenere su pendrive :). Prima utilizzavo WinDirStat ma è molto lento al confronto.
 
