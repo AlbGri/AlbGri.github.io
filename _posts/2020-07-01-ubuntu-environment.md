@@ -73,7 +73,7 @@ Software & Updates →  Updates → Automatically... → Never!
 ```
 [Qui](https://github.com/AlbGri/AlbGri.github.io/raw/master/assets/files/gedit_themes.zip) una collezione oppure [qui](https://raw.githubusercontent.com/AlbGri/AlbGri.github.io/master/assets/files/alb_gedit_theme.xml) quello che uso io.
 
-1. Come montare unità exFAT su Ubuntu Linux  
+1. Come montare unità <span title="exFAT è ottimizzato per le unità flash, progettato per essere un file system leggero come FAT32, ma senza le funzionalità extra e il sovraccarico di NTFS e senza i limiti di FAT32. Come NTFS, exFAT ha limiti molto ampi sulle dimensioni di file e partizioni, consentendo di archiviare file molto più grandi dei 4 GB consentiti da FAT32.">exFAT</span> su Ubuntu Linux  
 ```console
 ~$ sudo apt-get install exfat-fuse exfat-utils
 ```

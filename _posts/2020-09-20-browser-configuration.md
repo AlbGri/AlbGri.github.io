@@ -51,7 +51,9 @@ media.autoplay.blocking_policy 2
 1. [ClearURLs](https://chrome.google.com/webstore/detail/clearurls/lckanjgmijmafbedllaakclkaicjfmnk)
 1. [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp)
 1. [HTTPS Everywhere](https://chrome.google.com/webstore/detail/https-everywhere/gcbommkclmclpchllfjekcdonpmejbdp)
-1. [Selection Search](https://chrome.google.com/webstore/detail/selection-search/gipnlpdeieaidmmeaichnddnmjmcakoe) alternativa valida a "Swift Selection Search" di Firefox, [qui](https://github.com/CanisLupus/swift-selection-search/issues/148#issuecomment-517942416) il suo creatore spiega perché non ha fatto una versione per Chrome. In alternativa a "Selection Search" ci sono "Trufflepiggy" ma lo eviterei dato che non è opensource e "Simple = Select + Search" però mi sembra troppo rudimentale. Per inserire la funzione di ricerca di Google Translate in "Selection Search", bisogna aggiungere nelle opzioni dell'estensione l'url "https://translate.google.com/#view=home&op=translate&sl=auto&tl=it&text=%s".
+1. [Selection Search](https://chrome.google.com/webstore/detail/selection-search/gipnlpdeieaidmmeaichnddnmjmcakoe) alternativa valida a "Swift Selection Search" di Firefox, [qui](https://github.com/CanisLupus/swift-selection-search/issues/148#issuecomment-517942416) il suo creatore spiega perché non ha fatto una versione per Chrome. In alternativa a "Selection Search" ci sono "Trufflepiggy" ma lo eviterei dato che non è opensource e "Simple = Select + Search" però mi sembra troppo rudimentale. Per inserire la funzione di ricerca di Google Translate in "Selection Search", bisogna aggiungere nelle opzioni dell'estensione l'url 
+<span style="font-size: 3mm">https://translate.google.com/#view=home&op=translate&sl=auto&tl=it&text=%s</span>
+.
 1. (Avanzato) [NoScript](https://chrome.google.com/webstore/detail/noscript/doojmbjmlfjjnbmnoijecmcbfeoakpjm)
 
 
@@ -59,7 +61,7 @@ media.autoplay.blocking_policy 2
 
 
 ## Incognito
-Per creare un collegamento sul desktop/dove si vuole, che apra direttamente il browser in modalità anonima, prima bisogna copiare il collegamento del browser d'interesse e modificarne le proprietà in *Destinazione*  
+Per creare un collegamento che apra direttamente il browser in modalità anonima, prima bisogna copiare il collegamento del browser d'interesse e modificarne le *Proprietà → Destinazione*  
 ```raw
 Firefox: "path\firefox.exe" -private-window
 Chrome: "path\chrome.exe" -incognito
@@ -67,9 +69,6 @@ Edge: "path\msedge.exe" -inprivate
 Opera: "path\Opera\launcher.exe" -private
 Explorer: "path\iexplore.exe" -private
 ```
-
-test  
-<span title="I am hovering over the text">This is the text I want to have a mousover</span>
 
 
 
