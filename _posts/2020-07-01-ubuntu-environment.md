@@ -78,6 +78,11 @@ Software & Updates →  Updates → Automatically... → Never!
 ~$ sudo apt-get install exfat-fuse exfat-utils
 ```
 
+1. Rimuovi software updater (attenzione)
+```console
+~$ sudo apt-get remove update-notifier
+```
+
 
 
 ## Issues & Bugs
