@@ -1,7 +1,7 @@
 ---
 title: "github pages"
 excerpt: "how to"
-date: 2019-01-27
+date: 2020-10-29
 tags: [github, pages, ubuntu, utils]
 mathjax: "true"
 ---

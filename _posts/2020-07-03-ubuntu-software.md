@@ -1,7 +1,7 @@
 ---
 title: "Ubuntu: software"
 excerpt: "must have.. for me"
-date: 2020-07-03
+date: 2020-10-30
 tags: [utils, linux, ubuntu, r, setup]
 mathjax: "true"
 ---

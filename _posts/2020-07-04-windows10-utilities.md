@@ -1,7 +1,7 @@
 ---
 title: "Windows 10: utilities"
 excerpt: ""
-date: 2020-07-04
+date: 2020-10-30
 tags: [utils, windows, setup]
 mathjax: "true"
 ---

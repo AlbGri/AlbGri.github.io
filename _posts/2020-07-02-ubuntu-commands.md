@@ -1,7 +1,7 @@
 ---
 title: "Ubuntu: commands"
 excerpt: "useful commands"
-date: 2020-07-02
+date: 2020-10-30
 tags: [utils, linux, ubuntu, bugs, bash]
 mathjax: "true"
 ---

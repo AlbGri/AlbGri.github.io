@@ -1,7 +1,7 @@
 ---
 title: "Browser configuration"
 excerpt: "Must have extensions and utilities"
-date: 2020-09-20
+date: 2020-10-31
 tags: [ubuntu, windows, utils]
 mathjax: "true"
 ---
