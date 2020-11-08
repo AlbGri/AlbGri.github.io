@@ -38,10 +38,10 @@ Dopo anni di utilizzo sto provando ad abbandonarlo a favore di TinyWall o simple
 
 ## Utili 
 1. [Pingo Meter](https://github.com/EFLFE/PingoMeter/releases)  
-Piccolo widget che si posiziona vicino l'orologio e permette di monitorare l'andamento del ping verso un server.
+Widget vicino l'orologio per monitorare l'andamento del ping verso un server.
 
 1. [NetSpeedMonitor](https://www.filehorse.com/download-netspeedmonitor-64/download/)  
-Piccolo widget che si posiziona vicino l'orologio e permette di monitorare Download/Upload e consumi della rete. Per installarlo su Windows 10 è necessario abilitare la modalità compatibilità (Operating system not supported). Il file 64-bit si chiama 'netspeedmonitor_2_5_4_0_x64_setup.msi', attenzione se si usano altri setup!
+Widget vicino l'orologio per monitorare Download/Upload e consumi della rete. Per installarlo su Windows 10 è necessario abilitare la modalità compatibilità (Operating system not supported). Il file 64-bit si chiama 'netspeedmonitor_2_5_4_0_x64_setup.msi', attenzione se si usano altri setup!  
 ![png](/assets/images/netspeedmonitor_2_5_4_0.png)
 
 1. [NetLimiter](https://www.netlimiter.com/)  
@@ -49,7 +49,7 @@ Software a pagamento, ancora cerco una valida alternativa opensource. Permette a
 
 1. [Process Explorer](https://docs.microsoft.com/it-it/sysinternals/downloads/process-explorer)  
 Se appare il messaggio 'Impossibile completare l'operazione perché la cartella o un file all'interno di essa è aperto in un altro programma' o 'The Action Can’t Be Completed Because the Folder or a File in it is Open in Another Program', c'è un processo attivo che non ne consente la modifica.   
-Nel mio caso, non riuscivo a spostare una cartella, quindi ho cercato il nome di quella cartella in questo programma e analizzato tutti i processi che hanno il path specifico, a quel punto ho trovato il processo attivo da chiudere.
+Nel mio caso, non riuscivo a spostare una cartella, quindi ho cercato il nome di quella cartella in questo programma e analizzato tutti i processi che hanno il path specifico, a quel punto ho trovato il processo attivo da chiudere.  
 ![png](/assets/images/processexplorer_researchfolder.png)
 
 1. [Locate32](https://locate32.cogit.net/)  
@@ -86,6 +86,7 @@ Gestore file compressi
 
 
 ## [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+### Installazione
 1. Ci assicuriamo di avere rimosso la precedente installazione (eg. Uninstall-Miniconda3.exe e una ricerca con [Everything](https://www.albgri.com/windows10-software/#search-everything) male non fa)
 1. Preferisco installare miniconda con i privilegi d'amministratore così da poterlo installare nella cartella programmi  
 <img src="/assets/images/miniconda_1.png" width="200">
@@ -98,15 +99,7 @@ conda deactivate
 conda env list
 conda create --name py3.8_windows10 python=3.8
 ```
-1. Costruisco un collegamento per lanciare velocemente lo specifico conda environment da un percorso specifico  
-Creo un file .bat (nuovo file di testo e poi rinomino l'estensione) contenente il seguente codice (nota: modificare i path con i propri percorsi e il nome dell'environment)
-```bash
-@echo off
-set PATH=%PATH%;C:\ProgramData\Miniconda3\Scripts
-cd /d C:\
-%windir%\system32\cmd.exe "/K" C:\ProgramData\Miniconda3\Scripts\activate.bat py3.8_windows10
-```
-1. Avvio l'environment manualmente (tramite Anaconda Prompt) o via .bat
+1. Avvio l'environment manualmente (tramite Anaconda Prompt)
 ```console
 conda activate py3.8_windows10
 ```
@@ -114,6 +107,17 @@ conda activate py3.8_windows10
 ```console
 conda install pandas
 conda install jupyter
+```
+1. Lancio Jupyter notebook (py3.8_widows10) dal collegamento creato nel menu di Windows10
+
+### Utili
+1. Costruisco un collegamento per lanciare velocemente lo specifico conda environment da un percorso specifico  
+Creo un file .bat (nuovo file di testo e poi rinomino l'estensione) contenente il seguente codice (nota: modificare i path con i propri percorsi e il nome dell'environment)
+```bash
+@echo off
+set PATH=%PATH%;C:\ProgramData\Miniconda3\Scripts
+cd /d C:\
+%windir%\system32\cmd.exe "/K" C:\ProgramData\Miniconda3\Scripts\activate.bat py3.8_windows10
 ```
 1. [Wrap Code](https://www.albgri.com/python-the-beginning/#wrap-code)
 1. Genero il file di configurazione
