@@ -37,6 +37,21 @@ Dopo anni di utilizzo sto provando ad abbandonarlo a favore di TinyWall o simple
 
 
 ## Utili 
+1. [Pingo Meter](https://github.com/EFLFE/PingoMeter/releases)  
+Piccolo widget che si posiziona vicino l'orologio e permette di monitorare l'andamento del ping verso un server.
+
+1. [NetSpeedMonitor](https://www.filehorse.com/download-netspeedmonitor-64/download/)  
+Piccolo widget che si posiziona vicino l'orologio e permette di monitorare Download/Upload e consumi della rete. Per installarlo su Windows 10 è necessario abilitare la modalità compatibilità (Operating system not supported). Il file 64-bit si chiama 'netspeedmonitor_2_5_4_0_x64_setup.msi', attenzione se si usano altri setup!
+![png](/assets/images/netspeedmonitor_2_5_4_0.png)
+
+1. [NetLimiter](https://www.netlimiter.com/)  
+Software a pagamento, ancora cerco una valida alternativa opensource. Permette agilmente di limitare la banda download/upload di qualsiasi processo.
+
+1. [Process Explorer](https://docs.microsoft.com/it-it/sysinternals/downloads/process-explorer)  
+Se appare il messaggio 'Impossibile completare l'operazione perché la cartella o un file all'interno di essa è aperto in un altro programma' o 'The Action Can’t Be Completed Because the Folder or a File in it is Open in Another Program', c'è un processo attivo che non ne consente la modifica.   
+Nel mio caso, non riuscivo a spostare una cartella, quindi ho cercato il nome di quella cartella in questo programma e analizzato tutti i processi che hanno il path specifico, a quel punto ho trovato il processo attivo da chiudere.
+![png](/assets/images/processexplorer_researchfolder.png)
+
 1. [Locate32](https://locate32.cogit.net/)  
 Tool di ricerca simile a Search Everything, meno potente ma permette di indicizzare bene anche server remoti.
 
@@ -54,6 +69,9 @@ Per recuperare file eliminati, simile a [Recuva](https://www.ccleaner.com/recuva
 1. [Miktex](https://miktex.org/download)  
 Gestore LaTeX che preferisco per Windows
 
+1. [Sumatra PDF](https://www.sumatrapdfreader.org/download-free-pdf-viewer.html)  
+Lettore pdf gratuito e leggero
+
 1. Notepad++  
 Editor di testo semplice ed avanzato
 
@@ -62,9 +80,6 @@ Modifiche file pdf non esiste gratuito *legalmente*.
 
 1. VLC  
 Lettore multimediale
-
-1. Sumatra PDF  
-Lettore pdf gratuito e leggero
 
 1. 7-Zip  
 Gestore file compressi
