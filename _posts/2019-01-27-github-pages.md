@@ -160,7 +160,7 @@ search_engine_id       : 000000000000000000000:xxxxxxxxxxx
 [Search Console Google](https://search.google.com/search-console/about)  
 Nel caso non riconosce in automatico che si è proprietari, prova [questa](https://victor2code.github.io/blog/2019/07/04/jekyll-github-pages-appear-on-Google.html) guida  
 1. Rimuovere pagine rotte nella cache di google
-[Removal Google](https://www.google.com/webmasters/tools/removals)  
+[Removal](https://www.google.com/webmasters/tools/removals) [Google](https://search.google.com/search-console/remove-outdated-content)  
 Cerca su google "site:*tuodominio*" per trovare le pagine scadute indicizzate e richiederne la rimozione  
 
 
