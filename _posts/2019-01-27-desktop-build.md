@@ -1,5 +1,5 @@
 ---
-title: "desktop configuration"
+title: "Desktop configuration"
 excerpt: "(not expensive) build 04/2017"
 date: 2019-01-27
 tags: [hardware]
