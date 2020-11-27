@@ -1,15 +1,14 @@
 ---
 title: "Wereables"
-excerpt: "Smartbands e Smartwatch"
+excerpt: "Smartbands and Smartwatch"
 date: 2020-11-27
 tags: [gadget, utils]
-mathjax: "true"
 ---
 
 ## Xiaomi Band 5
 Smartband economico del 2020
 
-### Export dati via ufficiale da Mi Fit ufficiale
+### Export dati via ufficiale da Mi Fit Huami
 Da [qui](https://user.huami.com/hm_account/2.0.0/index.html?v=3.7.24&platform_app=com.xiaomi.hm.health#/chooseDestory) si possono scaricare tutti i dati registrati, basta loggare con l'account Mi Fit.
 
 ### Modified Mi Fit App
