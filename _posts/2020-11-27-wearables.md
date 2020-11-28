@@ -19,19 +19,28 @@ Nel sito di [Modified Mi Fit 4.7.0 - All in One](https://geekdoing.com/threads/m
 Dopo qualche settimana di utilizzo ho iniziato a ricevere richieste di amiciza *spam*. Non ho trovato un modo per bloccarle quindi ho disinstallato l'app e sto provando Gadgetbridge.
 
 ### Gadgetbridge
-[Gadgetbridge](https://gadgetbridge.org/) consente di usare alcuni Smartband senza trasmettere dati alle aziende produttici.
+[Gadgetbridge](https://gadgetbridge.org/) consente di usare alcuni Smartband senza trasmettere dati alle aziende produttici.  
+L'app è un po' più complessa della Mi Fit ma sembra essere completa
+
+#### Setup
 1. Scarico Mi Fit e effettuo la registrazione e il pairing con il dispositivo
 2. Disinstallo Mi Fit
 3. Scarico 'Modified Mi Fit' ed effettuo login con l'account Mi Fit
 	* "Profile" → *Smartband/Smartwatch name* → "Settings".
 	* "Save" in "Auth Key".
 	* Apri il file explorer, nella cartella "Mi Fit" ci sarà "Inforrmation.txt" con l'authkey
-4. Dalla sezione [download](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/), posso scaricare il client [F-Droid](https://f-droid.org/F-Droid.apk) così aggiorna l'apk automaticamente quando necessario, oppure scarico direttamente l'[apk](https://f-droid.org/repo/nodomain.freeyourgadget.gadgetbridge_182.apk) di Gadgetbridge 
+4. Dalla sezione [download](https://f-droid.org/packages/nodomain.freeyourgadget.gadgetbridge/), posso scaricare il client [F-Droid](https://f-droid.org/F-Droid.apk) così aggiorna l'apk automaticamente quando necessario, oppure scarico direttamente l'[apk](https://f-droid.org/repo/nodomain.freeyourgadget.gadgetbridge_182.apk) (occhio a scaricare l'ultima che il link che ho messo potrebbe essere di una vecchia versione) di Gadgetbridge 
 5. Da Gadgetbridge aggiungo l'authkey (senza le virgolette)
 0x'incolloilcodice'
 6. Ci ha messo qualche minuto, qualche riavvio app/bluetooth e si è sincronizzato.
+7. *In impostazioni app android concedo tutti i permessi all'app Gadgetbridge*
 
-L'app mi sembra più limitata rispetto alla Mi Fit/Mi Fit Mod, ma non credo di avere alternative.
+#### Weather Notification
+Per aggiungere il meteo bisogna seguire [questa](https://codeberg.org/Freeyourgadget/Gadgetbridge/wiki/Weather) guida.
+1. Come Gadgetbridge dalla sezione [download](https://f-droid.org/en/packages/ru.gelin.android.weather.notification/), posso scaricare il client F-Droid o l'[apk](https://f-droid.org/repo/ru.gelin.android.weather.notification_60.apk) di Weather Notification (occhio a scaricare l'ultima che il link che ho messo potrebbe essere di una vecchia versione)
+2. Il sito di [OpenWeather](https://openweathermap.org/) è incredibilmente ben fatto, e mi devo registrare per ottenere le API da utilizzare sull'app che poi si sincronizza con Gadgetbridge. Quindi mi [iscrivo](https://home.openweathermap.org/users/sign_up).
+3. [Genero una API](https://home.openweathermap.org/api_keys) con nome Android (non è obbligatorio ma preferisco non usare quella di default). Dalla mail ricevuta in fase di iscrizione, le API si attivano in un paio di ore. L'aggiungo nella sezione 'API key' dell'app.
+4. Dall'app Weather Notification/Notifiche meteo, attivo le notifiche e la Skin Gadgetbridge
 
 
 
