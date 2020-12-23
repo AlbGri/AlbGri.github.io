@@ -66,6 +66,11 @@ Pulire il workspace
 %reset -f
 ```
 
+## R in Jupyter Notebook
+Per poter usare codice R dentro un notebook Jupyter, bisogna avere installato R e poi installare _r-ikernel_
+```console
+~$ conda install -c r r-irkernel
+```
 
 
 # Conda Enviroments
