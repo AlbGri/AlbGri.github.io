@@ -66,7 +66,7 @@ Pulire il workspace
 %reset -f
 ```
 
-### R in Jupyter Notebook
+### R in Jupyter Notebook (Windows)
 Ho provato con _r-irkernel_ da conda, ma non mi piace perché scarica una propria versione di R, che può essere diversa rispetto la versione in locale. Quindi installo _IRkernel_ da R che legge direttamente la versione di R in locale e usa le librerie preinstallate. Vado un po' contro la filosofia degli environment di conda.
 ```console
 ~$ conda activate py3
