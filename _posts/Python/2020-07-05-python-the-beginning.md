@@ -12,10 +12,10 @@ Python 3.7.7
 ```
 
 
-# Jupyter Notebook
+## Jupyter Notebook
 
 
-## Scorciatoie
+### Scorciatoie
 ctrl + ù (no tastierino alfanumerico) → commenta linea codice  
 ctrl + / (tastierino alfanumerico)    → commenta linea codice  
 
@@ -30,7 +30,7 @@ SHIFT + Enter → Esegui e passa alla cella successiva
 CTRL + Enter → Esegui e passa alla cella successiva  
 
 
-## Wrap Code
+### Wrap Code
 Celle a capo testo lungo in jupyter  
 [Fonte](https://stackoverflow.com/q/36419342)  
 ```console
@@ -59,21 +59,21 @@ cat > notebook.json
 # Ctrl+D per chiudere il file
 ```
 
-## Altro
+### Altro
 
 Pulire il workspace
 ```python
 %reset -f
 ```
 
-## R in Jupyter Notebook
+### R in Jupyter Notebook
 Per poter usare codice R dentro un notebook Jupyter, bisogna avere installato R e poi installare _r-ikernel_
 ```console
 ~$ conda install -c r r-irkernel
 ```
 
 
-# Conda Enviroments
+## Conda Enviroments
 
 Per creare un ambiente su cui lavorare, da terminale:  
 
@@ -113,7 +113,7 @@ Per esportare un environment
 
 
 
-# Basic Python
+## Basic Python
 
 
 Utilizzo del r'nomeStringa': [qui il perché](https://stackoverflow.com/a/42655010)  
@@ -535,7 +535,7 @@ for a,b in x:
     6
 
 
-## Esercizi!
+### Esercizi!
 
 
 ```python
@@ -559,7 +559,7 @@ print(list(filter(lambda parola: parola[0] == "a", vettore)))
 ```
 
 
-# Utili
+## Utili
 ### L'imprecisione del float
 Il problema dei linguaggi dinamici: non hai controllo sui type casting e si perdono dati senza sapere da dove. Evita il float se ti interessa la precisione (cit. Luca).  
 Segue un esempio problema:  
