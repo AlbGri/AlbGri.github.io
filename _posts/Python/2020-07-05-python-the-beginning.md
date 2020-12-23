@@ -67,11 +67,15 @@ Pulire il workspace
 ```
 
 ### R in Jupyter Notebook
-Per poter usare codice R dentro un notebook Jupyter, bisogna avere installato R e poi installare _r-ikernel_
+Ho provato con _r-irkernel_ da conda, ma non mi piace perché scarica una propria versione di R, che può essere diversa rispetto la versione in locale. Quindi installo _IRkernel_ da R che legge direttamente la versione di R in locale e usa le librerie preinstallate. Vado un po' contro la filosofia degli environment di conda.
 ```console
-~$ conda install -c r r-irkernel
+~$ conda activate py3
+~$ "C:\Program Files\R\R-4.0.0\bin\x64\R.exe"
 ```
-
+```R
+install.packages('IRkernel')
+IRkernel::installspec()
+```
 
 ## Conda Enviroments
 
