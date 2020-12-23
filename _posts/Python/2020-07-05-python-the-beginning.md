@@ -76,6 +76,12 @@ Ho provato con _r-irkernel_ da conda, ma non mi piace perché scarica una propri
 install.packages('IRkernel')
 IRkernel::installspec()
 ```
+Kernel list
+```console
+~$ jupyter kernelspec list
+```
+Da _'C:\Users\nomeUtente\AppData\Roaming\jupyter\kernels\ir\kernel.json'_ posso modificare "display_name" aggiungendo la versione.
+
 
 ## Conda Enviroments
 
