@@ -80,7 +80,7 @@ Kernel list
 ```console
 ~$ jupyter kernelspec list
 ```
-Da _'C:\Users\nomeUtente\AppData\Roaming\jupyter\kernels\ir\kernel.json'_ posso modificare "display_name" aggiungendo la versione.
+Da _'C:\Users\nomeUtente\AppData\Roaming\jupyter\kernels\ir\kernel.json'_ posso modificare "display_name" aggiungendo la versione (nel comando _installspec_ si può specificare il display_name) .
 
 
 ## Conda Enviroments
