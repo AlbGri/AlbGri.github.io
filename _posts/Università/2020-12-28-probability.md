@@ -496,7 +496,7 @@ $$t\big[u(t)-u(t-1)\big]+u(t-1)$$
 ### Trasformata di Laplace
   $$F(s)=L\big[f(t)\big]=\int_0^\infty e^{-st}f(t)dt$$  
 es. $f(t)=1$
-$$F(s)=\int_0^\infty e^{-st}\cdot 1dt=\left[-\frac{1}{s}e^{-st}\right]_0^\infty=\frac{1}{s}$$
+  $$F(s)=\int_0^\infty e^{-st}\cdot 1dt=\left[-\frac{1}{s}e^{-st}\right]_0^\infty=\frac{1}{s}$$  
 
 #### Prodotto di convoluzione
 $$\big(f*g\big)(t)=\int_0^t{f(t-\tau)g(\tau)d\tau}\equiv L^{-1}\Big\{L\big[f(t)\big]L\big[g(t)\big]\Big\}$$
