@@ -314,7 +314,7 @@ $$p(x)=\sum_{i=1}^n p(x|A_i)P(A_i)$$
 ### Variabili e densità marginali
 Dato uno spazio di probabilità $$<\Omega,P>$$ consideriamo una variabile bidimensionale $$Z=(X,Y)$$ con densità $$p(x,y)$$. Per definizione di $$Z$$, $$X$$ e $$Y$$ sono a loro volta due variabili aleatorie unidimensionali, e vengono dette variabili marginali, mentre $$Z$$ è la congiunta.  
 
-L'evento marginale $$\{X\in A\}$$ si può anche esprimere come $$\{Z\in B\}$$ dove $$B=\{(X,Y)\in\Re^2\|X\in A\}$$
+L'evento marginale $$\{X\in A\}$$ si può anche esprimere come $$\{Z\in B\}$$ dove $$B=\{(X,Y)\in\Re^2|X\in A\}$$
 
 Sia $$Z=(X,Y)$$ v.a. intera  
 $$p_X(i)=\sum_{j=-\infty}^\infty p_{XY}(i,j)\qquad\qquad p_Y(j)=\sum_{i=-\infty}^\infty p_{XY}(i,j)$$  
@@ -349,8 +349,8 @@ $$p_{Y|X}(y|x)=p_Y(y)$$
 $$F_{XY}(x,y)=F_X(x)F_Y(y)$$  
 $$P(X\le x, Y\le y)=P(X\le x)P(Y\le y)$$  
   
-$$p_{(X+Y)\|Y}(x\|y)=p_X(x-y)$$  
-$$p_{(X+Y)}(x)=\int_{-\infty}^\infty p_{(X+Y)\|Y}(x\|y)p_Y(y)dy=\int_{-\infty}^\infty p_X(x-y)p_Y(y)dy$$  
+$$p_{(X+Y)|Y}(x|y)=p_X(x-y)$$  
+$$p_{(X+Y)}(x)=\int_{-\infty}^\infty p_{(X+Y)|Y}(x|y)p_Y(y)dy=\int_{-\infty}^\infty p_X(x-y)p_Y(y)dy$$  
 
 ## Valore atteso
 
@@ -367,7 +367,7 @@ $$E\big\{\sum_{i=1}^n a_iX_i\big\}=\sum_{i=1}^n a_i E(X_i)$$ Linearità del valo
 $$E\{XY\}\stackrel{ind}{=}E\{X\}E\{Y\}$$   
 $$E\{a\}=a$$ con $$a$$ costante  
 Se $$X(\omega)\ge Y(\omega) \Rightarrow E\{X\}\ge E\{Y\}$$  
-Se $$X(\omega)\ge 0\Rightarrow E\{X\}\ge 0 \Rightarrow E\{\|X|\}\ge \|E\{X\}|$$
+Se $$X(\omega)\ge 0\Rightarrow E\{X\}\ge 0 \Rightarrow E\{|X|\}\ge |E\{X\}|$$
 
 ### Momenti, media e varianza
 
