@@ -28,29 +28,14 @@
 {% endif %}
 
 {% if page.mathjax %}
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
-    TeX: {
-      equationNumbers: { autoNumber: "AMS" },
-      tagSide: "right"
-    },
     tex2jax: {
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
       processEscapes: true
     }
   });
-  MathJax.Hub.Register.StartupHook("TeX AMSmath Ready", function () {
-    MathJax.InputJax.TeX.Stack.Item.AMSarray.Augment({
-      clearTag() {
-        if (!this.global.notags) {
-          this.super(arguments).clearTag.call(this);
-        }
-      }
-    });
-  });
 </script>
-<script type="text/javascript" charset="utf-8"
-  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML">
-</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 {% endif %}
