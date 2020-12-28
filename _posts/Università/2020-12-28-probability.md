@@ -20,7 +20,9 @@ Proprietà distributiva: $$A(B\cup C)=AB\cup AC$$
 Formula di de Morgan: $$\bigcup_{i=1}^\infty A_i=\overline{\bigcap_{i=1}^\infty \bar{A}_i}$$  
 
 Esempio de Morgan con due insiemi: $$A_1\cup A_2=\overline{\bar{A}_1\cap \bar{A}_2}$$
-![png](/assets/images/R/Probabilità/Probabilità_1.png)
+
+![png](/assets/images/Università/Probabilità_1.png)
+
 ### Funzioni
 
 Una funzione è una associazione fra gli elementi di un insieme A (detto insieme di definizione) e un insieme B.
@@ -109,7 +111,7 @@ $$A=AB \mbox{ e } P(B\bar{A})\ge 0 \Rightarrow P(B)\ge P(A)$$
 
 Dati due eventi $A,B$ non necessariamente disgiunti:  
 $$A\cup B=A\cup (B\bar{A})$$
-![png](/assets/images/R/Probabilità/Probabilità_2.png)
+![png](/assets/images/Università/Probabilità_2.png)
 con i due elementi alla destra dell'uguale disgiunti, allora
 $$P(A\cup B)=P(A)+P(B\bar{A})\stackrel{(Prob2)}{=}P(A)+P(B)-P(AB)$$
 
