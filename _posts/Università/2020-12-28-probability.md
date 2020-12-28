@@ -362,12 +362,12 @@ Data una v.a. intera $$X$$ con densità $$p(k)$$
 $$E\{X\}=\sum_{k=-\infty}^\infty kp(k)$$  
 
 ##### Teoremi e proprietà
-$$E\{Y\}=E\{f(X_1,...,X_n)\}=\int_{-\infty}^\infty \dots \int_{-\infty}^\infty f(x_1,...,x_n)p_X(x_1,...,x_n)dx_1\dots dx_n $$  
-- $$E\big\{\sum_{i=1}^n a_iX_i\big\}=\sum_{i=1}^n a_i E(X_i)$$ Linearità del valore atteso
-- $$E\{XY\}\stackrel{ind}{=}E\{X\}E\{Y\}$$ 
-- $$E\{a\}=a$$ con $$a$$ costante
-- Se $$X(\omega)\ge Y(\omega) \Rightarrow E\{X\}\ge E\{Y\}$$
-- Se $$X(\omega)\ge 0\Rightarrow E\{X\}\ge 0 \Rightarrow E\{\|X|\}\ge \|E\{X\}|$$
+$$E\{Y\}=E\{f(X_1,...,X_n)\}=\int_{-\infty}^\infty \dots \int_{-\infty}^\infty f(x_1,...,x_n)p_X(x_1,...,x_n)dx_1\dots dx_n $$    
+$$E\big\{\sum_{i=1}^n a_iX_i\big\}=\sum_{i=1}^n a_i E(X_i)$$ Linearità del valore atteso  
+$$E\{XY\}\stackrel{ind}{=}E\{X\}E\{Y\}$$   
+$$E\{a\}=a$$ con $$a$$ costante  
+Se $$X(\omega)\ge Y(\omega) \Rightarrow E\{X\}\ge E\{Y\}$$  
+Se $$X(\omega)\ge 0\Rightarrow E\{X\}\ge 0 \Rightarrow E\{\|X|\}\ge \|E\{X\}|$$
 
 ### Momenti, media e varianza
 
@@ -379,17 +379,17 @@ $$\pi_X=E\{X^2\}$$ valore quadratico medio
 $$\sigma_X^2=E\{(X-\mu_X)^2\}=\pi_X-\mu_X^2$$ varianza
 
 ##### Teoremi e proprietà
-Per $$Y=aX$$
-- $$\mu_Y=a\mu_X$$
-- $$\sigma_Y^2=a^2\sigma_X^2$$
-- $$\pi_Y=a^2\pi_X$$
+Per $$Y=aX$$  
+$$\mu_Y=a\mu_X$$  
+$$\sigma_Y^2=a^2\sigma_X^2$$  
+$$\pi_Y=a^2\pi_X$$
 
-Per $$Y=X+a$$
-- $$\mu_Y=\mu_X+a$$
-- $$\sigma_Y^2=\sigma_X^2$$
+Per $$Y=X+a$$  
+$$\mu_Y=\mu_X+a$$  
+$$\sigma_Y^2=\sigma_X^2$$
 
-Se $$Z$$ è somma di combinazioni lineari di $$X_i$$ indipendenti $$Z=\sum_i a_i X_i$$
-- $$\sigma_Z^2=\sum_i a_i^2 \sigma_{X_i}^2$$
+Se $$Z$$ è somma di combinazioni lineari di $$X_i$$ indipendenti $$Z=\sum_i a_i X_i$$  
+$$\sigma_Z^2=\sum_i a_i^2 \sigma_{X_i}^2$$
 
 ### Correlazione e covarianza
 
@@ -401,15 +401,15 @@ $$C_{XY}=E\{(X-\mu_X) (Y-\mu_Y)\}$$ covarianza
 $$\rho_{XY}=\frac{C_{XY}}{\sigma_X \sigma_Y}$$
 
 
-##### Teoremi e proprietà
-- $$R_{XY}=R_{YX}$$
-- $$C_{XY}=C_{YX}$$
-- $$C_{XY}=R_{XY}-\mu_X \mu_Y$$
-- $$X\bot Y\Rightarrow C_{XY}=0$$
-- $$C_{XY}=\sigma_X\sigma_Y\Leftrightarrow Y=aX\mbox{ con }a>0$$
-- $$C_{XY}=-\sigma_X\sigma_Y\Leftrightarrow Y=aX\mbox{ con }a<0$$
-- $$C_{XY}^2\le \sigma_X^2 \sigma_Y^2$$
-- $$|C_{XY}|\le \sigma_X \sigma_Y$$
+##### Teoremi e proprietà  
+$$R_{XY}=R_{YX}$$  
+$$C_{XY}=C_{YX}$$  
+$$C_{XY}=R_{XY}-\mu_X \mu_Y$$  
+$$X\bot Y\Rightarrow C_{XY}=0$$  
+$$C_{XY}=\sigma_X\sigma_Y\Leftrightarrow Y=aX\mbox{ con }a>0$$  
+$$C_{XY}=-\sigma_X\sigma_Y\Leftrightarrow Y=aX\mbox{ con }a<0$$  
+$$C_{XY}^2\le \sigma_X^2 \sigma_Y^2$$  
+$$|C_{XY}|\le \sigma_X \sigma_Y$$
 
 ### Valori attesi condizionati e parziali
 Data una v.a. continua $$X$$ e un evento $$A$$  
@@ -431,11 +431,11 @@ Si può anche estendere anche al caso in cui le variabili $$X_i$$ hanno media di
 Data una v.a. $$X$$ con media $$\mu$$ e varianza $$\sigma^2$$ finite, per un qualsiasi numero $$\epsilon >0$$ risulta  
 $$P(|X-\mu|>\epsilon)\le\frac{\sigma^2}{\epsilon^2}$$  
 ##### Legge dei grandi numeri
-Data una v.a. $$X$$ con
-- media $$\mu_X$$
-- varianza $$\sigma^2_X$$
-- media campionaria $$\bar{X}_n=\frac{1}{n}\sum_{i=1}^n X_i$$
-- varianza campionaria $$\sigma_{\bar{X}_n}^2=\frac{1}{n}\sigma_X^2$$
+Data una v.a. $$X$$ con  
+media $$\mu_X$$  
+varianza $$\sigma^2_X$$  
+media campionaria $$\bar{X}_n=\frac{1}{n}\sum_{i=1}^n X_i$$  
+varianza campionaria $$\sigma_{\bar{X}_n}^2=\frac{1}{n}\sigma_X^2$$
 
 TLC  
 $$lim_{n\rightarrow\infty}P(|\bar{X}_n-\mu_X|>\epsilon)=0$$  
