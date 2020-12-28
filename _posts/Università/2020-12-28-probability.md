@@ -502,7 +502,12 @@ $$F(s)=\int_0^\infty e^{-st}\cdot 1dt=\left[-\frac{1}{s}e^{-st}\right]_0^\infty=
 $$\big(f*g\big)(t)=\int_0^t{f(t-\tau)g(\tau)d\tau}\equiv L^{-1}\Big\{L\big[f(t)\big]L\big[g(t)\big]\Big\}$$  
 
 
+$$\{X>k-1\}=\{X=k\}\cup \{X>k\}$$
+$$\{X>k-1\}=\{X=k\}\cup \{X>k\}$$
 
+$$\{X>k-1\}=\{X=k\}\cup \{X>k\}$$  
+
+  $$\{X>k-1\}=\{X=k\}\cup \{X>k\}$$
 
 
 
