@@ -35,9 +35,10 @@
       tagSide: "right"
     },
     tex2jax: {
-      inlineMath: [ ["\\$", "\\$"], ["\\(", "\\)"] ],
-      displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
-      processEscapes: true
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+	  ignoreClass: "tex2jax_ignore|dno"
     }
   });
   MathJax.Hub.Register.StartupHook("TeX AMSmath Ready", function () {
