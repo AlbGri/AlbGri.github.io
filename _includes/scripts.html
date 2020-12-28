@@ -29,28 +29,11 @@
 
 {% if page.mathjax %}
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: {
-      equationNumbers: { autoNumber: "AMS" },
-      tagSide: "right"
-    },
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-      processEscapes: true
-    }
-  });
-  MathJax.Hub.Register.StartupHook("TeX AMSmath Ready", function () {
-    MathJax.InputJax.TeX.Stack.Item.AMSarray.Augment({
-      clearTag() {
-        if (!this.global.notags) {
-          this.super(arguments).clearTag.call(this);
-        }
-      }
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["\\$", "\\$"], ["\\(", "\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } } },
+        messageStyle: "none"
     });
-  });
 </script>
-<script type="text/javascript" charset="utf-8"
-  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML">
-</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 {% endif %}
