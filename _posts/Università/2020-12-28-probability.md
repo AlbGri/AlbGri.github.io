@@ -362,12 +362,12 @@ Data una v.a. intera $$X$$ con densità $$p(k)$$
 $$E\{X\}=\sum_{k=-\infty}^\infty kp(k)$$  
 
 ##### Teoremi e proprietà
-- $$E\{Y\}=E\{f(X_1,...,X_n)\}=\int_{-\infty}^\infty \dots \int_{-\infty}^\infty f(x_1,...,x_n)p_X(x_1,...,x_n)dx_1\dots dx_n $$  
+-  $$E\{Y\}=E\{f(X_1,...,X_n)\}=\int_{-\infty}^\infty \dots \int_{-\infty}^\infty f(x_1,...,x_n)p_X(x_1,...,x_n)dx_1\dots dx_n $$   
 - $$E\big\{\sum_{i=1}^n a_iX_i\big\}=\sum_{i=1}^n a_i E(X_i)$$ Linearità del valore atteso
 - $$E\{XY\}\stackrel{ind}{=}E\{X\}E\{Y\}$$ 
 - $$E\{a\}=a$$ con $$a$$ costante
 - Se $$X(\omega)\ge Y(\omega) \Rightarrow E\{X\}\ge E\{Y\}$$
-- Se $$X(\omega)\ge 0\Rightarrow E\{X\}\ge 0 \Rightarrow E\{\|X\|\}\ge |E\{X\}|$$
+- Se $$X(\omega)\ge 0\Rightarrow E\{X\}\ge 0 \Rightarrow E\{\|X\|\}\ge \|E\{X\}\|$$
 
 ### Momenti, media e varianza
 
