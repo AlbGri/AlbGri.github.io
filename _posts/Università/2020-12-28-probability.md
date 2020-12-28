@@ -10,17 +10,20 @@ mathjax: "true"
 
 ## Propedeuticità
 ### Insiemi
+Proprietà commutativa:  
+$$A\cup B=B\cup A \qquad AB=BA$$  
 
-Proprietà commutativa: $$A\cup B=B\cup A \qquad AB=BA$$  
+Proprietà associativa:  
+$$(A\cup B)\cup C=A\cup (B\cup C) \qquad (AB)C=A(BC)$$  
 
-Proprietà associativa: $$(A\cup B)\cup C=A\cup (B\cup C) \qquad (AB)C=A(BC)$$  
+Proprietà distributiva:  
+$$A(B\cup C)=AB\cup AC$$
 
-Proprietà distributiva: $$A(B\cup C)=AB\cup AC$$
+Formula di de Morgan:  
+$$\bigcup_{i=1}^\infty A_i=\overline{\bigcap_{i=1}^\infty \bar{A}_i}$$  
 
-Formula di de Morgan: $$\bigcup_{i=1}^\infty A_i=\overline{\bigcap_{i=1}^\infty \bar{A}_i}$$  
-
-Esempio de Morgan con due insiemi: $$A_1\cup A_2=\overline{\bar{A}_1\cap \bar{A}_2}$$
-
+Esempio de Morgan con due insiemi:  
+$$A_1\cup A_2=\overline{\bar{A}_1\cap \bar{A}_2}$$
 ![png](/assets/images/Università/Probabilità_1.png)
 
 ### Funzioni
