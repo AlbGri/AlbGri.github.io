@@ -494,7 +494,7 @@ utilizzando la funzione Heaviside si ottiene
 $$t\big[u(t)-u(t-1)\big]+u(t-1)$$
 
 ### Trasformata di Laplace
-$$F(s)=L\big[f(t)\big]=\int_0^\infty e^{-st}f(t)dt$$
+  $$F(s)=L\big[f(t)\big]=\int_0^\infty e^{-st}f(t)dt$$  
 es. $f(t)=1$
 $$F(s)=\int_0^\infty e^{-st}\cdot 1dt=\left[-\frac{1}{s}e^{-st}\right]_0^\infty=\frac{1}{s}$$
 
