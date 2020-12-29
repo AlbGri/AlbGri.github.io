@@ -273,10 +273,10 @@ $$P(a<X\le b)=F(b)-F(a)$$
 Le v.a. possono anche essere definite intere, discrete o continue in base alle caratteristiche della funzione di ripartizione.
 
 ##### Proprietà della funzione di ripartizione
-1. $$F(X)\in [0,1]$$
-2. $$lim_{x\rightarrow -\infty}F(x)=0$$
-3. $$lim_{x\rightarrow \infty}F(x)=1$$
-4. Non decrescente $$F(x_1)\ge F(x_0)\Leftrightarrow x_1 \ge x_0$$  
+$$F(X)\in [0,1]$$  
+$$lim_{x\rightarrow -\infty}F(x)=0$$  
+$$lim_{x\rightarrow \infty}F(x)=1$$  
+Non decrescente $$F(x_1)\ge F(x_0)\Leftrightarrow x_1 \ge x_0$$  
 
 ##### Variabili intere e discrete
 La funzione di ripartizione è costante a tratti e cambia valore solo in corrispondenza ai valori appartenenti a $$\Omega_X$$ (interi nel caso di v.a. intere o un insieme numerabile di punti del'asse reale nel caso di v.a. discrete)  
@@ -352,12 +352,12 @@ $$p_{Y|X}(y|x)=p_Y(y)$$
   
 $$F_{XY}(x,y)=F_X(x)F_Y(y)$$  
 $$P(X\le x, Y\le y)=P(X\le x)P(Y\le y)$$  
-  
-$$p_{(X+Y)|Y}(x|y)=p_X(x-y)$$  
 
 <!--- 
-$$p_{(X+Y)}(x)=\int_{-\infty}^\infty p_{(X+Y)|Y}(x|y)p_Y(y)dy=\int_{-\infty}^\infty p_X(x-y)p_Y(y)dy$$  
+$$p_{(X+Y)|Y}(x|y)=p_X(x-y)$$  
 --->
+$$p_{(X+Y)}(x)=\int_{-\infty}^\infty p_{(X+Y)|Y}(x|y)p_Y(y)dy=\int_{-\infty}^\infty p_X(x-y)p_Y(y)dy$$  
+
 
 
 
