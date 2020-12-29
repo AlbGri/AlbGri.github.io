@@ -76,7 +76,7 @@ L'intersezione tra insiemi corrisponde all'operatore _and_
 Il complementare di un insieme corrisponde all'operatore _not_  
 
 e.g. Dato l'evento  
-$$A=\text{``Esce un numero pari"}=\{2,4,6\}$$  
+$$A=\text{``Esce un numero pari''}=\{2,4,6\}$$  
 la sua probabilità sarà  
 $$P(A)=P(\{2,4,6\})=P(\mbox{`Esce un numero pari'})$$
 
