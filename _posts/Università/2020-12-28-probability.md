@@ -233,7 +233,7 @@ $$p(k)=P(X=k)=\pi(1-\pi)^{k-1}\mbox{ per } k=1,2,... \qquad p(k)=0\mbox{ per }k\
 Sia $$Y$$ una v.a. che esprime il numero $$k$$ di insuccessi prima del primo successo.    
 $$p(k)=P(Y=k)=\pi(1-\pi)^{k}\mbox{ per } k=0,1,2,... \qquad p(k)=0\mbox{ per }k< 0$$  
 Utili:  
-1. $$\{X>k-1\}=\{X=k\}\cup \{X>k\}$$
+1. $$\{X>k-1\}$$ $$=\{X=k\}\cup \{X>k\}$$
 2. $$P(X\ge k+m|X\ge k)=P(X\ge m)$$ proprietà di assenza di memoria:  
 se non si è avuto nessun successo fino al passo $$k$$, la probabilità di avere un successo $$m$$ passi più avanti è la stessa di avere un successo dopo $$m$$ passi dall'inizio. In altre parole, se non ci sono stati successi fino al passo $$k$$ la probabilità di avere successi nei passi successivi non è modificata rispetto all'inizio.
 
@@ -353,9 +353,8 @@ $$p_{Y|X}(y|x)=p_Y(y)$$
 $$F_{XY}(x,y)=F_X(x)F_Y(y)$$  
 $$P(X\le x, Y\le y)=P(X\le x)P(Y\le y)$$  
 
-
-$$p_{(X+Y)|Y}(x|y)=p_X(x-y)$$  
-$$p_{(X+Y)}(x)=\int_{-\infty}^\infty p_{(X+Y)|Y}(x|y)p_Y(y)dy=\int_{-\infty}^\infty p_X(x-y)p_Y(y)dy$$  
+$$p_{(X+Y)\vert Y}(x\vert y)=p_X(x-y)$$  
+$$p_{(X+Y)}(x)=\int_{-\infty}^\infty p_{(X+Y)\vert Y}(x\vert y)p_Y(y)dy=\int_{-\infty}^\infty p_X(x-y)p_Y(y)dy$$  
 
 
 
