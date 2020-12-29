@@ -76,9 +76,9 @@ L'intersezione tra insiemi corrisponde all'operatore _and_
 Il complementare di un insieme corrisponde all'operatore _not_  
 
 e.g. Dato l'evento  
-$$A=\text{``Esce un numero pari''}=\{2,4,6\}$$  
+$$A=\mbox{“Esce un numero pari''}=\{2,4,6\}$$  
 la sua probabilità sarà  
-$$P(A)=P(\{2,4,6\})=P(\mbox{`Esce un numero pari'})$$
+$$P(A)=P(\{2,4,6\})=P(\mbox{“Esce un numero pari''})$$
 
 Per l'assegnazione della probabilità si può seguire l'approccio frequentistico o quello assiomatico.
 
@@ -514,18 +514,6 @@ $$F(s)=\int_0^\infty e^{-st}\cdot 1dt=\left[-\frac{1}{s}e^{-st}\right]_0^\infty=
 $$\big(f*g\big)(t)=\int_0^t{f(t-\tau)g(\tau)d\tau}\equiv L^{-1}\Big\{L\big[f(t)\big]L\big[g(t)\big]\Big\}$$  
 
 
-
-“Esce un numero pari”
-
-“Esce un numero pari”
-
-&ldquo; Esce un numero pari &rdquo;
-
-$$\textrm{“Esce un numero pari”}$$
-
-$$\text{“Esce un numero pari''}$$
-
-$$\mbox{``Esce un numero pari''}$$
 
 
 
