@@ -60,8 +60,12 @@ C:\Users\nomeUtente\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\Use
 1. [Web Flow Charts](https://app.diagrams.net) per i flow-chart
 1. [Ookla Custom](http://ookla.speedtestcustom.com/) speedtest
 1. [Troll link](https://matias.ma/nsfw/)
+1. [Ricezione SMS](http://sms.sellaite.com/)
 1. afdah[dot]info
 
+### Games
+1. A [Cards Against Humanity](https://pyx-1.pretendyoure.xyz/zy/game.jsp) clone
+1. [skribbl.io](https://skribbl.io)
 
 
 ## Altro
