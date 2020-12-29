@@ -15,7 +15,7 @@ Da [qui](https://user.huami.com/hm_account/2.0.0/index.html?v=3.7.24&platform_ap
 Sperimento una versione modificata della Mi Fit.  
 Quest'app consente anche di ottenere la Auth Key su smartphone che non hanno i privilegi [Root](https://it.wikipedia.org/wiki/Root_(utente)). Gadgetbridge non suggerisce questa come strada per ottenere l'Auth Key, ma ne propone [altre](https://codeberg.org/Freeyourgadget/Gadgetbridge/wiki/Huami-Server-Pairing#user-content-on-non-rooted-phones).  
 
-Nel sito di [Modified Mi Fit 4.7.0 - All in One](https://geekdoing.com/threads/modified-mi-fit-4-7-0-all-in-one.2528/) descrivono le caratteristiche dell'app.  
+Nel sito di [Modified Mi Fit 4.7.0 - All in One](https://geekdoing.com/threads/modified-mi-fit-4-7-0-all-in-one.2528/) descrivono le caratteristiche dell'app (la più comoda è che le notifiche si raggruppano e non rimangono singole).  
 [Qui](https://mega.nz/file/A5FUmRKI#pqlbzV4llH9OEVRHS7ZFPqBsiT7vcHQ63p4wI7-8CCs) il link diretto all'apk (per Android 11 c'è un [link](https://mega.nz/file/otUWkRaC#X00jT-GkfhmVWQUfvYhIoy-5rJQPyAUlcnGG5TaGCBA) specifico).  
 Dopo qualche settimana di utilizzo ho iniziato a ricevere richieste di amiciza *spam*. Non ho trovato un modo per bloccarle quindi ho disinstallato l'app e sto provando Gadgetbridge.
 
