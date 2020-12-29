@@ -88,9 +88,9 @@ Inoltre, su $$n$$ ripetizioni di un fenomeno aleatorio, un evento $$A$$ si verif
 ### Spazi di probabilità
 ##### Definizione di probabilità
 Dato un insieme $$\Omega$$ e considerato $$\Phi=\mathcal{P}(\Omega)$$, diremo che una funzione $$P:\Phi\rightarrow\Re$$ è una probabilità su $$\Phi$$ se risulta che
-1. $$P\ge 0, P(\Omega)=1$$
+1. $$P\ge 0 \qquad$$ $$P(\Omega)=1$$
 2. Se $$A_i\in \Phi \mbox{ per } i=1,...,\infty$$ è una successione di eventi disgiunti e cioè tali che $$A_iA_j=\emptyset \mbox{ per }i\neq j$$ allora (sigma-additività) – nb. vale anche per un numero $$n$$ finito di eventi.  
-$$P\Big(\bigcup_{i=1}^\infty A_i\Big)=\sum_{i=1}^\infty P(A_i)\label{eq:Prob1}\tag{Prob1}$$  
+$$P\Big(\bigcup_{i=1}^\infty A_i\Big)=\sum_{i=1}^\infty P(A_i)\label{eq:P1}\tag{P1}$$  
 
 ##### Definizione di spazio di probabilità
 Uno spazio di probabilità è una coppia $$<\Omega,P>$$ in cui $$\Omega$$ è un insieme e $$P$$ è una probabilità su $$\Phi=\mathcal{P}(\Omega)$$.
@@ -100,9 +100,13 @@ Dato uno spazio $$<\Omega,P>$$ consideriamo due eventi $$A,B$$.
 $$A\cup\bar{A}=\Omega$$  
 $$B=B\Omega$$  
 $$B=B(A\cup\bar{A})=(BA)\cup (B\bar{A})$$  
-poiché $$BA$$ e $$B\bar{A}$$ sono disgiunti, con la ([Prob1](#mjx-eqn-eq:Prob1)) si ottiene  
-$$P(B)=P(BA)+P(B\bar{A})\label{eq:Prob2}\tag{Prob2}$$  
-$$P(\bar{A})=1-P(A)\label{eq:Prob3}\tag{Prob3}$$  
+poiché $$BA$$ e $$B\bar{A}$$ sono disgiunti, si ottiene  
+$$P(B)\stackrel{(P1)}{=}P(BA)+P(B\bar{A})\label{eq:P2}\tag{P2}$$  
+$$P(\bar{A})=1-P(A)\label{eq:P3}\tag{P3}$$  
+
+<!--- 
+la ([P1](#mjx-eqn-eq:P1)) 
+--->
 
 Dati due eventi $$A,B$$ tali che $$A\subset B$$ cioè che $$A$$ è contenuto o coincidente con $$B$$:    
 $$A=AB \mbox{ e } P(B\bar{A})\ge 0 \Rightarrow P(B)\ge P(A)$$  
@@ -111,7 +115,7 @@ Dati due eventi $$A,B$$ non necessariamente disgiunti:
 $$A\cup B=A\cup (B\bar{A})$$  
 ![png](/assets/images/Università/Probabilità_2.png)
 con i due elementi alla destra dell'uguale disgiunti, allora  
-$$P(A\cup B)=P(A)+P(B\bar{A})\stackrel{(Prob2)}{=}P(A)+P(B)-P(AB)$$  
+$$P(A\cup B)=P(A)+P(B\bar{A})\stackrel{(P2)}{=}P(A)+P(B)-P(AB)$$  
 
 ### Spazi interi, probabilità uniformi
 Uno spazio è intero quando $$\Omega\subset\Im$$, cioè $$\Omega$$ è un insieme di numeri interi.
@@ -147,10 +151,10 @@ $$P(A)=\sum_{x\in A}p(x)$$
 ### Eventi condizionati
 ##### Definizione di probabilità condizionata (nell'approccio assiomatico)
 Siano dati uno spazio di probabilità $$<\Omega,P>$$ e due eventi $$A$$ e $$B$$ con $$P(A)>0$$. Si definisce la probabilità condizionata di $$B$$ dato $$A$$  
-$$P(B|A)=\frac{P(AB)}{P(A)}\label{eq:Cond1}\tag{Cond1}$$  
+$$P(B|A)=\frac{P(AB)}{P(A)}\label{eq:C1}\tag{C1}$$  
 Si può pensare che $$A$$ sia un evento fisso e noto, mentre $$B$$ è un qualsiasi evento di $$\Phi=\mathcal{P}(\Omega)$$.  
 Dalla precedente equazione si ottiene  
-$$P(AB)=P(B|A)P(A)\label{eq:Cond2}\tag{Cond2}$$  
+$$P(AB)=P(B|A)P(A)\label{eq:C2}\tag{C2}$$  
 Si dimostra che  
 $$P(B|A)\le 0 \mbox{ e } P(\Omega |A)=\frac{P(\Omega A)}{P(A)}=\frac{P(A)}{P(A)}=1$$  
 inoltre se gli eventi $$B_i$$ sono disgiunti  
@@ -175,23 +179,23 @@ o equivalentemente $$\sum_{i=1}^n P(A_i)=1$$
 
 ##### Probabilità totali
 Dati uno spazio di probabilità, una partizione $$A_i$$ ed un evento $$B$$, il teorema delle probabilità totali:  
-$$P(B)=\sum_{i=1}^n P(B|A_i)P(A_i)\label{eq:PrTot1}\tag{PrTot1}$$  
+$$P(B)=\sum_{i=1}^n P(B|A_i)P(A_i)\label{eq:PT1}\tag{PT1}$$  
 dimostrazione:  
 visto che $$A_i$$ è una partizione  
 $$B=B\Omega=B\Big(\bigcup_{i=1}^n A_i\Big)=\bigcup_{i=1}^n BA_i$$  
-$$P(B)=P\Big(\bigcup_{i=1}^n BA_i\Big)\stackrel{(Prob1)}{=}\sum_{i=1}^n P(BA_i)\stackrel{(Cond2)}{=}\sum_{i=1}^n P(B|A_i)P(A_i)$$  
+$$P(B)=P\Big(\bigcup_{i=1}^n BA_i\Big)\stackrel{(P1)}{=}\sum_{i=1}^n P(BA_i)\stackrel{(C2)}{=}\sum_{i=1}^n P(B|A_i)P(A_i)$$  
 
 ##### Bayes
 Formula o regola di Bayes  
-$$P(A|B)=\frac{P(B|A)P(A)}{P(B)}\label{eq:Bayes1}\tag{Bayes1}$$  
+$$P(A|B)=\frac{P(B|A)P(A)}{P(B)}\label{eq:B1}\tag{B1}$$  
 Teorema di Bayes  
-$$P(A_i|B)=\frac{P(B|A_i)P(A_i)}{\sum_{k=1}^n P(B|A_k)P(A_k)}\label{eq:Bayes2}\tag{Bayes2}$$  
+$$P(A_i|B)=\frac{P(B|A_i)P(A_i)}{\sum_{k=1}^n P(B|A_k)P(A_k)}\label{eq:B2}\tag{B2}$$  
 
 
 ### Indipendenza e prove ripetute
 ##### Definizione di eventi indipendenti
 Dato uno spazio di probabilità e $$n$$ eventi $$A_i \mbox{ per } i=1,...n$$ gli eventi si dicono (statisticamente) indipendenti se, assegnati in qualsiasi modo $$k\le n$$ numeri $$n_1,n_2,...,n_k$$ tutti diversi e compresi fra $$1$$ e $$n$$ risulta  
-$$P(A_{n_1} A_{n_2} \cdots A_{n_k})=P(A_{n_1})P(A_{n_2})\cdots P(A_{n_k})\label{eq:Indip1}\tag{Indip1}$$  
+$$P(A_{n_1} A_{n_2} \cdots A_{n_k})=P(A_{n_1})P(A_{n_2})\cdots P(A_{n_k})\label{eq:I1}\tag{I1}$$  
 vale anche con le probabilità condizionate, ad esempio nel caso di due eventi indipendenti $$A$$ e $$B$$ condizionati ad un terzo evento $$C$$, si ha  
 $$P(AB|C)=P(A|C)\cdot P(B|C)$$  
 
@@ -350,7 +354,12 @@ $$F_{XY}(x,y)=F_X(x)F_Y(y)$$
 $$P(X\le x, Y\le y)=P(X\le x)P(Y\le y)$$  
   
 $$p_{(X+Y)|Y}(x|y)=p_X(x-y)$$  
+
+<!--- 
 $$p_{(X+Y)}(x)=\int_{-\infty}^\infty p_{(X+Y)|Y}(x|y)p_Y(y)dy=\int_{-\infty}^\infty p_X(x-y)p_Y(y)dy$$  
+--->
+
+
 
 ## Valore atteso
 
