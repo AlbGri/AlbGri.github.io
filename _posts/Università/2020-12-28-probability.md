@@ -515,6 +515,14 @@ $$\big(f*g\big)(t)=\int_0^t{f(t-\tau)g(\tau)d\tau}\equiv L^{-1}\Big\{L\big[f(t)\
 
 
 
+$$\textnormal{``Esce un numero pari''}$$
+
+$$\textrm{``Esce un numero pari''}$$
+
+$$\text{``Esce un numero pari''}$$
+
+$$\mbox{``Esce un numero pari''}$$
+
 
 
 ...
