@@ -10,10 +10,9 @@ spinner_plot <- function (probs, ...)
   df <- data.frame(Region, y)
   TH <- theme(plot.title = element_text(colour = "blue", size = 18, 
                                         hjust = 0.5, vjust = 0.8, angle = 0))
-  p <- ggplot(df, aes(1, y, fill = Region)) + geom_bar(stat = "identity", 
-                                                       color = "black") + coord_polar(theta = "y", direction = 1) + 
-    xlab("") + ylab("") + theme(axis.text.x = element_blank(), 
-                                axis.text.y = element_blank(), axis.ticks = element_blank())
+  p <- ggplot(df, aes(1, y, fill = Region)) + geom_bar(stat = "identity", color = "black") + 
+    coord_polar(theta = "y", direction = 1) + xlab("") + ylab("") + 
+    theme(axis.text.x = element_blank(), axis.text.y = element_blank(), axis.ticks = element_blank())
   if ("title" %in% names(args)) 
     p <- p + ggtitle(args$title) + TH
   p
@@ -150,15 +149,13 @@ beta.select <- function (quantile1, quantile2)
 # beta_draw
 beta_draw <- function (shape_pars) 
 {
-  TH <- theme(plot.title = element_text(colour = "blue", size = 18, 
-                                        hjust = 0.5, vjust = 0.8, angle = 0))
-  Title <- paste("Beta(", shape_pars[1], ",", shape_pars[2], 
-                 ") Curve")
+  TH <- theme(plot.title = element_text(colour = "blue", size = 18, hjust = 0.5, vjust = 0.8, angle = 0))
+  Title <- paste("Beta(", shape_pars[1], ",", shape_pars[2], ") Curve")
   x <- NULL
-  ggplot(data.frame(x = c(0, 1)), aes(x)) + stat_function(fun = dbeta, 
-                                                          geom = "line", color = "red", size = 2.5, args = list(shape1 = shape_pars[1], 
-                                                                                                                shape2 = shape_pars[2])) + ggtitle(Title) + TH + 
-    xlab("P") + ylab("Density")
+  ggplot(data.frame(x = c(0, 1)), aes(x)) + 
+    stat_function(fun = dbeta, geom = "line", color = "red", size = 2.5, 
+                  args = list(shape1 = shape_pars[1], shape2 = shape_pars[2])) + 
+    ggtitle(Title) + TH + xlab("P") + ylab("Density")
 }
 
 # beta_interval
@@ -178,16 +175,15 @@ beta_interval <- function (prob, shape_par, Color = "orange")
   xx <- c(LO, x0, HI, lo)
   yy <- c(0, y0, 0, 0)
   betaprob <- diff(pbeta(c(lo, hi), shape_par[1], shape_par[2]))
-  message <- paste("P(", round(lo, 3), "< P < ", round(hi, 
-                                                       3), ") =", round(betaprob, 3))
+  message <- paste("P(", round(lo, 3), "< P < ", round(hi, 3), ") =", round(betaprob, 3))
   other_text <- paste("Beta(", shape_par[1], ", ", shape_par[2], 
                       ")", sep = "")
   x_text <- ifelse(shape_par[1] > shape_par[2], 0.15, 0.85)
   y_text <- 0.7 * max(dx)
   TH <- theme(plot.title = element_text(colour = "blue", size = 18, 
                                         hjust = 0.5, vjust = 0.8, angle = 0))
-  p + geom_polygon(data = data.frame(xx, yy), aes(xx, yy), 
-                   fill = Color) + ggtitle(message) + xlab("P") + ylab("Density") + 
+  p + geom_polygon(data = data.frame(xx, yy), aes(xx, yy), fill = Color) + 
+    ggtitle(message) + xlab("P") + ylab("Density") + 
     TH + annotate("text", x = x_text, y = y_text, label = other_text, 
                   size = 6, color = "blue")
 }
