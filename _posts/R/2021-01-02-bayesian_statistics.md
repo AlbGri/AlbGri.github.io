@@ -425,7 +425,7 @@ bayes_df
 
 ### Verosimiglianza (Binomiale)
 A seguito della raccolta empirica dei dati da un campione, si ottengono 12 positivi su 20.  
-L'esperimento è binomiale: la probabilità di 12 successi su 20, con probabilità di successo $$p$$
+L'esperimento è binomiale: la probabilità di 12 successi su 20, con probabilità di successo $$p$$  
 $$L={20\choose 12}p^{12}(1-p)^{8}$$
 
 
@@ -535,7 +535,7 @@ bayes_df %>% filter(P>0.5) %>% select(Posterior) %>% sum()
 ## Distribuzione a priori continua
 
 ### Distribuzione a priori (Beta)
-$$p^{a-1}(1-p)^{b-1}$$ con $$p \in \Re | 0< p< 1$$
+$$p^{a-1}(1-p)^{b-1}$$ con $$p \in \Re | 0< p< 1$$  
 Rappresenta la conoscenza a priori su $$p$$  
 Non è semplice identificare i parametri $$a$$ e $$b$$.  
 Per un semplice esempio, ipotizzo $$a=7$$ e $$b=10$$
@@ -639,12 +639,12 @@ beta_area(0, 0.4, parametri_priori)
 
 ### Verosimiglianza (Binomiale)
 A seguito della raccolta empirica dei dati da un campione, si ottengono 12 positivi su 20.  
-L'esperimento è binomiale: la probabilità di 12 successi su 20, con probabilità di successo $$p$$
+L'esperimento è binomiale: la probabilità di 12 successi su 20, con probabilità di successo $$p$$  
 $$L={20\choose 12}p^{12}(1-p)^{8}$$
 
 ### Distribuzione a posteriori (Beta)
-$$\mbox{Posteriori}\propto \mbox{Prori} \times \mbox{Verosimiglianza}$$
-$$\mbox{Posteriori}\propto [p^{3.06}(1-p)^{2.56-1}]\times [p^{12}(1-p)^8]=p^{15.06-1}(1-p)^{10.56-1}\equiv \mbox{Densità }\mathrm{B}(15.06,10.56)$$
+$$\mbox{Posteriori}\propto \mbox{Prori} \times \mbox{Verosimiglianza}$$  
+$$\mbox{Posteriori}\propto [p^{3.06}(1-p)^{2.56-1}]\times [p^{12}(1-p)^8]=p^{15.06-1}(1-p)^{10.56-1}\equiv \mbox{Densità }\mathrm{B}(15.06,10.56)$$  
 Quindi si ha
 $$\bigg\{\mbox{Priori}=\mathrm{B}\big(a,b\big)\bigg\}\times \bigg\{\mbox{Verosimiglianza}=\mathrm{Bin}\Big(p=\frac{s}{s+f}\Big)\bigg\}=\bigg\{\mbox{Posteriori}=\mathrm{B}\big(a+s,b+f\big)\bigg\}$$
 
@@ -714,9 +714,9 @@ beta_interval(0.90, parametri_posteriori)
 La probabilità che $$p$$ sia nell'intervallo $$(0.427,0.741)$$ è esattamente 0.9.  
 #### Intervalli di confidenza
 Nell'approccio classico (frequentista), l'intervallo di confidenza è basato sulla condizione degli esperimenti ripetuti.  
-Secondo il metodo "aggiungi 2 successi e 2 insuccessi" di Agresti e Coull, dati $$y$$ successi e un campione di dimensione $$n$$, l'intervallo 90% è:
-$$(\hat{p}-1.645se,\hat{p}+1.645se)$$
-con
+Secondo il metodo "aggiungi 2 successi e 2 insuccessi" di Agresti e Coull, dati $$y$$ successi e un campione di dimensione $$n$$, l'intervallo 90% è:  
+$$(\hat{p}-1.645se,\hat{p}+1.645se)$$  
+con  
 $$\hat{p}=\frac{y+2}{n+4}$$ e $$se=\sqrt{\frac{\hat{p}(1-\hat{p})}{n+4}}$$
 
 
@@ -1096,11 +1096,11 @@ round(bayes_df,3)
 
 
 ### Distribuzione a posteriori (Normale)
-$$\mbox{Posteriori}\propto \mbox{Prori} \times \mbox{Verosimiglianza}$$
+$$\mbox{Posteriori}\propto \mbox{Prori} \times \mbox{Verosimiglianza}$$  
 Quindi si ha
-$$\bigg\{\mbox{Priori}=\mathscr{N}\big(M_0,S_0\big)\bigg\}\times \bigg\{\mbox{Verosimiglianza}=\mathscr{N}\big(M_1,S_1\big)\bigg\}=\bigg\{\mbox{Posteriori}=\mathscr{N}\big(M_{Post},S_{Post}\big)\bigg\}$$
-con
-$$P_k=\frac{1}{S_k^2}$$
+$$\bigg\{\mbox{Priori}=\mathscr{N}\big(M_0,S_0\big)\bigg\}\times \bigg\{\mbox{Verosimiglianza}=\mathscr{N}\big(M_1,S_1\big)\bigg\}=\bigg\{\mbox{Posteriori}=\mathscr{N}\big(M_{Post},S_{Post}\big)\bigg\}$$  
+con  
+$$P_k=\frac{1}{S_k^2}$$  
 $$M_{Post}=\mbox{W.AVG}(M;P)$$  
 $$S_{Post}=\frac{1}{\sqrt{\sum S}}$$
 
@@ -1585,8 +1585,8 @@ sum(diag(prior))
 
 
 #### Distribuzione a priori (Beta)
-Assumiamo che una curva beta rappresenti la conoscenza riguardo $$p_W$$ e un'altra riguardo $$p_M$$ e che siano indipendenti.
-$$p_W \sim \mathrm{B}(1,1)$$
+Assumiamo che una curva beta rappresenti la conoscenza riguardo $$p_W$$ e un'altra riguardo $$p_M$$ e che siano indipendenti.  
+$$p_W \sim \mathrm{B}(1,1)$$  
 $$p_M \sim \mathrm{B}(1,1)$$
 
 
@@ -1673,7 +1673,7 @@ quantile(df$d_21, c(0.05, 0.95))
 5%:-0.0468267513603719; 95%:0.410351553897697
 
 
-$$P(-0.05<p_M-p_W<0.41)=0.9$$
+$$P(-0.05<p_M-p_W<0.41)=0.9$$  
 Dal momento che gli interavalli contengono lo zero, non c'è evidenza significativa per dire che le proporzioni sono differenti.
 
 
@@ -1687,7 +1687,7 @@ Sia $$y$$ una v.a. che modella i secondi necessari per calciare un rigore.
 Prima abbiamo fatto inferenza su $$M$$ campionando un modello normale, assumendo una deviazione standard $$S$$, adesso entrambi parametri sono sconosciuti.
 
 ### Distribuzione a priori (non-informativa)
-Sia $$M$$ che $$S$$ sono continue, usiamo una priori "non-informativa".
+Sia $$M$$ che $$S$$ sono continue, usiamo una priori "non-informativa".  
 $$g(M,S)=\frac{1}{S}$$
 
 ### Verosimiglianza
@@ -1720,7 +1720,7 @@ df <- data.frame(Player="One",
 
 
 ### Distribuzione a posteriori (modello lineare)
-$$Posteriori \propto Verosimiglianza \times \frac{1}{S}$$
+$$Posteriori \propto Verosimiglianza \times \frac{1}{S}$$  
 Simulo $$(M, S)$$ dalla posteriori a 2 parametri.
 
 Questo modello normale si può vedere come un modello lineare con solo l'intercetta.  
