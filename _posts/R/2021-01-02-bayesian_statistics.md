@@ -1612,7 +1612,7 @@ Sarà una $$\mathrm{B}(p_W,p_M)$$
 $$p_W \sim \mathrm{B}(10+1,10+1)$$  
 $$p_M \sim \mathrm{B}(14+1,6+1)$$ 
 
-...da fare verifiche
+**[TO DO] DA DETERMINARE ANALITICAMENTE L'A POSTERIORI**
 
 
 ```R
