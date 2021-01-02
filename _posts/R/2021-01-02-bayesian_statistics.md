@@ -30,9 +30,8 @@ spinner_plot(areas)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_4_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_4_0.png" width="400">  
     
-
 
 
 ```R
@@ -135,7 +134,7 @@ bar_plot(many_spins)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_13_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_13_0.png" width="400">  
     
 
 
@@ -230,7 +229,7 @@ bayes_df
 </table>
 
 
-![png](/assets/images/R/BayesianStatistics_Prior.png)
+<img src="/assets/images/R/BayesianStatistics_Prior.png" width="400">  
 ### Verosimiglianza
 Conosciamo la probabilità di estrazione del colore _Rosso_ per ciascun spinner
 
@@ -284,7 +283,7 @@ bayes_df
 </table>
 
 
-![png](/assets/images/R/BayesianStatistics_Posterior.png)
+<img src="/assets/images/R/BayesianStatistics_Posterior.png" width="400">  
 Quindi, mi aspetto che lo spinner $$B$$ sia stato quello utilizzato (in quanto l'a priori, aggiornata con la verosimiglianza, cioè l'a posteriori, fa emergere che lo spinner $$B$$ sia il più probabile).
 
 
@@ -295,7 +294,7 @@ prior_post_plot(bayes_df)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_28_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_28_0.png" width="400">  
     
 
 
@@ -386,7 +385,7 @@ prior_post_plot(bayes_df2)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_35_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_35_0.png" width="400">  
     
 
 
@@ -499,7 +498,7 @@ prior_post_plot(bayes_df)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_44_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_44_0.png" width="400">  
     
 
 
@@ -564,7 +563,7 @@ beta_area(0.4, 0.8, c(7, 10))
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_51_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_51_0.png" width="400">  
     
 
 
@@ -585,7 +584,7 @@ beta_quantile(0.5, c(7, 10))
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_53_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_53_0.png" width="400">  
     
 
 
@@ -622,7 +621,7 @@ beta_draw(parametri_priori)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_56_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_56_0.png" width="400">  
     
 
 
@@ -634,7 +633,7 @@ beta_interval(0.5, parametri_priori)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_57_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_57_0.png" width="400">  
     
 
 
@@ -646,7 +645,7 @@ beta_area(0, 0.4, parametri_priori)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_58_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_58_0.png" width="400">  
     
 
 
@@ -686,7 +685,7 @@ beta_prior_post(parametri_priori, parametri_posteriori)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_62_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_62_0.png" width="400">  
     
 
 
@@ -711,7 +710,7 @@ beta_area(0.8, 1, parametri_posteriori)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_65_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_65_0.png" width="400">  
     
 
 
@@ -726,7 +725,7 @@ beta_interval(0.90, parametri_posteriori)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_67_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_67_0.png" width="400">  
     
 
 
@@ -772,7 +771,7 @@ curve(dbeta(x, parametri_posteriori[1], parametri_posteriori[2]), add=TRUE, col=
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_73_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_73_0.png" width="400">  
     
 
 
@@ -829,7 +828,7 @@ hist(sim_logit, freq=FALSE)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_79_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_79_0.png" width="400">  
     
 
 
@@ -869,7 +868,7 @@ prob_plot(bayes_df) + ylim(0,0.25)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_83_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_83_0.png" width="400">  
     
 
 
@@ -885,7 +884,7 @@ many_normal_plots(Models)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_85_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_85_0.png" width="400">  
     
 
 
@@ -961,7 +960,7 @@ prior_post_plot(bayes_df)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_90_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_90_0.png" width="400">  
     
 
 
@@ -1040,7 +1039,7 @@ normal_draw(parametri_priori)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_94_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_94_0.png" width="400">  
     
 
 
@@ -1061,7 +1060,7 @@ normal_quantile(0.25, parametri_priori)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_96_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_96_0.png" width="400">  
     
 
 
@@ -1282,7 +1281,7 @@ many_normal_plots(list(as.numeric(parametri_priori[1:2]),
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_108_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_108_0.png" width="400">  
     
 
 
@@ -1344,7 +1343,7 @@ normal_draw(parametri_posteriori)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_116_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_116_0.png" width="400">  
     
 
 
@@ -1364,7 +1363,7 @@ normal_interval(0.80, parametri_posteriori)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_118_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_118_0.png" width="400">  
     
 
 
@@ -1456,7 +1455,7 @@ draw_two_p(prior)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_126_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_126_0.png" width="400">  
     
 
 
@@ -1532,7 +1531,7 @@ draw_two_p(posterior)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_131_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_131_0.png" width="400">  
     
 
 
@@ -1586,7 +1585,7 @@ prob_plot(d)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_134_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_134_0.png" width="400">  
     
 
 
@@ -1647,7 +1646,7 @@ ggplot(df, aes(pW,pM)) + geom_point() + xlim(0,1) + ylim(0,1)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_141_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_141_0.png" width="400">  
     
 
 
@@ -1679,7 +1678,7 @@ ggplot(df, aes(pW,pM)) + geom_point() + xlim(0,1) + ylim(0,1)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_145_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_145_0.png" width="400">  
     
 
 
@@ -1708,7 +1707,7 @@ ggplot(df, aes(d_21)) +
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_148_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_148_0.png" width="400">  
     
 
 
@@ -1830,7 +1829,7 @@ ggplot(data.frame(sim_M, sim_S), aes(sim_M, sim_S)) + geom_point()
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_162_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_162_0.png" width="400">  
     
 
 
@@ -1855,7 +1854,7 @@ round(quantile(sim_S, c(0.05, 0.95)),3)
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_163_1.png)
+<img src="/assets/images/R/BayesianStatistics_output_163_1.png" width="400">  
     
 
 
@@ -1942,7 +1941,7 @@ ggplot(sim_beta, aes(Intercetta, PlayerTwo)) + geom_point() +
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_172_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_172_0.png" width="400">  
     
 
 
@@ -1954,7 +1953,7 @@ ggplot(sim_beta, aes(PlayerTwo)) + geom_density()
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_173_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_173_0.png" width="400">  
     
 
 
@@ -1976,7 +1975,7 @@ ggplot(posterior, aes(standardized_effect)) + geom_density() +
 
 
     
-![png](/assets/images/R/BayesianStatistics_output_175_0.png)
+<img src="/assets/images/R/BayesianStatistics_output_175_0.png" width="400">  
     
 
 
