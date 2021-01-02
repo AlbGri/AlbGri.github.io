@@ -1496,15 +1496,15 @@ $$d=p_M-p_W$$
 ```R
 # differenze e probabilità
 
-# tabella <- as.matrix(posterior,3)
+# tabella <- as.matrix(posterior)
 # tabella <- data.frame(
-#   diff21=as.vector(outer(colnames(tabella), rownames(tabella), FUN=function(x,y) round(as.numeric(y)-as.numeric(x),1))),
-#   Prob=as.vector(tabella)
+#   diff21 = as.vector(outer(colnames(tabella), rownames(tabella), FUN=function(x,y) round(as.numeric(y)-as.numeric(x),1))),
+#   Prob = as.vector(tabella)
 # )
 
 # d <- tabella %>%
 #   group_by(diff21) %>%
-#   summarise(Prob=sum(Prob), .groups = 'drop_last')
+#   summarise(Prob = sum(Prob), .groups = 'drop_last')
 
 d <- two_p_summarize(posterior)
 d %>% head() %>% round(3)
