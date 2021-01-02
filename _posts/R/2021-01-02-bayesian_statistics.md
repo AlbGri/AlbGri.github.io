@@ -209,7 +209,7 @@ Non sapendo se alcuni di questi spinner vengono scelti più o meno facilmente, a
 
 ```R
 # distribuzione a priori
-bayes_df$$Prior <- rep(0.25, 4)
+bayes_df$Prior <- rep(0.25, 4)
 bayes_df
 ```
 
@@ -236,7 +236,7 @@ Conosciamo la probabilità di estrazione del colore _Rosso_ per ciascun spinner
 
 ```R
 # probabilità di ottenere rosso
-bayes_df$$Likelihood <- round(c(1/3, 1/2, 1/4, 1/6), 2)
+bayes_df$Likelihood <- round(c(1/3, 1/2, 1/4, 1/6), 2)
 bayes_df
 ```
 
@@ -330,7 +330,7 @@ bayes_df2
 
 ```R
 # verosimiglianza del blu
-bayes_df2$$Likelihood <- round(c(1/3, 1/4, 1/2, 2/3), 2)
+bayes_df2$Likelihood <- round(c(1/3, 1/4, 1/2, 2/3), 2)
 bayes_df2
 ```
 
@@ -438,7 +438,7 @@ $$L={20\choose 12}p^{12}(1-p)^{8}$$
 ```R
 # verosimiglianza
 bayes_df <- bayes_df %>% 
-    mutate(Likelihood = round(dbinom(12, size=20, prob=bayes_df$$P),3)) %>%
+    mutate(Likelihood = round(dbinom(12, size=20, prob=bayes_df$P),3)) %>%
     select(P, Prior, Likelihood)
 bayes_df
 ```
@@ -897,7 +897,7 @@ lo standard error associato $$se=\frac{S}{\sqrt{n}}=\frac{4}{\sqrt{20}}=0.89$$
 # collect data
 ymean <- 17.2
 se <- 4/sqrt(20)
-bayes_df$$Likelihood <- dnorm(ymean, mean=bayes_df$$M, sd=se)
+bayes_df$Likelihood <- dnorm(ymean, mean=bayes_df$M, sd=se)
 round(bayes_df, 3)
 ```
 
@@ -1023,9 +1023,9 @@ parametri_priori
 
 
 <dl>
-	<dt>$$mu</dt>
+	<dt>$mu</dt>
 		<dd>18</dd>
-	<dt>$$sigma</dt>
+	<dt>$sigma</dt>
 		<dd>1.56</dd>
 </dl>
 
@@ -1046,7 +1046,7 @@ normal_draw(parametri_priori)
 
 ```R
 # trovo il quantile 0.25 della priori
-qnorm(0.25, parametri_priori$$mu, parametri_priori$$sigma)
+qnorm(0.25, parametri_priori$mu, parametri_priori$sigma)
 ```
 
 
@@ -1071,7 +1071,7 @@ normal_quantile(0.25, parametri_priori)
 # assegno distribuzione a priori
 bayes_df <- data.frame(M=15:22)
 bayes_df <- bayes_df %>%
-    mutate(Prior=round(dnorm(M, mean=parametri_priori$$mu, sd=parametri_priori$$sigma),3))
+    mutate(Prior=round(dnorm(M, mean=parametri_priori$mu, sd=parametri_priori$sigma),3))
 bayes_df
 ```
 
@@ -1106,7 +1106,7 @@ lo standard error associato $$se=\frac{S}{\sqrt{n}}=\frac{4}{\sqrt{20}}=0.89$$
 # verosimiglianza
 parametri_verosimiglianza <- list(mu=17.2, sigma=0.89)
 bayes_df <- bayes_df %>%
-    mutate(Likelihood=dnorm(parametri_verosimiglianza$$mu, mean=M, sd=parametri_verosimiglianza$$sigma))
+    mutate(Likelihood=dnorm(parametri_verosimiglianza$mu, mean=M, sd=parametri_verosimiglianza$sigma))
 round(bayes_df,3)
 ```
 
@@ -1143,17 +1143,17 @@ $$S_{Post}=\frac{1}{\sqrt{\sum S}}$$
 
 ```R
 # aggiungo la precision ai parametri a priori
-parametri_priori <- append(parametri_priori, list(precision=round(1/parametri_priori$$sigma^2,2)))
+parametri_priori <- append(parametri_priori, list(precision=round(1/parametri_priori$sigma^2,2)))
 parametri_priori
 ```
 
 
 <dl>
-	<dt>$$mu</dt>
+	<dt>$mu</dt>
 		<dd>18</dd>
-	<dt>$$sigma</dt>
+	<dt>$sigma</dt>
 		<dd>1.56</dd>
-	<dt>$$precision</dt>
+	<dt>$precision</dt>
 		<dd>0.41</dd>
 </dl>
 
@@ -1162,17 +1162,17 @@ parametri_priori
 
 ```R
 # parametri verosimiglianza, con la sua precision
-parametri_verosimiglianza <- append(parametri_verosimiglianza, list(precision=round(1/parametri_verosimiglianza$$sigma^2,2)))
+parametri_verosimiglianza <- append(parametri_verosimiglianza, list(precision=round(1/parametri_verosimiglianza$sigma^2,2)))
 parametri_verosimiglianza
 ```
 
 
 <dl>
-	<dt>$$mu</dt>
+	<dt>$mu</dt>
 		<dd>17.2</dd>
-	<dt>$$sigma</dt>
+	<dt>$sigma</dt>
 		<dd>0.89</dd>
-	<dt>$$precision</dt>
+	<dt>$precision</dt>
 		<dd>1.26</dd>
 </dl>
 
@@ -1182,24 +1182,24 @@ parametri_verosimiglianza
 ```R
 # parametri posteriori, con la sua precision
 parametri_posteriori <- list(
-  mu = round(weighted.mean(x=c(parametri_priori$$mu, 
-                       parametri_verosimiglianza$$mu), 
-                   w=c(parametri_priori$$precision, 
-                       parametri_verosimiglianza$$precision)),2),
-  sigma = round(1/sqrt(sum(c(parametri_priori$$precision, 
-                       parametri_verosimiglianza$$precision))),2),
-  precision = sum(c(parametri_priori$$precision, 
-                    parametri_verosimiglianza$$precision)))
+  mu = round(weighted.mean(x=c(parametri_priori$mu, 
+                       parametri_verosimiglianza$mu), 
+                   w=c(parametri_priori$precision, 
+                       parametri_verosimiglianza$precision)),2),
+  sigma = round(1/sqrt(sum(c(parametri_priori$precision, 
+                       parametri_verosimiglianza$precision))),2),
+  precision = sum(c(parametri_priori$precision, 
+                    parametri_verosimiglianza$precision)))
 parametri_posteriori
 ```
 
 
 <dl>
-	<dt>$$mu</dt>
+	<dt>$mu</dt>
 		<dd>17.4</dd>
-	<dt>$$sigma</dt>
+	<dt>$sigma</dt>
 		<dd>0.77</dd>
-	<dt>$$precision</dt>
+	<dt>$precision</dt>
 		<dd>1.67</dd>
 </dl>
 
@@ -1296,7 +1296,7 @@ Test statistics $$Z=\frac{\bar{y}-19}{se}$$
 
 ```R
 # Z score
-z <- (parametri_verosimiglianza$$mu - 19)/parametri_verosimiglianza$$sigma
+z <- (parametri_verosimiglianza$mu - 19)/parametri_verosimiglianza$sigma
 z
 ```
 
@@ -1323,7 +1323,7 @@ $$\mathscr{N}(17.4,0.77)$$
 
 ```R
 # probabilità che M>=19
-1 - pnorm(19, parametri_posteriori$$mu, parametri_posteriori$$sigma)
+1 - pnorm(19, parametri_posteriori$mu, parametri_posteriori$sigma)
 ```
 
 
@@ -1350,7 +1350,7 @@ normal_draw(parametri_posteriori)
 
 ```R
 # simulation
-M_sim <- rnorm(1000, mean=parametri_posteriori$$mu, sd=parametri_posteriori$$sigma)
+M_sim <- rnorm(1000, mean=parametri_posteriori$mu, sd=parametri_posteriori$sigma)
 ```
 
 
@@ -1377,7 +1377,7 @@ Step
 
 ```R
 # simulazione dalla posteriori
-M_sim <- rnorm(1000, mean=parametri_posteriori$$mu, sd=parametri_posteriori$$sigma)
+M_sim <- rnorm(1000, mean=parametri_posteriori$mu, sd=parametri_posteriori$sigma)
 ```
 
 
@@ -1695,7 +1695,7 @@ with(df, sum(pW<pM)/1000)
 
 ```R
 # differenza posteriori
-df$$d_21 <- with(df, pM-pW)
+df$d_21 <- with(df, pM-pW)
 ```
 
 
@@ -1714,7 +1714,7 @@ ggplot(df, aes(d_21)) +
 
 ```R
 # intervallo di credibilità per d
-quantile(df$$d_21, c(0.05, 0.95))
+quantile(df$d_21, c(0.05, 0.95))
 ```
 
 
@@ -1766,7 +1766,7 @@ df <- data.frame(Player="One",
 
 
 ```R
-# prod(dnorm(df$$Time_to_Serve, mean=mean(df$$Time_to_Serve), sd=sd(df$$Time_to_Serve))) # ha senso?
+# prod(dnorm(df$Time_to_Serve, mean=mean(df$Time_to_Serve), sd=sd(df$Time_to_Serve))) # ha senso?
 ```
 
 
