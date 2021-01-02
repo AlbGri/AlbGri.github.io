@@ -30,7 +30,7 @@ spinner_plot(areas)
 
 
     
-<img src="/assets/images/R/BayesianStatistics_output_4_0.png" width="400">  
+<img src="/assets/images/R/BayesianStatistics_output_4_0.png" width="200">  
     
 
 
@@ -116,13 +116,7 @@ ten_spins
 ```
 
 
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>1</li><li>5</li><li>5</li><li>5</li><li>2</li><li>1</li><li>1</li><li>3</li><li>3</li><li>4</li></ol>
-
+1 5 5 5 2 1 1 3 3 4
 
 
 
@@ -604,13 +598,7 @@ parametri_priori # rispettivamente a e b
 ```
 
 
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>3.06</li><li>2.56</li></ol>
-
+3.06; 2.56
 
 
 
@@ -668,13 +656,7 @@ parametri_posteriori
 ```
 
 
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>15.06</li><li>10.56</li></ol>
-
+15.06; 10.56
 
 
 
@@ -743,13 +725,7 @@ classical_binom_ci(12, 20, 0.90)
 ```
 
 
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>0.417804211107709</li><li>0.748862455558958</li></ol>
-
+0.417804211107709; 0.748862455558958
 
 
 L'intervallo bayesiano è più stretto dell'intervallo di confidenza, è prevedibile in quanto è più preciso perché combina i dati con l'informazione a priori.
@@ -803,13 +779,7 @@ quantile(sim_p, c(0.05, 0.95))
 ```
 
 
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>5%</dt><dd>0.425741818823082</dd><dt>95%</dt><dd>0.737247520104539</dd></dl>
-
+5%: 0.425741818823082; 95%: 0.737247520104539
 
 
 #### Posterior of log odds ratio
@@ -839,13 +809,7 @@ quantile(sim_logit, c(0.10, 0.90))
 ```
 
 
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>10%</dt><dd>-0.15169200371894</dd><dt>90%</dt><dd>0.86935740076806</dd></dl>
-
+10%:-0.15169200371894; 90%:0.86935740076806
 
 
 
@@ -1239,13 +1203,7 @@ normal_update(as.numeric(parametri_priori[1:2]),
 ```
 
 
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>17.3964472827603</li><li>0.773041159419683</li></ol>
-
+17.3964472827603; 0.773041159419683
 
 
 
@@ -1393,13 +1351,7 @@ round(quantile(y_sim, c(0.10, 0.90)), 1)
 ```
 
 
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>10%</dt><dd>11.8</dd><dt>90%</dt><dd>22.6</dd></dl>
-
+10%:11.8; 90%:22.6
 
 
 L'intervallo di credibilità all'80% è più stretto dell'intervallo di credibilità previsto, in quanto non si conosce il valore di $$M$$ (inference) né il valore di $$y\vert M$$ (sampling).
@@ -1718,13 +1670,7 @@ quantile(df$d_21, c(0.05, 0.95))
 ```
 
 
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>5%</dt><dd>-0.0468267513603719</dd><dt>95%</dt><dd>0.410351553897697</dd></dl>
-
+5%:-0.0468267513603719; 95%:0.410351553897697
 
 
 $$P(-0.05<p_M-p_W<0.41)=0.9$$
@@ -1843,13 +1789,7 @@ round(quantile(sim_S, c(0.05, 0.95)),3)
 ```
 
 
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>5%</dt><dd>3.093</dd><dt>95%</dt><dd>5.313</dd></dl>
-
+5%:3.093; 95%:5.313
 
 
 
@@ -1982,18 +1922,12 @@ ggplot(posterior, aes(standardized_effect)) + geom_density() +
 
 ```R
 # intervallo di credibilità al 90% per l'effetto standardizzato
-round(quantile(data.frame(sim_beta)$$PlayerTwo / sim_S, c(0.05, 0.95)),3)
+round(quantile(data.frame(sim_beta)$PlayerTwo / sim_S, c(0.05, 0.95)),3)
 
 ```
 
 
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>5%</dt><dd>1.151</dd><dt>95%</dt><dd>2.423</dd></dl>
-
+5%:1.151; 95%:2.423
 
 
 La probabilità che l'effetto standardizzato di $$\beta_1$$ sia tra 1.2 e 2.4 è il 90%
