@@ -35,7 +35,24 @@ funzioni base nel continuo e nel discreto
 
 tipologie di metodi
 
+# test
+_1. List item__  
+__1.1 List item
+_2. List item
 
+# test2
+1. asd
+1. asd
+ 1. asd
+ 2. asd
+
+
+# test3
+1. asd
+2. asd
+	1. ddd
+	2. ddd
+3. aaaa
 
 
 
