@@ -1,5 +1,5 @@
 ---
-title: "Appunti di Statistica Bayesiana"
+title: "Appunti: Statistica Bayesiana"
 excerpt: "with R"
 date: 2021-01-02
 tags: [statistics, math, theory, bayesian, R]

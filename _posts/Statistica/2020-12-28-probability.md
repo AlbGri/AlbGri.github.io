@@ -1,5 +1,5 @@
 ---
-title: "Appunti di teoria della probabilità"
+title: "Appunti: Teoria della Probabilità"
 excerpt: ""
 date: 2020-12-28
 tags: [probability, math, theory, university]

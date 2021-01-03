@@ -8,8 +8,9 @@ mathjax: "true"
 
 *in costruzione*
 
-## Basi dell'analisi dei dati di durata
-### Concetti base
+## Metodi per l'analisi di dati di durata
+### Basi dell'analisi dei dati di durata
+#### Concetti base
 1. Ambiti ed esempi
 2. Definizioni base
 	1. Dominio, evento, episodio, popolazione a rischio
@@ -27,8 +28,7 @@ mathjax: "true"
 	1. Panel
 	2. Studi di follow-up (studi coorte)
 	3. Record-Linkage
-
-### Funzioni base nel continuo e nel discreto
+#### Funzioni base nel continuo e nel discreto
 1. Funzioni base con tempo continuo
 	1. Condizioni
 	2. Densità, Ripartizione, Sopravvivenza
@@ -38,18 +38,15 @@ mathjax: "true"
 2. Funzioni base con tempo discreto
 	1. Discreto
 	2. Continuo discretizzato
-
-### Tipologie di metodi
+#### Tipologie di metodi
 1. Metodi per tempo continuo
 	1. Metodi non parametrici: Kaplan-Meier (Product-Limit)
 	2. Modelli di regressione: PH, AFT
 2. Metodi per tempo discreto
 	1. Metodi non parametrici: Life Table (Actuarial Method)
 	2. Modelli di regressione: Logit, Probit
-
-
-## Metodi non parametrici
-### Kaplan-Meier (Product Limit)
+### Metodi non parametrici
+#### Kaplan-Meier (Product Limit)
 1. Calcolo delle funzioni e indici
 2. Esplorazione forma del rischio
 3. Funzione di sopravvivenza
@@ -57,23 +54,39 @@ mathjax: "true"
 	2. Confronto tra gruppi
 	3. Test di omogeneità (grafico, log-rank rest, wilcoxon test)
 4. Funzioni di pseudo-sopravvivenza per rischi competitivi
-
-### Life Table (o Attuariale)
+#### Life Table (o Attuariale)
 1. Tavola di eliminazione: stima rischio, probabilità e sopravvivenza
 2. Altre funzioni (es. rischio integrato)
 3. Intervalli di confidenza
 
 
-## Modelli a tempo continuo
-### Classi di modelli
-### Modello semiparametrico a rischi proporzionali e sue estensioni oltre il modello base (variabili tempo dipendenti, effetti non proporzionali, rischi competitivi)
-### Modelli parametrici a rischi proporzionali e a tempi accelerati (esponenziale, weibull, esponenziale a tratti)
+### Modelli a tempo continuo
+#### Classi di modelli
+#### Modello semiparametrico a rischi proporzionali e sue estensioni oltre il modello base (variabili tempo dipendenti, effetti non proporzionali, rischi competitivi)
+#### Modelli parametrici a rischi proporzionali e a tempi accelerati (esponenziale, weibull, esponenziale a tratti)
+### Modelli a tempo discreto
+#### Person Period
+#### Modello a odds proporzionali
 
 
-## Modelli a tempo discreto
-### Person Period
-### Modello a odds proporzionali
+## Modelli Frailty
+### Introduzione al concetto di Frailty
+### Frailty univariati
+#### Modelli semiparametrici e parametrici
+#### Metodi di stima
+### Shared Frailty Models
 
+
+## Modelli Multilevel
+### Il modello Multilevel come pooling parziale dei dati
+### Modelli a risposta continua
+#### Modelli a intercetta casuale
+#### Modelli a effetti casuali
+#### Inferenza per effetti fissi e per effetti casuali
+### Modelli a risposta discreta
+#### Modelli logistici a effetti casuali
+#### Modelli a tempo discreto con effetti casuali
+#### Inferenza per effetti fissi ed effetti casuali.
 
 
 
