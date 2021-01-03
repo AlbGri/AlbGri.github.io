@@ -12,7 +12,7 @@ mathjax: "true"
 
 ### Basi dell'analisi dei dati di durata
 
-#### Concetti base
+**Concetti base**  
 1. Ambiti ed esempi
 2. Definizioni base
 	1. Dominio, evento, episodio, popolazione a rischio
@@ -31,7 +31,7 @@ mathjax: "true"
 	2. Studi di follow-up (studi coorte)
 	3. Record-Linkage
 
-#### Funzioni base nel continuo e nel discreto
+**Funzioni base nel continuo e nel discreto**  
 1. Funzioni base con tempo continuo
 	1. Condizioni
 	2. Densità, Ripartizione, Sopravvivenza
