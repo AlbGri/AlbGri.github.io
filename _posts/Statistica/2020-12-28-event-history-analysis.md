@@ -9,7 +9,9 @@ mathjax: "true"
 *in costruzione*
 
 ## Metodi per l'analisi di dati di durata
+
 ### Basi dell'analisi dei dati di durata
+
 #### Concetti base
 1. Ambiti ed esempi
 2. Definizioni base
@@ -20,14 +22,15 @@ mathjax: "true"
 	5. Multistato o multi-episodio
 3. Modellazione specifica
 	1. Limiti modello lineare
-	2. Censure 
-	3. Covariate tempo in-dipendenti
+	2. Censure (tipo I, II, random-informative, random-non informative)
+	3. Covariate (variabili o costanti rispetto il tempo)
 4. Disegni longitudinali retrospettivi
 	1. Indagini retrospettive
 5. Disegni longitudinali prospettivi
 	1. Panel
 	2. Studi di follow-up (studi coorte)
 	3. Record-Linkage
+
 #### Funzioni base nel continuo e nel discreto
 1. Funzioni base con tempo continuo
 	1. Condizioni
@@ -38,6 +41,7 @@ mathjax: "true"
 2. Funzioni base con tempo discreto
 	1. Discreto
 	2. Continuo discretizzato
+
 #### Tipologie di metodi
 1. Metodi per tempo continuo
 	1. Metodi non parametrici: Kaplan-Meier (Product-Limit)
@@ -45,7 +49,9 @@ mathjax: "true"
 2. Metodi per tempo discreto
 	1. Metodi non parametrici: Life Table (Actuarial Method)
 	2. Modelli di regressione: Logit, Probit
+
 ### Metodi non parametrici
+
 #### Kaplan-Meier (Product Limit)
 1. Calcolo delle funzioni e indici
 2. Esplorazione forma del rischio
@@ -54,14 +60,16 @@ mathjax: "true"
 	2. Confronto tra gruppi
 	3. Test di omogeneità (grafico, log-rank rest, wilcoxon test)
 4. Funzioni di pseudo-sopravvivenza per rischi competitivi
+
 #### Life Table (o Attuariale)
 1. Tavola di eliminazione: stima rischio, probabilità e sopravvivenza
 2. Altre funzioni (es. rischio integrato)
 3. Intervalli di confidenza
 
 
+
 ### Modelli a tempo continuo
-#### Classi di modelli
+**Classi di modelli**  
 #### Modello semiparametrico a rischi proporzionali e sue estensioni oltre il modello base (variabili tempo dipendenti, effetti non proporzionali, rischi competitivi)
 #### Modelli parametrici a rischi proporzionali e a tempi accelerati (esponenziale, weibull, esponenziale a tratti)
 ### Modelli a tempo discreto
