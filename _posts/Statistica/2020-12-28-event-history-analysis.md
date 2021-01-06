@@ -69,6 +69,39 @@ mathjax: "true"
 
 
 ### [1.3] Modelli a tempo continuo
+
+#### Modello semi-parametrico
+1. Modello base
+	1. Caratteristiche modello di Cox
+	2. Significato PH (Proportional Hazard)
+2. Parametri e risk score
+	1. Interpretazione parametri
+	2. Significatività statistica dei parametri
+	3. Risk score
+3. Bontà adattamento modello
+	1. Rapporto di verosimiglianza
+	2. AIC e BIC
+4. Modello a rischi competitivi
+5. Stima di massima verosimiglianza 
+	1. Metodo FL (Full Likelihood - “Qual è la probabilità che l'individuo i-mo sperimenti un evento nel $$t_j$$ osservato?'')
+	2. Complicazioni: censure e rischio base
+	3. Metodo PL (Partial Likelihood - “Dato che qualcuno sperimenta un evento al tempo $$t_j$$ qual è la probabilità che si tratti dell'individuo i-mo?'') basato sui rank dei tempi
+	4. Massimizzazione PL con metodi numerici iterativi
+6. Ties
+	1. Exact (tutti i possibili ordinamenti)
+	2. Breslow (come Exact ma shrinkage to 0 se ci sono molti ties)
+	3. Efron (come Breslow ma più vicino all'Exact)
+	4. Discrete (eventi effettivamente doppioni)
+7. Stima e utilizzo delle funzioni base
+8. Variabili tempo-dipendenti
+	1. Caratteristiche VTD
+	2. Modello con VTD
+	3. Come tenere sotto controllo variabili TD
+	4. .....
+
+
+
+
 #### [1.3.1] Classi di modelli
 #### [1.3.2] Modello semiparametrico a rischi proporzionali e sue estensioni oltre il modello base (variabili tempo dipendenti, effetti non proporzionali, rischi competitivi)
 #### [1.3.3] Modelli parametrici a rischi proporzionali e a tempi accelerati (esponenziale, weibull, esponenziale a tratti)
