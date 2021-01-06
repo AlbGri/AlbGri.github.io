@@ -97,7 +97,10 @@ mathjax: "true"
 	1. Caratteristiche VTD
 	2. Modello con VTD
 	3. Come tenere sotto controllo variabili TD
-	4. .....
+	4. Spazio stati TD
+	5. Effetti immediati o differiti nel tempo
+9. Effetti non proporzionali
+	1. ...
 
 
 
