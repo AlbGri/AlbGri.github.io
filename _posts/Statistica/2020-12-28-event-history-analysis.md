@@ -43,6 +43,30 @@ print("hello world!")
 	~~~
 </details>
 
+##### asd2
+[expand]
+Long content here
+and here
+...
+[/expand]
+
+##### asd3
+[expand]
+```python
+print("hello world!")
+```
+[/expand]
+
+##### asd4
+[expand]
+
+```python
+print("hello world!")
+```
+
+[/expand]
+
+
 
 
 ## [1] Metodi per l'analisi di dati di durata
