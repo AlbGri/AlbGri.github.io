@@ -8,32 +8,29 @@ mathjax: "true"
 
 *in costruzione*
 
-## collapsible markdown?
+```python
+print("hello world!")
+```
+
+# 1
+
+[expand]
+Long content here
+and here
+...
+[/expand]
+
+# 2
 
 <details>
-	<summary>CLICK ME</summary>
+	<summary>Click to expand</summary>
 	
 	```python
 	print("hello world!")
 	```
 </details>
 
-### aaaaa
-
-<details>
-<summary>
-<i>Like this? </i>
-</summary>
-<p>
-
-```python
-print("hello world!")
-```
-
-</p>
-</details>
-
-##### asd
+# 3
 
 <details>
 	<summary>Click to expand</summary>
@@ -43,29 +40,28 @@ print("hello world!")
 	~~~
 </details>
 
-##### asd2
-[expand]
-Long content here
-and here
-...
-[/expand]
+# 4
 
-##### asd3
-[expand]
-```python
-print("hello world!")
-```
-[/expand]
+<details>
+	<summary>Click to expand</summary>
+	
+	```python
+	print("hello world!")
+	```
+</details>
 
-##### asd4
-[expand]
+# 5
 
-```python
-print("hello world!")
-```
+<details>
+	<summary>Click to expand</summary>
+	<pre>
+		
+	```python
+	print("hello world!")
+	```
+	</pre>
 
-[/expand]
-
+</details>
 
 
 
