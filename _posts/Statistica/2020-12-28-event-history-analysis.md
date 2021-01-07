@@ -66,9 +66,18 @@ mathjax: "true"
 2. Altre funzioni (es. rischio integrato)
 3. Intervalli di confidenza
 
+
+<details><summary># CLICK ME</summary><p>
+#### yes, even hidden code blocks! 
+```python
+print("hello world!")
+```
+</p>
+
 ##### SAS
+**Esempio 1**
 ```sas
-* Esempio 1;
+* creo df;
 data dati;
 input time cens;
 cards;
@@ -111,8 +120,9 @@ title “analisi KM durata episodi”;
 run;
 ```
 
+**Esempio 2**
 ```sas
-* Esempio 2;
+* carico df;
 libname dir "/home/dati";
 data pippo;
 set dir.rrdat1;
@@ -121,7 +131,7 @@ des=0;
 if tfin lt ti then des=1; /* pongo=0 casi censurati*/
 run;
 
-*stime con LT (unico gruppo//distinto per M e F);
+* stime con LT (unico gruppo//distinto per M e F);
 proc lifetest
 	data=pippo
 	method=life
@@ -135,7 +145,7 @@ time durata*des (0);
 title “analisi LT durata episodi lavoro uomini e donne”;
 run;
 
-*stime con KM per M e F;
+* stime con KM per M e F;
 proc lifetest
 	data=pippo
 	plots=(s(cl) h(cl) ls) graphics
@@ -188,6 +198,24 @@ Non riporto l'output.
 	1. ...
 
 
+##### SAS
+**Esempio 3**
+```sas
+```
+
+**Esempio 4**
+```sas
+```
+
+**Esempio 5**
+```sas
+```
+
+**Esempio 6**
+```sas
+```
+
+
 
 
 #### [1.3.1] Classi di modelli
@@ -197,6 +225,16 @@ Non riporto l'output.
 ### [1.4] Modelli a tempo discreto
 #### [1.4.1] Person Period
 #### [1.4.2] Modello a odds proporzionali
+
+
+
+
+
+
+
+
+
+
 
 
 ## [2] Modelli Frailty
