@@ -27,7 +27,7 @@ mathjax: "true"
 4. Disegni longitudinali retrospettivi
 	1. Indagini retrospettive
 5. Disegni longitudinali prospettivi
-	1. Panel
+	1. Panel (con waves)
 	2. Studi di follow-up (studi coorte)
 	3. Record-Linkage
 
@@ -49,6 +49,32 @@ mathjax: "true"
 2. Metodi per tempo discreto
 	1. Metodi non parametrici: Life Table (Actuarial Method)
 	2. Modelli di regressione: Logit, Probit
+
+##### Esercizi
+```SAS
+* costruisco data set "dati" inserendo dati da programma;
+data dati;
+input time cens;
+cards;
+0.1 1
+0.2 1
+0.5 0
+0.5 1
+0.7 1
+0.8 1
+1.3 1
+1.5 1
+1.8 0
+2.5 1
+2.5 1
+2.5 0
+3.2 1
+3.7 1
+3.8 0
+;
+run;
+```
+
 
 ### [1.2] Metodi non parametrici
 
