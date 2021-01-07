@@ -153,7 +153,7 @@ mathjax: "true"
 
 
 ## SAS Labs
-<button class="collapsible" id="es1">Esempio 1: LT e KM</button>
+<button class="collapsible" id="es1">Esempio 1: LT e KM (1)</button>
 <div class="content" id="es1data" markdown="1">
 
 	```sas
@@ -205,7 +205,7 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es2">Esempio 2: LT e KM</button>
+<button class="collapsible" id="es2">Esempio 2: LT e KM (2)</button>
 <div class="content" id="es2data" markdown="1">
 
 	```sas
@@ -252,11 +252,48 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es3">Esempio 3: vuoto</button>
+<button class="collapsible" id="es3">Esempio 3: Cox base (1)</button>
 <div class="content" id="es3data" markdown="1">
 
 	```sas
-	codice
+	* leggo i dati da inserimento;
+	data dati;
+	input time cens edu edu1 edu2 age ;   /*edu=B, M, A; age=anni compiuti */
+	cards;
+	0.1 1 1 1 0 20
+	0.2 1 2 0 1 18
+	0.5 0 3 0 0 29
+	0.5 1 1 1 0 30
+	0.7 1 2 0 1 17
+	0.8 1 3 0 0 23
+	1.3 1 1 1 0 29
+	1.5 1 2 0 1 33
+	1.8 0 3 0 0 25
+	2.5 1 1 1 0 18
+	2.5 1 2 0 1 20
+	2.5 0 3 0 0 31
+	3.2 1 1 1 0 35
+	3.7 1 2 0 1 17
+	3.8 0 3 0 0 24
+	;
+	run;
+
+	/*stimo modelli*/
+	proc phreg  data=dati;
+	model time*cens (0) = edu1 edu2;  /* ! anche class edu se …*/
+	title “predittori rischio uscita disoccupazione: education”;
+	run;
+
+	proc phreg  data=dati;
+	class edu;  *NB ref=3;
+	model time*cens (0) = edu;  
+	title “predittori rischio uscita disoccupazione: education”;
+	run;
+
+	proc phreg  data=dati;
+	model time*cens (0) = edu1 edu2 age;
+	title “predittori rischio uscita disoccupazione: age & edu”;
+	run;
 	```
 </div>
 <embed src="/assets/images/Statistica/EHA_3.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
