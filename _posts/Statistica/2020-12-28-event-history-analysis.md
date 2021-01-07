@@ -201,7 +201,7 @@ mathjax: "true"
 
 
 ##### SAS
-<button class="collapsible show" id="es3">Esempio 3</button>
+<button class="collapsible" id="es3">Esempio 3</button>
 <div class="content" id="es3data" markdown="1">
 
 	```sas
