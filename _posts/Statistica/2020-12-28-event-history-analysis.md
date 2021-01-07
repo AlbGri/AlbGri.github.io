@@ -13,22 +13,56 @@ print("hello world!")
 ```
 
 # 1
+<p>
 <details>
-  <summary>Click to expand!</summary>
-<div class="highlight highlight-source-python"><pre><span class="pl-k">def</span> <span class="pl-en">func</span>():
-    <span class="pl-k">return</span> <span class="pl-s">'hello, world!'</span></pre></div>
+<summary>Click this to collapse/fold.</summary>
+
+These details <em>remain</em> <strong>hidden</strong> until expanded.
+
+<pre><code>PASTE LOGS HERE</code></pre>
+
+</details>
+</p>
+
+# 2
+<details>
+<summary>Click this to collapse/fold.</summary>
+
+These details _remain_ **hidden** until expanded.
+
+```
+PASTE LOGS HERE
+```
+
 </details>
 
-# 5
-
+# 3
+<p>
 <details>
-	<summary>Click to expand</summary>
-	<pre>
-		
-	```python
-	print("hello world!")
-	```
-	</pre>
+<summary>Click this to collapse/fold.</summary>
+
+These details <em>remain</em> <strong>hidden</strong> until expanded.
+
+<pre><code>
+
+```python
+print("hello world!")
+```
+
+</code></pre>
+
+</details>
+</p>
+
+# 4
+<details>
+<summary>Click this to collapse/fold.</summary>
+
+These details _remain_ **hidden** until expanded.
+
+```python
+print("hello world!")
+```
 
 </details>
 
