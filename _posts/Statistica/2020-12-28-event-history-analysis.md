@@ -50,9 +50,25 @@ mathjax: "true"
 	1. Metodi non parametrici: Life Table (Actuarial Method)
 	2. Modelli di regressione: Logit, Probit
 
-##### Esercizi
+### [1.2] Metodi non parametrici
+
+#### [1.2.1] Kaplan-Meier (Product Limit)
+1. Calcolo delle funzioni e indici
+2. Esplorazione forma del rischio
+3. Funzione di sopravvivenza
+	1. Analisi quantili
+	2. Confronto tra gruppi
+	3. Test di omogeneità (grafico, log-rank rest, wilcoxon test)
+4. Funzioni di pseudo-sopravvivenza per rischi competitivi
+
+#### [1.2.2] Life Table (o Attuariale)
+1. Tavola di eliminazione: stima rischio, probabilità e sopravvivenza
+2. Altre funzioni (es. rischio integrato)
+3. Intervalli di confidenza
+
+##### SAS
 ```sas
-* costruisco data set "dati" inserendo dati da programma;
+* Esempio 1;
 data dati;
 input time cens;
 cards;
@@ -73,24 +89,67 @@ cards;
 3.8 0
 ;
 run;
+
+* stima LT;
+proc lifetest 
+data=dati
+method= lt
+intervals= 1 2 3 4
+plots =(s h) graphics  /* se una sola funzione non serve () */
+outsurv=conf1;
+time time*cens(0);
+title “analisi LT durata episodi”;
+run;
+
+* stima KM;
+proc lifetest 
+data=dati
+plots =(s h) graphics  
+outsurv=conf2;
+time time*cens(0);
+title “analisi KM durata episodi”;
+run;
 ```
 
+```sas
+* Esempio 2;
+libname dir "/home/dati";
+data pippo;
+set dir.rrdat1;
+durata=tfin-tstart+1;
+des=0;
+if tfin lt ti then des=1; /* pongo=0 casi censurati*/
+run;
 
-### [1.2] Metodi non parametrici
+*stime con LT (unico gruppo//distinto per M e F);
+proc lifetest
+	data=pippo
+	method=life
+	width=30
+plots =(s h) graphics   
+/* N.B: se più di 1 funzione (ls lls ...) usare () altrimenti: plots=s graphics */
+	outsurv=conf1;
+time durata*des (0);
+/* chiedo S per maschi e femmine */
+*strata sex;
+title “analisi LT durata episodi lavoro uomini e donne”;
+run;
 
-#### [1.2.1] Kaplan-Meier (Product Limit)
-1. Calcolo delle funzioni e indici
-2. Esplorazione forma del rischio
-3. Funzione di sopravvivenza
-	1. Analisi quantili
-	2. Confronto tra gruppi
-	3. Test di omogeneità (grafico, log-rank rest, wilcoxon test)
-4. Funzioni di pseudo-sopravvivenza per rischi competitivi
-
-#### [1.2.2] Life Table (o Attuariale)
-1. Tavola di eliminazione: stima rischio, probabilità e sopravvivenza
-2. Altre funzioni (es. rischio integrato)
-3. Intervalli di confidenza
+*stime con KM per M e F;
+proc lifetest
+	data=pippo
+	plots=(s(cl) h(cl) ls) graphics
+	outsurv=conf2;
+time durata*des (0);
+strata sex;
+title ”analisi KM su dati durata occupazione – M e F”; 
+symbol1 v=none color=black line=1;
+symbol2 v=none color=red line=2;
+run;
+proc print data=conf2;
+run;
+```
+Non riporto l'output.
 
 
 
