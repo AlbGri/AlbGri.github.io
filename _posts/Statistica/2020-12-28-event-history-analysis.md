@@ -257,22 +257,23 @@ mathjax: "true"
 
 #############################
 
+#### 0
+<embed src="/assets/images/Statistica/EHA_1.pdf" type="application/pdf">
 
 
-![pdf](/assets/images/Statistica/EHA_1.pdf "some discription")
-
+#### 1
+<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0" type="application/pdf">
 
 #### 2
+<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=1" type="application/pdf">
 
-<object data="/assets/images/Statistica/EHA_1.pdf" type="application/pdf" width="100%"> 
-</object>
 
 #### 3
-
-<image src="/assets/images/Statistica/EHA_1.pdf"/>
+<embed src="/assets/images/Statistica/EHA_1.pdf" type="application/pdf" frameborder="0">
 
 #### 4
-<embed src="/assets/images/Statistica/EHA_1.pdf" type="application/pdf">
+<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf">
+
 
 
 
