@@ -267,4 +267,8 @@ mathjax: "true"
 <object data="/assets/images/Statistica/EHA_1.pdf" type="application/pdf" width="100%"> 
 </object>
 
+#### 3
+
+<image src="/assets/images/Statistica/EHA_1.pdf"/>
+
 ...
