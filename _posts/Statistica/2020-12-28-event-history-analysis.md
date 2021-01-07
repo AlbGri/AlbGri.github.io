@@ -200,10 +200,10 @@ mathjax: "true"
 	run;
 	```
 </div>
-
 <embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
-
+&nbsp;
+&nbsp;
 
 <button class="collapsible" id="es2">Esempio 2: LT e KM</button>
 <div class="content" id="es2data" markdown="1">
