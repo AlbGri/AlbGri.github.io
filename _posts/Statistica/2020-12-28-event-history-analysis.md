@@ -13,46 +13,16 @@ print("hello world!")
 ```
 
 # 1
-<p>
-<details>
-<summary>Click this to collapse/fold.</summary>
+<button class="collapsible" id="yaml">Click here for the code.</button>
 
-These details <em>remain</em> <strong>hidden</strong> until expanded.
+<div class="content" id="yamldata" markdown="1">
 
-<pre><code>PASTE LOGS HERE</code></pre>
+	```python
+	print("hello world!")
+	```
 
-</details>
-</p>
+</div>
 
-# 2
-<details>
-<summary>Click this to collapse/fold.</summary>
-
-These details _remain_ **hidden** until expanded.
-
-```
-PASTE LOGS HERE
-```
-
-</details>
-
-# 3
-<p>
-<details>
-<summary>Click this to collapse/fold.</summary>
-
-These details <em>remain</em> <strong>hidden</strong> until expanded.
-
-<pre><code>
-
-```python
-print("hello world!")
-```
-
-</code></pre>
-
-</details>
-</p>
 
 # 4
 <details>
