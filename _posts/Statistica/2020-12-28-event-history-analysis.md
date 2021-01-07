@@ -257,6 +257,19 @@ mathjax: "true"
 </div>
 
 
+<button class="collapsible" id="es4">Esempio 4: vuoto</button>
+<div class="content" id="es4data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<div class="content" id="es4data">
+<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+</div>
+
+
+
 #############################
 
 <embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
