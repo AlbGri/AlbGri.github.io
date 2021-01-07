@@ -33,6 +33,16 @@ print("hello world!")
 </p>
 </details>
 
+##### asd
+
+<details>
+	<summary>Click to expand</summary>
+	
+	~~~ python
+	Code here
+	~~~
+</details>
+
 
 
 ## [1] Metodi per l'analisi di dati di durata
