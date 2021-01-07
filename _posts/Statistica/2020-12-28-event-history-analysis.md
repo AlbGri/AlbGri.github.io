@@ -67,8 +67,93 @@ mathjax: "true"
 2. Altre funzioni (es. rischio integrato)
 3. Intervalli di confidenza
 
-##### Coding in SAS: LT e KM
-<button class="collapsible" id="es1">Esempio 1</button>
+
+
+
+
+
+### [1.3] Modelli a tempo continuo
+
+#### Modello semi-parametrico
+1. Modello base
+	1. Caratteristiche modello di Cox
+	2. Significato PH (Proportional Hazard)
+2. Parametri e risk score
+	1. Interpretazione parametri
+	2. Significatività statistica dei parametri
+	3. Risk score
+3. Bontà adattamento modello
+	1. Rapporto di verosimiglianza
+	2. AIC e BIC
+4. Modello a rischi competitivi
+5. Stima di massima verosimiglianza 
+	1. Metodo FL (Full Likelihood - “Qual è la probabilità che l'individuo i-mo sperimenti un evento nel $$t_j$$ osservato?'')
+	2. Complicazioni: censure e rischio base
+	3. Metodo PL (Partial Likelihood - “Dato che qualcuno sperimenta un evento al tempo $$t_j$$ qual è la probabilità che si tratti dell'individuo i-mo?'') basato sui rank dei tempi
+	4. Massimizzazione PL con metodi numerici iterativi
+6. Ties
+	1. Exact (tutti i possibili ordinamenti)
+	2. Breslow (come Exact ma shrinkage to 0 se ci sono molti ties)
+	3. Efron (come Breslow ma più vicino all'Exact)
+	4. Discrete (eventi effettivamente doppioni)
+7. Stima e utilizzo delle funzioni base
+8. Variabili tempo-dipendenti
+	1. Caratteristiche VTD
+	2. Modello con VTD
+	3. Come tenere sotto controllo variabili TD
+	4. Spazio stati TD
+	5. Effetti immediati o differiti nel tempo
+9. Effetti non proporzionali
+	1. ...
+
+
+
+
+
+
+#### [1.3.1] Classi di modelli
+#### [1.3.2] Modello semiparametrico a rischi proporzionali e sue estensioni oltre il modello base (variabili tempo dipendenti, effetti non proporzionali, rischi competitivi)
+#### [1.3.3] Modelli parametrici a rischi proporzionali e a tempi accelerati (esponenziale, weibull, esponenziale a tratti)
+
+### [1.4] Modelli a tempo discreto
+#### [1.4.1] Person Period
+#### [1.4.2] Modello a odds proporzionali
+
+
+
+
+
+
+
+
+
+
+
+
+## [2] Modelli Frailty
+### [2.1] Introduzione al concetto di Frailty
+### [2.2] Frailty univariati
+#### [2.2.1] Modelli semiparametrici e parametrici
+#### [2.2.2] Metodi di stima
+### [2.3] Shared Frailty Models
+
+
+## [3] Modelli Multilevel
+### [3.1] Il modello Multilevel come pooling parziale dei dati
+### [3.2] Modelli a risposta continua
+#### [3.2.1] Modelli a intercetta casuale
+#### [3.2.2] Modelli a effetti casuali
+#### [3.2.3] Inferenza per effetti fissi e per effetti casuali
+### [3.3] Modelli a risposta discreta
+#### [3.3.1] Modelli logistici a effetti casuali
+#### [3.3.2] Modelli a tempo discreto con effetti casuali
+#### [3.3.3] Inferenza per effetti fissi ed effetti casuali.
+
+
+
+
+## SAS Labs
+<button class="collapsible" id="es1">Esempio 1: LT e KM</button>
 <div class="content" id="es1data" markdown="1">
 
 	```sas
@@ -117,8 +202,7 @@ mathjax: "true"
 </div>
 
 
-
-<button class="collapsible" id="es2">Esempio 2</button>
+<button class="collapsible" id="es2">Esempio 2: LT e KM</button>
 <div class="content" id="es2data" markdown="1">
 
 	```sas
@@ -162,46 +246,7 @@ mathjax: "true"
 </div>
 
 
-
-
-
-### [1.3] Modelli a tempo continuo
-
-#### Modello semi-parametrico
-1. Modello base
-	1. Caratteristiche modello di Cox
-	2. Significato PH (Proportional Hazard)
-2. Parametri e risk score
-	1. Interpretazione parametri
-	2. Significatività statistica dei parametri
-	3. Risk score
-3. Bontà adattamento modello
-	1. Rapporto di verosimiglianza
-	2. AIC e BIC
-4. Modello a rischi competitivi
-5. Stima di massima verosimiglianza 
-	1. Metodo FL (Full Likelihood - “Qual è la probabilità che l'individuo i-mo sperimenti un evento nel $$t_j$$ osservato?'')
-	2. Complicazioni: censure e rischio base
-	3. Metodo PL (Partial Likelihood - “Dato che qualcuno sperimenta un evento al tempo $$t_j$$ qual è la probabilità che si tratti dell'individuo i-mo?'') basato sui rank dei tempi
-	4. Massimizzazione PL con metodi numerici iterativi
-6. Ties
-	1. Exact (tutti i possibili ordinamenti)
-	2. Breslow (come Exact ma shrinkage to 0 se ci sono molti ties)
-	3. Efron (come Breslow ma più vicino all'Exact)
-	4. Discrete (eventi effettivamente doppioni)
-7. Stima e utilizzo delle funzioni base
-8. Variabili tempo-dipendenti
-	1. Caratteristiche VTD
-	2. Modello con VTD
-	3. Come tenere sotto controllo variabili TD
-	4. Spazio stati TD
-	5. Effetti immediati o differiti nel tempo
-9. Effetti non proporzionali
-	1. ...
-
-
-##### SAS
-<button class="collapsible" id="es3">Esempio 3</button>
+<button class="collapsible" id="es3">Esempio 3: vuoto</button>
 <div class="content" id="es3data" markdown="1">
 
 	```sas
@@ -209,47 +254,6 @@ mathjax: "true"
 	```
 </div>
 
-
-
-
-
-#### [1.3.1] Classi di modelli
-#### [1.3.2] Modello semiparametrico a rischi proporzionali e sue estensioni oltre il modello base (variabili tempo dipendenti, effetti non proporzionali, rischi competitivi)
-#### [1.3.3] Modelli parametrici a rischi proporzionali e a tempi accelerati (esponenziale, weibull, esponenziale a tratti)
-
-### [1.4] Modelli a tempo discreto
-#### [1.4.1] Person Period
-#### [1.4.2] Modello a odds proporzionali
-
-
-
-
-
-
-
-
-
-
-
-
-## [2] Modelli Frailty
-### [2.1] Introduzione al concetto di Frailty
-### [2.2] Frailty univariati
-#### [2.2.1] Modelli semiparametrici e parametrici
-#### [2.2.2] Metodi di stima
-### [2.3] Shared Frailty Models
-
-
-## [3] Modelli Multilevel
-### [3.1] Il modello Multilevel come pooling parziale dei dati
-### [3.2] Modelli a risposta continua
-#### [3.2.1] Modelli a intercetta casuale
-#### [3.2.2] Modelli a effetti casuali
-#### [3.2.3] Inferenza per effetti fissi e per effetti casuali
-### [3.3] Modelli a risposta discreta
-#### [3.3.1] Modelli logistici a effetti casuali
-#### [3.3.2] Modelli a tempo discreto con effetti casuali
-#### [3.3.3] Inferenza per effetti fissi ed effetti casuali.
 
 
 
