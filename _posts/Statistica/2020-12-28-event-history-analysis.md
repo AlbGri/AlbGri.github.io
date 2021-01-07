@@ -68,8 +68,8 @@ mathjax: "true"
 3. Intervalli di confidenza
 
 ##### Coding in SAS: LT e KM
-<button class="collapsible" id="yaml">Esempio 1</button>
-<div class="content" id="yamldata" markdown="1">
+<button class="collapsible" id="es1">Esempio 1</button>
+<div class="content" id="es1data" markdown="1">
 
 	```sas
 	* creo df;
@@ -118,8 +118,8 @@ mathjax: "true"
 
 
 
-<button class="collapsible" id="yaml">Esempio 2</button>
-<div class="content" id="yamldata" markdown="1">
+<button class="collapsible" id="es2">Esempio 2</button>
+<div class="content" id="es2data" markdown="1">
 
 	```sas
 	* carico df;
@@ -201,16 +201,8 @@ mathjax: "true"
 
 
 ##### SAS
-<button class="collapsible" id="yaml">Esempio 3</button>
-<div class="content" id="yamldata" markdown="1">
-
-	```sas
-	codice
-	```
-</div>
-
-<button class="collapsible" id="test">Esempio 4</button>
-<div class="content" id="testdata" markdown="1">
+<button class="collapsible" id="es3">Esempio 3</button>
+<div class="content" id="es3data" markdown="1">
 
 	```sas
 	codice
@@ -218,13 +210,6 @@ mathjax: "true"
 </div>
 
 
-<button class="collapsible" id="yaml">Esempio 4</button>
-<div class="content" id="yamldata" markdown="2">
-
-	```sas
-	codice
-	```
-</div>
 
 
 
