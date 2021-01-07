@@ -252,27 +252,15 @@ mathjax: "true"
 	```sas
 	codice
 	```
+	
+<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 </div>
 
 
 #############################
 
-#### 0
-<embed src="/assets/images/Statistica/EHA_1.pdf" type="application/pdf">
+<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
-
-#### 1
-<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0" type="application/pdf">
-
-#### 2
-<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=1" type="application/pdf">
-
-
-#### 3
-<embed src="/assets/images/Statistica/EHA_1.pdf" type="application/pdf" frameborder="0">
-
-#### 4
-<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf">
 
 
 
