@@ -70,53 +70,57 @@ mathjax: "true"
 ##### Coding in SAS: LT e KM
 <button class="collapsible" id="yaml">Esempio 1</button>
 <div class="content" id="yamldata" markdown="1">
-* creo df;
-data dati;
-input time cens;
-cards;
-0.1 1
-0.2 1
-0.5 0
-0.5 1
-0.7 1
-0.8 1
-1.3 1
-1.5 1
-1.8 0
-2.5 1
-2.5 1
-2.5 0
-3.2 1
-3.7 1
-3.8 0
-;
-run;
 
-* stima LT;
-proc lifetest 
-data=dati
-method= lt
-intervals= 1 2 3 4
-plots =(s h) graphics  /* se una sola funzione non serve () */
-outsurv=conf1;
-time time*cens(0);
-title “analisi LT durata episodi”;
-run;
+	```sas
+	* creo df;
+	data dati;
+	input time cens;
+	cards;
+	0.1 1
+	0.2 1
+	0.5 0
+	0.5 1
+	0.7 1
+	0.8 1
+	1.3 1
+	1.5 1
+	1.8 0
+	2.5 1
+	2.5 1
+	2.5 0
+	3.2 1
+	3.7 1
+	3.8 0
+	;
+	run;
 
-* stima KM;
-proc lifetest 
-data=dati
-plots =(s h) graphics  
-outsurv=conf2;
-time time*cens(0);
-title “analisi KM durata episodi”;
-run;
+	* stima LT;
+	proc lifetest 
+	data=dati
+	method= lt
+	intervals= 1 2 3 4
+	plots =(s h) graphics  /* se una sola funzione non serve () */
+	outsurv=conf1;
+	time time*cens(0);
+	title “analisi LT durata episodi”;
+	run;
+
+	* stima KM;
+	proc lifetest 
+	data=dati
+	plots =(s h) graphics  
+	outsurv=conf2;
+	time time*cens(0);
+	title “analisi KM durata episodi”;
+	run;
+	```
 </div>
 
 
 
 <button class="collapsible" id="yaml">Esempio 2</button>
 <div class="content" id="yamldata" markdown="1">
+
 * carico df;
 libname dir "/home/dati";
 data pippo;
@@ -197,7 +201,8 @@ run;
 ##### SAS
 <button class="collapsible" id="yaml">Esempio 3</button>
 <div class="content" id="yamldata" markdown="1">
-codice
+
+	codice
 </div>
 
 
