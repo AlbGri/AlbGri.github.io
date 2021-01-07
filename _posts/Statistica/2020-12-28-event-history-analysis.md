@@ -10,16 +10,12 @@ mathjax: "true"
 
 ## collapsible markdown?
 
-<details><summary>CLICK ME</summary>
-<p>
-
-#### yes, even hidden code blocks!
-
-```python
-print("hello world!")
-```
-
-</p>
+<details>
+	<summary>CLICK ME</summary>
+	
+	```python
+	print("hello world!")
+	```
 </details>
 
 ### aaaaa
