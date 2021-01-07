@@ -13,7 +13,7 @@ print("hello world!")
 ```
 
 # 1
-<button class="collapsible" id="python">Esercizio 1</button>
+<button class="collapsible" id="yaml">Esercizio 1</button>
 <div class="content" id="yamldata" markdown="1">
 	print("hello world!")
 </div>
