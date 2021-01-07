@@ -8,33 +8,6 @@ mathjax: "true"
 
 *in costruzione*
 
-```python
-print("hello world!")
-```
-
-# 1
-<button class="collapsible" id="yaml">Esercizio 1</button>
-<div class="content" id="yamldata" markdown="1">
-	print("hello world!")
-</div>
-
-
-# 2
-<button class="collapsible" id="python">Esercizio 1</button>
-<div class="content" id="yamldata" markdown="1">
-
-	print("hello world!")
-</div>
-
-
-# 3
-<button class="collapsible" id="python">Esercizio 1</button>
-<div class="content" id="python" markdown="1">
-
-	print("hello world!")
-</div>
-
-
 
 ## [1] Metodi per l'analisi di dati di durata
 
@@ -95,10 +68,8 @@ print("hello world!")
 3. Intervalli di confidenza
 
 ##### Coding in SAS: LT e KM
-<details><summary>Esempio 1</summary>
-<p>
-
-```sas
+<button class="collapsible" id="yaml">Esempio 1</button>
+<div class="content" id="yamldata" markdown="1">
 * creo df;
 data dati;
 input time cens;
@@ -140,16 +111,12 @@ outsurv=conf2;
 time time*cens(0);
 title “analisi KM durata episodi”;
 run;
-```
+</div>
 
-</p>
-</details>
 
-asd  
 
-<details><summary>**Esempio 2**</summary>
-<p>
-```sas
+<button class="collapsible" id="yaml">Esempio 2</button>
+<div class="content" id="yamldata" markdown="1">
 * carico df;
 libname dir "/home/dati";
 data pippo;
@@ -186,9 +153,7 @@ symbol2 v=none color=red line=2;
 run;
 proc print data=conf2;
 run;
-```
-</p>
-</details>
+</div>
 
 
 
@@ -230,15 +195,10 @@ run;
 
 
 ##### SAS
-<details><summary>**Esempio 3**</summary>
-<p>
-```sas
-```
-</p>
-</details>
-
-
-
+<button class="collapsible" id="yaml">Esempio 3</button>
+<div class="content" id="yamldata" markdown="1">
+codice
+</div>
 
 
 
