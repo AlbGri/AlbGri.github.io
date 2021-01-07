@@ -67,15 +67,12 @@ mathjax: "true"
 3. Intervalli di confidenza
 
 
-<details><summary># CLICK ME</summary><p>
-#### yes, even hidden code blocks! 
-```python
-print("hello world!")
-```
-</p>
+
+
 
 ##### SAS
-**Esempio 1**
+<details><summary>**Esempio 1**</summary>
+<p>
 ```sas
 * creo df;
 data dati;
@@ -119,8 +116,11 @@ time time*cens(0);
 title “analisi KM durata episodi”;
 run;
 ```
+</p>
+</details>
 
-**Esempio 2**
+<details><summary>**Esempio 2**</summary>
+<p>
 ```sas
 * carico df;
 libname dir "/home/dati";
@@ -159,7 +159,10 @@ run;
 proc print data=conf2;
 run;
 ```
-Non riporto l'output.
+</p>
+</details>
+
+
 
 
 
@@ -199,21 +202,14 @@ Non riporto l'output.
 
 
 ##### SAS
-**Esempio 3**
+<details><summary>**Esempio 3**</summary>
+<p>
 ```sas
 ```
+</p>
+</details>
 
-**Esempio 4**
-```sas
-```
 
-**Esempio 5**
-```sas
-```
-
-**Esempio 6**
-```sas
-```
 
 
 
