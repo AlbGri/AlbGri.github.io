@@ -13,28 +13,26 @@ print("hello world!")
 ```
 
 # 1
-<button class="collapsible" id="yaml">Click here for the code.</button>
-
+<button class="collapsible" id="python">Esercizio 1</button>
 <div class="content" id="yamldata" markdown="1">
-
-	```python
 	print("hello world!")
-	```
-
 </div>
 
 
-# 4
-<details>
-<summary>Click this to collapse/fold.</summary>
+# 2
+<button class="collapsible" id="python">Esercizio 1</button>
+<div class="content" id="yamldata" markdown="1">
 
-These details _remain_ **hidden** until expanded.
+	print("hello world!")
+</div>
 
-```python
-print("hello world!")
-```
 
-</details>
+# 3
+<button class="collapsible" id="python">Esercizio 1</button>
+<div class="content" id="python" markdown="1">
+
+	print("hello world!")
+</div>
 
 
 
