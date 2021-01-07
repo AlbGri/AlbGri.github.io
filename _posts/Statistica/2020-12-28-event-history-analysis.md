@@ -121,42 +121,44 @@ mathjax: "true"
 <button class="collapsible" id="yaml">Esempio 2</button>
 <div class="content" id="yamldata" markdown="1">
 
-* carico df;
-libname dir "/home/dati";
-data pippo;
-set dir.rrdat1;
-durata=tfin-tstart+1;
-des=0;
-if tfin lt ti then des=1; /* pongo=0 casi censurati*/
-run;
+	```sas
+	* carico df;
+	libname dir "/home/dati";
+	data pippo;
+	set dir.rrdat1;
+	durata=tfin-tstart+1;
+	des=0;
+	if tfin lt ti then des=1; /* pongo=0 casi censurati*/
+	run;
 
-* stime con LT (unico gruppo//distinto per M e F);
-proc lifetest
-	data=pippo
-	method=life
-	width=30
-plots =(s h) graphics   
-/* N.B: se più di 1 funzione (ls lls ...) usare () altrimenti: plots=s graphics */
-	outsurv=conf1;
-time durata*des (0);
-/* chiedo S per maschi e femmine */
-*strata sex;
-title “analisi LT durata episodi lavoro uomini e donne”;
-run;
+	* stime con LT (unico gruppo//distinto per M e F);
+	proc lifetest
+		data=pippo
+		method=life
+		width=30
+	plots =(s h) graphics   
+	/* N.B: se più di 1 funzione (ls lls ...) usare () altrimenti: plots=s graphics */
+		outsurv=conf1;
+	time durata*des (0);
+	/* chiedo S per maschi e femmine */
+	*strata sex;
+	title “analisi LT durata episodi lavoro uomini e donne”;
+	run;
 
-* stime con KM per M e F;
-proc lifetest
-	data=pippo
-	plots=(s(cl) h(cl) ls) graphics
-	outsurv=conf2;
-time durata*des (0);
-strata sex;
-title ”analisi KM su dati durata occupazione – M e F”; 
-symbol1 v=none color=black line=1;
-symbol2 v=none color=red line=2;
-run;
-proc print data=conf2;
-run;
+	* stime con KM per M e F;
+	proc lifetest
+		data=pippo
+		plots=(s(cl) h(cl) ls) graphics
+		outsurv=conf2;
+	time durata*des (0);
+	strata sex;
+	title ”analisi KM su dati durata occupazione – M e F”; 
+	symbol1 v=none color=black line=1;
+	symbol2 v=none color=red line=2;
+	run;
+	proc print data=conf2;
+	run;
+	```
 </div>
 
 
@@ -202,7 +204,26 @@ run;
 <button class="collapsible" id="yaml">Esempio 3</button>
 <div class="content" id="yamldata" markdown="1">
 
+	```sas
 	codice
+	```
+</div>
+
+<button class="collapsible" id="test">Esempio 4</button>
+<div class="content" id="testdata" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+
+
+<button class="collapsible" id="yaml">Esempio 4</button>
+<div class="content" id="yamldata" markdown="2">
+
+	```sas
+	codice
+	```
 </div>
 
 
