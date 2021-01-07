@@ -51,7 +51,7 @@ mathjax: "true"
 	2. Modelli di regressione: Logit, Probit
 
 ##### Esercizi
-```SAS
+```sas
 * costruisco data set "dati" inserendo dati da programma;
 data dati;
 input time cens;
