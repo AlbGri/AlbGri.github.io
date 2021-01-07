@@ -13,41 +13,10 @@ print("hello world!")
 ```
 
 # 1
-
-[expand]
-Long content here
-and here
-...
-[/expand]
-
-# 2
-
 <details>
-	<summary>Click to expand</summary>
-	
-	```python
-	print("hello world!")
-	```
-</details>
-
-# 3
-
-<details>
-	<summary>Click to expand</summary>
-	
-	~~~ python
-	Code here
-	~~~
-</details>
-
-# 4
-
-<details>
-	<summary>Click to expand</summary>
-	
-	```python
-	print("hello world!")
-	```
+  <summary>Click to expand!</summary>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">def</span> <span class="pl-en">func</span>():
+    <span class="pl-k">return</span> <span class="pl-s">'hello, world!'</span></pre></div>
 </details>
 
 # 5
