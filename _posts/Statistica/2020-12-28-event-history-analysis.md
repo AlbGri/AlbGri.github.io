@@ -249,6 +249,8 @@ mathjax: "true"
 </div>
 <embed src="/assets/images/Statistica/EHA_2.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
+&nbsp;
+&nbsp;
 
 <button class="collapsible" id="es3">Esempio 3: vuoto</button>
 <div class="content" id="es3data" markdown="1">
@@ -257,6 +259,79 @@ mathjax: "true"
 	codice
 	```
 </div>
+<embed src="/assets/images/Statistica/EHA_3.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es4">Esempio 4: vuoto</button>
+<div class="content" id="es4data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistica/EHA_4.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es5">Esempio 5: vuoto</button>
+<div class="content" id="es5data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistica/EHA_5.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es6">Esempio 6: vuoto</button>
+<div class="content" id="es6data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistica/EHA_6.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es7">Esempio 7: vuoto</button>
+<div class="content" id="es7data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistica/EHA_7.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es8">Esempio 8: vuoto</button>
+<div class="content" id="es8data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistica/EHA_8.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es9">Esempio 9: vuoto</button>
+<div class="content" id="es9data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistica/EHA_9.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 
 
