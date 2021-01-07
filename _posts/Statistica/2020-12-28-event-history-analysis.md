@@ -201,6 +201,9 @@ mathjax: "true"
 	```
 </div>
 
+<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+
 
 <button class="collapsible" id="es2">Esempio 2: LT e KM</button>
 <div class="content" id="es2data" markdown="1">
@@ -244,6 +247,7 @@ mathjax: "true"
 	run;
 	```
 </div>
+<embed src="/assets/images/Statistica/EHA_2.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 
 <button class="collapsible" id="es3">Esempio 3: vuoto</button>
@@ -252,27 +256,14 @@ mathjax: "true"
 	```sas
 	codice
 	```
-	
-<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 </div>
 
 
-<button class="collapsible" id="es4">Esempio 4: vuoto</button>
-<div class="content" id="es4data" markdown="1">
-
-	```sas
-	codice
-	```
-</div>
-<div class="content" id="es4data">
-<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
-</div>
 
 
 
 #############################
 
-<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 
 
