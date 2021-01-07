@@ -8,6 +8,21 @@ mathjax: "true"
 
 *in costruzione*
 
+## collapsible markdown?
+
+<details><summary>CLICK ME</summary>
+<p>
+
+#### yes, even hidden code blocks!
+
+```python
+print("hello world!")
+```
+
+</p>
+</details>
+
+
 ## [1] Metodi per l'analisi di dati di durata
 
 ### [1.1] Basi dell'analisi dei dati di durata
@@ -66,13 +81,10 @@ mathjax: "true"
 2. Altre funzioni (es. rischio integrato)
 3. Intervalli di confidenza
 
-
-
-
-
-##### SAS
-<details><summary>**Esempio 1**</summary>
+##### Coding in SAS: LT e KM
+<details><summary>Esempio 1</summary>
 <p>
+
 ```sas
 * creo df;
 data dati;
@@ -116,8 +128,11 @@ time time*cens(0);
 title “analisi KM durata episodi”;
 run;
 ```
+
 </p>
 </details>
+
+asd  
 
 <details><summary>**Esempio 2**</summary>
 <p>
