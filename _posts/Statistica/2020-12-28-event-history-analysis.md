@@ -22,6 +22,22 @@ print("hello world!")
 </p>
 </details>
 
+### aaaaa
+
+<details>
+<summary>
+<i>Like this? </i>
+</summary>
+<p>
+
+```python
+print("hello world!")
+```
+
+</p>
+</details>
+
+
 
 ## [1] Metodi per l'analisi di dati di durata
 
