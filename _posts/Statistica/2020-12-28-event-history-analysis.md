@@ -262,5 +262,9 @@ mathjax: "true"
 ![pdf](/assets/images/Statistica/EHA_1.pdf "some discription")
 
 
+#### 2
+
+<object data="/assets/images/Statistica/EHA_1.pdf" type="application/pdf" width="100%"> 
+</object>
 
 ...
