@@ -271,4 +271,9 @@ mathjax: "true"
 
 <image src="/assets/images/Statistica/EHA_1.pdf"/>
 
+#### 4
+<embed src="/assets/images/Statistica/EHA_1.pdf" type="application/pdf">
+
+
+
 ...
