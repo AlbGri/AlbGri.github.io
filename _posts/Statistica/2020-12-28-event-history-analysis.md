@@ -105,7 +105,7 @@ mathjax: "true"
 	2. Verifica proporzionalità 
 		- Grafico (analisi del logaritmo del rischio cumulato)
 		- Residui di Schoenfeld (l'andamento dello scarto tra la covariata dell'i-esimo individuo e la sua media nel tempo è casuale)
-		- Modello con interazione tra tempo e covariate
+		- Modello con interazione tra tempo e covariate (se il coeff. dell'interazione è significativamente diverso da zero)
 	3. Superamento ipotesi proporzionalità
 		- Modello stratificato
 		- Modello con interazione tra il tempo (continuo o discreto) e le covariate
@@ -122,51 +122,6 @@ mathjax: "true"
 4. Stima di massima verosimiglianza
 
 
-
-## 1
-1. Item1
-  1.1. SubItemA
-  1.2. SubItemB
-    - wat
-      - inception noise
-
-## 2
-1. Item1
-  1.1, SubItemA
-  1.2. SubItemB
-2. Item2 
-  2.1. SubItem 
-  2.2. SubItem
-
-## 3
-1. Item1
-   1. SubItemA
-   2. SubItemB
-      - wat
-        - hi
-
-## 4
-  1. List item 1.
-  2. List item 2.
-     1. Sublist item 1.
-     2. Sublist item 2.
-     3. Sublist item 3.
-  3. List item 3.
-
-## 5
-1. List item 1.
-2. List item 2.
-   1. Sublist item 1.
-   2. Sublist item 2.
-   3. Sublist item 3.
-3. List item 3.
-
-## 6
-1. Item1
-  1.1. SubItemA
-  1.2. SubItemB
-    - wat
-      - inception noise
 
 
 
