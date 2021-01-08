@@ -209,7 +209,10 @@ mathjax: "true"
 <div class="content" id="es2data" markdown="1">
 
 	```sas
-	* Obiettivo: con LT e KM, esaminare se e come la propensione a lasciare il mercato del lavoro differisce tra gli uomini e le donne nati tra 1929 e 1951.;
+	/* 
+	Obiettivo: con LT e KM, esaminare se e come la propensione a lasciare 
+	il mercato del lavoro differisce tra gli uomini e le donne nati tra 1929 e 1951. 
+	*/
 	
 	* carico df;
 	libname dir "/home/dati";
@@ -307,7 +310,9 @@ mathjax: "true"
 <div class="content" id="es4data" markdown="1">
 
 	```sas
-	* Obiettivo: stimare predittori uscita mercato del lavoro tra un set covariate;
+	/* 
+	Obiettivo: stimare predittori uscita mercato del lavoro tra un set covariate
+	*/
 	
 	libname dir "/home/dati";
 	data pippo;
@@ -353,7 +358,23 @@ mathjax: "true"
 	model durata*des (0) = edu coho2 coho3 lfx pnoj pres;
 	title “analisi predittori rischio uscita mercato lavoro”;
 	run;
-
+	
+	/* 
+	Nostre ipotesi: 
+	- se l'istruzione è bassa accelera l'uscita dal mondo da lavoro 
+	- Il prestigio del lavoro accelera o rallenta l'uscita? Probabilmente ritarda
+	
+	Risultati:
+	- tranne il numero di episodi è tutto significativo
+	- per ogni anno aggiuntivo di educazione il rischio di lasciare il posto di lavoro aumenta del 6%,
+	l'ipotesi potrebbe essere che chi ha un educazione alta ha anche un ambizione maggiore e lo lascia
+	con più facilità.
+	- la coorte2 e 3 aumenta il rischio (51% e 36%), diventano più mobile, rispetto il gruppo di base, 
+	si può prendere in riferimento la coorte2 e capire se la 3 è significativamente diverso
+	- all'aumentare dell'esperienza lavorativa diminuisce per ogni mese il rischio di uscire
+	- all'aumentare del prestigio del lavoro, diminuisce la propensione ad abbandonare quel lavoro
+	*/
+	
 	*L'esercizio successivo è con la variabile SEX;
 	```
 </div>
@@ -366,7 +387,66 @@ mathjax: "true"
 <div class="content" id="es5data" markdown="1">
 
 	```sas
-	codice
+	libname dir "/home/u52136602/sasuser.v94/dati";
+
+	* con data dir.pippo rendo permanente il df;
+	data dir.pippo;
+	set dir.rrdat1;
+	durata=tfin-tstart+1;
+	des=0;
+	if tfin lt ti then des=1; /* pongo=0 casi censurati*/
+
+	/* calcolo data nascita e esamino distribuzione anno nascita */
+	anno1=(tb-1)/12+1900; 
+	anno2=int(anno1);  
+
+	/* coorte nascita categoriale*/
+	coorte=3;
+	if anno2 le 1931 then coorte=1;
+	if anno2 ge 1939 and anno2 le 1941 then coorte=2;
+
+	/* coorte nascita dummy: coho1 = reference group 1929-31*/
+	coho2=0; coho3=0;
+	if tb ge 468 and tb le 504 then coho2=1;      /* nati tra 1939-41 */
+	if tb ge 588 and tb le 624 then coho3=1;      /* nati tra 1949-11  */
+
+	/* altre variabili utili */                                                  
+	pnoj=noj-1;                 /* numero lavori precedenti*/
+	lfx=tstart - te;            /* esperienza lavorativa */
+	run;
+
+	/* 
+	Ipotizzo interazione tra maschi e femmine, stimo due modelli distinti di Cox
+	Scoprire se c'è qualche covariata che influenza in modo diverso i maschi e femmine
+	*/
+
+
+	proc phreg data=dir.PIPPO;;
+	WHERE SEX=1;                 /* altrimenti usare prima if */     
+	model durata*des (0) = edu coho2 coho3 lfx pnoj pres;
+	title “MASCHI analisi predittori rischio uscita mercato lavoro”;
+	run;
+
+	*non metto data perché prende in riferimento l'ultimo df;
+	proc phreg;
+	WHERE SEX=2;
+	model durata*des (0) = edu coho2 coho3 lfx pnoj pres;
+	title “FEMMINE analisi predittori rischio uscita mercato lavoro”;
+	run;
+
+
+	proc phreg  data=dir.PIPPO;
+	CLASS COORTE;   /*RIF=COORTE3*/
+	model durata*des (0) = edu COORTE lfx pnoj pres;
+	title “analisi predittori rischio uscita mercato lavoro”;
+	run;
+	proc phreg  data=dir.PIPPO;
+	CLASS COORTE (REF=FIRST);   /*RIF=COORTE1*/
+	model durata*des (0) = edu COORTE lfx pnoj pres;
+	title “analisi predittori rischio uscita mercato lavoro”;
+	run;
+
+	*INTERAZIONE CON SEX???;
 	```
 </div>
 <embed src="/assets/images/Statistica/EHA_5.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
