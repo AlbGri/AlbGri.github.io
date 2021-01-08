@@ -124,16 +124,10 @@ mathjax: "true"
 
 
 ## asd
-I. One
-	A. two
-		1. three
-		2. four
-			i. five
-			ii. six
-				- seven
-					* eight
-II. Nine
-
+I.  Foo 
+    A.  Bar 
+    B.  Baz 
+II.  Quux
 
 
 
