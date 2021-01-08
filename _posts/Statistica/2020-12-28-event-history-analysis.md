@@ -445,7 +445,6 @@ mathjax: "true"
 	- le coorti sono crescenti per gli uomini
 	*/
 
-
 	proc phreg  data=dir.PIPPO;
 	CLASS COORTE;   /*il riferimento è alla COORTE3*/
 	model durata*des (0) = edu COORTE lfx pnoj pres;
@@ -457,7 +456,20 @@ mathjax: "true"
 	title “analisi predittori rischio uscita mercato lavoro”;
 	run;
 
-	*INTERAZIONE CON SEX???;
+	/* 
+	dato quello che era emerso su SEX ed EDU li aggiungo sia singolarmente
+	che con la loro interazione
+	*/
+	proc phreg  data=dir.PIPPO;
+	CLASS COORTE (REF=FIRST);   /*RIF=COORTE1*/
+	model durata*des (0) = edu COORTE lfx pnoj pres sex sex*edu;
+	title “analisi predittori rischio uscita mercato lavoro”;
+	run;
+	/*
+	Perde la significatività SEX e fa diventare EDU negativo
+	non riusciamo a sfruttare l'interazione così com'è
+	Si potrebbe rendere categoriale EDU e fare incroci con SEX
+	*/
 	```
 </div>
 <embed src="/assets/images/Statistica/EHA_5.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
