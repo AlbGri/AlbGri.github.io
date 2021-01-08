@@ -23,7 +23,7 @@ mathjax: "true"
 	5. Multistato o multi-episodio
 3. Modellazione specifica
 	1. Limiti modello lineare
-	2. Censure (tipo I, II, random-informative, random-non informative)
+	2. Censure (tipo I, II, random-informative che dipendono dal rischio, random-non informative che non dipendono dal rischio)
 	3. Covariate (variabili o costanti rispetto il tempo)
 4. Disegni longitudinali retrospettivi
 	1. Indagini retrospettive
@@ -104,7 +104,10 @@ mathjax: "true"
 	4. Spazio stati TD
 	5. Effetti immediati o differiti nel tempo
 9. Effetti non proporzionali
-	1. ...
+	1. Violazione assunzione proporzionalità
+	2. Verifica proporzionalità (grafico o modello con interazione tra tempo e covariate)
+	3. Superamento ipotesi proporzionalità (modello stratificato o con interazione tra tempo - continuo o discreto - e covariate)
+	4. 
 
 
 
