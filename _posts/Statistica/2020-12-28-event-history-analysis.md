@@ -108,8 +108,9 @@ mathjax: "true"
 		- Modello con interazione tra tempo e covariate (se il coeff. dell'interazione è significativamente diverso da zero)
 	3. Superamento ipotesi proporzionalità
 		- Modello stratificato ($$n$$ rischi di base quanti gli strati)
-		- Modelli separati in strati ($$n$$ modelli quanti gli strati, con $$\Chi^2$$ saggio se gli $$n$$ modelli sono uguali a quello compatto)
-		$$\mathcal{X}^2_{(k-1)p}=\bigg[-2LL_{\mbox{stra}}-\Big[\sum_{i=1}^n(-2LL_{\mbox{sep}_i})\Big]\bigg]$$ con $$k=\mbox{n.strati}$$ e $$p=\mbox{n.predittori}$$
+		- Modelli separati in strati ($$n$$ modelli quanti gli strati, con $$\mathcal{X}^2$$ saggio se gli $$n$$ modelli sono uguali a quello compatto)  
+		$$\mathcal{X}^2_{(k-1)p}=\bigg[-2LL_{\mbox{stra}}-\Big[\sum_{i=1}^n(-2LL_{\mbox{sep}_i})\Big]\bigg]$$  
+		con $$k=\mbox{n.strati}$$ e $$p=\mbox{n.predittori}$$
 		- Modello con interazione tra il tempo (continuo o discreto) e le covariate
 
 
