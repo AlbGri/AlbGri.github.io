@@ -1,6 +1,6 @@
 ---
-title: "Appunti: Event History Analysis"
-excerpt: ""
+title: "Event History Analysis"
+excerpt: "note"
 date: 2021-01-03
 tags: [statistics, math, theory, university]
 mathjax: "true"

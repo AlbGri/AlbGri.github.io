@@ -1,6 +1,6 @@
 ---
-title: "Appunti: Teoria della Probabilità"
-excerpt: ""
+title: "Teoria della Probabilità"
+excerpt: "note"
 date: 2020-12-28
 tags: [probability, math, theory, university]
 mathjax: "true"

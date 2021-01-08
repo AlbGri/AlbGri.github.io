@@ -1,6 +1,6 @@
 ---
-title: "Appunti: Statistica Bayesiana"
-excerpt: "with R"
+title: "Statistica Bayesiana"
+excerpt: "note with R"
 date: 2021-01-02
 tags: [statistics, math, theory, bayesian, R]
 mathjax: "true"
