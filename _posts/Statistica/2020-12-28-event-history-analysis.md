@@ -103,7 +103,7 @@ mathjax: "true"
 9. Effetti non proporzionali
 	1. Violazione assunzione proporzionalità
 	2. Verifica proporzionalità 
-		- Grafico
+		- Grafico (analisi del logaritmo del rischio cumulato)
 		- Residui di Schoenfeld 
 		- Modello con interazione tra tempo e covariate
 	3. Superamento ipotesi proporzionalità (modello stratificato o con interazione tra tempo - continuo o discreto - e covariate)
@@ -488,7 +488,9 @@ mathjax: "true"
 
 &nbsp;
 &nbsp;
-<!--- 
+
+<!---
+
 <button class="collapsible" id="es6">Esempio 6: vuoto</button>
 <div class="content" id="es6data" markdown="1">
 
@@ -533,6 +535,7 @@ mathjax: "true"
 	```
 </div>
 <embed src="/assets/images/Statistica/EHA_9.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
 --->
 
 
