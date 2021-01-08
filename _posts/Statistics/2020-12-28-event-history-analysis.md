@@ -240,7 +240,7 @@ mathjax: "true"
 	set dir.rrdat1;
 	durata=tfin-tstart+1;
 	des=0;
-	if tfin lt ti then des=1; /* pongo=0 casi censurati*/
+	if tfin lt ti then des=1; 	* pongo=0 casi censurati;
 	run;
 
 	* stime con LT (unico gruppo//distinto per M e F);
@@ -288,7 +288,7 @@ mathjax: "true"
 
 	* genero il df;
 	data dati;
-	input time cens edu edu1 edu2 age ;   /*edu=B, M, A; age=anni compiuti */
+	input time cens edu edu1 edu2 age ;   * edu=B, M, A. age=anni compiuti;
 	cards;
 	0.1 1 1 1 0 20
 	0.2 1 2 0 1 18
@@ -308,9 +308,9 @@ mathjax: "true"
 	;
 	run;
 
-	/*stimo modelli*/
+	* stimo modelli;
 	proc phreg  data=dati;
-	model time*cens (0) = edu1 edu2;  /* ! anche class edu se …*/
+	model time*cens (0) = edu1 edu2;  * anche class edu se..;
 	title “predittori rischio uscita disoccupazione: education”;
 	run;
 
@@ -345,9 +345,9 @@ mathjax: "true"
 	set dir.rrdat1;
 	durata=tfin-tstart+1;
 	des=0;
-	if tfin lt ti then des=1; /* pongo=0 casi censurati*/
+	if tfin lt ti then des=1; 	* pongo=0 casi censurati;
 
-	/* calcolo data nascita e esamino distribuzione anno nascita */
+	* calcolo data nascita e esamino distribuzione anno nascita;
 	anno1=(tb-1)/12+1900; 
 	anno2=int(anno1);  
 	run;
@@ -358,24 +358,23 @@ mathjax: "true"
 	run; 
 											
 	* costruisco covariate necessarie per modello;
-
 	data pluto;
 	set pippo;
 
-	/* coorte nascita categoriale*/
+	* coorte nascita categoriale;
 	coorte=3;
 	if anno2 le 1931 then coorte=1;
 	if anno2 ge 1939 and anno2 le 1941 then coorte=2;
 
-	/* coorte nascita dummy: coho1 = reference group 1929-31*/
+	* coorte nascita dummy: coho1 = reference group 1929-31;
 	coho2=0; coho3=0;
-	if tb ge 468 and tb le 504 then coho2=1;      /* nati tra 1939-41 */
-	if tb ge 588 and tb le 624 then coho3=1;      /* nati tra 1949-11  */
+	if tb ge 468 and tb le 504 then coho2=1;      * nati tra 1939-41;
+	if tb ge 588 and tb le 624 then coho3=1;      * nati tra 1949-11;
 	* ALTERNATIVAMENTE DUMMY USANDO DIRETTAMENTE COORTE OPPURE ANNO2;
 
-	/* altre variabili utili */                                                  
-	pnoj=noj-1;                 /* numero lavori precedenti*/
-	lfx=tstart - te;            /* esperienza lavorativa */
+	* altre variabili utili;                         
+	pnoj=noj-1;                 * numero lavori precedenti;
+	lfx=tstart - te;            * esperienza lavorativa;
 	run;
 
 	*STIMO MODELLO COX - uso dummy coorte in model - NO SEX;
@@ -385,8 +384,7 @@ mathjax: "true"
 	title “analisi predittori rischio uscita mercato lavoro”;
 	run;
 	
-	/* 
-	Nostre ipotesi: 
+	/* Nostre ipotesi: 
 	- se l'istruzione è bassa accelera l'uscita dal mondo da lavoro 
 	- Il prestigio del lavoro accelera o rallenta l'uscita? Probabilmente ritarda
 	
@@ -398,8 +396,7 @@ mathjax: "true"
 	- la coorte2 e 3 aumenta il rischio (51% e 36%), diventano più mobile, rispetto il gruppo di base, 
 	si può prendere in riferimento la coorte2 e capire se la 3 è significativamente diverso
 	- all'aumentare dell'esperienza lavorativa diminuisce per ogni mese il rischio di uscire
-	- all'aumentare del prestigio del lavoro, diminuisce la propensione ad abbandonare quel lavoro
-	*/
+	- all'aumentare del prestigio del lavoro, diminuisce la propensione ad abbandonare quel lavoro */
 	
 	*L'esercizio successivo è con la variabile SEX;
 	```
@@ -427,31 +424,29 @@ mathjax: "true"
 	set dir.rrdat1;
 	durata=tfin-tstart+1;
 	des=0;
-	if tfin lt ti then des=1; /* pongo=0 casi censurati*/
+	if tfin lt ti then des=1; 	* pongo=0 casi censurati;
 
-	/* calcolo data nascita e esamino distribuzione anno nascita */
+	* calcolo data nascita e esamino distribuzione anno nascita;
 	anno1=(tb-1)/12+1900; 
 	anno2=int(anno1);  
 
-	/* coorte nascita categoriale*/
+	* coorte nascita categoriale;
 	coorte=3;
 	if anno2 le 1931 then coorte=1;
 	if anno2 ge 1939 and anno2 le 1941 then coorte=2;
 
-	/* coorte nascita dummy: coho1 = reference group 1929-31*/
+	* coorte nascita dummy: coho1 = reference group 1929-31;
 	coho2=0; coho3=0;
-	if tb ge 468 and tb le 504 then coho2=1;      /* nati tra 1939-41 */
-	if tb ge 588 and tb le 624 then coho3=1;      /* nati tra 1949-11  */
+	if tb ge 468 and tb le 504 then coho2=1;      * nati tra 1939-41;
+	if tb ge 588 and tb le 624 then coho3=1;      * nati tra 1949-11;
 
-	/* altre variabili utili */                                                  
-	pnoj=noj-1;                 /* numero lavori precedenti*/
-	lfx=tstart - te;            /* esperienza lavorativa */
+	* altre variabili utili;
+	pnoj=noj-1;                 * numero lavori precedenti;
+	lfx=tstart - te;            * esperienza lavorativa;
 	run;
 
-	/* 
-	Ipotizzo interazione tra maschi e femmine, stimo due modelli distinti di Cox
-	Scoprire se c'è qualche covariata che influenza in modo diverso i maschi e femmine
-	*/
+	/* Ipotizzo interazione tra maschi e femmine, stimo due modelli distinti di Cox
+	Scoprire se c'è qualche covariata che influenza in modo diverso i maschi e femmine */
 
 	proc phreg data=dir.PIPPO;;
 	WHERE SEX=1;                 /* altrimenti usare prima if */     
@@ -466,11 +461,9 @@ mathjax: "true"
 	title “FEMMINE analisi predittori rischio uscita mercato lavoro”;
 	run;
 	
-	/*
-	Confrontando i due modelli emerge che 
+	/* Confrontando i due modelli emerge che 
 	- EDU è prevalente maggiormente nelle femmine
-	- le coorti sono crescenti per gli uomini
-	*/
+	- le coorti sono crescenti per gli uomini */
 
 	proc phreg  data=dir.PIPPO;
 	CLASS COORTE;   /*il riferimento è alla COORTE3*/
@@ -483,20 +476,16 @@ mathjax: "true"
 	title “analisi predittori rischio uscita mercato lavoro”;
 	run;
 
-	/* 
-	dato quello che era emerso su SEX ed EDU li aggiungo sia singolarmente
-	che con la loro interazione
-	*/
+	/* dato quello che era emerso su SEX ed EDU li aggiungo sia singolarmente
+	che con la loro interazione */
 	proc phreg  data=dir.PIPPO;
 	CLASS COORTE (REF=FIRST);   /*RIF=COORTE1*/
 	model durata*des (0) = edu COORTE lfx pnoj pres sex sex*edu;
 	title “analisi predittori rischio uscita mercato lavoro”;
 	run;
-	/*
-	Perde la significatività SEX e fa diventare EDU negativo
+	/* Perde la significatività SEX e fa diventare EDU negativo
 	non riusciamo a sfruttare l'interazione così com'è
-	Si potrebbe rendere categoriale EDU e fare incroci con SEX
-	*/
+	Si potrebbe rendere categoriale EDU e fare incroci con SEX */
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_5.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
@@ -566,12 +555,10 @@ mathjax: "true"
 	title “movimenti in discesa”;
 	run;
 
-	/*
-	Per mettere su un unico grafico le tre curve di sopravvivenza:
+	/* 	Per mettere su un unico grafico le tre curve di sopravvivenza:
 	Passo 1: costruisco 3 nuovi dataset (salita, laterali, discesa) 
 	che contengono i casi in salita, =, discesa: la variabile censura (opportun. classificata)
-	ha sempre stesso nome=event; una nuova variabile=type classifica il tipo di destinazione;
-	*/
+	ha sempre stesso nome=event; una nuova variabile=type classifica il tipo di destinazione */
 
 	data salita; 
 	set paperino; 
@@ -609,20 +596,15 @@ mathjax: "true"
 	*ods graphics off; 
 	*ods html close;
 
-	/* 
-	Dal grafico emerge che gli episodi lavorativi sono più rapidi a 
+	/* Dal grafico emerge che gli episodi lavorativi sono più rapidi a 
 	scendere quando si ha una condizione di prestigio di lavoro
 	Negli altri casi la sopravvivenza è più elevata per il passaggio 
 	sia per il passaggio verso più prestigiose o meno prestigiose
 	Inoltre, per prendere 5 anni (5*12=60 mesi), graficamente si prende 
 	in modo approssimativo il valore nelle curve, altrimenti si cerca nella tabella
-	output il valore più prossimo a 60 per ogni curva
-	*/
+	output il valore più prossimo a 60 per ogni curva */
 
-
-	/* 
-	Per mettere su un unico grafico le tre curve di sopravvivenza (modo rapido)
-	*/
+	* Per mettere su un unico grafico le tre curve di sopravvivenza (modo rapido);
 	*ods html; 
 	*ods graphics on; 
 
@@ -648,10 +630,8 @@ mathjax: "true"
 	*ods graphics off;
 	*ods html close;
 
-	/* 
-	Stima con modelli semi-parametrici.
-	Un modello per ognuna delle tre destinazioni.
-	*/
+	/* Stima con modelli semi-parametrici.
+	Un modello per ognuna delle tre destinazioni. */
 
 	proc phreg data=paperino; /* movimenti in salita */
 	model durata*desn (0, 2, 3)= edu coho2 coho3 lfx pnoj pres ;
@@ -668,8 +648,7 @@ mathjax: "true"
 	title “MODELLO PER movimenti in discesa”;
 	run;
 
-	/* 
-	Come operano le covariate in funzione del tipo di destinazione successiva
+	/* Come operano le covariate in funzione del tipo di destinazione successiva
 	Per la salita:
 	- L'educazione e il prestigio sono significative
 	- All'aumentare del prestigio c'è meno propensione a muoversi
@@ -681,8 +660,7 @@ mathjax: "true"
 	- L'esperienza lavorativa è associata negativamente
 
 	Attenzione che questi modelli hanno standard error differenti, non è come
-	un modello a destinazione unica, le interpretazioni sono rischiose
-	*/
+	un modello a destinazione unica, le interpretazioni sono rischiose */
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_6.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
@@ -694,7 +672,294 @@ mathjax: "true"
 <div class="content" id="es7data" markdown="1">
 
 	```sas
-	codice
+	/*******************************************************
+	Obiettivi:
+	(Esercizio 1) Stima di S (H, logH ..) per gruppo "medie campionarie" delle covariate
+	(Esercizio 2) Stima di S (H, logH ..) per gruppo di BASE (covar=0), parte non parametrica
+		BASELINE + COVARIATES (= data set con valori covariate di interesse)
+	(Esercizio 3) Stima di S (H, logH ..) per gruppi diversi dalla baseline
+		combino stime gruppo di base + riskscore
+		calcolo direttamente senza passare da gruppo di base
+	*******************************************************/
+
+	* genero il df;
+	data dati;
+	input time cens edu edu1 edu2 age ;
+	cards;
+	0.1 1 1 1 0 20
+	0.2 1 2 0 1 18
+	0.5 0 3 0 0 29
+	0.5 1 1 1 0 30
+	0.7 1 2 0 1 17
+	0.8 1 3 0 0 23
+	1.3 1 1 1 0 29
+	1.5 1 2 0 1 33
+	1.8 0 3 0 0 25
+	2.5 1 1 1 0 18
+	2.5 1 2 0 1 20
+	2.5 0 3 0 0 31
+	3.2 1 1 1 0 35
+	3.7 1 2 0 1 17
+	3.8 0 3 0 0 24
+	1.9 1 1 1 0 18
+	2.8 1 2 0 1 18
+	3.4 0 3 0 0 18
+	1.9 1 1 1 0 29
+	0.8 1 3 0 0 18
+	3.4 1 3 0 0 20
+	;
+	run;
+
+	****************************** (Esercizio 1) ******************************;
+	* Passo 1: PHREG + BASELINE: stimo funzioni base (che metto nel file a);
+	proc phreg data=dati ;
+	model time*cens (0) = edu1 edu2 age;
+	baseline out=a  survival=s logsurv=ls loglogs=lls  cumhaz=H;
+	run;
+
+	* Passo 2: stampo data set «a»;
+	proc print data=a;        /* funzioni a durate non censurate */
+	run;
+	* I valori medi sono:  Edu1=0,33 – edu2=0,28 – age=23,33;
+
+	* Approfondimenti;
+	/* 1) La funzione H, oltre che con cumhaz, è ottenibile come H=-ls
+	ls che è stato stimato in «a» */
+	data cum;   set a;   HAZ = -ls;    run;
+	/* 2) Che succede se uso «edu» al posto di «edu1» e «edu2»? con o senza class?
+	Senza class edu la tratta come continua, non è una stima uguale */
+	/* 3) Se aggiungo opzioni plots in phreg: 
+	"phreg dati=dati plots=S plots=cumhaz" 
+	fa grafici di S e H */
+				 
+	* Passo 3: costruisco grafici funzioni: S vs t (o H vs t);  
+	proc gplot data=a; 
+	plot S*time;              
+	title «Sopravvivenza vs t»; 
+	run;         
+	* NB: grafico doppio?; 
+
+	* Per migliorare il grafico uso: "symbol value=none   interpol=joint";
+	proc gplot data=a; 
+	plot H*time;  
+	symbol /*value=none*/   interpol=joint ; 
+	title «rischio cumulato vs t»; 
+	run;
+	* NB: se uso "frammenti codice" = menù a tendina non sdoppia grafici;
+
+	ods graphics / reset width=6.4in height=4.8in imagemap;
+	proc sort data=WORK.A out=_SeriesPlotTaskData;
+		by time;
+	run;
+	proc sgplot data=_SeriesPlotTaskData;
+		series x=time y=s /;
+		xaxis grid;
+		yaxis grid;
+	run;
+	ods graphics / reset;
+
+	/* Per il grafico di S e H con intervalli confidenza:
+	(lower= nome; upper= nome) e H (lowercumhaz= nome; uppercumhaz=nome)*/
+	* Costruisco nuovo data set a1 con variabili richieste;
+	proc phreg data=dati;      
+	model time*cens(0) = edu1 edu2 age;
+	baseline out=a1 survival=s lower=lows upper=ups cumhaz=H lowercumhaz=lowch uppercumhaz=upch;    
+	run;   
+	* Per il grafico di S e H con intervalli: uso overlay;
+	proc gplot data=a1;    
+	plot (lows s ups)*time / overlay; symbol interpol=joint;
+	title "funzione sopravvivenza con intervalli confidenza";
+	run;
+	proc gplot;
+	plot (lowch H upch)*time / overlay; symbol interpol=joint;
+	title "rischio integrato con intervalli confidenza";
+	run;
+
+	/* Se volessi la stima di S per i 3 gruppi di edu a parità di 
+	age = media campionaria? uso strata?
+	Creo a2 con nuove stime - chiedo grafici - stratifico per edu */
+	proc phreg data=dati  plots=s; 
+	model time*cens(0) = age;
+	baseline out=a2  survival=s;
+	strata edu;
+	run;
+	proc print data=a2;
+	run;
+	/* Problema se stratifico per EDU: 
+	Ho chiesto a parità di age per tutti e 3 gli strati, in questo modo strata 
+	(che è usato per i modelli stratificati), va a stimare la funzione di sopravvivenza
+	a parità dell'altra variabile, age, che varia di gruppo in gruppo, non mi mette
+	il valore di age per tutti e 3 i gruppi, quindi non riesco a tenere sotto controllo
+	la age, viene in questo modo calcolata la media campionaria per ciascun sotto-gruppo */
+
+	****************************** (Esercizio 2) ******************************;
+	/* Passo 1: creo data set servizio «null» con valori covariate gruppo base
+	NB. gruppo base: edu=0=alta , età=0 */
+	data null;  
+	input edu1 edu2 age; cards;  
+	0 0 0
+	;       /* anche senza */  
+	run;
+
+	* Passo 2: stimo modello, S e H per gruppo base e metto in base0;
+	proc phreg  data=dati  noprint  simple;    
+	* NB. noprint non fornisce output modello. simple dà le medie camp. covariate;
+	model time *cens (0) = edu1 edu2 age;
+	baseline out=base0   covariates=null  survival=s cumhaz=H / method=pl  ;      
+	run;
+	* NB pl usa KM;
+
+	* proc print data=base0;
+	* run;
+
+	* Passo 3 (non obbligatorio): elimino da base0 variabili non utili;
+	data base0;
+	set base0;
+	drop edu1 edu2 age; 
+	run;
+
+	* Passo 4: costruisco grafici S e H gruppo base;
+	goptions reset=all;
+	/* qui si può inserire alcune istruzioni forma grafico (non necessarie) 
+	che si collegano ad opzioni di plot seguente */
+
+	proc gplot data=base0;
+	plot s*time;     /* inserire eventualmente title e symbol interpol=joint */
+	plot H*time;
+	run;
+
+	****************************** (Esercizio 3) ******************************;
+	/* Passo 1A: creo data set servizio con valori covariate gruppo: 0 0 18 
+	voglio la sopravvivenza dei 18enni con istruzione alta */
+	data covar;
+	Input  edu1 edu2 age;
+	Cards;
+	0 0 18
+	;
+	run;
+
+	* Passo 2A: stimo modello e S per il gruppo richiesto e metto in b (grafico in proc!);
+	proc phreg data=dati  PLOTS=S;   
+	model time*cens (0) = edu1 edu2 age;
+	baseline out=b    covariates=covar    survival=s  lower=lcl upper=ucl ;
+	run;
+
+	* Passo 3A: stampo b (alternativam. si può costruire grafico con proc gplot);
+	proc print data=b;
+	run;
+
+	/* Approccio alternativo:
+	Stima funzioni per gruppo "0 0 18" indiretta
+	(passo per stima funzioni gruppo di base che poi modifico con i RR)
+
+	Passo 0B: recupero stime RR da passo 1 punto a) precedente
+
+	Passo 1B: costruisco funzioni H  S  logH: parto da base0 - costruisco funzioni per age=18 - 
+	gioco un po' con le relazioni tra funzioni */
+
+	data base1;
+	set base0;
+	H02 = H *exp(-0.01371*18); *-0.01371 beta, 18 variabile continua Age;
+	* se richiesto anche per altri gruppi aggiungere istruzioni per altre caratteristiche;
+	s02 = exp(-H02);
+	logH = log(H);   * costruisco logH per gruppo base (prima non calcolato)-NB: per H=0 log non definito;
+	logH02 = logH -0.01371*18; * stima del gruppo non di base;
+	run;
+
+	* Passo 2B: grafici S H e logH per due gruppi;
+	goption reset=all;
+	* Definisco  alcune caratteristiche assi grafici;
+	axis1 order=(0 to 4 by 0.2);                           /* scala tempo */
+	axis2 order=(0 to 1 by 0.25) label=(a=90 'S(t)');      /* scala di S */
+	axis3 order=(0 to 5 by .5) label=(a=90 'H(t)');        /* scala di H */
+	axis4 order=(-6 to 2 by 1) label=(a=90 'logH(t)');     /* scala di logH */
+
+	* Chiedo grafici S e H di 2 gruppi  (baseline e "18enni istruzione alta");
+	proc gplot data=base1;
+	plot (s s02)*time / overlay vaxis =axis2 haxis=axis1; 
+	 /* NB: senza «overlay …» fa grafici distinti */
+	plot (H H02)*time   /overlay vaxis=axis3 haxis=axis1;
+	plot (logH logH02)*time  /overlay vaxis=axis4 haxis=axis1;
+	run;
+	/* Confronto la funzione di sopravvivenza per il gruppo di base con tutte le 
+	covariate = 0 con quella che ne ha due di covariate, per i 18 enni */
+
+	/*
+	Voglio costruire delle funzioni di sopravvivenza di due gruppi al netto 
+	dell'effetto delle covariate, per tenere sotto controllo effetti di disturbo.
+	Usando strata non funziona, possiamo farlo costruendo
+	in corrispondenza delle variabili metto il valore fisso delle covariate
+
+	Stimare S per 3 gruppi di edu a parità di età media campionaria, 
+	e fare su unico piano grafici usando gplot
+	*/
+
+	* Passo 1: creo edu1, edu2 edu3 con valori cov 3 gruppi;
+	data edu1;
+	Input  edu1 edu2 age;
+	Cards;
+	1 0 23.33
+	;
+	run;
+
+	data edu2;
+	Input  edu1 edu2 age;
+	Cards;
+	0 1 23.33
+	;
+	run;
+
+	data edu3;
+	Input  edu1 edu2 age;
+	Cards;
+	0 0 23.33
+	;
+	run;
+
+	* Passo 2: stimo (e stampo) S per i 3 gruppi e metto in: stime1 stime2 stime3;
+	proc phreg data=dati  plots=s; 
+	model time*cens(0) = edu1 edu2 age;
+	baseline out=stime1  covariates= edu1  survival=s;
+	run;
+	proc print data=stime1;
+	run;
+
+	proc phreg data=dati  plots=s; 
+	model time*cens(0) = edu1 edu2 age;
+	baseline out=stime2  covariates= edu2 survival=s;
+	run;
+	proc print data=stime2;
+	run;
+
+	proc phreg data=dati  plots=s;
+	model time*cens(0) = edu1 edu2 age;
+	baseline out=stime3  covariates= edu3 survival=s;
+	run;
+	proc print data=stime3;
+	run;
+
+	* Passo 3: unisco i 3 dataset ottenuti e codifico gruppi con edu;
+	data unione;
+	set stime1 stime2 stime3;
+	run;
+
+	data unione;
+	set unione;
+	if edu1=1 and edu2=0 then edu=1;
+	if edu1=0 and edu2=1 then edu=2;
+	if edu1=0 and edu2=0 then edu=3;
+	run;
+	proc print data=unione;
+	run;
+
+	* Passo 4: creo grafici S su unico piano;
+	proc gplot data=unione;
+	plot s*time = edu;
+	symbol interpol=joint; 
+	title "S per titolo studio";
+	run;
+	/* cambia l'educazione ma rimane costante l'age 
+	che con strata non era possibile */
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_7.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
