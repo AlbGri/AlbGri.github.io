@@ -104,9 +104,11 @@ mathjax: "true"
 	1. Violazione assunzione proporzionalità
 	2. Verifica proporzionalità 
 		- Grafico (analisi del logaritmo del rischio cumulato)
-		- Residui di Schoenfeld 
+		- Residui di Schoenfeld
 		- Modello con interazione tra tempo e covariate
-	3. Superamento ipotesi proporzionalità (modello stratificato o con interazione tra tempo - continuo o discreto - e covariate)
+	3. Superamento ipotesi proporzionalità
+		- Modello stratificato
+		- Modello con interazione tra il tempo (continuo o discreto) e le covariate
 
 
 #### [1.3.2] Modelli parametrici
@@ -121,6 +123,16 @@ mathjax: "true"
 
 
 
+##
+I. One
+	A. two
+		1. three
+		2. four
+			i. five
+			ii. six
+				- seven
+					* eight
+II. Nine
 
 
 
