@@ -383,11 +383,17 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es5">Esempio 5: vuoto</button>
+<button class="collapsible" id="es5">Esempio 5: Cox base (2)</button>
 <div class="content" id="es5data" markdown="1">
 
 	```sas
-	libname dir "/home/u52136602/sasuser.v94/dati";
+	/* 
+	Obiettivo: stimare predittori uscita dal mercato del lavoro tra 
+	un set covariate separatamente per maschi e femmine (Ci sono effetti 
+	delle covariate che interagiscono con il genere?)
+	*/
+	
+	libname dir "/home/dati";
 
 	* con data dir.pippo rendo permanente il df;
 	data dir.pippo;
@@ -420,7 +426,6 @@ mathjax: "true"
 	Scoprire se c'è qualche covariata che influenza in modo diverso i maschi e femmine
 	*/
 
-
 	proc phreg data=dir.PIPPO;;
 	WHERE SEX=1;                 /* altrimenti usare prima if */     
 	model durata*des (0) = edu coho2 coho3 lfx pnoj pres;
@@ -433,6 +438,14 @@ mathjax: "true"
 	model durata*des (0) = edu coho2 coho3 lfx pnoj pres;
 	title “FEMMINE analisi predittori rischio uscita mercato lavoro”;
 	run;
+	
+	/*
+	Confrontando i due modelli emerge che 
+	- EDU è prevalente maggiormente nelle femmine
+	- le coorti sono crescenti per gli uomini
+	
+	
+	*/
 
 
 	proc phreg  data=dir.PIPPO;
