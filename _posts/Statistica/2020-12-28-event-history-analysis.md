@@ -172,7 +172,11 @@ mathjax: "true"
 <div class="content" id="es1data" markdown="1">
 
 	```sas
-	* creo df;
+	/*******************************************************
+	Obiettivo: 
+	analizzare andamento uscita mercato del lavoro con LT e KM
+	*******************************************************/
+	* genero il df;
 	data dati;
 	input time cens;
 	cards;
@@ -224,10 +228,11 @@ mathjax: "true"
 <div class="content" id="es2data" markdown="1">
 
 	```sas
-	/* 
-	Obiettivo: con LT e KM, esaminare se e come la propensione a lasciare 
-	il mercato del lavoro differisce tra gli uomini e le donne nati tra 1929 e 1951. 
-	*/
+	/******************************************************* 
+	Obiettivo: 
+	con LT e KM, esaminare se e come la propensione a lasciare il mercato 
+	del lavoro differisce tra gli uomini e le donne nati tra 1929 e 1951. 
+	*******************************************************/
 	
 	* carico df;
 	libname dir "/home/dati";
@@ -276,7 +281,12 @@ mathjax: "true"
 <div class="content" id="es3data" markdown="1">
 
 	```sas
-	* leggo i dati da inserimento;
+	/*******************************************************
+	Obiettivo: 
+	stimare predittori uscita mercato del lavoro tra un set covariate
+	*******************************************************/
+
+	* genero il df;
 	data dati;
 	input time cens edu edu1 edu2 age ;   /*edu=B, M, A; age=anni compiuti */
 	cards;
@@ -325,9 +335,10 @@ mathjax: "true"
 <div class="content" id="es4data" markdown="1">
 
 	```sas
-	/* 
-	Obiettivo: stimare predittori uscita mercato del lavoro tra un set covariate
-	*/
+	/*******************************************************
+	Obiettivo: 
+	stimare predittori uscita mercato del lavoro tra un set covariate
+	*******************************************************/
 	
 	libname dir "/home/dati";
 	data pippo;
@@ -341,12 +352,12 @@ mathjax: "true"
 	anno2=int(anno1);  
 	run;
 
-	*verifico cosa ho ottenuto per sesso;
+	* verifico cosa ho ottenuto per sesso;
 	proc freq;   
 	table anno2*sex;  
 	run; 
 											
-	*costruisco covariate necessarie per modello;
+	* costruisco covariate necessarie per modello;
 
 	data pluto;
 	set pippo;
@@ -402,11 +413,12 @@ mathjax: "true"
 <div class="content" id="es5data" markdown="1">
 
 	```sas
-	/* 
-	Obiettivo: stimare predittori uscita dal mercato del lavoro tra 
-	un set covariate separatamente per maschi e femmine (Ci sono effetti 
+	/*******************************************************
+	Obiettivo: 
+	stimare predittori uscita dal mercato del lavoro tra un set 
+	covariate separatamente per maschi e femmine (Ci sono effetti 
 	delle covariate che interagiscono con il genere?)
-	*/
+	*******************************************************/
 	
 	libname dir "/home/dati";
 
@@ -496,12 +508,13 @@ mathjax: "true"
 <div class="content" id="es6data" markdown="1">
 
 	```sas
-	/* 
+	/*******************************************************
 	Obiettivo: 
-	con stimatore PL, si verifichi se le durate degli episodi lavorativi dipendono dal tipo di progressione (verso alto, verso basso, stazionaria) nella carriera
-	lavorativa (es. progressioni verso alto sono associate a episodi lavorativi più brevi o più lunghi?)
+	con stimatore PL, si verifichi se le durate degli episodi lavorativi dipendono 
+	dal tipo di progressione (verso alto, verso basso, stazionaria) nella carriera lavorativa 
+	(es. progressioni verso alto sono associate a episodi lavorativi più brevi o più lunghi?)
 	NB. si ha un episodio e 3 transizioni: processo multistato (o rischi competitivi)
-	*/
+	*******************************************************/
 
 	libname dir "/home/u52136602/sasuser.v94/dati";
 	data PLUTO;
@@ -677,8 +690,6 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<!---
-
 <button class="collapsible" id="es7">Esempio 7: Cox esteso (1)</button>
 <div class="content" id="es7data" markdown="1">
 
@@ -690,6 +701,8 @@ mathjax: "true"
 
 &nbsp;
 &nbsp;
+
+<!---
 
 <button class="collapsible" id="es8">Esempio 8: vuoto</button>
 <div class="content" id="es8data" markdown="1">
