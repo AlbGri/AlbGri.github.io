@@ -1,8 +1,8 @@
 ---
-title: "Event History Analysis"
+title: "Statistics: Event History Analysis"
 excerpt: "note"
 date: 2021-01-03
-tags: [statistics, math, theory, university]
+tags: [statistics, math, theory, university, SAS]
 mathjax: "true"
 ---
 
@@ -219,7 +219,7 @@ mathjax: "true"
 	run;
 	```
 </div>
-<embed src="/assets/images/Statistica/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
@@ -272,7 +272,7 @@ mathjax: "true"
 	run;
 	```
 </div>
-<embed src="/assets/images/Statistica/EHA_2.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_2.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
@@ -326,7 +326,7 @@ mathjax: "true"
 	run;
 	```
 </div>
-<embed src="/assets/images/Statistica/EHA_3.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_3.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
@@ -404,7 +404,7 @@ mathjax: "true"
 	*L'esercizio successivo è con la variabile SEX;
 	```
 </div>
-<embed src="/assets/images/Statistica/EHA_4.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_4.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
@@ -499,7 +499,7 @@ mathjax: "true"
 	*/
 	```
 </div>
-<embed src="/assets/images/Statistica/EHA_5.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_5.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
@@ -685,7 +685,7 @@ mathjax: "true"
 	*/
 	```
 </div>
-<embed src="/assets/images/Statistica/EHA_6.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_6.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
@@ -697,7 +697,7 @@ mathjax: "true"
 	codice
 	```
 </div>
-<embed src="/assets/images/Statistica/EHA_7.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_7.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
@@ -711,7 +711,7 @@ mathjax: "true"
 	codice
 	```
 </div>
-<embed src="/assets/images/Statistica/EHA_8.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_8.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
@@ -723,7 +723,7 @@ mathjax: "true"
 	codice
 	```
 </div>
-<embed src="/assets/images/Statistica/EHA_9.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_9.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 --->
 

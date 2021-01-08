@@ -1,6 +1,6 @@
 ---
-title: "Statistica Bayesiana"
-excerpt: "note with R"
+title: "R: Bayesian Statistics"
+excerpt: "Turn the Bayesian Crank"
 date: 2021-01-02
 tags: [statistics, math, theory, bayesian, R]
 mathjax: "true"
