@@ -23,7 +23,7 @@ mathjax: "true"
 	5. Multistato o multi-episodio
 3. Modellazione specifica
 	1. Limiti modello lineare
-	2. Censure (tipo I, II, random-informative che dipendono dal rischio, random-non informative che non dipendono dal rischio)
+	2. Censure (tipo I, II, random-non informative che non dipendono dal rischio, random-informative che dipendono dal rischio)
 	3. Covariate (variabili o costanti rispetto il tempo)
 4. Disegni longitudinali retrospettivi
 	1. Indagini retrospettive
@@ -69,12 +69,9 @@ mathjax: "true"
 
 
 
-
-
-
 ### [1.3] Modelli a tempo continuo
 
-#### Modello semi-parametrico
+#### [1.3.1] Modelli semi-parametrici
 1. Modello base
 	1. Caratteristiche modello di Cox
 	2. Significato PH (Proportional Hazard)
@@ -107,16 +104,25 @@ mathjax: "true"
 	1. Violazione assunzione proporzionalità
 	2. Verifica proporzionalità (grafico o modello con interazione tra tempo e covariate)
 	3. Superamento ipotesi proporzionalità (modello stratificato o con interazione tra tempo - continuo o discreto - e covariate)
-	4. 
+
+
+#### [1.3.2] Modelli parametrici
+1. Calcolo delle funzioni di densità, sopravvivenza e rischio
+2. Modelli di regressione parametrici
+	1. Rischi proporzionali (PH)
+	2. Tempi accelarati (AFT)
+3. Modello Esponenziale, Weibull, Esponenziale a tratti
+	1. Senza covariate
+	2. Con covariate (Parametrizzazione PH e AFT)
+4. Stima di massima verosimiglianza
 
 
 
 
 
 
-#### [1.3.1] Classi di modelli
-#### [1.3.2] Modello semiparametrico a rischi proporzionali e sue estensioni oltre il modello base (variabili tempo dipendenti, effetti non proporzionali, rischi competitivi)
-#### [1.3.3] Modelli parametrici a rischi proporzionali e a tempi accelerati (esponenziale, weibull, esponenziale a tratti)
+
+
 
 ### [1.4] Modelli a tempo discreto
 #### [1.4.1] Person Period
@@ -529,7 +535,6 @@ mathjax: "true"
 
 
 
-#############################
 
 
 
