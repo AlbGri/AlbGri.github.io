@@ -492,7 +492,7 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es6">Esempio 6: vuoto</button>
+<button class="collapsible" id="es6">Esempio 6: KM e Cox base (3)</button>
 <div class="content" id="es6data" markdown="1">
 
 	```sas
@@ -679,7 +679,7 @@ mathjax: "true"
 
 <!---
 
-<button class="collapsible" id="es7">Esempio 7: vuoto</button>
+<button class="collapsible" id="es7">Esempio 7: Cox esteso (1)</button>
 <div class="content" id="es7data" markdown="1">
 
 	```sas
