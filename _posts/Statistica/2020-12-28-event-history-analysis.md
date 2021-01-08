@@ -102,7 +102,10 @@ mathjax: "true"
 	5. Effetti immediati o differiti nel tempo
 9. Effetti non proporzionali
 	1. Violazione assunzione proporzionalità
-	2. Verifica proporzionalità (grafico, residui di Schoenfeld e modello con interazione tra tempo e covariate)
+	2. Verifica proporzionalità 
+		- Grafico
+		- Residui di Schoenfeld 
+		- Modello con interazione tra tempo e covariate
 	3. Superamento ipotesi proporzionalità (modello stratificato o con interazione tra tempo - continuo o discreto - e covariate)
 
 
