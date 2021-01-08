@@ -102,7 +102,7 @@ mathjax: "true"
 	5. Effetti immediati o differiti nel tempo
 9. Effetti non proporzionali
 	1. Violazione assunzione proporzionalità
-	2. Verifica proporzionalità (grafico o modello con interazione tra tempo e covariate)
+	2. Verifica proporzionalità (grafico, residui di Schoenfeld e modello con interazione tra tempo e covariate)
 	3. Superamento ipotesi proporzionalità (modello stratificato o con interazione tra tempo - continuo o discreto - e covariate)
 
 
@@ -485,7 +485,7 @@ mathjax: "true"
 
 &nbsp;
 &nbsp;
-
+<!--- 
 <button class="collapsible" id="es6">Esempio 6: vuoto</button>
 <div class="content" id="es6data" markdown="1">
 
@@ -530,7 +530,7 @@ mathjax: "true"
 	```
 </div>
 <embed src="/assets/images/Statistica/EHA_9.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
-
+--->
 
 
 
