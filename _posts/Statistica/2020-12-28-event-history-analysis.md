@@ -20,7 +20,7 @@ mathjax: "true"
 	2. Caso semplice: 1 episodio, 1 stato destinazione
 	3. Multistato o rischi competitivi: 1 episodio, 2+ stati destinazione
 	4. Multi-episodio: 2+ episodi, 1 stato destinazione
-	5. Multistato o multi-episodio
+	5. Multistato e multi-episodio
 3. Modellazione specifica
 	1. Limiti modello lineare
 	2. Censure (tipo I, II, random-non informative che non dipendono dal rischio, random-informative che dipendono dal rischio)
@@ -492,19 +492,192 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<!---
-
 <button class="collapsible" id="es6">Esempio 6: vuoto</button>
 <div class="content" id="es6data" markdown="1">
 
 	```sas
-	codice
+	/* 
+	Obiettivo: 
+	con stimatore PL, si verifichi se le durate degli episodi lavorativi dipendono dal tipo di progressione (verso alto, verso basso, stazionaria) nella carriera
+	lavorativa (es. progressioni verso alto sono associate a episodi lavorativi più brevi o più lunghi?)
+	NB. si ha un episodio e 3 transizioni: processo multistato (o rischi competitivi)
+	*/
+
+	libname dir "/home/u52136602/sasuser.v94/dati";
+	data PLUTO;
+	set dir.PIPPO;
+
+	* analisi rischi competitivi: definisco le destinazioni ; 
+	desn=2;	         			                  /* laterale */
+	if (presn/pres -1)  >= 0.20   then desn=1;    /* salita */
+	if (presn/pres -1)<0          then desn=3;    /* discesa */
+	if presn = -1                 then desn=0;	  /* censura=ultimo lavoro (censurato o meno)*/
+	run;
+
+	*creo PAPERINO con lavori <65;
+	data paperino;
+	set pluto;
+	if pres < 65;     /*elimino i lavori con punteggio alto perché non possono andare verso l'alto*/
+	run;
+
+	* Stimo KM per ognuno dei tre movimenti;
+	* KM-Movimenti in salita;
+	proc lifetest
+		data=paperino  /* movimenti in salita */
+		plots=(s ) graphics  nocensplot notable;
+	/* NOPRINT: sopprime il display dell'output - 
+	NOCENSPLOT sopprime dal grafico i casi censurati
+	NOTABLE: sopprime il display delle stime di S. 
+	Only the number of censored and event times, plots, 
+	and test results is displayed. 
+	OUTSURV=SAS-data-set oppure OUTS=SAS-data-set: 
+	crea un output SAS data set che contiene le stime di S
+	 and corresponding confidence limits for all strata */
+
+	* includo i censurati 0, più quelli che vanno in direzione diversa;
+	time durata*desn (0, 2, 3);
+	title “movimenti in salita”;
+	run;
+
+	proc lifetest
+		data=pluto   /* movimenti laterali */
+		plots=(s ) graphics nocensplot notable;
+	time durata*desn (0, 1, 3);
+	title “movimenti laterali”;
+	run;
+
+	proc lifetest                   /* movimenti in discesa */
+		data=pluto
+		plots=(s ) graphics nocensplot notable;
+	time durata*desn (0, 1, 2);
+	title “movimenti in discesa”;
+	run;
+
+	/*
+	Per mettere su un unico grafico le tre curve di sopravvivenza:
+	Passo 1: costruisco 3 nuovi dataset (salita, laterali, discesa) 
+	che contengono i casi in salita, =, discesa: la variabile censura (opportun. classificata)
+	ha sempre stesso nome=event; una nuova variabile=type classifica il tipo di destinazione;
+	*/
+
+	data salita; 
+	set paperino; 
+	event=0; 
+	if desn=1 then event=1; 
+	type=1; 
+	run;
+
+	data laterali; 
+	set pluto; 
+	event=0; 
+	if desn=2 then event=1; 
+	type=2; 
+	run;
+
+	data discesa; 
+	set pluto; 
+	event=0; 
+	if desn=3 then event=1; 
+	type=3; 
+	run;
+
+	* Passo 2: costruisco il dataset COMBINE che riunisce i 3 gruppi di episodi precedentem. costruiti;
+	data combine;
+	set salita laterali discesa; 
+	run;
+
+	* Passo 3: creo il grafico congiunto utilizzano variabile type come stratificatore;
+	*ods html; 
+	*ods graphics on; 
+	PROC LIFETEST DATA=COMBINE plots=(s(nocensor)) graphics nocensplot; 
+	TIME durata*event(0); 
+	STRATA type; 
+	RUN; 
+	*ods graphics off; 
+	*ods html close;
+
+	/* 
+	Dal grafico emerge che gli episodi lavorativi sono più rapidi a 
+	scendere quando si ha una condizione di prestigio di lavoro
+	Negli altri casi la sopravvivenza è più elevata per il passaggio 
+	sia per il passaggio verso più prestigiose o meno prestigiose
+	Inoltre, per prendere 5 anni (5*12=60 mesi), graficamente si prende 
+	in modo approssimativo il valore nelle curve, altrimenti si cerca nella tabella
+	output il valore più prossimo a 60 per ogni curva
+	*/
+
+
+	/* 
+	Per mettere su un unico grafico le tre curve di sopravvivenza (modo rapido)
+	*/
+	*ods html; 
+	*ods graphics on; 
+
+	DATA sal; 
+	SET paperino; 
+	event=(desn=1); 
+	type=1; 
+	DATA lat; 
+	SET pluto; 
+	event=(desn=2); 
+	type=2; 
+	DATA disc; 
+	SET pluto; 
+	event=(desn=3); 
+	type=3; 
+	DATA combine; 
+	SET sal lat disc; 
+	PROC LIFETEST DATA=COMBINE plots=(s(nocensor)) graphics nocensplot; 
+	TIME durata*event(0); 
+	STRATA type; 
+	RUN; 
+
+	*ods graphics off;
+	*ods html close;
+
+	/* 
+	Stima con modelli semi-parametrici.
+	Un modello per ognuna delle tre destinazioni.
+	*/
+
+	proc phreg data=paperino; /* movimenti in salita */
+	model durata*desn (0, 2, 3)= edu coho2 coho3 lfx pnoj pres ;
+	title “MODELLO PER movimenti in salita”;
+	run;
+
+	proc phreg data=pluto; /* movimenti LATERALI */
+	model durata*desn (0, 1, 3)= edu coho2 coho3 lfx pnoj pres ;
+	title “MODELLO PER movimenti laterali”;
+	run;
+
+	proc phreg data=pluto; /* movimenti discesa */
+	model durata*desn (0, 1, 2)= edu coho2 coho3 lfx pnoj pres ;
+	title “MODELLO PER movimenti in discesa”;
+	run;
+
+	/* 
+	Come operano le covariate in funzione del tipo di destinazione successiva
+	Per la salita:
+	- L'educazione e il prestigio sono significative
+	- All'aumentare del prestigio c'è meno propensione a muoversi
+	- Il livello di istruzione è un propulsore che aiuta a passare a lavori di maggiore prestigio
+	Per laterali:
+	- All'aumentare della durata dell'esperienza lavorativa tendono meno a muoversi
+	a lavori di tipo pari
+	Per la discesa:
+	- L'esperienza lavorativa è associata negativamente
+
+	Attenzione che questi modelli hanno standard error differenti, non è come
+	un modello a destinazione unica, le interpretazioni sono rischiose
+	*/
 	```
 </div>
 <embed src="/assets/images/Statistica/EHA_6.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
+
+<!---
 
 <button class="collapsible" id="es7">Esempio 7: vuoto</button>
 <div class="content" id="es7data" markdown="1">
