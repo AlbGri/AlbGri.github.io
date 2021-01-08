@@ -123,19 +123,50 @@ mathjax: "true"
 
 
 
-## asd
-I.  Foo 
-    A.  Bar 
-    B.  Baz 
-II.  Quux
+## 1
+1. Item1
+  1.1. SubItemA
+  1.2. SubItemB
+    - wat
+      - inception noise
 
-## dddd
+## 2
+1. Item1
+  1.1, SubItemA
+  1.2. SubItemB
+2. Item2 
+  2.1. SubItem 
+  2.2. SubItem
 
-a) test
-b) ddd
-	1. a
-	2. b
-c) aaa
+## 3
+1. Item1
+   1. SubItemA
+   2. SubItemB
+      - wat
+        - hi
+
+## 4
+  1. List item 1.
+  2. List item 2.
+     1. Sublist item 1.
+     2. Sublist item 2.
+     3. Sublist item 3.
+  3. List item 3.
+
+## 5
+1. List item 1.
+2. List item 2.
+   1. Sublist item 1.
+   2. Sublist item 2.
+   3. Sublist item 3.
+3. List item 3.
+
+## 6
+1. Item1
+  1.1. SubItemA
+  1.2. SubItemB
+    - wat
+      - inception noise
 
 
 
