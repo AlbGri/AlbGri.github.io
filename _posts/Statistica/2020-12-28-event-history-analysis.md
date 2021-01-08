@@ -153,7 +153,7 @@ mathjax: "true"
 
 
 ## SAS Labs
-<button class="collapsible" id="es1">Esempio 1: LT e KM (1)</button>
+<button class="collapsible" id="es1">Esempio 1: LT e KM (0)</button>
 <div class="content" id="es1data" markdown="1">
 
 	```sas
@@ -205,10 +205,12 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es2">Esempio 2: LT e KM (2)</button>
+<button class="collapsible" id="es2">Esempio 2: LT e KM (1)</button>
 <div class="content" id="es2data" markdown="1">
 
 	```sas
+	* Obiettivo: con LT e KM, esaminare se e come la propensione a lasciare il mercato del lavoro differisce tra gli uomini e le donne nati tra 1929 e 1951.;
+	
 	* carico df;
 	libname dir "/home/dati";
 	data pippo;
@@ -252,7 +254,7 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es3">Esempio 3: Cox base (1)</button>
+<button class="collapsible" id="es3">Esempio 3: Cox base (0)</button>
 <div class="content" id="es3data" markdown="1">
 
 	```sas
@@ -285,7 +287,7 @@ mathjax: "true"
 	run;
 
 	proc phreg  data=dati;
-	class edu;  *NB ref=3;
+	class edu;  *NB ref=3, se non si specifica la class viene considerata come numerica;
 	model time*cens (0) = edu;  
 	title “predittori rischio uscita disoccupazione: education”;
 	run;
@@ -301,11 +303,58 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es4">Esempio 4: vuoto</button>
+<button class="collapsible" id="es4">Esempio 4: Cox base (1)</button>
 <div class="content" id="es4data" markdown="1">
 
 	```sas
-	codice
+	* Obiettivo: stimare predittori uscita mercato del lavoro tra un set covariate;
+	
+	libname dir "/home/dati";
+	data pippo;
+	set dir.rrdat1;
+	durata=tfin-tstart+1;
+	des=0;
+	if tfin lt ti then des=1; /* pongo=0 casi censurati*/
+
+	/* calcolo data nascita e esamino distribuzione anno nascita */
+	anno1=(tb-1)/12+1900; 
+	anno2=int(anno1);  
+	run;
+
+	*verifico cosa ho ottenuto per sesso;
+	proc freq;   
+	table anno2*sex;  
+	run; 
+											
+	*costruisco covariate necessarie per modello;
+
+	data pluto;
+	set pippo;
+
+	/* coorte nascita categoriale*/
+	coorte=3;
+	if anno2 le 1931 then coorte=1;
+	if anno2 ge 1939 and anno2 le 1941 then coorte=2;
+
+	/* coorte nascita dummy: coho1 = reference group 1929-31*/
+	coho2=0; coho3=0;
+	if tb ge 468 and tb le 504 then coho2=1;      /* nati tra 1939-41 */
+	if tb ge 588 and tb le 624 then coho3=1;      /* nati tra 1949-11  */
+	* ALTERNATIVAMENTE DUMMY USANDO DIRETTAMENTE COORTE OPPURE ANNO2;
+
+	/* altre variabili utili */                                                  
+	pnoj=noj-1;                 /* numero lavori precedenti*/
+	lfx=tstart - te;            /* esperienza lavorativa */
+	run;
+
+	*STIMO MODELLO COX - uso dummy coorte in model - NO SEX;
+
+	proc phreg  data=pluto;
+	model durata*des (0) = edu coho2 coho3 lfx pnoj pres;
+	title “analisi predittori rischio uscita mercato lavoro”;
+	run;
+
+	*L'esercizio successivo è con la variabile SEX;
 	```
 </div>
 <embed src="/assets/images/Statistica/EHA_4.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
