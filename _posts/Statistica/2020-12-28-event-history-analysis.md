@@ -443,13 +443,11 @@ mathjax: "true"
 	Confrontando i due modelli emerge che 
 	- EDU è prevalente maggiormente nelle femmine
 	- le coorti sono crescenti per gli uomini
-	
-	
 	*/
 
 
 	proc phreg  data=dir.PIPPO;
-	CLASS COORTE;   /*RIF=COORTE3*/
+	CLASS COORTE;   /*il riferimento è alla COORTE3*/
 	model durata*des (0) = edu COORTE lfx pnoj pres;
 	title “analisi predittori rischio uscita mercato lavoro”;
 	run;
