@@ -104,7 +104,7 @@ mathjax: "true"
 	1. Violazione assunzione proporzionalità
 	2. Verifica proporzionalità 
 		- Grafico (analisi del logaritmo del rischio cumulato)
-		- Residui di Schoenfeld
+		- Residui di Schoenfeld (l'andamento dello scarto tra la covariata dell'i-esimo individuo e la sua media nel tempo è casuale)
 		- Modello con interazione tra tempo e covariate
 	3. Superamento ipotesi proporzionalità
 		- Modello stratificato
@@ -123,7 +123,7 @@ mathjax: "true"
 
 
 
-##
+## asd
 I. One
 	A. two
 		1. three
