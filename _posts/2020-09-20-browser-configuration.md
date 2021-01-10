@@ -24,7 +24,7 @@ in
 Popup/icons behaviour → Left mouse button click → Open in new tab (next to current) 
 </span>
 ![png](/assets/images/swift_selection_search.png)
-1. [Drag-Select Link Text](https://addons.mozilla.org/it/firefox/addon/drag-select-link-text): permette di selezionare agevolmente gli hyperlink senza aprirli. Nel video di esempio si può notare anche il popup di "Swift Selection Search"
+1. [Drag-Select Link Text](https://addons.mozilla.org/it/firefox/addon/drag-select-link-text): permette di selezionare agevolmente gli hyperlink senza aprirli. Nella gif si può notare anche il popup di "Swift Selection Search"
 ![gif](/assets/images/browser-configuration_DragSelectLinkText.gif)
 1. (Avanzato) [NoScript](https://addons.mozilla.org/it/firefox/addon/noscript/): ogni volta che si naviga un sito si sceglie se considerarlo come TRUSTED oppure si concedono solo alcune caratteristiche. Al primo utilizzo ho configurato tutti i siti pre-impostati TRUSTED in Default e in Appereance ho attivato High contrast per rendere più fruibile il popup.  
 NB1: se non si abilita come TRUSTED Google, ClearURLS non funge da clear link (immagino valga anche per Facebook e altri track-redirect-linkers).  
@@ -33,10 +33,10 @@ NB2: alcuni siti (tipo uno di un famoso italiano che crea guide, o di un famoso 
 **Estensioni secondarie**  
 1. [Load timer](https://addons.mozilla.org/it/firefox/addon/load-timer): mostra in modo dettagliato i secondi necessari per accedere ad una pagina web. Molto minimale. [Qui](https://github.com/alex-vv/page-load-time) il repository del suo creatore.
 1. [Gesturefy](https://addons.mozilla.org/it/firefox/addon/gesturefy): permette d'impostare alcuni comandi via mouse (es. tasto destro su per andare top page) e di abilitare le Rocker gesture (click dx + click sx torna indietro o click sx + click dx vai avanti), purtroppo alcune pagine tipo la home di Firefox, o la pagina delle estensioni sono [bloccate](https://www.reddit.com/r/firefox/comments/erharo/is_there_a_way_to_remove_extension_blocks_from/).  
-Nota: queste caratteristiche sono native in Opera da 20 anni.. /sob
+Nota: queste caratteristiche sono native in Opera da 15 anni.. /sob
 1. [Hard Refresh Button](https://addons.mozilla.org/it/firefox/addon/hard-refresh-button/): refresh della pagina senza uso cache
 1. [Facebook Container](https://addons.mozilla.org/it/firefox/addon/facebook-container/): non necessario per me perché uso un browser a parte per usare solo facebook, ma è essenziale per chi usa un solo browser per limitare che facebook tracci la tua attività web.
-1. [KeePass](https://addons.mozilla.org/firefox/addon/keefox/): ottimo gestore di password opensource. Non è semplicemente un'estensione ma si incronizza con il programma in locale. Su Ubuntu 18.04 l'installazione è un po' più complessa se si vuole usare [Google Drive](https://www.albgri.com/ubuntu-software/#keepass-2x) per mantenere il database di password online. Su [Windows](https://www.albgri.com/windows10-software/#keepass-2x) c'è una procedura analoga se lo si vuole sincronizzare con Google Drive.
+1. [KeePass](https://addons.mozilla.org/firefox/addon/keefox/): ottimo gestore di password opensource. Non è semplicemente un'estensione ma si sincronizza con il programma in locale. Su Ubuntu 18.04 l'installazione è un po' più complessa se si vuole usare [Google Drive](https://www.albgri.com/ubuntu-software/#keepass-2x) per mantenere il database di password online. Su [Windows](https://www.albgri.com/windows10-software/#keepass-2x) c'è una procedura analoga se lo si vuole sincronizzare con Google Drive.
 1. [Search by Image](https://addons.mozilla.org/it/firefox/addon/search_by_image/) ricerca l'immagine su Google Immagini ed altri simili. Fa risparmiare tempo! Sapete cosa è il [Reverse image search](https://en.wikipedia.org/wiki/Reverse_image_search)?
 
 **Estensioni abbandonate**
