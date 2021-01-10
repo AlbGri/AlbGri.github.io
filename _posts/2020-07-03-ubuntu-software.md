@@ -78,6 +78,7 @@ Programma utile simil firewall per monitorare programmi in entrata e uscita
 ```console
 ~$ sudo apt-get install ffmpeg
 ~$ ffmpeg -i /path/out-1.ogv /path/out-1.mp4
+ffmpeg -i /path/out-1.ogv -vf scale=600:-1 /path/out-1.gif
 ```
 
 1. Thunderbird con accesso a Google Calendar  

@@ -165,7 +165,7 @@ nel *_config.yml* nella voce url c'era il proprio sito con slash "/" finale. Va 
 
 1. Se si aggiorna il repo da una fonte diversa, ricordarsi da GitHub Desktop di cliccare su Fetch origin prima di lavorare, così da sincronizzare il repo localmente
 
-1. Popup nascosto  
+1. Popup nascosto (text expand markdown jekyll)  
 per generare [questo](https://chrisphillips-cminion.github.io/jekyll/2019/07/12/CollapseInJekyll.html) tipo di spoiler popup.  
     - Ho inserito il codice di quell'articolo nel file  
     _/_includes/Collapse.html_
