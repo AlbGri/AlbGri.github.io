@@ -998,7 +998,7 @@ mathjax: "true"
     uomini con istruzione medio-alta; il contrario avviene invece se
     l’istruzione è medio-bassa */
 
-    libname dir "/home/u52136602/sasuser.v94/dati";
+    libname dir "/home/dati";
     data MIO;
     set dir.PIPPO;
     * creo variabile edu_c;
