@@ -168,8 +168,8 @@ mathjax: "true"
 
 
 ## SAS Labs
-<button class="collapsible" id="es1">Esempio 1: LT e KM (0)</button>
-<div class="content" id="es1data" markdown="1">
+<button class="collapsible" id="es001">Esempio 1: LT e KM (0)</button>
+<div class="content" id="es001data" markdown="1">
 
 	```sas
 	/*******************************************************
@@ -219,13 +219,13 @@ mathjax: "true"
 	run;
 	```
 </div>
-<embed src="/assets/images/Statistics/EHA_1.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_001.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es2">Esempio 2: LT e KM (1)</button>
-<div class="content" id="es2data" markdown="1">
+<button class="collapsible" id="es002">Esempio 2: LT e KM (1)</button>
+<div class="content" id="es002data" markdown="1">
 
 	```sas
 	/******************************************************* 
@@ -272,13 +272,13 @@ mathjax: "true"
 	run;
 	```
 </div>
-<embed src="/assets/images/Statistics/EHA_2.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_002.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es3">Esempio 3: Cox base (0)</button>
-<div class="content" id="es3data" markdown="1">
+<button class="collapsible" id="es003">Esempio 3: Cox base (0)</button>
+<div class="content" id="es003data" markdown="1">
 
 	```sas
 	/*******************************************************
@@ -326,13 +326,13 @@ mathjax: "true"
 	run;
 	```
 </div>
-<embed src="/assets/images/Statistics/EHA_3.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_003.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es4">Esempio 4: Cox base (1)</button>
-<div class="content" id="es4data" markdown="1">
+<button class="collapsible" id="es004">Esempio 4: Cox base (1)</button>
+<div class="content" id="es004data" markdown="1">
 
 	```sas
 	/*******************************************************
@@ -401,13 +401,13 @@ mathjax: "true"
 	*L'esercizio successivo è con la variabile SEX;
 	```
 </div>
-<embed src="/assets/images/Statistics/EHA_4.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_004.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es5">Esempio 5: Cox base (2)</button>
-<div class="content" id="es5data" markdown="1">
+<button class="collapsible" id="es005">Esempio 5: Cox base (2)</button>
+<div class="content" id="es005data" markdown="1">
 
 	```sas
 	/*******************************************************
@@ -488,13 +488,13 @@ mathjax: "true"
 	Si potrebbe rendere categoriale EDU e fare incroci con SEX */
 	```
 </div>
-<embed src="/assets/images/Statistics/EHA_5.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_005.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es6">Esempio 6: KM e Cox base (3)</button>
-<div class="content" id="es6data" markdown="1">
+<button class="collapsible" id="es006">Esempio 6: KM e Cox base (3)</button>
+<div class="content" id="es006data" markdown="1">
 
 	```sas
 	/*******************************************************
@@ -663,13 +663,13 @@ mathjax: "true"
 	un modello a destinazione unica, le interpretazioni sono rischiose */
 	```
 </div>
-<embed src="/assets/images/Statistics/EHA_6.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_006.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es7">Esempio 7: Cox esteso (1)</button>
-<div class="content" id="es7data" markdown="1">
+<button class="collapsible" id="es007">Esempio 7: Cox stima funzioni base (1)</button>
+<div class="content" id="es007data" markdown="1">
 
 	```sas
 	/*******************************************************
@@ -962,13 +962,25 @@ mathjax: "true"
 	che con strata non era possibile */
 	```
 </div>
-<embed src="/assets/images/Statistics/EHA_7.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_007.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es8">Esempio 8: vuoto</button>
-<div class="content" id="es8data" markdown="1">
+<button class="collapsible" id="es008">Esempio 8: Cox stima funzioni base (2)</button>
+<div class="content" id="es008data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistics/EHA_008.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es009">Esempio 9: Cox VTD (1)</button>
+<div class="content" id="es009data" markdown="1">
 
 	```sas
     /*******************************************************
@@ -1097,23 +1109,33 @@ mathjax: "true"
     * Restituisce risultati diversi perché è bassa la numerosità campionaria.
 	```
 </div>
-<embed src="/assets/images/Statistics/EHA_8.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_009.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
 
-<!---
-
-<button class="collapsible" id="es9">Esempio 9: vuoto</button>
-<div class="content" id="es9data" markdown="1">
+<button class="collapsible" id="es010">Esempio 10: Cox VTD (2)</button>
+<div class="content" id="es010data" markdown="1">
 
 	```sas
 	codice
 	```
 </div>
-<embed src="/assets/images/Statistics/EHA_9.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_010.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
---->
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es011">Esempio 11: vuoto</button>
+<div class="content" id="es011data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistics/EHA_011.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+
 
 
 
