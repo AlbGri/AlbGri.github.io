@@ -505,7 +505,7 @@ mathjax: "true"
 	NB. si ha un episodio e 3 transizioni: processo multistato (o rischi competitivi)
 	*******************************************************/
 
-	libname dir "/home/u52136602/sasuser.v94/dati";
+	libname dir "/home/dati";
 	data PLUTO;
 	set dir.PIPPO;
 
@@ -967,19 +967,142 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<!---
-
 <button class="collapsible" id="es8">Esempio 8: vuoto</button>
 <div class="content" id="es8data" markdown="1">
 
 	```sas
-	codice
+    /*******************************************************
+    Obiettivo: 
+    Il figlio esce di casa per vivere da solo. 
+    Ha avuto autonomia, cioè accesso ad essere indipendente?
+    e_lh: età leaving home a cui se n'è andato di casa
+    e_int: età intervista (serve per capire se è censurato)
+    sex: 0 maschio
+    e_1job: età primo lavoro
+    (Esercizio 1) Modello stratificando VTD manualmente
+    (Esercizio 2) Modello stratificando VTD if SAS
+    *******************************************************/
+
+    data dati;
+    input id e_lh e_int sex e_1job;
+    cards;
+    1 34 35 0 30
+    2 . 22 0 .
+    3 20 25 1 .
+    4 21 30 1 20
+    5 28 33 1 26
+    6 . 24 0 22
+    7 . 19 0 .
+    8 . 29 0 .
+    9 . 23 1 22
+    10 27 34 1 25
+    11 . 27 0 24	
+    12 . 20 1 .
+    13 25 33 0 .
+    14 . 25 1 .
+    15 . 20 0 .
+    16 26 28 1 27 
+    ;
+    run;
+
+    ****************************** (Esercizio 1) ******************************;
+    * Creo variabile durata e censura (1 se epis.censurato);
+    data dati;  
+    set dati;
+    durata = e_lh; 
+    censura = 0;
+    if e_lh = . then do;
+	    durata = e_int;
+	    censura = 1;   * episodi censurati=1;
+    end;
+    run;
+    proc print data=dati;
+    run;
+
+    /* La condizione di trovare lavoro è time dependent (è reversibile 
+    ma la considero come irreversibile per semplicità)
+    Quindi devo splittare la durata di leaving home per questa variabile
+    Definisco per ogni sotto episodio nuove variabili 
+    di durata, censura e stato occupazionale 
+    (0=no lav tempo ind.- 1 lavoro tempo indet) */
+
+    * Il tempo di esposizione inizia a 18 anni;
+    data split;
+    set dati;
+    * definisco variabili sottoepisodi;
+    tempo = 0; * durata episodio;
+    status = 0; * se censurato;
+    lav = 0; * variabile tempo dipendente;
+
+    * Caso 1: il lavoro non è avvenuto prima fine episodio;
+    if (e_1job=. or e_1job>=durata) then do;
+	    /* NB. tempo coincide con durata episodio, 
+	    sottoepisodio è censurato e VTD=0 */
+	    tempo = durata-18;
+	    status = censura;  
+	    lav = 0;
+	    output; * lo butta fuori dentro split;
+    end;
+         
+    * Caso 2: il lavoro non è accaduto prima fine episodio;
+    if (e_1job ne . and e_1job<durata) then do;
+	    tempo = e_1job-18; 
+	    status = 1;  * lo split iniziale sarà censurato;
+	    lav = 0; 
+	    output;
+	    tempo = durata-e_1job; 
+	    status = censura;  
+	    lav = 1; 
+	    output;
+    end;    
+    run;
+    proc print data = split;
+    run;
+
+    * Stimo modello con variabile lav;
+    proc phreg  data=split;
+    model tempo*status(1) = lav sex;
+    title "effetto occup tempo indeterminato su leaving home giovani - dataset splittato";
+    run;
+
+    /* Risultati
+    La variabile Lav stima 3.12 con un valore 
+    alto del rischio (22.8) ed è significativo
+
+    Senza il 18 come punto di partenza, si avevano effetti più alti 
+    ma non significativi, perchè il tratto veniva troppo lungo, conviene
+    riportarsi all'inizio dell'esposizione, altrimenti crea distorsione
+    in quanto non si lavora da minorenni e ci sarebbero 18 anni che pesano
+    sulla stima */
+
+
+    proc print data = dati;
+    run;
+
+    ****************************** (Esercizio 2) ******************************;
+    * La if di SAS ne risente di una bassa numerosità campionaria;
+    data dati;
+    set dati;
+    durata1 = durata-18;
+    e_1job1 = .;
+    if e_1job ne . then e_1job1 = e_1job-18;
+    run;
+
+    proc phreg data=dati;
+    model durata1*censura(1) = lav sex ; * variabile lav la definisco dopo;
+    if (e_1job1 ne . and e_1job1 < durata1) then lav=1;  else lav=0;      * 1,29 NS;
+    * if (e_1job1= . or e_1job1 >= durata1) then lav=0;  else lav=1;
+    title "effetto occup tempo indeterminato su leaving home giovani – uso IF";
+    run;
+    * Restituisce risultati diversi perché è bassa la numerosità campionaria.
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_8.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 &nbsp;
 &nbsp;
+
+<!---
 
 <button class="collapsible" id="es9">Esempio 9: vuoto</button>
 <div class="content" id="es9data" markdown="1">
