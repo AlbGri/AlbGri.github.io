@@ -70,6 +70,22 @@ Opera: "path\Opera\launcher.exe" -private
 Explorer: "path\iexplore.exe" -private
 ```
 
+### 1
+<img src="/assets/images/video_rec.gif" />
+
+### 2
+![Alt Text](/assets/images/video_rec.gif)
+
+### 3
+<img src="/assets/images/video_rec.mp4" width="600" />
+
+### 4
+<img src="/assets/images/video_rec.mp4" />
+
+
+### 5
+![Alt Text](/assets/images/video_rec.mp4)
+
 
 
 ...
