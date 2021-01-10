@@ -971,7 +971,205 @@ mathjax: "true"
 <div class="content" id="es008data" markdown="1">
 
 	```sas
-	codice
+    /* (Esercizio 1)
+    Stimare i grafici di S per k gruppi 
+    a lordo degli effetti delle altre covariate 
+    (con LT, o KM, usando metodo non parametrico sono a lordo)
+
+    (Esercizio 2)
+    Stimare i grafici di S per k gruppi 
+    al netto degli effetti delle altre covariate = phreg (perché tutte 
+    le altre variabili sono tutte uguali alla loro media campionaria)
+
+    (Esercizio 2 e mezzo)
+    Ci sono differenze nell'effetto dei k gruppi con i due approcci?
+    (ad esempio confrontare le due mediane)
+
+    (Esercizio 3)
+    Si verifichino le seguenti ipotesi
+    - HP1: le donne con istruzione medio-alta hanno meno
+    propensione a uscire dal mercato del lavoro delle donne con
+    istruzione medio-bassa
+    - HP2: a parità di altre condizioni, gli uomini con istruzione medio-
+    alta hanno più propensione a uscire dal mercato del lavoro degli
+    uomini con istruzione medio-bassa
+    - HP3: a parità di altre condizioni le donne con istruzione medio-
+    alta hanno meno propensione a uscire al mercato del lavoro degli
+    uomini con istruzione medio-alta; il contrario avviene invece se
+    l’istruzione è medio-bassa */
+
+    libname dir "/home/u52136602/sasuser.v94/dati";
+    data MIO;
+    set dir.PIPPO;
+    * creo variabile edu_c;
+    edu_c=0;                    /*istruz medio-bassa */
+    if edu >= 12 then edu_c=1; /*istruzione medio-alta*/
+    run;
+    proc freq;
+    table sex*edu_c;
+    run;
+
+    ****************************** (Esercizio 1) ******************************;
+    * stimo S coorte lordo altre covariate;
+    proc lifetest data=mio
+	    plots= s(cl) graphics
+	    outsurv=S_coorte1;
+    time durata*des (0);
+    strata coorte;
+    title ”analisi KM per coorti al lordo altre covariate”; 
+    *symbol1 v=none color=black line=1;
+    *symbol2 v=none color=red line=2;
+    proc print data=s_coorte1;
+    run;
+
+    ****************************** (Esercizio 2) ******************************;
+    * Passo 1: stimo S per 3 coorti netto altre covariate;
+    /* preliminarmenete stimo S per vettore medie 
+    campionarie (conosco medie covariate)*/
+    proc phreg data=mio ; 
+    model durata*des (0) = sex edu coho2 coho3 lfx pnoj pres; 
+    baseline out=a  survival=s; 
+    run; 
+    proc print data=a;   
+    run; 
+
+    /* S netto. 
+    Cambio solo le prime due variabili che definiscono la coorte,
+    le altre le fisso ai valori medi */
+    data coorte1;
+    Input  coho2 coho3 sex edu lfx pnoj pres;
+    Cards;
+    0 0 1.41 11.26 74.70  1.48 38.28
+    ;
+    run;
+    data coorte2;
+    Input  coho2 coho3 sex edu lfx pnoj pres;
+    Cards;
+    1 0 1.41 11.26 74.70  1.48 38.28
+    ;
+    run;
+    data coorte3;
+    Input  coho2 coho3 sex edu lfx pnoj pres;
+    Cards;
+    0 1 1.41 11.26 74.70  1.48 38.28
+    ;
+    run;
+
+    * Passo 2: stimo S per i 3 gruppi;
+    proc phreg data=mio  noprint; 
+    model durata*des(0) = coho2 coho3 sex edu lfx pnoj pres ;
+    baseline out=stime1  covariates= coorte1  survival=s;
+    run;
+
+    proc phreg data=mio  noprint; 
+    model durata*des(0) = coho2 coho3 sex edu lfx pnoj pres;
+    baseline out=stime2  covariates= coorte2 survival=s;
+    run;
+
+    proc phreg data=mio noprint; 
+    model durata*des(0) = coho2 coho3 sex edu lfx pnoj pres;
+    baseline out=stime3  covariates= coorte3 survival=s;
+    run;
+
+    * Passo 3: grafico con le 3 curve S;
+    * devo creare prima un df unico con le 3 S e 3 coorti;
+    data stime;
+    set stime1 stime2 stime3;
+    coorte=1;
+    if coho2=1 and coho3=0 then coorte=2;
+    if coho2=0 and coho3=1 then coorte=3;
+    run;
+    proc print data=stime;
+    run;
+
+    proc gplot data=stime;
+    plot s*durata = coorte;
+    symbol interpol=joint; 
+    title "S coorti al netto altre covariate";
+    run;
+
+
+    ****************************** (Esercizio 3) ******************************;
+    * Creo df tuo: individui nati 49-51 /187 casi;
+    data tuo;
+    set mio;
+    if coorte=3;
+    run;
+    proc freq data=tuo;
+    table sex*edu_c;
+    run;
+
+    * Creo 4 gruppi sex*istruz;
+    data Fbassa;
+    Input sex edu_c lfx pnoj pres;
+    Cards;
+    2 0 74.70  1.48 38.28
+    ;
+    run;
+    data Falta;
+    Input  sex edu_c lfx pnoj pres;
+    Cards;
+    2 1 74.70  1.48 38.28
+    ;
+    run;
+    data Mbassa;
+    Input sex edu_c lfx pnoj pres;
+    Cards;
+    1 0 74.70  1.48 38.28
+    ;
+    run;
+    data Malta;
+    Input sex edu_c lfx pnoj pres;
+    Cards;
+    1 1 74.70  1.48 38.28
+    ;
+    run;
+
+    * Stimo S 4 gruppi e unisco dati;
+    proc phreg data=mio  plots=s ; 
+    model durata*des(0) = sex edu_c lfx pnoj pres;
+    baseline out=stimeFb  covariates= fbassa survival=s;
+    run;
+    proc phreg data=mio  plots=s ; 
+    model durata*des(0) = sex edu_c lfx pnoj pres;
+    baseline out=stimeFa  covariates= falta survival=s;
+    run;
+    proc phreg data=mio  plots=s; 
+    model durata*des(0) = sex edu_c lfx pnoj pres;
+    baseline out=stimemb  covariates= mbassa survival=s;
+    run;
+    proc phreg data=mio  plots=s; 
+    model durata*des(0) = sex edu_c lfx pnoj pres;
+    baseline out=stimema  covariates= malta survival=s;
+    run;
+
+    * Crea file comune;
+    data stime;
+    set stimefb stimefa stimemb stimema;
+    sexedu=1;  *M edu bassa;
+    if sex=1 and edu_c=1 then sexedu=2;  *M edualta;
+    if sex=2 and edu_c=0 then sexedu=3;
+    if sex=2 and edu_c=1 then sexedu=4;
+    run;
+    proc print data=stime;
+    run;
+
+    proc freq;
+    table sex*edu_c;
+    run;
+
+    * Creo grafici S su unico piano;
+    proc gplot data=stime;
+    plot s*durata=sexedu;
+    symbol interpol=joint; 
+    title "S MF per edu al netto altre covariate";
+    run;
+
+    /* Risultati
+    Le ipotesi non sono confermate, il titolo di studio non
+    fa modificare i comportamenti di abbandonare il lavoro.
+    Le donne hanno un abbandono maggiore dal mercato del lavoro
+    rispetto gli uomini */
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_008.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
