@@ -165,6 +165,19 @@ nel *_config.yml* nella voce url ci stava il proprio sito con slash "/" finale. 
 
 1. Se si aggiorna il repo da una fonte diversa, ricordarsi da GitHub Desktop di cliccare su Fetch origin prima di lavorare, così da sincronizzare il repo localmente
 
+1. Popup nascosto  
+per generare [questo](https://chrisphillips-cminion.github.io/jekyll/2019/07/12/CollapseInJekyll.html) tipo di spoiler popup.  
+    - Ho inserito il codice di quell'articolo nel file _/_includes/Collapse.html_
+    - Aggiunto `{% include Collapse.html %}` prima dell'ultimo `body` in _/_layouts/default.html_
+    - Per rendere chiuso di default il popup, ho inserito dentro la skin _/_nomeskin.scss_ che utilizzo (quella che in _/_config.yml_ è presente alla voce `minimal_mistakes_skin`) il seguente codice  
+    ```scss
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+    }
+    ```
+    - Purtroppo il risultato non segue l'highlight dei codici.
 
 ## Google Setup
 1. Search Engine Google: utilizzo google search nel search bar del sito  
