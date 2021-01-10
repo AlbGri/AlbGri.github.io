@@ -52,6 +52,17 @@ Software & Updates →  Updates → Automatically... → Never!
 ~$ sudo dpkg-reconfigure unattended-upgrades
 ```
 
+1. Click to minimize  
+Per utilizzare l'icona del programma nella barra dei preferiti sia per aprirlo che per ridurlo ad icona.
+```console
+~$ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+```
+Per disattivarlo
+```console
+~$ gsettings reset org.gnome.shell.extensions.dash-to-dock click-action
+```
+NB. se si usano più finestre dello stesso programma può essere noioso se si era abituati a cliccare sull'icona per switchare di finestra, al momento come soluzione uso alt tab.
+
 1. Cambia velocità cursore  
 ```console
 ~$ xset m 3/2 1
