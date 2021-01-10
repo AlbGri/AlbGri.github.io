@@ -1312,6 +1312,8 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
+<!---
+
 <button class="collapsible" id="es010">Esempio 10: Cox VTD (2)</button>
 <div class="content" id="es010data" markdown="1">
 
@@ -1333,7 +1335,7 @@ mathjax: "true"
 </div>
 <embed src="/assets/images/Statistics/EHA_011.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
-
+--->
 
 
 
