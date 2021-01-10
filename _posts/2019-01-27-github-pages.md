@@ -161,15 +161,19 @@ $spotify-color: #00d867 !default;
       url: "https://open.spotify.com/user/albgri"
 ```
 1. Evitare il doppio slash nell'url del post  
-nel *_config.yml* nella voce url ci stava il proprio sito con slash "/" finale. Va rimosso!
+nel *_config.yml* nella voce url c'era il proprio sito con slash "/" finale. Va rimosso!
 
 1. Se si aggiorna il repo da una fonte diversa, ricordarsi da GitHub Desktop di cliccare su Fetch origin prima di lavorare, così da sincronizzare il repo localmente
 
 1. Popup nascosto  
 per generare [questo](https://chrisphillips-cminion.github.io/jekyll/2019/07/12/CollapseInJekyll.html) tipo di spoiler popup.  
-    - Ho inserito il codice di quell'articolo nel file _/_includes/Collapse.html_
-    - Aggiunto `{% raw %}{% include Collapse.html %}{% endraw %}` prima dell'ultimo `body` in _/_layouts/default.html_
-    - Per rendere chiuso di default il popup, ho inserito dentro la skin _/_nomeskin.scss_ che utilizzo (quella che in _/_config.yml_ è presente alla voce `minimal_mistakes_skin`) il seguente codice (preso spunto da [qui](https://www.nuomiphp.com/eplan/en/214045.html))  
+    - Ho inserito il codice di quell'articolo nel file  
+    _/_includes/Collapse.html_
+    - Aggiunto `{% raw %}{% include Collapse.html %}{% endraw %}` prima dell'ultimo `body` in  
+    _/_layouts/default.html_
+    - Per rendere chiuso di default il popup, ho inserito dentro la skin  
+    _/_sass/minimal-mistakes/skins/_nomeskin.scss_  
+    che utilizzo (quella che in _/_config.yml_ è presente alla voce `minimal_mistakes_skin`) il seguente codice (preso spunto da [qui](https://www.nuomiphp.com/eplan/en/214045.html))  
     ```scss
     .content {
       padding: 0 18px;
