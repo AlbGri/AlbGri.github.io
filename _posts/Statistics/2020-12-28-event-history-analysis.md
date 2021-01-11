@@ -125,13 +125,18 @@ mathjax: "true"
 #### [1.3.2] Modelli parametrici
 1. Calcolo delle funzioni di densità, sopravvivenza e rischio
     - trasformazioni utili:  
-    $$\log{T}\sim\mathcal{N}(\mu,\sigma^2)\Rightarrow T\sim\log{\mathcal{N}(\mu,\sigma^2)}$$  
+    $$\log{X}\sim\mathcal{N}(\mu,\sigma^2)\Rightarrow X\sim\log{\mathcal{N}(\mu,\sigma^2)}$$  
     $$S(t)=\int_t^{+\infty}f(u)du$$  
     $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     - possibili forme funzionali: 
         - Esponenziale  
-        $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0 \qquad S(t)=\exp{(-at)} \qquad h(t)=a$$
-        - Weibull 
+        $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
+        $$S(t)=\exp{(-at)}$$  
+        $$h(t)=a$$
+        - Weibull  
+        $$f(t)=abt^{b-1}\exp{(-at^b)}\mbox{ con }a\mbox{ (scala), }b\mbox{ (forma)}>0$$ se $$b=1$$ Esponenziale
+        $$S(t)=\exp{(-at^b)}$$
+        $$h(t)=abt^{b-1}$$
         - Altre: Gompertz, Gompertz-Makeham (utile per mortalità con pochi casi), Log-logistica, Log-normale, Gamma, Gamma generalizzati, Hernes, Sickle, etc. 
 2. Modelli di regressione parametrici
 	1. Rischi proporzionali (PH)
