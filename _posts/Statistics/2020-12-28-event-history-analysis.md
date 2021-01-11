@@ -166,7 +166,11 @@ mathjax: "true"
 	    - Weibul (Esponenziale): sia PH che AFT  
 	    - Gompertz: PH  
 	    - Log-normale, Log-logistico, Gamma generalizzati: AFT  
-3. Modello Esponenziale, Weibull, Esponenziale a tratti
+3. Modello Esponenziale, Weibull, Esponenziale a tratti con parametrizzazione PH e AFT
+	1. Esponenziale
+	    - Senza covariate, $$T\sim\mathcal{Exp}(a)$$, 1 episodio 1 evento:  
+	    $$lim_{t\rightarrow\infty}S(t,a)=0$$ eventi inevitabili  
+	    $$E(T)=\frac{1}{a} \qquad Var(T)=\frac{1}{a^2} \qquad t_{\mbox{quantile}_k}=-\log{(k)}\cdot E(T)$$
 	1. Senza covariate
 	2. Con covariate (Parametrizzazione PH e AFT)
 4. Stima di massima verosimiglianza (da gestire le censure)  
