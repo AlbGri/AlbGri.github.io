@@ -145,20 +145,24 @@ mathjax: "true"
         $$h(t)$$ Rischio unimodale  
         - Altre: Log-normale, Gamma, Gamma generalizzati  
 2. Modelli di regressione parametrici
-	1. Rischi proporzionali (PH)
+	1. Parametrizzazione a Rischi Proporzionali (PH)
 	    - La variabile dipendente è la funzione rischio (come Cox ma con baseline parametrico):  
 	    $$h_i(t,X_i)=h_0(t)\cdot \theta$$  
 	    - Trasformazioni utili  
 	    $$S(t)=S_0(t)^\theta$$  
 	    $$f(t)=f_0(t)\cdot S_0(t)^{(\theta-1)}\cdot\theta$$  
 	    $$H(t)=H_0(t)\cdot\theta\mbox{ con }H_0(t)=-\log{S_0(t)}$$  
-	2. Tempi accelarati (AFT)  
+	2. Parametrizzazione a Tempi Accelarati (AFT)  
 	    - Si ha un effetto moltiplicativo, non più sul rischio, ma sul tempo di permanenza nello stato pre-transizione:  
 	    $$T_i=T_0\cdot \gamma$$ con $$\gamma$$ fattore di accelerazione, e se è $$>1$$ aumentano i tempi di sopravvivenza e il rischio diminuisce  
 	    - Trasformazioni utili  
 	    $$S(t,X)=S_0\big(\frac{t}{\gamma}\big)$$  
 	    $$h(t,X)=h_0\big(\frac{t}{\gamma}\big)/\gamma$$  
 	    $$f(t,X)=h_0\big(\frac{t}{\gamma}\big)/\gamma\cdot S_0\big(\frac{t}{\gamma}\big)=f_0(t)/\gamma$$  
+	3. Specifiche parametrizzazioni per specifici modelli  
+	    - Weibul (Esponenziale): sia PH che AFT  
+	    - Gompertz: PH
+	    - Log-normale, Log-logistico, Gamma generalizzati: AFT
 3. Modello Esponenziale, Weibull, Esponenziale a tratti
 	1. Senza covariate
 	2. Con covariate (Parametrizzazione PH e AFT)
