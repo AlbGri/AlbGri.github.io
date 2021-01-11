@@ -419,7 +419,7 @@ mathjax: "true"
 	if tb ge 588 and tb le 624 then coho3=1;      * nati tra 1949-11;
 	* ALTERNATIVAMENTE DUMMY USANDO DIRETTAMENTE COORTE OPPURE ANNO2;
 
-	* altre variabili utili;                         
+	* altre variabili utili;
 	pnoj=noj-1;                 * numero lavori precedenti;
 	lfx=tstart - te;            * esperienza lavorativa;
 	run;
@@ -781,14 +781,14 @@ mathjax: "true"
 				 
 	* Passo 3: costruisco grafici funzioni: S vs t (o H vs t);  
 	proc gplot data=a; 
-	plot S*time;              
+	plot S*time;
 	title «Sopravvivenza vs t»; 
-	run;         
+	run;
 	* NB: grafico doppio?; 
 
 	* Per migliorare il grafico uso: "symbol value=none   interpol=joint";
 	proc gplot data=a; 
-	plot H*time;  
+	plot H*time;
 	symbol /*value=none*/   interpol=joint ; 
 	title «rischio cumulato vs t»; 
 	run;
@@ -808,12 +808,12 @@ mathjax: "true"
 	/* Per il grafico di S e H con intervalli confidenza:
 	(lower= nome; upper= nome) e H (lowercumhaz= nome; uppercumhaz=nome)*/
 	* Costruisco nuovo data set a1 con variabili richieste;
-	proc phreg data=dati;      
+	proc phreg data=dati;
 	model time*cens(0) = edu1 edu2 age;
-	baseline out=a1 survival=s lower=lows upper=ups cumhaz=H lowercumhaz=lowch uppercumhaz=upch;    
-	run;   
+	baseline out=a1 survival=s lower=lows upper=ups cumhaz=H lowercumhaz=lowch uppercumhaz=upch;
+	run;
 	* Per il grafico di S e H con intervalli: uso overlay;
-	proc gplot data=a1;    
+	proc gplot data=a1;
 	plot (lows s ups)*time / overlay; symbol interpol=joint;
 	title "funzione sopravvivenza con intervalli confidenza";
 	run;
@@ -852,7 +852,7 @@ mathjax: "true"
 	proc phreg  data=dati  noprint  simple;    
 	* NB. noprint non fornisce output modello. simple dà le medie camp. covariate;
 	model time *cens (0) = edu1 edu2 age;
-	baseline out=base0   covariates=null  survival=s cumhaz=H / method=pl  ;      
+	baseline out=base0   covariates=null  survival=s cumhaz=H / method=pl  ;
 	run;
 	* NB pl usa KM;
 
@@ -1236,7 +1236,7 @@ mathjax: "true"
     e_int: età intervista (serve per capire se è censurato)
     sex: 0 maschio
     e_1job: età primo lavoro
-    (Esercizio 1) Modello stratificando VTD manualmente
+    (Esercizio 1) Modello stratificando VTD manualmente in sotto-episodi
     (Esercizio 2) Modello stratificando VTD if SAS
     *******************************************************/
 
@@ -1359,13 +1359,157 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<!---
 
 <button class="collapsible" id="es010">Esempio 10: Cox VTD (2)</button>
 <div class="content" id="es010data" markdown="1">
 
 	```sas
-	codice
+    /*******************************************************
+    Obiettivo: 
+    Essere coniugati o no, per quella generazione, ha un effetto sulla durata
+    dell'episodio lavorativo? Passare da celibe a nubile ha un impatto sul rischio
+    dal mercato del lavoro? Essere coniugati è una variabile tempo dipendente.
+
+    (Esercizio 1) Modello stratificando VTD manualmente in sotto-episodi
+    (Esercizio 2) Modello stratificando VTD if SAS
+    *******************************************************/
+
+    libname dir "/home/dati";
+    data MIO;
+    set dir.PIPPO;
+    run;
+
+    ****************************** (Esercizio 1) ******************************;
+    * Costruisco i sotto-episodi;
+    data split; 
+    set mio;
+    tempo = 0; * lunghezza sotto-episodio;
+    status = 0; * censura sotto-episodio;
+    mar = 0; * variabile tempo dipendente;
+    *non coniugato per tutto intervallo: no matrimonio o matrimonio dopo fine episodio; 
+	    if (tmar = 0 or tmar > tfin) then do;  
+	    tempo = tfin-tstart+1; 
+	    status = des;
+	    mar = 0;
+	    output;
+	    end;
+    *coniugato per tutto episodio: matrimonio prima inizio episodio: td=1 tutto episodio;
+	    if (tmar>0 and tmar<=tstart) then do;
+	    * if (tmar>0 and tmar<tstart) then do;
+	    tempo=tfin-tstart+1; 
+	    status=des;
+	    mar=1;
+	    output;
+	    end;
+    * matrimonio durante episodio: split;
+	    * parte in cui il soggetto era ancora nubile/celibe;
+	    if (tstart<tmar<=tfin) then do;
+	    * if (tstart<=tmar<tfin) then do;
+	    tempo = tmar-tstart+1;
+	    status = 0;
+	    mar = 0;
+	    output;
+	    * parte in cui il soggetto è coniugato;
+	    tempo = tfin-tmar+1;
+	    status = des; 
+	    mar = 1;
+	    output;
+	    end;
+    run;
+
+    * Modello 1: dati splittati, senza sex, con variabile fissa MAR;
+    proc phreg data=split;
+    model tempo*status(0) = mar edu coho2 coho3 lfx pnoj pres / risklimits;
+    title "durata episodi lavorativi: effetto matrimonio dataset splittato";
+    run;
+
+    * Modello 2: dati splittati, con interazione MAR*sex;
+    proc phreg data=split;
+    /* Sex vale 1 e 2, 1 maschio e 2 femmina, significa che se faccio class sex
+    prende come variabile di baseline la donna che vale 2. Quindi trovo l'effetto
+    di sex che è di essere maschio. */
+    class sex;
+    model tempo*status(0) = mar sex mar*sex edu coho2 coho3 lfx pnoj pres;
+    title "durata episodi lavorativi: matrimonio tempo dip dataset splittato e interazione sex";
+    run;
+
+    /* Risultati
+    L'essere di uno stato civile piuttosto che un altro,
+    influisce sul rischio e propensione ad abbandonare
+    il mercato del lavoro?
+
+    Modello 1:
+    l'Hazard Ratio di MAR 0.91
+    il rischio di coloro che sono coniugati (la baseline è 0), 
+    rispetto coloro che non sono coniugati, è inferiore ad 1, 
+    quindi hanno meno rischi di uscire dal mercato di lavoro i coniugati.
+    Però non ha nessun effetto significativo, quindi essere
+    coniugato o no non cambia.
+
+    Modello 2:
+    magari l'effetto non è vero che non è significativo, magari
+    ci sono gruppi per il quale è significativo, ad esempio il genere.
+    Non restituisce l'HR per le interazioni, ma basta fare 
+    l'esponenziale della stima per ottenerla
+    Mar è significativo, Sex no, ma l'interazione Mar*Sex è significativa,
+    quindi l'essere coniugati produce un effetto che è positivo, aumenta
+    il rischio di uscire da lavoro, ma con l'interazione 
+    exp(parametro mar + parametro interazione), per i maschi il rischio
+    di uscire dal mercato di lavoro è invece più basso, quindi:
+    lo STATO CIVILE influenza in modo OPPOSTO nei due generi, l'essere
+    coniugato fa si che per gli uomini ci sia una minore propensione
+    di lasciare il lavoro (più responsabili), per le femmine succede 
+    il contrario (abbandonano per mantenere i figli) */
+
+    ****************************** (Esercizio 2) ******************************;
+    /* Tanti episodi dello stesso soggetto
+    Costruisco variabile ausiliaria DURNUB=TMAR-TSTART (=. se tmar=0=no matrimonio)
+    DURNUB servirà a misurare qual è l'intervallo di tempo in cui il soggetto
+    è non-coniugato (precedente al matrimonio), che si sovrappone al
+    periodo dell'episodio che considero. Qui non splittiamo */
+    DATA mio;
+    SET mio;
+    durnub=. ;
+    /* Se c'è stato un matrimonio allora durnub è la differenza tra
+    la data di matrimonio e la data di inizio dell'intervallo.
+    Se la data di matrimonio è avvenuta prima dell'inizio dell'intervallo,
+    questa differenza sarà negativa. Se avvenuta dopo sarà posiva,
+    e può essere un pezzo intervallo dell'episodio può essere inferiore
+    alla durata o può anche essere superiore nel caso in cui il matrimonio
+    è avvenuto dopo la fine del nostro intervallo. 
+    Quando non c'è stato il matrimonio durnub varrà 0
+
+    DURNUB>0 se TMAR successiva a inizio episodio - 
+    SE DURNUB<0 MATRIM PRIMA INIZIO EPISODIO */
+    if tmar ne 0 then durnub = tmar-tstart;
+    run;
+
+    * Modello 1: dati con if, senza sex, con variabile fissa MAR;
+    proc phreg data=mio;
+    model durata*des (0) = mar edu coho2 coho3 lfx pnoj pres;
+    * mar varrà 1 se il matrimonio è avvenuto entro la fine dell'episodio;
+    if DURNUB ne . AND durnub < durata then mar=1; else mar=0;
+    /* if tmar ne 0 and (tmar-tstart) < (tfin-tstart) then mar=1; else mar=0; */ * in alternativa;
+    title "matrimonio tempo dip con IF - no interazione con sex";
+    run;
+
+    * Modello 2: dati con if, con interazione MAR*sex;
+    proc phreg  data=mio;
+    * impongo come baseline F= sex=2, senza class baseline=1=uomini;
+    class sex;
+    model durata*des (0) = mar sex mar*sex edu coho2 coho3 lfx pnoj pres;
+    if DURNUB ne . AND durnub < durata then mar=1; else mar=0; 
+    /* if durnub eq . or durnub>= durata then mar=0; *else mar=1; */  * in alternativa;
+    title "matrimonio tempo dip con IF - interazione con sex=maschi";
+    run;  
+
+    /* Risultati
+    Modello 1:
+    MAR non è significativa
+
+    Modello 2:
+    MAR è significativa
+    SEX*MAR negativo e significativo */
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_010.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
@@ -1373,7 +1517,9 @@ mathjax: "true"
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es011">Esempio 11: vuoto</button>
+<!---
+
+<button class="collapsible" id="es011">Esempio 11: Cox non proporzionali</button>
 <div class="content" id="es011data" markdown="1">
 
 	```sas
