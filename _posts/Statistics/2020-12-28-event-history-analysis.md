@@ -122,11 +122,9 @@ mathjax: "true"
 
 
 
-
-
-
 #### [1.3.2] Modelli parametrici
 1. Calcolo delle funzioni di densità, sopravvivenza e rischio
+    - trasformazioni utili: se $$\log{X}\sim\mathcal{N}(0,1)\Rightarrow X\sim\log{\mathcal{N}}$$
 2. Modelli di regressione parametrici
 	1. Rischi proporzionali (PH)
 	2. Tempi accelarati (AFT)
