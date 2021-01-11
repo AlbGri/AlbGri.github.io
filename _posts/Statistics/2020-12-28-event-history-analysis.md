@@ -124,11 +124,11 @@ mathjax: "true"
 
 #### [1.3.2] Modelli parametrici
 1. Calcolo delle funzioni di densità, sopravvivenza e rischio
-    - trasformazioni utili:  
+    - Trasformazioni utili:  
     $$\log{X}\sim\mathcal{N}(\mu,\sigma^2)\Rightarrow X\sim\log{\mathcal{N}(\mu,\sigma^2)}$$  
     $$S(t)=\int_t^{+\infty}f(u)du$$  
     $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
-    - possibili forme funzionali: 
+    - Possibili forme funzionali: 
         - Esponenziale  
         $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
         $$S(t)=\exp{(-at)}$$  
@@ -145,10 +145,12 @@ mathjax: "true"
         $$h(t)$$ Rischio unimodale  
         - Altre: Log-normale, Gamma, Gamma generalizzati  
 2. Modelli di regressione parametrici
-	1. Rischi proporzionali (PH)
-	    - la variabile dipendente è la funzione rischio (come Cox ma con baseline parametrico):  
-	    $$h_i(t,X_i)=h_0(t)\cdot \theta$$
-	2. Tempi accelarati (AFT)
+	1. Rischi proporzionali (PH)  
+	La variabile dipendente è la funzione rischio (come Cox ma con baseline parametrico):  
+	$$h_i(t,X_i)=h_0(t)\cdot \theta$$
+	2. Tempi accelarati (AFT)  
+	è un effetto moltiplicativo, non più sul rischio, ma sul tempo di permanenza nello stato pre-transizione:  
+	$$T_i=T_0\cdot \gamma$$
 3. Modello Esponenziale, Weibull, Esponenziale a tratti
 	1. Senza covariate
 	2. Con covariate (Parametrizzazione PH e AFT)
