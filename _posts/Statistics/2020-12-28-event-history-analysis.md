@@ -133,6 +133,9 @@ mathjax: "true"
         $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
         $$S(t)=\exp{(-at)}$$  
         $$h(t)=a$$ Rischio costante  
+        $$H(t)=at$$ (area sottostante '$$a$$' fino a $$t$$)  
+        $$F(t)=1-\exp{(-at)}$$  
+        $$\log{S(t)}=-at$$  
         - Weibull  
         $$f(t)=abt^{b-1}\exp{(-at^b)}\mbox{ con }a\mbox{ (scala), }b\mbox{ (forma)}>0$$ se $$b=1$$ Esponenziale  
         $$S(t)=\exp{(-at^b)}$$  
