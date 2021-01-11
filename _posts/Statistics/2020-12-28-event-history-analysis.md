@@ -150,7 +150,10 @@ mathjax: "true"
 3. Modello Esponenziale, Weibull, Esponenziale a tratti
 	1. Senza covariate
 	2. Con covariate (Parametrizzazione PH e AFT)
-4. Stima di massima verosimiglianza
+4. Stima di massima verosimiglianza (da gestire le censure)  
+    - durate censurate, siano $$C$$ i casi non censurati e $$E=N-C$$ i casi censurati  
+    $$L(a,t_1,t_2,...,t_N)=\prod_{i\in E}f(t_i,a)\cdot \prod_{i\in C}S(t_i,a)$$  
+    $$\mbox{ poiché }f=S\codot h\rightarrow L(a,t_1,t_2,...,t_N)=\prod_{i\in E}h(t_i,a)\cdot \prod_{i\in C}S(t_i,a)$$
 
 
 
