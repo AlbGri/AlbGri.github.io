@@ -145,9 +145,13 @@ mathjax: "true"
         $$h(t)$$ Rischio unimodale  
         - Altre: Log-normale, Gamma, Gamma generalizzati  
 2. Modelli di regressione parametrici
-	1. Rischi proporzionali (PH)  
-	La variabile dipendente è la funzione rischio (come Cox ma con baseline parametrico):  
-	$$h_i(t,X_i)=h_0(t)\cdot \theta$$
+	1. Rischi proporzionali (PH)
+	    - La variabile dipendente è la funzione rischio (come Cox ma con baseline parametrico):  
+	    $$h_i(t,X_i)=h_0(t)\cdot \theta$$
+	    - Trasformazioni utili
+	    $$S(t)=S_0(t)^\theta$$
+	    $$f(t)=f_0(t)\cdot S_0(t)^{(\theta-1)}\cdot\theta$$
+	    $$H(t)=H_0(t)\cdot\theta\mbox{ con }H_0(t)=-\log{S_0(t)}$$
 	2. Tempi accelarati (AFT)  
 	è un effetto moltiplicativo, non più sul rischio, ma sul tempo di permanenza nello stato pre-transizione:  
 	$$T_i=T_0\cdot \gamma$$
@@ -157,7 +161,7 @@ mathjax: "true"
 4. Stima di massima verosimiglianza (da gestire le censure)  
     - durate censurate senza covariate, siano $$C$$ i casi non censurati e $$E=N-C$$ i casi censurati:  
     $$L(a,t_1,t_2,...,t_N)=\prod_{i\in E}f(t_i,a)\cdot \prod_{i\in C}S(t_i,a)$$  
-    $$\mbox{ poiché }f=S\codot h\rightarrow L(a,t_1,t_2,...,t_N)=\prod_{i\in E}h(t_i,a)\cdot \prod_{i\in N}S(t_i,a)$$
+    $$\mbox{ poiché }f=S\cdot h\rightarrow L(a,t_1,t_2,...,t_N)=\prod_{i\in E}h(t_i,a)\cdot \prod_{i\in N}S(t_i,a)$$
 
 
 
