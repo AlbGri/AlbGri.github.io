@@ -113,12 +113,12 @@ mathjax: "true"
 		con $$k=\mbox{n.strati}$$ e $$p=\mbox{n.predittori}$$
 		- Modello con interazione tra il tempo e le covariate. 
 		    - Tempo continuo
-		        - Trasformazione lineare
-		        - Trasformazione lineare traslata
-		        - Trasformazione logaritmica (il parametro rappresenta la variazione del log rischio a raddoppi della durata, se il logaritmo è in base 2)
+		        - Effetto lineare
+		        - Effetto lineare traslato
+		        - Effetto logaritmico (il parametro rappresenta la variazione del log rischio a raddoppi della durata, se il logaritmo è in base 2)
 		    - Tempo discreto
 		        - Main effect: effetto principale + parte lineare con dummy dell'intervallo (consente di capire se un tratto è significativamente diverso dall'altro) 
-		        - Lineare con $$k$$ dummy pari al numero di intervalli senza effetto principale (l'effetto potrebbe essere significativamente diverso da quello di base ma non è strettamente non proporzionale perché non è detto che i coefficienti che si stimano siano significativamente diversi da quelli stimati nel tratto precedente)
+		        - Effetto a gradini: lineare con $$k$$ dummy pari al numero di intervalli senza effetto principale (l'effetto potrebbe essere significativamente diverso da quello di base ma non è strettamente non proporzionale perché non è detto che i coefficienti che si stimano siano significativamente diversi da quelli stimati nel tratto precedente)
 
 
 
