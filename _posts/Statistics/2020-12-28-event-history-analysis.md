@@ -161,8 +161,8 @@ mathjax: "true"
 	    $$f(t,X)=h_0\big(\frac{t}{\gamma}\big)/\gamma\cdot S_0\big(\frac{t}{\gamma}\big)=f_0(t)/\gamma$$  
 	3. Specifiche parametrizzazioni per specifici modelli  
 	    - Weibul (Esponenziale): sia PH che AFT  
-	    - Gompertz: PH
-	    - Log-normale, Log-logistico, Gamma generalizzati: AFT
+	    - Gompertz: PH  
+	    - Log-normale, Log-logistico, Gamma generalizzati: AFT  
 3. Modello Esponenziale, Weibull, Esponenziale a tratti
 	1. Senza covariate
 	2. Con covariate (Parametrizzazione PH e AFT)
