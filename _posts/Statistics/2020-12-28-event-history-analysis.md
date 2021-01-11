@@ -131,7 +131,7 @@ mathjax: "true"
     - Possibili forme funzionali: 
         - Esponenziale  
         $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
-        $$S(t)=\exp{(-at)}$$  
+        $$S(t)=\exp{(-at)}=\exp{\big(-H(t)\big)$$  
         $$h(t)=a$$ Rischio costante  
         $$H(t)=at$$ (area sottostante '$$a$$' fino a $$t$$)  
         $$F(t)=1-\exp{(-at)}$$  
