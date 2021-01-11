@@ -115,10 +115,10 @@ mathjax: "true"
 		    - Tempo continuo
 		        - Trasformazione lineare
 		        - Trasformazione lineare traslata
-		        - Trasformazione logaritmica. La cui variazione è associata a un raddoppio della durata.
+		        - Trasformazione logaritmica (il parametro rappresenta la variazione del log rischio a raddoppi della durata, se il logaritmo è in base 2)
 		    - Tempo discreto
-		        - Main effect: effetto principale + parte lineare con dummy dell'intervallo. Consente di capire se un tratto è significativamente diverso dall'altro 
-		        - Lineare con $$k$$ dummy pari al numero di intervalli senza effetto principale. L'effetto potrebbe essere significativamente diverso da quello di base ma non è strettamente non proporzionale perché non è detto che i coefficienti che si stimano siano significativamente diversi da quelli stimati nel tratto precedente
+		        - Main effect: effetto principale + parte lineare con dummy dell'intervallo (consente di capire se un tratto è significativamente diverso dall'altro) 
+		        - Lineare con $$k$$ dummy pari al numero di intervalli senza effetto principale (l'effetto potrebbe essere significativamente diverso da quello di base ma non è strettamente non proporzionale perché non è detto che i coefficienti che si stimano siano significativamente diversi da quelli stimati nel tratto precedente)
 
 
 
