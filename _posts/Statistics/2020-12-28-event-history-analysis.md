@@ -154,7 +154,7 @@ mathjax: "true"
 	    $$H(t)=H_0(t)\cdot\theta\mbox{ con }H_0(t)=-\log{S_0(t)}$$  
 	2. Tempi accelarati (AFT)  
 	    - Si ha un effetto moltiplicativo, non più sul rischio, ma sul tempo di permanenza nello stato pre-transizione:  
-	    $$T_i=T_0\cdot \gamma$$ con $$\gamma$$ fattore di accelerazione  
+	    $$T_i=T_0\cdot \gamma$$ con $$\gamma$$ fattore di accelerazione, e se è $$>1$$ aumentano i tempi di sopravvivenza e il rischio diminuisce  
 	    - Trasformazioni utili  
 	    $$S(t,X)=S_0\big(\frac{t}{\gamma}\big)$$  
 	    $$h(t,X)=h_0\big(\frac{t}{\gamma}\big)/\gamma$$  
