@@ -111,21 +111,17 @@ mathjax: "true"
 		- Modelli separati in strati ($$n$$ modelli quanti gli strati, con $$\mathcal{X}^2$$ saggio se gli $$n$$ modelli sono uguali a quello compatto)  
 		$$\mathcal{X}^2_{(k-1)p}=\bigg[-2LL_{\mbox{stra}}-\Big[\sum_{i=1}^n(-2LL_{\mbox{sep}_i})\Big]\bigg]$$  
 		con $$k=\mbox{n.strati}$$ e $$p=\mbox{n.predittori}$$
-		- Modello con interazione tra il tempo e le covariate. Tempo continuo (trasf. lineare; trasf. lineare traslata; trasf. logaritmica - variazione associata a un raddoppio della durata) o tempo discreto (Main effect: effetto principale & lineare con dummy dell'intervallo - dà la possibilità di capire se un tratto è significativamente diverso dall'altro; lineare con $$k$$ dummy pari al numero di intervalli senza effetto principale - l'effetto potrebbe essere significativamente diverso da quello di base ma non è strettamente non proporzionale perché non è detto che i coefficienti che si stimano siano significativamente diversi da quelli stimati nel tratto precedente)
+		- Modello con interazione tra il tempo e le covariate. 
+		    - Tempo continuo
+		        - Trasformazione lineare
+		        - Trasformazione lineare traslata
+		        - Trasformazione logaritmica. La cui variazione è associata a un raddoppio della durata.
+		    - Tempo discreto
+		        - Main effect: effetto principale + parte lineare con dummy dell'intervallo. Consente di capire se un tratto è significativamente diverso dall'altro 
+		        - Lineare con $$k$$ dummy pari al numero di intervalli senza effetto principale. L'effetto potrebbe essere significativamente diverso da quello di base ma non è strettamente non proporzionale perché non è detto che i coefficienti che si stimano siano significativamente diversi da quelli stimati nel tratto precedente
 
 
 
-1. asd1
-    - uno1
-        - due1
-            - tre1
-                - quattro1
-                    - cinque
-                - quattro2
-            - tre2
-        - due2
-    - uno2
-1. asd2
 
 
 
