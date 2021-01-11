@@ -146,12 +146,14 @@ mathjax: "true"
         - Altre: Log-normale, Gamma, Gamma generalizzati  
 2. Modelli di regressione parametrici
 	1. Rischi proporzionali (PH)
+	    - la variabile dipendente è la funzione rischio (come Cox ma con baseline parametrico):  
+	    $$h_i(t,X_i)=h_0(t)\cdot \theta$$
 	2. Tempi accelarati (AFT)
 3. Modello Esponenziale, Weibull, Esponenziale a tratti
 	1. Senza covariate
 	2. Con covariate (Parametrizzazione PH e AFT)
 4. Stima di massima verosimiglianza (da gestire le censure)  
-    - durate censurate, siano $$C$$ i casi non censurati e $$E=N-C$$ i casi censurati, senza covariate:  
+    - durate censurate senza covariate, siano $$C$$ i casi non censurati e $$E=N-C$$ i casi censurati:  
     $$L(a,t_1,t_2,...,t_N)=\prod_{i\in E}f(t_i,a)\cdot \prod_{i\in C}S(t_i,a)$$  
     $$\mbox{ poiché }f=S\codot h\rightarrow L(a,t_1,t_2,...,t_N)=\prod_{i\in E}h(t_i,a)\cdot \prod_{i\in N}S(t_i,a)$$
 
