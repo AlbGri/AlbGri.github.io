@@ -156,9 +156,9 @@ mathjax: "true"
 	    - Si ha un effetto moltiplicativo, non più sul rischio, ma sul tempo di permanenza nello stato pre-transizione:  
 	    $$T_i=T_0\cdot \gamma$$ con $$\gamma$$ fattore di accelerazione  
 	    - Trasformazioni utili  
-	    $$S(t,X)=S_0(\frac{t}{\gamma})$$  
-	    $$h(t,X)=\frac{h_0(\frac{t}{\gamma})}{\gamma}$$  
-	    $$f(t,X)=\frac{h_0(\frac{t}{\gamma})}{\gamma}\cdot S_0(\frac{t}{\gamma})=\frac{f_0(t)}{\gamma}$$  
+	    $$S(t,X)=S_0\big(\frac{t}{\gamma}\big)$$  
+	    $$h(t,X)=h_0\big(\frac{t}{\gamma}\big)/\gamma$$  
+	    $$f(t,X)=h_0\big(\frac{t}{\gamma}\big)/\gamma\cdot S_0\big(\frac{t}{\gamma}\big)=f_0(t)/\gamma$$  
 3. Modello Esponenziale, Weibull, Esponenziale a tratti
 	1. Senza covariate
 	2. Con covariate (Parametrizzazione PH e AFT)
