@@ -132,7 +132,7 @@ mathjax: "true"
         - Esponenziale  
         $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
         $$S(t)=\exp{(-at)}=\exp{\big(-H(t)\big)$$  
-        $$h(t)=a$$ Rischio costante  
+        $$h(t)=a$$ Rischio costante, memorylessness distribution  
         $$H(t)=at$$ (area sottostante '$$a$$' fino a $$t$$)  
         $$F(t)=1-\exp{(-at)}$$  
         $$\log{S(t)}=-at$$  
@@ -168,15 +168,19 @@ mathjax: "true"
 	    - Log-normale, Log-logistico, Gamma generalizzati: AFT  
 3. Modello Esponenziale, Weibull, Esponenziale a tratti con parametrizzazione PH e AFT
 	1. Esponenziale
-	    - Senza covariate, $$T\sim\mathcal{Exp}(a)$$, 1 episodio 1 evento:  
+	    - Senza covariate per 1 episodio 1 evento  
+	    $$T\sim\mathcal{Exp}(a)$$:  
 	    $$lim_{t\rightarrow\infty}S(t,a)=0$$ eventi inevitabili  
-	    $$E(T)=\frac{1}{a} \qquad Var(T)=\frac{1}{a^2} \qquad t_{\mbox{quantile}_k}=-\log{(k)}\cdot E(T)$$
+	    $$E(T)=\frac{1}{a} \qquad Var(T)=\frac{1}{a^2} \qquad t_{\mbox{quantile}_k}=-\log{(k)}\cdot E(T)$$  
+	    $$h(t,a_k)=a_k$$ se 1 episodio, più destinazioni (rischi competitivi)
 	1. Senza covariate
 	2. Con covariate (Parametrizzazione PH e AFT)
 4. Stima di massima verosimiglianza (da gestire le censure)  
     - durate censurate senza covariate, siano $$C$$ i casi non censurati e $$E=N-C$$ i casi censurati:  
     $$L(a,t_1,t_2,...,t_N)=\prod_{i\in E}f(t_i,a)\cdot \prod_{i\in C}S(t_i,a)$$  
     poiché $$f=S\cdot h\rightarrow L(a,t_1,t_2,...,t_N)=\prod_{i\in E}h(t_i,a)\cdot \prod_{i\in N}S(t_i,a)$$
+
+
 
 
 
