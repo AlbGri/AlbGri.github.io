@@ -1386,14 +1386,14 @@ mathjax: "true"
     tempo = 0; * lunghezza sotto-episodio;
     status = 0; * censura sotto-episodio;
     mar = 0; * variabile tempo dipendente;
-    *non coniugato per tutto intervallo: no matrimonio o matrimonio dopo fine episodio; 
-	    if (tmar = 0 or tmar > tfin) then do;  
+    * non coniugato per tutto intervallo: no matr. o matr. dopo fine episodio; 
+	    if (tmar = 0 or tmar > tfin) then do;
 	    tempo = tfin-tstart+1; 
 	    status = des;
 	    mar = 0;
 	    output;
 	    end;
-    *coniugato per tutto episodio: matrimonio prima inizio episodio: td=1 tutto episodio;
+    * coniugato per tutto episodio: matr. prima inizio episodio: td=1 tutto episodio;
 	    if (tmar>0 and tmar<=tstart) then do;
 	    * if (tmar>0 and tmar<tstart) then do;
 	    tempo=tfin-tstart+1; 
@@ -1401,7 +1401,7 @@ mathjax: "true"
 	    mar=1;
 	    output;
 	    end;
-    * matrimonio durante episodio: split;
+    * matr. durante episodio: split;
 	    * parte in cui il soggetto era ancora nubile/celibe;
 	    if (tstart<tmar<=tfin) then do;
 	    * if (tstart<=tmar<tfin) then do;
