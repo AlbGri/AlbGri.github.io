@@ -132,12 +132,18 @@ mathjax: "true"
         - Esponenziale  
         $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
         $$S(t)=\exp{(-at)}$$  
-        $$h(t)=a$$
+        $$h(t)=a$$ Rischio costante  
         - Weibull  
-        $$f(t)=abt^{b-1}\exp{(-at^b)}\mbox{ con }a\mbox{ (scala), }b\mbox{ (forma)}>0$$ se $$b=1$$ Esponenziale
-        $$S(t)=\exp{(-at^b)}$$
-        $$h(t)=abt^{b-1}$$
-        - Altre: Gompertz, Gompertz-Makeham (utile per mortalità con pochi casi), Log-logistica, Log-normale, Gamma, Gamma generalizzati, Hernes, Sickle, etc. 
+        $$f(t)=abt^{b-1}\exp{(-at^b)}\mbox{ con }a\mbox{ (scala), }b\mbox{ (forma)}>0$$ se $$b=1$$ Esponenziale  
+        $$S(t)=\exp{(-at^b)}$$  
+        $$h(t)=abt^{b-1}$$ Rischio costante se $$b=1$$, monotono crescente se $$b>1$$, monotono decrescente se $$b<1$$  
+        - Gompertz e Gompertz-Makeham (utile per mortalità con pochi casi)  
+        $$h(t)$$ Rischio monotono  
+        - Log-logistica  
+        $$h(t)$$ Rischio monotono decrescente o unimodale  
+        - Hernes, Sickle, Coale-McNeil  
+        $$h(t)$$ Rischio unimodale  
+        - Altre: Log-normale, Gamma, Gamma generalizzati  
 2. Modelli di regressione parametrici
 	1. Rischi proporzionali (PH)
 	2. Tempi accelarati (AFT)
