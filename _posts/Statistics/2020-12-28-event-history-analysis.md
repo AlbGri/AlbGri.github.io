@@ -158,9 +158,11 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$F(t)=1-\exp{(-at)}$$  
     $$\log{S(t)}=-at$$  
     - Weibull  
-    $$f(t)=abt^{b-1}\exp{(-at^b)}\mbox{ con }a\mbox{ (scala), }b\mbox{ (forma)}>0$$ se $$b=1$$ Esponenziale  
+    $$f(t)=abt^{b-1}\exp{(-at^b)}$$ con  
+    $$a$$ (livello o scala), $$b>0$$ (forma), se $$b=1$$ Esponenziale  
     $$S(t)=\exp{(-at^b)}$$  
     $$h(t)=abt^{b-1}$$ Rischio costante se $$b=1$$, monotono crescente se $$b>1$$, monotono decrescente se $$b<{1}$$  
+    $$H(t)=-\log{S(t)}=at^b$$  
     - Gompertz e Gompertz-Makeham (utile per mortalità con pochi casi)  
     $$h(t)$$ Rischio monotono  
     - Log-logistica  
@@ -208,6 +210,7 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$\alpha$$ stimato è il logaritmo della durata relativo alla variabile $$X$$  
     $$\exp{(\alpha_0^{AFT})}=\exp{(-\beta_0^{PH})}=1/\exp{(-\beta_0^{PH})}=1/h_0^{PH}=E(T_0)$$  
 - Weibull  
+    - Funzioni utili  
     - Senza covariate.......  
     - Con covariate.......  
 - Esponenziale a tratti  
