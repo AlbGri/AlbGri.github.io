@@ -134,6 +134,7 @@ mathjax: "true"
         $$S(t)=\exp{(-at)}=\exp{\big(-H(t)\big)}$$  
         $$h(t)=a$$ Rischio costante, memorylessness distribution  
         $$H(t)=-\log{S(t)}=at$$ (area sottostante '$$a$$' fino a $$t$$)  
+        Test grafico su esponenziale: se il grafico $$H(t)$$ vs $$t$$ è una linea retta che parte dall'origine allora i dati approssimano bene una durata esponenziale.  
         $$F(t)=1-\exp{(-at)}$$  
         $$\log{S(t)}=-at$$  
         - Weibull  
