@@ -40,27 +40,26 @@ h1 {
 
 h2 {
   font-size: $h-size-2;
-  color: mix(#000, $gray, 80%);
+  color: $darker-gray;
 }
 
 h3 {
   font-size: $h-size-3;
-  color: mix(#000, $gray, 70%);
+  color: $dark-gray;
 }
 
 h4 {
   font-size: $h-size-4;
-  color: mix(#000, $gray, 60%);
+  color: $light-gray;
 }
 
 h5 {
   font-size: $h-size-5;
-  color: mix(#000, $gray, 50%);
+  color: $lighter-gray;
 }
 
 h6 {
   font-size: $h-size-6;
-  color: mix(#000, $gray, 40%);
 }
 
 small,
