@@ -201,7 +201,7 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$h(t,X)=\exp{\beta_0}\cdot\exp{(\beta X)}=h_0\cdot\exp{(\beta X)}$$  
     Si noti che $\exp{(\beta X)}$ è il Rischio Relativo nel caso di $$X=1$$ (dummy)  
     Rispetto i modelli di Cox: $$h_0$$ è parametrico e il rischio non dipende dal tempo  
-    Inoltre, $$E(T\vert X=k)=1/h(t\vert X=k)$$
+    Per leggerli in ottica di durata media: $$E(T\vert X=k)=1/h(t\vert X=k)$$
     - AFT (stimo la durata media)  
     $$T=\big[\exp{(\alpha_0)}\cdot\exp{(\epsilon)}\big]\cdot\exp{(\alpha X)}=T_0\cdot\gamma$$  
     Si dimostra che per l'esponenziale $$\alpha=-\beta$$  
