@@ -9,12 +9,12 @@ mathjax: "true"
 *in costruzione*
 
 
-## [1] Metodi per l'analisi di dati di durata
+## Metodi per l'analisi di dati di durata
 
-### [1.1] Basi dell'analisi dei dati di durata
+### Basi dell'analisi dei dati di durata
 
-#### [1.1.1] Concetti base
-1. Ambiti ed esempi
+#### Concetti base
+##### Ambiti ed esempi
 2. Definizioni base
 	1. Dominio, evento, episodio, popolazione a rischio
 	2. Caso semplice: 1 episodio, 1 stato destinazione
