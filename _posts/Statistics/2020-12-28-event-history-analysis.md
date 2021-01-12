@@ -1975,9 +1975,6 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 </div>
 <embed src="/assets/images/Statistics/EHA_012.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
-
-<!---
-
 &nbsp;
 &nbsp;
 
@@ -1985,13 +1982,89 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 <div class="content" id="es013data" markdown="1">
 
 	```sas
-	codice
+    /*******************************************************
+    Obiettivo: 
+    (Esercizio 1) Modello esponenziale a tratti senza covariate
+    (Esercizio 2) Modello esponenziale a tratti con covariate
+    *******************************************************/
+    libname dir "/home/u52136602/sasuser.v94/dati";
+    data MIO;
+    set dir.PIPPO;
+    run;
+
+    /* Preparo il df per modellazione a tratti.
+
+    Splitto ogni episodio in un numero di tratti pari a quelli
+    che si ottengono in base alla sua durata originaria.
+    Poiché la durata media degli episodi non censurati è di circa 49 mesi (4
+    anni e 1 mese), provo 96 mesi in J=9 intervalli da 12 mesi (ultimo aperto).
+    è improbabile trovare un valore più alto di 96 mesi quando la media è 49. 
+    Costruisco 8 periodi di 12 mesi + 1 intervallo aperto
+
+    Passo 1. costruisco la variabile n che mi dice quanti sono 
+    i tratti di ciascun episodio tratti da 12 mesi 
+    fino a 96 poi intervallo aperto
+
+    Passo 2. costruisco tre nuove variabili che servono 
+    per model: tempo - evento - j */
+    data n;
+    set mio;
+    /* Creo num. di intervalli (variabile per individuo): 
+    (n-1) completi e n residuo (con evento o censura)*/
+	    if durata le 96 then n=ceil (durata/12);  * ceil arrotonda per eccesso;
+	    if durata gt 96 then n=9;
+    /* Creo le specifiche di durata per ciascun tratto e 
+    j = contatore intervalli, con n = num. di intervalli. 
+    Ogni episodio al suo numero di sotto-episodi associati */
+	    do j=1 to n;
+	    if j le (n-1) then do;
+	    tempo=12;
+	    evento=0;
+	    end;
+		    if j=n then do;
+		    tempo = durata-12*(n-1);
+		    evento = des;
+		    end;
+	    output;
+    end; 
+    run;
+    proc print data=n (obs=15);
+    run;
+    /* L'ID 1 è stato splittato in 9, quindi sono molto lunghi, 
+    si prendono tutto il tempo. Il primo ID ha 9 tratti, il secondo ne ha 4.
+    I primi 8 del primo ID sono di 12 mesi, e l'ultimo è lunghissimo.
+    Il secondo ID, primi 3 da 12 mesi e l'ultimo da 10 mesi con l'evento. */
+
+    ****************************** (Esercizio 1) ******************************;
+    * Stimo esponenziale a tratti senza covariate;
+    proc lifereg  data=n;
+    class j; 
+    /* j varia da 1 a n, dato che diventa categoriale la 
+    baseline è l'ultimo tratto */
+    model tempo * evento (0)= j / dist=exponential ;
+    title “stima esponenziale a pezzi senza covariate”;
+    run;
+    /* è una stima a tempi accelerati AFT.
+    Per ogni j si ottiene dei valori di beta. L'ultimo, 9, vale 0.
+    Per capire l'andamento del rischio negli intervalli, creo la stima PH:
+    intervallo k vs exp(-intercetta -coeff. j=k), 
+    l'andamento è crescente e decrescente, due non sono significativi. 
+    Da inesperto rischia e poi no, soprattutto nella prima fase */
+
+    ****************************** (Esercizio 2) ******************************;
+    * Stimo esponenziale a tratti senza covariate;
+    proc lifereg  data=n;
+    class j;
+    model tempo * evento(0) = edu coho2 coho3 lfx pnoj pres j / dist=exponential;
+    title “stima esponenziale a pezzi con covariate”;
+    run;
+    /* Comportamento analogo al modello senza covariate
+    Il test Lagrange non ha senso qui per questa a tratti.
+    Si sarebbe potuto usare il modello di Cox ma avremmo ottenuto
+    rischi relativi, mentre in questo modo otteniamo rischi assoluti */
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_013.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
-
---->
-
 
 <!---
 
