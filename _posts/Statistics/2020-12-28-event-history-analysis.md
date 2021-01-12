@@ -75,6 +75,7 @@ mathjax: "true"
     4. Si calcola quanto segue  
     ![png](/assets/images/Statistics/EHA_KM2.png)
     5. Si sintetizzano le informazioni  
+    ![png](/assets/images/Statistics/EHA_KM3.png)
     6. Si rappresenta la sopravvivenza
 - Esplorazione forma del rischio
 - Funzione di sopravvivenza
