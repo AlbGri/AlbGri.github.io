@@ -189,7 +189,7 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     - Gompertz: PH  
     - Log-normale, Log-logistico, Gamma generalizzati: AFT  
 
-##### Modello Esponenziale, Weibull ed Esponenziale a tratti con parametrizzazione PH e AFT
+##### Parametr. PH e AFT per i modelli Esponenziale, Weibull ed Esponenziale a tratti
 - Esponenziale
     - Senza covariate, per 1 episodio 1 evento  
     $$T\sim\mathcal{Exp}(a)$$:  
@@ -197,7 +197,8 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$E(T)=\frac{1}{a} \qquad Var(T)=\frac{1}{a^2}$$  
     $$t_{\mbox{quantile}_q}=-\log{(q)}\cdot E(T)$$ (es. mediana $$t_{ME}=0.693/a$$)  
     $$h(t,a_k)=a_k$$ se 1 episodio, più destinazioni (rischi competitivi), con $$a_k$$ tasso di transizione (costante) verso destinazione $$k$$
-    - Con covariate.......  
+    - PH: $$h(t,X)=\exp{\beta_0}\cdot\exp{(\beta X)}=h_0\cdot\exp{(\beta X)}$$  
+    - AFT: $$T=\big[\exp{(\alpha_0)}\cdot\alpha{(\epsilon)}\big]\cdot\exp{(\alpha X)}=T_0\cdot\gamma$$  
 - Weibull  
     - Senza covariate.......  
     - Con covariate.......  
