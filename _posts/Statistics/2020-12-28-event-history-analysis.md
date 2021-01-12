@@ -218,7 +218,7 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$T=\exp{(\alpha_0+\sigma\epsilon)}\cdot\exp{(\alpha X)}=T_0\cdot\gamma$$  
     Si dimostra che $$\beta=\beta_{PH}=-\beta_{AFT}\cdot b=-\alpha\cdot b$$  
     NB. SAS stima modello Weibull solo AFT con $$\sigma=1/b\Rightarrow\beta_{PH}=-\beta_{AFT}\cdot (1/\sigma)$$  
-    Inoltre, con $$a=\exp{(-\beta_{AFT}\cdot b)}$$ si ricava facilmente $$h(t)=\exp{(-\beta_{AFT}\cdot 1/\sigma)}\cdot 1/\sigma\cdot t^{(1/\sigma -1)}$$  
+    Inoltre, con $$a=\exp{(-\beta_{AFT}\cdot b)}$$ si ricava facilmente $$h(t)=\exp{(-\beta_{AFT}\cdot 1/\sigma)}\cdot 1/\sigma\cdot t^{(1/\sigma -1)}$$, così da ottenere il rischio dopo $$t$$ durate  
 - Esponenziale a tratti (Piecewise exponential model)  
 Per $$L$$ sotto-intervalli del tempo si specificano diverse distribuzioni parametriche del rischio.
     - Funzioni utili  
@@ -1836,29 +1836,152 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 </div>
 <embed src="/assets/images/Statistics/EHA_011.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
-<!---
-
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es012">Esempio 12: Modelli parametrici (1)</button>
+<button class="collapsible" id="es012">Esempio 12: Modelli parametrici: Esponenziale e Weibull (1)</button>
 <div class="content" id="es012data" markdown="1">
 
 	```sas
-	codice
+    /*******************************************************
+    Obiettivi: 
+    (Esercizio 1A) Modello Esponenziale (AFT) senza covariate
+    (Esercizio 1B) Test grafico per il modello Esponenziale
+    (Esercizio 2) Modello Esponenziale (AFT) con covariate
+
+    (Esercizio 3) Test grafico per il modello Weibull
+    (Esercizio 4) Modello Weibull (AFT) senza covariate
+    (Esercizio 5) Modello Weibull (AFT) con covariate
+    *******************************************************/
+
+    libname dir "/home/u52136602/sasuser.v94/dati";
+    data MIO;
+    set dir.PIPPO;
+    * RICODIFICO SEX CON SEX1 E pongo donne gruppo di base;
+    sex1=0;               /*donne*/
+    if sex=1 then sex1=1; /*uomini*/
+    run;
+
+    ****************************** (Esercizio 1A) ******************************;
+    /* Nel modello parametrico possiamo non mettere le covariate,
+    mentre nel modello di Cox erano obbligatorie perché è semiparametrico,
+    qui possiamo chiedere di stimare solo l'intercetta */
+    proc lifereg  data=mio; 
+    model durata*des (0)= / dist=exponential; * default weibull;
+    title “stima modello esponenziale senza covariate”; 
+    run;
+    /* La scala di Weibull è l'esponenziale dell'intercetta, che stimando
+    un modello AFT, è la durata media dell'episodio.
+    Il moltiplicatore di Lagrange, verifica H0 scale=1, è rigettato quindi
+    la scelta dell'esponenziale non è opportuno. 
+    EXP(-coef. intercetta ATF) è il rischio di uscita 
+    dal mercato del lavoro(PH).
+    EXP(-coef. intercetta)*t è il numero medio di uscite 
+    dal lavoro al tempo t (relazione con Poisson).
+    EXP(coef.intercetta)=E(T)=1/a=durata media dell'episodio lavorativo */
+
+    ****************************** (Esercizio 1B) ******************************;
+    /* Il parametro di scala non risultava accettato uguale ad 1,
+    va fatto (prima) un test grafico esponenziale -logS vs t */
+    proc lifetest data=mio plots=ls graphics
+    outsurv=a;
+    * Aggiunge S ma non H sebbene faccia il plot;
+    time durata*des(0);
+    run;
+    proc print data=a (obs=10);   
+    run;
+
+    * Costruisco H da S (così posso migliorarne il grafico);
+    data a;
+    set a;
+    s = survival;
+    neg_logs = -log(s);
+    run;
+    proc print data=a (obs=10);
+    run;
+
+    * Grafico H=-logS vs t;
+    proc gplot;
+    plot neg_logs*durata;
+    symbol1 value=none i=join; *join unisce i punti;
+    title "test grafico esponenziale: -ls vs t - retta che parte da origine?";
+    run;
+    * Parte dall'origine ma non è una retta;
+
+    ****************************** (Esercizio 2) ******************************;
+    * Esponenziale AFT con covariate;
+    proc lifereg  data=MIO;
+    model durata*des (0) = edu coho2 coho3 lfx pnoj pres / dist=exponential;
+    title “stima modello esponenziale con covariate”;
+    run;
+    /* Stima intercetta e l'effetto di ciascuna covariata 
+    sul logaritmo del tempo (modelli AFT).
+    Effetti forniti da ciascuna covariata, rispetto al rischio del 
+    valore della stessa covariata con il gruppo di base, in termini di
+    durate. 
+    Il coefficiente è alpha e impatta il logaritmo della durata */
+
+    ****************************** (Esercizio 3) ******************************;
+    * Verifica se Weibull. Grafico logH vs logt;
+    proc lifetest data=mio  
+    plots = lls graphics
+    outsurv=c;
+    * in c solo S;
+    time durata*des(0);
+    title «esame grafico su parametrizzazione weibull»;
+    run;
+    * Più simile ad una retta;
+    * Si ipotizza sigma>1 monotono decrescente con t (cioè b<1);
+
+    * Grafico migliore;
+    data c;
+    set c;
+    s = survival;
+    ldur = log(durata); * !durate =0;
+    lls=log(-log(s));
+    run;
+    proc gplot;
+    symbol1 value=none i=join;
+    plot lls*ldur;
+    title "test grafico weibull: -lls vs logt";
+    run;
+
+    ****************************** (Esercizio 4) ******************************;
+    * Modello Weibull senza covariate;
+    proc lifereg data= mio; 
+    model durata*des (0) = / dist=weibull;
+    title “stima modello weibull senza covariate”;
+    run;
+    /* 1.15 parametro di scala, quindi il rischio è 
+    decrescente a passare del tempo */
+
+    ****************************** (Esercizio 5) ******************************;
+    * Modello Weibull con covariate;
+    proc lifereg data= mio; 
+    model durata*des (0) = edu coho2 coho3 lfx pnoj pres / dist=weibull;
+    title “stima modello weibull con covariate”;
+    run;
+    /* Rispetto al precedente, ora abbiamo la stima delle covariate
+    sul gruppo di base. Le stime influenzano il logaritmo del tempo rispetto
+    il gruppo di base
+    EDU: per ogni aumento unitario di educazione, l'effetto è quello di ridurre
+    il logaritmo del tempo rispetto il punto precedente di educazione.
+    Per ottenere il fattore di accelerazione bisogna fare l'exp. 
+    Per passare a rischi proporzionali (PH) bisogna fare le conversioni:
+    negativo del parametro e dividere per il parametro di scala 1.09.
+    Shape=b<1 <=> Scale=(1/b)=Sigma>1: anche dopo le covariate il rischio è
+    decrescente. */
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_012.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
---->
-
 
 <!---
 
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es013">Esempio 13: Modelli parametrici (2)</button>
+<button class="collapsible" id="es013">Esempio 13: Modelli parametrici: Esponenziale a tratti (2)</button>
 <div class="content" id="es013data" markdown="1">
 
 	```sas
