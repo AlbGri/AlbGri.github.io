@@ -154,7 +154,7 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$S(t)=\exp{(-at)}=\exp{\big(-H(t)\big)}$$  
     $$h(t)=a$$ Rischio costante, memorylessness distribution  
     $$H(t)=-\log{S(t)}=at$$ (area sottostante '$$a$$' fino a $$t$$)  
-    Test grafico su esponenziale: se il grafico $$H(t)$$ vs $$t$$ è una linea retta che parte dall'origine allora i dati approssimano bene una durata esponenziale.  
+    Test grafico su Esponenziale: se l'andamento $$H(t)$$ vs $$t$$ è una linea retta che parte dall'origine allora i dati approssimano bene una durata esponenziale (quindi $$b=1$$).  
     $$F(t)=1-\exp{(-at)}$$  
     $$\log{S(t)}=-at$$  
     - Weibull  
@@ -163,6 +163,7 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$S(t)=\exp{(-at^b)}$$  
     $$h(t)=abt^{b-1}$$ Rischio costante se $$b=1$$, monotono crescente se $$b>1$$, monotono decrescente se $$b<{1}$$  
     $$H(t)=-\log{S(t)}=at^b$$  
+    Test grafico su Weibull: se l'andamento $$\log{H(t)}$$ vs $$\log{t}$$ è una retta con intercetta $$\log{a}$$ e pendenza $$b$$  
     - Gompertz e Gompertz-Makeham (utile per mortalità con pochi casi)  
     $$h(t)$$ Rischio monotono  
     - Log-logistica  
@@ -211,7 +212,11 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$\exp{(\alpha_0^{AFT})}=\exp{(-\beta_0^{PH})}=1/\exp{(-\beta_0^{PH})}=1/h_0^{PH}=E(T_0)$$  
 - Weibull  
     - Funzioni utili  
-    - Senza covariate.......  
+    - PH  
+    $$h(t\vert X)=\big[\exp{(\beta_0)}\cdot bt^{b-1}\big]\cdot\exp{(\beta X)}=h_0(t)\cdot\exp{(\beta X)}$$
+    - AFT  
+    $$\log{T}=\alpha_0+\alpha X+\sigma\epsilon$$  
+    $$T=\exp{(\alpha_0+\sigma\epsilon)}\cdot\exp{(\alpha X)}=T_0\cdot\gamma$$  
     - Con covariate.......  
 - Esponenziale a tratti  
     - Senza covariate.......  
