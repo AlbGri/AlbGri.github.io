@@ -2099,9 +2099,9 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 
 ## Utili
 ### Century Months
-$$\mbox{C.M.}=\mbox{Anno}\cdot 12+\mbox{Mese}$$  
-$$\mbox{Anno}=(\mbox{C.M.}-1)/12+1900$$  
-$$\mbox{Mese}=\mbox{C.M.}-(\mbox{intero(Anno)}\cdot 12)$$
+$$\mbox{C.M.}=\mbox{YY}\cdot 12+\mbox{MM}$$  
+$$\mbox{YY}=(\mbox{C.M.}-1)/12+1900$$  
+$$\mbox{MM}=\mbox{C.M.}-(\mbox{intero(YY)}\cdot 12)$$
 
 
 
