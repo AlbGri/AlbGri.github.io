@@ -64,6 +64,18 @@ mathjax: "true"
 
 #### Kaplan-Meier (Product Limit)
 - Calcolo delle funzioni e indici
+    1. Siano $$n=6$$ episodi di durata $$(4,3*,6,6*,10,18)$$
+    2. Rappresento sull'asse T gli episodi nel seguente modo  
+    ![png](/assets/images/Statistics/EHA_KM1.png)
+    3. Siano:
+        - $$R_j=N-\sum_{k=1}^{j-1}(Censure+Eventi)_k$$ i soggetti a rischio di sperimentare l'evento in quel punto  
+        - $$\hat{q}_j=\frac{E_j}{R_j}$$ la probabilità di sperimentare l'evento  
+        - $$\hat{p}_j=1-\hat{q}_j$$ probabilità di non sperimentare l'evento  
+        - $$\hat{S}_j=\prod_{k=1}^{j-1}\hat{p}_k la sopravvivenza nel punto
+    4. Si calcola quanto segue  
+    ![png](/assets/images/Statistics/EHA_KM2.png)
+    5. Si sintetizzano le informazioni  
+    6. Si rappresenta la sopravvivenza
 - Esplorazione forma del rischio
 - Funzione di sopravvivenza
 	- Analisi quantili
@@ -1987,7 +1999,7 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
     (Esercizio 1) Modello esponenziale a tratti senza covariate
     (Esercizio 2) Modello esponenziale a tratti con covariate
     *******************************************************/
-    libname dir "/home/u52136602/sasuser.v94/dati";
+    libname dir "/home/dati";
     data MIO;
     set dir.PIPPO;
     run;
