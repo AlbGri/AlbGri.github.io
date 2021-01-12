@@ -68,7 +68,7 @@ mathjax: "true"
     2. Rappresento sull'asse T gli episodi nel seguente modo  
     ![png](/assets/images/Statistics/EHA_KM1.png)
     3. Siano:
-        - $$R_j=N-\sum_{k=1}^{j-1}(\mbox{Censure}+Eventi)_k$$ i soggetti a rischio di sperimentare l'evento in quel punto  
+        - $$R_j=N-\sum_{k=1}^{j-1}(C+E)_k$$ i soggetti a rischio di sperimentare l'evento in quel punto  
         - $$\hat{q}_j=\frac{E_j}{R_j}$$ la probabilità di sperimentare l'evento  
         - $$\hat{p}_j=1-\hat{q}_j$$ probabilità di non sperimentare l'evento  
         - $$\hat{S}_j=\prod_{k=1}^{j-1}\hat{p}_k$$ la sopravvivenza nel punto
