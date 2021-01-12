@@ -81,83 +81,94 @@ mathjax: "true"
 ### Modelli a tempo continuo
 
 #### Modelli semi-parametrici
-1. Modello base
-	1. Caratteristiche modello di Cox
-	2. Significato PH (Proportional Hazard)
-2. Parametri e risk score
-	1. Interpretazione parametri
-	2. Significatività statistica dei parametri
-	3. Risk score
-3. Bontà adattamento modello
-	1. Rapporto di verosimiglianza
-	2. AIC e BIC
-4. Modello a rischi competitivi
-5. Stima di massima verosimiglianza 
-	1. Metodo FL (Full Likelihood - “Qual è la probabilità che l'individuo i-mo sperimenti un evento nel $$t_j$$ osservato?'')
-	2. Complicazioni: censure e rischio base
-	3. Metodo PL (Partial Likelihood - “Dato che qualcuno sperimenta un evento al tempo $$t_j$$ qual è la probabilità che si tratti dell'individuo i-mo?'') basato sui rank dei tempi
-	4. Massimizzazione PL con metodi numerici iterativi
-6. Ties
-	1. Exact (tutti i possibili ordinamenti)
-	2. Breslow (come Exact ma shrinkage to 0 se ci sono molti ties)
-	3. Efron (come Breslow ma più vicino all'Exact)
-	4. Discrete (eventi effettivamente doppioni)
-7. Stima e utilizzo delle funzioni base
-8. Variabili tempo-dipendenti
-	1. Caratteristiche VTD
-	2. Modello con VTD
-	3. Come tenere sotto controllo variabili TD
-	4. Spazio stati TD
-	5. Effetti immediati o differiti nel tempo
-9. Effetti non proporzionali
-	1. Violazione assunzione proporzionalità
-	2. Verifica proporzionalità 
-		- Grafico di $$\log{H}$$ (analisi del logaritmo del rischio cumulato $$\log{(H)}=\log{(-\log{(s)})}$$
-		- Residui di Schoenfeld (l'andamento dello scarto tra la covariata dell'i-esimo individuo e la sua media nel tempo è casuale)
-		- Modello con interazione tra tempo e covariate (se il coeff. dell'interazione è significativamente diverso da zero)
-	3. Superamento ipotesi proporzionalità
-		- Modello stratificato ($$n$$ rischi di base quanti gli strati)
-		- Modelli separati in strati ($$n$$ modelli quanti gli strati, con $$\mathcal{X}^2$$ saggio se gli $$n$$ modelli sono uguali a quello compatto)  
-		$$\mathcal{X}^2_{(k-1)p}=\bigg[-2LL_{\mbox{stra}}-\Big[\sum_{i=1}^n(-2LL_{\mbox{sep}_i})\Big]\bigg]$$  
-		con $$k=\mbox{n.strati}$$ e $$p=\mbox{n.predittori}$$
-		- Modello con interazione tra il tempo e le covariate. 
-		    - Tempo continuo
-		        - Effetto lineare
-		        - Effetto lineare traslato
-		        - Effetto logaritmico (il parametro rappresenta la variazione del log rischio a raddoppi della durata, se il logaritmo è in base 2)
-		    - Tempo discreto
-		        - Main effect: effetto principale + parte lineare con dummy dell'intervallo (consente di capire se un tratto è significativamente diverso dall'altro) 
-		        - Effetto a gradini: lineare con $$k$$ dummy pari al numero di intervalli senza effetto principale (l'effetto potrebbe essere significativamente diverso da quello di base ma non è strettamente non proporzionale perché non è detto che i coefficienti che si stimano siano significativamente diversi da quelli stimati nel tratto precedente)
+
+##### Modello base
+- Caratteristiche modello di Cox
+- Significato PH (Proportional Hazard)
+
+##### Parametri e risk score
+- Interpretazione parametri
+- Significatività statistica dei parametri
+- Risk score
+
+##### Bontà adattamento modello
+- Rapporto di verosimiglianza
+- AIC e BIC
+
+##### Modello a rischi competitivi
+
+##### Stima di massima verosimiglianza 
+- Metodo FL (Full Likelihood - “Qual è la probabilità che l'individuo i-mo sperimenti un evento nel $$t_j$$ osservato?'')
+- Complicazioni: censure e rischio base
+- Metodo PL (Partial Likelihood - “Dato che qualcuno sperimenta un evento al tempo $$t_j$$ qual è la probabilità che si tratti dell'individuo i-mo?'') basato sui rank dei tempi
+- Massimizzazione PL con metodi numerici iterativi
+
+##### Ties
+- Exact (tutti i possibili ordinamenti)
+- Breslow (come Exact ma shrinkage to 0 se ci sono molti ties)
+- Efron (come Breslow ma più vicino all'Exact)
+- Discrete (eventi effettivamente doppioni)
+
+##### Stima e utilizzo delle funzioni base
+
+##### Variabili tempo-dipendenti
+- Caratteristiche VTD
+- Modello con VTD
+- Come tenere sotto controllo variabili TD
+- Spazio stati TD
+- Effetti immediati o differiti nel tempo
+
+##### Effetti non proporzionali
+- Violazione assunzione proporzionalità
+- Verifica proporzionalità 
+	- Grafico di $$\log{H}$$ (analisi del logaritmo del rischio cumulato $$\log{(H)}=\log{(-\log{(s)})}$$
+	- Residui di Schoenfeld (l'andamento dello scarto tra la covariata dell'i-esimo individuo e la sua media nel tempo è casuale)
+	- Modello con interazione tra tempo e covariate (se il coeff. dell'interazione è significativamente diverso da zero)
+- Superamento ipotesi proporzionalità
+	- Modello stratificato ($$n$$ rischi di base quanti gli strati)
+	- Modelli separati in strati ($$n$$ modelli quanti gli strati, con $$\mathcal{X}^2$$ saggio se gli $$n$$ modelli sono uguali a quello compatto)  
+	$$\mathcal{X}^2_{(k-1)p}=\bigg[-2LL_{\mbox{stra}}-\Big[\sum_{i=1}^n(-2LL_{\mbox{sep}_i})\Big]\bigg]$$  
+	con $$k=\mbox{n.strati}$$ e $$p=\mbox{n.predittori}$$
+	- Modello con interazione tra il tempo e le covariate. 
+	    - Tempo continuo
+	        - Effetto lineare
+	        - Effetto lineare traslato
+	        - Effetto logaritmico (il parametro rappresenta la variazione del log rischio a raddoppi della durata, se il logaritmo è in base 2)
+	    - Tempo discreto
+	        - Main effect: effetto principale + parte lineare con dummy dell'intervallo (consente di capire se un tratto è significativamente diverso dall'altro) 
+	        - Effetto a gradini: lineare con $$k$$ dummy pari al numero di intervalli senza effetto principale (l'effetto potrebbe essere significativamente diverso da quello di base ma non è strettamente non proporzionale perché non è detto che i coefficienti che si stimano siano significativamente diversi da quelli stimati nel tratto precedente)
 
 
 
 #### Modelli parametrici
-1. Calcolo delle funzioni di densità, sopravvivenza e rischio
-    - Trasformazioni utili:  
-    $$\log{X}\sim\mathcal{N}(\mu,\sigma^2)\Rightarrow X\sim\log{\mathcal{N}(\mu,\sigma^2)}$$  
-    $$S(t)=\int_t^{+\infty}f(u)du$$  
-    $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
-    - Possibili forme funzionali: 
-        - Esponenziale  
-        $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
-        $$S(t)=\exp{(-at)}=\exp{\big(-H(t)\big)}$$  
-        $$h(t)=a$$ Rischio costante, memorylessness distribution  
-        $$H(t)=-\log{S(t)}=at$$ (area sottostante '$$a$$' fino a $$t$$)  
-        Test grafico su esponenziale: se il grafico $$H(t)$$ vs $$t$$ è una linea retta che parte dall'origine allora i dati approssimano bene una durata esponenziale.  
-        $$F(t)=1-\exp{(-at)}$$  
-        $$\log{S(t)}=-at$$  
-        - Weibull  
-        $$f(t)=abt^{b-1}\exp{(-at^b)}\mbox{ con }a\mbox{ (scala), }b\mbox{ (forma)}>0$$ se $$b=1$$ Esponenziale  
-        $$S(t)=\exp{(-at^b)}$$  
-        $$h(t)=abt^{b-1}$$ Rischio costante se $$b=1$$, monotono crescente se $$b>1$$, monotono decrescente se $$b<1$$  
-        - Gompertz e Gompertz-Makeham (utile per mortalità con pochi casi)  
-        $$h(t)$$ Rischio monotono  
-        - Log-logistica  
-        $$h(t)$$ Rischio monotono decrescente o unimodale  
-        - Hernes, Sickle, Coale-McNeil  
-        $$h(t)$$ Rischio unimodale  
-        - Altre: Log-normale, Gamma, Gamma generalizzati  
-2. Modelli di regressione parametrici
+
+##### Calcolo delle funzioni di densità, sopravvivenza e rischio
+- Trasformazioni utili:  
+$$\log{X}\sim\mathcal{N}(\mu,\sigma^2)\Rightarrow X\sim\log{\mathcal{N}(\mu,\sigma^2)}$$  
+$$S(t)=\int_t^{+\infty}f(u)du$$  
+$$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
+- Possibili forme funzionali: 
+    - Esponenziale  
+    $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
+    $$S(t)=\exp{(-at)}=\exp{\big(-H(t)\big)}$$  
+    $$h(t)=a$$ Rischio costante, memorylessness distribution  
+    $$H(t)=-\log{S(t)}=at$$ (area sottostante '$$a$$' fino a $$t$$)  
+    Test grafico su esponenziale: se il grafico $$H(t)$$ vs $$t$$ è una linea retta che parte dall'origine allora i dati approssimano bene una durata esponenziale.  
+    $$F(t)=1-\exp{(-at)}$$  
+    $$\log{S(t)}=-at$$  
+    - Weibull  
+    $$f(t)=abt^{b-1}\exp{(-at^b)}\mbox{ con }a\mbox{ (scala), }b\mbox{ (forma)}>0$$ se $$b=1$$ Esponenziale  
+    $$S(t)=\exp{(-at^b)}$$  
+    $$h(t)=abt^{b-1}$$ Rischio costante se $$b=1$$, monotono crescente se $$b>1$$, monotono decrescente se $$b<1$$  
+    - Gompertz e Gompertz-Makeham (utile per mortalità con pochi casi)  
+    $$h(t)$$ Rischio monotono  
+    - Log-logistica  
+    $$h(t)$$ Rischio monotono decrescente o unimodale  
+    - Hernes, Sickle, Coale-McNeil  
+    $$h(t)$$ Rischio unimodale  
+    - Altre: Log-normale, Gamma, Gamma generalizzati  
+
+##### Modelli di regressione parametrici
 	1. Parametrizzazione a Rischi Proporzionali (PH)
 	    - La variabile dipendente è la funzione rischio (come Cox ma con baseline parametrico):  
 	    $$h_i(t,X_i)=h_0(t)\cdot \theta$$  
@@ -176,7 +187,8 @@ mathjax: "true"
 	    - Weibul (Esponenziale): sia PH che AFT  
 	    - Gompertz: PH  
 	    - Log-normale, Log-logistico, Gamma generalizzati: AFT  
-3. Modello Esponenziale, Weibull ed Esponenziale a tratti con parametrizzazione PH e AFT
+
+##### Modello Esponenziale, Weibull ed Esponenziale a tratti con parametrizzazione PH e AFT
 	1. Esponenziale
 	    - Senza covariate, per 1 episodio 1 evento  
 	    $$T\sim\mathcal{Exp}(a)$$:  
@@ -191,7 +203,8 @@ mathjax: "true"
 	3. Esponenziale a tratti  
 	    - Senza covariate.......  
 	    - con covariate.......  
-4. Stima di massima verosimiglianza (da gestire le censure)  
+
+##### Stima di massima verosimiglianza (da gestire le censure)  
     - durate censurate senza covariate, siano $$C$$ i casi non censurati e $$E=N-C$$ i casi censurati:  
     $$L(a,t_1,t_2,...,t_N)=\prod_{i\in E}f(t_i,a)\cdot \prod_{i\in C}S(t_i,a)$$  
     poiché $$f=S\cdot h\rightarrow L(a,t_1,t_2,...,t_N)=\prod_{i\in E}h(t_i,a)\cdot \prod_{i\in N}S(t_i,a)$$
