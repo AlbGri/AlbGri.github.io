@@ -159,7 +159,7 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     - Weibull  
     $$f(t)=abt^{b-1}\exp{(-at^b)}\mbox{ con }a\mbox{ (scala), }b\mbox{ (forma)}>0$$ se $$b=1$$ Esponenziale  
     $$S(t)=\exp{(-at^b)}$$  
-    $$h(t)=abt^{b-1}$$ Rischio costante se $$b=1$$, monotono crescente se $$b>1$$, monotono decrescente se $$b<1$$  
+    $$h(t)=abt^{b-1}$$ Rischio costante se $$b=1$$, monotono crescente se $$b>1$$, monotono decrescente se $$b<{1}$$  
     - Gompertz e Gompertz-Makeham (utile per mortalità con pochi casi)  
     $$h(t)$$ Rischio monotono  
     - Log-logistica  
