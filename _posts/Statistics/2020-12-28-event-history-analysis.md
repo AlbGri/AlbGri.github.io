@@ -14,14 +14,14 @@ mathjax: "true"
 ### Basi dell'analisi dei dati di durata
 
 #### Concetti base
-##### Ambiti ed esempi
-2. Definizioni base
-	1. Dominio, evento, episodio, popolazione a rischio
-	2. Caso semplice: 1 episodio, 1 stato destinazione
-	3. Multistato o rischi competitivi: 1 episodio, 2+ stati destinazione
-	4. Multi-episodio: 2+ episodi, 1 stato destinazione
-	5. Multistato e multi-episodio
-3. Modellazione specifica
+**Ambiti ed esempi**  
+**Definizioni base**  
+1. Dominio, evento, episodio, popolazione a rischio
+2. Caso semplice: 1 episodio, 1 stato destinazione
+3. Multistato o rischi competitivi: 1 episodio, 2+ stati destinazione
+4. Multi-episodio: 2+ episodi, 1 stato destinazione
+5. Multistato e multi-episodio
+**Modellazione specifica**  
 	1. Limiti modello lineare
 	2. Censure (tipo I, II, random-non informative che non dipendono dal rischio, random-informative che dipendono dal rischio)
 	3. Covariate (variabili o costanti rispetto il tempo)
@@ -195,9 +195,9 @@ mathjax: "true"
 
 
 
-### [1.4] Modelli a tempo discreto
-#### [1.4.1] Person Period
-#### [1.4.2] Modello a odds proporzionali
+### Modelli a tempo discreto
+#### Person Period
+#### Modello a odds proporzionali
 
 
 
@@ -210,24 +210,24 @@ mathjax: "true"
 
 
 
-## [2] Modelli Frailty
-### [2.1] Introduzione al concetto di Frailty
-### [2.2] Frailty univariati
-#### [2.2.1] Modelli semiparametrici e parametrici
-#### [2.2.2] Metodi di stima
-### [2.3] Shared Frailty Models
+## Modelli Frailty
+### Introduzione al concetto di Frailty
+### Frailty univariati
+#### Modelli semiparametrici e parametrici
+#### Metodi di stima
+### Shared Frailty Models
 
 
-## [3] Modelli Multilevel
-### [3.1] Il modello Multilevel come pooling parziale dei dati
-### [3.2] Modelli a risposta continua
-#### [3.2.1] Modelli a intercetta casuale
-#### [3.2.2] Modelli a effetti casuali
-#### [3.2.3] Inferenza per effetti fissi e per effetti casuali
-### [3.3] Modelli a risposta discreta
-#### [3.3.1] Modelli logistici a effetti casuali
-#### [3.3.2] Modelli a tempo discreto con effetti casuali
-#### [3.3.3] Inferenza per effetti fissi ed effetti casuali.
+## Modelli Multilevel
+### Il modello Multilevel come pooling parziale dei dati
+### Modelli a risposta continua
+#### Modelli a intercetta casuale
+#### Modelli a effetti casuali
+#### Inferenza per effetti fissi e per effetti casuali
+### Modelli a risposta discreta
+#### Modelli logistici a effetti casuali
+#### Modelli a tempo discreto con effetti casuali
+#### Inferenza per effetti fissi ed effetti casuali.
 
 
 
