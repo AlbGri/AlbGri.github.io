@@ -14,14 +14,14 @@ mathjax: "true"
 ### Basi dell'analisi dei dati di durata
 
 #### Concetti base
-**Ambiti ed esempi**  
-**Definizioni base**  
+##### Ambiti ed esempi
+##### Definizioni base
 1. Dominio, evento, episodio, popolazione a rischio
 2. Caso semplice: 1 episodio, 1 stato destinazione
 3. Multistato o rischi competitivi: 1 episodio, 2+ stati destinazione
 4. Multi-episodio: 2+ episodi, 1 stato destinazione
 5. Multistato e multi-episodio
-**Modellazione specifica**  
+##### Modellazione specifica
 	1. Limiti modello lineare
 	2. Censure (tipo I, II, random-non informative che non dipendono dal rischio, random-informative che dipendono dal rischio)
 	3. Covariate (variabili o costanti rispetto il tempo)
