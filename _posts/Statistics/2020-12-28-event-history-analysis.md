@@ -121,7 +121,8 @@ mathjax: "true"
 ##### Effetti non proporzionali
 - Violazione assunzione proporzionalità
 - Verifica proporzionalità 
-	- Grafico di $$\log{H}$$ (analisi del logaritmo del rischio cumulato $$\log{(H)}=\log{(-\log{(s)})}$$
+	- Analisi grafica del logaritmo del rischio cumulato  
+	$$\log{(H)}=\log{(-\log{(s)})}$$
 	- Residui di Schoenfeld (l'andamento dello scarto tra la covariata dell'i-esimo individuo e la sua media nel tempo è casuale)
 	- Modello con interazione tra tempo e covariate (se il coeff. dell'interazione è significativamente diverso da zero)
 - Superamento ipotesi proporzionalità
