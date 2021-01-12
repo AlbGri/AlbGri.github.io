@@ -217,8 +217,9 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     - AFT  
     $$\log{T}=\alpha_0+\alpha X+\sigma\epsilon$$  
     $$T=\exp{(\alpha_0+\sigma\epsilon)}\cdot\exp{(\alpha X)}=T_0\cdot\gamma$$  
-    Si dimostra che $$\beta=\beta_{PH}=-\beta_{AFT}b=-\alpha\cdot b$$  
-    NB. SAS stima mod. Weibull solo AFT con $$\sigma=1/b\Rightarrow\beta_{PH}=-\beta_{AFT}\cdot (1/\sigma)$$  
+    Si dimostra che $$\beta=\beta_{PH}=-\beta_{AFT}\cdot b=-\alpha\cdot b$$  
+    NB. SAS stima modello Weibull solo AFT con $$\sigma=1/b\Rightarrow\beta_{PH}=-\beta_{AFT}\cdot (1/\sigma)$$  
+    Inoltre, con $$a=\exp{(-\beta_{AFT}\cdot b)}$$ si ricava facilmente $$h(t)$$  
     - Con covariate.......  
 - Esponenziale a tratti  
     - Senza covariate.......  
