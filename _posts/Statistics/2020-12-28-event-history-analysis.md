@@ -1584,16 +1584,271 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 &nbsp;
 &nbsp;
 
-<!---
-
 <button class="collapsible" id="es011">Esempio 11: Cox non proporzionali</button>
 <div class="content" id="es011data" markdown="1">
+
+	```sas
+    /*******************************************************
+    Obiettivo: 
+    (Esercizio 1) Verifico assunz. proporzionalità con grafico e
+    stimo modello stratificato per sesso
+    (Esercizio 2) Verifico assunz. proporzionalità con test
+
+    (Esercizio 3) Superamento assunzione proporzionalità con modelli che
+    ipotizzano interazioni tra il tempo (durata) e le covariate (SEX1)
+    (Esercizio 3.1) Tempo continuo: effetto lineare, 
+    effetto lineare traslato, effetto lineare con log del tempo
+    (Esercizio 3.2) Tempo discreto: effetto principale; 
+    effetto a gradini (pochi); effetto a gradini (molti)
+    (Esercizio 3.3) Qual è il modello migliore?
+    *******************************************************/
+
+    libname dir "/home/u52136602/sasuser.v94/dati";
+    data MIO;
+    set dir.PIPPO;
+    /* Genero dummy per sex invece di usare class, è più comodo
+    per quando si stimano i modelli con l'interazione con il tempo*/
+    sex1 = 0;      * assegno donne=0 al gruppo di base;
+    if sex = 1 then sex1 = 1; 	* uomini=1;
+    run;
+
+    ****************************** (Esercizio 1) ******************************;
+    /* Passo 1: stimo modello stratificato (superamento ipotesi porporzionalità)
+    e costruisco "a" che contiene logH per M e F. */
+    proc phreg data=mio;
+    model durata*des(0) = edu coho2 coho3 lfx pnoj pres / ties = efron;
+    strata sex1;
+    /* Se facessimo run qua avremmo stimato un modello stratificato
+    ma stima in modo non parametrico le funzioni del rischio di base per maschi 
+    e femmine. Dato che non vogliamo solo la stima di edu e le altre variabili
+    al netto di un possibile effetto di sex1, inseriamo anche baseline out a
+    perché vogliamo l'effetto di sex1. */
+    baseline out=a loglogs=lls;  
+    run;
+
+    * tranne le ultime tre, tutte le altre colonne saranno medie campionarie;
+    proc print data=a (obs=10);
+    run;
+
+    * Passo 2: costruisco grafico di logH per maschi e femmine;
+    proc gplot data=a;
+    plot lls*durata=sex1;
+    Symbol1 interpol=join color=red   line=1;
+    Symbol2 interpol=join color=black line=2;
+    title "verifica proporzionalità di sex"; 
+    run;
+
+    /* Risultato:
+    sembra ci sia un effetto proporzionale dopo i 30 mesi,
+    ma all'inizio sembra non rispettare la proporzionalità.
+    Per comprendere meglio la parte iniziale posso fare 
+    lls vs log(durata) */
+
+    /* Passo 3: creo grafico logH*log(durata);
+    Nota: se logH vs logt si distribuisce come una retta abbiamo una weibull */
+    data b;  * NB. posso anche scrivere su "a" aggiornandolo;
+    set a;
+    lndur = log(durata);    * NB: in S=1 lndur non è stimato;
+    drop edu coho2 coho3 lfx pnoj pres;
+    run;
+
+    proc gplot data=b;
+    plot lls*lndur=sex1;
+    Symbol1 interpol=join color=red  line=1;
+    Symbol2 interpol=join color=blue  line=2;
+    title "logH vs logt"; 
+    run;
+    * Ora il grafico è più chiaro;
+
+    ****************************** (Esercizio 2) ******************************;
+    /* Test sui residui di SCHOENFELD
+    Nel caso in cui sono proporzionali, se facciamo
+    il grafico tra i residui di schoenfeld calcolati in
+    funzione di una certa covariata, cioè che sono la 
+    differenza tra quello che è il valore della covariata
+    con il modello rispetto il valore che avrebbe nella realtà,
+    messo in relazione con la durata, dovremmo trovare un andamento
+    casuale incorrelato */
+    proc phreg data=mio;
+    model durata*des(0)= sex1 edu lfx pnoj pres / ties=efron; 
+    OUTPUT OUT=C RESSCH= schsex1 schedu SCHLFX SCHPNOJ SCHPRES; 
+    run; 
+    proc print data=c (obs=10); 
+    run; 
+
+    * Seleziono solo le variabili con i residui;
+    data c;
+    set c;
+    keep durata schsex1 schedu SCHLFX SCHPNOJ SCHPRES;
+    run;
+    proc print data=c (obs=10);
+    run;
+
+    /* Resetto l'ambiente grafico, altrimenti se lancio tutto il
+    codice mi prenderà per i grafici successivi l'impostazione
+    interpol dei grafici precedenti */
+    goption reset=all;
+
+    * Grafici;
+    proc gplot data=c; 
+    plot schsex1*durata;
+    plot schedu*durata;
+    plot SCHLFX*durata;
+    plot SCHPNOJ*durata;
+    plot SCHPRES*durata; 
+    symbol value=dot H=.5; 
+    run; 
+
+    /* Le due curve tipiche con residui con dummy.
+    Non c'è un andamento parallelo, è inclinato, quindi una qualche
+    relazione tra tempo le variabili c'è.
+    Va meglio sulle variabili di tipo continuo EDU, sembrano proporzionali.
+    Per la variabile LFX (durata) non sembrano proporzionali */
+
+
+    /* Non rientra nei modelli di durata, ma possiamo stimare la correlazione,
+    un'analisi di regressione lineare ORL, tra la variabile SCHPRES e DURATA, 
+    in questo caso la variabile sex non è opportuna per una correlazione. 
+    Chiedo p=valori predetti var.dip. e r=stime residui*/
+    Proc reg data=c;
+    Model schpres=durata /p;        * sintassi: y=x;
+    Output out=zeta p=prev_pres r=resid;
+    Run;
+    /* R^2 basso, come si immaginava.
+    Non ci sono evidenze quindi per dire che schpres ha effetti non proporzionali */
+
+
+    ****************************** (Esercizio 3.1) ******************************;
+    * Tempo continuo: effetto lineare;
+    proc phreg data=mio;
+    model durata*des(0)= edu coho2 coho3 lfx pnoj pres sex1 sextime;
+	    sextime=sex1*durata;
+	    title 'cox model - interazione t*sex1 lineare';
+    run;
+    /* L'effetto del sesso non sia costante al variare del tempo
+    perché il rischio di uscita dal mercato di lavoro sembra dimunuire
+    al variare del tempo, per gli uomini rispetto le donne (baseline) */
+
+    * Tempo continuo: effetto lineare traslato di 12 mesi;
+    proc phreg data=mio;
+    model durata*des(0)= edu coho2 coho3 lfx pnoj pres sex1 sextime;
+	    sextime=sex1*(durata-12);
+	    title 'cox model con sex1 lineare traslato';
+    run;
+    /* L'interazione va nella stessa direzione, ma 
+    Sex1 ora è diventato significativo */
+
+    * Tempo continuo: effetto lineare con il log del tempo;
+    proc phreg data=mio;
+    model durata*des(0)= edu coho2 coho3 lfx pnoj pres sex1 sextime;
+	    sextime=sex1*log(durata);
+	    title 'cox model con sex1 log-lineare';
+    run;
+    * L'interazione è significativo ma Sex1 no;
+
+
+    ****************************** (Esercizio 3.2) ******************************;
+    * Tempo discreto: effetto principale: effetto dicotomico con salto a 30 mesi; 
+    proc phreg data=mio;
+    model durata*des(0)= edu coho2 coho3 lfx pnoj pres sex1 sextime;
+	    sextime = sex1*(durata > 30);
+	    /* IF DURATA>30 THEN SEXTIME=SEX1; ELSE SEXTIME=0; * alternativ.; */
+    /* Un effetto principale che dice qual è l'effetto del sex per tutto 
+    l'asse del tempo e poi ho un'interazione aggiuntiva che vale 
+    per la seconda parte del tempo da 30 in su che va ad aggiungersi 
+    all'effetto di sex1. */
+    title 'cox model con sex1 step dicotomica>30';
+    run;      * interpretare significato dei due effetti; 
+    /* coefficente sex1: Il logaritmo del rischio di uscire dal mercato per i maschi
+    per i primi 30 mesi, è di -0.11, vedendo il rischio, hanno
+    una probabilità che è 10/11% inferiore rispetto quello delle
+    donne sul primo tratto. Non è significativo
+    coefficiente sextime: per quanto riguarda il secondo tratto è per i maschi inferiore
+    a quello delle femmine molto di più, a -0.11 bisogna togliere -0.52, oppure
+    exp(rischio di sex1)*exp(rischio sextime). Fatto 1 il rischio che hanno
+    le femmine di uscire. è significativo. 
+    è un effetto non proporzionale
+    */
+
+    * Tempo discreto: effetto a gradini (2 gradini);
+    proc phreg data=mio;
+    model durata*des(0)= edu coho2 coho3 lfx pnoj pres sextime1 sextime2;
+	    sextime1 = sex1*(durata <= 30);
+	    sextime2 = sex1*(durata > 30);
+    title 'cox model con sex1 a due livelli dicotomica>30';
+    run;
+    /* sextime2 non sono sicuro che sia signif. diverso 
+    come effetto da sextime1, mentre nel precedente si vedeva
+    sextime è significativo che va ad aggiungersi a quello che già c'è.
+    Va utilizzato dopo che si è sicuri che c'è differenza, e a gradini 
+    viene più facile da leggere */
+
+    * Tempo discreto: effetto a gradini (pochi);
+    proc phreg data=mio;
+    model durata*des(0)= edu coho2 coho3 lfx pnoj pres sextime1 sextime2 sextime3;
+	    sextime1 = sex1*(durata < 20);
+	    sextime2 = sex1*(20 <= durata < 40);
+	    sextime3 = sex1*(durata >= 40);
+	    title 'cox model con sex1 a (pochi) gradini';
+    run;
+    /* non c'è più sextime come effetto principale 
+    Il primo tratto ha -0.15 e non è significativo, 
+    il secondo tratto è poco significativo e il terzo è significativo.
+    Nel primo tratto i maschi hanno un rischio di uscire dal mercato del lavoro
+    che è inferiore del 15% (ma non è significativo).
+    Nel secondo tratto il rischio degli uomini rispetto le donne è inferiore
+    di quasi il 30% (significativo) e poi va ulteriormente riducendosi.
+    Gli uomini man mano che passa il tempo, rispetto le donne, hanno
+    meno rischi dal mercato di lavoro.
+    L'effetto di sex, è coerente sul fatto che sia diversificato per uomini
+    e donne.
+    Il secondo tratto però non ci dice se la differenza è statisticamente
+    significativa rispetto il tratto precedente perché lavoro sul totale
+    del coefficiente. */
+
+    * Tempo discreto: effetto a gradini (molti);
+    proc phreg data=mio;
+    model durata*des(0)= edu coho2 coho3 lfx pnoj pres sextime1 sextime2 
+			    sextime3 sextime4 sextime5 sextime6 sextime7;
+	    sextime1 = sex1*(durata < 20);
+	    sextime2 = sex1*(20 <= durata < 40);
+	    sextime3 = sex1*(40 <= durata < 60);
+	    sextime4 = sex1*(60 <= durata < 80);
+	    sextime5 = sex1*(80 <= durata < 100);
+	    sextime6 = sex1*(100 <= durata < 160);
+	    sextime7 = sex1*(durata ge 160);
+	    title 'cox model con sex1 a (molti) gradini';
+    run;   
+    * Si può migliorare la suddivisione del tempo?;
+    * Da confrontare i modelli;
+
+    ****************************** (Esercizio 3.2) ******************************;
+    * lineare continuo con log del tempo traslato della mediana;
+    proc phreg data=mio; 
+    model durata*des(0)= edu coho2 coho3 lfx pnoj pres sex1 sextime; 
+	    sextime=sex1*(log(durata)-4.7);  /* traslo della mediana log tempo*/ 
+	    title 'cox model con sex1 log-lineare traslato'; 
+    run;
+    /* L'interazione è significativa con il logaritmo.
+    Il modello migliore sembra essere a tempo continuo con effetto lineare 
+    con il log del tempo (traslato del log del tempo medio/mediano) */
+	```
+</div>
+<embed src="/assets/images/Statistics/EHA_011.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+&nbsp;
+&nbsp;
+
+<!---
+
+<button class="collapsible" id="es012">Esempio 12: Modelli parametrici</button>
+<div class="content" id="es012data" markdown="1">
 
 	```sas
 	codice
 	```
 </div>
-<embed src="/assets/images/Statistics/EHA_011.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+<embed src="/assets/images/Statistics/EHA_012.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 --->
 
