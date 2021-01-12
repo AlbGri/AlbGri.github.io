@@ -191,16 +191,16 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
 
 ##### Parametr. PH e AFT per i modelli Esponenziale, Weibull ed Esponenziale a tratti
 - Esponenziale
-    - Senza covariate, per 1 episodio 1 evento  
-    $$T\sim\mathcal{Exp}(a)$$:  
+    - Funzioni utili  
+    $$T\sim\mathcal{Exp}(a)$$  
     $$lim_{t\rightarrow\infty}S(t,a)=0$$ eventi inevitabili  
     $$E(T)=\frac{1}{a} \qquad Var(T)=\frac{1}{a^2}$$  
     $$t_{\mbox{quantile}_q}=-\log{(q)}\cdot E(T)$$ (es. mediana $$t_{ME}=0.693/a$$)  
     $$h(t,a_k)=a_k$$ se 1 episodio, più destinazioni (rischi competitivi), con $$a_k$$ tasso di transizione (costante) verso destinazione $$k$$
-    - PH:  
-    $$h(t,X)=\exp{\beta_0}\cdot\exp{(\beta X)}=h_0\cdot\exp{(\beta X)}$$  
+    - PH  
+    $$h(t,X)=\exp{\beta_0}\cdot\exp{(\beta X)}=h_0\cdot\underbrace{\exp{(\beta X)}_\mbox{RR se 1 X dummy}$$  
     Rispetto i modelli di Cox: $$h_0$$ è parametrico e il rischio non dipende dal tempo  
-    - AFT:  
+    - AFT  
     $$T=\big[\exp{(\alpha_0)}\cdot\exp{(\epsilon)}\big]\cdot\exp{(\alpha X)}=T_0\cdot\gamma$$  
     Si dimostra che per l'esponenziale $$\alpha=-\beta$$  
 - Weibull  
