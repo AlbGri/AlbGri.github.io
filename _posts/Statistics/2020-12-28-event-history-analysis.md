@@ -1836,12 +1836,12 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 </div>
 <embed src="/assets/images/Statistics/EHA_011.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
-&nbsp;
-&nbsp;
-
 <!---
 
-<button class="collapsible" id="es012">Esempio 12: Modelli parametrici</button>
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es012">Esempio 12: Modelli parametrici (1)</button>
 <div class="content" id="es012data" markdown="1">
 
 	```sas
@@ -1849,6 +1849,40 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_012.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+--->
+
+
+<!---
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es013">Esempio 13: Modelli parametrici (2)</button>
+<div class="content" id="es013data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistics/EHA_013.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+--->
+
+
+<!---
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es014">Esempio 14: Modelli parametrici (3)</button>
+<div class="content" id="es014data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistics/EHA_014.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 --->
 
