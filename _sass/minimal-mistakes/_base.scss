@@ -40,26 +40,30 @@ h1 {
 
 h2 {
   font-size: $h-size-2;
+  color: #000033;
+  margin: 1em 0 0;
 }
 
 h3 {
   font-size: $h-size-3;
   color: #000099;
+  margin: 1em 0 0;
 }
 
 h4 {
   font-size: $h-size-4;
   color: #0000cc;
+  margin: 1em 0 0;
 }
 
 h5 {
   font-size: $h-size-5;
-  color: #0000ff;
   margin: 1em 0 0;
 }
 
 h6 {
   font-size: $h-size-6;
+  font-style: italic;
 }
 
 small,

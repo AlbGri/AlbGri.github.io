@@ -32,7 +32,7 @@ mathjax: "true"
 	2. Studi di follow-up (studi coorte)
 	3. Record-Linkage
 
-#### [1.1.2] Funzioni base nel continuo e nel discreto
+#### Funzioni base nel continuo e nel discreto
 1. Funzioni base con tempo continuo
 	1. Condizioni
 	2. Densità, Ripartizione, Sopravvivenza
@@ -43,7 +43,7 @@ mathjax: "true"
 	1. Discreto
 	2. Continuo discretizzato
 
-#### [1.1.3] Tipologie di metodi
+#### Tipologie di metodi
 1. Metodi per tempo continuo
 	1. Metodi non parametrici: Kaplan-Meier (Product-Limit)
 	2. Modelli di regressione: PH, AFT
@@ -51,9 +51,9 @@ mathjax: "true"
 	1. Metodi non parametrici: Life Table (Actuarial Method)
 	2. Modelli di regressione: Logit, Probit
 
-### [1.2] Metodi non parametrici
+### Metodi non parametrici
 
-#### [1.2.1] Kaplan-Meier (Product Limit)
+#### Kaplan-Meier (Product Limit)
 1. Calcolo delle funzioni e indici
 2. Esplorazione forma del rischio
 3. Funzione di sopravvivenza
@@ -62,16 +62,16 @@ mathjax: "true"
 	3. Test di omogeneità (grafico, log-rank rest, wilcoxon test)
 4. Funzioni di pseudo-sopravvivenza per rischi competitivi
 
-#### [1.2.2] Life Table (o Attuariale)
+####  Life Table (o Attuariale)
 1. Tavola di eliminazione: stima rischio, probabilità e sopravvivenza
 2. Altre funzioni (es. rischio integrato)
 3. Intervalli di confidenza
 
 
 
-### [1.3] Modelli a tempo continuo
+### Modelli a tempo continuo
 
-#### [1.3.1] Modelli semi-parametrici
+#### Modelli semi-parametrici
 1. Modello base
 	1. Caratteristiche modello di Cox
 	2. Significato PH (Proportional Hazard)
@@ -122,7 +122,7 @@ mathjax: "true"
 
 
 
-#### [1.3.2] Modelli parametrici
+#### Modelli parametrici
 1. Calcolo delle funzioni di densità, sopravvivenza e rischio
     - Trasformazioni utili:  
     $$\log{X}\sim\mathcal{N}(\mu,\sigma^2)\Rightarrow X\sim\log{\mathcal{N}(\mu,\sigma^2)}$$  
