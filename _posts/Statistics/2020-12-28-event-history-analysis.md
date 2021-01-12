@@ -205,6 +205,8 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     - AFT (stimo la durata media)  
     $$T=\big[\exp{(\alpha_0)}\cdot\exp{(\epsilon)}\big]\cdot\exp{(\alpha X)}=T_0\cdot\gamma$$  
     Si dimostra che per l'esponenziale $$\alpha=-\beta$$  
+    $$\alpha$$ stimato è il logaritmo della durata relativo alla variabile $$X$$  
+    $$\exp{(\alpha_0^{\mbox{AFT}})}=\exp{(-\beta_0^{\mbox{PH}})}=1/\exp{(-\beta_0^{\mbox{PH}})}=1/h_0^{\mbox{PH}}=E(T_0)$$  
 - Weibull  
     - Senza covariate.......  
     - Con covariate.......  
