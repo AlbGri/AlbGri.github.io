@@ -211,7 +211,6 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$\alpha$$ stimato è il logaritmo della durata relativo alla variabile $$X$$  
     $$\exp{(\alpha_0^{AFT})}=\exp{(-\beta_0^{PH})}=1/\exp{(-\beta_0^{PH})}=1/h_0^{PH}=E(T_0)$$  
 - Weibull  
-    - Funzioni utili  
     - PH  
     $$h(t\vert X)=\big[\exp{(\beta_0)}\cdot bt^{b-1}\big]\cdot\exp{(\beta X)}=h_0(t)\cdot\exp{(\beta X)}$$
     - AFT  
@@ -220,15 +219,22 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     Si dimostra che $$\beta=\beta_{PH}=-\beta_{AFT}\cdot b=-\alpha\cdot b$$  
     NB. SAS stima modello Weibull solo AFT con $$\sigma=1/b\Rightarrow\beta_{PH}=-\beta_{AFT}\cdot (1/\sigma)$$  
     Inoltre, con $$a=\exp{(-\beta_{AFT}\cdot b)}$$ si ricava facilmente $$h(t)$$  
-    - Con covariate.......  
-- Esponenziale a tratti  
-    - Senza covariate.......  
-    - Con covariate.......  
+- Esponenziale a tratti (Piecewise exponential model)  
+Per $$L$$ sotto-intervalli del tempo si specificano diverse distribuzioni parametriche del rischio.
+    - Funzioni utili  
+    $$h(t_j)=\sum_j^L a_j I_j$$ con $I_j$ variabile dummy che vale $$1$$ nel $j-$esimo intervallo. Rischio costante a tratti, con valori di $$a$$ differenti per ogni intervallo.   
+    $$h(t_j,X)=a_j=\exp{(\beta_{0j}+\beta_j X)}\mbox{ con }j=1,...,L$$ è un modello a rischi non proporzionali, varia ad ogni intervallo. Se $$\beta_j=\beta$$ è a rischi proporzionali.  
+    NB. in SAS la significatività di J è con Wald, in cui si saggia se il rischio è costante  
+    NB. in SAS exp(-coeff.) è il valore del rischio relativo rispetto al $$j-$$esimo tratto  
 
 ##### Stima di massima verosimiglianza (da gestire le censure)  
 - durate censurate senza covariate, siano $$C$$ i casi non censurati e $$E=N-C$$ i casi censurati:  
 $$L(a,t_1,t_2,...,t_N)=\prod_{i\in E}f(t_i,a)\cdot \prod_{i\in C}S(t_i,a)$$  
-poiché $$f=S\cdot h\rightarrow L(a,t_1,t_2,...,t_N)=\prod_{i\in E}h(t_i,a)\cdot \prod_{i\in N}S(t_i,a)$$
+poiché $$f=S\cdot h\rightarrow L(a,t_1,t_2,...,t_N)=\prod_{i\in E}h(t_i,a)\cdot \prod_{i\in N}S(t_i,a)$$  
+Ottengo la log-verosimiglianza, derivo rispetto ad $$a$$, pongo uguale a $$0$$ e ottengo le stime.  
+Nel caso di esponenziale:  
+$$\hat{a}=\frac{E}{\sum_{i\in N}t_i}=$$ rapporto tra numero di eventi (casi non censurati) e totale dei tempi $$t_i$$ dell'intero campione (sia censurati che non)  
+$$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 
 
 
