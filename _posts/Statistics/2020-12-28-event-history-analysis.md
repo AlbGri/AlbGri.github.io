@@ -14,42 +14,51 @@ mathjax: "true"
 ### Basi dell'analisi dei dati di durata
 
 #### Concetti base
+
 ##### Ambiti ed esempi
+
 ##### Definizioni base
 1. Dominio, evento, episodio, popolazione a rischio
 2. Caso semplice: 1 episodio, 1 stato destinazione
 3. Multistato o rischi competitivi: 1 episodio, 2+ stati destinazione
 4. Multi-episodio: 2+ episodi, 1 stato destinazione
 5. Multistato e multi-episodio
+
 ##### Modellazione specifica
-	1. Limiti modello lineare
-	2. Censure (tipo I, II, random-non informative che non dipendono dal rischio, random-informative che dipendono dal rischio)
-	3. Covariate (variabili o costanti rispetto il tempo)
-4. Disegni longitudinali retrospettivi
-	1. Indagini retrospettive
-5. Disegni longitudinali prospettivi
-	1. Panel (con waves)
-	2. Studi di follow-up (studi coorte)
-	3. Record-Linkage
+1. Limiti modello lineare
+2. Censure (tipo I, II, random-non informative che non dipendono dal rischio, random-informative che dipendono dal rischio)
+3. Covariate (variabili o costanti rispetto il tempo)
+
+##### Disegni longitudinali retrospettivi
+1. Indagini retrospettive
+
+##### Disegni longitudinali prospettivi
+1. Panel (con waves)
+2. Studi di follow-up (studi coorte)
+3. Record-Linkage
 
 #### Funzioni base nel continuo e nel discreto
-1. Funzioni base con tempo continuo
-	1. Condizioni
-	2. Densità, Ripartizione, Sopravvivenza
-	3. Funzione di rischio
-	4. Rischio integrato
-	5. Relazioni tra le funzioni
-2. Funzioni base con tempo discreto
-	1. Discreto
-	2. Continuo discretizzato
+
+##### Funzioni base con tempo continuo
+1. Condizioni
+2. Densità, Ripartizione, Sopravvivenza
+3. Funzione di rischio
+4. Rischio integrato
+5. Relazioni tra le funzioni
+
+##### Funzioni base con tempo discreto
+1. Discreto
+2. Continuo discretizzato
 
 #### Tipologie di metodi
-1. Metodi per tempo continuo
-	1. Metodi non parametrici: Kaplan-Meier (Product-Limit)
-	2. Modelli di regressione: PH, AFT
-2. Metodi per tempo discreto
-	1. Metodi non parametrici: Life Table (Actuarial Method)
-	2. Modelli di regressione: Logit, Probit
+
+##### Metodi per tempo continuo
+1. Metodi non parametrici: Kaplan-Meier (Product-Limit)
+2. Modelli di regressione: PH, AFT
+
+##### Metodi per tempo discreto
+1. Metodi non parametrici: Life Table (Actuarial Method)
+2. Modelli di regressione: Logit, Probit
 
 ### Metodi non parametrici
 
