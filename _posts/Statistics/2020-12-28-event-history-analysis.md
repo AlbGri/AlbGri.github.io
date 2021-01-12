@@ -131,9 +131,9 @@ mathjax: "true"
     - Possibili forme funzionali: 
         - Esponenziale  
         $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
-        $$S(t)=\exp{(-at)}=\exp{\big(-H(t)\big)$$  
+        $$S(t)=\exp{(-at)}=\exp{\big(-H(t)\big)}$$  
         $$h(t)=a$$ Rischio costante, memorylessness distribution  
-        $$H(t)=at$$ (area sottostante '$$a$$' fino a $$t$$)  
+        $$H(t)=-\log{S(t)}=at$$ (area sottostante '$$a$$' fino a $$t$$)  
         $$F(t)=1-\exp{(-at)}$$  
         $$\log{S(t)}=-at$$  
         - Weibull  
@@ -154,7 +154,7 @@ mathjax: "true"
 	    - Trasformazioni utili  
 	    $$S(t)=S_0(t)^\theta$$  
 	    $$f(t)=f_0(t)\cdot S_0(t)^{(\theta-1)}\cdot\theta$$  
-	    $$H(t)=H_0(t)\cdot\theta\mbox{ con }H_0(t)=-\log{S_0(t)}$$  
+	    $$H(t)=H_0(t)\cdot\theta\quad\mbox{ con }H_0(t)=-\log{S_0(t)}$$  
 	2. Parametrizzazione a Tempi Accelarati (AFT)  
 	    - Si ha un effetto moltiplicativo, non più sul rischio, ma sul tempo di permanenza nello stato pre-transizione:  
 	    $$T_i=T_0\cdot \gamma$$ con $$\gamma$$ fattore di accelerazione, e se è $$>1$$ aumentano i tempi di sopravvivenza e il rischio diminuisce  
