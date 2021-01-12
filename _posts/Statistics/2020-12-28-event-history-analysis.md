@@ -199,6 +199,7 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$h(t,a_k)=a_k$$ se 1 episodio, più destinazioni (rischi competitivi), con $$a_k$$ tasso di transizione (costante) verso destinazione $$k$$
     - PH: $$h(t,X)=\exp{\beta_0}\cdot\exp{(\beta X)}=h_0\cdot\exp{(\beta X)}$$  
     - AFT: $$T=\big[\exp{(\alpha_0)}\cdot\alpha{(\epsilon)}\big]\cdot\exp{(\alpha X)}=T_0\cdot\gamma$$  
+    Si dimostra che $$\alpha=-\beta$$  
 - Weibull  
     - Senza covariate.......  
     - Con covariate.......  
