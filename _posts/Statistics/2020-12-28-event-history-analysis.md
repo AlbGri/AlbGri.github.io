@@ -218,7 +218,7 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$T=\exp{(\alpha_0+\sigma\epsilon)}\cdot\exp{(\alpha X)}=T_0\cdot\gamma$$  
     Si dimostra che $$\beta=\beta_{PH}=-\beta_{AFT}\cdot b=-\alpha\cdot b$$  
     NB. SAS stima modello Weibull solo AFT con $$\sigma=1/b\Rightarrow\beta_{PH}=-\beta_{AFT}\cdot (1/\sigma)$$  
-    Inoltre, con $$a=\exp{(-\beta_{AFT}\cdot b)}$$ si ricava facilmente $$h(t)=\exp{(-\beta_{AFT}\cdot 1/\sigma)\cdot 1/\sigma\cdot t^{(1/\sigma -1}$$  
+    Inoltre, con $$a=\exp{(-\beta_{AFT}\cdot b)}$$ si ricava facilmente $$h(t)=\exp{(-\beta_{AFT}\cdot 1/\sigma)}\cdot 1/\sigma\cdot t^{(1/\sigma -1)}$$  
 - Esponenziale a tratti (Piecewise exponential model)  
 Per $$L$$ sotto-intervalli del tempo si specificano diverse distribuzioni parametriche del rischio.
     - Funzioni utili  
