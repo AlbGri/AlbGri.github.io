@@ -192,7 +192,7 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
 ##### Parametr. PH e AFT per i modelli Esponenziale, Weibull ed Esponenziale a tratti
 - Esponenziale
     - Funzioni utili  
-    $$T\sim\mathcal{Exp}(a)$$  
+    $$T\sim\mathcal{Exp}(a)\sim\mathcal{W}(a,\sigma =1)$$  
     $$lim_{t\rightarrow\infty}S(t,a)=0$$ eventi inevitabili  
     $$E(T)=\frac{1}{a} \qquad Var(T)=\frac{1}{a^2}$$  
     $$t_{\mbox{quantile}_q}=-\log{(q)}\cdot E(T)$$ (es. mediana $$t_{ME}=0.693/a$$)  
