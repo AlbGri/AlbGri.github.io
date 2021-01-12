@@ -198,7 +198,8 @@ $$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
     $$t_{\mbox{quantile}_q}=-\log{(q)}\cdot E(T)$$ (es. mediana $$t_{ME}=0.693/a$$)  
     $$h(t,a_k)=a_k$$ se 1 episodio, più destinazioni (rischi competitivi), con $$a_k$$ tasso di transizione (costante) verso destinazione $$k$$
     - PH (stimo il rischio assoluto)  
-    $$h(t,X)=\exp{\beta_0}\cdot\exp{(\beta X)}=h_0\cdot\underbrace{\exp{(\beta X)}}_{\mbox{RR se 1 X dummy}}$$  
+    $$h(t,X)=\exp{\beta_0}\cdot\exp{(\beta X)}=h_0\cdot\exp{(\beta X)}$$  
+    Si nota che $\exp{(\beta X)}$ è il Rischio Relativo nel caso di $$X=1$$ (dummy)  
     Rispetto i modelli di Cox: $$h_0$$ è parametrico e il rischio non dipende dal tempo  
     - AFT (stimo la durata media)  
     $$T=\big[\exp{(\alpha_0)}\cdot\exp{(\epsilon)}\big]\cdot\exp{(\alpha X)}=T_0\cdot\gamma$$  
