@@ -1603,7 +1603,7 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
     (Esercizio 3.3) Qual è il modello migliore?
     *******************************************************/
 
-    libname dir "/home/u52136602/sasuser.v94/dati";
+    libname dir "/home/dati";
     data MIO;
     set dir.PIPPO;
     /* Genero dummy per sex invece di usare class, è più comodo
@@ -1853,8 +1853,8 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
     (Esercizio 4) Modello Weibull (AFT) senza covariate
     (Esercizio 5) Modello Weibull (AFT) con covariate
     *******************************************************/
-
-    libname dir "/home/u52136602/sasuser.v94/dati";
+    
+    libname dir "/home/dati";
     data MIO;
     set dir.PIPPO;
     * RICODIFICO SEX CON SEX1 E pongo donne gruppo di base;
