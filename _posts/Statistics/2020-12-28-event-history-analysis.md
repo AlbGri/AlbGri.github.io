@@ -159,8 +159,8 @@ mathjax: "true"
 ##### Calcolo delle funzioni di densità, sopravvivenza e rischio
 - Trasformazioni utili:  
 $$\log{X}\sim\mathcal{N}(\mu,\sigma^2)\Rightarrow X\sim\log{\mathcal{N}(\mu,\sigma^2)}$$  
-$$S(t)=\int_t^{+\infty}f(u)du$$  
-$$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}$$
+$$S(t)=\mbox{Pr}\{T\ge t\}=1-F(t)=\int_t^{+\infty}f(u)du$$  
+$$h(t)=\frac{\frac{-d[S(t)]}{dt}}{S(t)}=\frac{f(t)}{S(t)}=-\frac{d}{dt}\log{S(t)}$$
 - Possibili forme funzionali: 
     - Esponenziale  
     $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
@@ -251,26 +251,25 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 
 
 
+## Modelli Frailty
+### Perché
+Limitare il problema della mal specificazione del modello e distorsione delle stime, aggiungendo un effetto casuale sui modelli di regressione sul rischio.  
+NB: anche covariate indipendenti tra loro, se una delle due è omesse andrà ad impattare le stime _selezionando_ la popolazione e rendendo le stime dipendenti dal tempo.
+- Funzione di sopravvivenza marginale per due popolazioni esponenziali $$(\lambda_i)$$  
+$$S(t)=p\exp{(-\lambda_1 t)}+(1-p)\exp{(-\lambda_2 t)}$$ è una mistura
+### Univariati
+### Distribuzione della frailty
+### Inferenza
+### Modelli shared Frailty
+### Modelli Frailty per dati discreti
 
 
 
-
-
+<!---
 
 ### Modelli a tempo discreto
 #### Person Period
 #### Modello a odds proporzionali
-
-
-
-
-
-
-
-
-
-
-
 
 ## Modelli Frailty
 ### Introduzione al concetto di Frailty
@@ -291,7 +290,7 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 #### Modelli a tempo discreto con effetti casuali
 #### Inferenza per effetti fissi ed effetti casuali.
 
-
+--->
 
 
 ## SAS Labs
