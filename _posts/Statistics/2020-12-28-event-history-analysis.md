@@ -272,7 +272,7 @@ $$h(t\vert U)=h_0(t)\cdot U$$
 $$h(t\vert X, U)=h_0(t)\exp{(\beta 'X)}\cdot U$$  
 $$E_U\{h(t\vert U)\}=h_0(t)\cdot E_U\{U\}=h_0(t)$$ rischio marginale  
 - Funzione di sopravvivenza  
-$$S(t\vert X,U)=\exp{(-\int_0^t h(s\vert X,U)ds}=$$
+$$S(t\vert X,U)=\exp{\big\{-\int_0^t h(s\vert X,U)ds\big\}}$$
 
 ### Univariati
 ### Distribuzione della frailty
