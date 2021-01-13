@@ -270,7 +270,7 @@ Sia $$U>0$$ v.a. indipendente dal tempo, la cui varianza misura l'eterogeneità 
 - Funzione di rischio  
 $$h(t\vert U)=h_0(t)\cdot U$$  
 $$h(t\vert X, U)=h_0(t)\exp{(\beta 'X)}\cdot U$$  
-
+$$E_U\{h(t\vert U)}=h_0(t)\cdot E_U\{U\}=h_0(t)$$  
 
 ### Univariati
 ### Distribuzione della frailty
