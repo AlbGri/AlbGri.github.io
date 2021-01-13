@@ -256,7 +256,8 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 ## Modelli Frailty
 ### Perché
 Limitare il problema della mal specificazione del modello e distorsione delle stime, aggiungendo un effetto casuale sui modelli di regressione sul rischio.  
-NB: anche covariate indipendenti tra loro, se una delle due è omesse andrà ad impattare le stime _selezionando_ la popolazione e rendendo le stime dipendenti dal tempo.
+Anche con covariate indipendenti tra loro, se una delle due è omesse andrà ad impattare le stime _selezionando_ la popolazione e rendendo le stime dipendenti dal tempo.  
+La presenza di una _fragilità_ diversa tra due popolazioni diverse - eterogeneità non osservata - comporta una variazione del rischio.  
 - Funzione di sopravvivenza marginale per due popolazioni esponenziali $$(\lambda_i)$$  
 $$S(t)=p\exp{(-\lambda_1 t)}+(1-p)\exp{(-\lambda_2 t)}$$ è una mistura
 ### Univariati
