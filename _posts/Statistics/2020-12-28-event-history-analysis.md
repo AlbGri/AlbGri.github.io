@@ -278,6 +278,7 @@ $$S(t\vert X,U)=\exp{\big\{-\int_0^t h(s\vert X,U)ds\big\}}$$
 $$S(t)=E\big[S(t\vert U)\big]=E\big[\exp{\{-UH_0(t)\}}\big]=\mathbf{L}\big\{H_0(t)\big\}$$  
 - Trasformata di Laplace  
 $$L\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
+- La varianza della frailty può avere un valore contenuto e può modificare significativamente sia le covariate e che la forma del rischio
 
 #### Distribuzione della Frailty
 
@@ -298,14 +299,14 @@ $$...$$
 $$...$$  
 - Laplace non-esplicita
 
-
 #### Modello Gamma-Gompertz
-Modello parametrico con distribuzione Gamma-Gompertz o modello Gompertz con frailty Gamma
+Modello parametrico con distribuzione Gamma-Gompertz o modello Gompertz con frailty Gamma.  
+Descrive bene i tassi di mortalità (per età superiore ai 30 anni).
 - Caratteristiche  
 $$...$$  
 - Funzione di rischio  
 $$...$$  
-- Funzione di rischio con frailty Gamma  
+- Funzione di rischio con frailty Gamma (avrà forma logistica con un plateau finale)  
 $$...$$  
 - Rischio marginale  
 $$...$$  
@@ -318,6 +319,88 @@ $$...$$
 - Integrazione della verosimiglianza marginale
     - Trasformazione di Laplace non-esplicita: integrazione numerica (approssimazione di Laplace, quadratura Gaussiana)
     - Trasformazione di Laplace esplicita
+
+##### Esempio su R
+```R
+## Speed-time tra modelli parametrici con frailty e 
+# laplace esplicita (gamma) e non-esplicita (log-normale)
+## SAS usa sempre e solo la procedura iterativa non
+# utilizzando i vantaggi analitici della Laplace
+```
+
+
+```R
+# libs
+library(survival)
+library(parfm) # parametric frailty models
+```
+
+
+```R
+# df
+data(kidney)
+kidney$sex <- kidney$sex - 1
+```
+
+
+```R
+# modello parametrico Weibull con frailty distribuzione gamma
+system.time(
+    parfm(Surv(time,status)~sex+age+as.factor(disease), 
+          cluster="id", data=kidney, 
+          dist="weibull", frailty="gamma"))
+```
+
+
+       user  system elapsed 
+      4.606   0.001   4.639 
+
+
+
+```R
+# modello parametrico Weibull con frailty distribuzione log-normale
+system.time(
+    parfm(Surv(time,status)~sex+age+as.factor(disease), 
+          cluster="id", data=kidney, 
+          dist="weibull", frailty="lognormal", 
+          method="Nelder-Mead", maxit=2000))
+```
+
+
+       user  system elapsed 
+     11.775   0.000  11.784 
+
+
+
+```R
+# modello parametrico Weibull con frailty distribuzione normale inversa
+system.time(
+    parfm(Surv(time,status)~sex+age, 
+          cluster="id", data=kidney, 
+          dist="weibull", frailty="ingau"))
+```
+
+
+       user  system elapsed 
+      2.060   0.000   2.062 
+
+
+
+```R
+# modello parametrico Weibull con frailty positive stable
+system.time(
+    parfm(Surv(time,status)~sex+age, 
+          cluster="id", data=kidney, 
+          dist="weibull", frailty="possta", 
+          method="Nelder-Mead"))
+```
+
+
+       user  system elapsed 
+      3.229   0.000   3.231 
+
+
+
 
 #### Modello semi parametrico
 - Rischio base non specificato
