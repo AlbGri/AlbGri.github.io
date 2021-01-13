@@ -320,6 +320,7 @@ $$...$$
     - Trasformazione di Laplace esplicita
 
 ##### Esempio su R
+Con le librerie [survival](https://cran.r-project.org/web/packages/survival//survival.pdf) e [parfm](https://cran.r-project.org/web/packages/parfm/parfm.pdf).
 ```R
 ## Speed-time tra modelli parametrici con frailty e 
 # laplace esplicita (gamma) e non-esplicita (log-normale)
