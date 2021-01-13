@@ -358,13 +358,6 @@ Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel co
 
 
 
-### Univariati
-### Distribuzione della frailty
-### Inferenza
-### Modelli shared Frailty
-### Modelli Frailty per dati discreti
-
-
 
 <!---
 
