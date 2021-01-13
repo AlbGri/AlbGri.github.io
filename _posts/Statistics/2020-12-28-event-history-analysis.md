@@ -313,8 +313,8 @@ $$...$$
 ### Modelli Frailty Univariati
 
 #### Modello parametrico
-- Verosimiglianza
-- Verosimiglianza marginale
+- Verosimiglianza (non si può massimizzare perché non si conosce la frailty)
+- Verosimiglianza marginale (è una pseudo verosimiglianza, utile per ottenere le stime MV, 'liberandosi' dell'influenza della frailty)
 - Integrazione della verosimiglianza marginale
     - Trasformazione di Laplace non-esplicita: integrazione numerica (approssimazione di Laplace, quadratura Gaussiana)
     - Trasformazione di Laplace esplicita
@@ -406,7 +406,7 @@ system.time(
 - Fattorizzazione della verosimiglianza
 
 ##### Failty note
-- Verosimiglianza parziale
+- Verosimiglianza parziale (utile per ottenere le stime MV, 'liberandosi' dell'influenza della frailty)
 
 ##### Frailty non-note
 - Algoritmo EM (Expectation-Maximization) con la verosimiglianza parziale
