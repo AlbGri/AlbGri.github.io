@@ -265,12 +265,14 @@ La presenza di una _fragilità_ differente tra i gruppi - eterogeneità non osse
 - Funzione di sopravvivenza marginale per due popolazioni esponenziali $$(\lambda_i)$$  
 $$S(t)=p\exp{(-\lambda_1 t)}+(1-p)\exp{(-\lambda_2 t)}$$ è una mistura
 
-#### Funzioni
-Sia $$U>0$$ v.a. indipendente dal tempo, la cui varianza misura l'eterogeneità non osservata della popolazione
+#### Frailty
+Sia $$U>0$$ v.a. indipendente dal tempo, la cui varianza $$\sigma^2_U$$ misura l'eterogeneità non osservata della popolazione. Siano $$\textbf{X}=(X_1,...,X_k)$$ matrice delle covariate e $$\textbf{\beta}=(\beta_1,...,\beta_k)$$ parametri di regressione.
 - Funzione di rischio  
 $$h(t\vert U)=h_0(t)\cdot U$$  
 $$h(t\vert X, U)=h_0(t)\exp{(\beta 'X)}\cdot U$$  
-$$E_U\{h(t\vert U)}=h_0(t)\cdot E_U\{U\}=h_0(t)$$ rischio marginale  
+$$E_U\{h(t\vert U)\}=h_0(t)\cdot E_U\{U\}=h_0(t)$$ rischio marginale  
+- Funzione di sopravvivenza  
+$$S(t\vert X,U)=\exp{(-\int_0^t h(s\vert X,U)ds}=$$
 
 ### Univariati
 ### Distribuzione della frailty
