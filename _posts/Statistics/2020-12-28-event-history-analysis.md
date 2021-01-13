@@ -466,7 +466,7 @@ Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel co
 --->
 
 
-## SAS Labs
+## SAS Labs - Parte 1
 <button class="collapsible" id="es001">Esempio 1: LT e KM (0)</button>
 <div class="content" id="es001data" markdown="1">
 
@@ -2266,6 +2266,196 @@ Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel co
 <embed src="/assets/images/Statistics/EHA_014.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 --->
+
+## SAS Labs - Parte 2
+<button class="collapsible" id="es015">Esempio 15: Modelli parametrici (3)</button>
+<div class="content" id="es015data" markdown="1">
+
+	```sas
+    /*******************************************************
+    Obiettivo:
+    simulare durate provenienti da una distribuzione Weibull con 
+    parametro di scala pari a 1 (esponenziale) e parametro di forma 
+    pari a 0.002 (il rischio di base) mentre il rischio di censura 
+    è pari a 0.004. Simulo 1250 osservazioni (250 gruppi di 5 individui)
+    *******************************************************/
+
+    data simfrail;
+      beta1 = 2; * effetto di x1;
+      beta2 = -1; * effetto di x2;
+      lambdat = 0.002; * rischio di base;
+      lambdac = 0.004; * rischio censura;
+      do i = 1 to 250; * genero le frailty, i=identificativo del gruppo;
+        frailty = normal(1999) * sqrt(.5); * 1999 seed, varianza 0.5;
+        do j = 1 to 5; * j=identificativo dell'individuo;
+          x1 = normal(0);
+          x2 = normal(0);
+          * nuovo modello con la frailty;
+          linpred = exp(-beta1*x1 - beta2*x2 + frailty);
+          t = rand("WEIBULL", 1, lambdaT * linpred);
+            * durata;
+          c = rand("WEIBULL", 1, lambdaC);
+            * tempo di censura;
+          time = min(t, c);    * il tempo osservato è il minimo tra le due;
+          censored = (c lt t); * è censurato se c <(lt) t;
+        output;
+        end;
+      end;
+    run;
+    /* Le frailty sono uguali all'interno del gruppo ma 
+    diverse tra gruppi. 
+    Generiamo da modello parametrico (esponenziale) e 
+    stiamo da modello semi parametrico, non è un problema
+    in quanto il modello AFT per la Weibull è analogo
+    ad un modello PH. Un modello semi parametrico non è un
+    problema perché ho simulato da modello Esponenziale
+    che è anche un modello a effetti proporzionali, non
+    avrò solo la stima del rischio di base.
+    Se avessi generato da un modello AFT con distrib. 
+    log-normale, la stima avrebbe problemi */
+
+    * modello a rischi proporzionali;
+    proc phreg data=simfrail;
+      model time*censored(1) = x1 x2;
+    run;
+    /* Il vero valore non rientra dei due intervalli stimati.
+    Abbiamo stime distorte, causate da un'eterogeneità non
+    osservata. La frailty simulata è indipendente dalle X, ma
+    genera distorsione nel tempo, diversamente da un modello
+    classico lineare */
+
+    * aggiungo la frailty;
+    proc phreg data=simfrail;
+      class i;
+      model time*censored(1) = x1 x2;
+      random i / dist=gamma initialvariance=0.5 noclprint;
+      * initialvariance, con varianza penalizzata, iterativo;
+    run;
+    /* I veri parametri rientrano negli intervalli stimati */
+	```
+</div>
+<embed src="/assets/images/Statistics/EHA_015.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+<!---
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es016">Esempio 16: Modelli parametrici (3)</button>
+<div class="content" id="es016data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistics/EHA_016.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+--->
+
+<!---
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es017">Esempio 17: Modelli parametrici (3)</button>
+<div class="content" id="es017data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistics/EHA_017.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+--->
+
+<!---
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es018">Esempio 18: Modelli parametrici (3)</button>
+<div class="content" id="es018data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistics/EHA_018.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+--->
+
+<!---
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es019">Esempio 19: Modelli parametrici (3)</button>
+<div class="content" id="es019data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistics/EHA_019.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+--->
+
+<!---
+
+&nbsp;
+&nbsp;
+
+<button class="collapsible" id="es020">Esempio 20: Modelli parametrici (3)</button>
+<div class="content" id="es020data" markdown="1">
+
+	```sas
+	codice
+	```
+</div>
+<embed src="/assets/images/Statistics/EHA_020.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+--->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
