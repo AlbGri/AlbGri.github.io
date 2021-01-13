@@ -275,7 +275,7 @@ $$E_U\{h(t\vert U)\}=h_0(t)\cdot E_U\{U\}=h_0(t)$$
 - Funzione di sopravvivenza  
 $$S(t\vert X,U)=\exp{\big\{-\int_0^t h(s\vert X,U)ds\big\}}$$
 - Sopravvivenza marginale  
-$$...$$  
+$$S(t)=E\big[S(t\vert U)\big]=E\big[\exp{\{-UH_0(t)\}}\big]=\mathbf{L}\big\{H_0(t)\big\}$$  
 
 #### Distribuzione della Frailty
 
