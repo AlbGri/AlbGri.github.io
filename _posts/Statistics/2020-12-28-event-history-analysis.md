@@ -300,8 +300,7 @@ $$...$$
 - Laplace non-esplicita
 
 #### Modello Gamma-Gompertz
-Modello parametrico con distribuzione Gamma-Gompertz o modello Gompertz con frailty Gamma.  
-Descrive bene i tassi di mortalità (per età superiore ai 30 anni).
+Modello parametrico con distribuzione Gamma-Gompertz o modello Gompertz con frailty Gamma. La distribuzione esponenziale è un caso specifico. La distribuzione descrive bene i tassi di mortalità (principalmente 30-80 anni).
 - Caratteristiche  
 $$...$$  
 - Funzione di rischio  
