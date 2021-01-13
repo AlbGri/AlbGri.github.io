@@ -162,10 +162,11 @@ $$\log{X}\sim\mathcal{N}(\mu,\sigma^2)\Rightarrow X\sim\log{\mathcal{N}(\mu,\sig
 $$S(t)=\mbox{Pr}\{T\ge t\}=1-F(t)=\int_t^{+\infty}f(x)dx=\exp{\Big\{-\int_0^t h(x)dx\Big\}}$$  
 $$h(t)=\frac{-d[S(t)]}{dt}/S(t)=\frac{f(t)}{S(t)}=-\frac{d}{dt}\log{S(t)}$$  
 $$H(t)=\int_0^t h(x)dx$$  
+$$\mu=\int_0^\infty S(t)d(t)$$  
 - Possibili forme funzionali: 
     - Esponenziale  
     $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
-    $$S(t)=\exp{(-at)}=\exp{\big[-H(t)\big]}$$  
+    $$S(t)=\exp{(-at)}=\exp{\big\{-H(t)\big\}}$$  
     $$h(t)=a$$ Rischio costante, memorylessness distribution  
     $$H(t)=-\log{S(t)}=at$$ (area sottostante '$$a$$' fino a $$t$$)  
     Test grafico su Esponenziale: se l'andamento $$H(t)$$ vs $$t$$ è una linea retta che parte dall'origine allora i dati approssimano bene una durata esponenziale (quindi $$b=1$$).  
