@@ -359,18 +359,12 @@ Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel co
 
 
 
+
 <!---
 
 ### Modelli a tempo discreto
 #### Person Period
 #### Modello a odds proporzionali
-
-## Modelli Frailty
-### Introduzione al concetto di Frailty
-### Frailty univariati
-#### Modelli semiparametrici e parametrici
-#### Metodi di stima
-### Shared Frailty Models
 
 
 ## Modelli Multilevel
