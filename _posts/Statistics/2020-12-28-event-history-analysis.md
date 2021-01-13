@@ -160,7 +160,8 @@ mathjax: "true"
 - Trasformazioni utili:  
 $$\log{X}\sim\mathcal{N}(\mu,\sigma^2)\Rightarrow X\sim\log{\mathcal{N}(\mu,\sigma^2)}$$  
 $$S(t)=\mbox{Pr}\{T\ge t\}=1-F(t)=\int_t^{+\infty}f(x)dx$$=\exp{\Big\{-\int_0^t h(x)dx\Big\}}$$  
-$$h(t)=\frac{-d[S(t)]}{dt}/S(t)=\frac{f(t)}{S(t)}=-\frac{d}{dt}\log{S(t)}$$
+$$h(t)=\frac{-d[S(t)]}{dt}/S(t)=\frac{f(t)}{S(t)}=-\frac{d}{dt}\log{S(t)}$$  
+$$H(t)=\int_0^t h(x)dx$$  
 - Possibili forme funzionali: 
     - Esponenziale  
     $$f(t)=a\cdot \exp{(-at)}\mbox{ con }a>0$$  
