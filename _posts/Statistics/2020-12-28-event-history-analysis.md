@@ -254,12 +254,24 @@ $$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 
 
 ## Modelli Frailty
-### Perché
+Frailty models o Mixed Proportional Hazard models (misti si intende con effetti fissi e casuali).
+
+### Introduzione al concetto di Frailty
+
+#### Problema
 Limitare il problema della mal specificazione del modello e distorsione delle stime, aggiungendo un effetto casuale sui modelli di regressione sul rischio.  
 Anche con covariate indipendenti tra loro, se una delle due è omesse andrà ad impattare le stime _selezionando_ la popolazione e rendendo le stime dipendenti dal tempo.  
-La presenza di una _fragilità_ diversa tra due popolazioni diverse - eterogeneità non osservata - comporta una variazione del rischio.  
+La presenza di una _fragilità_ differente tra i gruppi - eterogeneità non osservata - comporta una variazione del rischio; i modelli tradizionali di Survival Analysis considerano le popolazioni omogenee, cioè che tutti gli individui hanno lo stesso rischio.  
 - Funzione di sopravvivenza marginale per due popolazioni esponenziali $$(\lambda_i)$$  
 $$S(t)=p\exp{(-\lambda_1 t)}+(1-p)\exp{(-\lambda_2 t)}$$ è una mistura
+
+#### Funzioni
+Sia $$U>0$$ v.a. indipendente dal tempo, la cui varianza misura l'eterogeneità non osservata della popolazione
+- Funzione di rischio  
+$$h(t\vert U)=h_0(t)\cdot U$$  
+$$h(t\vert X, U)=h_0(t)\exp{(\beta 'X)}\cdot U$$  
+
+
 ### Univariati
 ### Distribuzione della frailty
 ### Inferenza
