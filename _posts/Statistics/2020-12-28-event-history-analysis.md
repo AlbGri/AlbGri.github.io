@@ -276,6 +276,8 @@ $$E_U\{h(t\vert U)\}=h_0(t)\cdot E_U\{U\}=h_0(t)$$
 $$S(t\vert X,U)=\exp{\big\{-\int_0^t h(s\vert X,U)ds\big\}}$$
 - Sopravvivenza marginale  
 $$S(t)=E\big[S(t\vert U)\big]=E\big[\exp{\{-UH_0(t)\}}\big]=\mathbf{L}\big\{H_0(t)\big\}$$  
+- Trasformata di Laplace  
+$$L\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 
 #### Distribuzione della Frailty
 
@@ -284,7 +286,7 @@ $$S(t)=E\big[S(t\vert U)\big]=E\big[\exp{\{-UH_0(t)\}}\big]=\mathbf{L}\big\{H_0(
 - Funzioni  
 $$...$$  
 - Laplace esplicita  
-$$...$$  
+$$L\mathbf{L}=\big(1+\frac{z}{\gamma}\big)^{-k}$$  
 - Sopravvivenza marginale  
 $$...$$  
 - Rischio marginale  
