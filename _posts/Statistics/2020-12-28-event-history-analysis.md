@@ -336,14 +336,24 @@ $$...$$
     - Verosimiglianza parziale penalizzata
 
 ### Shared Frailty Models
+Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel con gli individui (unità di primo livello) all'interno di gruppi (unità di secondo livello).
 
-#### Differenze tra mod. univariati e shared
+#### Univariati vs Shared
 
 ##### Mod. univariati
-Assegnano ad ogni individuo un livello di "fragilità". 
+- Assegnano ad ogni individuo un livello di "fragilità"
+- Mirano a tenere sotto controllo l'eterogeneità non osservata
 
 ##### Mod. shared
-mentre i mod. shared assegnano un livello di fragilità comune a un gruppo di unità statistiche.
+- Assegnano un livello di fragilità comune a un gruppo di unità statistiche
+- Mirano a tenere sotto controllo la correlazione intraclasse, cioè la correlazione tra gli individui che appartengono agli stessi gruppi
+
+#### Funzioni
+- Funzione di rischio
+- Sopravvivenza congiunta
+- Sopravvivenza marginale per le unità appartenenti al $i-$esimo gruppo
+- Legami con frailty e la trasformata di Laplace
+- Inferenza analoga ai modelli univariati
 
 
 
