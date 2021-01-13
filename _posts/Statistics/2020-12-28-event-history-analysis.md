@@ -287,7 +287,7 @@ $$L\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 - Funzioni  
 $$...$$  
 - Laplace esplicita  
-$$L\mathbf{L}=\big(1+\frac{z}{\gamma}\big)^{-k}$$  
+$$\mathbf{L}=\big(1+\frac{z}{\gamma}\big)^{-k}$$  
 - Sopravvivenza marginale  
 $$...$$  
 - Rischio marginale  
