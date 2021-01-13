@@ -265,14 +265,88 @@ La presenza di una _fragilità_ differente tra i gruppi - eterogeneità non osse
 - Funzione di sopravvivenza marginale per due popolazioni esponenziali $$(\lambda_i)$$  
 $$S(t)=p\exp{(-\lambda_1 t)}+(1-p)\exp{(-\lambda_2 t)}$$ è una mistura
 
-#### Frailty
-Sia $$U>0$$ v.a. indipendente dal tempo, la cui varianza $$\sigma^2_U$$ misura l'eterogeneità non osservata della popolazione. Siano $$\textbf{X}=(X_1,...,X_k)$$ matrice delle covariate e $$\textbf{\beta}=(\beta_1,...,\beta_k)$$ parametri di regressione.
+#### Variabile Frailty
+Sia $$U>0$$ v.a. indipendente dal tempo, la cui varianza $$\sigma^2_U$$ misura l'eterogeneità non osservata della popolazione. Siano $$\mathbf{X}=(X_1,...,X_k)$$ matrice delle covariate e $$\mathbf{\beta}=(\beta_1,...,\beta_k)$$ parametri di regressione.
 - Funzione di rischio  
 $$h(t\vert U)=h_0(t)\cdot U$$  
 $$h(t\vert X, U)=h_0(t)\exp{(\beta 'X)}\cdot U$$  
-$$E_U\{h(t\vert U)\}=h_0(t)\cdot E_U\{U\}=h_0(t)$$ rischio marginale  
+- Rischio marginale  
+$$E_U\{h(t\vert U)\}=h_0(t)\cdot E_U\{U\}=h_0(t)$$  
 - Funzione di sopravvivenza  
 $$S(t\vert X,U)=\exp{\big\{-\int_0^t h(s\vert X,U)ds\big\}}$$
+- Sopravvivenza marginale  
+$$...$$  
+
+#### Distribuzione della Frailty
+
+##### Gamma
+- Caratteristiche  
+- Funzioni  
+$$...$$  
+- Laplace esplicita  
+$$...$$  
+- Sopravvivenza marginale  
+$$...$$  
+- Rischio marginale  
+$$...$$  
+
+##### Log-normale
+- Caratteristiche  
+- Funzioni  
+$$...$$  
+- Laplace non-esplicita
+
+
+#### Modello Gamma-Gompertz
+Modello parametrico con distribuzione Gamma-Gompertz o modello Gompertz con frailty Gamma
+- Caratteristiche  
+$$...$$  
+- Funzione di rischio  
+$$...$$  
+- Funzione di rischio con frailty Gamma  
+$$...$$  
+- Rischio marginale  
+$$...$$  
+
+### Modelli Frailty Univariati
+
+#### Modello parametrico
+- Verosimiglianza
+- Verosimiglianza marginale
+- Integrazione della verosimiglianza marginale
+    - Trasformazione di Laplace non-esplicita: integrazione numerica (approssimazione di Laplace, quadratura Gaussiana)
+    - Trasformazione di Laplace esplicita
+
+#### Modello semi parametrico
+- Rischio base non specificato
+- Fattorizzazione della verosimiglianza
+
+##### Failty note
+- Verosimiglianza parziale
+
+##### Frailty non-note
+- Algoritmo EM (Expectation-Maximization) con la verosimiglianza parziale
+    - Frailty Gamma
+    - Stima di Nelson-Aalen del rischio cumulato di base
+    - Valore atteso di $$\log{U}$$ con distribuzione log-Gamma  
+- Verosimiglianza penalizzata
+    - Frailty log-normale
+    - Frailty Gamma (stessi risultati di EM)
+    - Funzione di rischio
+    - Verosimiglianza parziale penalizzata
+
+### Shared Frailty Models
+
+#### Differenze tra mod. univariati e shared
+
+##### Mod. univariati
+Assegnano ad ogni individuo un livello di "fragilità". 
+
+##### Mod. shared
+mentre i mod. shared assegnano un livello di fragilità comune a un gruppo di unità statistiche.
+
+
+
 
 ### Univariati
 ### Distribuzione della frailty
