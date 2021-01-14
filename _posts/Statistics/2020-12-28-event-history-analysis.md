@@ -410,11 +410,12 @@ system.time(
 - Verosimiglianza parziale (utile per ottenere le stime MV, 'liberandosi' dell'influenza della frailty)
 
 ##### Frailty non-note
-- Algoritmo EM (Expectation-Maximization) con la verosimiglianza parziale, considerando come se le frailty fossero i dati mancanti (cfr EM)
+Due alternative per ottenere le stime  
+1. Algoritmo EM (Expectation-Maximization) con la verosimiglianza parziale, considerando come se le frailty fossero i dati mancanti (cfr EM)
     - Frailty Gamma
     - Stima di Nelson-Aalen del rischio cumulato di base (equivalente alla stima KM)
     - Valore atteso di $$\log{U}$$ con distribuzione log-Gamma
-- Verosimiglianza penalizzata
+2. Verosimiglianza penalizzata
     - Frailty log-normale
     - Frailty Gamma (stessi risultati di EM)
     - Funzione di rischio
