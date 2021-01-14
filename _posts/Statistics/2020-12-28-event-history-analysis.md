@@ -455,11 +455,13 @@ La gerarchia si può intendere in due modi
 1. Gerarchia Bayesiana, dove i dati si distribuiscono secondo una famiglia di parametro $$\theta_1$$ e a sua volta il $$\theta_1$$ si assume sia la realizzazione di una variabile casuale la cui distribuzione (a-priori) appartiene ad una famiglia di parametro $$\theta_2$$ (si può continuare con $$\theta_3$$, con distribuzione iper-a-priori, etc.)
 1. Struttura gerarchica dei dati, quando unità statistiche di secondo stadio (I livello) appartengono a delle unità di primo stadio (II livello). Es.: pazienti (I livello) e ospedali (II livello), oppure nei dati longitudinali, individuo (II livello) e tempo (I livello).
 
-#### Coefficiente di correlazione intraclasse
-La forma che segue è specifica per i modelli lineari classici, per i GLM andrebbero sviluppate delle forme differenti.
 
-##### Pooling
+#### Pooling
 Quando si sintetizza l'informazione (es. media) schiacciando il livello superiore, ignorando la variabilità tra i gruppi, interna al livello. Al contrario, considerare tutti i gruppi appartenenti al livello superiore (no-pooling) porta sovrastimare la variabilità tra i gruppi del livello. Concetto analogo al trade-off distorsione-varianza.
+
+
+#### Coefficiente di correlazione intraclasse
+La costruzione che segue è specifica per i modelli lineari classici (e non GLM).  
 
 ##### ANOVA ad una via con effetti casuali
 Dato il modello con intercetta casuale e senza variabili indipendenti  
@@ -472,6 +474,21 @@ Se la $$cov$$ è molto diversa da 0 allora le osservazioni in uno stesso gruppo 
 Si decide di fare il pooling se la correlazione intraclasse non è significativamente diversa da 0  
 $$\rho (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}}{\sigma^2_{U_0}+\sigma^2_{\epsilon}}$$ con $$\rho\in [0,1]$$  
 Se si può fare il pooling non serve un modello multilevel.  
+
+##### Varianza between-group
+Esprime la variabilità tra le unità di secondo livello, se la dimensione dei gruppi non è omogenea occorre modificare opportunamente la varianza.  
+Il valore atteso è dato adl suo vero valore più la varianza introdotta dall'errore di campionamento:  
+$$E\big(\sigma^2_b\big)=\sigma^2_{U_0}+\frac{\sigma^2_\epsilon}{\hat{n}}$$ con  
+$$\hat{n}=$$ dimensione media delle unità di secondo livello. 
+
+##### Varianza within-group
+È una media pesata delle varianze all'interno delle unità di secondo livello.
+
+##### Coefficiente di correlazione con varianza between e within
+$$\hat{\sigma}^2_\epsilon=\sigma^2_w$$  
+$$\hat{\sigma}^2_{U_0}=\sigma^2_b-\frac{\sigma^2_w}{\hat{n}}$$
+
+
 
 
 
