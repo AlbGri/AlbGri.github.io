@@ -480,9 +480,8 @@ Se si può fare il pooling non serve un modello multilevel.
 
 ##### Varianza between-group
 Esprime la variabilità tra le unità di secondo livello, se la dimensione dei gruppi non è omogenea occorre modificare opportunamente la varianza.  
-Il valore atteso è dato adl suo vero valore più la varianza introdotta dall'errore di campionamento:  
-$$E\big(\sigma^2_b\big)=\sigma^2_{U_0}+\frac{\sigma^2_\epsilon}{\hat{n}}$$ con  
-$$\hat{n}=$$ dimensione media delle unità di secondo livello. 
+Il valore atteso è dato dal suo vero valore più la varianza introdotta dall'errore di campionamento:  
+$$E\big(\sigma^2_b\big)=\sigma^2_{U_0}+\frac{\sigma^2_\epsilon}{\hat{n}}$$ con $$\hat{n}=$$ dimensione media delle unità di secondo livello. 
 
 ##### Varianza within-group
 È una media pesata delle varianze all'interno delle unità di secondo livello.
