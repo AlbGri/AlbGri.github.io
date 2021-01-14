@@ -463,8 +463,13 @@ Quando si sintetizza l'informazione (es. media) schiacciando il livello superior
 ##### ANOVA ad una via con effetti casuali
 Dato il modello con intercetta casuale e senza variabili indipendenti  
 Sia $$i$$ unità di I livello e $$j$$ di II livello  
-$$y_{ij}=b_{0j}+\epsilon_{ij}$$ con $$\epsilon_{ij}\sim\big(0,\sigma^2_\epsilon\big)$$  
-Ipotizzando un ulteriore livello che influenzi $$b_{0j}=\gamma_{00}+U_{0j}$$ con $$U_{0j}\sim\big(0,\sigma^2_{U_0}\big)$$
+$$y_{ij}=\beta_{0j}+\epsilon_{ij}$$ con $$\epsilon_{ij}\sim\big(0,\sigma^2_\epsilon\big)$$  
+Ipotizzando che $$\beta_{0j}=\gamma_{00}+U_{0j}$$ con $$U_{0j}\sim\big(0,\sigma^2_{U_0}\big)$$  
+Si ha che osservazioni appartenenti allo stesso gruppo (del II livello), sono per definizione correlate.  
+$$cov(y_{ij},y_{i'j})=E(y_{ij}y_{i'j})-E(y_{ij})E(y_{i'j})=var(U_{0j})=\sigma^2_{U_0}$$  
+Se la $$cov$$ è molto diversa da 0 allora le osservazioni in uno stesso gruppo (o classe) sono correlate, quindi si può decidere di fare il pooling se la correlazione non è significativamente diversa da 0  
+$$\rho (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}{\sigma^2_{U_0}+\sigma^2_{\epsilon}}$$  
+
 
 
 
