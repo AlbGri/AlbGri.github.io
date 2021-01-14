@@ -456,7 +456,7 @@ La gerarchia si può intendere in due modi
 1. Struttura gerarchica dei dati, quando unità statistiche di secondo stadio (I livello) appartengono a delle unità di primo stadio (II livello). Es.: pazienti (I livello) e ospedali (II livello), oppure nei dati longitudinali, individuo (II livello) e tempo (I livello).
 
 #### Coefficiente di correlazione intraclasse
-Si può calcolare solo per i modelli lineari classici e perde di utilità per i GLM.
+La forma che segue è specifica per i modelli lineari classici, per i GLM andrebbero sviluppate delle forme differenti.
 
 ##### Pooling
 Quando si sintetizza l'informazione (es. media) schiacciando il livello superiore, ignorando la variabilità tra i gruppi, interna al livello. Al contrario, considerare tutti i gruppi appartenenti al livello superiore (no-pooling) porta sovrastimare la variabilità tra i gruppi del livello. Concetto analogo al trade-off distorsione-varianza.
@@ -466,10 +466,11 @@ Dato il modello con intercetta casuale e senza variabili indipendenti
 Sia $$i$$ unità di I livello e $$j$$ di II livello  
 $$y_{ij}=\beta_{0j}+\epsilon_{ij}$$ con $$\epsilon_{ij}\sim\mathcal{N}\big(0,\sigma^2_\epsilon\big)$$  
 Ipotizzando che $$\beta_{0j}=\gamma_{00}+U_{0j}$$ con $$U_{0j}\sim\mathcal{N}\big(0,\sigma^2_{U_0}\big)$$  
-Si ha che osservazioni appartenenti allo stesso gruppo (del II livello), sono per definizione correlate.  
+La varianza dell'effetto casuale $$U_{0j}$$ è la covarianza tra individui appartenenti allo stesso gruppo  
 $$cov(y_{ij},y_{i'j})=E(y_{ij}y_{i'j})-E(y_{ij})E(y_{i'j})=var(U_{0j})=\sigma^2_{U_0}$$  
-Se la $$cov$$ è molto diversa da 0 allora le osservazioni in uno stesso gruppo (o classe) sono correlate, quindi si può decidere di fare il pooling se la correlazione non è significativamente diversa da 0  
-$$\rho (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}}{\sigma^2_{U_0}+\sigma^2_{\epsilon}}$$  
+Se la $$cov$$ è molto diversa da 0 allora le osservazioni in uno stesso gruppo (o classe) sono correlate.  
+Si decide di fare il pooling se la correlazione intraclasse non è significativamente diversa da 0  
+$$\rho (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}}{\sigma^2_{U_0}+\sigma^2_{\epsilon}}$$ con $$\rho\in [0,1]$$  
 Se si può fare il pooling non serve un modello multilevel.  
 
 
