@@ -278,7 +278,7 @@ $$S(t\vert X,U)=\exp{\big\{-\int_0^t h(s\vert X,U)ds\big\}}$$
 $$S(t)=E\big[S(t\vert U)\big]=E\big[\exp{\{-UH_0(t)\}}\big]=\mathbf{L}\big\{H_0(t)\big\}$$  
 - Trasformata di Laplace  
 $$L\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
-- La varianza della frailty può avere un valore contenuto e può modificare significativamente sia le covariate e che la forma del rischio
+- La varianza della frailty può avere un valore contenuto e influenzare significativamente sia le covariate (sia come significatività che il valore) che la forma del rischio
 
 #### Distribuzione della Frailty
 
@@ -415,7 +415,7 @@ Due alternative per ottenere le stime
     - Frailty Gamma
     - Stima di Nelson-Aalen del rischio cumulato di base (equivalente alla stima KM)
     - Valore atteso di $$\log{U}$$ con distribuzione log-Gamma
-2. Verosimiglianza penalizzata
+2. Verosimiglianza penalizzata (utile per restringere una verosimiglianza piatta, pesando maggiormente alcuni valori del dominio del parametro da stimare)
     - Frailty log-normale
     - Frailty Gamma (stessi risultati di EM)
     - Funzione di rischio
@@ -442,6 +442,29 @@ Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel co
 - Inferenza analoga ai modelli univariati
 
 
+## Modelli Multilivello o Gerarchici
+
+### Modelli Multilivello
+Per i dati che sono raggruppati in modo tale da ipotizzare più intercette e/o pendenze differenti  
+- Modelli ad intercetta variabile
+- Modelli a pendenza variabile (effetti random)
+- Modelli a intercetta e pendenza variabili
+
+### Modelli Gerarchici
+La gerarchia si può intendere in due modi
+1. Gerarchia Bayesiana, dove i dati si distribuiscono secondo una famiglia di parametro $$\theta_1$$ e a sua volta il $$\theta_1$$ si assume sia la realizzazione di una variabile casuale la cui distribuzione appartiene ad una famiglia di parametro $$\theta_2$$ (si può continuare con $$\theta_3$$ etc.)
+1. Struttura gerarchica dei dati, quando unità statistiche di secondo stadio (I livello) appartengono a delle unità di primo stadio (II livello). Es.: pazienti (I livello) e ospedali (II livello), oppure nei dati longitudinali, individuo (II livello) e tempo (I livello).
+
+#### Coefficiente di correlazione intraclasse
+
+##### Pooling
+Quando si sintetizza l'informazione (es. media) schiacciando il livello superiore, ignorando la variabilità tra i gruppi, interna al livello. Al contrario, considerare tutti i gruppi appartenenti al livello superiore (no-pooling) porta sovrastimare la variabilità tra i gruppi del livello.
+
+##### ANOVA ad una via con effetti casuali
+Dato il modello con intercetta casuale e senza variabili indipendenti  
+Sia $$i$$ unità di I livello e $$j$$ di II livello
+$$y_{ij}=b_{0j}+\epsilon_{ij}$$ con $$\epsilon_{ij}\sim\big(0,\sigma^2_\epsilon\big)$$  
+Ipotizzando un ulteriore livello che influenzi $$b_{0j}=\gamma_{00}+U_{0j}$$ con $$\U{0j}\sim\big(0,\sigma^2_{U_0}\big)$$
 
 
 
