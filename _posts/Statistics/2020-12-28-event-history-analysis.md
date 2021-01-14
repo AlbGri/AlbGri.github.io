@@ -446,16 +446,17 @@ Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel co
 
 ### Modelli Multilivello
 Per i dati che sono raggruppati in modo tale da ipotizzare più intercette e/o pendenze differenti  
-- Modelli ad intercetta variabile
+- Modelli ad intercetta variabile ($$n$$ rette parallele)
 - Modelli a pendenza variabile (effetti random)
 - Modelli a intercetta e pendenza variabili
 
 ### Modelli Gerarchici
 La gerarchia si può intendere in due modi
-1. Gerarchia Bayesiana, dove i dati si distribuiscono secondo una famiglia di parametro $$\theta_1$$ e a sua volta il $$\theta_1$$ si assume sia la realizzazione di una variabile casuale la cui distribuzione appartiene ad una famiglia di parametro $$\theta_2$$ (si può continuare con $$\theta_3$$ etc.)
+1. Gerarchia Bayesiana, dove i dati si distribuiscono secondo una famiglia di parametro $$\theta_1$$ e a sua volta il $$\theta_1$$ si assume sia la realizzazione di una variabile casuale la cui distribuzione (a-priori) appartiene ad una famiglia di parametro $$\theta_2$$ (si può continuare con $$\theta_3$$, con distribuzione iper-a-priori, etc.)
 1. Struttura gerarchica dei dati, quando unità statistiche di secondo stadio (I livello) appartengono a delle unità di primo stadio (II livello). Es.: pazienti (I livello) e ospedali (II livello), oppure nei dati longitudinali, individuo (II livello) e tempo (I livello).
 
 #### Coefficiente di correlazione intraclasse
+Si può calcolare solo per i modelli lineari classici e perde di utilità per i GLM.
 
 ##### Pooling
 Quando si sintetizza l'informazione (es. media) schiacciando il livello superiore, ignorando la variabilità tra i gruppi, interna al livello. Al contrario, considerare tutti i gruppi appartenenti al livello superiore (no-pooling) porta sovrastimare la variabilità tra i gruppi del livello.
@@ -469,8 +470,19 @@ Si ha che osservazioni appartenenti allo stesso gruppo (del II livello), sono pe
 $$cov(y_{ij},y_{i'j})=E(y_{ij}y_{i'j})-E(y_{ij})E(y_{i'j})=var(U_{0j})=\sigma^2_{U_0}$$  
 Se la $$cov$$ è molto diversa da 0 allora le osservazioni in uno stesso gruppo (o classe) sono correlate, quindi si può decidere di fare il pooling se la correlazione non è significativamente diversa da 0  
 $$\rho (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}{\sigma^2_{U_0}+\sigma^2_{\epsilon}}$$  
+Se si può fare il pooling non serve un modello multilevel.  
 
 
+
+- Modelli gerarchici
+- Coeff di correlaz intraclasse
+- Modello ad intercetta casuale
+- Pooling no pooling partial pooling
+- Stima bayesiana empirica
+- Modelli ad effetti casuali
+- diagnostica
+- stima reml
+- glmm (generalized linear mixed models)
 
 
 
