@@ -469,7 +469,7 @@ Ipotizzando che $$\beta_{0j}=\gamma_{00}+U_{0j}$$ con $$U_{0j}\sim\mathcal{N}\bi
 Si ha che osservazioni appartenenti allo stesso gruppo (del II livello), sono per definizione correlate.  
 $$cov(y_{ij},y_{i'j})=E(y_{ij}y_{i'j})-E(y_{ij})E(y_{i'j})=var(U_{0j})=\sigma^2_{U_0}$$  
 Se la $$cov$$ è molto diversa da 0 allora le osservazioni in uno stesso gruppo (o classe) sono correlate, quindi si può decidere di fare il pooling se la correlazione non è significativamente diversa da 0  
-$$\rho (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}{\sigma^2_{U_0}+\sigma^2_{\epsilon}}$$  
+$$\rho (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}}{\sigma^2_{U_0}+\sigma^2_{\epsilon}}$$  
 Se si può fare il pooling non serve un modello multilevel.  
 
 
