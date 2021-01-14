@@ -277,7 +277,7 @@ $$S(t\vert X,U)=\exp{\big\{-\int_0^t h(s\vert X,U)ds\big\}}$$
 - Sopravvivenza marginale  
 $$S(t)=E\big[S(t\vert U)\big]=E\big[\exp{\{-UH_0(t)\}}\big]=\mathbf{L}\big\{H_0(t)\big\}$$  
 - Trasformata di Laplace  
-$$L\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
+$$\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 - La varianza della frailty può avere un valore contenuto e influenzare significativamente sia le covariate (sia come significatività che il valore) che la forma del rischio
 
 #### Distribuzione della Frailty
@@ -462,9 +462,9 @@ Quando si sintetizza l'informazione (es. media) schiacciando il livello superior
 
 ##### ANOVA ad una via con effetti casuali
 Dato il modello con intercetta casuale e senza variabili indipendenti  
-Sia $$i$$ unità di I livello e $$j$$ di II livello
+Sia $$i$$ unità di I livello e $$j$$ di II livello  
 $$y_{ij}=b_{0j}+\epsilon_{ij}$$ con $$\epsilon_{ij}\sim\big(0,\sigma^2_\epsilon\big)$$  
-Ipotizzando un ulteriore livello che influenzi $$b_{0j}=\gamma_{00}+U_{0j}$$ con $$\U{0j}\sim\big(0,\sigma^2_{U_0}\big)$$
+Ipotizzando un ulteriore livello che influenzi $$b_{0j}=\gamma_{00}+U_{0j}$$ con $$U_{0j}\sim\big(0,\sigma^2_{U_0}\big)$$
 
 
 
