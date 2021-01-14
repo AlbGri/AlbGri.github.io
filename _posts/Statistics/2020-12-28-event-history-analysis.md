@@ -487,10 +487,14 @@ $$E\big(\sigma^2_b\big)=\sigma^2_{U_0}+\frac{\sigma^2_\epsilon}{\hat{n}}$$ con $
 È una media pesata delle varianze all'interno delle unità di secondo livello.
 
 ##### Coefficiente di correlazione con varianza between e within
+In un modello senza predittori, si ha  
 $$\hat{\sigma}^2_\epsilon=\sigma^2_w$$  
-$$\hat{\sigma}^2_{U_0}=\sigma^2_b-\frac{\sigma^2_w}{\hat{n}}$$
+$$\hat{\sigma}^2_{U_0}=\sigma^2_b-\frac{\sigma^2_w}{\hat{n}}$$  
+Potrebbe accadere che stimando un modello senza predittori, si ottenga un coeff. elevato che suggerisca un modello con effetto casuale specifico per i gruppi, ma potrebbe accadere che con qualche predittore il coeff. diminuisca e che l'intercetta casuale non sia più necessaria.  
 
 
+### Analisi multilevel con predittori
+$$y_{ij}=\beta_{0j}+\beta_1 x_{ij}+\epsilon_{ij}$$ con $$\epsilon_{ij}\sim\mathcal{N}\big(0,\sigma^2_\epsilon\big)$$
 
 
 
