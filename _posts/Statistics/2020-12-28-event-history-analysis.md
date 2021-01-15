@@ -444,13 +444,13 @@ Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel co
 
 ## Modelli Multilivello o Gerarchici
 
-### Modelli Multilivello
+#### Modelli Multilivello
 Per i dati che sono raggruppati in modo tale da ipotizzare più intercette e/o pendenze differenti  
 - Modelli ad intercetta variabile ($$n$$ rette parallele)
 - Modelli a pendenza variabile (effetti random)
 - Modelli a intercetta e pendenza variabili
 
-### Modelli Gerarchici
+#### Modelli Gerarchici
 La gerarchia si può intendere in due modi
 1. Gerarchia Bayesiana, dove i dati si distribuiscono secondo una famiglia di parametro $$\theta_1$$ e a sua volta il $$\theta_1$$ si assume sia la realizzazione di una variabile casuale la cui distribuzione (a-priori) appartiene ad una famiglia di parametro $$\theta_2$$ (si può continuare con $$\theta_3$$, con distribuzione iper-a-priori, etc.)
 1. Struttura gerarchica dei dati, quando unità statistiche di secondo stadio (I livello) appartengono a delle unità di primo stadio (II livello). Es.: pazienti (I livello) e ospedali (II livello), oppure nei dati longitudinali, individuo (II livello) e tempo (I livello).
@@ -459,6 +459,7 @@ La gerarchia si può intendere in due modi
 #### Pooling
 Quando si sintetizza l'informazione (es. media) schiacciando il livello superiore, ignorando la variabilità tra i gruppi, interna al livello. Al contrario, considerare tutti i gruppi appartenenti al livello superiore (no-pooling) porta sovrastimare la variabilità tra i gruppi del livello. Concetto analogo al trade-off distorsione-varianza.
 
+### Analisi multilevel senza covariate
 
 #### Coefficiente di correlazione intraclasse
 La costruzione che segue è specifica per i modelli lineari classici (e non GLM).  
@@ -493,7 +494,7 @@ $$\hat{\sigma}^2_{U_0}=\sigma^2_b-\frac{\sigma^2_w}{\hat{n}}$$
 Potrebbe accadere che stimando un modello senza predittori, si ottenga un coeff. elevato che suggerisca un modello con effetto casuale specifico per i gruppi, ma potrebbe accadere che con qualche predittore il coeff. diminuisca e che l'intercetta casuale non sia più necessaria.  
 
 
-### Analisi multilevel con predittori
+### Analisi multilevel con covariate
 $$y_{ij}=\alpha+\beta x_{it}+\epsilon_{it}$$  
 con eterogeneità non osservata, il vero modello è  
 $$y_it=\gamma_i+\beta x_{it}+\epsilon_{it}$$ con $$\gamma_i$$ eterogeneità non osservata.  
@@ -532,8 +533,21 @@ Il modello tenderà ad un modello no-pooling se
 in ottica bayesiana è come se fosse una priori non informativa quindi si utilizzano tutti i gruppi
 - La numerosità campionaria è elevata (seguo più i dati)
 
+#### Modelli ad effetti casuali o ad effetti misti
+Modellazione con pendenza casuale  
+$$y_{ij}=\beta_{0j}+\beta_{1j}X_{ij}+\epsilon_{ij}$$ con $$\begin{pmatrix} \beta_{0j} \\ \beta_{1j} \end{pmatrix}\sim\mathcal{N}\Bigg(\begin{pmatrix} \gamma_{00} \\ \gamma_{10} \end{pmatrix}, \begin{pmatrix} \sigma^2_{\beta_0} & \rho\sigma_{\beta_0}\sigma_{\beta_1} \\ \sigma^2_{\beta_1} & \rho\sigma_{\beta_0}\sigma_{\beta_1} \end{pmatrix}\Bigg)$$
+
+#### Modelli non nidificati
+I gruppi presi non sono conteninuti l'uno nell'altro.  
+
+##### Modello nidificato
+Dato l'individuo $$i$$ (unità di I livello), appartenente alla famiglia $$j$$ (unità di II livello) e al gruppo $$k$$ (unità di III livello)  
+$$y_{ijk}=\alpha_k+\gamma_{jk}+\beta x_{ijk}+\epsilon_{ijk}$$ con $$\alpha_k\sim\mathcal{N}(\alpha_0,\sigma^2_\alpha)$$  
 
 
+##### Modello non-nidificato
+Dato l'individuo $$i$$ (unità di I livello), appartenente alla classe d'età $$j$$  (unità di II livello) e alla nazione $$k$$ (unità di II livello)  
+$$y_{i(j,k)}=\alpha_k+\gamma_{j}+\beta x_{ijk}+\epsilon_{ijk}$$ con $$\gamma_j\sim\mathcal{N}(\gamma_0,\sigma^2_\gamma)$$  
 
 
 
