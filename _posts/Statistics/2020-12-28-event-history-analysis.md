@@ -552,9 +552,23 @@ $$y_{i(j,k)}=\alpha_k+\gamma_{j}+\beta x_{ijk}+\epsilon_{ijk}$$ con $$\gamma_j\s
 ### Stima Bayesiana empirica
 Stima dell'intercetta casuale. Non è una stima perché non è un parametro ma una variabile casuale, il termine giusto sarebbe previsione del valore.  
 Prevede il valore di $$\beta_{0j}$$ per un gruppo $$j$$ e si dimostra che la previsione è un valore atteso.  
-Stima bayesianaa empirica del modello ad intercetta casuale senza predittori
-- Forma di Snijder & Boskers
-- Forma di Gelman & Hill
+Stima bayesiana empirica del modello ad intercetta casuale senza predittori 
+Stima bayesiana empirica di $$\hat{\beta_{0j}}$$ (modello ad intercetta casuale senza predittori) di Snijder & Boskers (analoga a Gelman & Hill): media pesata della media specifica del gruppo $$j$$ (no-pooling) e della media totale (pooling)
+
+#### Teoria Bayesiana
+Elicitazione: rappresentazione della conoscenza a priori in una distribuzione (a priori).  
+Siano  
+$$y_i\sim\mathcal{N}(\mu,\sigma^2_0)$$ con $$\sigma^2_0$$ noto e $$\mu$$ ignoto  
+$$\mu\sim\mathcal{N}(\mu_0,\tau^2_0)$$ con $$\mu_0$$ e $$\tau^2_0$$ iperparametri della distribuzione a priori  
+La “stima'' bayesiana è la media a posteriori $$E(\mu\vert y)$$  
+Tramite il teorema di Bayes (e algoritmi iterativi quali Metropolis-Hastings, Gibbs sampling o
+Hamiltonian Monte Carlo per risolvere l'integrale, o si usano le distribuzioni coniugate)   
+$$f(\mu\vert y)=\frac{f(y\vert \mu)\cdot f(\mu)}{\int_\mu f(y\vert \mu)\cdot f(\mu)d\mu}$$  
+si dimostra che la distribuzione a posteriori è la seguente  
+$$\mu\vert y\sim\mathcal{N}\Bigg(\frac{\mu_0\frac{\sigma^2_0}{n}+\tau^2_0\bar{y}}{\frac{\sigma^2_0}{n}+\tau^2_0},\frac{\sigma^2_0\tau^2_0}{\frac{\sigma^2_0}{n}+\tau^2_0}\Bigg)$$
+
+
+
 
 
 
