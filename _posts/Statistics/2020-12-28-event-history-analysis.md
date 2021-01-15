@@ -524,7 +524,7 @@ $$y_{ij}=\beta_{0j}+\beta_1 X_{ij}+\epsilon_{ij}$$ con $$\beta_{0j}\sim\mathcal{
 $$\gamma_{00}$$ intercetta globale, la media delle intercette  
 
 Il modello tenderà ad un modello pooling se
-- $$\sigma^2_{\beta}\rightarrow 0$$, in cui l'intercetta casuale a varianza 0 significa che ho una sola intercetta e quindi $$\gamma_{00}=\beta_0$$  
+- $$\sigma^2_{\beta}\rightarrow 0$$, l'intercetta casuale ha varianza $$0$$, quindi si ha una sola intercetta e di conseguenza $$\gamma_{00}=\beta_0$$  
 - La numerosità campionaria è ridotta (seguo più il modello)
 
 Il modello tenderà ad un modello no-pooling se
