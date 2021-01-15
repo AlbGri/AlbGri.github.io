@@ -85,7 +85,11 @@ mathjax: "true"
 - Funzioni di pseudo-sopravvivenza per rischi competitivi
 
 ####  Life Table (o Attuariale)
-- Tavola di eliminazione: stima rischio, probabilità e sopravvivenza
+- Tavola di eliminazione: stima rischio, probabilità e sopravvivenza  
+$$N_j=N_{j-1}-(E_j+C_j)$$  
+$$R_j=N_{j}-0.5\cdot C_j$$  
+$$\hat{p}_1=1-\frac{E_j}{R_j}$$  
+$$\hat{S}_j^*=\hat{p}_{j-1}\cdot S_{j-1}$$
 - Altre funzioni (es. rischio integrato)
 - Intervalli di confidenza
 
@@ -453,7 +457,7 @@ Per i dati che sono raggruppati in modo tale da ipotizzare più intercette e/o p
 #### Modelli Gerarchici
 La gerarchia si può intendere in due modi
 1. Gerarchia Bayesiana, dove i dati si distribuiscono secondo una famiglia di parametro $$\theta_1$$ e a sua volta il $$\theta_1$$ si assume sia la realizzazione di una variabile casuale la cui distribuzione (a-priori) appartiene ad una famiglia di parametro $$\theta_2$$ (si può continuare con $$\theta_3$$, con distribuzione iper-a-priori, etc.)
-1. Struttura gerarchica dei dati, quando unità statistiche di secondo stadio (I livello) appartengono a delle unità di primo stadio (II livello). Es.: pazienti (I livello) e ospedali (II livello), oppure nei dati longitudinali, individuo (II livello) e tempo (I livello).
+2. Struttura gerarchica dei dati, quando unità statistiche di secondo stadio (I livello) appartengono a delle unità di primo stadio (II livello). Es.: pazienti (I livello) e ospedali (II livello), oppure nei dati longitudinali, individuo (II livello) e tempo (I livello).
 
 
 #### Pooling
@@ -585,9 +589,28 @@ Il valore atteso della distribuzione a posteriori, differisce dalla Bayesiana em
 La verosimiglianza penalizzata, può essere vista come una variante frequentista della distribuzione a priori.
 
 
+### Modelli lineari generalizzati gerarchici
+Generalized Linear Mixed Models (GLMM), analogia LM$$\rightarrow$$GLM.  
+Si prende il tasso di successo per ogni categoria e lo si ripondera rispetto la popolazione. Questo però nel caso di più variabili discrete a diversi livelli, il campione necessario deve essere enorme per soddisfare tutte le combinazioni. Per evitare di riempire tutte le informazioni, si possono usare i modelli gerarchici per fare 'borrowing' dell'informazione laddove è presente (rischio: shrinkage to mean).
+
+Modello a gerarchie imperfette: alcune sono gerarchiche altre sono dello stesso livello.
+
+#### GLMM Logit
+$$\mbox{Logit}\big\{Pr(y_{ij(k,l)}=1)\big\}=...$$  
+
+#### GLMM Poisson
+Posso farlo sul tasso invece che sul semplice numero, ad esempio il tasso di migratorietà, con intercetta casuale sulle nazioni.
+
+Un altro caso: tasso di mortalità prematura. Si possono ipotizzare distribuzioni differenti modellando la mistura. Oppure con un modello gerarchico, si tiene fissa la mortalità adulti e variabile la mortalità prematura (come variabile effetto casuale).
 
 
 
+
+
+
+
+
+### Modelli Frailty a tempi Discreti
 
 
 
