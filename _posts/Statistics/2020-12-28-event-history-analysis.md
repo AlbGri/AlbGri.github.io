@@ -2441,7 +2441,7 @@ La verosimiglianza penalizzata, può essere vista come una variante frequentista
 --->
 
 ## SAS Labs - Parte 2
-<button class="collapsible" id="es015">Esempio 15: Modelli parametrici (3)</button>
+<button class="collapsible" id="es015">Esempio 15: Frailty (1)</button>
 <div class="content" id="es015data" markdown="1">
 
 	```sas
@@ -2509,21 +2509,139 @@ La verosimiglianza penalizzata, può essere vista come una variante frequentista
 </div>
 <embed src="/assets/images/Statistics/EHA_015.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
-<!---
-
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es016">Esempio 16: Modelli parametrici (3)</button>
+<button class="collapsible" id="es016">Esempio 16: Frailty (2)</button>
 <div class="content" id="es016data" markdown="1">
 
 	```sas
-	codice
+    /*******************************************************
+    Obiettivo:
+    I dati sono relativi alla mortalita infantile in Guatemala. Da notare che abbiamo due identificativi: 
+    uno per il bambino (kidid) e uno per la madre (momid), 
+    la variabile time ci indica la durata e la variabile death ci dice se l'evento (il decesso) e stato 
+    osservato oppure se il dato e censurato. 
+    Abbiamo poi alcune variabili esplicative (eta della madre, ordine di nascita, e intervallo di tempo con 
+    la nascita precedente. 
+    Possiamo anche includere delle variabili tempo dipendenti: l'intervallo di tempo con la nascita 
+    successiva. Le dummy f0011 e f1223 ci dicono se in tempi brevissimi (0-11 mesi) o 
+    brevi (12-23 mesi) e avvenuta una nascita ulteriore. Per comodita, abbiamo gia effettuato lo split dei 
+    dati
+
+    (Esercizio 1) Modello Esponenziale a tratti
+    (Esercizio 2) Modello Cox con frailty Gamma
+    (Esercizio 3) Modello Esponenziale con frailty log-normale
+    (Esercizio 4) Modello Gompertz con frailty log-normale
+    (Esercizio 5) Modello Gompertz senza frailty
+    *******************************************************/
+
+    * import STATA file;
+    proc import datafile="/home/u52136602/sasuser.v94/dati/guatemala.dta" 
+	    out=guatemala dbms = dta replace;
+    run;
+
+    ****************************** (Esercizio 1) ******************************;
+    /* Stimo modello esponenziale (parametrico) a tratti (il df è già splittato)
+    Le variabili che identificano il periodo sono a0 a1to5 a6to11 e a12to23*/
+    title "LIFEREG: mod. Esponenziale a tratti senza frailty";
+    proc lifereg  data=guatemala;
+    model time * death(0) = a0 a1to5 a6to11 a12to23 a24up mage mage2 borde 
+    pdead p0014 p1523 p2435 p36up i011a1223 i011a24p i1223a24p / noint dist=exponential;
+    run;
+
+    ****************************** (Esercizio 2) ******************************;
+    * Stimo modello Cox (semi parametrico) con frailty Gamma;
+    title "PHREG: mod. Cox con frailty Gamma";
+    proc phreg data=guatemala;
+    class momid;
+    model time * death(0) =  mage mage2 borde pdead p0014 p1523 p2435 p36up i011a1223 i011a24p i1223a24p;
+    random momid / noclprint dist=GAMMA initialvariance=0.5;
+    run;
+
+    * Stimo modello Cox (semi parametrico) con frailty Gamma con Newton–Raphson;
+    title "PHREG: mod. Cox con frailty Gamma (Newton–Raphson)";
+    proc phreg data=guatemala;
+    nloptions tech=newrap;
+    class momid;
+    model time * death(0) =  mage mage2 borde pdead p0014 p1523 p2435 p36up i011a1223 i011a24p i1223a24p;
+    random momid / noclprint dist=GAMMA initialvariance=0.5;
+    run;
+
+    ****************************** (Esercizio 3) ******************************;
+    /* I modelli non sono equivalenti, phreg semi parametrico con frailty,
+    ma non c'è modo di aggiungere la frailty con lifereg.
+    Per stimare mod. parametrico con frailty, uso NLMIXED (non linear mixed models). 
+    Con NLMIXED bisogna scrivere direttamente la log-verosimiglianza 
+    della esponenziale a tratti */
+    title "NLMIXED: mod. Esponenziale a tratti con frailty log-normale";
+    PROC NLMIXED DATA=guatemala;
+    lambda=exp(b0*a0+b15*a1to5+b611*a6to11+b1223*a12to23+b24up*a24up+
+	    bmage*mage+bmage2*mage2+bborde*borde+bpdead*pdead+bp0014*p0014+
+	    bp1523*p1523+bp2435*p2435+bp36up*p36up+bi0111223*i011a1223+
+	    bi01124p*i011a24p+bi122324p*i1223a24p+e);
+    * dove 'e' è il logaritmo della frailty;
+    ll=-lambda*time + death*(LOG(lambda));
+    MODEL time~GENERAL(ll);
+    RANDOM e~NORMAL(0,s2) SUBJECT=momid;
+    * la procedura non prevede effetti casuali gamma, solo log-normali;
+    PARMS b0=-1.12 b15=-3.93 b611=-4.24 b1223=-4.76 b24up=-6.35 bmage=-0.14 
+	    bmage2=0.0025 bborde=0.062 bpdead=0.10 bp0014=0.54 bp1523=-0.13 
+	    bp2435=-0.26 bp36up=-0.39 bi0111223=0.82 bi01124p=1.63 bi122324p=0.07 s2=0.21;
+    * parametri stimati con il modello senza frailty;
+    run;
+    /* La stima della varianza è s2, non è significativa ma
+    non ha senso il test t perché:
+    1. la distribuzione della varianza non è normale, tipicamente è asimmetrica
+    2. è un test sulla frontiera dello spazio parametrico, perché la varianza 
+    è per definizione >0 e se è uguale a 0 è il valore limite del parametro e le
+    proprietà dei test non sono garantite */
+
+    ****************************** (Esercizio 4) ******************************;
+    /* Con NLMIXED stimo Gompertz, non ha la frailty Gamma, stimo log-normale.
+    La stima richiede circa 20 minuti */
+    title "NLMIXED: mod. Gompertz con frailty log-normale";
+    proc nlmixed data=guatemala;
+    gamma=exp(log_gamma);
+    linp=b0*a0+b15*a1to5+b611*a6to11+b1223*a12to23+
+	    b24up*a24up+
+	    bmage*mage+bmage2*mage2+bborde*borde+bpdead*pdead+bp0014*p0014+
+	    bp1523*p1523+bp2435*p2435+bp36up*p36up+ bi0111223*i011a1223+
+	    bi01124p*i011a24p+bi122324p*i1223a24p+e;
+    alpha=exp(-linp);
+    G_t=exp((alpha/gamma)*(1 - exp(gamma*time)));
+    g=alpha*exp(gamma*time)*G_t;
+    ll=(death=1)*log(g) +    /* ll for observed failures */
+	    (death=0)*log(G_t);    /* ll for censored failures */
+    model ll ~ general(ll);
+    RANDOM e~NORMAL(0,s2) SUBJECT=momid;
+    PARMS b0=-0.76 b15=2.25 b611=3.48 b1223=3.74 b24up=7.98 bmage=0 bmage2=0 bborde=0 bpdead=0 bp0014=0 
+	    bp1523=0.3362 bp2435=0.34 bp36up=0.39 bi0111223=-0.96 bi01124p=-1.587 bi122324p=-0.0657 
+	    log_gamma=-10 s2=0.21;
+    run;
+
+    ****************************** (Esercizio 5) ******************************;
+    title "NLMIXED: mod. Gompertz senza frailty";
+    proc nlmixed data=guatemala ;
+    gamma=exp(log_gamma);
+    linp=b0∗a0+b15∗a1to5+b611∗a6to11+b1223∗a12to23+
+	    bmage∗mage+bmage2∗mage2+bborde∗borde+bpdead∗pdead+bp0014∗p0014+
+	    bp1523∗p1523+bp2435∗p2435+bp36up∗p36up+bi0111223∗i011a1223+
+	    bi01124p∗i011a24p+bi122324p∗i1223a24p;
+    alpha=exp(−linp);
+    G_t=exp((alpha/gamma)*(1−exp(gamma*time))) ;
+    g=alpha*exp(gamma*time)*G_t ;
+    ll=(death =1)*log(g) +  /* ll for observed failures */
+	    (death=0)*log(G_t);     /* ll for censored failures */
+    model ll~general(ll);
+    PARMS b0=−0.76 b15 = 2.25 b611=3.48 b1223=3.74 b24up=7.98 bmage=0 bmage2=0 bborde=0 bpdead=0 bp0014=0 
+	    bp1523=0.3362 bp2435=0.34 bp36up=0.39 bi0111223=−0.96 bi01124p=−1.587 bi122324p=−0.0657 
+	    log_gamma=−10;
+    estimate "gamma" exp(log_gamma);
+    run;
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_016.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
-
---->
 
 <!---
 
@@ -2631,18 +2749,6 @@ $$\mbox{C.M.}=\mbox{YY}\times 12+\mbox{MM}$$
 $$\mbox{YY}=(\mbox{C.M.}-1)/12+1900$$  
 $$\mbox{MM}=\mbox{C.M.}-(\mbox{intero(YY)}\times 12)$$
 
-
-
-<button class="collapsible" id="es020">Esempio 20: Modelli parametrici (3)</button>
-<div class="content" id="es020data" markdown="1">
-
-	```sas
-	codice
-	```
-
-<embed src="/assets/images/Statistics/EHA_015.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
-
-</div>
 
 
 
