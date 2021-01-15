@@ -476,7 +476,7 @@ Se la $$cov$$ è molto diversa da 0 allora le osservazioni in uno stesso
 gruppo (o classe) sono correlate.  
 Si decide di fare il pooling se la correlazione intraclasse  
 non è significativamente diversa da 0  
-$$\rho (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}}{\sigma^2_{U_0}+\sigma^2_{\epsilon}}$$ con $$\rho\in [0,1]$$  
+$$\rho^{IC} (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}}{\sigma^2_{U_0}+\sigma^2_{\epsilon}}$$ con $$\rho\in [0,1]$$  
 Se si può fare il pooling non serve un modello multilevel.  
 
 ##### Varianza between-group
@@ -2648,7 +2648,7 @@ La verosimiglianza penalizzata, può essere vista come una variante frequentista
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es017">Esempio 17: Modelli parametrici (3)</button>
+<button class="collapsible" id="es017">Esempio 17: Modelli gerarchici (1)</button>
 <div class="content" id="es017data" markdown="1">
 
 	```sas
