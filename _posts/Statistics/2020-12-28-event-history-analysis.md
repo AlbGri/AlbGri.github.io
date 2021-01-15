@@ -544,11 +544,17 @@ I gruppi presi non sono conteninuti l'uno nell'altro.
 Dato l'individuo $$i$$ (unità di I livello), appartenente alla famiglia $$j$$ (unità di II livello) e al gruppo $$k$$ (unità di III livello)  
 $$y_{ijk}=\alpha_k+\gamma_{jk}+\beta x_{ijk}+\epsilon_{ijk}$$ con $$\alpha_k\sim\mathcal{N}(\alpha_0,\sigma^2_\alpha)$$  
 
-
 ##### Modello non-nidificato
 Dato l'individuo $$i$$ (unità di I livello), appartenente alla classe d'età $$j$$  (unità di II livello) e alla nazione $$k$$ (unità di II livello)  
 $$y_{i(j,k)}=\alpha_k+\gamma_{j}+\beta x_{ijk}+\epsilon_{ijk}$$ con $$\gamma_j\sim\mathcal{N}(\gamma_0,\sigma^2_\gamma)$$  
 
+
+### Stima Bayesiana empirica
+Stima dell'intercetta casuale. Non è una stima perché non è un parametro ma una variabile casuale, il termine giusto sarebbe previsione del valore.  
+Prevede il valore di $$\beta_{0j}$$ per un gruppo $$j$$ e si dimostra che la previsione è un valore atteso.  
+Stima bayesianaa empirica del modello ad intercetta casuale senza predittori
+- Forma di Snijder & Boskers
+- Forma di Gelman & Hill
 
 
 
