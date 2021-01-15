@@ -500,25 +500,27 @@ $$y_it=\gamma_i+\beta x_{it}+\epsilon_{it}$$ con $$\gamma_i$$ eterogeneità non 
 
 #### Rimozione eterogeneità non osservata
 Con alcune trasformazioni, si può costruire un modello ad effetti fissi, che non ha il problema dell'assunzione $$U_{0j}\bot \epsilon_{ij}$$ e garantisce una stima di $$\beta$$ non distorta, ma non posso stimare $$\alpha$$ né $$\gamma_i$$.
+
 ##### Trasformata within-group
 $$y_{it}-\bar{y_i}$$  
 Elimino la variabilità between (generalmente più elevata nei panel), stimando $$\beta$$ solo con la variabilità within.
+
 ##### Trasformata first difference
 $$y_{it}-y_{it-1}$$
 
 #### Modellazione eterogeneità non osservata
 
-##### Modello con intercetta fissa: modello pooling  
-Stima un'intercetta uguale per tutti  
+##### Modello pooling  
+Modello con intercetta fissa: stima un'intercetta uguale per tutti  
 $$y_{ij}=\beta_0+\beta_1 X_{ij}+\epsilon_{ij}$$  
 
-##### Modello con intercetta specifica per ogni gruppo: modello no-pooling
-Per stimare l'intercetta di un gruppo usa i dati solo di quel gruppo  
+##### Modello no-pooling
+Modello con intercetta specifica per ogni gruppo: per stimare l'intercetta di un gruppo usa i dati solo di quel gruppo  
 $$y_{ij}=\beta_{0j}+\beta_1 X_{ij}+\epsilon_{ij}$$ con $$\beta_{0j}$$ fissa  
 
-##### Modello con intercetta casuale, specifica per ogni gruppo: modello gerarchico o di pooling parziale  
-$$y_{ij}=\beta_{0j}+\beta_1 X_{ij}+\epsilon_{ij}$$ con  
-$$\beta_{0j}\sim\mathcal{N}(\gamma_{00},\sigma^2_{\beta})$$ e  
+##### Modello gerarchico o di pooling parziale  
+Modello con intercetta casuale, specifica per ogni gruppo.  
+$$y_{ij}=\beta_{0j}+\beta_1 X_{ij}+\epsilon_{ij}$$ con $$\beta_{0j}\sim\mathcal{N}(\gamma_{00},\sigma^2_{\beta})$$ e  
 $$\gamma_{00}$$ intercetta globale, la media delle intercette  
 
 Il modello tenderà ad un modello pooling se
@@ -526,7 +528,8 @@ Il modello tenderà ad un modello pooling se
 - La numerosità campionaria è ridotta (seguo più il modello)
 
 Il modello tenderà ad un modello no-pooling se
-- $$\sigma^2_{\beta}\rightarrow \infty$$ modello no-pooling, in quanto una normale con varianza infinita è piatta e in ottica bayesiana è come se fosse una priori non informativa quindi si utilizzano tutti i gruppi
+- $$\sigma^2_{\beta}\rightarrow \infty$$ modello no-pooling, in quanto una normale con varianza infinita è piatta e  
+in ottica bayesiana è come se fosse una priori non informativa quindi si utilizzano tutti i gruppi
 - La numerosità campionaria è elevata (seguo più i dati)
 
 
@@ -555,7 +558,7 @@ Il modello tenderà ad un modello no-pooling se
 
 
 
-
+<!---
 
 - Modelli gerarchici
 - Coeff di correlaz intraclasse
@@ -567,6 +570,7 @@ Il modello tenderà ad un modello no-pooling se
 - stima reml
 - glmm (generalized linear mixed models)
 
+--->
 
 
 <!---
