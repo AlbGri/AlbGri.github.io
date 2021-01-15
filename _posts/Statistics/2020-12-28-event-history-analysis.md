@@ -511,11 +511,11 @@ $$y_{it}-y_{it-1}$$
 
 #### Modellazione eterogeneità non osservata
 
-##### Modello pooling  
+##### Modello pooling (underfitting)
 Modello con intercetta fissa: stima un'intercetta uguale per tutti  
 $$y_{ij}=\beta_0+\beta_1 X_{ij}+\epsilon_{ij}$$  
 
-##### Modello no-pooling
+##### Modello no-pooling (overfitting)
 Modello con intercetta specifica per ogni gruppo: per stimare l'intercetta di un gruppo usa i dati solo di quel gruppo  
 $$y_{ij}=\beta_{0j}+\beta_1 X_{ij}+\epsilon_{ij}$$ con $$\beta_{0j}$$ fissa  
 
@@ -573,12 +573,16 @@ si dimostra che la distribuzione a posteriori è la seguente
 
 $$\mu\vert y\sim\mathcal{N}\Bigg(\frac{\tau^2_0\bar{y}+\frac{\sigma^2_0}{n}\mu_0}{\tau^2_0+\frac{\sigma^2_0}{n}},\frac{\sigma^2_0\tau^2_0}{\frac{\sigma^2_0}{n}+\tau^2_0}\Bigg)$$
 
+Il modello gerarchico è un compromesso tra il modello pooling e no-pooling, la stima Bayesiana empirica è un compromesso tra la media totale e la media specifica del gruppo $$j$$.  
+La stima bayesiana è una media pesata della media campionaria (che in un modello normale di media ignota e varianza ignota è la stima MV, quindi usando solo i dati) e la media a priori.  
+- $$n\rightarrow\infty$$ la media a posteriori tende alla stima MV  
+- $$\tau^2_0\rightarrow\infty$$ meno è informativa la priori, più peso ha alla stima MV e meno la priori
+- $$\sigma^2_0\rightarrow\infty$$ la varianza dei dati, che è nota, se è alta più importanza avrà la media a priori 
+
 Il valore atteso della distribuzione a posteriori, differisce dalla Bayesiana empirica, in quanto in quest'ultima:
 - non c'è una distribuzione a priori 
-- al posto della media e varianza a priori si ha la stima “pooling'' e la varianza residua dell’effetto casuale $$\sigma^2_{\beta_0}$$
-
-
-
+- al posto della media e varianza a priori si hanno le stime (MV) del modello pooling
+- ...
 
 
 
