@@ -2519,17 +2519,16 @@ La verosimiglianza penalizzata, può essere vista come una variante frequentista
 	```sas
     /*******************************************************
     Obiettivo:
-    I dati sono relativi alla mortalita infantile in Guatemala. Da notare che abbiamo due identificativi: 
-    uno per il bambino (kidid) e uno per la madre (momid), 
-    la variabile time ci indica la durata e la variabile death ci dice se l'evento (il decesso) e stato 
-    osservato oppure se il dato e censurato. 
-    Abbiamo poi alcune variabili esplicative (eta della madre, ordine di nascita, e intervallo di tempo con 
-    la nascita precedente. 
-    Possiamo anche includere delle variabili tempo dipendenti: l'intervallo di tempo con la nascita 
-    successiva. Le dummy f0011 e f1223 ci dicono se in tempi brevissimi (0-11 mesi) o 
-    brevi (12-23 mesi) e avvenuta una nascita ulteriore. Per comodita, abbiamo gia effettuato lo split dei 
-    dati
-
+    I dati sono relativi alla mortalita infantile. 
+    Due identificativi: bambino (kidid) e madre (momid), 
+    la variabile time indica la durata e la variabile death definisce se 
+    l'evento (il decesso) e stato osservato oppure se il dato e censurato. 
+    Variabili esplicative: eta della madre, ordine di nascita, e intervallo 
+    di tempo con la nascita precedente. 
+    Variabili tempo dipendenti: l'intervallo di tempo con la nascita successiva. 
+    Le dummy f0011 e f1223 definiscono se in tempi brevissimi (0-11 mesi) o 
+    brevi (12-23 mesi) e avvenuta una nascita ulteriore.
+    Nota: i dati già sono splittati.
     (Esercizio 1) Modello Esponenziale a tratti
     (Esercizio 2) Modello Cox con frailty Gamma
     (Esercizio 3) Modello Esponenziale con frailty log-normale
