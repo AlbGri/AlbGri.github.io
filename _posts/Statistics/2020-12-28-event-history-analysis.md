@@ -88,7 +88,7 @@ mathjax: "true"
 - Tavola di eliminazione: stima rischio, probabilità e sopravvivenza  
 $$N_j=N_{j-1}-(E_j+C_j)$$  
 $$R_j=N_{j}-0.5\cdot C_j$$  
-$$\hat{p}_1=1-\frac{E_j}{R_j}$$  
+$$\hat{p}_j=1-\frac{E_j}{R_j}$$  
 $$\hat{S}_j^*=\hat{p}_{j-1}\cdot S_{j-1}$$
 - Altre funzioni (es. rischio integrato)
 - Intervalli di confidenza
