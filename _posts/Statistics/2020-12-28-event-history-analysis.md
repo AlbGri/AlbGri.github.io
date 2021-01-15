@@ -506,6 +506,43 @@ Elimino la variabilità between (generalmente più elevata nei panel), stimando 
 - Trasformata first difference  
 $$y_{it}-y_{it-1}$$
 
+#### Modellazione eterogeneità non osservata
+- Modello con intercetta fissa: modello pooling  
+$$y_{ij}=\beta_0+\beta_1 X_{ij}+\epsilon_{ij}$$  
+- Modello con intercetta specifica per ogni gruppo: modello no-pooling
+$$y_{ij}=\beta_{0j}+\beta_1 X_{ij}+\epsilon_{ij}$$ con $$\beta_{0j}$$ fissa  
+- Modello con intercetta casuale, specifica per ogni gruppo: modello gerarchico o di pooling parziale  
+$$y_{ij}=\beta_{0j}+\beta_1 X_{ij}+\epsilon_{ij}$$ con  
+$$\beta_{0j}\sim\mathcal{N}(\gamma_{00},\sigma^2_{\beta})$$ e  
+$$\gamma_{00}$$ intercetta globale, la media delle intercette  
+    - Se $$\sigma^2_{\beta})\rightarrow 0$$ modello pooling, in cui l'intercetta casuale a varianza 0 significa che ho una sola intercetta e quindi $$\gamma_{00}=\beta_0$$  
+    - Se $$\sigma^2_{\beta})\rightarrow \infty$$ modello no-pooling, in quanto una normale con varianza infinita è piatta e in ottica bayesiana è come se fosse una priori non informativa quindi si utilizzano tutti i gruppi  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
