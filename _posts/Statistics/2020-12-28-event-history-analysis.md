@@ -556,11 +556,14 @@ Stima bayesiana empirica del modello ad intercetta casuale senza predittori
 Stima bayesiana empirica di $$\hat{\beta_{0j}}$$ (modello ad intercetta casuale senza predittori) di Snijder & Boskers (analoga a Gelman & Hill): media pesata della media specifica del gruppo $$j$$ (no-pooling) e della media totale (pooling)
 
 #### Teoria Bayesiana
-Elicitazione: rappresentazione della conoscenza a priori in una distribuzione (a priori).  
-Siano  
+Elicitazione: rappresentazione della conoscenza a priori in una distribuzione (a priori).
+
+Dati  
 $$y_i\sim\mathcal{N}(\mu,\sigma^2_0)$$ con $$\sigma^2_0$$ noto e $$\mu$$ ignoto  
-$$\mu\sim\mathcal{N}(\mu_0,\tau^2_0)$$ con $$\mu_0$$ e $$\tau^2_0$$ iperparametri della distribuzione a priori  
-La “stima'' Bayesiana empirica è analoga alla media a posteriori $$E(\mu\vert y)$$  
+$$\mu\sim\mathcal{N}(\mu_0,\tau^2_0)$$ con $$\mu_0$$ e $$\tau^2_0$$ iperparametri della distribuzione a priori
+
+Si dimostra che la “stima'' Bayesiana empirica è analoga alla media a posteriori $$E(\mu\vert y)$$
+
 Tramite il teorema di Bayes (e algoritmi iterativi quali Metropolis-Hastings, Gibbs sampling o
 Hamiltonian Monte Carlo per risolvere l'integrale, o si usano le distribuzioni coniugate come questo caso)
 
@@ -570,7 +573,9 @@ si dimostra che la distribuzione a posteriori è la seguente
 
 $$\mu\vert y\sim\mathcal{N}\Bigg(\frac{\tau^2_0\bar{y}+\frac{\sigma^2_0}{n}\mu_0}{\tau^2_0+\frac{\sigma^2_0}{n}},\frac{\sigma^2_0\tau^2_0}{\frac{\sigma^2_0}{n}+\tau^2_0}\Bigg)$$
 
-Il valore atteso della distribuzione a posteriori, differisce dalla Bayesiana empirica, in quanto in quest'ultima non è presente una distribuzione a priori e al posto della media e varianza a priori veogno usate la stima “pooling'' e la varianza residuadell’effetto casuale $$\sigma^2_{\beta_0}$$
+Il valore atteso della distribuzione a posteriori, differisce dalla Bayesiana empirica, in quanto in quest'ultima:
+- non c'è una distribuzione a priori 
+- al posto della media e varianza a priori si ha la stima “pooling'' e la varianza residua dell’effetto casuale $$\sigma^2_{\beta_0}$$
 
 
 
