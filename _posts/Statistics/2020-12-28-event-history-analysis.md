@@ -574,10 +574,11 @@ si dimostra che la distribuzione a posteriori è la seguente
 $$\mu\vert y\sim\mathcal{N}\Bigg(\frac{\tau^2_0\bar{y}+\frac{\sigma^2_0}{n}\mu_0}{\tau^2_0+\frac{\sigma^2_0}{n}},\frac{\sigma^2_0\tau^2_0}{\frac{\sigma^2_0}{n}+\tau^2_0}\Bigg)$$
 
 Il modello gerarchico è un compromesso tra il modello pooling e no-pooling, la stima Bayesiana empirica è un compromesso tra la media totale e la media specifica del gruppo $$j$$.  
+Il modello multilevel effettua un 'borrowing' dell'informazione prendendo anche da altri gruppi.  
 La stima bayesiana è una media pesata della media campionaria (che in un modello normale di media ignota e varianza ignota è la stima MV, quindi usando solo i dati) e la media a priori.  
 - $$n\rightarrow\infty$$ la media a posteriori tende alla stima MV  
 - $$\tau^2_0\rightarrow\infty$$ meno è informativa la priori, più peso ha alla stima MV e meno la priori
-- $$\sigma^2_0\rightarrow\infty$$ la varianza dei dati, che è nota, se è alta più importanza avrà la media a priori 
+- $$\sigma^2_0\rightarrow\infty$$ la varianza dei dati, che è nota, se è alta più importanza avrà la media a priori
 
 Il valore atteso della distribuzione a posteriori, differisce dalla Bayesiana empirica, in quanto in quest'ultima non si assume una distribuzione a priori e al posto della media e varianza a priori si hanno le stime (MV) del modello pooling.
 
@@ -1985,7 +1986,7 @@ La verosimiglianza penalizzata, può essere vista come una variante frequentista
     run;
 
     * tranne le ultime tre, tutte le altre colonne saranno medie campionarie;
-    proc print data=a (obs=10);
+    proc print data=a (obs=10); * obs mostro prime n righe;
     run;
 
     * Passo 2: costruisco grafico di logH per maschi e femmine;
@@ -2537,7 +2538,7 @@ La verosimiglianza penalizzata, può essere vista come una variante frequentista
     *******************************************************/
 
     * import STATA file;
-    proc import datafile="/home/u52136602/sasuser.v94/dati/guatemala.dta" 
+    proc import datafile="/home/dati/guatemala.dta" 
 	    out=guatemala dbms = dta replace;
     run;
 
@@ -2643,8 +2644,6 @@ La verosimiglianza penalizzata, può essere vista come una variante frequentista
 </div>
 <embed src="/assets/images/Statistics/EHA_016.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
-<!---
-
 &nbsp;
 &nbsp;
 
@@ -2652,12 +2651,201 @@ La verosimiglianza penalizzata, può essere vista come una variante frequentista
 <div class="content" id="es017data" markdown="1">
 
 	```sas
-	codice
+    /*******************************************************
+    Obiettivo
+    Dataset risultato test matematica studenti americani.
+    mathach: punteggio di matematica
+    ses: social-economic-status
+    sector: scuola pubblica (0) o privata (1)
+    school: identificativo scuola
+    meanses: media dello stato socio economico degli studenti della scuola
+    (Esercizio 1) Esplorazione df e struttura secondo livello
+    (Esercizio 2) Modello gerarchico a intercetta casuale senza covariate
+    (Esercizio 3) Modello gerarchico a intercetta casuale con covariata (a effetto fisso)
+    (Esercizio 4) Modello pooling e no pooling
+    (Esercizio 5) Grafico dei tre modelli
+    (Esercizio 6) Modello gerarchico a intercetta e pendenza casuale
+    *******************************************************/
+    libname in '/home/dati';
+    options nocenter nodate nonumber nolabel;
+
+    ****************************** (Esercizio 1) ******************************;
+    * media e SD di ses e mathach;
+    proc means data = in.hsb12 mean std;
+    var ses mathach;
+    run;
+
+    * tabella di frequenza di school;
+    proc freq data=in.hsb12;
+    tables school;
+    run;
+
+    /* Si potrebbe introdurre nel modello gerarchico, 
+    delle covariate relative all'unità di secondo livello (scuola) */
+    * ordino df by school;
+    proc sort data = in.hsb12;
+    by school;
+    run;
+    /* Le variabili che interessano sono relative alle scuole
+    quindi ripetute per ogni soggetto appartenente alla scuola,
+    pertanto prendo solo una osservazione (last) per ogni scuola */
+    data level2;
+    set in.hsb12;
+    by school;
+    if last.school;
+    keep school meanses sector;
+    run;
+    * media e SD di meanses sector;
+    proc means data = level2 mean std;
+    var meanses sector;
+    run;
+
+    ****************************** (Esercizio 2) ******************************;
+    * modello GERARCHICO senza covariate;
+    title "Modello 1: Modello a intercetta casuale";
+    *ods graphics on;
+    proc mixed data = in.hsb12 covtest noclprint plots(maxpoints=10000);
+    class school; * la variabile che definisce i gruppi deve essere class;
+    model mathach = / solution;
+    random intercept / subject = school solution;
+    /* solution in random restituisce le stime bayesiane 
+    empiriche della intercetta casuale. Senza restituisce solo
+    la stima della varianza residua e dell'effetto casuale */
+    run;
+    *ods graphics off;
+    /* con REML stima la varianza dell'effetto casuale.
+    Newton-Raphson per MV
+    \sigma^2_{\beta_0}=8.6
+    \sigma^2_{\epsilon}=39.2
+    Per la frailty sas non fa l'errore, qui da il test t sulla varianza
+    che è sbagliato.
+    Il valore -2.6638 dell'intercetta dell'effetto casuale (che è la 'stima'
+    bayesiana empirica) è la deviazione che si ha nella scuola 1224 rispetto 
+    all'intercetta fissa. Quindi se voglio prevedere
+    l'intercetta della scuola 1224, questa sarà 12.6-2.6638 */
+
+    ****************************** (Esercizio 3) ******************************;
+    * modello GERARCHICO con covariata;
+    /* Esporto le stime sia degli effetti fissi che casuali 
+    nel caso in cui serva fare previsione sulle specifiche scuole */
+    ods output SolutionF=Fixed SolutionR=Random;
+    title "Modello 2: Modello a intercetta casuale con effetto fisso per la variabile ses";
+    title2 "ses e' lo status socio-economico";
+    proc mixed data = in.hsb12 noclprint covtest noitprint plots(maxpoints=10000);
+    class school;
+    model mathach = ses / solution ;
+    random intercept / subject = school solution;
+    run;
+    ods output close;
+    * Ora si ha la stima della pendenza;
+
+    ****************************** (Esercizio 4) ******************************;
+    * modello POOLING; 
+    /* ods html file="mod_pooling.html"; * utile per export in html;*/
+    title "Modello 3: Modello Pooling";
+    proc reg data = in.hsb12 plots(maxpoints=10000); * regressione lineare;
+    model mathach = ses;
+    run;
+    /* ods html close; */
+
+    * modello NO-POOLING;
+    /* Per stimare un'intercetta specifica per ogni scuola,
+    creo la covariata scuola, trasformo in dummy e l'intercetta specifica
+    di ogni scuola sarà il coefficiente di ciascuna dummy. 
+    160 scuole, 160 dummy (non stimando l'intercetta), 
+    per crearle uso il comando class disponibile
+    su proc glm e non proc reg, ma è comunque un modello lineare */
+    title "Modello 4: Modello ad effetti fissi: un'intercetta per ogni scuola";
+    proc glm data = in.hsb12;
+    class school;
+    model mathach = ses school/ solution noint;
+    * noint: non stimo intercetta fissa così da avere 1 dummy per ogni scuola;
+    run;
+    quit; * richiesto da proc glm;
+
+    ****************************** (Esercizio 5) ******************************;
+    /* Per ottenere un grafico leggibile, si crea un df specifico 
+    in cui si scelgono 4 scuole e  si prendono i 
+    valori predetti dei tre modelli delle stime
+    delle intercette per le 4 scuole */
+    data toplot;
+    set in.hsb12;
+    if school=2208 or school=3610 or school=7697 or school=9550;
+    /* predpool = 12.74740+3.18387*ses; * previsione con pooling; */
+    predpool = 12.74740+2.19117197*ses;
+    /* per rendere più chiara la rappresentazione assegno una
+    pendenza al modello pooling pari a quella no-pooling */
+    prednopool = 14.47743573*(school=2208)+15.09173859*(school=3610)+
+	    15.15591109*(school=7697)+10.97293026*(school=9550)+
+	    2.19117197*ses; * previsione no pooling;
+    /* predmlevel=12.6575+1.5367*(school=2208)+2.1494*(school=3610)+
+	    1.9689*(school=7697)-1.3369*(school=9550)+
+	    2.3903*ses; * previsione gerarchico; */
+    predmlevel = 12.6575+1.5367*(school=2208)+2.1494*(school=3610)+
+	    1.9689*(school=7697)-1.3369*(school=9550)+
+	    2.19117197*ses;
+    /* per rendere più chiara la rappresentazione assegno una
+    pendenza al modello multilevel pari a quella no-pooling */
+    run;
+
+    * ordino per scuola (il grafico non verrebbe pulito);
+    proc sort data = toplot;
+    by school;
+    run;
+
+    * grafico;
+    goptions reset = all;
+    symbol1 v = none i = join c = red ; * modello pooling;
+    symbol2 v = none i = join c = blue  ; * modello no pooling;
+    symbol3 v = none i = join c = black  ; * modello multilevel;
+    SYMBOL4 v=circle c=black i=none;
+    axis1 order = (-4 to 3 by 1) minor = none label=("SES");
+    axis2 order = (0 to 22 by 2) minor = none label=(a = 90 "Math Achievement Score");
+    proc gplot data = toplot;
+    by school;
+    plot predpool*ses prednopool*ses predmlevel*ses mathach*ses/ vaxis = axis2 haxis = axis1 
+    overlay; * 4 grafici sovrapposti;
+    run;
+    quit;
+    /* Il modello multilevel è sempre più vicino al no-pooling.
+    La numerosità interna ai gruppi è elevata, non c'è una grande
+    differenza al no-pooling, quindi vanno bene entrambi */
+
+    * tabella di frequenza delle scuole;
+    proc freq data=in.hsb12;
+    tables school;
+    run;
+
+    ****************************** (Esercizio 6) ******************************;
+    * modello intercetta e pendenza casuale;
+    title "Modello 5: Si include un effetto casuale per la variabile ses";
+    title2 "ses e' lo status socio-economico";
+
+    proc mixed data = in.hsb12 noclprint covtest noitprint plots(maxpoints=10000);
+    class school;
+    model mathach = ses / solution ddfm = bw notest;
+    * notest: non riportare i test per gli effetti fissi;
+    random intercept ses / subject = school type = vc gcorr solution;
+    /* un gcorr: qualsiasi tipo di matrice di varianze e covarianze;
+    vc gcorr: solo le varianze, imponendo covarianza uguale a 0, qui si
+    ottengono stime simili, perché la correlazione è bassa */
+    run;
+    /* UN(1,1) varianza intercetta casuale
+    UN(2,2) varianza pendenza casuale
+    UN(2,1) covarianza 
+
+    Con parametro VC (ma vale lo stesso con UN), si nota che
+    Covariance Parameter Estimates, per  SEX, la deviazione casuale è molto debole (0.4),
+    la varianza è piccola, rispetto l'intercetta (4.8) è 1/10. 
+    Sembra che l'aggiunta della pendenza casuale non migliora tanto il modello
+
+    Con SOLUTION ottengo le stime bayesiane empiriche della intercetta e pendenza
+    casuali. Per ogni scuola ho la deviazione per intercetta e pendenza:
+    anche qui le stime bayesiane le deviazioni è molto leggera nella 
+    maggior parte dei casi */
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_017.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
-
---->
 
 <!---
 
