@@ -494,7 +494,18 @@ Potrebbe accadere che stimando un modello senza predittori, si ottenga un coeff.
 
 
 ### Analisi multilevel con predittori
-$$y_{ij}=\beta_{0j}+\beta_1 x_{ij}+\epsilon_{ij}$$ con $$\epsilon_{ij}\sim\mathcal{N}\big(0,\sigma^2_\epsilon\big)$$
+$$y_{ij}=\alpha+\beta x_{it}+\epsilon_{it}$$  
+con eterogeneità non osservata, il vero modello è  
+$$y_it=\gamma_i+\beta x_{it}+\epsilon_{it}$$ con $$\gamma_i$$ eterogeneità non osservata.  
+
+#### Rimozione eterogeneità non osservata
+Con alcune trasformazioni, si può costruire un modello ad effetti fissi, che non ha il problema dell'assunzione $$U_{0j}\bot \epsilon_{ij}$$ e garantisce una stima di $$\beta$$ non distorta, ma non posso stimare $$\alpha$$ né $$\gamma_i$$.
+- Trasformata within-group  
+$$y_{it}-\bar{y_i}$$  
+Elimino la variabilità between (generalmente più elevata nei panel), stimando $$\beta$$ solo con la variabilità within.
+- Trasformata first difference  
+$$y_{it}-y_{it-1}$$
+
 
 
 
