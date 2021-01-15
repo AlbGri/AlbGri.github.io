@@ -568,7 +568,7 @@ $$f(\mu\vert y)=\frac{f(y\vert \mu)\cdot f(\mu)}{\int_\mu f(y\vert \mu)\cdot f(\
 
 si dimostra che la distribuzione a posteriori è la seguente
 
-$$\mu\vert y\sim\mathcal{N}\Bigg(\frac{\mu_0\frac{\sigma^2_0}{n}+\tau^2_0\bar{y}}{\frac{\sigma^2_0}{n}+\tau^2_0},\frac{\sigma^2_0\tau^2_0}{\frac{\sigma^2_0}{n}+\tau^2_0}\Bigg)$$
+$$\mu\vert y\sim\mathcal{N}\Bigg(\frac{\tau^2_0\bar{y}+\frac{\sigma^2_0}{n}\mu_0}{\tau^2_0+\frac{\sigma^2_0}{n}},\frac{\sigma^2_0\tau^2_0}{\frac{\sigma^2_0}{n}+\tau^2_0}\Bigg)$$
 
 Il valore atteso della distribuzione a posteriori, differisce dalla Bayesiana empirica, in quanto in quest'ultima non è presente una distribuzione a priori e al posto della media e varianza a priori veogno usate la stima “pooling'' e la varianza residuadell’effetto casuale $$\sigma^2_{\beta_0}$$
 
