@@ -579,12 +579,9 @@ La stima bayesiana è una media pesata della media campionaria (che in un modell
 - $$\tau^2_0\rightarrow\infty$$ meno è informativa la priori, più peso ha alla stima MV e meno la priori
 - $$\sigma^2_0\rightarrow\infty$$ la varianza dei dati, che è nota, se è alta più importanza avrà la media a priori 
 
-Il valore atteso della distribuzione a posteriori, differisce dalla Bayesiana empirica, in quanto in quest'ultima:
-- non c'è una distribuzione a priori 
-- al posto della media e varianza a priori si hanno le stime (MV) del modello pooling
-- ...
+Il valore atteso della distribuzione a posteriori, differisce dalla Bayesiana empirica, in quanto in quest'ultima non si assume una distribuzione a priori e al posto della media e varianza a priori si hanno le stime (MV) del modello pooling.
 
-
+La verosimiglianza penalizzata, può essere vista come una variante frequentista della distribuzione a priori.
 
 
 
