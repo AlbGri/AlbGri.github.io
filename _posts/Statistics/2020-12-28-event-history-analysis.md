@@ -2625,19 +2625,24 @@ La verosimiglianza penalizzata, può essere vista come una variante frequentista
 
 
 
-
-
-
-
-
-
-
 ## Utili
 ### Century Months
 $$\mbox{C.M.}=\mbox{YY}\times 12+\mbox{MM}$$  
 $$\mbox{YY}=(\mbox{C.M.}-1)/12+1900$$  
 $$\mbox{MM}=\mbox{C.M.}-(\mbox{intero(YY)}\times 12)$$
 
+
+
+<button class="collapsible" id="es020">Esempio 20: Modelli parametrici (3)</button>
+<div class="content" id="es020data" markdown="1">
+
+	```sas
+	codice
+	```
+
+<embed src="/assets/images/Statistics/EHA_015.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
+
+</div>
 
 
 
