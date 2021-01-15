@@ -604,8 +604,20 @@ Posso farlo sul tasso invece che sul semplice numero, ad esempio il tasso di mig
 Un altro caso: tasso di mortalità prematura. Si possono ipotizzare distribuzioni differenti modellando la mistura. Oppure con un modello gerarchico, si tiene fissa la mortalità adulti e variabile la mortalità prematura (come variabile effetto casuale).
 
 
+### Stima dei parametri
+I parametri con OLS sono Best Linear Unbiased Estimator (BLUE) se vale l'omoschedasticità.
+
+Con un modello gerarchico, se si vuole fare una stima basata sulla MV, l'inferenza sarebbe legata a meno due volte la-log verosimiglianza. Il problema è che bisogna conoscere la matrice delle varianze degli effetti casuali, che è sconosciuta e si otterrebbero stime distorte. 
+
+#### Restricted (o Residual) Maximum Likelihood
+La REML, si basa su una combinazione lineare dei dati affinché la distribuzione non dipenda da $$\beta$$, si stimano i parametri che definiscono la matrice di varianze e covarianze con il metodo MV, e dopo si procede ad una stima anche dei parametri $$\beta$$.
+
+La stima non distorta della varianza di una v.a. $$Y\sim\mathcal{N}(\mu,\sigma^2)$$ è una stima REML. Si ha una funzione di verosimiglianza, con $$\mu$$ e $$\sigma^2$$ e stima di $$\sigma^2$$ dipende dalla stima di $$\mu$$, quindi nella stima MV non tengo conto che perdo un grado di libertà per stimare $$\mu$$ e poi costruire all'interno la stima di $$\sigma^2$$. 
 
 
+
+
+ 
 
 
 
