@@ -522,11 +522,11 @@ $$\beta_{0j}\sim\mathcal{N}(\gamma_{00},\sigma^2_{\beta})$$ e
 $$\gamma_{00}$$ intercetta globale, la media delle intercette  
 
 Il modello tenderà ad un modello pooling se
-- $$\sigma^2_{\beta})\rightarrow 0$$, in cui l'intercetta casuale a varianza 0 significa che ho una sola intercetta e quindi $$\gamma_{00}=\beta_0$$  
+- $$\sigma^2_{\beta}\rightarrow 0$$, in cui l'intercetta casuale a varianza 0 significa che ho una sola intercetta e quindi $$\gamma_{00}=\beta_0$$  
 - La numerosità campionaria è ridotta (seguo più il modello)
 
 Il modello tenderà ad un modello no-pooling se
-- $$\sigma^2_{\beta})\rightarrow \infty$$ modello no-pooling, in quanto una normale con varianza infinita è piatta e in ottica bayesiana è come se fosse una priori non informativa quindi si utilizzano tutti i gruppi
+- $$\sigma^2_{\beta}\rightarrow \infty$$ modello no-pooling, in quanto una normale con varianza infinita è piatta e in ottica bayesiana è come se fosse una priori non informativa quindi si utilizzano tutti i gruppi
 - La numerosità campionaria è elevata (seguo più i dati)
 
 
