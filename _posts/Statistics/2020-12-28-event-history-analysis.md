@@ -607,13 +607,22 @@ Un altro caso: tasso di mortalità prematura. Si possono ipotizzare distribuzion
 ### Stima dei parametri
 I parametri con OLS sono Best Linear Unbiased Estimator (BLUE) se vale l'omoschedasticità.
 
-Con un modello gerarchico, se si vuole fare una stima basata sulla MV, l'inferenza sarebbe legata a meno due volte la-log verosimiglianza. Il problema è che bisogna conoscere la matrice delle varianze degli effetti casuali, che è sconosciuta e si otterrebbero stime distorte. 
+Con un modello gerarchico, se si vuole fare una stima basata sulla MV, l'inferenza sarebbe legata a meno due volte la log-verosimiglianza. Il problema è che bisogna conoscere la matrice delle varianze degli effetti casuali, che è sconosciuta e si otterrebbero stime distorte. 
 
 #### Restricted (o Residual) Maximum Likelihood
 La REML, si basa su una combinazione lineare dei dati affinché la distribuzione non dipenda da $$\beta$$, si stimano i parametri che definiscono la matrice di varianze e covarianze con il metodo MV, e dopo si procede ad una stima anche dei parametri $$\beta$$.
 
 La stima non distorta della varianza di una v.a. $$Y\sim\mathcal{N}(\mu,\sigma^2)$$ è una stima REML. Si ha una funzione di verosimiglianza, con $$\mu$$ e $$\sigma^2$$ e stima di $$\sigma^2$$ dipende dalla stima di $$\mu$$, quindi nella stima MV non tengo conto che perdo un grado di libertà per stimare $$\mu$$ e poi costruire all'interno la stima di $$\sigma^2$$. 
 
+##### Proprietà
+- La stima REML è non distorta, diversamente dalla MV
+- La stima REML è analoga al metodo dei Minimi Quadrati Pesati.
+- La verosimiglianza ristretta, con stima REML non gode delle stesse proprietà della stima MV ordinaria, quindi il test rapporto di verosimiglianze non è possibile
+
+##### Come scegliere tra REML e MV
+Dipende da $$n$$ e $$p$$ se  
+- $$n$$ grande e $$p$$ piccolo, la distorsione tra le varianze è piccola
+- $$n$$ è piccolo e $$p$$ grande, ci può essere differenza tra le due stime
 
 
 
@@ -2971,8 +2980,10 @@ $$\mbox{C.M.}=\mbox{YY}\times 12+\mbox{MM}$$
 $$\mbox{YY}=(\mbox{C.M.}-1)/12+1900$$  
 $$\mbox{MM}=\mbox{C.M.}-(\mbox{intero(YY)}\times 12)$$
 
-
-
+### Risorse
+- [Andrew Gelman](http://www.stat.columbia.edu/~gelman/)
+- [Codice R su RADON per modelli multilevel](http://www.stat.columbia.edu/~gelman/arm/examples/radon/)
+- [Mixed effects modeling](https://towardsdatascience.com/when-mixed-effects-hierarchical-models-fail-pooling-and-uncertainty-77e667823ae8)
 
 
 
