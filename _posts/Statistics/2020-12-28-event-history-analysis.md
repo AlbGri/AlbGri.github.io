@@ -465,7 +465,7 @@ Ricavata la funzione di verosimiglianza (costruita come contributi individuali d
 Quindi per stimare il modello a odds proporzionali:  
 1. Si riorganizzano i dati nel formato 'person-period' (se era in formato 'person data'), con un record per ogni intervallo di tempo
 2. Si creano le variabili tempo-dipendenti
-3. Si stima il modello con una regressione logistica
+3. Si stima il modello con una regressione logistica, i cui coefficienti sono i medesimi del modello a odds proporzionali
 
 
 
