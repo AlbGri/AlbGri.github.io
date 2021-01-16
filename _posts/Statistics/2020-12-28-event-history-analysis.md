@@ -446,6 +446,16 @@ Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel co
 - Inferenza analoga ai modelli univariati
 
 
+
+### Modelli Frailty a tempi Discreti
+Problame dei ties. Nel modello di Cox ad esempio si creano problemi.  
+Si può stimare un modello a tempi discreti da un modello logistico a intercetta casuale.  
+Si hanno $$k$$ intervalli e  
+$$P(t_{i-1}<T\le t_i)=F(t_i)-F(t_{i-1})=S(t_{i-1})-S(t_i)=f(t_i)$$  
+$$h(t_i)=P(t_{i-1}<T\le t_i\vert T\ge t_{i-1})$$
+
+aaaaaaaaaaaaaaaaaaooooaaaaaaaaaaaaaaaaaaooooaaaaaaaaaaaaaaaaaaooooaaaaaaaaaaaaaaaaaaooooaaaaaaaaaaaaaaaaaaooooaaaaaaaaaaaaaaaaaaooooaaaaaaaaaaaaaaaaaaooooaaaaaaaaaaaaaaaaaaooooaaaaaaaaaaaaaaaaaaooooaaaaaaaaaaaaaaaaaaoooo
+
 ## Modelli Multilivello o Gerarchici
 
 #### Modelli Multilivello
@@ -631,9 +641,6 @@ Dipende da $$n$$ e $$p$$ se
  
 
 
-
-
-### Modelli Frailty a tempi Discreti
 
 
 
