@@ -471,7 +471,9 @@ Quindi per stimare il modello a odds proporzionali:
 3. Si stima il modello con una regressione logistica, i cui coefficienti sono i medesimi del modello a odds proporzionali
 
 #### Frailty univariato
-Si inserisce un'intercetta casuale al corrispondente modello logistico. Per stimare un modello frailty univariato si fa ricorso ad un modello logistico gerarchico: l'effetto casuale è condiviso dagli intervalli di tempo dello stesso individuo. Log della frailty fissa nel tempo ma è diversa per ogni individuo.
+Si inserisce un'intercetta casuale al corrispondente modello logistico. Per stimare un modello frailty univariato si fa ricorso ad un modello logistico gerarchico (ad intercetta casuale): l'effetto casuale è condiviso dagli intervalli di tempo dello stesso individuo. Log della frailty fissa nel tempo ma è diversa per ogni individuo.
+
+Se ci fosse un raggruppamento, si utilizza un modello logistico gerarchico con unità di terzo livello, sarebbe un modello Frailty Shared, perché la frailty fa riferimento al gruppo a cui appartiene l'individuo.
 
 
 
