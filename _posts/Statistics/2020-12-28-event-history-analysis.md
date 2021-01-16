@@ -596,7 +596,7 @@ Si prende il tasso di successo per ogni categoria e lo si ripondera rispetto la 
 Modello a gerarchie imperfette: alcune sono gerarchiche altre sono dello stesso livello.
 
 #### GLMM Logit
-$$\mbox{Logit}\big\{Pr(y_{ij(k,l)}=1)\big\}=...$$  
+$$\mbox{Logit}\big\{Pr(y_{ij(k,l)}=1)\big\}$$  
 
 #### GLMM Poisson
 Posso farlo sul tasso invece che sul semplice numero, ad esempio il tasso di migratorietà, con intercetta casuale sulle nazioni.
@@ -609,15 +609,17 @@ I parametri con OLS sono Best Linear Unbiased Estimator (BLUE) se vale l'omosche
 
 Con un modello gerarchico, se si vuole fare una stima basata sulla MV, l'inferenza sarebbe legata a meno due volte la log-verosimiglianza. Il problema è che bisogna conoscere la matrice delle varianze degli effetti casuali, che è sconosciuta e si otterrebbero stime distorte. 
 
+Il modello logistico lo sistima con la verosimiglianza marginale.
+
 #### Restricted (o Residual) Maximum Likelihood
 La REML, si basa su una combinazione lineare dei dati affinché la distribuzione non dipenda da $$\beta$$, si stimano i parametri che definiscono la matrice di varianze e covarianze con il metodo MV, e dopo si procede ad una stima anche dei parametri $$\beta$$.
 
 La stima non distorta della varianza di una v.a. $$Y\sim\mathcal{N}(\mu,\sigma^2)$$ è una stima REML. Si ha una funzione di verosimiglianza, con $$\mu$$ e $$\sigma^2$$ e stima di $$\sigma^2$$ dipende dalla stima di $$\mu$$, quindi nella stima MV non tengo conto che perdo un grado di libertà per stimare $$\mu$$ e poi costruire all'interno la stima di $$\sigma^2$$. 
 
 ##### Proprietà
-- La stima REML è non distorta, diversamente dalla MV
-- La stima REML è analoga al metodo dei Minimi Quadrati Pesati.
-- La verosimiglianza ristretta, con stima REML non gode delle stesse proprietà della stima MV ordinaria, quindi il test rapporto di verosimiglianze non è possibile
+- Le stime REML restituiscono stime della varianza non distorta, diversamente dalla MV
+- La stime REML sono analoghe al metodo dei Minimi Quadrati Pesati.
+- La verosimiglianza 'ristretta', ottenuta dalla REML non gode delle stesse proprietà della stima MV ordinaria, e il test rapporto di verosimiglianze (TRV) non è possibile
 
 ##### Come scegliere tra REML e MV
 Dipende da $$n$$ e $$p$$ se  
