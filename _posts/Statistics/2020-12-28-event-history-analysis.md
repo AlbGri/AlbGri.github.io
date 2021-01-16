@@ -450,12 +450,12 @@ Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel co
 ### Modelli Frailty a tempi Discreti
 Problame dei ties. Nel modello di Cox ad esempio si creano problemi.  
 Si può stimare un modello a tempi discreti da un modello logistico a intercetta casuale.  
-Si hanno $$k$$ intervalli e  
-$$P(t_{i-1}<T\le t_i)=F(t_i)-F(t_{i-1})=S(t_{i-1})-S(t_i)=f(t_i)$$  
+Si hanno $$J$$ intervalli e la probabilità di subire l'evento all'intervallo $$j-$$esimo è  
+$$P(t_{i-1}<T\le t_i)=F(t_i)-F(t_{i-1})=S(t_{i-1})-S(t_i)=f(t_i)=S(t_{i-1})\cdot h(t_i)$$  
 $$h(t_i)=P(t_{i-1}<T\le t_i\vert T\ge t_{i-1})=1-\frac{S(t_1)}{S(t_{i-1})}$$  
 la funzione di rischio nel discreto è una probabilità (condizionata) e varia tra 0 e 1.  
 $$S(t_{j})=\Bigg[1-\bigg(S(t_{0})-\frac{S(t_{1})}{S(t_{0})}\bigg)\Bigg]\cdot \Bigg[1-\bigg(\frac{S(t_{1})-S(t_{2})}{S(t_{1})}\bigg)\Bigg]\cdots \Bigg[1-\bigg(\frac{S(t_{j-1})-S(t_{j})}{S(t_{j-1})}\bigg)\Bigg]=\prod_{i=1}^j\big(1-h(t_i)\big)$$  
-
+La funzione di densità è la probabilità di subire l'evento all'intervallo $$j-$$esimo.  
 
 
 
