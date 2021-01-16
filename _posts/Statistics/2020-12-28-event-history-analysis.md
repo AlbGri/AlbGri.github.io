@@ -458,6 +458,11 @@ $$S(t_{j})=\Bigg[1-\bigg(S(t_{0})-\frac{S(t_{1})}{S(t_{0})}\bigg)\Bigg]\cdot \Bi
 La funzione di densità è la probabilità di subire l'evento all'intervallo $$j-$$esimo.  
 Si riesce a formulare tutto in funzione del rischio.
 
+#### Modello a odds proporzionali
+$$\frac{h(t_i;X)}{1-h(t_i;X)}=\frac{h(t_i)}{1-h(t_i)}\exp{(\beta^' X)}$$
+La funzione di rischio ora è una probabilità, quindi l'odds è una quantità sensata, non lo era in ambito continuo (poteva essere anche negativo).
+
+
 
 
 ## Modelli Multilivello o Gerarchici
