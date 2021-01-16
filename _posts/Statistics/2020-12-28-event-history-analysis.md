@@ -460,7 +460,8 @@ Si riesce a formulare tutto in funzione del rischio.
 
 #### Modello a odds proporzionali
 $$\frac{h(t_i;X)}{1-h(t_i;X)}=\frac{h(t_i)}{1-h(t_i)}\exp{(\beta^' X)}$$
-La funzione di rischio ora è una probabilità, quindi l'odds è una quantità sensata, non lo era in ambito continuo (poteva essere anche negativo).
+La funzione di rischio ora è una probabilità, quindi l'odds è una quantità sensata, non lo era in ambito continuo (poteva essere anche negativo).  
+Facendone il logaritmo, 
 
 
 
@@ -2602,6 +2603,7 @@ Dipende da $$n$$ e $$p$$ se
     (Esercizio 5) Modello Gompertz senza frailty
     *******************************************************/
 
+    * ods pdf file='/home/EHA_016.pdf';
     * import STATA file;
     proc import datafile="/home/dati/guatemala.dta" 
 	    out=guatemala dbms = dta replace;
@@ -2675,36 +2677,42 @@ Dipende da $$n$$ e $$p$$ se
 	    bp1523*p1523+bp2435*p2435+bp36up*p36up+ bi0111223*i011a1223+
 	    bi01124p*i011a24p+bi122324p*i1223a24p+e;
     alpha=exp(-linp);
-    G_t=exp((alpha/gamma)*(1 - exp(gamma*time)));
+    G_t=exp((alpha/gamma)*(1-exp(gamma*time)));
     g=alpha*exp(gamma*time)*G_t;
-    ll=(death=1)*log(g) +    /* ll for observed failures */
-	    (death=0)*log(G_t);    /* ll for censored failures */
+    ll=(death=1)*log(g) +    	/* ll for observed failures */
+	    (death=0)*log(G_t);		/* ll for censored failures */
     model ll ~ general(ll);
     RANDOM e~NORMAL(0,s2) SUBJECT=momid;
     PARMS b0=-0.76 b15=2.25 b611=3.48 b1223=3.74 b24up=7.98 bmage=0 bmage2=0 bborde=0 bpdead=0 bp0014=0 
 	    bp1523=0.3362 bp2435=0.34 bp36up=0.39 bi0111223=-0.96 bi01124p=-1.587 bi122324p=-0.0657 
 	    log_gamma=-10 s2=0.21;
     run;
+    /*  WARNING: The final Hessian matrix is full rank but has at least 
+    one negative eigenvalue. Second-order optimality condition violated.*/
 
     ****************************** (Esercizio 5) ******************************;
     title "NLMIXED: mod. Gompertz senza frailty";
     proc nlmixed data=guatemala ;
     gamma=exp(log_gamma);
-    linp=b0∗a0+b15∗a1to5+b611∗a6to11+b1223∗a12to23+
-	    bmage∗mage+bmage2∗mage2+bborde∗borde+bpdead∗pdead+bp0014∗p0014+
-	    bp1523∗p1523+bp2435∗p2435+bp36up∗p36up+bi0111223∗i011a1223+
-	    bi01124p∗i011a24p+bi122324p∗i1223a24p;
-    alpha=exp(−linp);
-    G_t=exp((alpha/gamma)*(1−exp(gamma*time))) ;
+    linp=b0*a0+b15*a1to5+b611*a6to11+b1223*a12to23+
+	    b24up*a24up+ /* nel codice originale non era presente */
+	    bmage*mage+bmage2*mage2+bborde*borde+bpdead*pdead+bp0014*p0014+
+	    bp1523*p1523+bp2435*p2435+bp36up*p36up+bi0111223*i011a1223+
+	    bi01124p*i011a24p+bi122324p*i1223a24p;
+    alpha=exp(-linp);
+    G_t=exp((alpha/gamma)*(1-exp(gamma*time)));
     g=alpha*exp(gamma*time)*G_t ;
-    ll=(death =1)*log(g) +  /* ll for observed failures */
+    ll=(death =1)*log(g) +  	/* ll for observed failures */
 	    (death=0)*log(G_t);     /* ll for censored failures */
     model ll~general(ll);
-    PARMS b0=−0.76 b15 = 2.25 b611=3.48 b1223=3.74 b24up=7.98 bmage=0 bmage2=0 bborde=0 bpdead=0 bp0014=0 
-	    bp1523=0.3362 bp2435=0.34 bp36up=0.39 bi0111223=−0.96 bi01124p=−1.587 bi122324p=−0.0657 
-	    log_gamma=−10;
+    PARMS b0=-0.76 b15 = 2.25 b611=3.48 b1223=3.74 b24up=7.98 bmage=0 bmage2=0 bborde=0 bpdead=0 bp0014=0 
+	    bp1523=0.3362 bp2435=0.34 bp36up=0.39 bi0111223=-0.96 bi01124p=-1.587 bi122324p=-0.0657 
+	    log_gamma=-10;
     estimate "gamma" exp(log_gamma);
     run;
+    /*  WARNING: The final Hessian matrix is full rank but has at least 
+    one negative eigenvalue. Second-order optimality condition violated.*/
+    * ods pdf close;
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_016.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
