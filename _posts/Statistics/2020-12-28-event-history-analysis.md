@@ -459,6 +459,7 @@ La funzione di densità è la probabilità di subire l'evento all'intervallo $$j
 Si riesce a formulare tutto in funzione del rischio.
 
 #### Modello a odds proporzionali
+
 $$\log{\bigg(\frac{h(t_i;X)}{1-h(t_i;X)}\bigg)}=\log{\bigg(\frac{h(t_i)}{1-h(t_i)}\bigg)}+\beta' X$$
 
 La funzione di rischio ora è una probabilità, quindi l'odds è una quantità sensata, non lo era in ambito continuo (poteva essere anche negativo).  
@@ -641,6 +642,12 @@ Posso farlo sul tasso invece che sul semplice numero, ad esempio il tasso di mig
 
 Un altro caso: tasso di mortalità prematura. Si possono ipotizzare distribuzioni differenti modellando la mistura. Oppure con un modello gerarchico, si tiene fissa la mortalità adulti e variabile la mortalità prematura (come variabile effetto casuale).
 
+#### GLMM Multinomiale
+- Modello a destinazioni multiple
+- Rischi competitivi (non sono indipendenti tra loro gli eventi)
+- Estensione del Logit
+- Problema dell'[indipendenza da alternative irrilevanti](https://en.wikipedia.org/wiki/Independence_of_irrelevant_alternatives#In_econometrics)
+
 
 ### Stima dei parametri
 I parametri con OLS sono Best Linear Unbiased Estimator (BLUE) se vale l'omoschedasticità.
@@ -683,21 +690,6 @@ Dipende da $$n$$ e $$p$$ se
 
 
 
-
-
-<!---
-
-- Modelli gerarchici
-- Coeff di correlaz intraclasse
-- Modello ad intercetta casuale
-- Pooling no pooling partial pooling
-- Stima bayesiana empirica
-- Modelli ad effetti casuali
-- diagnostica
-- stima reml
-- glmm (generalized linear mixed models)
-
---->
 
 
 <!---
