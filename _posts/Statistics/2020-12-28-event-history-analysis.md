@@ -459,7 +459,7 @@ La funzione di densità è la probabilità di subire l'evento all'intervallo $$j
 Si riesce a formulare tutto in funzione del rischio.
 
 #### Modello a odds proporzionali
-$$\frac{h(t_i;X)}{1-h(t_i;X)}=\frac{h(t_i)}{1-h(t_i)}\exp{(\beta^' X)}$$
+$$\log{\bigg(\frac{h(t_i;X)}{1-h(t_i;X)}\bigg)}=\log{\bigg(\frac{h(t_i)}{1-h(t_i)}\bigg)}+\beta' X$$
 La funzione di rischio ora è una probabilità, quindi l'odds è una quantità sensata, non lo era in ambito continuo (poteva essere anche negativo).  
 Ricavata la funzione di verosimiglianza (costruita come contributi individuali divisi per censurati e non), si dimostra che è analoga alla verosimiglianza di un modello logistico (di una variabile $$y_{ik}$$ relativa non solo all'individuo ma anche all'intervallo).  
 Quindi per stimare il modello a odds proporzionali:  
@@ -467,6 +467,7 @@ Quindi per stimare il modello a odds proporzionali:
 2. Si creano le variabili tempo-dipendenti
 3. Si stima il modello con una regressione logistica, i cui coefficienti sono i medesimi del modello a odds proporzionali
 
+$$\log{\bigg(\frac{P(y_i=1)}{1-P(y_i=1)}\bigg)}=\beta_0+ \beta' X$$
 
 
 
