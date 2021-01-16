@@ -605,8 +605,10 @@ La verosimiglianza penalizzata, può essere vista come una variante frequentista
 
 ### Modelli lineari generalizzati gerarchici
 Generalized Linear Mixed Models (GLMM), analogia LM$$\rightarrow$$GLM.  
-Per la previsione del tasso di successo, si effettua una media pesata di ogni gruppo  
-$$\theta_j=\frac{\sum_{l\in j} N_l \theta_l}{\sum_{l\in j} N_j}$$  
+Per la previsione del tasso di successo, si effettua una media pesata di ogni gruppo
+
+$$\theta_j=\frac{\sum_{l\in j} N_l \theta_l}{\sum_{l\in j} N_j}$$
+
 Questo però nel caso di più variabili discrete a diversi livelli, il campione necessario deve essere enorme per soddisfare tutte le combinazioni. Per evitare di riempire tutte le informazioni, si possono usare i modelli gerarchici per fare 'borrowing' dell'informazione laddove è presente (rischio: shrinkage to mean).
 
 Modello a gerarchie imperfette: alcune sono gerarchiche altre sono dello stesso livello.
@@ -2909,21 +2911,151 @@ Dipende da $$n$$ e $$p$$ se
 </div>
 <embed src="/assets/images/Statistics/EHA_017.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
-<!---
-
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es018">Esempio 18: Modelli parametrici (3)</button>
+<button class="collapsible" id="es018">Esempio 18: Modelli gerarchici (2)</button>
 <div class="content" id="es018data" markdown="1">
 
 	```sas
-	codice
+    /*******************************************************
+    Obiettivo:
+    Analisi dati sondaggi politici (USA '88) e previsioni per uno stato
+    Y: 1 'rep', 0 'dem'
+    black: colore pelle
+    female: genere
+    age: 4 classi di età
+    edu: 4 categorie istruzione
+    state: stato
+    region_full: 5 regioni (gruppi di stati)
+    y_prev_full: proporzione di voto per 'rep' della precedente 
+	    elezione (variabile relativa all'unità di secondo livello)
+    (Esercizio 1) Modello logistico con intercetta fissa
+    (Esercizio 2) Modello logistico con intercetta casuale
+    (Esercizio 3) Modello logistico con intercette casuale
+    (Esercizio 4) Previsione su df census
+    *******************************************************/
+
+    * import STATA file;
+    proc import datafile="/home/u52136602/sasuser.v94/dati/USpoll.dta" 
+	    out=USpoll dbms = dta replace;
+    run;
+
+    * Aggiungo variabile interazione colore e genere;
+    data USPollcomplete;
+    set USpoll;
+    blackfem=black*female;
+    run;
+
+    /* Visualizzo output data
+    2193 osservazioni */
+    proc freq data=USPollcomplete;
+    tables state;
+    run;
+
+    ****************************** (Esercizio 1) ******************************;
+    * logistico a intercetta fissa per ogni stato;
+    proc logistic  data=USPollcomplete;
+    class state;
+    model y(event='1')=black female state; * conviene specificare l'evento target;
+    title "modello logistico semplice";
+    run;
+    /* Gli standard error di molti stati hanno valori enormi rispetto la stima
+    questo accade perché molti stati hanno poche osservazioni. 
+    è un modello no-pooling, e non è stimabile, l'unica strade è fare
+    'borrowing' information con il gerarchico */
+
+    ****************************** (Esercizio 2) ******************************;
+    * logistico a intercetta casuale per ogni stato;
+    proc glimmix  data=USPollcomplete;
+    class state;
+    model y(event='1')=black female /dist=binary solution;
+    random int /subject=state solution;
+    title "modello logistico con intercetta casuale per stato";
+    run;
+    /* Covariance Parameter Estimates: intercetta 0.17 che con una varianza residua
+    dell'ordine dell'1 è elevato.
+    Le stime bayesiane empiriche (le soluzioni degli effetti casuali), gli SD 
+    sono più accettabili, ma ci interessa poco la significatività in quanto sono
+    previsioni. Se ci sono poche osservazioni tende alla stima no-pooling (intercetta fissa). */
+
+    ****************************** (Esercizio 3) ******************************;
+    /* aggiunta dell'effetto della votazione precedente (riferito allo stato) e le
+    intercette casuali di età, istruzione, regione (unità di III livello). 
+    Non si tratta di effetti casuali (pendenze) ma di intercette casuali, che ad esempio
+    avrebbe significato che l'effetto dell'età cambiava di stato in stato, che è diverso
+    da avere un'intercetta specifica per età */
+    proc glimmix  data=USPollcomplete;
+    class state region_full age edu;
+    model y(event='1')=black female blackfem v_prev_full/dist=binary solution;
+    random int /subject=state solution;
+    random int /subject=region_full solution;
+    random int /subject=age solution; 
+    /* 4 categorie di age = 4 intercette casuali, se avessimo 
+    avuto un effetto casuale sulla age avremmo avuto 50 effetti casuale,
+    cioè una pendenza diversa per ogni stato */
+    random int /subject=edu solution;
+    title "modello (non nidificato) a più intercette casuali";
+    run;
+
+    ****************************** (Esercizio 3) ******************************;
+    /* Importo il dataset del census, contenente la numerosità degli
+    individui con le caratteristiche usate nel modello (3136 celle delle combinazioni).
+    Utilizzo questo df per la previsione. */
+    proc import datafile="/home/u52136602/sasuser.v94/dati/censusnew.dta" 
+	    out=census dbms = dta replace;
+    run;
+
+    /* Per ogni stato, in questo caso state 1, ho le varie combinazioni d'età e di istruzione
+    e prendo tutti gli effetti casuali delle due variabili. Dopo di che costruisco il predittore
+    lineare definito da una parte fissa e una casuale, la parte fissa sono gli effetti fissi,
+    prendo l'intercetta, colore per coeff. colore, genere per coeff. genere, voto precedente
+    per l'effetto del voto precedente, poi ho la parte casuale, dove l'effetto dello stato 
+    e della regione, più l'effetto dell'età e istruzione.
+    Calcolo il valore predetto della probabilità di voto per i 'rep'
+    theta_l=P(y_l=1)=exp(preditore lineare)/(1+exp(predittore lineare)).
+    Quindi, il nostro predittore lineare ha una parte fissa (fixed) e una casuale (random). 
+    Il valore predetto della percentuale di voti per i repubblicani 
+    si ottiene facendo l'inverso della funzione logit. */
+    data census88;
+    set census;
+    if state = 1;
+    blackfem = black*female;
+    ranage = 0.08933; 				/* Sol. Random Eff.: Intercept: age 1 */
+    if age=2 then ranage=-0.08420;	/* Sol. Random Eff.: Intercept: age 2 */
+    if age=3 then ranage=0.04275;	/* Sol. Random Eff.: Intercept: age 3 */
+    if age=4 then ranage=-0.04787;	/* Sol. Random Eff.: Intercept: age 4 */
+    ranedu=-0.1547;					/* Sol. Random Eff.: Intercept: edu 1 */
+    if edu=2 then ranedu=-0.02730;	/* Sol. Random Eff.: Intercept: edu 2 */
+    if edu=3 then ranedu=0.1691;	/* Sol. Random Eff.: Intercept: edu 3 */
+    if edu=4 then ranedu=0.01290;	/* Sol. Random Eff.: Intercept: edu 4 */
+    * fixed: parte fissa del predittore lineare;
+    fixed = -2.1733-		/* Sol. for Fixed Eff.: Intercept */
+	    black*1.6407-		/* Sol. for Fixed Eff.: black */
+	    female*0.08726-		/* Sol. for Fixed Eff.: female */
+	    blackfem*0.1696+	/* Sol. for Fixed Eff.: blackfem */
+	    prev_v*4.6759;		/* Sol. for Fixed Eff.: v_prev_full */
+    * random: parte casuale del predittore lineare;
+    random = 0.1626+ 		/* Sol. Random Eff.: Intercept: state 1 */
+	    0.5006+				/* Sol. Random Eff.: Intercept: region_full 3 */
+	    ranage + ranedu;
+    * pred: previsione di voti per 'rep' per ognuna delle categorie;
+    pred = exp(fixed+random)/(1+exp(fixed+random));
+    npred = pred*N;
+    run;
+
+    /* La somma di npred è il numeratore della somma pesata (N_l*pred_l), 
+    N il denominatore (N_l). Il loro rapporto è la % di voti per 'rep' prevista
+    per lo stato 1 */
+    proc print data=census88;
+    sum npred N;
+    run;
+    /* Effettuo la divisione (a mano) i totali
+    1877363/3077948=0.6099, quindi 61% prevista 'rep' per stato 1 */
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_018.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
---->
 
 <!---
 
