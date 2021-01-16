@@ -605,7 +605,9 @@ La verosimiglianza penalizzata, può essere vista come una variante frequentista
 
 ### Modelli lineari generalizzati gerarchici
 Generalized Linear Mixed Models (GLMM), analogia LM$$\rightarrow$$GLM.  
-Si prende il tasso di successo per ogni categoria e lo si ripondera rispetto la popolazione. Questo però nel caso di più variabili discrete a diversi livelli, il campione necessario deve essere enorme per soddisfare tutte le combinazioni. Per evitare di riempire tutte le informazioni, si possono usare i modelli gerarchici per fare 'borrowing' dell'informazione laddove è presente (rischio: shrinkage to mean).
+Per la previsione del tasso di successo, si effettua una media pesata di ogni gruppo  
+$$\theta_j=\frac{\sum_{l\in j} N_l \theta_l}{\sum_{l\in j} N_j}$$  
+Questo però nel caso di più variabili discrete a diversi livelli, il campione necessario deve essere enorme per soddisfare tutte le combinazioni. Per evitare di riempire tutte le informazioni, si possono usare i modelli gerarchici per fare 'borrowing' dell'informazione laddove è presente (rischio: shrinkage to mean).
 
 Modello a gerarchie imperfette: alcune sono gerarchiche altre sono dello stesso livello.
 
@@ -2875,7 +2877,7 @@ Dipende da $$n$$ e $$p$$ se
 
     ****************************** (Esercizio 6) ******************************;
     * modello intercetta e pendenza casuale;
-    title "Modello 5: Si include un effetto casuale per la variabile ses";
+    title "Modello 5: Si include un effetto casuale (pendenza) per la variabile ses";
     title2 "ses e' lo status socio-economico";
 
     proc mixed data = in.hsb12 noclprint covtest noitprint plots(maxpoints=10000);
