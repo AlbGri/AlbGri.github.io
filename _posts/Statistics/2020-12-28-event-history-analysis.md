@@ -456,7 +456,7 @@ $$h(t_i)=P(t_{i-1}<T\le t_i\vert T\ge t_{i-1})=1-\frac{S(t_1)}{S(t_{i-1})}$$
 la funzione di rischio nel discreto è una probabilità (condizionata) e varia tra 0 e 1.  
 $$S(t_{j})=\Bigg[1-\bigg(S(t_{0})-\frac{S(t_{1})}{S(t_{0})}\bigg)\Bigg]\cdot \Bigg[1-\bigg(\frac{S(t_{1})-S(t_{2})}{S(t_{1})}\bigg)\Bigg]\cdots \Bigg[1-\bigg(\frac{S(t_{j-1})-S(t_{j})}{S(t_{j-1})}\bigg)\Bigg]=\prod_{i=1}^j\big(1-h(t_i)\big)$$  
 La funzione di densità è la probabilità di subire l'evento all'intervallo $$j-$$esimo.  
-
+Si riesce a formulare tutto in funzione del rischio.
 
 
 
@@ -2759,6 +2759,7 @@ Dipende da $$n$$ e $$p$$ se
     ****************************** (Esercizio 2) ******************************;
     * modello GERARCHICO senza covariate;
     title "Modello 1: Modello a intercetta casuale";
+    * nella proc mixed posso aggiungere method=ml per fare MV invece di REML;
     *ods graphics on;
     proc mixed data = in.hsb12 covtest noclprint plots(maxpoints=10000);
     class school; * la variabile che definisce i gruppi deve essere class;
@@ -2898,7 +2899,10 @@ Dipende da $$n$$ e $$p$$ se
     Con SOLUTION ottengo le stime bayesiane empiriche della intercetta e pendenza
     casuali. Per ogni scuola ho la deviazione per intercetta e pendenza:
     anche qui le stime bayesiane le deviazioni è molto leggera nella 
-    maggior parte dei casi */
+    maggior parte dei casi 
+    
+    Scegliere metodo MV o REML se porta differenza può impattare le stime bayesiane
+    empiriche in quanto è una media pesata delle varianze stimate o con MV o REML */
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_017.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
