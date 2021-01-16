@@ -2937,7 +2937,7 @@ Dipende da $$n$$ e $$p$$ se
     *******************************************************/
 
     * import STATA file;
-    proc import datafile="/home/u52136602/sasuser.v94/dati/USpoll.dta" 
+    proc import datafile="/home/USpoll.dta" 
 	    out=USpoll dbms = dta replace;
     run;
 
@@ -3002,7 +3002,7 @@ Dipende da $$n$$ e $$p$$ se
     /* Importo il dataset del census, contenente la numerosità degli
     individui con le caratteristiche usate nel modello (3136 celle delle combinazioni).
     Utilizzo questo df per la previsione. */
-    proc import datafile="/home/u52136602/sasuser.v94/dati/censusnew.dta" 
+    proc import datafile="/home/dati/censusnew.dta" 
 	    out=census dbms = dta replace;
     run;
 
