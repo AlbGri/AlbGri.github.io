@@ -3065,37 +3065,207 @@ Dipende da $$n$$ e $$p$$ se
 <embed src="/assets/images/Statistics/EHA_018.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
 
-<!---
-
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es019">Esempio 19: Modelli parametrici (3)</button>
+<button class="collapsible" id="es019">Esempio 19: Modelli a tempi discreti</button>
 <div class="content" id="es019data" markdown="1">
 
 	```sas
-	codice
+    /*******************************************************
+    Obiettivo:
+    Dati su indagine su 180 studenti (sia in formato 
+    person-data che person-period)
+    tsex: 'classe' in cui è avvenuto l'evento (da 7 a 12 grade)
+    pt: numero di transizioni genitoriali prima del 7 grade
+    ?: livello di comportamento antisociale dei genitori
+    period: periodo temporale di riferimento
+    Modelli a tempi discreti
+    (Esercizio 1) Modello ad odds proporzionali
+    (Esercizio 2) Modello ad odds proporzionali con tempo
+    (Esercizio 3) Modello ad odds proporzionali con tempo a tratti
+    (Esercizio 3) 
+    (Esercizio 5) Frailty a tempi discreti
+    *******************************************************/
+
+    * set path;
+    libname firts '/home/u52136602/sasuser.v94/dati';
+
+    * sort by pt (per il grafico della sopravvivenza);
+    proc sort data = firts.firstsex;
+    by pt;
+    run;
+
+    * costruisco la sopravvivenza;
+    * PL Product Limit (KM);
+    proc lifetest data = firts.firstsex;
+    time time*censor(1);
+    by pt;
+    ods output ProductLimitEstimates = tsex;
+    run;
+
+    * Esplorativa: grafico S e h, rispetto pt;
+    data fig11_1b;
+    set tsex (where = (survival~=.)); 
+    if time = 0 then time = 6;
+    lags = lag(survival); * valore precedente;
+    by pt;
+    if ~ first.pt then do;	* se non è la prima;
+    hazard = 1 - survival/lags; * funzione di rischio;
+    end;
+    keep survival hazard time pt;
+    run;
+
+    * Grafico;
+    goptions reset=all; /* device=gif570 */
+    symbol1 c=red i=stepJ width=2; * pt=0;
+    symbol2 c=blue i=stepJ width=2; * pt=1;
+    axis1 order = (0 to .5 by 0.1) label=(a=90 'Estimated hazard probability');
+    axis2 order = (0 to 1 by .5) label=(a=90 'Estimated survival probability');
+    axis3 order = (6 to 12 by 1) minor = none label=('Grade');
+    proc gplot data=fig11_1b;
+    format time 2.0 survival hazard 3.1;
+    plot hazard*time  = pt / vaxis=axis1 haxis=axis3;
+    plot survival*time = pt / vaxis=axis2 haxis=axis3 vref=0.5 lvref=21;
+    run;
+    quit;
+    /* Per la variabile pt ha senso un modello a rischi proporzionali?
+    Per la prima parte non sembra valere la proporzionalità (se non sono
+    proporzionali i rischi non saranno proporzionali gli odds) */
+
+    ****************************** (Esercizio 1) ******************************;
+    * Dati nel formato person-period per la stima dei modello;
+    * Modello 1: modello ad odds proporzionali;
+    proc logistic data = firts.firstsex_pp descending;
+    model event (event='1') = pt;
+    run;
+    /* Intercetta: -2.1493 = log(h_j/1-h_j) = beta_0
+    PT: 0.7131 = beta_1.
+    Il rischio è costante, è l'equivalenti a tempi discreti
+    di un modello esponenziale, ma il precedente grafico 
+    del rischio mostra che non è costante, non va bene.
+    Si può usare la variabile period, che definisce
+    il periodo temporale, all'interno del modello. Così il coeff.
+    della variabile period, si può interpretare come la variazione
+    temporale del rischio di base, il logit del rischio di base
+    varierà linearmente rispetto al period (crescente o decrescente) */
+
+    ****************************** (Esercizio 2) ******************************;
+    * Modello 2: modello ad odds proporzionali con tempo;
+    proc logistic data = firts.firstsex_pp descending;
+    model event = pt period;
+    run;
+    /* Usando un effetto lineare si immagina un effetto monotono,
+    a seconda del valore di beta1 però il rischio decresce 
+    all'inizio e crescere dopo, quindi non monotono. 
+    Invece di usare la variabile period, si usa la dummy per ogni 
+    periodo temporale. In questo modo la forma del rischio di base
+    sarà definita dai dati, in modo analogo all'esponenziale a tratti,
+    è a rischio costante per ogni tratto. Come cambia lo definiscono
+    i parametri d7 e d12 */
+
+    ****************************** (Esercizio 3) ******************************;
+    * Modello 3: modello ad odds proporzionali con dummy tempo;
+    proc logistic data = firts.firstsex_pp descending;
+    model event = pt d7-d12;
+    output out = pred xbeta=g; 
+    /* xbeta valore predetto dei beta, g è il pred. lineare, 
+    pred è il df di output, così da usarli per il grafico */
+    run;
+    /* I parametri prima decrescono e poi crescono, 
+    quindi il rischio dell'evento decresce nei primi
+    due periodi e poi cresce */
+
+    * Preparo i dati ordinandoli per il grafico;
+    proc sort data = pred;
+    by pt period;
+    run;
+
+    * Preparo il df per il grafico;
+    data figura;
+    set pred;
+    if pt = 0 then do;
+    lhz0 = g;					* logit del rischio;
+    odds0 = exp(g); 			* odds del rischio;
+    hazard0 = odds0/(1+odds0); 	* valore del rischio;
+    end;
+    if pt = 1 then do;
+    lhz1 = g;
+    odds1 = exp(g);
+    hazard1 = odds1/(1+odds1);
+    end;
+    rename period = time;
+    run;
+
+    * Parametri grafico;
+    axis1 order = (6 to 12 by 1) minor = none label=('Grade');
+    axis2 order = (-4 to 1 by 1) minor = none label=(a=90 'Logit(hazard)');
+    axis3 order = (0.0 to 0.8 by .2) minor = none label=('Odds');
+    axis4 order = (0.0 to 0.5 by .1) minor = none label=('Hazard');
+    symbol1 c=blue i=j value=none;
+    symbol2 c=red i=j l=4 value=none;
+    legend label=none value=(height=1 font=swiss 'Pt=0' 'Pt=1' ) 
+	    position=(top left inside) mode=share cborder=black;
+
+    * Grafico forma rischio, log rischio e odds;
+    proc gplot data=figura;
+    plot (lhz0 lhz1)*time
+	    / legend = legend1 overlay vaxis=axis2 haxis=axis1;
+    plot (odds0 odds1)*time
+	    / legend = legend1 overlay vaxis=axis3 haxis=axis1;
+    plot (hazard0 hazard1)*time
+	    / legend = legend1 overlay vaxis=axis4 haxis=axis1;
+    run;
+    quit;
+    /* Valori predetti del rischio rispetto il modello, 
+    si prevede una proporzionalità perfetta rispetto
+    al logit del rischio (per costruzione) e ora il rischio,
+    non si discosta molto dal grafico del rischio osservato */
+
+    ****************************** (Esercizio 4) ******************************;
+    /* Modello 4; con variabile relativa al comportamento antisociale dei genitori. 
+    Si rimuove l'intercetta per avere la stima diretta dei parametri di tutti i periodi */
+    proc logistic data=firts.firstsex_pp descending ;
+    model event = d7 d8 d9 d10 d11 d12 pt pas / noint ;
+    pt:  test pt;
+    pas: test pas;
+    run;
+
+    ****************************** (Esercizio 5) ******************************;
+    * Modello 5: Frailty a tempi discreti;
+    /* Intercetta casuale specifica per ogni studente (frailty univariata). 
+    Ci può essere sospetto di una forma di selezione? Forse sì perché l'andamento
+    del rischio ad U, può essere causato dalla selezione, dove la popolazione 
+    iniziale (a tempo 7) sperimenta più facilmente il rischio e rimane la popolazione meno 
+    a rischio (a tempo 8). Quindi motivo l'utilizzo della frailty */
+    proc glimmix  data=firts.firstsex_pp;
+    class ID;
+    model event(event='1')=d7 d8 d9 d10 d11 d12 pas pt / noint dist=binary solution;
+    random int /subject=ID solution;
+    output out = predm predicted=p;
+    /* Le stime non sembrano cambiare e il rischio mantiene quella forma. 
+    Solo alcuni individui hanno valori di intercetta casuali elevati, ma
+    globalmente non sembra avere aiutato la frailty, in quanto le stime delle 
+    intercette casuali hanno quasi tutti valori nulli, quindi scostamento nullo. */
+
+    /* Ultimo sperimento: divido in due il periodo e ristimo il modello */
+    * divido in due il period;
+    run;
+    data prova;
+    set firts.firstsex_pp;
+    if period>8 then per9=1;
+    else per9=0;
+    run;
+    * ristimo un modello con la nuova configurazione;
+    proc logistic data=prova descending ;
+    model event = d7 d8 d9 d10 d11 d12 pt pas pt*d7 pt*d8 /noint ;
+    output out = pred2 xbeta=g;
+    run;
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_019.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
---->
 
-<!---
-
-&nbsp;
-&nbsp;
-
-<button class="collapsible" id="es020">Esempio 20: Modelli parametrici (3)</button>
-<div class="content" id="es020data" markdown="1">
-
-	```sas
-	codice
-	```
-</div>
-<embed src="/assets/images/Statistics/EHA_020.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
-
---->
 
 
 
