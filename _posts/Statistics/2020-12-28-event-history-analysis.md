@@ -2487,8 +2487,6 @@ Dipende da $$n$$ e $$p$$ se
 </div>
 <embed src="/assets/images/Statistics/EHA_013.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
-<!---
-
 &nbsp;
 &nbsp;
 
@@ -2496,12 +2494,86 @@ Dipende da $$n$$ e $$p$$ se
 <div class="content" id="es014data" markdown="1">
 
 	```sas
-	codice
+    /*******************************************************
+    Obiettivo: 
+    (Esercizio 1) Interpretazione Weibull
+    (Esercizio 2) Esponenziale a tratti (preparazione df)
+    (Esercizio 3) 
+    *******************************************************/
+
+    ****************************** (Esercizio 1) ******************************;
+    /* Stimato il modello Weibull
+    exp (4,46) = 86,480  durata media episodi 
+
+    RISCHI DI LASCIARE LAVORO AL VARIARE PERMANENZA:
+    poichè: h(t) = 0,02155 * 0,8627 t (elevato a -0,1373)
+    si ricava:
+
+    a) rischio lasciare lavoro al primo mese occupazione:
+    h(t=1)= exp(-3,8356)* 0,8627=0,02155* 0,8627 = =0,01854 
+
+    b) rischio lasciare lavoro dopo 10 anni:  
+    h(t=120) = 0,02155* 0,8627* 120(elevato a 0,8627-1) = 0,0095
+
+    c) variazione rischio PASSANDO DAL 1mo AL 120mo GIORNO: 0,0095/0,01854
+
+    CALCOLO TEMPO MEDIANO:
+    poichè:  S(tMe)=exp(-0,02155 *tMe (elevato a 0,8627)=0,5 
+    TMe=56,9  mesi */
+
+    ****************************** (Esercizio 2) ******************************;
+    libname dir "/home/u52136602/sasuser.v94/dati";
+    data MIO;
+    set dir.PIPPO;
+    run;
+
+    /* Modello esponenziale a tratti.
+    Preparo i dati per avere 3 periodi di 24, 36, residuo su 60: fino a 24, 25-60, 61+.
+    1. costruisco la variabile n che mi dice IL NUMERO MASSIMO DI tratti di ciascun episodio
+    2. costruisco tre nuove variabili che servono per model:
+    tempo=durata del tratto - evento=tratto con censura o evento - j=num tratto */
+
+    data m;
+    set mio;
+    * creo n= numero max di tratti temporali per ciascun episodio;
+	    if durata le 24 then n=1;
+	    if durata gt 24 and durata le 60 then n=2;
+	    if durata gt 60 then n=3;
+    * creo j e le specifiche di durata per ciascun tratto;
+    do j=1 to n;
+	    if j le (n-1) then do;   /* tratti precedenti ultimo */
+		    evento=0;
+		    if j=1 then tempo=24;
+		    if j=2 then tempo=36;
+		    end; 
+	    if j=n then do;     /* ultimo tratto */
+		    evento=des;
+		    if j=1 then tempo=durata;
+		    if j=2 then tempo=durata-24;
+		    if j=3 then tempo=durata-(24+36);
+		    end;
+    output;
+    end; 
+    run;
+
+    * Stimo esponenziale a pezzi con covariate;
+    proc lifereg  data=m;
+    class j;
+    model tempo * evento(0) = edu coho2 coho3 lfx pnoj pres j / dist=exponential;
+    title “stima esponenziale a tre pezzi con covariate”;
+    run;
+
+    ****************************** (Esercizio 2) ******************************;
+    * Stimo esponenziale a pezzi con covariate e interazione con pres;
+    proc lifereg  data=m;
+    class j;
+    model tempo * evento(0) = edu coho2 coho3 lfx pnoj pres j j*pres/ dist=exponential;
+    title “stima esponenziale a tre pezzi con interazione tratti e pres;
+    run;
 	```
 </div>
 <embed src="/assets/images/Statistics/EHA_014.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" type="application/pdf">
 
---->
 
 ## SAS Labs - Parte 2
 <button class="collapsible" id="es015">Esempio 15: Frailty (1)</button>
