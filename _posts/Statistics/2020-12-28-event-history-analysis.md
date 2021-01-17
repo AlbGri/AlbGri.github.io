@@ -289,30 +289,23 @@ $$\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 ##### Gamma
 - Caratteristiche  
 - Funzioni  
-$$...$$  
 - Laplace esplicita  
 $$\mathbf{L}=\big(1+\frac{z}{\gamma}\big)^{-k}$$  
 - Sopravvivenza marginale  
-$$...$$  
 - Rischio marginale  
-$$...$$  
 
 ##### Log-normale
 - Caratteristiche  
 - Funzioni  
-$$...$$  
 - Laplace non-esplicita
 
 #### Modello Gamma-Gompertz
 Modello parametrico con distribuzione Gamma-Gompertz o modello Gompertz con frailty Gamma. La distribuzione esponenziale è un caso specifico. La distribuzione descrive bene i tassi di mortalità (principalmente 30-80 anni).
 - Caratteristiche  
-$$...$$  
 - Funzione di rischio  
-$$...$$  
 - Funzione di rischio con frailty Gamma (avrà forma logistica con un plateau finale)  
-$$...$$  
 - Rischio marginale  
-$$...$$  
+
 
 ### Modelli Frailty Univariati
 
