@@ -2522,7 +2522,7 @@ Dipende da $$n$$ e $$p$$ se
     TMe=56,9  mesi */
 
     ****************************** (Esercizio 2) ******************************;
-    libname dir "/home/u52136602/sasuser.v94/dati";
+    libname dir "/home/dati";
     data MIO;
     set dir.PIPPO;
     run;
@@ -3156,12 +3156,12 @@ Dipende da $$n$$ e $$p$$ se
     (Esercizio 1) Modello ad odds proporzionali
     (Esercizio 2) Modello ad odds proporzionali con tempo
     (Esercizio 3) Modello ad odds proporzionali con tempo a tratti
-    (Esercizio 3) 
+    (Esercizio 4) Modello per confrontare la Frailty
     (Esercizio 5) Frailty a tempi discreti
     *******************************************************/
 
     * set path;
-    libname firts '/home/u52136602/sasuser.v94/dati';
+    libname firts '/home/dati';
 
     * sort by pt (per il grafico della sopravvivenza);
     proc sort data = firts.firstsex;
