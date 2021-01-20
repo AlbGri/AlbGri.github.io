@@ -26,13 +26,21 @@ mathjax: "true"
 
 ##### Modellazione specifica
 - Limiti modello lineare
-- Censure (tipo I, II, random-non informative che non dipendono dal rischio, random-informative che dipendono dal rischio)
+- Censure 
+    - Tipo I (generati dalla fine del periodo di analisi) 
+    - Tipo II (osservazione termina dopo che si è verificato un certo numero di eventi)
+    - Random-non informative (non dipendono dal rischio) 
+    - Random-informative (dipendono dal rischio)
 - Covariate (variabili o costanti rispetto il tempo)
 
-##### Disegni longitudinali retrospettivi
+#### Disegni di indagine
+
+##### Trasversali
+
+##### Longitudinali retrospettivi
 - Indagini retrospettive
 
-##### Disegni longitudinali prospettivi
+##### Longitudinali prospettivi
 - Panel (con waves)
 - Studi di follow-up (studi coorte)
 - Record-Linkage
@@ -41,8 +49,10 @@ mathjax: "true"
 
 ##### Funzioni base con tempo continuo
 - Condizioni
-- Densità, Ripartizione, Sopravvivenza
-- Funzione di rischio
+- Densità, Ripartizione, Sopravvivenza  
+La distribuzione di $$T$$ è impropria o difettosa in quanto la sopravvivenza può non raggiungere 0 ('long-term survivors')
+- Funzione di rischio  
+Non è una probabilità ma lo è se si moltiplica il suo valore per l'intervallo di tempo in cui la si stima
 - Rischio integrato
 - Relazioni tra le funzioni
 
