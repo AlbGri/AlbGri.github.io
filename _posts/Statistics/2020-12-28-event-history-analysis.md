@@ -82,7 +82,7 @@ mathjax: "true"
 	- Analisi quantili
 	- Confronto tra gruppi
 	- Test di omogeneità (grafico, log-rank rest, wilcoxon test)
-- Funzioni di pseudo-sopravvivenza per rischi competitivi
+- Funzioni di pseudo-sopravvivenza per rischi competitivi (con ipotesi di indipendenza, l'eliminazione di un rischio non modifica la sopravvivenza rispetto agli altri)
 
 ####  Life Table (o Attuariale)
 - Tavola di eliminazione: stima rischio, probabilità e sopravvivenza  
