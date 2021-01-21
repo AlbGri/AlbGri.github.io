@@ -142,7 +142,11 @@ $$\hat{S}_j^*=\hat{p}_{j-1}\cdot S_{j-1}$$
 - Caratteristiche VTD
 - Modello con VTD
 - Come tenere sotto controllo variabili TD
+    - Episode splitting
 - Spazio stati TD
+    - Dicotomizzazione non reversibile
+    - Dicotomizzazione reversibile
+    - Strutture complesse
 - Effetti immediati o differiti nel tempo
 
 ##### Effetti non proporzionali
