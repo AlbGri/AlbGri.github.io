@@ -302,6 +302,8 @@ $$\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 
 ##### Gamma
 - Caratteristiche  
+	- Facile da standardizzare  
+	- La vera distribuzione della frailty tra i sopravviventi tende a Gamma  
 - Funzioni  
 - Laplace esplicita  
 $$\mathbf{L}=\big(1+\frac{z}{\gamma}\big)^{-k}$$  
@@ -310,6 +312,8 @@ $$\mathbf{L}=\big(1+\frac{z}{\gamma}\big)^{-k}$$
 
 ##### Log-normale
 - Caratteristiche  
+	- Forte legame con modello lineare ad effetti casuali  
+	- Più semplice la generalizzazione al caso multivariato  
 - Funzioni  
 - Laplace non-esplicita
 
