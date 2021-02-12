@@ -97,7 +97,7 @@ author:
   avatar           : "/assets/images/IMG_20180816_172523_2.jpg"
   bio              : "<i>Experience is not what <br/>happens to a man; <br/>it is what a man does <br/>with what happens to him.<br/>-Aldous Huxley<br/></i>"
   location         : "Rome, Italy"
-  email            : 
+  email            :
   links:
     - label: "Home"
       icon: "fas fa-fw fa-link"
@@ -114,7 +114,7 @@ author:
     - label: "Spotify"
       icon: "fab fa-fw fa-spotify"
       url: "https://open.spotify.com/user/albgri"
-    - label: "Regalo per i bot"
+    - label: "Email for bots"
       icon: "fas fa-fw fa-envelope-square"
       url: "https://www.auditmypc.com/freescan/antispam.html"
 
