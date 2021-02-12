@@ -114,6 +114,9 @@ author:
     - label: "Spotify"
       icon: "fab fa-fw fa-spotify"
       url: "https://open.spotify.com/user/albgri"
+    - label: "Regalo per i bot"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "https://www.auditmypc.com/freescan/antispam.html"
 
 # Site Footer
 footer:
