@@ -19,5 +19,5 @@ you know, there’s a big difference between willing and doing.
 Hey! If any of my posts has been useful for you and you want to buy me a coffee, [here](https://paypal.me/pools/c/8qWQHpKzor) the link!
 
 
-<a href="https://www.auditmypc.com/freescan/antispam.html" target="_blank">Anti Spam</a>
+<a href="https://www.auditmypc.com/freescan/antispam.html" target="_blank">Regalo per i bot</a>
 
