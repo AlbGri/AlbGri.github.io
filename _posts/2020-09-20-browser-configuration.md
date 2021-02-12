@@ -51,6 +51,12 @@ media.autoplay.default	5
 media.autoplay.blocking_policy 2
 ```
 
+1. Fingerprinting
+```raw
+privacy.resist	true
+```
+
+
 
 ## Chrome
 nb. ho riportato solo alcune delle estensioni Firefox che utilizzo.

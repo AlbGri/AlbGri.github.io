@@ -183,6 +183,10 @@ per generare [questo](https://chrisphillips-cminion.github.io/jekyll/2019/07/12/
     ```
     - Purtroppo il risultato non segue l'highlight dei codici.
 
+1. Titoli colorati  
+in _/_sass/minimal-mistakes/_base.css_ posso configurare i colori dei titoli impostando il parametro color nel blocco codice relativo a h1, h2, etc.
+
+
 ## Google Setup
 1. Search Engine Google: utilizzo google search nel search bar del sito  
 * Crea il tuo [Search Engine Google](https://programmablesearchengine.google.com/cse/all)  

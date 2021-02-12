@@ -94,6 +94,15 @@ NB. se si usano più finestre dello stesso programma può essere noioso se si er
 ~$ sudo apt-get remove update-notifier
 ```
 
+1. Riduci ad icona da barra favoriti  
+```console
+~$ gsettings range org.gnome.shell.extensions.dash-to-dock click-action
+~$ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'previews'
+~$ gsettings set org.gnome.shell.extensions.dash-to-dock middle-click-action 'minimize'
+```
+
+
+
 
 
 ## Issues & Bugs

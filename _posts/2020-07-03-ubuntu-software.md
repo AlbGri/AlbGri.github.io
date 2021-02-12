@@ -121,6 +121,25 @@ Elimina i doppioni
 * Marca → Marca tutti
 * Azioni → Sposta elementi marcati nel Cestino... → [v] Elimina file direttamente
 
+1. Crop PDF pages  
+```console
+~$ sudo add-apt-repository ppa:malteworld/ppa
+~$ sudo snap install pdftk
+~$ pdftk file.pdf cat 1-13 17-end output file_cropped1.pdf
+~$ pdftk file.pdf cat 14-16 output file_cropped2.pdf
+```
+
+1. Reduce size pdf  
+Con *dPDFSETTINGS* si possono impostare diverse qualità (screen-ebook-prepress-printer-default)  
+```console
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
+```
+
+1. Notepad++  
+```console
+~$ sudo snap install notepad-plus-plus
+```
+
 
 
 ### Google Drive
@@ -216,6 +235,15 @@ Idenficare la [versione](https://cloud.r-project.org/bin/linux/ubuntu) da instal
 update.packages(checkBuilt = TRUE, ask = FALSE) # Update packages
 .libPaths()	# path dei packages
 ```
+
+#### R in Jupyternotebook
+```console
+~$ sudo apt-get install libzmq3-dev libcurl4-openssl-dev libssl-dev jupyter-core jupyter-client
+~$ R
+install.packages(c('repr', 'IRdisplay', 'IRkernel'), type = 'source')
+IRkernel::installspec()
+```
+
 
 #### Errore Signature Verification
 L'apt get update restituisce errore sulla signature verification, [qui](https://cran.r-project.org/bin/linux/ubuntu/README.html#secure-apt) e [qua](https://www.bentoh.my/post/gpg-key-problem/) link utili.  

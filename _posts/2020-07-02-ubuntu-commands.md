@@ -100,6 +100,9 @@ Seleziono l'autocompletamento da eliminare nel box di immissione testo e
 1. Funzione tasto destro su nautilus dentro la cartella  
 Deselezionare il file con *F5*, quindi *Shift+F10* per funzionalità tasto destro
 
+1. Cerca comando usato nel terminale  
+*CTRL+r*  
+
 
 
 

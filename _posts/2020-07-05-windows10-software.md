@@ -73,7 +73,9 @@ Gestore LaTeX che preferisco per Windows
 Lettore pdf gratuito e leggero
 
 1. Notepad++  
-Editor di testo semplice ed avanzato
+Editor di testo semplice ed avanzato.  
+Per consentire l'export di testo con highlight colorato:  
+scarico la [dll](https://github.com/chcg/NPP_ExportPlugin/releases) e la importo (Administrator→Settings→Import→Plugin)
 
 1. Nitro PRO PDF  
 Modifiche file pdf non esiste gratuito *legalmente*.

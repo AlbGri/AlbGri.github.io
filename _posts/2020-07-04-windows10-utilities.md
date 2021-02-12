@@ -62,6 +62,10 @@ C:\Users\nomeUtente\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\Use
 1. [Troll link](https://matias.ma/nsfw/)
 1. [Ricezione SMS](http://sms.sellaite.com/)
 1. afdah[dot]info
+1. [Countdown](https://www.online-stopwatch.com/loop-countdown/)
+1. [Testa antitrackers](https://coveryourtracks.eff.org/)
+
+
 
 ### Games
 1. A [Cards Against Humanity](https://pyx-1.pretendyoure.xyz/zy/game.jsp) clone
