@@ -15,13 +15,15 @@ mathjax: "true"
 ## Modelli Lineari e Minimi Quadrati (LS)
 
 ### Modello lineare multidimensionale
-a più $$X$$  
+a più $$X$$.  
 Sia $$y=X\beta+\epsilon$$  
 con OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):  
-$$\hat{y}=X\hat{\beta}$$, dove $$\hat{\beta}=(X^T X)^{-1}X^T y$$
+$$\hat{y}=X\hat{\beta}$$, dove $$\hat{\beta}=(X^T X)^{-1}X^T y$$.
+
+Nota: se si applica OLS con le esplicative trasformate con il logaritmo si mantiene lineare nei parametri, ma se il logaritmo si applica alla risposta non è più lineare nei parametri. La stima non è la migliore in termini di minimizzazione della devianza ma mantiene la sua validità.
 
 ### Modello lineare multivariato
-a più $$Y$$  
+a più $$Y$$.  
 Sia $$Y=X\mathcal{B}+E$$  
 con $$\mathcal{B}$$ matrice di parametri $$p$$ righe (numero di variabili esplicative) per $$q$$ colonne (numero di variabili risposta) e 
 con $$\mathcal{E}$$ matrice di errore $$n$$ righe per $$q$$ colonne.  
@@ -32,7 +34,7 @@ $$\tilde{Y_i}$$ come vettore colonna, per semplicità la si mette come vettore c
 #### Scomposizione QR
 Complessità computazionale $$2np^2$$  
 Per ottenere R e Q si può usare l'Algoritmo Gram-Schmidt che ortogonalizza la matrice  
-![#f03c15](https://via.placeholder.com/15/c5f015/000000?text=+) Interpretazione geometrica e relazione con il coefficiente di correlazione parziale
+![#f03c15]((https://via.placeholder.com/15/f03c15/000000?text=+) Interpretazione geometrica e relazione con il coefficiente di correlazione parziale
 
 #### Scomposizione di Cholesky
 
