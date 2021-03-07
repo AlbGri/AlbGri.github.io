@@ -8,9 +8,16 @@ mathjax: "true"
 
 *in costruzione*
 
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Incompleto`
-- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `Da approfondire`
-- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `Importante`
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Da approfondire`
+
+
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
 
 
 ## Modelli Lineari e Minimi Quadrati (LS)
@@ -30,7 +37,7 @@ $$\tilde{Y_i}$$ come vettore colonna, per semplicità la si mette come vettore c
 #### Scomposizione QR
 Complessità computazionale $$2np^2$$  
 Per ottenere R e Q si può usare l'Algoritmo Gram-Schmidt che ortogonalizza la matrice  
-![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `Da approfondire:` Interpretazione geometrica e relazione con il coefficiente di correlazione parziale
+![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) Interpretazione geometrica e relazione con il coefficiente di correlazione parziale
 
 #### Scomposizione di Cholesky
 
