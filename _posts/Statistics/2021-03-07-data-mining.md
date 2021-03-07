@@ -34,7 +34,7 @@ Minimizzazione di $$D(\beta)=\sum_{i=1}^n\big\{y_i-f(x_i; \beta)\big\}^2=\left \
 a più $$X$$.  
 Sia $$y=X\beta+\epsilon$$ con $$\mathbb{E}(\epsilon)=0$$.  
 Tramite OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):  
-$$\hat{y}=X\hat{\beta}$$, dove  
+$$\hat{y}=X\hat{\beta}=Py$$, dove  
 $$\hat{\beta}=(X^T X)^{-1}X^T y\equiv\beta+(X^T X)^{-1}X^T \epsilon$$  
 e $$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$
 
@@ -51,8 +51,7 @@ Nota: se si applica OLS con le esplicative trasformate con il logaritmo si manti
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Ricalcolare l'$$R^2$$ retrotrasformando la previsione per il log Y, ovvero retrotrasformarla con l'esponenziale per ottenere Y.
 
 #### Projection Matrix
-$$P$$ è la matrice cappello o di proiezione $$P=X(X^TX)^{-1}X^T$$
-Risulta che $$\hat{y}=X\hat{\beta}=Py$$.
+$$P$$ è la matrice cappello o di proiezione $$P=X(X^TX)^{-1}X^T$$.
 
 ##### Proprietà della projection matrix
 1. Matrice $$n\times n$$
