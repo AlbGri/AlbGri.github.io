@@ -35,18 +35,31 @@ Sia $$Y=X\mathcal{B}+\mathcal{E}$$
 con $$\mathcal{B}$$ matrice di parametri $$p$$ righe (numero di variabili esplicative) per $$q$$ colonne (numero di variabili risposta) e 
 con $$\mathcal{E}$$ matrice di errore $$n$$ righe per $$q$$ colonne, in cui si assume che ogni riga è indipendente.  
 $$\tilde{Y_i}$$ come vettore colonna, sarebbe la i-esima riga della matrice $$Y$$ messa in colonna. Per semplicità la si mette come vettore colonna e la variabile multivariata è espressa dalle righe della Y.  
-Stima LS: $$\hat{\mathcal{B}=(X^T X)^{-1}X^T Y$$.  
+Stima LS: $$\hat{\mathcal{B}}=(X^T X)^{-1}X^T Y$$.  
 Inoltre, $$VAR\{\tilde{\mathcal{E}_i}\}=\Sigma$$ e  
 $$\hat{\Sigma}=\frac{1}{n-p}Y^T(I-P)Y$$ con la matrice cappello o di proiezione $$P=X(X^TX)^{-1}X^T$$
+
+### Stima LS
+Bisogna invertire la matrice $$X^TX$$ (che è simmetrica).  
+
+#### Gauss-Jordan
+Per invertire qualsiasi matrice si può usare il metodo di [Gauss-Jordan](https://www.youmath.it/forum/algebra-lineare/70367-matrice-inversa-con-gauss-jordan.html).
+
+#### Fattorizzazione di Cholesky
+Per invertire una matrice simmetrica, si può usare la fattorizzazione di Cholesky.  
+Complessità computazionale $$è^3+\frac{np^2}{2}$$. Molto lento con tante variabili.
+
+#### Scomposizione Spettrale
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Per una matrice quadrata.
 
 ### Stima LS con $$n$$ non troppo grande
 
 #### Scomposizione QR
 Complessità computazionale $$2np^2$$  
-Per ottenere R e Q si può usare l'Algoritmo Gram-Schmidt che ortogonalizza la matrice  
+Si cerca una scomposizione $$X=QR$$ per cui $$Q$$ è una matrice ortogonale $$n\times p$$ e $$R$$ è triangolare superiore $$p\times p$$.  
+Per ottenere $$Q$$ si può usare l'Algoritmo Gram-Schmidt che ortogonalizza la matrice.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Interpretazione geometrica e relazione con il coefficiente di correlazione parziale
 
-#### Scomposizione di Cholesky
 
 ### Stima LS con $$n$$ grande
 
