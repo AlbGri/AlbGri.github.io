@@ -58,16 +58,20 @@ Complessità computazionale $$p^3+\frac{np^2}{2}$$ e risulta molto lento con tan
 Complessità computazionale $$2np^2$$.  
 Si cerca una scomposizione $$X=QR$$ per cui $$Q$$ è una matrice ortogonale (colonne ortogonali l'una con l'altra) $$n\times p$$ e $$R$$ è triangolare superiore $$p\times p$$.  
 $$\hat{\beta}=(X^T X)^{-1}X^T y=R^{-1} Q^T y\quad$$ e $$\quad\hat{y}=QQ^T y$$  
-Per ottenere $$Q$$ si può usare l'Algoritmo Gram-Schmidt che ortogonalizza la matrice.  
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Interpretazione geometrica e relazione con il coefficiente di correlazione parziale
+Per ottenere $$Q$$ si può usare l'Algoritmo Gram-Schmidt che ortogonalizza la matrice.
 
+##### Gram-Schmidt
+Proietta la risposta su uno spazio generato da vettori ortogonali tra loro.  
+Con due variabili esplicative $$x_1$$ e $$x_2$$ e la variabile risposta $$y$$, la regressione di $$y$$ sul vettore dei residui $$z_{x_2\sim x_1}$$, determinato dalla regressione di $$x_2$$ su $$x_1$$, fornisce i coefficienti di regressione multipla di $$x_2$$. Il vettore $$z_{x_2\sim x_1}$$ è ortogonale al vettore $$x_1$$.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Il coefficiente di correlazione parziale utilizza lo stesso concetto della regressione di $$x_2$$ su $$x_1$$.
 
 ### Stima LS con $$n$$ grande
+Il prodotto $$X^TX$$ risulta oneroso se si ha un elevato numero di righe.
 
 #### Stima ricorsiva (filtro lineare)
-Inverte $$p \times p$$ quindi se si ha un numero elevato di variabili diventa oneroso.  
+Il metodo consente di invertire solo una matrice $$p \times p$$, quindi se si ha un numero elevato di variabili può diventare oneroso.  
 Per invertire una matrice generica (eg. somma di due matrici) in questo caso si usa la formula di Sherman-Morrison.  
-Si inverte solo una volta e poi si aggiornano le stime. Si può iniziare anche dalla Identità.  
+Consente di invertire solo una volta (usando anche la matrice identità come partenza) e poi si aggiornano le stime.  
 Formula analoga per la stima della varianza.  
 
 <!--- 
