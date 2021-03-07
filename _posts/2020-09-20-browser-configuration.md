@@ -57,10 +57,9 @@ privacy.resist	true
 ```
 
 ### Utili
-Se Whatsapp Web non permette di inviare immagini, neanche copiando e incollando, il risultato è un'immagine oscurata/blurred/white noise.  
+1. Se Whatsapp Web non permette di inviare immagini, neanche copiando e incollando, il risultato è un'immagine oscurata/blurred/white noise.  
 Per risolvere è sufficiente consentire l'accesso a HTML5 canvas.
 ![png](/assets/images/Firefox_Whatsapp_1.png)  
-
 ![png](/assets/images/Firefox_Whatsapp_2.png)
 
 
