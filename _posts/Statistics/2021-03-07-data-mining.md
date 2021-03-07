@@ -27,7 +27,7 @@ Varianza dello stimatore
 $$\sigma^2(\hat{\beta})=\mathbb{E}\big[ (\hat{\beta}-\mathbb{E}[\hat{\beta}])^2 \big]=\mathbb{E}\big[ (\hat{\beta}-\beta])(\hat{\beta}-\beta])^T \big]=$$
 $$=(X^TX)^{-1}\mathbb{E}[(y-X\hat{\beta}) (y-X\hat{\beta})^T]X(X^TX)^{-1}=(X^TX)^{-1}\mathbb{E}[\epsilon \epsilon^T]X(X^TX)^{-1}=\sigma^2(X^TX)^{-1}$$  
 Stima non distorta della varianza dello stimatore  
-$$\hat{\mbox{var}}(\hat{\beta})=\frac{D(\hat{\beta}}{n-p}$$
+$$\widehat{\mbox{var}}(\hat{\beta})=\frac{D(\hat{\beta}}{n-p}$$
 
 
 Nota: se si applica OLS con le esplicative trasformate con il logaritmo si mantiene lineare nei parametri, ma se il logaritmo si applica alla risposta non è più lineare nei parametri. La stima non è OLS e non è la migliore in termini di minimizzazione della devianza, ma mantiene la sua validità. Anche l'$$R^2$$ non risulterebbe confrontabile.  
