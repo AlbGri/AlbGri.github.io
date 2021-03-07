@@ -15,7 +15,10 @@ mathjax: "true"
 ## Modelli Lineari e Minimi Quadrati (LS)
 
 ### Modello lineare multidimensionale
-a più $$X$$
+a più $$X$$  
+Sia $$y=X\beta+\epsilon$$  
+con OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):  
+$$\hat{y}=X\hat{\beta}$$, dove $$\hat{\beta}=(X^T X)^{-1}X^T y$$
 
 ### Modello lineare multivariato
 a più $$Y$$  
@@ -41,15 +44,25 @@ Per invertire una matrice generica (eg. somma di due matrici) in questo caso si 
 Si inverte solo una volta e poi si aggiornano le stime. Si può iniziare anche dalla Identità.  
 Formula analoga per la stima della varianza.  
 
+<!--- 
 ### Esercizi
-- AS, ES. 2.8 (calcolare s^2)
-- AS, ES. 2.9 (sherman finisce inversa)
-- AS, ES. 2.10 (correttezza aggiornamento)
-- AS, ES. 2.11 (minimi quad ricorsivi per sigma2)
-- AS, ES. 2.12 (differenza intervallo di confidenza)
 
+##### AS, ES. 2.8
+Complete the details of the statements at the end of section 2.2.2 by calculating $$s^2$$ and standard errors, using (2.10) or any other method.
 
+##### AS, ES. 2.9 
+Check the correctness of the Sherman-Morrison formula (A.2).
 
+##### AS, ES. 2.10
+Check the correctness of the formulas provided by recursive updating of the least squares estimates.
+
+##### AS, ES. 2.11
+Prove (2.24).
+
+##### AS, ES. 2.12
+What is the difference between the confidence interval of the value of the function and the prediction interval, both relative to the next observation?
+
+--->
 
 
 
