@@ -34,16 +34,12 @@ Minimizzazione di $$D(\beta)=\sum_{i=1}^n\big\{y_i-f(x_i; \beta)\big\}^2=\left \
 a più $$X$$.  
 Sia $$y=X\beta+\epsilon$$ con $$\mathbb{E}(\epsilon)=0$$.  
 Tramite OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):  
-$$\hat{y}=X\hat{\beta}$$, dove 
-$$\hat{\beta}=(X^T X)^{-1}X^T y\equiv\beta+(X^T X)^{-1}X^T \epsilon$$.  
-
-Sia $$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$
+$$\hat{y}=X\hat{\beta}$$, dove  
+$$\hat{\beta}=(X^T X)^{-1}X^T y\equiv\beta+(X^T X)^{-1}X^T \epsilon$$  
+e $$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$
 
 Valore atteso dello stimatore  
-$$\mathbb{E}[\hat{\beta}]=
-\mathbb{E}[(X^TX)^{-1}X^T(X\beta+\epsilon)]=
-\beta$$
-
+$$\mathbb{E}[\hat{\beta}]=\mathbb{E}[(X^TX)^{-1}X^T(X\beta+\epsilon)]=\beta$$
 Varianza dello stimatore  
 $$\sigma^2(\hat{\beta})
 =\mathbb{E}\big[ (\hat{\beta}-\mathbb{E}[\hat{\beta}])^2 \big]=\sigma^2(X^TX)^{-1}$$  
@@ -60,9 +56,9 @@ Risulta che $$\hat{y}=X\hat{\beta}=Py$$.
 
 ##### Proprietà della projection matrix
 1. Matrice $$n\times n$$
-2. $$P^T=P$$  
-3. $$PP=P$$  
-4. $$\mbox{tr}(P)=\mbox{rk}(P)=p$$
+2. $$P^T$$ $$=P$$  
+3. $$PP$$ $$=P$$  
+4. $$\mbox{tr}(P)=\mbox{rk}(P)$$ $$=p$$
 
 
 #### Variabili qualitative: dummy e contrasti
