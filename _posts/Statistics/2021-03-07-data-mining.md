@@ -14,13 +14,13 @@ mathjax: "true"
 ## Proprietà e teoremi utili
 - $$(A^T)^T$$ $$=A$$
 - $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
-    1. $$A^{-1}A$$ $$=I$$  
-    2. $$(A^{-1}A)^T=I^T$$ $$=I$$ 
-    3. dato che $$(AB)^T=B^TA^T$$  
-    4. $$A^T(A^{-1})^T$$ $$=I$$  
+    1. $$A^{-1}A$$ $$=I$$
+    2. $$(A^{-1}A)^T=I^T$$ $$=I$$
+    3. dato che $$(AB)^T=B^TA^T$$
+    4. $$A^T(A^{-1})^T$$ $$=I$$
     5. dato che $$A$$ è invertibile allora anche $$A^T$$ lo è
-    6. $$(A^T)^{-1}A^T(A^{-1})^T$$ $$=(A^T)^{-1}I$$  
-    7. $$(A^{-1})^T$$ $$=(A^T)^{-1}  
+    6. $$(A^T)^{-1}A^T(A^{-1})^T$$ $$=(A^T)^{-1}I$$
+    7. $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
 - $$[(X^TX)^{-1}X^T]^T=X[(X^TX)^{-1}]^T=X[(X^TX)^T]^{-1}=X[(X)^T(X^T)^T]^{-1}$$ $$=X(X^TX)^{-1}$$  
 - Proprietà dissociativa dell'addizione $$10=4+6=...$$
 - Se $$Q$$ ortogonale, allora $$Q^TQ=I$$
@@ -34,9 +34,9 @@ Minimizzazione di $$D(\beta)=\sum_{i=1}^n\big\{y_i-f(x_i; \beta)\big\}^2=\left \
 a più $$X$$.  
 Sia $$y=X\beta+\epsilon$$ con $$\mathbb{E}(\epsilon)=0$$.  
 Tramite OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):  
-$$\hat{y}=X\hat{\beta}=Py$$, dove  
-$$\hat{\beta}=(X^T X)^{-1}X^T y\equiv\beta+(X^T X)^{-1}X^T \epsilon$$  
-e $$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$
+$$\hat{y}=X\hat{\beta}=Py$$  
+con $$\hat{\beta}=(X^T X)^{-1}X^T y\equiv\beta+(X^T X)^{-1}X^T \epsilon$$.  
+Inoltre, $$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$
 
 Valore atteso dello stimatore  
 $$\mathbb{E}[\hat{\beta}]=\mathbb{E}[(X^TX)^{-1}X^T(X\beta+\epsilon)]=\beta$$
