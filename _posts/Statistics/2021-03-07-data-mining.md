@@ -21,10 +21,11 @@ a più $$X$$.
 Sia $$y=X\beta+\epsilon$$  
 con OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):  
 $$\hat{y}=X\hat{\beta}$$, dove $$\hat{\beta}=(X^T X)^{-1}X^T y$$.  
-Valore atteso dello stimatore:  
+Valore atteso dello stimatore  
 
-Varianza dello stimatore:  
-$$\sigma^2(\hat{\beta})=\mathbb{E}\big[ (\hat{\beta}-\mathbb{E}[\hat{\beta}])^2 \big]=\mathbb{E}\big[ (\hat{\beta}-\beta])(\hat{\beta}-\beta])^T \big]=(X^TX)^{-1}\mathbb{E}[\epsilon \epsilon^T]X(X^TX)^{-1}=\sigma^2(X^TX)^{-1}$$  
+Varianza dello stimatore  
+$$\sigma^2(\hat{\beta})=\mathbb{E}\big[ (\hat{\beta}-\mathbb{E}[\hat{\beta}])^2 \big]=\mathbb{E}\big[ (\hat{\beta}-\beta])(\hat{\beta}-\beta])^T \big]=$$
+$$=(X^TX)^{-1}\mathbb{E}[(y-X\hat{\beta}) (y-X\hat{\beta})^T]X(X^TX)^{-1}=(X^TX)^{-1}\mathbb{E}[\epsilon \epsilon^T]X(X^TX)^{-1}=\sigma^2(X^TX)^{-1}$$  
 Stima non distorta della varianza dello stimatore  
 $$\hat{\mbox{var}}(\hat{\beta})=\frac{D(\hat{\beta}}{n-p}$$
 
