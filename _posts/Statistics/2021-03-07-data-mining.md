@@ -35,7 +35,7 @@ a più $$X$$.
 Sia $$y=X\beta+\epsilon$$ con $$\mathbb{E}(\epsilon)=0$$.  
 Tramite OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):  
 $$\hat{y}=X\hat{\beta}=Py$$  
-con $$\hat{\beta}=(X^T X)^{-1}X^T y\equiv\beta+(X^T X)^{-1}X^T \epsilon$$.  
+con $$\hat{\beta}=(X^T X)^{-1}X^T y\equiv\beta+(X^T X)^{-1}X^T \epsilon$$  
 Inoltre, $$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$
 
 Valore atteso dello stimatore  
