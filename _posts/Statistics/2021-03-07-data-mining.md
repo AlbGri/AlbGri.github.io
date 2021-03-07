@@ -59,7 +59,7 @@ Complessità computazionale $$è^3+\frac{np^2}{2}$$. Molto lento con tante varia
 Complessità computazionale $$2np^2$$  
 Si cerca una scomposizione $$X=QR$$ per cui $$Q$$ è una matrice ortogonale (colonne ortogonali l'una con l'altra) $$n\times p$$ e $$R$$ è triangolare superiore $$p\times p$$.  
 Per ottenere $$Q$$ si può usare l'Algoritmo Gram-Schmidt che ortogonalizza la matrice.  
-$$\hat{\beta}=(X^T X)^{-1}X^T y=R^-1 Q^T y$$  
+$$\hat{\beta}=(X^T X)^{-1}X^T y=R^-1 Q^T y$$ e $$\hat{y}=QQ^T y$$  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Interpretazione geometrica e relazione con il coefficiente di correlazione parziale
 
 
