@@ -20,7 +20,9 @@ Sia $$y=X\beta+\epsilon$$
 con OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):  
 $$\hat{y}=X\hat{\beta}$$, dove $$\hat{\beta}=(X^T X)^{-1}X^T y$$.
 
-Nota: se si applica OLS con le esplicative trasformate con il logaritmo si mantiene lineare nei parametri, ma se il logaritmo si applica alla risposta non è più lineare nei parametri. La stima non è la migliore in termini di minimizzazione della devianza ma mantiene la sua validità.
+Nota: se si applica OLS con le esplicative trasformate con il logaritmo si mantiene lineare nei parametri, ma se il logaritmo si applica alla risposta non è più lineare nei parametri. La stima non è OLS e non è la migliore in termini di minimizzazione della devianza, ma mantiene la sua validità. Anche l'$$R^2$$ non risulterebbe confrontabile.
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Ricalcolare l'$$R^2$$ retrotrasformando la previsione per il log Y, ovvero retrotrasformarla con l'esponenziale per ottenere Y.
+
 
 ### Modello lineare multivariato
 a più $$Y$$.  
