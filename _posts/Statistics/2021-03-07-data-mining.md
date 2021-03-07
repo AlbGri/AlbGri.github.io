@@ -11,7 +11,7 @@ mathjax: "true"
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Da approfondire`
 
 
-## Appunti utili
+## Proprietà e teoremi utili
 - $$(A^T)^T$$ $$=A$$
 - $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
     1. $$A^{-1}A$$ $$=I$$  
@@ -22,13 +22,13 @@ mathjax: "true"
     6. $$(A^T)^{-1}A^T(A^{-1})^T$$ $$=(A^T)^{-1}I$$  
     7. $$(A^{-1})^T$$ $$=(A^T)^{-1}  
 - $$[(X^TX)^{-1}X^T]^T=X[(X^TX)^{-1}]^T=X[(X^TX)^T]^{-1}=X[(X)^T(X^T)^T]^{-1}$$ $$=X(X^TX)^{-1}$$  
-- Proprietà dissociativa dell'addizione $$10=5+5=...$$
-- Se $$Q$ ortogonale, allora $$Q^TQ=I$$
+- Proprietà dissociativa dell'addizione $$10=4+6=...$$
+- Se $$Q$$ ortogonale, allora $$Q^TQ=I$$
 - $$(AB)^{-1}$$ $$=A^{-1}B^{-1}$$
 
 ## Modelli Lineari e Minimi Quadrati (LS)
 
-Minimizzazione di $$D(\beta)=\sum_{i=1}^n\big\{y_i-f(x_i; \beta)\big\}^2=\left \| y-f(x; \beta) \right \|^2$$
+Minimizzazione di $$D(\beta)=\sum_{i=1}^n\big\{y_i-f(x_i; \beta)\big\}^2=\left \| y-X\beta \right \|^2$$
 
 ### Modello lineare multidimensionale
 a più $$X$$.  
@@ -48,7 +48,7 @@ Varianza dello stimatore
 $$\sigma^2(\hat{\beta})
 =\mathbb{E}\big[ (\hat{\beta}-\mathbb{E}[\hat{\beta}])^2 \big]=\sigma^2(X^TX)^{-1}$$  
 Stima non distorta della varianza dello stimatore  
-$$\widehat{\mbox{var}}(\hat{\beta})=\frac{D(\hat{\beta})}{n-p}$$
+$$\widehat{\mbox{var}}(\hat{\beta})=\frac{D(\hat{\beta})}{n-p}(X^TX)^{-1}$$
 
 
 Nota: se si applica OLS con le esplicative trasformate con il logaritmo si mantiene lineare nei parametri, ma se il logaritmo si applica alla risposta non è più lineare nei parametri. La stima non è OLS e non è la migliore in termini di minimizzazione della devianza, ma mantiene la sua validità. Anche l'$$R^2$$ non risulterebbe confrontabile.  
