@@ -35,7 +35,9 @@ Sia $$Y=X\mathcal{B}+\mathcal{E}$$
 con $$\mathcal{B}$$ matrice di parametri $$p$$ righe (numero di variabili esplicative) per $$q$$ colonne (numero di variabili risposta) e 
 con $$\mathcal{E}$$ matrice di errore $$n$$ righe per $$q$$ colonne, in cui si assume che ogni riga è indipendente.  
 $$\tilde{Y_i}$$ come vettore colonna, sarebbe la i-esima riga della matrice $$Y$$ messa in colonna. Per semplicità la si mette come vettore colonna e la variabile multivariata è espressa dalle righe della Y.  
-Inoltre, $$VAR\{\tilde{\mathcal{E}}\}=\Sigma$$
+Stima LS: $$\hat{\mathcal{B}=(X^T X)^{-1}X^T Y$$.  
+Inoltre, $$VAR\{\tilde{\mathcal{E}_i}\}=\Sigma$$ e  
+$$\hat{\Sigma}=\frac{1}{n-p}Y^T(I-P)Y$$ con la matrice cappello o di proiezione $$P=X(X^TX)^{-1}X^T$$
 
 ### Stima LS con $$n$$ non troppo grande
 
