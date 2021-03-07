@@ -36,9 +36,8 @@ con $$\mathcal{B}$$ matrice di parametri $$p$$ righe (numero di variabili esplic
 con $$\mathcal{E}$$ matrice di errore $$n$$ righe per $$q$$ colonne, in cui si assume che ogni riga è indipendente.  
 $$\tilde{Y_i}$$ come vettore colonna, sarebbe la i-esima riga della matrice $$Y$$ messa in colonna. Per semplicità la si mette come vettore colonna e la variabile multivariata è espressa dalle righe della Y.  
 Stima LS: $$\hat{ \mathcal{B} }=(X^T X)^{-1}X^T Y$$.  
-Stima LS: $$\mathcal{\hat{B}}=(X^T X)^{-1}X^T Y$$.  
-Inoltre, $$VAR\{\tilde{\mathcal{E}_i}\}=\Sigma$$ e  
-$$\hat{\Sigma}=\frac{1}{n-p}Y^T(I-P)Y$$ con la matrice cappello o di proiezione $$P=X(X^TX)^{-1}X^T$$
+Inoltre, $$VAR\{\tilde{\mathcal{E}_i}\}=\Sigma$$ e $$\hat{\Sigma}=\frac{1}{n-p}Y^T(I-P)Y$$  
+con $$P$$ matrice cappello o di proiezione $$P=X(X^TX)^{-1}X^T$$
 
 ### Stima LS
 Bisogna invertire la matrice $$X^TX$$ (che è simmetrica).  
@@ -48,7 +47,7 @@ Per invertire qualsiasi matrice si può usare il metodo di [Gauss-Jordan](https:
 
 #### Fattorizzazione di Cholesky
 Per invertire una matrice simmetrica, si può usare la fattorizzazione di Cholesky.  
-Complessità computazionale $$è^3+\frac{np^2}{2}$$. Molto lento con tante variabili.
+Complessità computazionale $$p^3+\frac{np^2}{2}$$. Molto lento con tante variabili.
 
 #### Scomposizione Spettrale
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Per una matrice quadrata.
@@ -59,7 +58,7 @@ Complessità computazionale $$è^3+\frac{np^2}{2}$$. Molto lento con tante varia
 Complessità computazionale $$2np^2$$  
 Si cerca una scomposizione $$X=QR$$ per cui $$Q$$ è una matrice ortogonale (colonne ortogonali l'una con l'altra) $$n\times p$$ e $$R$$ è triangolare superiore $$p\times p$$.  
 Per ottenere $$Q$$ si può usare l'Algoritmo Gram-Schmidt che ortogonalizza la matrice.  
-$$\hat{\beta}=(X^T X)^{-1}X^T y=R^-1 Q^T y$$ e $$\hat{y}=QQ^T y$$  
+$$\hat{\beta}=(X^T X)^{-1}X^T y=R^{-1} Q^T y$$ e $$\hat{y}=QQ^T y$$  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Interpretazione geometrica e relazione con il coefficiente di correlazione parziale
 
 
