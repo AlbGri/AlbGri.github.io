@@ -9,28 +9,28 @@ mathjax: "true"
 *in costruzione*
 
 
-## Richiami sui modelli lineari
+## Modelli Lineari e Minimi Quadrati (LS)
 
 ### Modello lineare multidimensionale
 a più $$X$$
 
 ### Modello lineare multivariato
 a più $$Y$$  
-$$Y=X\mathcal{B}+E$$
-con $$\mathcal{B}$$ matrice di parametri $$p$$ righe (numero di variabili esplicative) per $$q$$ colonne (numero di variabili risposta)
-con $$\mathcal{E}$$ matrice di errore $$n$$ righe per $$q$$ colonne.
+Sia $$Y=X\mathcal{B}+E$$  
+con $$\mathcal{B}$$ matrice di parametri $$p$$ righe (numero di variabili esplicative) per $$q$$ colonne (numero di variabili risposta) e 
+con $$\mathcal{E}$$ matrice di errore $$n$$ righe per $$q$$ colonne.  
 $$\tilde{Y_i}$$ come vettore colonna, per semplicità la si mette come vettore colonna e la variabile multivariata è espressa dalle righe della Y metto la tilde sopra per identificare la riga messa in colonna.
 
-### Stima Minimi quadrati con n non troppo grande
+### Stima LS con $$n$$ non troppo grande
 
 #### Scomposizione QR
-Complessità computazionale 2np^2  
+Complessità computazionale $$2np^2$$  
 Per ottenere R e Q si può usare l'Algoritmo Gram-Schmidt che ortogonalizza la matrice  
 [da approfondire] Interpretazione geometrica e relazione con il coefficiente di correlazione parziale
 
 #### Scomposizione di Cholesky
 
-### Stima Minimi quadrati con n grande
+### Stima LS con $$n$$ grande
 
 #### Stima ricorsiva (filtro lineare)
 Inverte $$p \times p$$ quindi se si ha un numero elevato di variabili diventa oneroso.  
