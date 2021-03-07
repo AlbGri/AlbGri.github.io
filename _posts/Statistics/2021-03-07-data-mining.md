@@ -12,18 +12,19 @@ mathjax: "true"
 
 
 ## Appunti utili
-- $$(A^T)^T=A$$
-- $$(A^{-1})^T=(A^T)^{-1}$$
+- $$(A^T)^T$$ $$=A$$
+- $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
     1. $$A^{-1}A$$ $$=I$$  
-    2. $$(A^{-1}A)^T=I^T=I$$ 
+    2. $$(A^{-1}A)^T=I^T$$ $$=I$$ 
     3. dato che $$(AB)^T=B^TA^T$$  
-    4. $$A^T(A^{-1})^T=I$$  
+    4. $$A^T(A^{-1})^T$$ $$=I$$  
     5. dato che $$A$$ è invertibile allora anche $$A^T$$ lo è
-    6. $$(A^T)^{-1}A^T(A^{-1})^T=(A^T)^{-1}I$$  
-    7. $$(A^{-1})^T=(A^T)^{-1}  
-- $$[(X^TX)^{-1}X^T]^T=X[(X^TX)^{-1}]^T=X[(X^TX)^T]^{-1}=X[(X)^T(X^T)^T]^{-1}=X(X^TX)^{-1}$$  
+    6. $$(A^T)^{-1}A^T(A^{-1})^T$$ $$=(A^T)^{-1}I$$  
+    7. $$(A^{-1})^T$$ $$=(A^T)^{-1}  
+- $$[(X^TX)^{-1}X^T]^T=X[(X^TX)^{-1}]^T=X[(X^TX)^T]^{-1}=X[(X)^T(X^T)^T]^{-1}$$ $$=X(X^TX)^{-1}$$  
 - Proprietà dissociativa dell'addizione $$10=5+5=...$$
-- 
+- Se $$Q$ ortogonale, allora $$Q^TQ=I$$
+- $$(AB)^{-1}$$ $$=A^{-1}B^{-1}$$
 
 ## Modelli Lineari e Minimi Quadrati (LS)
 
