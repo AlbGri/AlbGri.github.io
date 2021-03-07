@@ -16,7 +16,8 @@ mathjax: "true"
 1. [Network Cell Info](https://play.google.com/store/apps/details?id=com.wilysis.cellinfolite) adatta per capire dove l'intensità del segnale telefonico è migliore
 
 ### Pagamenti
-1. [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) prepagata smart, veloce e gratuita (se usi il mio link referral puoi non pagare la carta fisica: [albert9u1r](https://revolut.com/referral/albert9u1r)). Prima aveva IBAN GB, ma con la Brexit stanno trasferendo a LT (Lituania) i clienti europei. Il vantaggio principale di questa carta è che la ricarica è istantanea da qualsiasi conto, puoi prelevare gratuitamente in tutta l'europa (max 200 euro per la versione gratuita) e altri vantaggi come la creazione di carte virtuali usa e getta e il dettaglio non da poco che è tutto a costo zero con il pacchetto base.
+1. [Revolut](https://play.google.com/store/apps/details?id=com.revolut.revolut) prepagata smart, veloce e gratuita (se usi il mio link referral puoi non pagare la carta fisica: [albert9u1r](https://revolut.com/referral/albert9u1r)). Prima aveva IBAN GB, ma con la Brexit stanno trasferendo a LT (Lituania) i clienti europei. Il vantaggio principale di questa carta è che la ricarica è istantanea da qualsiasi conto, puoi prelevare gratuitamente in tutta l'europa (max 200 euro per la versione gratuita) e altri vantaggi come la creazione di carte virtuali usa e getta e il dettaglio non da poco che è tutto a costo zero con il pacchetto base.  
+**Nota di demerito**: per invitare amici necessita del completo accesso alla propria rubrica. Lo stesso sembra valere per il trasferimento di denaro. [Qui](https://community.revolut.com/t/cant-send-money-without-revolut-needs-to-access-your-contacts/9948/22) un tread interessante. La propria rubrica, soprattutto con tutti i dati che raccoglie delle persone che ti sono vicine, è un dato molto prezioso, non vendiamolo.
 
 
 ### Utilities
