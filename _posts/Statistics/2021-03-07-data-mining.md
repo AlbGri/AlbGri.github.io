@@ -47,7 +47,7 @@ Per invertire qualsiasi matrice si può usare il metodo di [Gauss-Jordan](https:
 
 #### Fattorizzazione di Cholesky
 Per invertire una matrice simmetrica, si può usare la fattorizzazione di Cholesky.  
-Complessità computazionale $$p^3+\frac{np^2}{2}$$. Molto lento con tante variabili.
+Complessità computazionale $$p^3+\frac{np^2}{2}$$ e risulta molto lento con tante variabili.
 
 #### Scomposizione Spettrale
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Per una matrice quadrata.
@@ -55,10 +55,10 @@ Complessità computazionale $$p^3+\frac{np^2}{2}$$. Molto lento con tante variab
 ### Stima LS con $$n$$ non troppo grande
 
 #### Scomposizione QR
-Complessità computazionale $$2np^2$$  
+Complessità computazionale $$2np^2$$.  
 Si cerca una scomposizione $$X=QR$$ per cui $$Q$$ è una matrice ortogonale (colonne ortogonali l'una con l'altra) $$n\times p$$ e $$R$$ è triangolare superiore $$p\times p$$.  
+$$\hat{\beta}=(X^T X)^{-1}X^T y=R^{-1} Q^T y\quad$$ e $$\quad\hat{y}=QQ^T y$$  
 Per ottenere $$Q$$ si può usare l'Algoritmo Gram-Schmidt che ortogonalizza la matrice.  
-$$\hat{\beta}=(X^T X)^{-1}X^T y=R^{-1} Q^T y$$ e $$\hat{y}=QQ^T y$$  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Interpretazione geometrica e relazione con il coefficiente di correlazione parziale
 
 
