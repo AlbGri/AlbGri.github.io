@@ -14,14 +14,14 @@ mathjax: "true"
 ## Appunti di algebra
 - $$(A^T)^T=A$$
 - $$(A^{-1})^T=(A^T)^{-1}$$
-    1. $$A^{-1}A=I$$
-    2. $$(A^{-1}A)^T=I^T=I$$
-    3. dato che $$(AB)^T=B^TA^T$$
-    4. $$A^T(A^{-1})^T=I$$
+    1. $$A^{-1}A=I$$  
+    2. $$(A^{-1}A)^T=I^T=I$$  
+    3. dato che $$(AB)^T=B^TA^T$$  
+    4. $$A^T(A^{-1})^T=I$$  
     5. dato che $$A$$ è invertibile allora anche $$A^T$$ lo è
-    6. $$(A^T)^{-1}A^T(A^{-1})^T=(A^T)^{-1}I$$
-    7. $$(A^{-1})^T=(A^T)^{-1}
-- $$[(X^TX)^{-1}X^T]^T=X[(X^TX)^{-1}]^T=X[(X^TX)^T]^{-1}=X[(X)^T(X^T)^T]^{-1}=X(X^TX)^{-1}
+    6. $$(A^T)^{-1}A^T(A^{-1})^T=(A^T)^{-1}I$$  
+    7. $$(A^{-1})^T=(A^T)^{-1}  
+- $$[(X^TX)^{-1}X^T]^T=X[(X^TX)^{-1}]^T=X[(X^TX)^T]^{-1}=X[(X)^T(X^T)^T]^{-1}=X(X^TX)^{-1}$$
 
 
 ## Modelli Lineari e Minimi Quadrati (LS)
@@ -43,10 +43,10 @@ $$\mathbb{E}[\hat{\beta}]=
 \beta$$
 
 Varianza dello stimatore  
-$$\sigma^2(\hat{\beta})=\mathbb{E}\big[ (\hat{\beta}-\mathbb{E}[\hat{\beta}])^2 \big]=\mathbb{E}\big[ (\hat{\beta}-\beta])(\hat{\beta}-\beta])^T \big]=$$
-$$=(X^TX)^{-1}\mathbb{E}[(y-X\hat{\beta}) (y-X\hat{\beta})^T]X(X^TX)^{-1}=(X^TX)^{-1}\mathbb{E}[\epsilon \epsilon^T]X(X^TX)^{-1}=\sigma^2(X^TX)^{-1}$$  
+$$\sigma^2(\hat{\beta})
+=\mathbb{E}\big[ (\hat{\beta}-\mathbb{E}[\hat{\beta}])^2 \big]=\sigma^2(X^TX)^{-1}$$  
 Stima non distorta della varianza dello stimatore  
-$$\widehat{\mbox{var}}(\hat{\beta})=\frac{D(\hat{\beta}}{n-p}$$
+$$\widehat{\mbox{var}}(\hat{\beta})=\frac{D(\hat{\beta})}{n-p}$$
 
 
 Nota: se si applica OLS con le esplicative trasformate con il logaritmo si mantiene lineare nei parametri, ma se il logaritmo si applica alla risposta non è più lineare nei parametri. La stima non è OLS e non è la migliore in termini di minimizzazione della devianza, ma mantiene la sua validità. Anche l'$$R^2$$ non risulterebbe confrontabile.  
