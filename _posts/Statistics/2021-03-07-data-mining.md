@@ -23,6 +23,17 @@ $$\hat{y}=X\hat{\beta}$$, dove $$\hat{\beta}=(X^T X)^{-1}X^T y$$.
 Nota: se si applica OLS con le esplicative trasformate con il logaritmo si mantiene lineare nei parametri, ma se il logaritmo si applica alla risposta non è più lineare nei parametri. La stima non è OLS e non è la migliore in termini di minimizzazione della devianza, ma mantiene la sua validità. Anche l'$$R^2$$ non risulterebbe confrontabile.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Ricalcolare l'$$R^2$$ retrotrasformando la previsione per il log Y, ovvero retrotrasformarla con l'esponenziale per ottenere Y.
 
+#### Projection Matrix
+$$P$$ è la matrice cappello o di proiezione $$P=X(X^TX)^{-1}X^T$$
+Risulta che $$\hat{y}=X\hat{\beta}=Py$$.
+
+##### Proprietà della projection matrix
+1. Matrice $$n\times n$$
+2. $$P^T=P$$  
+3. $$PP=P$$  
+4. $$\mbox{tr}(P)=\mbox{rk}(P)=p$$
+
+
 #### Variabili qualitative: dummy e contrasti
 - Parametrizzazione ad angolo: 0/1
 - Parametrizzazione simmetrica: +1/-1 (la somma degli coefficienti fa 0)
@@ -37,7 +48,7 @@ con $$\mathcal{E}$$ matrice di errore $$n$$ righe per $$q$$ colonne, in cui si a
 $$\tilde{Y_i}$$ come vettore colonna, sarebbe la i-esima riga della matrice $$Y$$ messa in colonna. Per semplicità la si mette come vettore colonna e la variabile multivariata è espressa dalle righe della Y.  
 Stima LS: $$\hat{ \mathcal{B} }=(X^T X)^{-1}X^T Y$$.  
 Inoltre, $$VAR\{\tilde{\mathcal{E}_i}\}=\Sigma$$ e $$\hat{\Sigma}=\frac{1}{n-p}Y^T(I-P)Y$$  
-con $$P$$ matrice cappello o di proiezione $$P=X(X^TX)^{-1}X^T$$
+
 
 ### Stima LS
 Bisogna invertire la matrice $$X^TX$$ (che è simmetrica).  
@@ -69,7 +80,9 @@ Con due variabili esplicative $$x_1$$ e $$x_2$$ e la variabile risposta $$y$$, l
 Il prodotto $$X^TX$$ risulta oneroso se si ha un elevato numero di righe.
 
 #### Stima ricorsiva (filtro lineare)
-Il metodo consente di invertire solo una matrice $$p \times p$$, quindi se si ha un numero elevato di variabili può diventare oneroso.  
+Il metodo consente di invertire solo due matrici $$p \times p$$ per la stima dei beta.  
+$$\hat{\beta}_{(j)}=W^{-1}_{(j)}u_{(j)}$$  
+Se si ha un numero elevato di variabili diventa oneroso, ma si estende il metodo al fine di attenuare questo problema.  
 Per invertire una matrice generica (eg. somma di due matrici) in questo caso si usa la formula di Sherman-Morrison.  
 Consente di invertire solo una volta (usando anche la matrice identità come partenza) e poi si aggiornano le stime.  
 Formula analoga per la stima della varianza.  
@@ -79,6 +92,7 @@ Formula analoga per la stima della varianza.
 
 ##### AS, ES. 2.8
 Complete the details of the statements at the end of section 2.2.2 by calculating $$s^2$$ and standard errors, using (2.10) or any other method.
+Si estenda la procedura precedente per calcolare $$s^2$$ e gli errori standard di $$\hat\beta$$ con un uso della memoria indipendente dalla numerosità $$n$$ dei dati disponibili.
 
 ##### AS, ES. 2.9 
 Check the correctness of the Sherman-Morrison formula (A.2).
