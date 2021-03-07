@@ -21,7 +21,14 @@ a più $$X$$.
 Sia $$y=X\beta+\epsilon$$  
 con OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):  
 $$\hat{y}=X\hat{\beta}$$, dove $$\hat{\beta}=(X^T X)^{-1}X^T y$$.  
+
+Sia $$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$
+
 Valore atteso dello stimatore  
+$$\mathbb{E}[\hat{\beta}]=
+\mathbb{E}[(X^TX)^{-1}X^T(X\beta+\epsilon)]=
+=\beta+\mathbb{E}[(X^TX)^{-1}X^T\epsilon]=
+\beta$$
 
 Varianza dello stimatore  
 $$\sigma^2(\hat{\beta})=\mathbb{E}\big[ (\hat{\beta}-\mathbb{E}[\hat{\beta}])^2 \big]=\mathbb{E}\big[ (\hat{\beta}-\beta])(\hat{\beta}-\beta])^T \big]=$$
