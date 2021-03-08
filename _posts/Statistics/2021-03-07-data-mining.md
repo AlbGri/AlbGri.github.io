@@ -38,8 +38,8 @@ Tramite OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):
 $$\hat{y}=X\hat{\beta}=Py$$  
 con $$\hat{\beta}=(X^T X)^{-1}X^T y\equiv\beta+(X^T X)^{-1}X^T \epsilon$$  
 Inoltre,  
-$$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$ e  
-$$\left \| \hat{\epsilon} \right \|^2$$ $$=y^Ty-y^TX\hat{\beta}$$
+$$\hat{\epsilon}=y-\hat{y}$$ $$=y-X\hat{\beta}$$  
+$$\left \| \hat{\epsilon} \right \|^2$$ $$=y^Ty-y^TX\hat{\beta}$$  
 
 Valore atteso dello stimatore  
 $$\mathbb{E}[\hat{\beta}]=\mathbb{E}[(X^TX)^{-1}X^T(X\beta+\epsilon)]=\beta$$
@@ -122,7 +122,7 @@ $$\hat{\beta}_{(n+1)}=\hat{\beta}_{(n)}+k_n (y_{n+1}-\tilde{x}^T_{n+1}\hat{\beta
 con $$e_{n+1}$$ l'errore di $$y_{n+1}$$ con la stima di $$\beta$$ sulle prime $$n$$ osservazioni.  
 La nuova stima è ottenuta come somma della precedente stima più l'errore di previsione pesato con il guadagno del filtro.  
 La stima (ricorsiva) della devianza dello stimatore dei minimi quadrati ricorsivo al passo $$_{(n+1)}$$ risulta:  
-$$D_{(n+1)}(\hat{\beta}_{(n+1)})=D_{(n)}(\hat{\beta}_{(n)})+he^2_{(n+1)}$$  
+$$D_{(n+1)}(\hat{\beta}_{(n+1)})=D_{(n)}(\hat{\beta}_{(n)})+he^2_{n+1}$$  
 si determinano facilmente $$s^2_{(n+1)}$$ e lo standard error di $$\hat{\beta}_{(n+1)}$$ 
 
 
