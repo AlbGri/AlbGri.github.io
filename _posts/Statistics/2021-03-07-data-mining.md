@@ -103,12 +103,14 @@ Con due variabili esplicative $$x_1$$ e $$x_2$$ e la variabile risposta $$y$$, l
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Il coefficiente di correlazione parziale utilizza lo stesso concetto della regressione di $$x_2$$ su $$x_1$$.
 
 ### Stima LS con $$n$$ grande
-Il prodotto $$X^TX$$ risulta oneroso se si ha un elevato numero di righe.
+Data una matrice di dati con $$j$$ righe, si voglio stimare i coefficienti beta con i minimi quadrati.  
+Sia $$_{(j)}$$ il riferimento di una matrice alle prime $$j$$ su $$n$$ osservazioni. La matrice $$X^TX_{(j)}$$ può essere vista come la stessa matrice con $$_(j-1)$$ righe più l'ultima. In maniera analoga la stima dei coefficienti beta risulterà:  
+$$\hat{\beta}_{(j)}=W^{-1}_{(j)}u_{(j)}$$  
+Il metodo consente di invertire solo due matrici $$p \times p$$ per la stima dei beta ad ogni $$j$$, evitando di salvare in memoria la matrice $$X$$.  
+Se si ha un numero elevato di variabili diventa oneroso, ma si estende il metodo al fine di attenuare questo problema.  
 
 #### Stima ricorsiva (filtro lineare)
-Il metodo consente di invertire solo due matrici $$p \times p$$ per la stima dei beta.  
-$$\hat{\beta}_{(j)}=W^{-1}_{(j)}u_{(j)}$$  
-Se si ha un numero elevato di variabili diventa oneroso, ma si estende il metodo al fine di attenuare questo problema.  
+Il metodo precedente co
 Per invertire una matrice generica (eg. somma di due matrici) in questo caso si usa la formula di Sherman-Morrison.  
 Consente di invertire solo una volta (usando anche la matrice identità come partenza) e poi si aggiornano le stime.  
 Formula analoga per la stima della varianza.  
