@@ -28,7 +28,9 @@ mathjax: "true"
 
 ## Modelli Lineari e Minimi Quadrati (LS)
 
-Minimizzazione di $$D(\beta)=\sum_{i=1}^n\big\{y_i-f(x_i; \beta)\big\}^2=\left \| y-X\beta \right \|^2$$
+Minimizzazione di  
+$$D(\beta)=\sum_{i=1}^n\big\{y_i-f(x_i; \beta)\big\}^2$$ $$=\left \| y-X\beta \right \|^2=$$  
+$$\sum_{i=1}^{n}(y_i-\hat{y})^2$$ $$=y^T(I_n-P)y$$
 
 ### Modello lineare multidimensionale
 a più $$X$$.  
@@ -109,13 +111,13 @@ $$\hat{\beta}_{(j)}=W^{-1}_{(j)}u_{(j)}$$
 Il metodo consente di invertire solo due matrici $$p \times p$$ per la stima dei beta ad ogni $$j$$, evitando di salvare in memoria la matrice $$X$$.  
 Se si ha un numero elevato di variabili diventa oneroso, ma si estende il metodo al fine di attenuare questo problema.  
 
-#### Stima ricorsiva (filtro lineare)
-Il metodo precedente co
+#### Stima ricorsiva (con filtro lineare)
+Il seguente metodo, consente di invertire una sola matrice $$p\times p$$ all'inizio (anche la matrice identità) e poi iterativamente si aggiornano le stime.  
 Per invertire una matrice generica (eg. somma di due matrici) si può usare la formula di Sherman-Morrison.  
 $$(A+bd^T)^{-1}=A^{-1}-\frac{1}{1+d^TA^{-1}b}A^{-1}bd^TA^{-1}$$  
 con $$d$$ vettore colonna, $$d^T$$ vettore riga.  
-Consente di invertire solo una volta (usando anche la matrice identità come partenza) e poi si aggiornano le stime.  
-$$\hat{\beta}_{(n+1)}=\hat{\beta}_{(n)}+k_n (y_{n+1}-\tilde{x}^T_{n+1}\hat{\beta}_{(n)})=\hat{\beta}_{(n)}+k_n e_{n+1}$$ con $$e_{n+1}$$ l'errore di $$y_{n+1}$$ con la stima di $$\beta$$ sulle prime $$n$$ osservazioni.  
+$$\hat{\beta}_{(n+1)}=\hat{\beta}_{(n)}+k_n (y_{n+1}-\tilde{x}^T_{n+1}\hat{\beta}_{(n)})=\hat{\beta}_{(n)}+k_n e_{n+1}$$  
+con $$e_{n+1}$$ l'errore di $$y_{n+1}$$ con la stima di $$\beta$$ sulle prime $$n$$ osservazioni.  
 La nuova stima è ottenuta come somma della precedente stima più l'errore di previsione pesato con il guadagno del filtro.  
   
 
