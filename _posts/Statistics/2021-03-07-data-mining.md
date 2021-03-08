@@ -37,7 +37,7 @@ Sia $$y=X\beta+\epsilon$$ con $$\mathbb{E}(\epsilon)=0$$.
 Tramite OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):  
 $$\hat{y}=X\hat{\beta}=Py$$  
 con $$\hat{\beta}=(X^T X)^{-1}X^T y\equiv\beta+(X^T X)^{-1}X^T \epsilon$$  
-Inoltre, $$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$
+Inoltre, $$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$ e $$\left \| \hat{\epsilon} \right \|^2=y^Ty-y^TX\hat{\beta}$$
 
 Valore atteso dello stimatore  
 $$\mathbb{E}[\hat{\beta}]=\mathbb{E}[(X^TX)^{-1}X^T(X\beta+\epsilon)]=\beta$$
@@ -118,9 +118,13 @@ con $$d$$ vettore colonna, $$d^T$$ vettore riga.
 $$\hat{\beta}_{(n+1)}=\hat{\beta}_{(n)}+k_n (y_{n+1}-\tilde{x}^T_{n+1}\hat{\beta}_{(n)})=\hat{\beta}_{(n)}+k_n e_{n+1}$$  
 con $$e_{n+1}$$ l'errore di $$y_{n+1}$$ con la stima di $$\beta$$ sulle prime $$n$$ osservazioni.  
 La nuova stima è ottenuta come somma della precedente stima più l'errore di previsione pesato con il guadagno del filtro.  
-La stima (iterativa) della devianza dello stimatore dei minimi quadrati ricorsivo al passo $$_{(n+1)}$$ risulta:  
+La stima (ricorsiva) della devianza dello stimatore dei minimi quadrati ricorsivo al passo $$_{(n+1)}$$ risulta:  
 $$D_{(n+1)}(\hat{\beta}_{(n+1)})=D_{(n)}(\hat{\beta}_{(n)})+he^2_{(n+1)}$$  
-così determinando facilmente $$s^2_{(n+1)}$$ e lo standard error di $$\hat{\beta}_{(n+1)}$$ 
+si determinano facilmente $$s^2_{(n+1)}$$ e lo sd di $$\hat{\beta}_{(n+1)}$$ 
+
+
+
+
 
 <!--- 
 ### Esercizi
@@ -131,16 +135,19 @@ Si estenda la procedura precedente per calcolare $$s^2$$ e gli errori standard d
 
 ##### AS, ES. 2.9 
 Check the correctness of the Sherman-Morrison formula (A.2).
+Verificare che la formula di Sherman-Morrison fornisce effettivamente l'inversa di $$(A+bd^T)$$.
 
 ##### AS, ES. 2.10
 Check the correctness of the formulas provided by recursive updating of the least squares estimates.
+Verificare la correttezza delle formule fornite per l'aggiornamento ricorsivo delle stime dei minimi quadrati.
 
 ##### AS, ES. 2.11
 Prove (2.24).
+Si completi l'algoritmo dei minimi quadrati ricorsivi sviluppando le formule per l'aggiornamento iterativo di $$\hat{\sigma}^2$$ appena viste. Si usi il fatto che $$\left \| \hat{\epsilon} \right \|^2=y^Ty-y^TX\hat{\beta}$$
 
 ##### AS, ES. 2.12
 What is the difference between the confidence interval of the value of the function and the prediction interval, both relative to the next observation?
-
+Qual è la differenza tra intervallo di confidenza del valore della funzione e quello di previsione, ambedue relativi alla prossima osservazione?
 
 ### Domande
 Come continuo la formula di s^2 (vedi appunti)
