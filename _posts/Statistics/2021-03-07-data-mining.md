@@ -37,7 +37,9 @@ Sia $$y=X\beta+\epsilon$$ con $$\mathbb{E}(\epsilon)=0$$.
 Tramite OLS (proiezione ortogonale di $$y$$ su $$\mathcal{C}(X)$$):  
 $$\hat{y}=X\hat{\beta}=Py$$  
 con $$\hat{\beta}=(X^T X)^{-1}X^T y\equiv\beta+(X^T X)^{-1}X^T \epsilon$$  
-Inoltre, $$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$ e $$\left \| \hat{\epsilon} \right \|^2=y^Ty-y^TX\hat{\beta}$$
+Inoltre,  
+$$\hat{\epsilon}=y-\hat{y}=y-X\hat{\beta}$$ e  
+$$\left \| \hat{\epsilon} \right \|^2$$ $$=y^Ty-y^TX\hat{\beta}$$
 
 Valore atteso dello stimatore  
 $$\mathbb{E}[\hat{\beta}]=\mathbb{E}[(X^TX)^{-1}X^T(X\beta+\epsilon)]=\beta$$
@@ -151,11 +153,13 @@ What is the difference between the confidence interval of the value of the funct
 Qual è la differenza tra intervallo di confidenza del valore della funzione e quello di previsione, ambedue relativi alla prossima osservazione?
 
 ### Domande
-- Come continuo la formula di s^2 (vedi appunti)
+- Es 2.8 suggerimenti per continuare la formula per s^2 (vedi appunti)
 - (pagina 33) Q_(n+1)(beta_(n+1)) quel Q perché non ha usato la D di deviance?
 - (pagina 33) la formula dello standard error dei beta iterati n+1 sarebbe (Q_(n+1)(beta_(n+1))/(n-p) V_(n+1))^-(1/2)
 - C'è un modo migliore di risolvere questa semplificazione? (screen)
-
+- Es 2.9 verificare anche su R?
+- Es 2.10 Cosa si intende? Che la stima si mantiene non distorta?
+- Es 2-11 devo capire il 2.8
 
 
 --->
