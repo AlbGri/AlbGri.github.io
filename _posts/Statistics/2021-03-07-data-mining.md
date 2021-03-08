@@ -111,7 +111,8 @@ Se si ha un numero elevato di variabili diventa oneroso, ma si estende il metodo
 
 #### Stima ricorsiva (filtro lineare)
 Il metodo precedente co
-Per invertire una matrice generica (eg. somma di due matrici) in questo caso si usa la formula di Sherman-Morrison.  
+Per invertire una matrice generica (eg. somma di due matrici) si può usare la formula di Sherman-Morrison.  
+$$(A+bd^T)^{-1}=A^{-1}-\frac{1}{1+d^TA^{-1}b}A^{-1}bd^TA^{-1}$$
 Consente di invertire solo una volta (usando anche la matrice identità come partenza) e poi si aggiornano le stime.  
 Formula analoga per la stima della varianza.  
 
