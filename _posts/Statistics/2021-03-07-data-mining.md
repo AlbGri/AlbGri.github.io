@@ -104,7 +104,7 @@ Con due variabili esplicative $$x_1$$ e $$x_2$$ e la variabile risposta $$y$$, l
 
 ### Stima LS con $$n$$ grande
 Data una matrice di dati con $$j$$ righe, si voglio stimare i coefficienti beta con i minimi quadrati.  
-Sia $$_{(j)}$$ il riferimento di una matrice alle prime $$j$$ su $$n$$ osservazioni. La matrice $$X^TX_{(j)}$$ può essere vista come la stessa matrice con $$_(j-1)$$ righe più l'ultima. In maniera analoga la stima dei coefficienti beta risulterà:  
+Sia $$_{(j)}$$ il riferimento di una matrice alle prime $$j$$ su $$n$$ osservazioni. La matrice $$(X^TX)_{(j)}$$ può essere vista come la stessa matrice con $$_{(j-1)}$$ righe più l'ultima. Analogamente la stima dei coefficienti beta risulta:  
 $$\hat{\beta}_{(j)}=W^{-1}_{(j)}u_{(j)}$$  
 Il metodo consente di invertire solo due matrici $$p \times p$$ per la stima dei beta ad ogni $$j$$, evitando di salvare in memoria la matrice $$X$$.  
 Se si ha un numero elevato di variabili diventa oneroso, ma si estende il metodo al fine di attenuare questo problema.  
@@ -112,7 +112,8 @@ Se si ha un numero elevato di variabili diventa oneroso, ma si estende il metodo
 #### Stima ricorsiva (filtro lineare)
 Il metodo precedente co
 Per invertire una matrice generica (eg. somma di due matrici) si può usare la formula di Sherman-Morrison.  
-$$(A+bd^T)^{-1}=A^{-1}-\frac{1}{1+d^TA^{-1}b}A^{-1}bd^TA^{-1}$$
+$$(A+bd^T)^{-1}=A^{-1}-\frac{1}{1+d^TA^{-1}b}A^{-1}bd^TA^{-1}$$  
+con $$d$$ vettore colonna, $$d^T$$ vettore riga.  
 Consente di invertire solo una volta (usando anche la matrice identità come partenza) e poi si aggiornano le stime.  
 Formula analoga per la stima della varianza.  
 
