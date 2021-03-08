@@ -29,8 +29,7 @@ mathjax: "true"
 ## Modelli Lineari e Minimi Quadrati (LS)
 
 Minimizzazione di  
-$$D(\beta)=\sum_{i=1}^n\big\{y_i-f(x_i; \beta)\big\}^2$$ $$=\left \| y-X\beta \right \|^2=$$  
-$$\sum_{i=1}^{n}(y_i-\hat{y})^2$$ $$=y^T(I_n-P)y$$
+$$D(\beta)=\sum_{i=1}^n\big\{y_i-f(x_i; \beta)\big\}^2=\left \| y-X\beta \right \|^2=\sum_{i=1}^{n}(y_i-\hat{y})^2$$ $$=y^T(I_n-P)y$$
 
 ### Modello lineare multidimensionale
 a più $$X$$.  
