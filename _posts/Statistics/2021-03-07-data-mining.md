@@ -121,7 +121,7 @@ con $$e_{n+1}$$ l'errore di $$y_{n+1}$$ con la stima di $$\beta$$ sulle prime $$
 La nuova stima è ottenuta come somma della precedente stima più l'errore di previsione pesato con il guadagno del filtro.  
 La stima (ricorsiva) della devianza dello stimatore dei minimi quadrati ricorsivo al passo $$_{(n+1)}$$ risulta:  
 $$D_{(n+1)}(\hat{\beta}_{(n+1)})=D_{(n)}(\hat{\beta}_{(n)})+he^2_{(n+1)}$$  
-si determinano facilmente $$s^2_{(n+1)}$$ e lo sd di $$\hat{\beta}_{(n+1)}$$ 
+si determinano facilmente $$s^2_{(n+1)}$$ e lo standard error di $$\hat{\beta}_{(n+1)}$$ 
 
 
 
@@ -151,10 +151,11 @@ What is the difference between the confidence interval of the value of the funct
 Qual è la differenza tra intervallo di confidenza del valore della funzione e quello di previsione, ambedue relativi alla prossima osservazione?
 
 ### Domande
-Come continuo la formula di s^2 (vedi appunti)
-(pagina 33) Q_(n+1)(beta_(n+1)) quel Q perché non ha usato la D di deviance?
-(pagina 33) la formula dello standard error dei beta iterati n+1 sarebbe 
-(Q_(n+1)(beta_(n+1))/(n-p) V_(n+1))^-(1/2)
+- Come continuo la formula di s^2 (vedi appunti)
+- (pagina 33) Q_(n+1)(beta_(n+1)) quel Q perché non ha usato la D di deviance?
+- (pagina 33) la formula dello standard error dei beta iterati n+1 sarebbe (Q_(n+1)(beta_(n+1))/(n-p) V_(n+1))^-(1/2)
+- C'è un modo migliore di risolvere questa semplificazione? (screen)
+
 
 
 --->
