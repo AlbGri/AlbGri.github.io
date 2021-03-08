@@ -155,12 +155,12 @@ Qual è la differenza tra intervallo di confidenza del valore della funzione e q
 ### Domande
 - Es 2.8 suggerimenti per continuare la formula per s^2 (vedi appunti)
 - (pagina 33) Q_(n+1)(beta_(n+1)) quel Q perché non ha usato la D di deviance?
-- (pagina 33) la formula dello standard error dei beta iterati n+1 sarebbe (Q_(n+1)(beta_(n+1))/(n-p) V_(n+1))^-(1/2)
+- (pagina 33) la formula dello standard error dei beta iterati n+1 sarebbe (Q_{n+1}(beta_{(n+1)})/(n-p) V_{(n+1)})^-(1/2)
 - C'è un modo migliore di risolvere questa semplificazione? (screen)
 - Es 2.9 verificare anche su R?
 - Es 2.10 Cosa si intende? Che la stima si mantiene non distorta?
 - Es 2-11 devo capire il 2.8
-
+- Es 2-12 che intende per valore della funzione e di previsione? la differenza tra il vero valore e quello stimato?
 
 --->
 
