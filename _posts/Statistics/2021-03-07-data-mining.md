@@ -115,7 +115,7 @@ Per invertire una matrice generica (eg. somma di due matrici) si può usare la f
 $$(A+bd^T)^{-1}=A^{-1}-\frac{1}{1+d^TA^{-1}b}A^{-1}bd^TA^{-1}$$  
 con $$d$$ vettore colonna, $$d^T$$ vettore riga.  
 Consente di invertire solo una volta (usando anche la matrice identità come partenza) e poi si aggiornano le stime.  
-$$\hat{\beta}_{(n+1)}=\hat{\beta}_{(n)}+k_n (y_{n+1}-\tilde{x)^T_{n+1}\hat{\beta}_{(n)}=\hat{\beta}_{(n)}+k_n e_{n+1}$$ con $$e_{n+1}$$ l'errore di $$y_{n+1}$$ con la stima di $$\beta$$ sulle prime $$n$$ osservazioni.  
+$$\hat{\beta}_{(n+1)}=\hat{\beta}_{(n)}+k_n (y_{n+1}-\tilde{x}^T_{n+1}\hat{\beta}_{(n)})=\hat{\beta}_{(n)}+k_n e_{n+1}$$ con $$e_{n+1}$$ l'errore di $$y_{n+1}$$ con la stima di $$\beta$$ sulle prime $$n$$ osservazioni.  
 La nuova stima è ottenuta come somma della precedente stima più l'errore di previsione pesato con il guadagno del filtro.  
   
 
