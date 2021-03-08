@@ -106,7 +106,8 @@ Con due variabili esplicative $$x_1$$ e $$x_2$$ e la variabile risposta $$y$$, l
 ### Stima LS con $$n$$ grande
 Data una matrice di dati con $$j$$ righe, si voglio stimare i coefficienti beta con i minimi quadrati.  
 Sia $$_{(j)}$$ il riferimento di una matrice alle prime $$j$$ su $$n$$ osservazioni. La matrice $$(X^TX)_{(j)}$$ può essere vista come la stessa matrice con $$_{(j-1)}$$ righe più l'ultima. Analogamente la stima dei coefficienti beta risulta:  
-$$\hat{\beta}_{(j)}=W^{-1}_{(j)}u_{(j)}$$ con $$W=X^TX=\sum_{i=1}^n \tilde{x}_i \tilde{x}_i^T$$ e $$u=X^Ty=\sum_{i=1}^n \tilde{x}_i y_i$$ 
+$$\hat{\beta}_{(j)}=W^{-1}_{(j)}u_{(j)}$$  
+con $$W=X^TX=\sum_{i=1}^n \tilde{x}_i \tilde{x}_i^T$$ e $$u=X^Ty=\sum_{i=1}^n \tilde{x}_i y_i$$  
 Il metodo consente di invertire solo due matrici $$p \times p$$ per la stima dei beta ad ogni $$j$$, evitando di salvare in memoria la matrice $$X$$.  
 Se si ha un numero elevato di variabili diventa oneroso, ma si estende il metodo al fine di attenuare questo problema.  
 
