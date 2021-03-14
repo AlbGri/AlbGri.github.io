@@ -211,8 +211,13 @@ Dal modello completo al modello con intercetta. Generalmente seleziona un numero
 Combinazione delle due precedenti.
 
 ### PCA
-Analisi delle componenti principali. Effettua una rotazione delle variabili per renderle ortogonali. Si effettua la scomposizione spettrale della matrice di correlazione (o di varianze e covarianze ma verrebbe influenzata dalla scala delle variabili) $$\Sigma$$:  
-$$\Sigma \alpha_l=\lambda^2_j \alpha_l$$  
+Analisi delle componenti principali. Effettua una rotazione delle variabili per ottenere nuove variabili ortogonali. Si effettua la scomposizione spettrale della matrice di correlazione (o di varianze e covarianze ma è influenzata dalla scala delle variabili) $$\Sigma$$:  
+$$\Sigma \alpha_l=\lambda^2_j \alpha_l$$ con $$\lambda$$ autovalori.  
+
+La PCA minimizza le distanze ortogonali, è una relazione simmetrica tra le variabili, mentre la retta dei minimi quadrati minimizza le distanze verticali in cui la scelta della direzione comporta stime differenti dei parametri.  
+
+La prima componente è la più informativa ma non necessariamente è quella che spiega meglio la target.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Esistono metodi, come la Correlazione Canonica in cui si determinano le componenti anche in funzione della risposta. Altri metodi: Minimi Quadrati Parziali (Partially Square), Independent Component Analysis, Principal Curves, etc.
 
 
 
