@@ -355,18 +355,14 @@ aaaaaaaaaaaaa
 bbbbbbbbbbbbbbbbbb
 
 
-<iframe id="github-iframe" src=""></iframe>
-<script>
-    fetch('https://api.github.com/repos/ileathan/hubot-mubot/contents/src/mubot.coffee')
-        .then(function(response) {
-            return response.json();
-        }).then(function(data) {
-            var iframe = document.getElementById('github-iframe');
-            iframe.src = 'data:text/html;base64,' + encodeURIComponent(data['content']);
-        });
-</script>
+<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://raw.githubusercontent.com/AlbGri/AlbGri.github.io/master/assets/files/Statistics/data-mining-lab1.R"></script></body></html>'></iframe> 
 
 
+
+CCCCCCCCCCCCCCCCCC
+
+
+<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.R"></script></body></html>'></iframe> 
 
 
 
