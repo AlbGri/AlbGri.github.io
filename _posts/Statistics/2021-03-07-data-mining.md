@@ -149,13 +149,14 @@ La varianza residua _overfitta_ se applicata solo al dataset di training.
 
 
 ### Cross Validation
-Per identificare gli iper parametri, invece di fare una suddivisione tra stima (training) e verifica (test), si suddividono i dati in $$k$$ sottoinsiemi, che si stima e si verifica a rotazione, ottenendo $$k$$ stime della funzione di perdita e si sceglie il parametro che la minimizza.  
+Per identificare gli iper parametri, invece di fare una suddivisione tra stima (training) e verifica (validation), si suddividono i dati in $$k$$ sottoinsiemi, che si stima e si verifica a rotazione, ottenendo $$k$$ stime della funzione di perdita e si sceglie il parametro che la minimizza.  
 $$p=\text{arg}\,\min\limits_{p}\,D^*(p)=\text{arg}\,\min\limits_{p}\,\left [ \sum_{i=1}^n \left ( y_i-\hat{y}_i \right )^2 \right ]_p$$
 
 Se si vuole ottenere un modello unico dalla CV, nel caso dei modelli parametrici, si può fare una media tra i parametri.
 
 #### Leave-one-out
-$$k=n$$ suddividere il numero di porzioni pari al numero di righe, quindi $$n-1$$ per la stima e $$1$$ riga per la verifica, rotando gli insiemi. Computazionalmente oneroso per $$n$$ elevato.  
+$$k=n$$ suddividere il numero di porzioni pari al numero di righe, quindi $$n-1$$ per la stima e $$1$$ riga per la verifica, rotando gli insiemi.  
+Computazionalmente oneroso per $$n$$ elevato.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da implementare su R.
 
 ##### Sherman-Morrison
