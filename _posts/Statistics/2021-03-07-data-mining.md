@@ -145,7 +145,18 @@ $$ $$= Var(\hat{y})+Bias(\hat{y},f(x'))^2 $$
 
 $$f(x)$$ è ignoto e si può calcolare solo la varianza residua  
 $$\frac{1}{n}\sum_{i=1}^n\left [ \hat{y}_i - y_i \right ] ^2$$  
-La varianza residua _overfitta_ se applicata solo al dataset di training.
+La varianza residua _overfitta_ se applicata su tutto il dataset, quindi divido in due parti i dati e uso una parte per la stima e uno per la verifica.  
+
+In alternativa, per non suddividere il dataset e contenere l'effetto dell'overfitting della varianza residua, si può penalizzare la log verosimiglianza e cercare il modello con il valore minimo. Si penalizza la log-verosimiglianza per la relazione con la chi-quadro per differenze tra log verosimiglianze di modelli annidati. 
+Inoltre, consente di esprimere l'aggiunta di un parametro come l'incremento dei suoi gradi di libertà (cioè il valore medio) alla log verosimiglianza. Quindi si cerca una penalizzazione che sia più grande del suo valore atteso.
+- AIC: $$-2\log{p(y;\hat{\theta})}+2p$$
+- AICc, BIC/SIC, HQ
+
+
+##### Divergenza di Kullback-Leiber
+AIC di Akaike è stato ottenuto sviluppando la divergenza di Kullback-Leiber.  
+Cerca la funzione che minimizzi la distanza tra la vera distribuzione e la stima. Si prova che è la stima di massima verosimiglianza $$\hat{\theta}_y$$ il valore che la minimizza.
+
 
 
 ### Cross Validation
