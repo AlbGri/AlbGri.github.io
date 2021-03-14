@@ -200,6 +200,19 @@ https://www.codecogs.com/latex/eqneditor.php
 
 
 
+<button class="collapsible" id="es005">Esempio 5: LT e KM (0)</button>
+<div class="content" id="es005data" markdown="1">
+
+	```R
+	yrdyfdsfd
+	```
+</div>
+
+
+&nbsp;
+&nbsp;
+
+
 <button class="collapsible" id="esdm001">Esercitazione 1: confronti tra stimatori della media</button>
 <div class="content" id="esdm001R" markdown="1">
 
@@ -296,17 +309,6 @@ https://www.codecogs.com/latex/eqneditor.php
 
 
 
-<button class="collapsible" id="es005">Esempio 5: LT e KM (0)</button>
-<div class="content" id="es005data" markdown="1">
-
-	```R
-	yrdyfdsfd
-	```
-</div>
-
-
-&nbsp;
-&nbsp;
 
 
 
@@ -320,52 +322,32 @@ https://www.codecogs.com/latex/eqneditor.php
 
 ## test
 
+aaa
+
+
 <script src="https://gist-it.appspot.com/github/robertkrimen/gist-it-example/blob/master/example.js"></script>
 
-a
 
-
-<script src="http://gist-it.appspot.com/http://github.com/$file"></script>
-
-
-b
+bbbb
 
 
 
 <script src="http://gist-it.appspot.com/https://github.com/dotnet/corefx/blob/master/src/System.ObjectModel/src/System/Windows/Input/ICommand.cs"></script>
 
 
-c
+
+
+cccccc
 
 
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fpytorch%2Fpytorch%2Fblob%2Fmaster%2Ftorch%2Fnn%2Fcpp.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+<script src="http://gist-it.appspot.com/https://github.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R"></script>
 
 
 
-d
+aaaaaaaaaaaaa
 
 
-<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R"></script>
-
-
-e
-
-
-<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R" slice=0:10 footer=minimal></script>
-
-f
-
-
-<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R", slice=0:10, footer=minimal></script>
-
-
-g
-
-
-<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R&slice=0:10&footer=minimal"></script>
-
-
-
+<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.github.com/sundbry/55bb902b66a39c0ff83629d9a8015ca4.js"></script></body></html>'></iframe> 
 
 ...
