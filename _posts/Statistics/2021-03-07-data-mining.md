@@ -194,10 +194,10 @@ Computazionalmente oneroso.
 ### Forward Stepwise
 Dal modello con intercetta fino al modello più completo.  
 Per saggiare il miglioramento si può usare il test F  
-$$F=\frac{\hat{\beta}^{\mbox{old}-\hat{\beta}^{\mbox{new}}{\mbox{RSS}(\hat{\beta}^{\mbox{new}})/(n-s)}$$
+$$F=\frac{\mbox{RSS}\left (\hat{\beta}^{\tiny \mbox{OLD}}\right )-\mbox{RSS}\left (\hat{\beta}^{\tiny \mbox{NEW}}\right )}{\mbox{RSS}\left (\hat{\beta}^{\tiny \mbox{NEW}}\right )/(n-s)}$$
 
-
-
+### Backward stepwise
+Dal modello completo al modello con intercetta
 
 
 
