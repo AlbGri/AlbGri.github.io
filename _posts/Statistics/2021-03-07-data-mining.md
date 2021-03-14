@@ -200,8 +200,8 @@ https://www.codecogs.com/latex/eqneditor.php
 
 
 
-<button class="collapsible" id="es001">Esercitazione 1: confronti tra stimatori della media</button>
-<div class="content" id="es001R" markdown="1">
+<button class="collapsible" id="esdm001">Esercitazione 1: confronti tra stimatori della media</button>
+<div class="content" id="esdm001R" markdown="1">
 
 	```R
 	########################################################
@@ -296,8 +296,8 @@ https://www.codecogs.com/latex/eqneditor.php
 &nbsp;
 
 
-<button class="collapsible" id="es002">Esercitazione 2: ()</button>
-<div class="content" id="es002R" markdown="1">
+<button class="collapsible" id="esdm002">Esercitazione 2: ()</button>
+<div class="content" id="esdm002R" markdown="1">
 
 	```R
 	########################################################
