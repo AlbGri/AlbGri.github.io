@@ -362,17 +362,62 @@ https://www.codecogs.com/latex/eqneditor.php
 	```
 </div>
 
+&nbsp;
+&nbsp;
 
-<button class="collapsible" id="esdm003">Esercitazione 2: ()</button>
-<div class="content" id="esdm003R" markdown="1">
+<button class="collapsible" id="es002">Esempio 1: LT e KM (0)</button>
+<div class="content" id="es002data" markdown="1">
 
 	```sas
-	test
-	```	
+	/*******************************************************
+	Obiettivo: 
+	analizzare andamento uscita mercato del lavoro con LT e KM
+	*******************************************************/
+	* genero il df;
+	data dati;
+	input time cens;
+	cards;
+	0.1 1aaaaaaaaaaaaaaaaaaaaaaaaaaa
+	0.2 1
+	0.5 0
+	0.5 1
+	0.7 1
+	0.8 1
+	1.3 1
+	1.5 1
+	1.8 0
+	2.5 1
+	2.5 1
+	2.5 0
+	3.2 1
+	3.7 1
+	3.8 0
+	;
+	run;
+
+	* stima LT;
+	proc lifetest 
+	data=dati
+	method= lt
+	intervals= 1 2 3 4
+	plots =(s h) graphics  /* se una sola funzione non serve () */
+	outsurv=conf1;
+	time time*cens(0);
+	title “analisi LT durata episodi”;
+	run;
+
+	* stima KM;
+	proc lifetest 
+	data=dati
+	plots =(s h) graphics  
+	outsurv=conf2;
+	time time*cens(0);
+	title “analisi KM durata episodi”;
+	run;
+	```
 </div>
 
-&nbsp;
-&nbsp;
+
 
 
 
