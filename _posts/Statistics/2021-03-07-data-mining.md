@@ -352,12 +352,18 @@ d
 e
 
 
-<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R" slice=0:-2 footer=minimal></script>
+<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R" slice=0:10 footer=minimal></script>
 
 f
 
 
-<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R", slice=0:-2, footer=minimal></script>
+<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R", slice=0:10, footer=minimal></script>
+
+
+g
+
+
+<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R&slice=0:10&footer=minimal"></script>
 
 
 
