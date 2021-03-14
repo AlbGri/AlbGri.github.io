@@ -144,6 +144,9 @@ $$ MSE\left (\hat{y}\right )
 $$= \mathbb{E}\left \{\left [ \hat{y}-\mathbb{E}\left \{\hat{y}\right \} \right ] ^2\right \} + \left [\mathbb{E}\left \{\hat{y}\right \}-f(x') \right ]^2 
 = Var(\hat{y})+Bias(\hat{y},f(x'))^2 $$  
 
+$$f(x)$$ è ignoto e si puà calcolare solo la varianza residua  
+$$\frac{1}{n}\sum_{i=1}^n\left [ \hat{y}_i - y_i \right ] ^2$$
+
 
 
 
