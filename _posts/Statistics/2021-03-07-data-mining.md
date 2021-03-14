@@ -346,13 +346,13 @@ c
 d
 
 
-<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/master/assets/files/Statistics/data-mining-lab1.R"></script>
+<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R"></script>
 
 
 e
 
 
-<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/master/assets/files/Statistics/data-mining-lab1.R" slice=0:-2></script>
+<script src="https://gist-it.appspot.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R" slice=0:-2 footer=minimal></script>
 
 
 
