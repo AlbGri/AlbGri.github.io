@@ -154,13 +154,13 @@ $$p=\text{arg}\,\min\limits_{p}\,D^*(p)=\text{arg}\,\min\limits_{p}\,\left [ \su
 
 Se si vuole ottenere un modello unico dalla CV, nel caso dei modelli parametrici, si può fare una media tra i parametri.
 
-#### Leave-one-out
+#### Leave-One-Out
 $$k=n$$ suddividere il numero di porzioni pari al numero di righe, quindi $$n-1$$ per la stima e $$1$$ riga per la verifica, rotando gli insiemi.  
 Computazionalmente oneroso per $$n$$ elevato.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da implementare su R.
 
-##### Sherman-Morrison
-Per i stimatori lineari, sfruttando la formula di Sherman-Morrison, da un solo modello completo, si ottiene l'errore di CV Leave-one-out:  
+##### CV LOO Sherman-Morrison
+Per i stimatori lineari, sfruttando la formula di Sherman-Morrison, da un solo modello completo, si ottiene l'errore di CV Leave-One-Out:  
 $$y_i-\hat{y}_{-i}=\frac{y_i-\hat{y}_i}{1-P_{ii}}$$  
 quindi l'MSE di previsione di CV risulta  
 $$D^*(p)=\frac{1}{n}\sum_{i=1}^n\left [ y_i - \hat{y}_{-i} \right ] ^2 = \frac{1}{n}\sum_{i=1}^n \left ( \frac{y_i-\hat{y}_i}{1-P_{ii}} \right )^2$$  
