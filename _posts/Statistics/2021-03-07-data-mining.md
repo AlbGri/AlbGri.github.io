@@ -322,28 +322,6 @@ https://www.codecogs.com/latex/eqneditor.php
 
 ## test
 
-aaa
-
-
-<script src="https://gist-it.appspot.com/github/robertkrimen/gist-it-example/blob/master/example.js"></script>
-
-
-bbbb
-
-
-
-<script src="http://gist-it.appspot.com/https://github.com/dotnet/corefx/blob/master/src/System.ObjectModel/src/System/Windows/Input/ICommand.cs"></script>
-
-
-
-
-cccccc
-
-
-
-<script src="http://gist-it.appspot.com/https://github.com/AlbGri/AlbGri.github.io/blob/master/assets/files/Statistics/data-mining-lab1.R"></script>
-
-
 
 aaaaaaaaaaaaa
 
@@ -355,30 +333,11 @@ aaaaaaaaaaaaa
 bbbbbbbbbbbbbbbbbb
 
 
-<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://raw.githubusercontent.com/AlbGri/AlbGri.github.io/master/assets/files/Statistics/data-mining-lab1.R"></script></body></html>'></iframe> 
+<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
 
+ggggggg
 
-
-CCCCCCCCCCCCCCCCCC
-
-
-<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.R"></script></body></html>'></iframe> 
-
-ddddddddddd
-
-
-<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.txt"></script></body></html>'></iframe> 
-
-eeeeeeeeeeeeeeee
-
-<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.githubusercontent.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb/raw"></script></body></html>'></iframe> 
-
-
-fffff
-
-<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.githubusercontent.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb/raw/2174af61565a8c31d6e4a3d667c226935a29c3de/test.R"></script></body></html>'></iframe> 
-
-
+<script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script>
 
 
 ...
