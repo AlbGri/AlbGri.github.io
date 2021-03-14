@@ -136,7 +136,30 @@ $$ MSE\left (\hat{\theta}\right )
 = \mathbb{E}\left \{\left (\hat{\theta}-\theta \right)^2\right \}
 = \mathbb{E}\left \{\left (\hat{\theta} \pm \mathbb{E}\left \{\hat{\theta}\right \}+\theta \right)^2\right \}= \ldots$$  
 $$= \mathbb{E}\left \{\left [ \hat{\theta}-\mathbb{E}\left \{\hat{\theta}\right \} \right ] ^2\right \} + \left [\mathbb{E}\left \{\hat{\theta}\right \}-\theta \right ]^2 
-= Var(\hat{\theta})+Bias(\hat{\theta},\theta)^2 $$
+= Var(\hat{\theta})+Bias(\hat{\theta},\theta)^2 $$  
+
+$$ MSE\left (\hat{y}\right )
+= \mathbb{E}\left \{\left (\hat{y}-f(x') \right)^2\right \}
+= \mathbb{E}\left \{\left (\hat{y} \pm \mathbb{E}\left \{\hat{y}\right \}+f(x') \right)^2\right \}= \ldots$$  
+$$= \mathbb{E}\left \{\left [ \hat{y}-\mathbb{E}\left \{\hat{y}\right \} \right ] ^2\right \} + \left [\mathbb{E}\left \{\hat{y}\right \}-f(x') \right ]^2 
+= Var(\hat{y})+Bias(\hat{y},f(x'))^2 $$  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
