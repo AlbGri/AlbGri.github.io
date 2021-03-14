@@ -363,6 +363,17 @@ https://www.codecogs.com/latex/eqneditor.php
 </div>
 
 
+<button class="collapsible" id="esdm003">Esercitazione 2: ()</button>
+<div class="content" id="esdm003R" markdown="1">
+
+	```R
+	test
+	```	
+</div>
+
+&nbsp;
+&nbsp;
+
 
 
 ## Utili
