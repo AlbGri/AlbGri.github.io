@@ -152,7 +152,10 @@ La varianza residua _overfitta_ se applicata su tutto il dataset, quindi divido 
 Per identificare gli iper parametri, invece di fare una suddivisione tra stima (training) e verifica (validation), si suddividono i dati in $$k$$ sottoinsiemi, che si stima e si verifica a rotazione, ottenendo $$k$$ stime della funzione di perdita e si sceglie il parametro che la minimizza.  
 $$p=\text{arg}\,\min\limits_{p}\,D^*(p)=\text{arg}\,\min\limits_{p}\,\left [ \sum_{i=1}^n \left ( y_i-\hat{y}_i \right )^2 \right ]_p$$
 
-Se si vuole ottenere un modello unico dalla CV, nel caso dei modelli parametrici, si può fare una media tra i parametri.
+Consente di avere anche una stima approssimativa della variabilità degli stimatori, ad esempio facendone il boxplot perché si ottengono $$k$$ stime dei parametri. Non sarebbe possibile nella suddivisione stima-verifica.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da implementare su R.
+
+In fine, se si vuole ottenere un modello unico dalla CV, nel caso dei modelli parametrici, si può fare una media tra i parametri.
 
 #### Leave-One-Out
 $$k=n$$ suddividere il numero di porzioni pari al numero di righe, quindi $$n-1$$ per la stima e $$1$$ riga per la verifica, rotando gli insiemi.  
@@ -187,21 +190,27 @@ Tra due variabili altamente correlate, rimuovo quella che contribuisce meno alla
 ### Best subset selection
 Date $$p$$ variabili esplicative in una regressione lineare multipla
 1. stimo gli $$k={p\choose i}$$ modelli con $$i=0,...,p$$ numero di variabili da considerare in ogni combinazione
-2. uso un metodo (eg. $$R^2$$) per trovare il miglior modello interno per ogni $$i$$
-3. uso altro metodo (eg. CV) per trovare il migliore tra i $$p+1$$ modelli
-Computazionalmente oneroso.
+2. uso un metodo (eg. $$R^2$$) per trovare il miglior modello interno per ogni $$i$$ (parametro di regolazione: dimensione del sottoinsieme)
+3. uso altro metodo (eg. CV) per trovare il migliore tra i $$p+1$$ modelli (parametro di regolazione: numero di esplicative)
+Il metodo è computazionalmente oneroso.
 
 ### Forward Stepwise
 Dal modello con intercetta fino al modello più completo.  
-Per saggiare il miglioramento si può usare il test F  
+Per saggiare il miglioramento si può usare il test F:  
 $$F=\frac{\mbox{RSS}\left (\hat{\beta}^{\tiny \mbox{OLD}}\right )-\mbox{RSS}\left (\hat{\beta}^{\tiny \mbox{NEW}}\right )}{\mbox{RSS}\left (\hat{\beta}^{\tiny \mbox{NEW}}\right )/(n-s)}$$
 
 ### Backward Stepwise
 Dal modello completo al modello con intercetta. Generalmente seleziona un numero più maggiore di variabili rispetto la forward.
 
 ### Bidirectional Stepwise
-Combinazione delle due
+Combinazione delle due precedenti.
 
+### Iperparametri
+- Grado del polinomio
+- Dimensione del sottoinsieme
+- Posizione della stepwise
+- Parametri di penalizzazione
+- Altro
 
 
 
