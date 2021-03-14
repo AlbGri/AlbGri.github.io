@@ -296,6 +296,8 @@ https://www.codecogs.com/latex/eqneditor.php
 &nbsp;
 
 
+
+
 <button class="collapsible" id="esdm002">Esercitazione 2: ()</button>
 <div class="content" id="esdm002R" markdown="1">
 
@@ -374,6 +376,23 @@ https://www.codecogs.com/latex/eqneditor.php
 </div>
 
 
+&nbsp;
+&nbsp;
+
+
+
+<button class="collapsible" id="es002">Esempio 2: LT e KM (0)</button>
+<div class="content" id="es002data" markdown="1">
+
+	```R
+	yrdy
+	```
+</div>
+
+
+&nbsp;
+&nbsp;
+
 
 
 
@@ -387,5 +406,33 @@ https://www.codecogs.com/latex/eqneditor.php
 ## test
 
 <script src="https://gist-it.appspot.com/github/robertkrimen/gist-it-example/blob/master/example.js"></script>
+
+a
+
+
+<script src="http://gist-it.appspot.com/http://github.com/$file"></script>
+
+
+b
+
+
+
+<script src="http://gist-it.appspot.com/https://github.com/dotnet/corefx/blob/master/src/System.ObjectModel/src/System/Windows/Input/ICommand.cs"></script>
+
+
+c
+
+
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fpytorch%2Fpytorch%2Fblob%2Fmaster%2Ftorch%2Fnn%2Fcpp.py&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+
+
+
+d
+
+
+
+
+
 
 ...
