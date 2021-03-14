@@ -364,8 +364,19 @@ CCCCCCCCCCCCCCCCCC
 
 <iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.R"></script></body></html>'></iframe> 
 
+ddddddddddd
 
 
+<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.txt"></script></body></html>'></iframe> 
+
+eeeeeeeeeeeeeeee
+
+<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.githubusercontent.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb/raw"></script></body></html>'></iframe> 
+
+
+fffff
+
+<iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.githubusercontent.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb/raw/2174af61565a8c31d6e4a3d667c226935a29c3de/test.R"></script></body></html>'></iframe> 
 
 
 
