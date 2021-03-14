@@ -196,121 +196,12 @@ https://www.codecogs.com/latex/eqneditor.php
 
 
 
-## R Esercitazioni
+## R
 
+##### lab1
+<iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
 
-
-<button class="collapsible" id="es005">Esempio 5: LT e KM (0)</button>
-<div class="content" id="es005data" markdown="1">
-
-	```R
-	yrdyfdsfd
-	```
-</div>
-
-
-&nbsp;
-&nbsp;
-
-
-<button class="collapsible" id="esdm001">Esercitazione 1: confronti tra stimatori della media</button>
-<div class="content" id="esdm001R" markdown="1">
-
-	```R
-	asd
-    ```
-</div>
-
-
-&nbsp;
-&nbsp;
-
-
-
-
-<button class="collapsible" id="esdm003">Esercitazione 3: ()</button>
-<div class="content" id="esdm003R" markdown="1">
-
-	```R
-	dddddddddddd
-	```	
-</div>
-
-&nbsp;
-&nbsp;
-
-
-<button class="collapsible" id="es001">Esempio 1: LT e KM (0)</button>
-<div class="content" id="es001data" markdown="1">
-
-	```sas
-	/*******************************************************
-	Obiettivo: 
-	analizzare andamento uscita mercato del lavoro con LT e KM
-	*******************************************************/
-	* genero il df;
-	data dati;
-	input time cens;
-	cards;
-	0.1 1
-	0.2 1
-	0.5 0
-	0.5 1
-	0.7 1
-	0.8 1
-	1.3 1
-	1.5 1
-	1.8 0
-	2.5 1
-	2.5 1
-	2.5 0
-	3.2 1
-	3.7 1
-	3.8 0
-	;
-	run;
-
-	* stima LT;
-	proc lifetest 
-	data=dati
-	method= lt
-	intervals= 1 2 3 4
-	plots =(s h) graphics  /* se una sola funzione non serve () */
-	outsurv=conf1;
-	time time*cens(0);
-	title “analisi LT durata episodi”;
-	run;
-
-	* stima KM;
-	proc lifetest 
-	data=dati
-	plots =(s h) graphics  
-	outsurv=conf2;
-	time time*cens(0);
-	title “analisi KM durata episodi”;
-	run;
-	```
-</div>
-
-&nbsp;
-&nbsp;
-
-<button class="collapsible" id="es004">Esempio 4: LT e KM (0)</button>
-<div class="content" id="es004data" markdown="1">
-
-	```sas
-	yrdyasaaaaaaaaaaa
-	```
-</div>
-
-
-&nbsp;
-&nbsp;
-
-
-
-
-
+##### lab2
 
 
 ## Utili
@@ -320,47 +211,17 @@ https://www.codecogs.com/latex/eqneditor.php
 - [The Elements of Statistical Learing](https://web.stanford.edu/~hastie/ElemStatLearn/printings/ESLII_print12_toc.pdf)
 
 
-## test
-
-test 1
-
-<iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
-
-
-test 2
-
-<iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
-
-
-test 3
-
-<iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" word-wrap="break-word;" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
-
-
-test 4
-
-<iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" word-break="break-all;" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
-
-
-test 5
-
-<iframe frameborder=0 style="width: 100%; height: 250px; word-break:break-word;" scrolling="no" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
-
-
-test 6
-
-<iframe frameborder=0 style="width: 100%; height: 250px; word-break:break-all;" scrolling="no" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
-
-test 7
-
-<iframe frameborder=0 style="width: 100%; height: 250px; overflow-wrap: break-word;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
-
-
 
 
 <!---
-Originale:
+iframe codice stackoverflow:
 
 <iframe frameborder=0 style="min-width: 200px; width: 60%; height: 460px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.github.com/sundbry/55bb902b66a39c0ff83629d9a8015ca4.js"></script></body></html>'></iframe> 
+
+note:
+- seamless è inutile
+- height dentro gist è la dimensione del riquadro interno
+- da trovare: rimuovere la parte finale con hosted with <3 (si potrebbe far sparire giocando con le due height)
+- da trovare: word wrap
 --->
 
