@@ -196,10 +196,11 @@ Dal modello con intercetta fino al modello più completo.
 Per saggiare il miglioramento si può usare il test F  
 $$F=\frac{\mbox{RSS}\left (\hat{\beta}^{\tiny \mbox{OLD}}\right )-\mbox{RSS}\left (\hat{\beta}^{\tiny \mbox{NEW}}\right )}{\mbox{RSS}\left (\hat{\beta}^{\tiny \mbox{NEW}}\right )/(n-s)}$$
 
-### Backward stepwise
-Dal modello completo al modello con intercetta
+### Backward Stepwise
+Dal modello completo al modello con intercetta. Generalmente seleziona un numero più maggiore di variabili rispetto la forward.
 
-
+### Bidirectional Stepwise
+Combinazione delle due
 
 
 
