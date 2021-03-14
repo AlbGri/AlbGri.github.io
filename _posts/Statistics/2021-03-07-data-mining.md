@@ -131,18 +131,17 @@ Errore Quadratico Medio
 $$\mathbb{E}\big\{[\hat{y}-f(x')]^2\big\}$$  
 $$\hat{y}$$ l'elemento casuale perché dipende dall $$y$$  
 Si cerca il valore degli iperparametri (es. grado polinomio) che minimizza l'MSE.  
-
 $$ MSE\left (\hat{\theta}\right )
 = \mathbb{E}\left \{\left (\hat{\theta}-\theta \right)^2\right \}
 = \mathbb{E}\left \{\left (\hat{\theta} \pm \mathbb{E}\left \{\hat{\theta}\right \}+\theta \right)^2\right \}= \ldots$$  
 $$= \mathbb{E}\left \{\left [ \hat{\theta}-\mathbb{E}\left \{\hat{\theta}\right \} \right ] ^2\right \} + \left [\mathbb{E}\left \{\hat{\theta}\right \}-\theta \right ]^2 
-= Var(\hat{\theta})+Bias(\hat{\theta},\theta)^2 $$  
+$$ $$= Var(\hat{\theta})+Bias(\hat{\theta},\theta)^2 $$  
 
 $$ MSE\left (\hat{y}\right )
-= \mathbb{E}\left \{\left (\hat{y}-f(x') \right)^2\right \}
+= \mathbb{E}\left \{\left ( \hat{y}-f(x') \right ) ^2\right \}
 = \mathbb{E}\left \{\left (\hat{y} \pm \mathbb{E}\left \{\hat{y}\right \}+f(x') \right)^2\right \}= \ldots$$  
-$$= \mathbb{E}\left \{\left [ \hat{y}-\mathbb{E}\left \{\hat{y}\right \} \right ] ^2\right \} + \left [\mathbb{E}\left \{\hat{y}\right \}-f(x') \right ]^2 
-= Var(\hat{y})+Bias(\hat{y},f(x'))^2 $$  
+$$= \mathbb{E}\left \{\left [ \hat{y}-\mathbb{E}\left \{\hat{y}\right \} \right ] ^2\right \} + \left [ \mathbb{E}\left \{\hat{y}\right \}-f(x') \right ] ^2 
+$$ $$= Var(\hat{y})+Bias(\hat{y},f(x'))^2 $$  
 
 $$f(x)$$ è ignoto e si puà calcolare solo la varianza residua  
 $$\frac{1}{n}\sum_{i=1}^n\left [ \hat{y}_i - y_i \right ] ^2$$  
