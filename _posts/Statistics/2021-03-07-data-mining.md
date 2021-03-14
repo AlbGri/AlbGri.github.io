@@ -125,12 +125,26 @@ La stima (ricorsiva) della devianza dello stimatore dei minimi quadrati ricorsiv
 $$D_{n+1}(\hat{\beta}_{(n+1)})=D_{n}(\hat{\beta}_{(n)})+he^2_{n+1}$$  
 si determinano facilmente $$s^2_{n+1}$$ e lo standard error di $$\hat{\beta}_{(n+1)}$$ 
 
+## Trade-off Varianza Distorsione
 
+Errore Quadratico Medio  
+$$\mathbb{E}\big\{[\hat{y}-f(x')]^2\big\}$$  
+$$\hat{y}$$ l'elemento casuale perché dipende dall $$y$$  
+Si cerca il valore degli iperparametri (es. grado polinomio) che minimizza l'MSE.  
+
+$$
+MSE\left (\hat{\theta}\right ) \\
+= \mathbb{E}\left \{\left (\hat{\theta}-\theta \right)^2\right \} \\
+= \mathbb{E}\left [\left (\hat{\theta} \pm \mathbb{E}\left (\hat{\theta}\right )+\theta \right)^2\right ] \\
+= \ldots \\
+= \mathbb{E}\left [\left (\hat{\theta}-\mathbb{E}\left (\hat{\theta}\right ) \right)^2\right ] + \mathbb{E}\left [\left (\mathbb{E}\left (\hat{\theta}\right )-\theta \right)^2\right ] \\
+= Var(\hat{\theta})+Bias(\hat{\theta},\theta)^2
+$$
 
 
 
 <!--- 
-### Esercizi
+## Esercizi
 
 ##### AS, ES. 2.8
 Complete the details of the statements at the end of section 2.2.2 by calculating $$s^2$$ and standard errors, using (2.10) or any other method.
@@ -153,14 +167,33 @@ What is the difference between the confidence interval of the value of the funct
 Qual è la differenza tra intervallo di confidenza del valore della funzione e quello di previsione, ambedue relativi alla prossima osservazione?
 
 ### Domande
-- Es 2.8 suggerimenti per continuare la formula per s^2 (vedi appunti)
-- (pagina 33) Q_(n+1)(beta_(n+1)) quel Q perché non ha usato la D di deviance?
-- (pagina 33) la formula dello standard error dei beta iterati n+1 sarebbe (Q_{n+1}(beta_{(n+1)})/(n-p) V_{(n+1)})^-(1/2)
-- C'è un modo migliore di risolvere questa semplificazione? (screen)
-- Es 2.9 verificare anche su R?
-- Es 2.10 Cosa si intende? Che la stima si mantiene non distorta?
-- Es 2-11 devo capire il 2.8
-- Es 2-12 che intende per valore della funzione e di previsione? la differenza tra il vero valore e quello stimato?
+Q: Es 2.8 suggerimenti per continuare la formula per s^2 (vedi appunti). 
+R: da usare la formula sigma^2(X^TX)^-1
+
+Q: (pagina 33) Q_(n+1)(beta_(n+1)) quel Q perché non ha usato la D di deviance?
+R: è identica
+
+Q: (pagina 33) la formula dello standard error dei beta iterati n+1 sarebbe (Q_{n+1}(beta_{(n+1)})/(n-p) V_{(n+1)})^-(1/2)
+R: non devo fare la radice quadrata, ma prendere gli elementi diagonale e farne la radice
+
+Q: C'è un modo migliore di risolvere questa semplificazione? (screen)
+R: in attesa
+
+Q: Es 2.9 verificare anche su R?
+R: da verificare si intende provare che I=I
+
+Q: Es 2.10 Cosa si intende? Che la stima si mantiene non distorta?
+R: da verificare si intende provare che I=I
+
+Q: Es 2-11 devo capire il 2.8
+R: R: da verificare si intende provare che I=I
+
+Q: Es 2-12 che intende per valore della funzione e di previsione? la differenza tra il vero valore e quello stimato?
+R: sul modello lineare l'errore di previsione e le y, la differenza è +1 perché ho la variabile casuale in più di quella del futuro, esercizio semplice in tutti i libri di statistica 1 // da capire
+
+
+https://www.codecogs.com/latex/eqneditor.php
+
 
 --->
 
