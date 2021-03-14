@@ -126,7 +126,6 @@ $$D_{n+1}(\hat{\beta}_{(n+1)})=D_{n}(\hat{\beta}_{(n)})+he^2_{n+1}$$
 si determinano facilmente $$s^2_{n+1}$$ e lo standard error di $$\hat{\beta}_{(n+1)}$$ 
 
 ## Trade-off Varianza Distorsione
-
 Errore Quadratico Medio  
 $$\mathbb{E}\big\{[\hat{y}-f(x')]^2\big\}$$  
 $$\hat{y}$$ l'elemento casuale perché dipende dall $$y$$  
@@ -143,6 +142,7 @@ $$ MSE\left (\hat{y}\right )
 $$= \mathbb{E}\left \{\left [ \hat{y}-\mathbb{E}\left \{\hat{y}\right \} \right ] ^2\right \} + \left [ \mathbb{E}\left \{\hat{y}\right \}-f(x') \right ] ^2 
 $$ $$= Var(\hat{y})+Bias(\hat{y},f(x'))^2 $$  
 
+### Stima e verifica
 $$f(x)$$ è ignoto e si può calcolare solo la varianza residua  
 $$\frac{1}{n}\sum_{i=1}^n\left [ \hat{y}_i - y_i \right ] ^2$$  
 La varianza residua _overfitta_ se applicata su tutto il dataset, quindi divido in due parti i dati e uso una parte per la stima e uno per la verifica.  
