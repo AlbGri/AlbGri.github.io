@@ -189,9 +189,12 @@ Date $$p$$ variabili esplicative in una regressione lineare multipla
 1. stimo gli $$k={p\choose i}$$ modelli con $$i=0,...,p$$ numero di variabili da considerare in ogni combinazione
 2. uso un metodo (eg. $$R^2$$) per trovare il miglior modello interno per ogni $$i$$
 3. uso altro metodo (eg. CV) per trovare il migliore tra i $$p+1$$ modelli
+Computazionalmente oneroso.
 
-###
-
+### Forward Stepwise
+Dal modello con intercetta fino al modello più completo.  
+Per saggiare il miglioramento si può usare il test F  
+$$F=\frac{\hat{\beta}^{\mbox{old}-\hat{\beta}^{\mbox{new}}{\mbox{RSS}(\hat{\beta}^{\mbox{new}})/(n-s)}$$
 
 
 
