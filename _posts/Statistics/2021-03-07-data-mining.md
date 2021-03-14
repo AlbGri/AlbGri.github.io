@@ -329,7 +329,32 @@ test 1
 
 test 2
 
-<iframe frameborder=0 style="min-width: 400px; height: 250px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
+<iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
+
+
+test 3
+
+<iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" word-wrap="break-word;" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
+
+
+test 4
+
+<iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" word-break="break-all;" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
+
+
+test 5
+
+<iframe frameborder=0 style="width: 100%; height: 250px; word-break:break-word;" scrolling="no" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
+
+
+test 6
+
+<iframe frameborder=0 style="width: 100%; height: 250px; word-break:break-all;" scrolling="no" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
+
+test 7
+
+<iframe frameborder=0 style="width: 100%; height: 250px; overflow-wrap: break-word;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
+
 
 
 

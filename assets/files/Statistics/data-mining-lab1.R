@@ -83,14 +83,3 @@ sapply(df1, var)
 sapply(df1, function(x) mean((x-10)^2))
 # l'MSE si decompone in varianza più distorsione, che è nulla a meno di micro oscillazioni, quindi è uguale alla varianza
 
-
-
-
-
-
-
-
-
-
-
-
