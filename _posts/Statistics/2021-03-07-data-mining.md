@@ -168,7 +168,8 @@ $$D^*(p)=\frac{1}{n}\sum_{i=1}^n\left [ y_i - \hat{y}_{-i} \right ] ^2 = \frac{1
 ### Information Criterion
 In alternativa, per non suddividere il dataset e contenere l'effetto dell'overfitting della varianza residua, si può penalizzare la log verosimiglianza e cercare il modello con il valore minimo. Si penalizza la log-verosimiglianza per la relazione con la chi-quadro per differenze tra log verosimiglianze di modelli annidati. 
 Inoltre, consente di esprimere l'aggiunta di un parametro come l'incremento dei suoi gradi di libertà (cioè il valore medio) alla log verosimiglianza. Quindi si cerca una penalizzazione che sia più grande del suo valore atteso.
-- AIC: $$-2\log{p(y;\hat{\theta})}+2p$$
+- AIC: $$-2\log{p(y;\hat{\theta})}+2p=\frac{\sum_{i=1}^n(y_i-x_i\hat{\beta}_p)^2}{\sigma^2}+2p$$
+- Cp: $$\frac{\sum_{i=1}^n(y_i-x_i\hat{\beta}_p)^2}{\sigma^2}-n+2p$$
 - AICc, BIC/SIC, HQ 
 
 ##### Divergenza di Kullback-Leiber
@@ -176,8 +177,20 @@ AIC di Akaike è stato ottenuto sviluppando la divergenza di Kullback-Leiber.
 Cerca la funzione che minimizzi la distanza tra la vera distribuzione e la stima. Si prova che è la stima di massima verosimiglianza $$\hat{\theta}_y$$ il valore che la minimizza.
 
 
+## Riduzione della dimensionalità
+I una regressione multipla, la correlazione tra variabili esplicativa comporta
+- aumento varianza dei coefficienti
+- interpretazioni rischiose
 
+Tra due variabili altamente correlate, rimuovo quella che contribuisce meno alla spiegazione della risposta.
 
+### Best subset selection
+Date $$p$$ variabili esplicative in una regressione lineare multipla
+1. stimo gli $$k={p\choose i}$$ modelli con $$i=0,...,p$$ numero di variabili da considerare in ogni combinazione
+2. uso un metodo (eg. $$R^2$$) per trovare il miglior modello interno per ogni $$i$$
+3. uso altro metodo (eg. CV) per trovare il migliore tra i $$p+1$$ modelli
+
+###
 
 
 
