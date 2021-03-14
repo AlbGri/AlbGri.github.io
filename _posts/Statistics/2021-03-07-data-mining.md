@@ -430,5 +430,6 @@ https://www.codecogs.com/latex/eqneditor.php
 
 ## test
 
+<script src="https://gist-it.appspot.com/github/robertkrimen/gist-it-example/blob/master/example.js"></script>
 
 ...
