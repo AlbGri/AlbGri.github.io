@@ -150,7 +150,7 @@ La varianza residua _overfitta_ se applicata su tutto il dataset, quindi divido 
 In alternativa, per non suddividere il dataset e contenere l'effetto dell'overfitting della varianza residua, si può penalizzare la log verosimiglianza e cercare il modello con il valore minimo. Si penalizza la log-verosimiglianza per la relazione con la chi-quadro per differenze tra log verosimiglianze di modelli annidati. 
 Inoltre, consente di esprimere l'aggiunta di un parametro come l'incremento dei suoi gradi di libertà (cioè il valore medio) alla log verosimiglianza. Quindi si cerca una penalizzazione che sia più grande del suo valore atteso.
 - AIC: $$-2\log{p(y;\hat{\theta})}+2p$$
-- AICc, BIC/SIC, HQ
+- AICc, BIC/SIC, HQ 
 
 
 ##### Divergenza di Kullback-Leiber
@@ -175,6 +175,9 @@ Per i stimatori lineari, sfruttando la formula di Sherman-Morrison, da un solo m
 $$y_i-\hat{y}_{-i}=\frac{y_i-\hat{y}_i}{1-P_{ii}}$$  
 quindi l'MSE di previsione di CV risulta  
 $$D^*(p)=\frac{1}{n}\sum_{i=1}^n\left [ y_i - \hat{y}_{-i} \right ] ^2 = \frac{1}{n}\sum_{i=1}^n \left ( \frac{y_i-\hat{y}_i}{1-P_{ii}} \right )^2$$  
+
+
+
 
 
 
