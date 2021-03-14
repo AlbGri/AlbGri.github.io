@@ -134,8 +134,8 @@ Si cerca il valore degli iperparametri (es. grado polinomio) che minimizza l'MSE
 
 $$ MSE\left (\hat{\theta}\right )
 = \mathbb{E}\left \{\left (\hat{\theta}-\theta \right)^2\right \}
-= \mathbb{E}\left \{\left (\hat{\theta} \pm \mathbb{E}\left \{\hat{\theta}\right \}+\theta \right)^2\right \}$$  
-$$= \ldots = \mathbb{E}\left \{\left [ \hat{\theta}-\mathbb{E}\left \{\hat{\theta}\right \} \right ] ^2\right \} + \left [\mathbb{E}\left \{\hat{\theta}\right \}-\theta \right ]^2 
+= \mathbb{E}\left \{\left (\hat{\theta} \pm \mathbb{E}\left \{\hat{\theta}\right \}+\theta \right)^2\right \}= \ldots$$  
+$$= \mathbb{E}\left \{\left [ \hat{\theta}-\mathbb{E}\left \{\hat{\theta}\right \} \right ] ^2\right \} + \left [\mathbb{E}\left \{\hat{\theta}\right \}-\theta \right ]^2 
 = Var(\hat{\theta})+Bias(\hat{\theta},\theta)^2 $$
 
 
@@ -197,6 +197,8 @@ https://www.codecogs.com/latex/eqneditor.php
 
 
 ## R Esercitazioni
+
+
 
 <button class="collapsible" id="es001">Esercitazione 1: confronti tra stimatori della media</button>
 <div class="content" id="es001R" markdown="1">
@@ -287,8 +289,8 @@ https://www.codecogs.com/latex/eqneditor.php
     sapply(df1, function(x) mean((x-10)^2))
     # l'MSE si decompone in varianza più distorsione, che è nulla a meno di micro oscillazioni, quindi è uguale alla varianza
     ```
-
 </div>
+
 
 &nbsp;
 &nbsp;
@@ -300,14 +302,64 @@ https://www.codecogs.com/latex/eqneditor.php
 	```R
 	########################################################
 	# Obiettivo: 
-	########################################################
-	
-	
+	########################################################	
 </div>
 
 &nbsp;
 &nbsp;
 
+
+<button class="collapsible" id="es001">Esempio 1: LT e KM (0)</button>
+<div class="content" id="es001data" markdown="1">
+
+	```sas
+	/*******************************************************
+	Obiettivo: 
+	analizzare andamento uscita mercato del lavoro con LT e KM
+	*******************************************************/
+	* genero il df;
+	data dati;
+	input time cens;
+	cards;
+	0.1 1
+	0.2 1
+	0.5 0
+	0.5 1
+	0.7 1
+	0.8 1
+	1.3 1
+	1.5 1
+	1.8 0
+	2.5 1
+	2.5 1
+	2.5 0
+	3.2 1
+	3.7 1
+	3.8 0
+	;
+	run;
+
+	* stima LT;
+	proc lifetest 
+	data=dati
+	method= lt
+	intervals= 1 2 3 4
+	plots =(s h) graphics  /* se una sola funzione non serve () */
+	outsurv=conf1;
+	time time*cens(0);
+	title “analisi LT durata episodi”;
+	run;
+
+	* stima KM;
+	proc lifetest 
+	data=dati
+	plots =(s h) graphics  
+	outsurv=conf2;
+	time time*cens(0);
+	title “analisi KM durata episodi”;
+	run;
+	```
+</div>
 
 
 
