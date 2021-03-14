@@ -134,9 +134,8 @@ Si cerca il valore degli iperparametri (es. grado polinomio) che minimizza l'MSE
 
 $$ MSE\left (\hat{\theta}\right )
 = \mathbb{E}\left \{\left (\hat{\theta}-\theta \right)^2\right \}
-= \mathbb{E}\left \{\left (\hat{\theta} \pm \mathbb{E}\left \{\hat{\theta}\right \}+\theta \right)^2\right \}$$ 
-$$= \ldots
-= \mathbb{E}\left \{\left (\hat{\theta}-\mathbb{E}\left \{\hat{\theta}\right \} \right)^2\right \} + \left (\mathbb{E}\left \{\hat{\theta}\right \}-\theta \right)^2 
+= \mathbb{E}\left \{\left (\hat{\theta} \pm \mathbb{E}\left \{\hat{\theta}\right \}+\theta \right)^2\right \}$$  
+$$= \ldots = \mathbb{E}\left \{\left [ \hat{\theta}-\mathbb{E}\left \{\hat{\theta}\right \} \right ] ^2\right \} + \left [\mathbb{E}\left \{\hat{\theta}\right \}-\theta \right ]^2 
 = Var(\hat{\theta})+Bias(\hat{\theta},\theta)^2 $$
 
 
