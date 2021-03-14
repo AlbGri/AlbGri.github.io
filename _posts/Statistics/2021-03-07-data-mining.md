@@ -143,7 +143,7 @@ $$ MSE\left (\hat{y}\right )
 $$= \mathbb{E}\left \{\left [ \hat{y}-\mathbb{E}\left \{\hat{y}\right \} \right ] ^2\right \} + \left [ \mathbb{E}\left \{\hat{y}\right \}-f(x') \right ] ^2 
 $$ $$= Var(\hat{y})+Bias(\hat{y},f(x'))^2 $$  
 
-$$f(x)$$ è ignoto e si puà calcolare solo la varianza residua  
+$$f(x)$$ è ignoto e si può calcolare solo la varianza residua  
 $$\frac{1}{n}\sum_{i=1}^n\left [ \hat{y}_i - y_i \right ] ^2$$  
 La varianza residua _overfitta_ se applicata solo al dataset di training.
 
@@ -155,11 +155,14 @@ $$p=\text{arg}\,\min\limits_{p}\,D^*(p)=\text{arg}\,\min\limits_{p}\,\left [ \su
 Se si vuole ottenere un modello unico dalla CV, nel caso dei modelli parametrici, si può fare una media tra i parametri.
 
 #### Leave-one-out
-$$k=n$$ suddividere il numero di porzioni pari al numero di righe, quindi $$n-1$$ per la stima e $$1$$ riga per la verifica, rotando gli insiemi. Computazionalmente oneroso.
+$$k=n$$ suddividere il numero di porzioni pari al numero di righe, quindi $$n-1$$ per la stima e $$1$$ riga per la verifica, rotando gli insiemi. Computazionalmente oneroso per $$n$$ elevato.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da implementare su R.
 
-
-
-
+##### Sherman-Morrison
+Per i stimatori lineari, sfruttando la formula di Sherman-Morrison, da un solo modello completo, si ottiene l'errore di CV Leave-one-out:  
+$$y_i-\hat{y}_{-i}=\frac{y_i-\hat{y}_i}{1-P_{ii}}$$  
+quindi l'MSE di previsione di CV risulta  
+$$D^*(p)=\frac{1}{n}\sum_{i=1}^n\left [ y_i - \hat{y}_{-i} \right ] ^2 = \frac{1}{n}\sum_{i=1}^n \left ( \frac{y_i-\hat{y}_i}{1-P_{ii}} \right )^2$$  
 
 
 
