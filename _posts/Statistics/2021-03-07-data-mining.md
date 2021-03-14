@@ -298,8 +298,8 @@ https://www.codecogs.com/latex/eqneditor.php
 
 
 
-<button class="collapsible" id="esdm002">Esercitazione 2: ()</button>
-<div class="content" id="esdm002R" markdown="1">
+<button class="collapsible" id="esdm003">Esercitazione 3: ()</button>
+<div class="content" id="esdm003R" markdown="1">
 
 	```R
 	########################################################
@@ -367,11 +367,11 @@ https://www.codecogs.com/latex/eqneditor.php
 &nbsp;
 &nbsp;
 
-<button class="collapsible" id="es002">Esempio 1: LT e KM (0)</button>
-<div class="content" id="es002data" markdown="1">
+<button class="collapsible" id="es004">Esempio 4: LT e KM (0)</button>
+<div class="content" id="es004data" markdown="1">
 
 	```sas
-	yrdy
+	yrdyasaaaaaaaaaaa
 	```
 </div>
 
@@ -381,11 +381,11 @@ https://www.codecogs.com/latex/eqneditor.php
 
 
 
-<button class="collapsible" id="es002">Esempio 2: LT e KM (0)</button>
-<div class="content" id="es002data" markdown="1">
+<button class="collapsible" id="es005">Esempio 5: LT e KM (0)</button>
+<div class="content" id="es005data" markdown="1">
 
 	```R
-	yrdy
+	yrdyfdsfd
 	```
 </div>
 
