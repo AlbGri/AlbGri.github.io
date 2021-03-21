@@ -230,7 +230,7 @@ La prima componente è la più informativa ma non necessariamente è quella che 
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Per una matrice quadrata (sulla matrice di varianze e covarianze).
 
 #### Decomposizione a valori singolari (SVD)
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Della matrice $$X^T X$$  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Della matrice $$X$$  
 $$X=UDV^T$$  
 
 
@@ -244,7 +244,7 @@ $$\min\limits_{\beta}\left \{ \left ( y-X\beta \right )^T \left ( y-X\beta \righ
 nota: $$s\uparrow\Leftrightarrow \lambda \downarrow$$  
 Si ottiene quindi:  
 $$\hat{\beta}_\lambda=\left (X^TX+\lambda I \right )^{-1} X^T y$$  
-nota: $$\lambda\rightarrow\infty \Rightarrow \hat{\beta}\rightarrow 0$$ e $$\lambda\rightarrow 0 \Rightarrow \hat{\beta}\rightarrow \hat{\beta}_{LS}$$  
+nota: se $$\lambda\rightarrow\infty \Rightarrow \hat{\beta}\rightarrow 0$$ e se $$\lambda\rightarrow 0 \Rightarrow \hat{\beta}\rightarrow \hat{\beta}_{LS}$$  
 Tipicamente non si penalizza l'intercetta. Il metodo consente di ottenere stime anche con variabili collineari.
 
 #### Interpretazione Bayesiana
@@ -257,10 +257,12 @@ la stima ridge è la moda (e media) a posteriori con $$\lambda=\frac{\sigma^2}{\
 $$\beta \vert y \sim \mathcal{N} \left \{ \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} X^Ty, \sigma^2 \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} \right \}$$  
 
 #### Relazione con PCA
-Nella PCA rotiamo le $$X$$, e dopo scegliamo le prime direzioni (le più variabili), per fare la regressione su $$y$$. La ridge si può formulare in modo che prenda le direzioni delle componenti principali, utilizzando la SVD.  
-$$X\hat{\beta}^{\tiny \mbox{ridge}}\right )}=X\left ( X^TX+\lambda I \right )^{-1} X^T y =\sum_{j=1}^p u_j k_j u_j^T y$$ con $$\frac{d_j^2}{d^2_j+\lambda}$$  
-$$k_j$$ è la quantità di compressione nelle direzioni principali.  
-$$d_j^2$$ sono autovalori della matrice delle varianze e covarianze di $$X^TX$$, $$d_j^2$$ sono le varianze delle componenti principali. Anziché usare la regressione sulle componenti principali, in cui solitamente si considerano solo le prime componenti e le altre vengono messe a 0, qui considera tutte le componenti comprimendo quelle meno importanti.
+Nella PCA rotiamo le $$X$$, e dopo scegliamo le prime direzioni (le più variabili), per fare la regressione su $$y$$. La ridge si può formulare in modo che prenda le direzioni delle componenti principali (utilizzando la SVD $$X=UDV^T$$).  
+$$X\hat{\beta}^{\tiny \mbox{ridge}}\right )=X\left ( X^TX+\lambda I \right )^{-1} X^T y =My=\sum_{j=1}^p u_j k_j u_j^T y$$ con $$\frac{d_j^2}{d^2_j+\lambda}$$  
+$$u_j$$ vettori ortogonali della $$U$$  
+$$k_j$$ è la quantità di compressione nelle direzioni principali  
+$$d_j^2$$ sono autovalori della matrice delle varianze e covarianze di $$X^TX$$, $$d_j^2$$ sono le varianze delle componenti principali. Anziché usare la regressione sulle componenti principali, in cui solitamente si considerano solo le prime componenti e le altre vengono messe a 0, qui considera tutte le componenti comprimendo quelle meno importanti.  
+$$df(\lambda)=\mbox{tr}(M)=\sum_{j=1}^p k_j$$ misura complessità del modello
  
 
 ### Regressione Lasso
