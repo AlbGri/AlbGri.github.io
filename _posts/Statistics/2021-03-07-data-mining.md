@@ -276,9 +276,10 @@ Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo 
 
 La funzione da minimizzare è un paraboloide, il cui centro è la stima di massima verosimiglianza. Nel caso a due variabili, con il Lasso il vincolo è un parallelepipedo a base quadrata, che possiamo visualizzare come quadrato (curve di livello) perché ragioniamo solo con i due coefficienti, e un cerchio nella Ridge. La soluzione con il vincolo è il punto di contatto tra il paraboloide e il vincolo. Nel Lasso, a meno di casi estremi (es 2 variabili in cui il paraboloide è perfettamente nella diagonale), uno dei due coefficienti andrà a 0.  
 
-Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
-
 $$s$$ è da considerare come iperparametro, da scegliere ottimizzando il trade-off varianza distorsione.  
+
+Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
+![png](/assets/images/Statistics/DM_Shrinkage1.png)
 
 #### Consistenza del Lasso
 La consistenza della stima MV non è garantita se lo spazio dei parametri $$p$$ cresce al crescere delle osservazioni $$n$$. Il Lasso è capace di identificare il modello corretto anche in questa situazione, purché le variabili esplicative non siano troppo correlate con le variabili di disturbo (altrimenti la condizione di irrepresentabilità, o stabilità dell'intorno, viene meno).  
@@ -301,7 +302,18 @@ Se $$q\le 1$$ si ha la selezione delle variabili.
 - Elastic Net
 - Grouped Lasso
 
+### Least Angle Regression
+Serve a risolvere i minimi quadrati in un modo diverso ed è utile per stimare il modello Lasso.  
+Si inizializza il vettore dei coefficienti pari a 0, iterativamente si incrementano le stime inserendo ad una ad una le variabili più correlate con i residui che si ottengono ad ogni passo, ci si ferma fino a quando si ha correlazione minima.  
 
+
+#### LARS
+Stima del Lasso con LAR
+1. Inizia l'algoritmo del LAR
+2. Se un coefficiente raggiunge lo 0 si ferma, elimina la variabile e si cerca la migliore direzione 
+3. Si ottiene il percorso del lasso
+
+Il LAR ha costo computazionale simile della stima LS con QR, poco più elevato perché quando si incontra lo 0 elimina e rinizia.
 
 
 
