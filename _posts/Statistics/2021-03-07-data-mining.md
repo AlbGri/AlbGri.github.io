@@ -11,7 +11,7 @@ mathjax: "true"
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Da approfondire`
 
 
-## Proprietà e teoremi utili
+## Accenni di Algebra
 - $$(A^T)^T$$ $$=A$$
 - $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
     1. $$A^{-1}A$$ $$=I$$
@@ -25,6 +25,13 @@ mathjax: "true"
 - Proprietà dissociativa dell'addizione $$10=4+6=...$$
 - Se $$Q$$ ortogonale, allora $$Q^TQ=I$$
 - $$(AB)^{-1}$$ $$=A^{-1}B^{-1}$$
+
+## Accenni di Statistica
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Teorema di Gauss Markov  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Proprietà stimatore LS  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Proprietà stimatore MV (coincide con LS con errori gaussiani)
+
+
 
 ## Modelli Lineari e Minimi Quadrati (LS)
 
@@ -225,6 +232,7 @@ La prima componente è la più informativa ma non necessariamente è quella che 
 
 
 
+
 <!--- 
 ## Esercizi
 
@@ -248,6 +256,17 @@ Si completi l'algoritmo dei minimi quadrati ricorsivi sviluppando le formule per
 What is the difference between the confidence interval of the value of the function and the prediction interval, both relative to the next observation?
 Qual è la differenza tra intervallo di confidenza del valore della funzione e quello di previsione, ambedue relativi alla prossima osservazione?
 
+
+#### Lezione 7
+Es1: sia distribuz normale con mu unico parametro sconosciuto, dimostrare che mu è non distorto
+Es2: come ottenere sd delle stime distorte?
+
+
+--->
+
+
+
+<!--- 
 ### Domande
 Q: Es 2.8 suggerimenti per continuare la formula per s^2 (vedi appunti). 
 R: da usare la formula sigma^2(X^TX)^-1
@@ -272,6 +291,14 @@ R: R: da verificare si intende provare che I=I
 
 Q: Es 2-12 che intende per valore della funzione e di previsione? la differenza tra il vero valore e quello stimato?
 R: sul modello lineare l'errore di previsione e le y, la differenza è +1 perché ho la variabile casuale in più di quella del futuro, esercizio semplice in tutti i libri di statistica 1 // da capire
+
+Q: nella regressione ridge, può accadere che alcuni coefficienti cambiano anche il segno al variare dei lambda? questo non fa perdere la credibilità interpretativa dei coefficienti?
+R: paradossalmente acquisisce più senso, anche se cambia il segno del coefficiente è perché stiamo modificando la relazione con le variabili correlate
+
+
+Q: nella regressione ridge, il livello di variabilità dei beta al variare dei lambda ci da qualche informazione in più? la bassa variabilità potrebbe essere vicina al concetto di significatività statistica?
+R:no perché se è lontano da 0 e non varia, non per questo è da considerare come robusto
+
 
 
 https://www.codecogs.com/latex/eqneditor.php
