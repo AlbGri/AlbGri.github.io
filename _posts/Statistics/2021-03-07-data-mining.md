@@ -28,7 +28,9 @@ mathjax: "true"
 
 ## Accenni di Statistica
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Teorema di Gauss Markov  
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Proprietà stimatore LS  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Proprietà stimatore LS:  
+- Non distorto
+- Tra i non distorti è quello a minima varianza
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Proprietà stimatore MV (coincide con LS con errori gaussiani)
 
 
@@ -227,6 +229,21 @@ La prima componente è la più informativa ma non necessariamente è quella che 
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Esistono metodi, come la Correlazione Canonica in cui si determinano le componenti anche in funzione della risposta. Altri metodi: Minimi Quadrati Parziali (Partially Square), Independent Component Analysis, Principal Curves, etc.
 
 
+## Metodi di shrinkage
+Regolarizzare l'equazione di stima, penalizzando la funzione di ottimizzazione dei minimi quadrati introducendo una distorsione ma riducendo la varianza. Se tutto traslato verso lo 0 l'errore quadratico medio (e assoluto) sarà più basso.
+
+### Regressione Ridge
+$$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \beta_j^2 \le s$$  
+in forma di Lagrange:  
+$$\min\limits_{\beta}\left \{ \left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta \right \}$$  
+
+
+### Regressione Lasso
+
+### Ibridi
+- Elastic Net
+- Grouped Lasso
+
 
 
 
@@ -258,7 +275,7 @@ Qual è la differenza tra intervallo di confidenza del valore della funzione e q
 
 
 #### Lezione 7
-Es1: sia distribuz normale con mu unico parametro sconosciuto, dimostrare che mu è non distorto
+Es1: con distribuz normale e mu unico parametro sconosciuto, dimostrare che mu è non distorto. se lo stimatore è non distorto, anche se non conosco mu, dimostro che lo stimatore è centrato sulla verità. la media della verità la si ottiene.
 Es2: come ottenere sd delle stime distorte?
 
 
