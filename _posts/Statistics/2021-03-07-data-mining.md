@@ -270,7 +270,9 @@ $$\mbox{df}(\lambda)=\mbox{tr}(M_{\lambda})=\sum_{j=1}^p k_j$$ misura la comples
  
 ### Regressione Lasso
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \vert \beta_j \vert \le s$$  
-Non c'è una forma esplicita per risolvere il problema. Programmazione quadratica. Discontinuità della derivata prima causata dai valori assoluti.  
+in forma di Lagrange:  
+$$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )+\lambda 1^T \vert \beta \vert$$  
+Non c'è una forma esplicita per risolvere il problema, perché il valore assoluto comporta la discontinuità della derivata prima. Bisogna usare metodi di programmazione quadratica.  
 
 Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili.  
 
@@ -306,7 +308,6 @@ Se $$q\le 1$$ si ha la selezione delle variabili.
 Serve a risolvere i minimi quadrati in un modo diverso ed è utile per stimare il modello Lasso.  
 Si inizializza il vettore dei coefficienti pari a 0, iterativamente si incrementano le stime inserendo ad una ad una le variabili più correlate con i residui che si ottengono ad ogni passo, ci si ferma fino a quando si ha correlazione minima.  
 
-
 #### LARS
 Stima del Lasso con LAR
 1. Inizia l'algoritmo del LAR
@@ -315,7 +316,11 @@ Stima del Lasso con LAR
 
 Il LAR ha costo computazionale simile della stima LS con QR, poco più elevato perché quando si incontra lo 0 elimina e rinizia.
 
-
+#### Pathwise cordinate descent
+Nel Gauss Newton si identifica la direzione più ripida per raggiungere il minimo. Dato che la funzione può non essere derivabile ovunque (la penalizzazione con il modulo), invece di scendere lungo la direzione più veloce, si scende lungo le coordinate, cioè i parametri. Si ottimizza rispetto un parametro, poi si scende verso un altro etc.  
+Nel Lasso il pathwise funziona perché trovare il minimo parametro per parametro si riesce velocemente.  
+Il minimo, per il modello Lasso, lo si ottiene tramite la stima della funzione soft-tthreshold:  
+$$\mbox{sign}(\hat{\beta})(\vert \hat{\beta} \vert - \lambda)_{+}$$
 
 
 
