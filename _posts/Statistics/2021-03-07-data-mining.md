@@ -268,7 +268,6 @@ $$d_j^2$$ sono autovalori della matrice delle varianze e covarianze di $$X^TX$$,
 
 $$\mbox{df}(\lambda)=\mbox{tr}(M_{\lambda})=\sum_{j=1}^p k_j$$ misura la complessità del modello, è una funzione monotona di $$\lambda$$, al crescere della complessità si raggiungono i minimi quadrati, al decrescere i coefficienti tendono a 0.  
  
-
 ### Regressione Lasso
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \vert \beta_j \vert \le s$$  
 Non c'è una forma esplicita per risolvere il problema. Programmazione quadratica. Discontinuità della derivata prima causata dai valori assoluti.  
@@ -289,9 +288,14 @@ Il Lasso adattivo permette di trovare una soluzione per svincolarsi dalla condiz
 $$\hat{\beta}_{\tiny \mbox{adp}}(\lambda)=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)+\lambda \sum_{j=1}^p\frac{\vert \beta_j \vert}{\vert \hat{\beta}_{\tiny{\mbox{iniz}},j} \vert}$$  
 Con $$\hat{\beta}_{\tiny{\mbox{iniz}},j}$$ è uno stimatore iniziale come OLS, un suggerimento a quale parametro dare più importante. Procedura a due step.
 
+#### Interpretazione Bayesiana
+Come per il Ridge, se consideriamo i beta (a priori) distribuiti secondo una Laplace, si ottiene lo stimatore Lasso (la densità a Posteriori ha come nucleo la forma di Lagrange dello stimatore Lasso).  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da dimostrare
+
 ### Famiglia shrinkage
 Il ridge e lasso possono essere casi specifici della seguente generalizzazione  
 $$\tilde{\beta}=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)$$ soggetta al vincolo $$\sum \vert \beta_j \vert ^q \le s$$ per $$q\ge 0$$  
+Per $$q\le 1$$ si ha selezione delle variabili.  
 
 ### Ibridi
 - Elastic Net
