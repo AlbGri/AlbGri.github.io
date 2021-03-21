@@ -294,8 +294,8 @@ Come per il Ridge, se consideriamo i beta (a priori) distribuiti secondo una Lap
 
 ### Famiglia shrinkage
 Il ridge e lasso possono essere casi specifici della seguente generalizzazione  
-$$\tilde{\beta}=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)$$ soggetta al vincolo $$\sum \vert \beta_j \vert ^q \le s$$ per $$q\ge 0$$  
-Per $$q\le 1$$ si ha selezione delle variabili.  
+$$\tilde{\beta}=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)$$ soggetta al vincolo $$\sum \vert \beta_j \vert ^q \le s$$ con $$q\ge 0$$.  
+Se $$q\le 1$$ si ha la selezione delle variabili.  
 
 ### Ibridi
 - Elastic Net
