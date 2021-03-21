@@ -284,8 +284,8 @@ La consistenza della stima MV non è garantita se lo spazio dei parametri $$p$$ 
 
 ##### Lasso Adattivo
 Il Lasso adattivo permette di trovare una soluzione per svincolarsi dalla condizione di irrepresentabilità.  
-$$\hat{\beta}_{\tiny \mbox{adp}}(\lambda)=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)+\lambda \sum_{j=1}^p\frac{\vert \beta_j \vert}{\vert \hat{\beta}_{\tiny \mbox{iniz},j} \vert}$$  
-Con $$\hat{\beta}_{\tiny \mbox{iniz}}$$ è uno stimatore iniziale come OLS, un suggerimento a quale parametro dare più importante. Procedura a due step.
+$$\hat{\beta}_{\tiny \mbox{adp}}(\lambda)=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)+\lambda \sum_{j=1}^p\frac{\vert \beta_j \vert}{\vert \hat{\beta}_{\tiny{\mbox{iniz}},j} \vert}$$  
+Con $$\hat{\beta}_{\tiny{\mbox{iniz}},j}$$ è uno stimatore iniziale come OLS, un suggerimento a quale parametro dare più importante. Procedura a due step.
 
 ### Ibridi
 - Elastic Net
