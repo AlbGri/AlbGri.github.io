@@ -98,12 +98,9 @@ Per invertire qualsiasi matrice si può usare il metodo di [Gauss-Jordan](https:
 Per invertire una matrice simmetrica, si può usare la fattorizzazione di Cholesky.  
 Complessità computazionale $$p^3+\frac{np^2}{2}$$ e risulta molto lento con tante variabili.
 
-#### Scomposizione Spettrale
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Per una matrice quadrata.
-
 ### Stima LS con $$n$$ non troppo grande
 
-#### Scomposizione QR
+#### Fattorizzazione QR
 Complessità computazionale $$2np^2$$.  
 Si cerca una scomposizione $$X=QR$$ per cui $$Q$$ è una matrice ortogonale (colonne ortogonali l'una con l'altra) $$n\times p$$ e $$R$$ è triangolare superiore $$p\times p$$.  
 $$\hat{\beta}=(X^T X)^{-1}X^T y=R^{-1} Q^T y\quad$$ e $$\quad\hat{y}=QQ^T y$$  
@@ -229,6 +226,14 @@ La prima componente è la più informativa ma non necessariamente è quella che 
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Esistono metodi, come la Correlazione Canonica in cui si determinano le componenti anche in funzione della risposta. Altri metodi: Minimi Quadrati Parziali (Partially Square), Independent Component Analysis, Principal Curves, etc.
 
 
+#### Decomposizione Spettrale
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Per una matrice quadrata (sulla matrice di varianze e covarianze).
+
+#### Decomposizione a valori singolari (SVD)
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Della matrice $$X^T X$$  
+$$X=UDV^T$$  
+
+
 ## Metodi di shrinkage
 Regolarizzare l'equazione di stima, penalizzando la funzione di ottimizzazione dei minimi quadrati introducendo una distorsione ma riducendo la varianza. Se tutto traslato verso lo 0 l'errore quadratico medio (e assoluto) sarà più basso.
 
@@ -251,6 +256,12 @@ $$\left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta$$
 la stima ridge è la moda (e media) a posteriori con $$\lambda=\frac{\sigma^2}{\tau^2}$$  
 $$\beta \vert y \sim \mathcal{N} \left \{ \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} X^Ty, \sigma^2 \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} \right \}$$  
 
+#### Relazione con PCA
+Nella PCA rotiamo le $$X$$, e dopo scegliamo le prime direzioni (le più variabili), per fare la regressione su $$y$$. La ridge si può formulare in modo che prenda le direzioni delle componenti principali, utilizzando la SVD.  
+$$X\hat{\beta}^{\tiny \mbox{ridge}}\right )}=X\left ( X^TX+\lambda I \right )^{-1} X^T y =\sum_{j=1}^p u_j k_j u_j^T y$$ con $$\frac{d_j^2}{d^2_j+\lambda}$$  
+$$k_j$$ è la quantità di compressione nelle direzioni principali.  
+$$d_j^2$$ sono autovalori della matrice delle varianze e covarianze di $$X^TX$$, $$d_j^2$$ sono le varianze delle componenti principali. Anziché usare la regressione sulle componenti principali, in cui solitamente si considerano solo le prime componenti e le altre vengono messe a 0, qui considera tutte le componenti comprimendo quelle meno importanti.
+ 
 
 ### Regressione Lasso
 
