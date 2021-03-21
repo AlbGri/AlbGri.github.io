@@ -235,7 +235,9 @@ $$X=UDV^T$$
 
 
 ## Metodi di shrinkage
-Regolarizzare l'equazione di stima, penalizzando la funzione di ottimizzazione dei minimi quadrati introducendo una distorsione ma riducendo la varianza. Se tutto traslato verso lo 0 l'errore quadratico medio (e assoluto) sarà più basso.
+Regolarizzare l'equazione di stima, penalizzando la funzione di ottimizzazione dei minimi quadrati introducendo una distorsione ma riducendo la varianza. Se tutto traslato verso lo 0 l'errore quadratico medio (e assoluto) sarà più basso.  
+
+Funzionano bene anche quando $$p>n$$.  
 
 ### Regressione Ridge
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \beta_j^2 \le s$$ (norma in [spazio L2](https://it.wikipedia.org/wiki/Spazio_l2))  
@@ -286,6 +288,10 @@ La consistenza della stima MV non è garantita se lo spazio dei parametri $$p$$ 
 Il Lasso adattivo permette di trovare una soluzione per svincolarsi dalla condizione di irrepresentabilità.  
 $$\hat{\beta}_{\tiny \mbox{adp}}(\lambda)=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)+\lambda \sum_{j=1}^p\frac{\vert \beta_j \vert}{\vert \hat{\beta}_{\tiny{\mbox{iniz}},j} \vert}$$  
 Con $$\hat{\beta}_{\tiny{\mbox{iniz}},j}$$ è uno stimatore iniziale come OLS, un suggerimento a quale parametro dare più importante. Procedura a due step.
+
+### Famiglia shrinkage
+Il ridge e lasso possono essere casi specifici della seguente generalizzazione  
+$$\tilde{\beta}=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)$$ soggetta al vincolo $$\sum \vert \beta_j \vert ^q \le s$$ per $$q\ge 0$$  
 
 ### Ibridi
 - Elastic Net
