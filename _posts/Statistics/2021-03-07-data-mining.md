@@ -277,7 +277,15 @@ La funzione da minimizzare è un paraboloide, il cui centro è la stima di massi
 
 Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
 
-$$s$$ è da considerare come iperparametro, da scegliere ottimizzando il trade-off varianza distorsione.
+$$s$$ è da considerare come iperparametro, da scegliere ottimizzando il trade-off varianza distorsione.  
+
+#### Consistenza del Lasso
+La consistenza della stima MV non è garantita se lo spazio dei parametri $$p$$ cresce al crescere delle osservazioni $$n$$. Il Lasso è capace di identificare il modello corretto anche in questa situazione, purché le variabili esplicative non siano troppo correlate con le variabili di disturbo (altrimenti la condizione di irrepresentabilità, o stabilità dell'intorno, viene meno).  
+
+##### Lasso Adattivo
+Il Lasso adattivo permette di trovare una soluzione per svincolarsi dalla condizione di irrepresentabilità.  
+$$\hat{\beta}_{\tiny \mbox{adp}}(\lambda)=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)+\lambda \sum_{j=1}^p\frac{\vert \beta_j \vert}{\vert \hat{\beta}_{\tiny \mbox{iniz},j} \vert}$$  
+Con $$\hat{\beta}_{\tiny \mbox{iniz}}$$ è uno stimatore iniziale come OLS, un suggerimento a quale parametro dare più importante. Procedura a due step.
 
 ### Ibridi
 - Elastic Net
