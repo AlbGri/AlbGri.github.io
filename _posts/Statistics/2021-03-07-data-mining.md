@@ -268,7 +268,8 @@ $$df(\lambda)=\mbox{tr}(M)=\sum_{j=1}^p k_j$$ misura complessità del modello, c
 ### Regressione Lasso
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \vert \beta_j \vert \le s$$  
 Non c'è una forma esplicita per risolvere il problema. Programmazione quadratica. Discontinuità della derivata prima causata dai valori assoluti.  
-Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili.
+Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili.  
+La funzione da minimizzare è un paraboloide, il cui centro è la stima di massima verosimiglianza. Nel caso a due variabili, il vincolo è un parallelepipedo a base quadrata nel caso del Lasso, che possiamo visualizzare come quadrato (curve di livello) perché ragioniamo solo con i due coefficienti, e un cerchio nella Ridge. La soluzione con il vincolo è il punto di contatto tra il paraboloide e il vincolo. Nel caso del Lasso, a meno di casi estremi (es 2 variabili in cui il paraboloide è perfettamente nella diagonale), uno dei due coefficienti andrà a 0.
 
 ### Ibridi
 - Elastic Net
