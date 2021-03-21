@@ -267,7 +267,8 @@ $$df(\lambda)=\mbox{tr}(M)=\sum_{j=1}^p k_j$$ misura complessità del modello, c
 
 ### Regressione Lasso
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \vert \beta_j \vert \le s$$  
-Non c'è una forma esplicita per risolvere il problema. Programmazione quadratica. Discontinuità della derivata prima causata dai valori assoluti.
+Non c'è una forma esplicita per risolvere il problema. Programmazione quadratica. Discontinuità della derivata prima causata dai valori assoluti.  
+Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili.
 
 ### Ibridi
 - Elastic Net
