@@ -315,7 +315,7 @@ Stima del Lasso con LAR
 Il LAR ha costo computazionale simile della stima LS con QR, poco più elevato perché quando si incontra lo 0 elimina e rinizia.
 
 #### Pathwise cordinate descent
-Nel Gauss Newton si identifica la direzione più ripida per raggiungere il minimo. Dato che la funzione può non essere derivabile ovunque (la penalizzazione ha il modulo), invece di scendere lungo la direzione più veloce, si scende lungo le coordinate, cioè i parametri. Si ottimizza rispetto un parametro, poi si scende verso un altro etc.  
+Con il metodo di Gauss-Newton si identifica la direzione più ripida per raggiungere il minimo. Dato che la funzione può non essere derivabile ovunque (la penalizzazione ha il modulo), invece di scendere lungo la direzione più veloce, si scende lungo le coordinate, cioè i parametri (gli assi). Si ottimizza rispetto un parametro, poi si scende verso un altro etc.  
 Nel Lasso il pathwise funziona perché trovare il minimo parametro per parametro si riesce velocemente.  
 Il minimo, per il modello Lasso, lo si ottiene tramite la stima della funzione soft-threshold:  
 forma estesa  
@@ -325,7 +325,14 @@ $$\tilde{\beta} = \begin{cases}
 \hat{\beta}-\lambda & \mbox{se } \hat{\beta} > \lambda
 \end{cases}$$  
 forma compatta  
-$$\tilde{\beta}=\mbox{sign}(\hat{\beta})(\vert \hat{\beta} \vert - \lambda)_{+}$$
+$$\tilde{\beta}=\mbox{sign}(\hat{\beta})(\vert \hat{\beta} \vert - \lambda)_{+}$$  
+Per la generalizzazione con $$p$$ variabili, si iterano le variabili, si calcolano i residui e si applica la soft-threshold. Può essere visto come un problema di lasso univariato dove la variabile risposta sono i residui parziali:  
+$$y_i-\tilde{y}_i^{(j)}=y_i-\sum_{k\ne j}x_{ik}\tilde{\beta}_k (\lambda)$$  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da approfondire
+
+
+
+
 
 
 
