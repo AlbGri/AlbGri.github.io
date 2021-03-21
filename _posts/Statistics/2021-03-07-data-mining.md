@@ -165,7 +165,9 @@ Per identificare gli iper parametri, invece di fare una suddivisione tra stima (
 $$p=\text{arg}\,\min\limits_{p}\,D^*(p)=\text{arg}\,\min\limits_{p}\,\left [ \sum_{i=1}^n \left ( y_i-\hat{y}_i \right )^2 \right ]_p$$
 
 Consente di avere anche una stima approssimativa della variabilità degli stimatori, ad esempio facendone il boxplot perché si ottengono $$k$$ stime per ogni parametro. Non sarebbe possibile nella suddivisione stima-verifica.  
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da implementare su R.
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da implementare su R.  
+
+Metodo parsimonioso per scegliere il miglior parametro di regolazione: costurisco il grafico dell'andamento dell'iperparametro vs errore di convalida incrociata, poi identifico l'iperparametro che minimizza, aggiungo una volta lo standard error, traccio una linea orizzontale da quel punto e scelgo come iperparametro quello corrispondente al primo che si ritrova sotto la linea (metodo 1 SE).  
 
 In fine, se si vuole ottenere un modello unico dalla CV, nel caso dei modelli parametrici, si può fare una media tra i parametri.
 
@@ -224,7 +226,7 @@ La PCA minimizza le distanze ortogonali, è una relazione simmetrica tra le vari
 
 La prima componente è la più informativa ma non necessariamente è quella che spiega meglio la target.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Esistono metodi, come la Correlazione Canonica in cui si determinano le componenti anche in funzione della risposta. Altri metodi: Minimi Quadrati Parziali (Partially Square), Independent Component Analysis, Principal Curves, etc.
-
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da costruire su R un metodo che restituisca i coefficienti delle variabili usando la regressione sulle componenti principali scelte. Introducendo anche la CV per la scelta del numero di componenti.
 
 #### Decomposizione Spettrale
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Per una matrice quadrata (sulla matrice di varianze e covarianze).
@@ -232,7 +234,6 @@ La prima componente è la più informativa ma non necessariamente è quella che 
 #### Decomposizione a valori singolari (SVD)
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Della matrice $$X$$  
 $$X=UDV^T$$  
-
 
 ## Metodi di shrinkage
 Regolarizzare l'equazione di stima, penalizzando la funzione di ottimizzazione dei minimi quadrati introducendo una distorsione ma riducendo la varianza. Se tutto traslato verso lo 0 l'errore quadratico medio (e assoluto) sarà più basso.  
@@ -274,7 +275,7 @@ in forma di Lagrange:
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )+\lambda 1^T \vert \beta \vert$$  
 Non c'è una forma esplicita per risolvere il problema, perché il valore assoluto comporta la discontinuità della derivata prima. Bisogna usare metodi di programmazione quadratica.  
 
-Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili. $$s$$ è da considerare come iperparametro, da scegliere ottimizzando il trade-off varianza distorsione.  
+Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili. $$s$$, parametro di compressione, è da considerare come iperparametro, da scegliere ottimizzando il trade-off varianza distorsione.  
 
 La funzione da minimizzare è un paraboloide, il cui centro è la stima di massima verosimiglianza. Nel caso a due variabili, con il Lasso il vincolo è un parallelepipedo a base quadrata, che possiamo visualizzare come quadrato (curve di livello) perché ragioniamo solo con i due coefficienti, e un cerchio nella Ridge. La soluzione con il vincolo è il punto di contatto tra il paraboloide e il vincolo. Nel Lasso, a meno di casi estremi (es 2 variabili in cui il paraboloide è perfettamente nella diagonale), uno dei due coefficienti andrà a 0.  
 
