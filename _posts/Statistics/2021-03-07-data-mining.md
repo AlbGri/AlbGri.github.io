@@ -255,7 +255,7 @@ quindi la distribuzione a priori è
 $$\beta\sim \mathcal{N}(0,\tau^2 I)$$  
 e si dimostra che la distribuzione a posteriori è  
 $$\left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta$$  
-la stima ridge è la moda (e media) a posteriori con $$\lambda=\frac{\sigma^2}{\tau^2}$$  
+la stima ridge è la [moda](https://it.wikipedia.org/wiki/Stima_del_massimo_a_posteriori) (e media) a posteriori con $$\lambda=\frac{\sigma^2}{\tau^2}$$  
 $$\beta \vert y \sim \mathcal{N} \left \{ \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} X^Ty, \sigma^2 \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} \right \}$$  
 
 #### Relazione con PCA
@@ -274,11 +274,9 @@ in forma di Lagrange:
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )+\lambda 1^T \vert \beta \vert$$  
 Non c'è una forma esplicita per risolvere il problema, perché il valore assoluto comporta la discontinuità della derivata prima. Bisogna usare metodi di programmazione quadratica.  
 
-Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili.  
+Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili. $$s$$ è da considerare come iperparametro, da scegliere ottimizzando il trade-off varianza distorsione.  
 
 La funzione da minimizzare è un paraboloide, il cui centro è la stima di massima verosimiglianza. Nel caso a due variabili, con il Lasso il vincolo è un parallelepipedo a base quadrata, che possiamo visualizzare come quadrato (curve di livello) perché ragioniamo solo con i due coefficienti, e un cerchio nella Ridge. La soluzione con il vincolo è il punto di contatto tra il paraboloide e il vincolo. Nel Lasso, a meno di casi estremi (es 2 variabili in cui il paraboloide è perfettamente nella diagonale), uno dei due coefficienti andrà a 0.  
-
-$$s$$ è da considerare come iperparametro, da scegliere ottimizzando il trade-off varianza distorsione.  
 
 Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
 ![png](/assets/images/Statistics/DM_Shrinkage1.png)
@@ -317,10 +315,17 @@ Stima del Lasso con LAR
 Il LAR ha costo computazionale simile della stima LS con QR, poco più elevato perché quando si incontra lo 0 elimina e rinizia.
 
 #### Pathwise cordinate descent
-Nel Gauss Newton si identifica la direzione più ripida per raggiungere il minimo. Dato che la funzione può non essere derivabile ovunque (la penalizzazione con il modulo), invece di scendere lungo la direzione più veloce, si scende lungo le coordinate, cioè i parametri. Si ottimizza rispetto un parametro, poi si scende verso un altro etc.  
+Nel Gauss Newton si identifica la direzione più ripida per raggiungere il minimo. Dato che la funzione può non essere derivabile ovunque (la penalizzazione ha il modulo), invece di scendere lungo la direzione più veloce, si scende lungo le coordinate, cioè i parametri. Si ottimizza rispetto un parametro, poi si scende verso un altro etc.  
 Nel Lasso il pathwise funziona perché trovare il minimo parametro per parametro si riesce velocemente.  
-Il minimo, per il modello Lasso, lo si ottiene tramite la stima della funzione soft-tthreshold:  
-$$\mbox{sign}(\hat{\beta})(\vert \hat{\beta} \vert - \lambda)_{+}$$
+Il minimo, per il modello Lasso, lo si ottiene tramite la stima della funzione soft-threshold:  
+forma estesa  
+$$\tilde{\beta} = \begin{cases} 
+\hat{\beta}+\lambda & \mbox{se } \hat{\beta}<-\lambda \\
+0 & \mbox{se } -\lambda \le \hat{\beta} \le \lambda \\
+\hat{\beta}-\lambda & \mbox{se } \hat{\beta} > \lambda
+\end{cases}$$  
+forma compatta  
+$$\tilde{\beta}=\mbox{sign}(\hat{\beta})(\vert \hat{\beta} \vert - \lambda)_{+}$$
 
 
 
