@@ -238,8 +238,9 @@ in forma di Lagrange:
 $$\min\limits_{\beta}\left \{ \left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta \right \}$$  
 nota: $$s\uparrow\Leftrightarrow \lambda \downarrow$$  
 Si ottiene quindi:  
-$$\hat{\beta}_\lambda=\left (X^TX+\lambda I \right )^-1 X^T y$$  
-nota: $$\lambda\rightarrow\infty \Rightarrow \hat{\beta}\rightarrow 0$$  
+$$\hat{\beta}_\lambda=\left (X^TX+\lambda I \right )^{-1} X^T y$$  
+nota: $$\lambda\rightarrow\infty \Rightarrow \hat{\beta}\rightarrow 0$$ e $$\lambda\rightarrow 0 \Rightarrow \hat{\beta}\rightarrow \hat{\beta}_{LS}$$  
+Tipicamente non si penalizza l'intercetta. Il metodo consente di ottenere stime anche con variabili collineari.
 
 ### Regressione Lasso
 
