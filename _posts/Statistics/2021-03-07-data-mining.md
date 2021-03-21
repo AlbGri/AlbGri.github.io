@@ -242,6 +242,15 @@ $$\hat{\beta}_\lambda=\left (X^TX+\lambda I \right )^{-1} X^T y$$
 nota: $$\lambda\rightarrow\infty \Rightarrow \hat{\beta}\rightarrow 0$$ e $$\lambda\rightarrow 0 \Rightarrow \hat{\beta}\rightarrow \hat{\beta}_{LS}$$  
 Tipicamente non si penalizza l'intercetta. Il metodo consente di ottenere stime anche con variabili collineari.
 
+#### Interpretazione Bayesiana
+Sia $$y_i\sim\mathcal{N}(\beta_0+x_i^T \beta , \sigma^2)$$ con $$\beta_j\sim \mathcal{N}(0,\tau^2),j=1,...,p$$  
+quindi la distribuzione a priori è  
+$$\beta\sim \mathcal{N}(0,\tau^2 I)$$  
+e si dimostra che la distribuzione a posteriori è  
+$$\left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta$$  
+
+
+
 ### Regressione Lasso
 
 ### Ibridi
