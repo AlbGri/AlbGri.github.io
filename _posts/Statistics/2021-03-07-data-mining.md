@@ -262,10 +262,12 @@ $$X\hat{\beta}^{\tiny \mbox{ridge}}\right )=X\left ( X^TX+\lambda I \right )^{-1
 $$u_j$$ vettori ortogonali della $$U$$  
 $$k_j$$ è la quantità di compressione nelle direzioni principali  
 $$d_j^2$$ sono autovalori della matrice delle varianze e covarianze di $$X^TX$$, $$d_j^2$$ sono le varianze delle componenti principali. Anziché usare la regressione sulle componenti principali, in cui solitamente si considerano solo le prime componenti e le altre vengono messe a 0, qui considera tutte le componenti comprimendo quelle meno importanti.  
-$$df(\lambda)=\mbox{tr}(M)=\sum_{j=1}^p k_j$$ misura complessità del modello
+$$df(\lambda)=\mbox{tr}(M)=\sum_{j=1}^p k_j$$ misura complessità del modello, che è una funzione monotona di $$\lambda$$, al crescere della complessità si raggiungono i minimi quadrati, al decrescere i coefficienti tendono a 0.  
  
 
 ### Regressione Lasso
+$$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \vert \beta_j \vert \le s$$  
+Non c'è una forma esplicita per risolvere il problema. Programmazione quadratica. Discontinuità della derivata prima causata dai valori assoluti.
 
 ### Ibridi
 - Elastic Net
