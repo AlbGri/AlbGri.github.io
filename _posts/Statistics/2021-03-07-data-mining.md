@@ -236,7 +236,7 @@ Regolarizzare l'equazione di stima, penalizzando la funzione di ottimizzazione d
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \beta_j^2 \le s$$ (norma in [spazio L2](https://it.wikipedia.org/wiki/Spazio_l2))  
 in forma di Lagrange:  
 $$\min\limits_{\beta}\left \{ \left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta \right \}$$  
-al crescere di $$s$$, $$lambda$$ decresce.  
+nota: $$s\uparrow\Leftrightarrow \lambda \downarrow$$  
 Si ottiene quindi:  
 $$\hat{\beta}_\lambda=\left (X^TX+\lambda I \right )^-1 X^T y$$
 
