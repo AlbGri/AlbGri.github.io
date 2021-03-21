@@ -258,17 +258,20 @@ $$\beta \vert y \sim \mathcal{N} \left \{ \left ( X^TX+\frac{\sigma^2}{\tau^2}I 
 
 #### Relazione con PCA
 Nella PCA rotiamo le $$X$$, e dopo scegliamo le prime direzioni (le più variabili), per fare la regressione su $$y$$. La ridge si può formulare in modo che prenda le direzioni delle componenti principali (utilizzando la SVD $$X=UDV^T$$).  
-$$X\hat{\beta}^{\tiny \mbox{ridge}}\right )=X\left ( X^TX+\lambda I \right )^{-1} X^T y =My=\sum_{j=1}^p u_j k_j u_j^T y$$ con $$\frac{d_j^2}{d^2_j+\lambda}$$  
+$$X\hat{\beta}^{\tiny \mbox{ridge}}=X\left ( X^TX+\lambda I \right )^{-1} X^T y =M_{\lambda}y=\sum_{j=1}^p u_j k_j u_j^T y$$ con $$\frac{d_j^2}{d^2_j+\lambda}$$  
 $$u_j$$ vettori ortogonali della $$U$$  
 $$k_j$$ è la quantità di compressione nelle direzioni principali  
 $$d_j^2$$ sono autovalori della matrice delle varianze e covarianze di $$X^TX$$, $$d_j^2$$ sono le varianze delle componenti principali. Anziché usare la regressione sulle componenti principali, in cui solitamente si considerano solo le prime componenti e le altre vengono messe a 0, qui considera tutte le componenti comprimendo quelle meno importanti.  
-$$df(\lambda)=\mbox{tr}(M)=\sum_{j=1}^p k_j$$ misura complessità del modello, che è una funzione monotona di $$\lambda$$, al crescere della complessità si raggiungono i minimi quadrati, al decrescere i coefficienti tendono a 0.  
+
+$$df(\lambda)=\mbox{tr}(M_{\lambda})=\sum_{j=1}^p k_j$$ misura la complessità del modello, è una funzione monotona di $$\lambda$$, al crescere della complessità si raggiungono i minimi quadrati, al decrescere i coefficienti tendono a 0.  
  
 
 ### Regressione Lasso
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \vert \beta_j \vert \le s$$  
 Non c'è una forma esplicita per risolvere il problema. Programmazione quadratica. Discontinuità della derivata prima causata dai valori assoluti.  
+
 Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili.  
+
 La funzione da minimizzare è un paraboloide, il cui centro è la stima di massima verosimiglianza. Nel caso a due variabili, il vincolo è un parallelepipedo a base quadrata nel caso del Lasso, che possiamo visualizzare come quadrato (curve di livello) perché ragioniamo solo con i due coefficienti, e un cerchio nella Ridge. La soluzione con il vincolo è il punto di contatto tra il paraboloide e il vincolo. Nel caso del Lasso, a meno di casi estremi (es 2 variabili in cui il paraboloide è perfettamente nella diagonale), uno dei due coefficienti andrà a 0.
 
 ### Ibridi
