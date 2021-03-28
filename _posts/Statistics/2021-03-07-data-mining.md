@@ -335,6 +335,11 @@ $$y_i-\tilde{y}_i^{(j)}=y_i-\sum_{k\ne j}x_{ik}\tilde{\beta}_k (\lambda)$$
 Sia $$\overline{X}_n-\overline{X}_N$$ la differenza tra la media ottenuta nel campione con $$n$$ osservazioni e la media dell'intera popolazione d'interesse.  
 Si può esprimere come  
 $$\overline{X}_n-\overline{X}_N=\sqrt{\frac{1-f}{f}}\times \sigma_X \times \rho_{R,X}$$  
+Con:  
+- $$R$$ vettore di indicatrici della presenza di ciascuna unità della popolazione nel campione.  
+- $$f=\frac{n}{N}$$  
+- difficoltà del problema $$\sigma_X$$: variabilità di $$X$$, più è elavata e più è difficile da stimare $$\overline{X}_N$$ in modo accurato  
+- qualità dei dati $$\rho_{R,X}$$: con un buon campionamento probabilistico, quindi senza distorsione da selezione, la probabilitàd i osservare uno specifico valore di $$X$$ non dipende dal suo valore, quindi mediamente $$\rho_{R,X}\approx 0$$.
 
 
 
