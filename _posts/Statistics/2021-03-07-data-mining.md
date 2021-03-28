@@ -342,7 +342,7 @@ $$\overline{X}_n-\overline{X}_N=\sqrt{\frac{1-f}{f}}\times \sigma_X \times \rho_
 
 Se si ha distorsione da selezione:  
 - $$Z_{n,N}=\frac{\overline{X}_n-\overline{X}_N}{\sqrt{\mbox{var}_{CCS}\overline{X}_n}}$$ $$=\sqrt{N-1}\cdot \rho_{R,X}$$
-- Se si vuole mantenere l'errore legato alla qualità dei dati di un ordine di grandezza confrontabile con le altre componenti dell'errore complessivo $$\rho_{R,X} < N^{1/2}$$
+- Se si vuole mantenere l'errore legato alla qualità dei dati di un ordine di grandezza confrontabile con le altre componenti dell'errore complessivo $$\rho_{R,X}$$ deve essere inferiore a $$N^{1/2}$$
 
 
 
@@ -416,6 +416,8 @@ R: paradossalmente acquisisce più senso, anche se cambia il segno del coefficie
 
 Q: nella regressione ridge, il livello di variabilità dei beta al variare dei lambda ci da qualche informazione in più? la bassa variabilità potrebbe essere vicina al concetto di significatività statistica?
 R:no perché se è lontano da 0 e non varia, non per questo è da considerare come robusto
+
+Q: slide 170, su modello scientifico e big data. Quel Rho 0.00084 è 1/sqrt(N)? perché mi viene differente. come è stato determinato quel n=400?
 
 
 
