@@ -352,7 +352,7 @@ $$f(x_0)=\mathbb{E}\left \{ y \vert x=x_0 \right \}$$
 Non conoscendo la vera distribuzione, se ne fa la media delle $$y$$ condizionate alle $$X=x_0$$.  
 $$f(x_0)=\mbox{Media}(y\vert x=x_0)$$
 
-### Nearest-Neighbor
+### k-Nearest-Neighbor regression
 Si stima $$f(x_0)$$ attraverso la media aritmetica delle $$y_i$$ le cui $$x_i$$ sono in una finestra di $$x_0$$. Si determina $$\hat{f}(x_0)$$ con $$k$$ numero di vicini. 
 
 ### Regressione Lineare Locale
@@ -363,6 +363,10 @@ Stimo con il metodo dei minimi quadrati pesati mediante la distanza tra $$x_i$$ 
 $$\hat{\alpha},\hat{\beta}=\text{arg}\,\min\limits_{\alpha , \beta} \sum_{i=1}^n \left \{ y_i -\alpha - \beta (x_i - x_0)\right \} ^2 \omega (x_i-x_0; h)$$  
 - $$h$$ ampiezza di banda o parametro di lisciamento
 - $$\omega (\cdot ;h)$$ densità simmetrica attorno a $$0$$, detta nucleo
+
+Quindi si ottiene, stima esplicita e lineare nelle $$y_i$$:  
+$$\hat{f}(x)=s_h^T y=s_{1h}y_i+ \cdots +s_{nh}y_{n}$$  
+
 
 
 <!--- 
