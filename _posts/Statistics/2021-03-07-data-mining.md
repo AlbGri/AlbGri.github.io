@@ -357,11 +357,12 @@ Si stima $$f(x_0)$$ attraverso la media aritmetica delle $$y_i$$ le cui $$x_i$$ 
 
 ### Regressione Lineare Locale
 Come il k-NN ma non effettua una media aritmetica ma una regressione lineare.
-Per per il punto $$x_0$$ espando con Taylor:  
+Per per il punto $$x_0$$ (che poi varia) espando con Taylor:  
 $$f(x)=f(x_0)=f'(x_0)(x-x_0)+\mbox{resto}$$  
 Stimo con il metodo dei minimi quadrati pesati mediante la distanza tra $$x_i$$ e $$x_0$$:  
-$$\min\limits_{\alpha , \beta} \sum_{i=1}^n \left \{ y_i -\alpha - \beta (x_i - x_0)\right \} ^2 w(x_i-x_0; h)$$  
-
+$$\min\limits_{\alpha , \beta} \sum_{i=1}^n \left \{ y_i -\alpha - \beta (x_i - x_0)\right \} ^2 \omega (x_i-x_0; h)$$  
+- $$h$$ ampiezza di banda o parametro di lisciamento
+- $$\omega (\cdot ;h)$$ densità simmetrica attorno a $$0$$, detta nucleo
 
 
 <!--- 
