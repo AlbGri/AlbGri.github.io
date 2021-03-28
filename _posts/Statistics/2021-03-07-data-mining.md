@@ -367,7 +367,7 @@ $$\hat{\alpha},\hat{\beta}=\text{arg}\,\min\limits_{\alpha , \beta} \sum_{i=1}^n
 Quindi si ottiene, stima esplicita e lineare nelle $$y_i$$:  
 $$\hat{f}(x)=s_h^T y=s_{1h}y_i+ \cdots +s_{nh}y_{n}$$  
 
-Il valore atteso di $$\hat{f}(x)$$ non decresce all'aumentare di $$n$$. 
+$$\hat{f}(x)$$ è distorto e il suo valore atteso non decresce all'aumentare di $$n$$. 
 
 #### Scelta del nucleo
 La scelta del nucleo è meno importande dell'ampiezza di banda.  
@@ -385,7 +385,13 @@ Il nucleo a supporto limitato riduce il costo computazionale.
 #### Scelta del parametro di lisciamento
 $$\mathbb{E}\left \{ \hat{f}(x) \right \}$$ $$\approx f(x) + \frac{h^2}{2}\sigma^2_{\omega} f''(x)$$  
 $$\mbox{var}\left \{ \hat{f}(x) \right \}$$ $$\approx \frac{\sigma^2}{nh} \frac{\alpha(\omega)}{g(x)}$$  
-Per un $$h$$ piccolo la distorsione diventa nulla, ma la varianza esplode. 
+Per un $$h$$ piccolo la distorsione diventa nulla, ma la varianza esplode.  
+Si sceglie $$h$$ che minimizza l'errore quadratico medio. Analiticamente si può esplicitare $$h$$ ottimo ma questo dipende da $$f''(x)$$ che a sua volta dipende da $$h$$.  
+L'MSE tende a $$0$$ più lentamente $$O(n^{-4/5})$$ dello stimatore MV $$O(n^{-1})$$, la convergenza al valore vero è più lenta senza assunzioni.
+
+#### LOESS
+La scelta di $$h$$ può essere fissa, oppure variabile in funzione della rarefazione dei punti. Determino quindi l'ampiezza di banda affinché raggiunga un numero o una percentuale prefissata di punti. Inoltre, invece di minimizzare la funzione di perdita quadratica, si minimizza l'assoluta che genera una stima più robusta agli outliers.
+
 
 
 
