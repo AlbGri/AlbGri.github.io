@@ -330,6 +330,14 @@ $$y_i-\tilde{y}_i^{(j)}=y_i-\sum_{k\ne j}x_{ik}\tilde{\beta}_k (\lambda)$$
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da approfondire
 
 
+## Distorsione da selezione
+
+Sia $$\overline{X}_n-\overline{X}_N$$ la differenza tra la media ottenuta nel campione con $$n$$ osservazioni e la media dell'intera popolazione d'interesse.  
+Si può esprimere come  
+$$\overline{X}_n-\overline{X}_N=\sqrt{\frac{1-f}{f}}\times \sigma_X \times \rho_{R,X}$$  
+
+
+
 
 
 
