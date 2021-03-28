@@ -358,7 +358,7 @@ Si stima $$f(x_0)$$ attraverso la media aritmetica delle $$y_i$$ le cui $$x_i$$ 
 ### Regressione Lineare Locale
 Come il k-NN ma non effettua una media aritmetica ma una regressione lineare.  
 Sul punto generico $$x_0$$ espando con Taylor:  
-$$f(x)=f(x_0)=f'(x_0)(x-x_0)+\mbox{resto}$$  
+$$f(x)=f(x_0)+f'(x_0)(x-x_0)+\mbox{resto}$$  
 Stimo con il metodo dei minimi quadrati pesati mediante la distanza tra $$x_i$$ e $$x_0$$:  
 $$\hat{\alpha},\hat{\beta}=\text{arg}\,\min\limits_{\alpha , \beta} \sum_{i=1}^n \left \{ y_i -\alpha - \beta (x_i - x_0)\right \} ^2 \omega (x_i-x_0; h)$$  
 - $$h$$ ampiezza di banda o parametro di lisciamento
@@ -367,9 +367,12 @@ $$\hat{\alpha},\hat{\beta}=\text{arg}\,\min\limits_{\alpha , \beta} \sum_{i=1}^n
 Quindi si ottiene, stima esplicita e lineare nelle $$y_i$$:  
 $$\hat{f}(x)=s_h^T y=s_{1h}y_i+ \cdots +s_{nh}y_{n}$$  
 
+Il valore atteso di $$\hat{f}(x)$$ non decresce all'aumentare di $$n$$. 
+
 #### Scelta del nucleo
 La scelta del nucleo è meno importande dell'ampiezza di banda.  
-Posto $$\omega(t;h)=\frac{1}{h} \omega_0 \left ( \frac{t}{h} \right )$$ con $$t=\vert x-x_0 \vert$$  
+Posto  
+$$\omega(t;h)=\frac{1}{h} \omega_0 \left ( \frac{t}{h} \right )$$ con $$t=\vert x-x_0 \vert$$  
 alcune scelte possibili del nucleo:  
 - normale $$\omega_0 \sim\mathcal{N}(0,h^2)$$, dominio $$\mathbb{R}$$
 - biquadratico $$(1-t^2)^2$$ se $$\vert t \vert < 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
@@ -377,8 +380,14 @@ alcune scelte possibili del nucleo:
 - rettangolare, dominio $$(-1,1)$$
 - epanechnikov, dominio $$(-1,1)$$
 
-
 Il nucleo a supporto limitato riduce il costo computazionale.
+
+#### Scelta del parametro di lisciamento
+$$\mathbb{E}\left \{ \hat{f}(x) \right \}$$ $$\approx f(x) + \frac{h^2}{2}\sigma^2_{\omega} f''(x)$$  
+$$\mbox{var}\left \{ \hat{f}(x) \right \}$$ $$\approx \frac{\sigma^2}{nh} \frac{\alpha(\omega)}{g(x)}$$  
+Per un $$h$$ piccolo la distorsione diventa nulla, ma la varianza esplode. 
+
+
 
 
 
