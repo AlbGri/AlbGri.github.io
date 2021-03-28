@@ -369,6 +369,9 @@ $$\hat{f}(x)=s_h^T y=s_{1h}y_i+ \cdots +s_{nh}y_{n}$$
 
 $$\hat{f}(x)$$ è distorto e il suo valore atteso non decresce all'aumentare di $$n$$. 
 
+Per il caso multidimensionale la stima dei coefficienti sarà data da  
+$$(X^T WX)^-1 X^T Wy$$  
+
 #### Scelta del nucleo
 La scelta del nucleo è meno importande dell'ampiezza di banda.  
 Posto  
@@ -391,6 +394,23 @@ L'MSE tende a $$0$$ più lentamente $$O(n^{-4/5})$$ dello stimatore MV $$O(n^{-1
 
 #### LOESS
 La scelta di $$h$$ può essere fissa, oppure variabile in funzione della rarefazione dei punti. Determino quindi l'ampiezza di banda affinché raggiunga un numero o una percentuale prefissata di punti. Inoltre, invece di minimizzare la funzione di perdita quadratica, si minimizza l'assoluta che genera una stima più robusta agli outliers.
+
+### Curse of dimensionality
+Per tutti i modelli non parametrici, al crescere della dimensione $$p$$ i punti sono sempre più rarefatti.  
+Per mantenere costante l'MSE al crescere di $$p$$ la numerosità campionaria deve crescere esponenzialmente.  
+Le assunzioni dei modelli lineari consentono di limitare il problema, quindi si cercono assunzioni non stringenti per gestire questa “maledizione''.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
