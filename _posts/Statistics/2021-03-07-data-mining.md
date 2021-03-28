@@ -371,9 +371,15 @@ $$\hat{f}(x)=s_h^T y=s_{1h}y_i+ \cdots +s_{nh}y_{n}$$
 La scelta del nucleo è meno importande dell'ampiezza di banda.  
 Posto $$\omega(t;h)=\frac{1}{h} \omega_0 \left ( \frac{t}{h} \right )$$ con $$t=\vert x-x_0 \vert$$  
 alcune scelte possibili del nucleo:  
-- Normale $$\omega_0 \sim\mathcal{N}(0,h^2)$$
-- biquadratico $$(1-t^2)^2$$ se $$\vert t \vert < 1$$ altrimenti $$0$$
-- tricubico $$(1-\vert t \vert ^3)^3$$ se $$\vert t \vert < 1$$ altrimenti $$0$$
+- normale $$\omega_0 \sim\mathcal{N}(0,h^2)$$, dominio $$\mathbb{R}$$
+- biquadratico $$(1-t^2)^2$$ se $$\vert t \vert < 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
+- tricubico $$(1-\vert t \vert ^3)^3$$ se $$\vert t \vert < 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
+- rettangolare, dominio $$(-1,1)$$
+- epanechnikov, dominio $$(-1,1)$$
+
+
+Il nucleo a supporto limitato riduce il costo computazionale.
+
 
 
 <!--- 
