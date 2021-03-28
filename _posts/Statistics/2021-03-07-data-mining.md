@@ -367,6 +367,9 @@ $$\hat{\alpha},\hat{\beta}=\text{arg}\,\min\limits_{\alpha , \beta} \sum_{i=1}^n
 Quindi si ottiene, stima esplicita e lineare nelle $$y_i$$:  
 $$\hat{f}(x)=s_h^T y=s_{1h}y_i+ \cdots +s_{nh}y_{n}$$  
 
+#### Scelta del nucleo
+La scelta del nucleo è meno importande dell'ampiezza di banda.  
+Posto $$\omega(t;h)=\frac{1}{h} \omega_0 \left ( \frac{t}{h} \left )$$ con $$t=\vert x-x_0 \vert$$  
 
 
 <!--- 
