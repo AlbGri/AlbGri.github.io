@@ -142,7 +142,7 @@ $$ $$= Var(\hat{\theta})+Bias(\hat{\theta},\theta)^2 $$
 
 $$ MSE\left (\hat{y}\right )
 = \mathbb{E}\left \{\left ( \hat{y}-f(x') \right ) ^2\right \}
-= \mathbb{E}\left \{\left (\hat{y} \pm \mathbb{E}\left \{\hat{y}\right \}+f(x') \right)^2\right \}= \ldots$$  
+= \ldots$$  
 $$= \mathbb{E}\left \{\left [ \hat{y}-\mathbb{E}\left \{\hat{y}\right \} \right ] ^2\right \} + \left [ \mathbb{E}\left \{\hat{y}\right \}-f(x') \right ] ^2 
 $$ $$= Var(\hat{y})+Bias(\hat{y},f(x'))^2 $$  
 
@@ -345,9 +345,22 @@ Se si ha distorsione da selezione:
 - Se si vuole mantenere l'errore legato alla qualità dei dati di un ordine di grandezza confrontabile con le altre componenti dell'errore complessivo $$\rho_{R,X}$$ deve essere inferiore a $$N^{1/2}$$
 
 
+## Metodi non parametrici
+Minimizzare funzione di perdita quadrata, mediante i minimi quadrati.  
+Il valore che minimizza è la media condizionata delle $$y$$ condizionate alle $$X$$, il valore atteso condizionato cioè la funzione di regressione.  
+$$f(x_0)=\mathbb{E}\left \{ y\vert x=x_0 \left \}$$  
+Non conoscendo la vera distribuzione, se ne fa la media delle $$y$$ condizionate alle $$X=x_0$$.  
+$$f(x_0)=\mbox{Media}(y\vert x=x_0)$$
 
+### Nearest-Neighbor
+Si stima $$f(x_0)$$ attraverso la media aritmetica delle $$y_i$$ le cui $$x_i$$ sono in una finestra di $$x_0$$. Si stima quindi $$\hat{f}(x_0)$$ con $$k$$ numero di vicini. 
 
-
+### Regressione Lineare Locale
+Come il k-NN ma non effettua una media aritmetica ma una regressione lineare.
+Per per il punto $$x_0$$ espando con Taylor:  
+$$f(x)=f(x_0)=f'(x_0)(x-x_0)+\mbox{resto}$$  
+Stimo con il metodo dei minimi quadrati pesati mediante la distanza tra $$x_i$$ e $$x_0$$:  
+$$\min\limits_{\alpha , \beta} \sum_{i=1}^n \left \{ y_i -\alpha - \beta (x_i - x_0)\right \} ^2 w(x_i-x_0; h)$$  
 
 
 
