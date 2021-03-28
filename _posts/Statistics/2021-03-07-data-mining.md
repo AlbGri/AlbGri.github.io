@@ -348,19 +348,19 @@ Se si ha distorsione da selezione:
 ## Metodi non parametrici
 Minimizzare funzione di perdita quadrata, mediante i minimi quadrati.  
 Il valore che minimizza è la media condizionata delle $$y$$ condizionate alle $$X$$, il valore atteso condizionato cioè la funzione di regressione.  
-$$f(x_0)=\mathbb{E}\left \{ y\vert x=x_0 \left \}$$  
+$$f(x_0)=\mathbb{E}\left \{ y \vert x=x_0 \right \}$$  
 Non conoscendo la vera distribuzione, se ne fa la media delle $$y$$ condizionate alle $$X=x_0$$.  
 $$f(x_0)=\mbox{Media}(y\vert x=x_0)$$
 
 ### Nearest-Neighbor
-Si stima $$f(x_0)$$ attraverso la media aritmetica delle $$y_i$$ le cui $$x_i$$ sono in una finestra di $$x_0$$. Si stima quindi $$\hat{f}(x_0)$$ con $$k$$ numero di vicini. 
+Si stima $$f(x_0)$$ attraverso la media aritmetica delle $$y_i$$ le cui $$x_i$$ sono in una finestra di $$x_0$$. Si determina $$\hat{f}(x_0)$$ con $$k$$ numero di vicini. 
 
 ### Regressione Lineare Locale
-Come il k-NN ma non effettua una media aritmetica ma una regressione lineare.
-Per per il punto $$x_0$$ (che poi varia) espando con Taylor:  
+Come il k-NN ma non effettua una media aritmetica ma una regressione lineare.  
+Sul punto generico $$x_0$$ espando con Taylor:  
 $$f(x)=f(x_0)=f'(x_0)(x-x_0)+\mbox{resto}$$  
 Stimo con il metodo dei minimi quadrati pesati mediante la distanza tra $$x_i$$ e $$x_0$$:  
-$$\min\limits_{\alpha , \beta} \sum_{i=1}^n \left \{ y_i -\alpha - \beta (x_i - x_0)\right \} ^2 \omega (x_i-x_0; h)$$  
+$$\hat{\alpha},\hat{\beta}=\text{arg}\,\min\limits_{\alpha , \beta} \sum_{i=1}^n \left \{ y_i -\alpha - \beta (x_i - x_0)\right \} ^2 \omega (x_i-x_0; h)$$  
 - $$h$$ ampiezza di banda o parametro di lisciamento
 - $$\omega (\cdot ;h)$$ densità simmetrica attorno a $$0$$, detta nucleo
 
