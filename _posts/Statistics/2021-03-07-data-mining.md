@@ -339,9 +339,10 @@ $$\overline{X}_n-\overline{X}_N=\sqrt{\frac{1-f}{f}}\times \sigma_X \times \rho_
 - $$f$$ $$=\frac{n}{N}$$  
 - difficoltà del problema $$\sigma_X$$: variabilità di $$X$$, più è elavata e più è difficile da stimare $$\overline{X}_N$$ in modo accurato  
 - qualità dei dati $$\rho_{R,X}$$: con un buon campionamento probabilistico, quindi senza distorsione da selezione, la probabilità di osservare uno specifico valore di $$X$$ non dipende dal suo valore e si avrà mediamente $$\rho_{R,X}\approx 0$$.  
-Se si ha distorsione da selezione  
-- $$Z_{n,N}=\frac{\overline{X}_n-\overline{X}_N}{\sqrt{\mbox{var}_{\tiny{CCS}}\overline{X}_n}}$$ $$=\sqrt{N-1}\rho_{R,X}$$
-- Se si vuole mantenere l'errore leagato alla qualità dei dati di un ordine di grandezza confrontabile con le altre componenti dell'errore complessivo $$\rho_{R,X} < N^{1/2}$$
+
+Se si ha distorsione da selezione:  
+- $$Z_{n,N}=\frac{\overline{X}_n-\overline{X}_N}{\sqrt{\mbox{var}_{CCS}\overline{X}_n}}$$ $$=\sqrt{N-1}\cdot \rho_{R,X}$$
+- Se si vuole mantenere l'errore legato alla qualità dei dati di un ordine di grandezza confrontabile con le altre componenti dell'errore complessivo $$\rho_{R,X} < N^{1/2}$$
 
 
 
