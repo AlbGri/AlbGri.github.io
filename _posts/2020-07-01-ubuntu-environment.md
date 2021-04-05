@@ -38,7 +38,11 @@ System →  Keyboard → Switch windows direcly → Alt+Tab
 </span>
 
 1. Aggiungi tasto destro create nuovo .txt  
+Assicurarsi che in user-dirs.dirs ci sia Templates  
 ```console
+~$ gedit ~/.config/user-dirs.dirs
+~$ xdg-user-dir TEMPLATES
+~$ mkdir -p ~/Templates
 ~$ touch ~/Templates/Empty\ Document
 ```
 
