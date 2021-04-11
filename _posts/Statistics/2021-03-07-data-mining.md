@@ -28,9 +28,8 @@ mathjax: "true"
 
 ## Accenni di Statistica
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Teorema di Gauss Markov  
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Proprietà stimatore LS (non distorto, tra i non distorti è quello a minima varianza)  
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Proprietà stimatore MV (coincide con LS con errori gaussiani)  
 
+Proprietà stimatore LS: non distorto, tra i non distorti è quello a minima varianza...  
 
 
 ## Modelli Lineari e Minimi Quadrati (LS)
