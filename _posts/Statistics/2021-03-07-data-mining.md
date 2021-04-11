@@ -383,6 +383,7 @@ alcune scelte possibili del nucleo:
 - tricubico $$(1-\vert t \vert ^3)^3$$ se $$\vert t \vert < 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
 - rettangolare, dominio $$(-1,1)$$
 - epanechnikov, dominio $$(-1,1)$$
+<!--- --->
 
 Il nucleo a supporto limitato riduce il costo computazionale.
 
@@ -442,9 +443,10 @@ Si ha una funzione di base per ogni $$x$$, che si andranno a combinare mediante 
 Nel caso bidimensionale $$x=(x_1,x_2)^T\in \mathbb{R}$$ si hanno le seguenti basi di funzioni  
 $$h_{1k}(x_1)$$, con $$k=1,...,K_1$$ relativa alla $$x_1$$,  
 $$h_{2k}(x_2)$$, con $$k=1,...,K_2$$ relativa alla $$x_2$$  
-la base prodotto tensoriale risulta  
+La base prodotto tensoriale risulta  
 $$g_{jk}(x)=h_{1j}(x_1)h_{2k}(x_2)$$ con $$j=1,...,K_1$$ e $$k=1,...,K_2$$  
-si può usare per rappresentare la funzione bidimensionale  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Con $$K_1$$ numero di funzioni di base, in questo caso 2, intercetta ed $$x$$, quindi il numero di nodi è $$K_1+2?$$.  
+Si può usare per rappresentare la funzione bidimensionale  
 $$g(x)=\sum_{j=1}^{K_1} \sum_{k=1}^{K_2} \theta_{jk}g_{jk}(x)$$  
 la stima dei $$\theta_{jk}$$ viene effettuata attraverso i minimi quadrati.  
 
@@ -522,9 +524,11 @@ si ottiene che
 $$\mathbb{E}(Q)\approx \sigma^2\{n-\mbox{tr}(S)\}$$  
 Quindi  
 $$\{n-\mbox{tr}(S)\}$$ gradi di libertà equivalenti per il termine di errore  
-$$\mbox{tr}(S)$$ gradi di libertà equivalenti per il lisciatore, 'quanto costa di $$n$$ per stimare il lisciatore', utile per confrontare complessità di metodi differenti ma anche per fare dei test.
+$$\mbox{tr}(S)$$ gradi di libertà equivalenti per il lisciatore, 'quanto costa di $$n$$ per stimare il lisciatore', utile per confrontare complessità di metodi differenti ma anche per fare dei test (analogia con il grado di un polinomio e i gradi di libertà, quindi numero di parametri da stimare).  
 
-Esistono altre forme di gradi di libertà equivalenti in funzione delle approssimazioni che si scelgono.
+Esistono altre forme di gradi di libertà equivalenti in funzione delle approssimazioni che si scelgono.  
+
+Consente di costruire statistiche tipo $$F$$ per valutare bontà del modello. La traccia di $$S$$ è paragonabile alla penalizzazione $$p$$ dell'AIC.
 
 
 ### Modelli additivi
@@ -532,7 +536,7 @@ Un modo per gestire la maledizione della dimensionalità sono i modelli additivi
 $$f(x_1,...,x_p)=\alpha+\sum_{j=1}^p f_j(x_j)+\sum_{k<j} f_{kj}(x_k,x_j)+...$$  
 <!--- --->
 si può usare per approssimare qualsiasi funzione.  
-Ci si può fermare al termine di primo grado:  
+Può essere una buona scelta fermarsi al termine di primo grado:  
 $$y=f(x_1,...,x_p)+\epsilon=\alpha+\sum_{j=1}^p f_j(x_j)+\epsilon$$  
 consentiamo una maggiore libertà di forma delle variabili rispetto il modello lineare.  
 In un contesto geografico si potrebbe aggiungere come elemento di interazione le coordinate e il resto tutte in maniera additiva.  
@@ -542,8 +546,8 @@ Le $$p$$ funzioni $$f_j(x_j)$$ sono stimate mediante l'algoritmo 'backfitting'.
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) È una variante dell'algoritmo di Gauss-Seidel.  
 Iterativamente ogni funzione si può scrivere come residui parziali, fissando tutte le altre funzioni e quindi diventando univariata:  
 $$f_j(x_j)=y-\left ( \alpha+\sum_{k\ne j} f_k(x_k)+\epsilon \right )$$  
-a questo punto si può usare un lisciatore sui residui parziali (si può usare anche uno parametrico, nel caso si usi una retta si ottengono i minimi quadrati).  
-Per evitare un eccesso di parametrizzazione dell'intercetta ogni funziona deve essere a media zero.
+a questo punto si può usare un lisciatore a scelta sui residui parziali (si può usare anche uno parametrico, nel caso si usi una retta si ottengono i minimi quadrati, anche metodi diversi per variabili diverse).  
+Per evitare un eccesso di parametrizzazione dell'intercetta ogni funziona deve essere a media zero.  
 
 
 
