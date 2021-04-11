@@ -432,6 +432,17 @@ $$f(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$
 Per interpolare non esattamente $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente. Con $$K$$ nodi, la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$. La stima risulta:  
 $$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$ per opportuni $$\theta_j$$ si minimizza la devianza residua e si ottiene una spline di regressione.  
 
+#### Relazione con minimi quadrati penalizzati
+Dato il criterio dei minimi quadrati penalizzati (regressioni Ridge, LASSO):  
+$$D(f,\lambda)=\sum_{i=1}^n [y_i-f(x_i)]^2+\lambda \int_{-\infty}^{\infty}\left \{ f''(t) \right \}^2 dt$$ con $$\lambda>0$$ parametro di lisciamento moltiplicato per il grado di irregolarità della curva.  
+La $$f$$ che minimizza la funzione di perdita risulta:  
+$$f(x)=\sum_{j=1}^{n_0} N_j(x)\theta_j$$ $$=N\theta$$  
+con $$n_0$$ numero di $$x_i$$ distinti e $$N_j(x)$$ basi delle spline naturali. $$N$$ matrice in cui la $$j-$$ma colonna contiene i valori di $$N_j$$ in corrispondenza agli $$n_0$$ valori distinti di $$x_i$$.  
+Il problema si può riscrivere con  
+$$D(f,\lambda)=(y-N\theta)^T (y-N\theta)+\lambda \theta^T \Omega \theta $$  
+con $$\Omega$$ matrice il cui generico elemento è $$\int N_j''(t)N_k''(t)dt$$  
+Il $$\theta$$ che minimizza la funzione di perdita risulta:  
+$$\hat{\theta}$$ $$=(N^TN+\lambda\Omega)^{-1}N^Ty$$
 
 
 
