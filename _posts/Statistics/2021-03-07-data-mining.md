@@ -516,7 +516,11 @@ $$\mathbb{E}(Q)\overset{*}{=}\mu^T(I_n-S)^T(I_n-S)\mu+\sigma^2 \mbox{tr}(I_n-S)^
 \* Utilizzando il valore atteso di una forma quadratica:  
 $$\mathbb{E}\left \{ X^T AX\right \}=\mu^T A\mu+\mbox{tr}(AV)$$ con $$\mu=\mathbb{E}(X)$$ e $$V=\mbox{var}(X)$$
 
+Utilizzando le approssimazioni  
+- $$(I_n-S)\mu$$ $$\approx 0$$  
+- $$(I_n-S)^T(I_n-S)\approx (I_n-S)$$ cioè idempotente
 
+si ottiene che $$\mathbb{E}(Q)\approx \sigma^2\{n-\mbox{tr}(S)\}$$ e $$\{n-\mbox{tr}(S)\}$$ si definiscono gradi di libertà equivalenti per il termine di errore.
 
 
 
