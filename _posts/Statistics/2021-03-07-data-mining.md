@@ -491,10 +491,20 @@ Il livello di complessità è dato da $$\lambda$$.
 ### Significatività nelle splines di regressione
 Data la teoria dei modelli lineari  
 $$\hat{y}=Py,\qquad \hat{\epsilon}=(I-P)y$$  
-con $$P=X(X^TX)^{-1}X^T$$ simmetrica idempotente di rango $$p$$ e con $$\mbox{rank}(P)=\mbox{tr}(P)=p$$  
+con l'ipotesi che $$P=X(X^TX)^{-1}X^T$$ matrice simmetrica idempotente di rango $$p$$ e con $$\mbox{rank}(P)=\mbox{tr}(P)=p$$  
 sappiamo che $$\mathbb{E}(\vert\vert\hat{\epsilon}\vert\vert ^2)=\sigma^2 (n-p)$$ e  
 con l'ipotesi di normalità $$\vert\vert\hat{\epsilon}\vert\vert ^2\sim\sigma^2\mathcal{X}^2_{n-p}, \qquad \vert\vert\hat{y}\vert\vert ^2=\hat{y}^T\hat{y}\sim\sigma^2\mathcal{X}^2_p(\delta)$$  
-con $$\delta$$ parametro di non centralità
+con $$\delta$$ parametro di non centralità.  
+Si ricorda che:  
+$$\vert\vert\hat{y}\vert\vert ^2$$ devianza spiegata, variabilità della regressione  
+$$n-p$$ gradi di libertà dei residui  
+$$p$$ gdl della regressione  
+$$\vert\vert\y\vert\vert ^2=\vert\vert\hat{\epsilon}\vert\vert ^2+\vert\vert\hat{y}\vert\vert ^2$$  
+Inoltre la devianza spiegata si scompone in pezzi che dipendono da ciascuna variabile più una parte residua (ANOVA).  
+
+Fissato il parametro di regolazione, tutti i metodi visti possono essere espressi come modelli lineari:  
+$$\hat{y}=S_h y$$
+
 
 
 
