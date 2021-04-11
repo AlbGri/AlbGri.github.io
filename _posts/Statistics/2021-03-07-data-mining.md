@@ -223,7 +223,7 @@ $$\Sigma \alpha_l=\lambda^2_j \alpha_l$$ con $$\lambda$$ autovalori.
 La PCA minimizza le distanze ortogonali, è una relazione simmetrica tra le variabili, mentre la retta dei minimi quadrati minimizza le distanze verticali in cui la scelta della direzione comporta stime differenti dei parametri.  
 
 La prima componente è la più informativa ma non necessariamente è quella che spiega meglio la target.  
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Esistono metodi, come la Correlazione Canonica in cui si determinano le componenti anche in funzione della risposta. Altri metodi: Minimi Quadrati Parziali (Partially Square), Independent Component Analysis, Principal Curves, etc.
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Esistono metodi, come la Correlazione Canonica in cui si determinano le componenti anche in funzione della risposta. Altri metodi: Minimi Quadrati Parziali (Partially Square), Independent Component Analysis, Principal Curves, etc.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da costruire su R un metodo che restituisca i coefficienti delle variabili usando la regressione sulle componenti principali scelte. Introducendo anche la CV per la scelta del numero di componenti.
 
 #### Decomposizione Spettrale
