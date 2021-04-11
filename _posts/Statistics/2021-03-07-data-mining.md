@@ -531,9 +531,18 @@ Esistono altre forme di gradi di libertà equivalenti in funzione delle approssi
 Un modo per gestire la maledizione della dimensionalità sono i modelli additivi  
 $$f(x_1,...,x_p)=\alpha+\sum_{j=1}^p f_j(x_j)+\sum_{k<j} f_{kj}(x_k,x_j)+...$$  
 <!--- --->
-si può usare per approssimare qualsiasi funzione
+si può usare per approssimare qualsiasi funzione.  
+Ci si può fermare al termine di primo grado:  
+$$y=f(x_1,...,x_p)+\epsilon=\alpha+\sum_{j=1}^p f_j(x_j)+\epsilon$$  
+consentiamo una maggiore libertà di forma delle variabili rispetto il modello lineare.  
+In un contesto geografico si potrebbe aggiungere come elemento di interazione le coordinate e il resto tutte in maniera additiva.  
+Le $$p$$ funzioni $$f_j(x_j)$$ sono stimate mediante l'algoritmo 'backfitting'.  
 
-
+#### Backfitting
+Iterativamente ogni funzione si può scrivere come residui parziali, fissando tutte le altre funzioni e quindi diventando univariata  
+$$f_j(x_j)=y-\left ( \alpha+\sum_{k\ne j} f_k(x_k)+\epsilon \right )$$  
+a questo punto si può usare un lisciatore sui residui parziali.  
+Per evitare un eccesso di parametrizzazione dell'intercetta ogni funziona deve essere a media zero.
 
 
 
