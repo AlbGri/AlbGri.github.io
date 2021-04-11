@@ -488,13 +488,14 @@ Sono stime non parametriche, usa i dati vicini più dei dati lontani, quindi l'o
 Il livello di complessità è dato da $$\lambda$$.
 
 
-### Significatività nelle splines di regressione
+### Gradi di libertà equivalenti
 Data la teoria dei modelli lineari  
 $$\hat{y}=Py,\qquad \hat{\epsilon}=(I-P)y$$  
 con l'ipotesi che $$P=X(X^TX)^{-1}X^T$$ matrice simmetrica idempotente di rango $$p$$ e con $$\mbox{rank}(P)=\mbox{tr}(P)=p$$  
 sappiamo che $$\mathbb{E}(\vert\vert\hat{\epsilon}\vert\vert ^2)=\sigma^2 (n-p)$$ e  
-con l'ipotesi di normalità $$\vert\vert\hat{\epsilon}\vert\vert ^2\sim\sigma^2\mathcal{X}^2_{n-p}, \qquad \vert\vert\hat{y}\vert\vert ^2=\hat{y}^T\hat{y}\sim\sigma^2\mathcal{X}^2_p(\delta)$$  
-con $$\delta$$ parametro di non centralità.  
+con l'ipotesi di normalità:  
+$$\vert\vert\hat{\epsilon}\vert\vert ^2\sim\sigma^2\mathcal{X}^2_{n-p}, \qquad \vert\vert\hat{y}\vert\vert ^2=\hat{y}^T\hat{y}\sim\sigma^2\mathcal{X}^2_p(\delta)$$  
+e $$\delta$$ parametro di non centralità.  
 Si ricorda che:  
 $$\vert\vert\hat{y}\vert\vert ^2$$ devianza spiegata, variabilità della regressione  
 $$n-p$$ gradi di libertà dei residui  
@@ -506,7 +507,9 @@ Fissato il parametro di regolazione, tutti i metodi visti possono essere espress
 $$\hat{y}=S_h y$$ con $$S_h$$ matrice $$n\times n$$  
 e $$\hat{\sigma}=(I-S_h)y$$  
 Se si assume che l'errore $$\epsilon$$ abbia distribuzione normale, $$\vert\vert\hat{\epsilon}\vert\vert ^2$$ non risulta più $$\mathcal{X}^2$$, ma empiricamente si assomiglia  
-$$\vert\vert\hat{\epsilon}\vert\vert ^2 \overset{\mbox{approx}}{\sim} \sigma^2 \mathcal{X}^2_{?}\qquad \vert\vert\hat{y}\vert\vert ^2 \overset{\mbox{approx}}{\sim} \sigma^2 \mathcal{X}^2_{??}(\delta)$$
+$$\vert\vert\hat{\epsilon}\vert\vert ^2 \overset{\mbox{approx}}{\sim} \sigma^2 \mathcal{X}^2_{?}\qquad \vert\vert\hat{y}\vert\vert ^2 \overset{\mbox{approx}}{\sim} \sigma^2 \mathcal{X}^2_{??}(\delta)$$  
+
+
 
 
 
