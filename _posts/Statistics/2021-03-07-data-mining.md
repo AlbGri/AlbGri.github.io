@@ -498,13 +498,15 @@ con $$\delta$$ parametro di non centralità.
 Si ricorda che:  
 $$\vert\vert\hat{y}\vert\vert ^2$$ devianza spiegata, variabilità della regressione  
 $$n-p$$ gradi di libertà dei residui  
-$$p$$ gdl della regressione  
-$$\vert\vert\y\vert\vert ^2=\vert\vert\hat{\epsilon}\vert\vert ^2+\vert\vert\hat{y}\vert\vert ^2$$  
+$$p$$ gradi di libertà della regressione  
+$$\vert\vert y \vert\vert ^2=\vert\vert\hat{\epsilon}\vert\vert ^2+\vert\vert\hat{y}\vert\vert ^2$$  
 Inoltre la devianza spiegata si scompone in pezzi che dipendono da ciascuna variabile più una parte residua (ANOVA).  
 
 Fissato il parametro di regolazione, tutti i metodi visti possono essere espressi come modelli lineari:  
-$$\hat{y}=S_h y$$
-
+$$\hat{y}=S_h y$$ con $$S_h$$ matrice $$n\times n$$  
+e $$\hat{\sigma}=(I-S_h)y$$  
+Se si assume che l'errore $$\epsilon$$ abbia distribuzione normale, $$\vert\vert\hat{\epsilon}\vert\vert ^2$$ non risulta più $$\mathcal{X}^2$$, ma empiricamente si assomiglia  
+$$\vert\vert\hat{\epsilon}\vert\vert ^2 \overset{\mbox{approx}}{\sim} \sigma^2 \mathcal{X}^2_{?}\qquad \vert\vert\hat{y}\vert\vert ^2 \overset{\mbox{approx}}{\sim} \sigma^2 \mathcal{X}^2_{??}(\delta)$$
 
 
 
