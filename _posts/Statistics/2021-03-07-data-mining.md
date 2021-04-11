@@ -455,8 +455,9 @@ Una polinomiale a tratti in $$\mathbb{R}^2$$ è difficile, quindi costruiamo del
 
 Si rischiano di ottenere un numero molto elevato di funzioni (4+1 per ogni nodo, e moltiplicarle per 4+1 per ogni nodo per l'altro asse), quindi si considerano le funzioni di base lineari a tratti e non cubiche. Il prodotto tensoriale di base lineari a tratti è comoda perché è nulla tranne in piccole porzioni.  
 
-Il livello di complessità è dato dal numero di nodi ($$K_1, K_2$$).
+Il livello di complessità è dato dal numero di nodi ($$K_1, K_2$$).  
 
+Le funzioni hanno anche le interazioni, è difficile distinguere l'effetto di ogni variabile.
 
 ### Smoothing splines
 Dato il criterio dei minimi quadrati penalizzati (regressioni Ridge, LASSO):  
@@ -482,12 +483,17 @@ $$f(x)=\hat{\beta}_0+\hat{\beta}^T x+\sum_{j=1}^n \hat{\alpha}_j h_j(x)$$
 dove $$h_j(x)=\eta\left (\vert \vert x-x_j \vert \vert \right )$$ e $$\eta (z)=z^2 \log{z}$$  
 e $$\hat{\alpha}_j$$, $$\hat{\beta}_0$$ e $$\hat{\beta}$$ determinati sostituendo la $$f(x)$$ nell'espressione dei minimi quadrati penalizzati e minimizzando.  
 
-Sono stime non parametriche, usa i dati vicini più dei dati lontani, quindi l'operazione di estrapolazione è pericolosa, perché non si ipotizza alcuna relazione tra le $$x$$ e la $$y$$.
+Sono stime non parametriche, usa i dati vicini più dei dati lontani, quindi l'operazione di estrapolazione è pericolosa, perché non si ipotizza alcuna relazione tra le $$x$$ e la $$y$$.  
 
 Il livello di complessità è dato da $$\lambda$$.
 
 
-
+### Significatività nelle splines di regressione
+Data la teoria dei modelli lineari  
+$$\hat{y}=Py,\qquad \hat{\epsilon}=(I-P)y$$  
+con $$P=X(X^TX)^{-1}X^T$$ simmetrica idempotente di rango $$p$$ e con $$\mbox{rank}(P)=\mbox{tr}(P)=p$$  
+sappiamo che $$\mathbb{E}(\vert\vert\hat{\epsilon}\vert\vert ^2)=\sigma^2 (n-p)$$ e  
+con l'ipotesi di normalità $$\vert\vert\hat{\epsilon}\vert\vert ^2\sim\sigma^2\mathcal{X}^2_{n-p}}, \qquad \vert\vert\hat{y}\vert\vert ^2=\hat{y}^T\hat{y}\sim$$
 
 
 
