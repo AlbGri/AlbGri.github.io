@@ -405,7 +405,6 @@ $$\mbox{MSE}\approx \frac{c}{n^{4/(4+d)}}$$ con $$c>0$$.
 Se si vuole l'MSE uguale a $$\delta$$ si impone $$\mbox{MSE}=\delta$$ e si risolve per $$n\Rightarrow n\propto \left ( \frac{c}{\delta}\right ) ^{d/4}$$, si nota che l'MSE cresce esponenzialmente per la dimensionalità $$d$$.
 
 #### Distribuzione verso la frontiera
-
 Dati $$n$$ punti estratti una distribuzione uniforme $$p$$-variata, $$x\sim U^p(0,1)$$, si ha che la distanza mediana dall'origine al punto più vicino, $$r(p,n)=\left ( 1-0.5^{\frac{1}{n}} \right )^{\frac{1}{p}}$$, cresce all'aumentare della dimensione, pertanto la maggior parte dei punti è più vicina al bordo dello spazio campionario che ad ogni altro punto.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La previsione è molto più difficile vicino ai bordi (estrapolazione contro interpolazione).  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La maggior parte dei punti è vicina all'involucro convesso del campione..  
@@ -430,8 +429,6 @@ Una funzione di tipo splines si può scrivere come combinazione lineare di oppor
 $$f(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$  
 
 Qualsiasi polinomiale a tratti con vincolo di continuità può essere riscritta come combinazione lineare di funzione di base.  
-
-
 
 ### Splines di regressione (parametrica)
 Per interpolare non esattamente $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente. Con $$K$$ nodi, la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$. La stima risulta:  
@@ -503,7 +500,7 @@ $$p$$ gradi di libertà della regressione
 $$\vert\vert y \vert\vert ^2=\vert\vert\hat{\epsilon}\vert\vert ^2+\vert\vert\hat{y}\vert\vert ^2$$  
 Inoltre la devianza spiegata si scompone in pezzi che dipendono da ciascuna variabile più una parte residua (ANOVA).  
 
-Fissato il parametro di regolazione, tutti i metodi visti possono essere espressi come modelli lineari:  
+Fissato il parametro di regolazione, tutti i metodi visti possono essere espressi come stimatori lineari:  
 $$\hat{y}=S_h y$$ con $$S_h$$ matrice $$n\times n$$  
 e $$\hat{\sigma}=(I-S_h)y$$  
 Se si assume che l'errore $$\epsilon$$ abbia distribuzione normale, $$\vert\vert\hat{\epsilon}\vert\vert ^2$$ non risulta più $$\mathcal{X}^2$$, ma empiricamente si assomiglia  
@@ -511,16 +508,32 @@ $$\vert\vert\hat{\epsilon}\vert\vert ^2 \overset{\mbox{approx}}{\sim} \sigma^2 \
 
 Sia  
 $$Q=\sum_i \hat{\epsilon}^2_i=\vert\vert\hat{\epsilon}\vert\vert ^2=\hat{\epsilon}^T \hat{\epsilon}=y^T (I_n-S)^T(I_n-S)y$$  
+Poiché i gradi di libertà di una $$\mathcal{X}^2$$ corrispondono al valore atteso, si determina il valore atteso di $$Q$$:  
 $$\mathbb{E}(Q)\overset{*}{=}\mu^T(I_n-S)^T(I_n-S)\mu+\sigma^2 \mbox{tr}(I_n-S)^T(I_n-S)$$
 
-\* Utilizzando il valore atteso di una forma quadratica:  
+\* sfruttando la seguente proprietà di una forma quadratica:  
 $$\mathbb{E}\left \{ X^T AX\right \}=\mu^T A\mu+\mbox{tr}(AV)$$ con $$\mu=\mathbb{E}(X)$$ e $$V=\mbox{var}(X)$$
 
 Utilizzando le approssimazioni  
 - $$(I_n-S)\mu$$ $$\approx 0$$  
 - $$(I_n-S)^T(I_n-S)\approx (I_n-S)$$ cioè idempotente
 
-si ottiene che $$\mathbb{E}(Q)\approx \sigma^2\{n-\mbox{tr}(S)\}$$ e $$\{n-\mbox{tr}(S)\}$$ si definiscono gradi di libertà equivalenti per il termine di errore.
+si ottiene che  
+$$\mathbb{E}(Q)\approx \sigma^2\{n-\mbox{tr}(S)\}$$  
+Quindi  
+$$\{n-\mbox{tr}(S)\}$$ gradi di libertà equivalenti per il termine di errore  
+$$\mbox{tr}(S)$$ gradi di libertà equivalenti per il lisciatore, 'quanto costa di $$n$$ per stimare il lisciatore', utile per confrontare complessità di metodi differenti ma anche per fare dei test.
+
+Esistono altre forme di gradi di libertà equivalenti in funzione delle approssimazioni che si scelgono.
+
+
+### Modelli additivi
+Un modo per gestire la maledizione della dimensionalità sono i modelli additivi  
+$$f(x_1,...,x_p)=\alpha+\sum_{j=1}^p f_j(x_j)+\sum_{k<j} f_{kj}(x_k,x_j)+...$$  
+<!--- --->
+si può usare per approssimare qualsiasi funzione
+
+
 
 
 
