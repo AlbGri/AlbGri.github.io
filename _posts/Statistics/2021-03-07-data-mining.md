@@ -413,7 +413,7 @@ L'intorno (ipercubo) contenente una frazione $$d$$ di punti ha lati di lunghezze
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Così gli 'intorni' non sono più locali.  
 
 
-### Spline
+### Spline di interpolazione
 Per interpolare esattamente $$K$$ punti $$(\xi_k,y_k)$$ per $$k=1,...,K$$ detti nodi.  
 Interpolare funzioni lisce come polinomi, imponendo la continuità (di grado $$d-1$$) ai nodi.  
 Si richiede continuità della derivata prima e della seconda  
@@ -429,15 +429,28 @@ Quindi le spline, in condizioni di continuità sono funzioni polinomiali a tratt
 Una funzione di tipo splines si può scrivere come combinazione lineare di opportuni funzioni di base (o base di funzioni):  
 $$f(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$
 
-#### Regressione parametrica con splines
+### Splines di regressione (parametrica)
 Per interpolare non esattamente $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente. Con $$K$$ nodi, la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$. La stima risulta:  
 $$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$ per opportuni $$\theta_j$$ si minimizza la devianza residua e si ottiene una spline di regressione.  
 
-#### Relazione con minimi quadrati penalizzati
+Si stima una funzione parametrica con molti parametri, le splines le pensiamo come combinazione lineare di funzioni di base. Si possono pensare altre forme di funzione di base, come serie di fourier, seni e coseni, o le Wavelet.
+
+#### Multidimensionale
+Generalizzazione delle splines di regressione a più dimensione.  
+Si ha una funzione di base per ogni $$x$$, che si andranno a combinare mediante il loro prodotto tensoriale.  
+Nel caso bidimensionale $$x=(x_1,x_2)^T\in \mathbb{R}$$ si hanno le seguenti basi di funzioni  
+$$h_{1k}(x_1)$$, con $$k=1,...,K_1$$ relativa alla $$x_1$$,  
+$$h_{2k}(x_2)$$, con $$k=1,...,K_2$$ relativa alla $$x_2$$  
+la base prodotto tensoriale risulta  
+$$g_{jk}(x)=h_{1j}(x_1)h_{2k}(x_2)$$ con $$j=1,...,K_1$$ e $$k=1,...,K_2$$  
+si può usare per rappresentare la funzione bidimensionale  
+$$g(x)=\sum_{j=1}^{K_1} \sum_{k=1}^{K_2} \theta_{jk}g_{jk}(x)$$  
+
+### Smoothing splines
 Dato il criterio dei minimi quadrati penalizzati (regressioni Ridge, LASSO):  
 $$D(f,\lambda)=\sum_{i=1}^n [y_i-f(x_i)]^2+\lambda \int_{-\infty}^{\infty}\left \{ f''(t) \right \}^2 dt$$  
 con $$\lambda>0$$ parametro di lisciamento moltiplicato per il grado di irregolarità della curva.  
-La $$f$$ che minimizza la funzione di perdita risulta:  
+La $$f$$ che minimizza la funzione di perdita risulta (una spline):  
 $$f(x)=\sum_{j=1}^{n_0} N_j(x)\theta_j=N\theta$$  
 con $$n_0$$ numero di $$x_i$$ distinti e $$N_j(x)$$ basi delle spline naturali. $$N$$ matrice in cui la $$j-$$ma colonna contiene i valori di $$N_j$$ in corrispondenza agli $$n_0$$ valori distinti di $$x_i$$.  
 Il problema si può riscrivere con  
@@ -446,13 +459,24 @@ con $$\Omega$$ matrice il cui generico elemento è $$\int N_j''(t)N_k''(t)dt$$
 Il $$\theta$$ che minimizza la funzione di perdita risulta:  
 $$\hat{\theta}=(N^TN+\lambda\Omega)^{-1}N^Ty$$  
 sostituendo in $$f(x)$$ si ottiene $$\hat{y}=S_\lambda y$$ quindi è un lisciatore lineare.  
-Si parla dunque di 'smoothing splines' o spline di lisciamento.
+Si parla dunque di 'smoothing splines' o spline di lisciamento.  
 
-#### thin-plate splines
-La generalizzazione avviene con la sostituzione della derivata seconda della funzione $$f$$ con il laplaciano. La soluzione di ottimo è data da  
+Si tratta di una tecnica che usa le splines, ma è uno strumento diverso dalle splines di regressione.
+
+#### Thin-plate splines
+Un modo di generalizzare le smoothing splines a più dimensioni si ottiene sostituendo $$f''$$ della funzione di perdita con il laplaciano (somma di tutti degli elementi dell'hessiano al quadrato).  
+La soluzione di ottimo risulta (non è una spline ma qualcosa di simile):  
 $$f(x)=\hat{\beta}_0+\hat{\beta}^T x+\sum_{j=1}^n \hat{\alpha}_j h_j(x)$$  
 dove $$h_j(x)=\eta\left (\vert \vert x-x_j \vert \vert \right )$$ e $$\eta (z)=z^2 \log{z}$$  
-e $$\hat{\alpha}_j$$, $$\hat{\beta}_0$$ e $$\hat{\beta}$$ determinati sostituendo la $$f(x)$$ nell'espressione dei minimi quadrati penalizzati e minimizzando.
+e $$\hat{\alpha}_j$$, $$\hat{\beta}_0$$ e $$\hat{\beta}$$ determinati sostituendo la $$f(x)$$ nell'espressione dei minimi quadrati penalizzati e minimizzando.  
+
+Sono stime non parametriche, usa i dati vicini più dei dati lontani, quindi l'operazione di estrapolazione è pericolosa, perché non si ipotizza alcuna relazione tra le $$x$$ e la $$y$$.
+
+
+
+
+
+
 
 
 
