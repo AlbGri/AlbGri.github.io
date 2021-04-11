@@ -370,7 +370,8 @@ $$\hat{f}(x)=s_h^T y=s_{1h}y_i+ \cdots +s_{nh}y_{n}$$
 $$\hat{f}(x)$$ è distorto e il suo valore atteso non decresce all'aumentare di $$n$$. 
 
 Per il caso multidimensionale la stima dei coefficienti sarà data da  
-$$(X^T WX)^-1 X^T Wy$$  
+$$(X^T WX)^{-1} X^T Wy$$  
+con matrice $$X_{(n\times p+1)}=\{1, (x_{1i}-x_{01}), (x_{2i}-x_{02}), (...), (x_{pi}-x_{0p})}$$ e $$W_{(n\times n)}$$ matrice di pesi.
 
 #### Scelta del nucleo
 La scelta del nucleo è meno importande dell'ampiezza di banda.  
