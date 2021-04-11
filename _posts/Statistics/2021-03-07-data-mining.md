@@ -401,7 +401,9 @@ Per mantenere costante l'MSE al crescere di $$p$$ la numerosità campionaria dev
 Le assunzioni dei modelli lineari consentono di limitare il problema, quindi si cercono assunzioni non stringenti per gestire questa “maledizione''.
 
 
+### provaprova
 
+$$\textless$$ qualcosa
 
 
 
