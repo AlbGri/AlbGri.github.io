@@ -401,10 +401,11 @@ Per tutti i modelli non parametrici, al crescere della dimensione $$p$$ i punti 
 Per mantenere costante l'MSE al crescere di $$p$$ la numerosità campionaria deve crescere esponenzialmente.  
 Le assunzioni dei modelli lineari consentono di limitare il problema, quindi si cercono assunzioni non stringenti per gestire questa “maledizione''.
 
+$$\mbox{MSE}\approx \frac{c}{n^{4/(4+d)}$$ con $$c>0$$. Se si vuole l'MSE uguale a $$\delta$$ si impone $$\mbox{MSE}=\delta$$ e si risolve per $$n\Rightarrow n\propto \left ( \frac{c}{\delta}\right ) ^{d/4}$$ che cresce esponenzialmente per la dimensionalità $$d$$.
+
 
 ### provaprova
 
-$$\textless$$ qualcosa
 
 
 
