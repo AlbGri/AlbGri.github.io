@@ -398,10 +398,20 @@ La scelta di $$h$$ può essere fissa, oppure variabile in funzione della rarefaz
 
 ### Curse of dimensionality
 Per tutti i modelli non parametrici, al crescere della dimensione $$p$$ i punti sono sempre più rarefatti.  
-Per mantenere costante l'MSE al crescere di $$p$$ la numerosità campionaria deve crescere esponenzialmente.  
+Per mantenere costante l'errore quadratico medio (MSE) al crescere di $$p$$ la numerosità campionaria deve crescere esponenzialmente.  
 Le assunzioni dei modelli lineari consentono di limitare il problema, quindi si cercono assunzioni non stringenti per gestire questa “maledizione''.
 
-$$\mbox{MSE}\approx \frac{c}{n^{4/(4+d)}$$ con $$c>0$$. Se si vuole l'MSE uguale a $$\delta$$ si impone $$\mbox{MSE}=\delta$$ e si risolve per $$n\Rightarrow n\propto \left ( \frac{c}{\delta}\right ) ^{d/4}$$ che cresce esponenzialmente per la dimensionalità $$d$$.
+$$\mbox{MSE}\approx \frac{c}{n^{4/(4+d)}}$$ con $$c>0$$. Se si vuole l'MSE uguale a $$\delta$$ si impone $$\mbox{MSE}=\delta$$ e si risolve per $$n\Rightarrow n\propto \left ( \frac{c}{\delta}\right ) ^{d/4}$$, si nota che l'MSE cresce esponenzialmente per la dimensionalità $$d$$.
+
+#### Distribuzione verso la frontiera
+
+Dati $$n$$ punti estratti una distribuzione uniforme $$p-$$ variata, $$x\sim U^p(0,1)$$, si ha che la distanza mediana dall'origine al punto più vicino $$r(p,n)=\left ( 1-0.5^{\frac{1}{n}} \right )^{\frac{1}{p}}$$ cresce all'aumentare della dimensione, pertanto la maggior parte dei punti è più vicina al bordo dello spazio campionario che ad ogni altro punto.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La previsione è molto più difficile vicino ai bordi (estrapolazione contro interpolazione).  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La maggior parte dei punti è vicina all'involucro convesso del campione..  
+L'intorno (ipercubo) contenente una frazione $$d$$ di punti ha lati di lunghezze $$e_p(d)=d^{\frac{1}{p}}$$. $$e_p(d)$$ esprime la percentuale di copertura del campo di variazione di ciascuna variabile esplicativa che si dovrebbe avere per ottenere una media 'locale' con $$p$$ dimensioni e $$d$$ percentuale di utilizzo dei dati.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Così gli 'intorni' non sono più locali.  
+
+
 
 
 ### provaprova
