@@ -371,7 +371,7 @@ $$\hat{f}(x)$$ è distorto e il suo valore atteso non decresce all'aumentare di 
 
 Per il caso multidimensionale la stima dei coefficienti sarà data da  
 $$(X^T WX)^{-1} X^T Wy$$  
-con matrice $$X_{(n\times p+1)}=\{1, (x_{1i}-x_{01}), (x_{2i}-x_{02}), (...), (x_{pi}-x_{0p})}$$ e $$W_{(n\times n)}$$ matrice di pesi.
+con matrice $$X_{(n\times p+1)}=\left \{1, (x_{1i}-x_{01}), (x_{2i}-x_{02}), (...), (x_{pi}-x_{0p})\right \}$$ e $$W_{(n\times n)}$$ matrice di pesi.
 
 #### Scelta del nucleo
 La scelta del nucleo è meno importande dell'ampiezza di banda.  
@@ -448,9 +448,11 @@ $$\hat{\theta}=(N^TN+\lambda\Omega)^{-1}N^Ty$$
 sostituendo in $$f(x)$$ si ottiene $$\hat{y}=S_\lambda y$$ quindi è un lisciatore lineare.  
 Si parla dunque di 'smoothing splines' o spline di lisciamento.
 
-
-
-
+#### thin-plate splines
+La generalizzazione avviene con la sostituzione della derivata seconda della funzione $$f$$ con il laplaciano. La soluzione di ottimo è data da  
+$$f(x)=\hat{\beta}_0+\hat{\beta}^T x+\sum_{j=1}^n \hat{\alpha}_j h_j(x)$$  
+dove $$h_j(x)=\eta\left (\vert \vert x-x_j \vert \vert \right )$$ e $$\eta (z)=z^2 \log{z}$$  
+e $$\hat{\alpha}_j$$, $$\hat{\beta}_0$$ e $$\hat{\beta}$$ determinati sostituendo la $$f(x)$$ nell'espressione dei minimi quadrati penalizzati e minimizzando.
 
 
 
