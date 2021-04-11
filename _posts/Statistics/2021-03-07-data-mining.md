@@ -509,7 +509,12 @@ e $$\hat{\sigma}=(I-S_h)y$$
 Se si assume che l'errore $$\epsilon$$ abbia distribuzione normale, $$\vert\vert\hat{\epsilon}\vert\vert ^2$$ non risulta più $$\mathcal{X}^2$$, ma empiricamente si assomiglia  
 $$\vert\vert\hat{\epsilon}\vert\vert ^2 \overset{\mbox{approx}}{\sim} \sigma^2 \mathcal{X}^2_{?}\qquad \vert\vert\hat{y}\vert\vert ^2 \overset{\mbox{approx}}{\sim} \sigma^2 \mathcal{X}^2_{??}(\delta)$$  
 
+Sia  
+$$Q=\sum_i \hat{\epsilon}^2_i=\vert\vert\hat{\epsilon}\vert\vert ^2=\hat{\epsilon}^T \hat{\epsilon}=y^T (I_n-S)^T(I_n-S)y$$  
+$$\mathbb{E}(Q)=\mu^T(I_n-S)^T(I_n-S)\mu+\sigma^2 \mbox{tr}(I_n-S)^T(I_n-S)\overset{*}{=}$$
 
+\* Utilizzando il valore atteso di una forma quadratica:  
+$$\mathbb{E}\left \{ X^T AX\right \}=\mu^T A\mu+\mbox{tr}(AV)$$ con $$\mu=\mathbb{E}(X)$$ e $$V=\mbox{var}(X)$$
 
 
 
