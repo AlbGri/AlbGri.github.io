@@ -493,7 +493,8 @@ Data la teoria dei modelli lineari
 $$\hat{y}=Py,\qquad \hat{\epsilon}=(I-P)y$$  
 con $$P=X(X^TX)^{-1}X^T$$ simmetrica idempotente di rango $$p$$ e con $$\mbox{rank}(P)=\mbox{tr}(P)=p$$  
 sappiamo che $$\mathbb{E}(\vert\vert\hat{\epsilon}\vert\vert ^2)=\sigma^2 (n-p)$$ e  
-con l'ipotesi di normalità $$\vert\vert\hat{\epsilon}\vert\vert ^2\sim\sigma^2\mathcal{X}^2_{n-p}}, \qquad \vert\vert\hat{y}\vert\vert ^2=\hat{y}^T\hat{y}\sim$$
+con l'ipotesi di normalità $$\vert\vert\hat{\epsilon}\vert\vert ^2\sim\sigma^2\mathcal{X}^2_{n-p}, \qquad \vert\vert\hat{y}\vert\vert ^2=\hat{y}^T\hat{y}\sim\sigma^2\mathcal{X}^2_p(\delta)$$  
+con $$\delta$$ parametro di non centralità
 
 
 
