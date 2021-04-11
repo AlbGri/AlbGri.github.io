@@ -511,7 +511,7 @@ $$\vert\vert\hat{\epsilon}\vert\vert ^2 \overset{\mbox{approx}}{\sim} \sigma^2 \
 
 Sia  
 $$Q=\sum_i \hat{\epsilon}^2_i=\vert\vert\hat{\epsilon}\vert\vert ^2=\hat{\epsilon}^T \hat{\epsilon}=y^T (I_n-S)^T(I_n-S)y$$  
-$$\mathbb{E}(Q)=\mu^T(I_n-S)^T(I_n-S)\mu+\sigma^2 \mbox{tr}(I_n-S)^T(I_n-S)\overset{*}{=}$$
+$$\mathbb{E}(Q)\overset{*}{=}\mu^T(I_n-S)^T(I_n-S)\mu+\sigma^2 \mbox{tr}(I_n-S)^T(I_n-S)$$
 
 \* Utilizzando il valore atteso di una forma quadratica:  
 $$\mathbb{E}\left \{ X^T AX\right \}=\mu^T A\mu+\mbox{tr}(AV)$$ con $$\mu=\mathbb{E}(X)$$ e $$V=\mbox{var}(X)$$
