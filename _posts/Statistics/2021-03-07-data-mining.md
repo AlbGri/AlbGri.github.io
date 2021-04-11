@@ -406,7 +406,7 @@ Se si vuole l'MSE uguale a $$\delta$$ si impone $$\mbox{MSE}=\delta$$ e si risol
 
 #### Distribuzione verso la frontiera
 
-Dati $$n$$ punti estratti una distribuzione uniforme $$p-$$ variata, $$x\sim U^p(0,1)$$, si ha che la distanza mediana dall'origine al punto più vicino $$r(p,n)=\left ( 1-0.5^{\frac{1}{n}} \right )^{\frac{1}{p}}$$ cresce all'aumentare della dimensione, pertanto la maggior parte dei punti è più vicina al bordo dello spazio campionario che ad ogni altro punto.  
+Dati $$n$$ punti estratti una distribuzione uniforme $$p$$-variata, $$x\sim U^p(0,1)$$, si ha che la distanza mediana dall'origine al punto più vicino, $$r(p,n)=\left ( 1-0.5^{\frac{1}{n}} \right )^{\frac{1}{p}}$$, cresce all'aumentare della dimensione, pertanto la maggior parte dei punti è più vicina al bordo dello spazio campionario che ad ogni altro punto.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La previsione è molto più difficile vicino ai bordi (estrapolazione contro interpolazione).  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La maggior parte dei punti è vicina all'involucro convesso del campione..  
 L'intorno (ipercubo) contenente una frazione $$d$$ di punti ha lati di lunghezze $$e_p(d)=d^{\frac{1}{p}}$$. $$e_p(d)$$ esprime la percentuale di copertura del campo di variazione di ciascuna variabile esplicativa che si dovrebbe avere per ottenere una media 'locale' con $$p$$ dimensioni e $$d$$ percentuale di utilizzo dei dati.  
@@ -423,7 +423,8 @@ Per $$d=3$$ , $$K$$ nodi comportano:
 - $$4(K-1)$$ parametri
 - $$K$$ vincoli per interpolare i punti
 - $$3(K-2)$$ vincoli di continuità
-- se $$f''(\xi_1)=f''(\xi_K)=0$$ splines cubiche naturali
+- se $$f''(\xi_1)=f''(\xi_K)=0$$ splines cubiche naturali  
+
 Quindi le spline, in condizioni di continuità sono funzioni polinomiali a tratti.  
 Una funzione di tipo splines si può scrivere come combinazione lineare di opportuni funzioni di base (o base di funzioni):  
 $$f(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$
@@ -434,15 +435,19 @@ $$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$ per opportuni $$\theta_j$$ s
 
 #### Relazione con minimi quadrati penalizzati
 Dato il criterio dei minimi quadrati penalizzati (regressioni Ridge, LASSO):  
-$$D(f,\lambda)=\sum_{i=1}^n [y_i-f(x_i)]^2+\lambda \int_{-\infty}^{\infty}\left \{ f''(t) \right \}^2 dt$$ con $$\lambda>0$$ parametro di lisciamento moltiplicato per il grado di irregolarità della curva.  
+$$D(f,\lambda)=\sum_{i=1}^n [y_i-f(x_i)]^2+\lambda \int_{-\infty}^{\infty}\left \{ f''(t) \right \}^2 dt$$  
+con $$\lambda>0$$ parametro di lisciamento moltiplicato per il grado di irregolarità della curva.  
 La $$f$$ che minimizza la funzione di perdita risulta:  
-$$f(x)=\sum_{j=1}^{n_0} N_j(x)\theta_j$$ $$=N\theta$$  
+$$f(x)=\sum_{j=1}^{n_0} N_j(x)\theta_j=N\theta$$  
 con $$n_0$$ numero di $$x_i$$ distinti e $$N_j(x)$$ basi delle spline naturali. $$N$$ matrice in cui la $$j-$$ma colonna contiene i valori di $$N_j$$ in corrispondenza agli $$n_0$$ valori distinti di $$x_i$$.  
 Il problema si può riscrivere con  
-$$D(f,\lambda)=(y-N\theta)^T (y-N\theta)+\lambda \theta^T \Omega \theta $$  
+$$D(f,\lambda)=(y-N\theta)^T (y-N\theta)+\lambda \theta^T \Omega \theta$$  
 con $$\Omega$$ matrice il cui generico elemento è $$\int N_j''(t)N_k''(t)dt$$  
 Il $$\theta$$ che minimizza la funzione di perdita risulta:  
-$$\hat{\theta}$$ $$=(N^TN+\lambda\Omega)^{-1}N^Ty$$
+$$\hat{\theta}=(N^TN+\lambda\Omega)^{-1}N^Ty$$  
+sostituendo in $$f(x)$$ si ottiene $$\hat{y}=S_\lambda y$$ quindi è un lisciatore lineare.  
+Si parla dunque di 'smoothing splines' o spline di lisciamento.
+
 
 
 
