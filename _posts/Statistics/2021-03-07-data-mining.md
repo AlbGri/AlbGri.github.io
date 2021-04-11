@@ -427,7 +427,11 @@ Per $$d=3$$ , $$K$$ nodi comportano:
 
 Quindi le spline, in condizioni di continuità sono funzioni polinomiali a tratti.  
 Una funzione di tipo splines si può scrivere come combinazione lineare di opportuni funzioni di base (o base di funzioni):  
-$$f(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$
+$$f(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$  
+
+Qualsiasi polinomiale a tratti con vincolo di continuità può essere riscritta come combinazione lineare di funzione di base.  
+
+
 
 ### Splines di regressione (parametrica)
 Per interpolare non esattamente $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente. Con $$K$$ nodi, la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$. La stima risulta:  
@@ -445,6 +449,14 @@ la base prodotto tensoriale risulta
 $$g_{jk}(x)=h_{1j}(x_1)h_{2k}(x_2)$$ con $$j=1,...,K_1$$ e $$k=1,...,K_2$$  
 si può usare per rappresentare la funzione bidimensionale  
 $$g(x)=\sum_{j=1}^{K_1} \sum_{k=1}^{K_2} \theta_{jk}g_{jk}(x)$$  
+la stima dei $$\theta_{jk}$$ viene effettuata attraverso i minimi quadrati.  
+
+Una polinomiale a tratti in $$\mathbb{R}^2$$ è difficile, quindi costruiamo delle basi per costruire una funzione che sia combinazione lineare di funzioni di base.  
+
+Si rischiano di ottenere un numero molto elevato di funzioni (4+1 per ogni nodo, e moltiplicarle per 4+1 per ogni nodo per l'altro asse), quindi si considerano le funzioni di base lineari a tratti e non cubiche. Il prodotto tensoriale di base lineari a tratti è comoda perché è nulla tranne in piccole porzioni.  
+
+Il livello di complessità è dato dal numero di nodi ($$K_1, K_2$$).
+
 
 ### Smoothing splines
 Dato il criterio dei minimi quadrati penalizzati (regressioni Ridge, LASSO):  
@@ -472,7 +484,7 @@ e $$\hat{\alpha}_j$$, $$\hat{\beta}_0$$ e $$\hat{\beta}$$ determinati sostituend
 
 Sono stime non parametriche, usa i dati vicini più dei dati lontani, quindi l'operazione di estrapolazione è pericolosa, perché non si ipotizza alcuna relazione tra le $$x$$ e la $$y$$.
 
-
+Il livello di complessità è dato da $$\lambda$$.
 
 
 
