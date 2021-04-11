@@ -401,7 +401,8 @@ Per tutti i modelli non parametrici, al crescere della dimensione $$p$$ i punti 
 Per mantenere costante l'errore quadratico medio (MSE) al crescere di $$p$$ la numerosità campionaria deve crescere esponenzialmente.  
 Le assunzioni dei modelli lineari consentono di limitare il problema, quindi si cercono assunzioni non stringenti per gestire questa “maledizione''.
 
-$$\mbox{MSE}\approx \frac{c}{n^{4/(4+d)}}$$ con $$c>0$$. Se si vuole l'MSE uguale a $$\delta$$ si impone $$\mbox{MSE}=\delta$$ e si risolve per $$n\Rightarrow n\propto \left ( \frac{c}{\delta}\right ) ^{d/4}$$, si nota che l'MSE cresce esponenzialmente per la dimensionalità $$d$$.
+$$\mbox{MSE}\approx \frac{c}{n^{4/(4+d)}}$$ con $$c>0$$.  
+Se si vuole l'MSE uguale a $$\delta$$ si impone $$\mbox{MSE}=\delta$$ e si risolve per $$n\Rightarrow n\propto \left ( \frac{c}{\delta}\right ) ^{d/4}$$, si nota che l'MSE cresce esponenzialmente per la dimensionalità $$d$$.
 
 #### Distribuzione verso la frontiera
 
@@ -412,14 +413,24 @@ L'intorno (ipercubo) contenente una frazione $$d$$ di punti ha lati di lunghezze
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Così gli 'intorni' non sono più locali.  
 
 
+### Spline
+Per interpolare esattamente $$K$$ punti $$(\xi_k,y_k)$$ per $$k=1,...,K$$ detti nodi.  
+Interpolare funzioni lisce come polinomi, imponendo la continuità (di grado $$d-1$$) ai nodi.  
+Si richiede continuità della derivata prima e della seconda  
+$$f(\xi_k)=y_k$$ per $$k=1,...,K$$  
+$$f(\xi_k^{-})=f(\xi_k^{+}), \quad f'(\xi_k^{-})=f'(\xi_k^{+}), \quad f''(\xi_k^{-})=f''(\xi_k^{+}), \quad$$ per $$k=2,...,K-1$$.  
+Per $$d=3$$ , $$K$$ nodi comportano:
+- $$4(K-1)$$ parametri
+- $$K$$ vincoli per interpolare i punti
+- $$3(K-2)$$ vincoli di continuità
+- se $$f''(\xi_1)=f''(\xi_K)=0$$ splines cubiche naturali
+Quindi le spline, in condizioni di continuità sono funzioni polinomiali a tratti.  
+Una funzione di tipo splines si può scrivere come combinazione lineare di opportuni funzioni di base (o base di funzioni):  
+$$f(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$
 
-
-### provaprova
-
-
-
-
-
+#### Regressione parametrica con splines
+Per interpolare non esattamente $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente. Con $$K$$ nodi, la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$. La stima risulta:  
+$$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$ per opportuni $$\theta_j$$ si minimizza la devianza residua e si ottiene una spline di regressione.  
 
 
 
