@@ -539,9 +539,10 @@ In un contesto geografico si potrebbe aggiungere come elemento di interazione le
 Le $$p$$ funzioni $$f_j(x_j)$$ sono stimate mediante l'algoritmo 'backfitting'.  
 
 #### Backfitting
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) È una variante dell'algoritmo di Gauss-Seidel.  
 Iterativamente ogni funzione si può scrivere come residui parziali, fissando tutte le altre funzioni e quindi diventando univariata  
 $$f_j(x_j)=y-\left ( \alpha+\sum_{k\ne j} f_k(x_k)+\epsilon \right )$$  
-a questo punto si può usare un lisciatore sui residui parziali.  
+a questo punto si può usare un lisciatore sui residui parziali (si può usare anche uno parametrico, nel caso si usi una retta si ottengono i minimi quadrati).  
 Per evitare un eccesso di parametrizzazione dell'intercetta ogni funziona deve essere a media zero.
 
 
