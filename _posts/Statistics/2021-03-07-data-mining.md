@@ -572,7 +572,7 @@ La parte interna alla sommatoria è chiamata funzione dorsale (ridge) in \mathbb
 Il modello additivo non è un approssimatore universale, perché ad esempio su direzioni oblique non riesce ad approssimare.  
 Il modello lineare non è un approssimatore universale, approssima solo iperpiani.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La PPR è invariante rispetto a trasformazioni nonsingolari delle variabili esplicative.  
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) L'algoritmo si compone di una parte della stima degli $$a$$ con Gauss-Newton, successivamente si itera fino a convergenza per ottenere le $$z$$, si identificano passo passo le $$M$$ direzioni e in fine si migliorano attraverso il backfitting.
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) L'algoritmo si compone di una parte della stima degli $$a$$ (sono di numerosità $$p$$) con Gauss-Newton (per ottenere l'ottimo), successivamente si itera fino a convergenza per ottenere le $$z$$, si identificano passo passo le $$M$$ direzioni e in fine si migliorano attraverso il backfitting.
 
 
 
