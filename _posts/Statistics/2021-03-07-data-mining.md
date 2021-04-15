@@ -529,7 +529,7 @@ Esistono altre forme di gradi di libertà equivalenti in funzione delle approssi
 
 La traccia di $$S$$ è paragonabile alla penalizzazione $$p$$ dell'AIC.  
 
-#### ANOVA
+#### ANOVA approssimato
 Consente di costruire statistiche tipo $$F$$ per valutare bontà del modello.  
 Test $$F$$ come varianza spiegata su residua pesata per i gradi di libertà equivalenti:  
 $$F=\frac{\vert\vert\hat{y}-\hat{y}_0\vert\vert^2}{\hat{\sigma}^2}\frac{n-p}{nq}\sim\mathcal{S}_{\mbox{tr}(S)-\mbox{tr}(S_0),n-\mbox{tr}(S)}$$  
@@ -551,11 +551,28 @@ Le $$p$$ funzioni $$f_j(x_j)$$ sono stimate mediante l'algoritmo 'backfitting'.
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) È una variante dell'algoritmo di Gauss-Seidel.  
 Iterativamente ogni funzione si può scrivere come residui parziali, fissando tutte le altre funzioni e quindi diventando univariata:  
 $$f_j(x_j)=y-\left ( \alpha+\sum_{k\ne j} f_k(x_k)+\epsilon \right )$$  
-a questo punto si può usare un lisciatore a scelta sui residui parziali (si può usare anche uno parametrico, nel caso si usi una retta si ottengono i minimi quadrati, anche metodi diversi per variabili diverse).  
+a questo punto si può usare un lisciatore a scelta sui residui parziali (si può usare anche uno parametrico, nel caso si usi una retta si ottengono i minimi quadrati, anche metodi diversi per variabili diverse con i corrispettivi parametri di regolazione).  
 Criterio di convergenza: si itera fintanto che la differenza tra la funzione nella stessa $$x$$ in due step adiacenti è pressocché nulla.  
 Per evitare un eccesso di parametrizzazione dell'intercetta ogni funziona deve essere a media zero.  
 
+#### Output (su R)
+L'output del modello additivo senza componenti d'interazione è generalmente composto da una parte di significatività delle variabili con il test F approssimato e una parte di grafici bidimenzionali di ciascuna variabile rispetto la target, con l'andamento delle bande di variabilità. Bisogna osservare la stima della funzione di regressione condizionata perché non vi è un solo parametro che esprime la relazione. La forma della relazione tra la target e una $$x$$ è la stessa qualsiasi sia il valore delle altre $$x$$. Il grafico congiunto è ottenibile dai singoli solo se si ha un modello additivo senza interazioni, un modello con interazioni è più evoluto ma non consente di commentare facilmente i singoli grafici.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Differenza tra banda di variabilità e bande di confidenza.  
 
+#### GAM
+Modelli Additivi Generalizzati. Come i GLM si usa una funzione lineare, trasformando la scala del predittore additivo nella scala della variabile risposta.  
+$$g\left ( \mathbb{E}\{y\vert x_1,...,x_p\} \right )=\alpha+\sum_{j=1}^p f_j(x_j)$$  
+Si stima con una modifica (come i minimi quadrati pesati iterati come nei GLM) dell'algoritmo di backfitting, detto punteggio locale - local scoring. Non c'è garanzia di convergenza ma l'evidenza empirica mostra risultati sensati.  
+Si mette insieme l'approssimazione della funzione di legame (quella dei minimi quadrati pesati iterati - IRLS) con l'iterazione del backfitting.
+
+### Regressione Projection Pursuit
+La PPR è come un modello additivo ma su variabili rotate. L'interpretazione è difficile.  
+$$f(x_i)=\sum_{m=1}^M f_m(a_m^T x_i)$$  
+La parte interna alla sommatoria è chiamata funzione dorsale (ridge) in \mathbb{R}. La funzione dorsale va da $$\mathbb{R}^p$$ ad $$\mathbb{R}$$, trasforma una combinazione lineare nello spazio delle $$y$$. Si dimostra che $$M$$ è sufficientemente grande allora può approssimare qualsiasi funzione nello spazio $$\mathbb{R}^p$$ (ma si vuole evitare l'overfitting) - è un approssimatore universale.  
+Il modello additivo non è un approssimatore universale, perché ad esempio su direzioni oblique non riesce ad approssimare.  
+Il modello lineare non è un approssimatore universale, approssima solo iperpiani.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La PPR è invariante rispetto a trasformazioni nonsingolari delle variabili esplicative.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) L'algoritmo si compone di una parte della stima degli $$a$$ con Gauss-Newton, successivamente si itera fino a convergenza per ottenere le $$z$$, si identificano passo passo le $$M$$ direzioni e in fine si migliorano attraverso il backfitting.
 
 
 
