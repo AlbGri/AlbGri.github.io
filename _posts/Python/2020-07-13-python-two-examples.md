@@ -1273,6 +1273,24 @@ import seaborn as sns
 ```
 
 
+*Aggiunta 16/04/2021*  
+Per scaricare indici di borsa torna comodo yfinance che ha una granularità anche del minuto ma con un limite di download massimo di 7 giorni.  
+```python
+import yfinance as yf
+import datetime
+FTSEMIB = yf.download(tickers="FTSEMIB.MI", 
+            start=datetime.datetime(2021, 4, 14), 
+            end=datetime.datetime(2021, 4, 16), 
+            interval="1m").sort_values(by='Datetime', ascending=False).head()
+
+NASDAQ = yf.download(tickers="^IXIC", 
+            start=datetime.datetime(2021, 4, 14), 
+            end=datetime.datetime(2021, 4, 16), 
+            interval="1m").sort_values(by='Datetime', ascending=False).head()
+```
+
+Riprendendo l'esercitazione..  
+
 ```python
 # download data
 start = datetime.datetime(2006, 1, 1)
