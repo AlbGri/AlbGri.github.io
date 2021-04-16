@@ -1287,6 +1287,16 @@ NASDAQ = yf.download(tickers="^IXIC",
             start=datetime.datetime(2021, 4, 14), 
             end=datetime.datetime(2021, 4, 16), 
             interval="1m").sort_values(by='Datetime', ascending=False).head()
+
+BITCOIN_USD = yf.download(tickers="BTC-USD", 
+                          start=datetime.datetime(2021, 4, 14), 
+                          end=datetime.datetime(2021, 4, 16), 
+                          interval="1m").sort_values(by='Datetime', ascending=False).head()
+
+TESLA = yf.download(tickers="TSLA", 
+                    start=datetime.datetime(2021, 4, 14), 
+                    end=datetime.datetime(2021, 4, 16), 
+                    interval="1m").sort_values(by='Datetime', ascending=False).head()
 ```
 
 Riprendendo l'esercitazione..  
