@@ -1274,7 +1274,7 @@ import seaborn as sns
 
 
 *Aggiunta 16/04/2021*  
-Per scaricare indici di borsa torna comodo yfinance che ha una granularità anche del minuto ma con un limite di download massimo di 7 giorni.  
+Per scaricare indici di borsa torna comodo [yfinance](https://pypi.org/project/yfinance/) che ha una granularità anche del minuto ma con un limite di download massimo di 7 giorni.  
 ```python
 import yfinance as yf
 import datetime
