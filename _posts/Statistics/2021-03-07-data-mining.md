@@ -344,7 +344,7 @@ Se si ha distorsione da selezione:
 - Se si vuole mantenere l'errore legato alla qualità dei dati di un ordine di grandezza confrontabile con le altre componenti dell'errore complessivo $$\rho_{R,X}$$ deve essere inferiore a $$N^{1/2}$$
 
 
-## Metodi non parametrici
+## Metodi di regressione non parametrici
 Minimizzare funzione di perdita quadrata, mediante i minimi quadrati.  
 Il valore che minimizza è la media condizionata delle $$y$$ condizionate alle $$X$$, il valore atteso condizionato cioè la funzione di regressione.  
 $$f(x_0)=\mathbb{E}\left \{ y \vert x=x_0 \right \}$$  
@@ -566,7 +566,7 @@ Si stima con una modifica (come i minimi quadrati pesati iterati come nei GLM) d
 Si mette insieme l'approssimazione della funzione di legame (quella dei minimi quadrati pesati iterati - IRLS) con l'iterazione del backfitting.
 
 ### Regressione Projection Pursuit
-La PPR è come un modello additivo ma su variabili rotate. L'interpretazione è difficile.  
+La PPR è come un modello additivo ma su variabili rotate (ma è stata inventata prima del modello additivo). L'interpretazione è difficile.  
 $$f(x_i)=\sum_{m=1}^M f_m(a_m^T x_i)$$  
 La parte interna alla sommatoria è chiamata funzione dorsale (ridge) in \mathbb{R}. La funzione dorsale va da $$\mathbb{R}^p$$ ad $$\mathbb{R}$$, trasforma una combinazione lineare nello spazio delle $$y$$. Si dimostra che $$M$$ è sufficientemente grande allora può approssimare qualsiasi funzione nello spazio $$\mathbb{R}^p$$ (ma si vuole evitare l'overfitting) - è un approssimatore universale.  
 Il modello additivo non è un approssimatore universale, perché ad esempio su direzioni oblique non riesce ad approssimare.  
@@ -574,7 +574,15 @@ Il modello lineare non è un approssimatore universale, approssima solo iperpian
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La PPR è invariante rispetto a trasformazioni nonsingolari delle variabili esplicative.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) L'algoritmo si compone di una parte della stima degli $$a$$ (sono di numerosità $$p$$) con Gauss-Newton (per ottenere l'ottimo), successivamente si itera fino a convergenza per ottenere le $$z$$, si identificano passo passo le $$M$$ direzioni e in fine si migliorano attraverso il backfitting.
 
+### MARS
+Spline di regressione multivariate adattive.  
+$$\eta=\beta_0+\sum_{m=1}^M \beta_m b_m (X)$$  
+Costruire una spline di regressione multivariata.  
+Nelle splines prodotto tensoriale richiedono che il modello è combinazione lineare di funzioni di base $$b$$ (che vanno da $$\mathbb{R}^p$$ a $$\mathbb{R}$$) come prodotti tensoriali di basi univariate in modo da costruire una base multivariata. Con $$p$$ grande conviene considerare funzioni di base univariate semplici, le curve lineari a tratti, invece di considere le splines cubiche. Se le splines cubiche sono giustapposizioni di polinomio di grado 3 con vincoli di continuità e delle derivate fino al grado-1, le splines lineari non possono avere la continuità delle derivate. Nelle splines lineari l'unico vincolo è la continuità della funzione, ottenendo degli angoli. Le splines così costruite soffrono della maledizione. Le splines di regressione non sono metodi non parametrici in quanto usando le funzioni di base si stimano dei beta, quindi sono metodi parametrici, ma ne risentono della maledizione in quanto non sono effettivamente parametriche perché il numero di funzioni di base è molto grande e quindi anche il numero di parametri (dipende dai nodi) e quindi si ricade nel problema della stima con un numero elevato di parametri. Si definisce regressione semi-parametrica. Il numero di parametri da stimare dipende dal numero di funzioni di base.  
+Il MARS è una splines di regressione prodotto tensoriale in cui si scelgono opportunamente le funzioni di base così da limitare il problema della maledizione. Per ogni variabile si ha un numero di funzioni di base che dipende dal numero di nodi (es per una funzione abbastanza flessibile servono almeno 4-5-10 o più nodi), con il prodotto tensoriale si arrivano a considerare tutti i livelli di interazione. Approccio stepwise forward, aggiungendo funzioni di base (un 'pezzo' di una variabile) alla volta, moltiplicata per una funzione già esistente ricostruendo la logica del prodotto tensoriale.
 
+
+## Metodi di classificazione non parametrici
 
 
 <!--- 
