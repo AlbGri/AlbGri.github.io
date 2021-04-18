@@ -636,7 +636,16 @@ Struttura:
 - variabile aggiuntiva per definire il livello (come l'intercetta nel modello di regressione)
 
 $$z_j=f_0\left ( \sum_{i\rightarrow j}w_{ij}x_i\right ), \quad y_k=f_1 \left ( \sum_{j\rightarrow k} w_{jk}z_j \right )$$  
-con $$w$$ pesi che definiscono quanto le variabili influen
+con $$f_0(u)=\frac{e^u}{1+e^u}$$ funzione logistica o sigmoide e $$f_1(u)=u$$ identità.  
+Tecnicamente parametrico, ma ciascuna $$w$$ ha una numerosità tale da renderlo semi-parametrico o parametrico.  
+Si minimizza la funzione di perdita (es. devianza) con algoritmi come il back propagation.
+
+#### Backpropagation
+Si minimizza una funzione di funzione  
+$$D=\sum_{i=1}^N\vert\vert y_i-\hat{f}(x_i)\vert\vert ^2=\sum_{i=1}^N \sum_{k=1}^K \left ( {}_{k}y_{i}-{}_{k}\hat{f}(x_i)\right )^2$$  
+dove  
+$$\hat{f}(x)=f_1\left \{ \sum_{j\rightarrow k} \beta_{jk} f_0 \left ( \sum_{h\rightarrow j} \alpha_{hj} x_h \right ) \right \}=f_1\left \{ \beta^T f_0 \left ( \alpha ^T x_h \right ) \right \}$$  
+con osservazione $$i$$, variabile esplicativa $$h$$, variabile dello strato latente $$j$$ e risposta $$k$$.
 
 
 ## Metodi di classificazione non parametrici
