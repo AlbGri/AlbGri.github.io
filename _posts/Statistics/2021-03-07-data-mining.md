@@ -590,17 +590,38 @@ Quando $$\hat{y}$$ ha una forma non lineare non esplicita, invece di usare ogni 
 $$\mbox{GCV}=\frac{\mbox{Errori residui}}{\left ( 1 - \frac{M}{n}\right ) ^2}=\frac{\sum_{i=1}^n(y_i-\hat{f}_\lambda(x_i))^2}{\left ( 1 - \frac{M(\lambda)}{n}\right ) ^2}$$  
 con  
 - $$\lambda$$ numero di termini nel modello
-- $$M$$ complessità del modello (es gdl equivalenti), nel MARS è il numero di basi del modello $$+c\cdot\{\mbox{num. nodi}\}$$ con $$c=2\mbox{ o }3$$ definito in modo euristico.
+- $$M$$ complessità del modello (es gdl equivalenti), nel MARS è il numero di basi del modello + $$c\cdot\{\mbox{num. nodi}\}$$ con $$c=2\mbox{ o }3$$ definito in modo euristico.
 
 ### CART
 Classification and Regression Trees. Alberi di regressione.  
-Approssimazione a gradini di una funzione. Più gradini dove è più ripida, meno dove è meno ripida. Dove effettuare il taglio e la sua intensità. Quale variabile preferire da approssimare. Si usa l'albero come rappresentazione.  
+Approssimazione a gradini di una funzione continua. Più gradini dove è più ripida, meno dove è meno ripida. Dove effettuare il taglio e la sua intensità. Quale variabile preferire da approssimare. Si usa l'albero come rappresentazione.  
 $$\hat{f}(x)=\sum_{j=1}^J c_j I(x\in R_j)$$  
 Si sceglie il $$c_j$$ che minimizza la devianza $$D$$, ed è la media aritmetica.  
-$$R_j$$ gli intervalli sono dei rettangoli, la loro scelta è difficile, si usa una procedura passo-passo miopico in avanti. Si costruisce un albero binario con $$J$$ nodi terminali (foglie) fino ad un massimo di $$J=n$$. Si usa un ulteriore criterio per potare. 
-Crescita:  
+$$R_j$$ gli intervalli sono dei rettangoli, la loro scelta è difficile, si usa una procedura passo-passo miopico in avanti. Si costruisce un albero binario con $$J$$ nodi terminali (foglie) fino ad un massimo di $$J=n$$ e dopo generalmente si usa un ulteriore criterio per potare.  
+
+Altri algoritmi:
+- AID, CHAID usati per la classificazione
+- C4.5, C5.0 sviluppati da Quinlan
+
+#### Crescita
 $$D=\sum_{i=1}^n \{ y_i -\hat{f}(x_i)\}^2=\sum_{j=1}^J \left \{ \sum_{i\in R_j} (y_i-\hat{c}_j)^2 \right \}=\sum_{j=1}^J D_j$$  
-allo step iniziale $$J=1,R_j=\mathbb{R}^p,D=\sum_i (y_i-M(y))^2$$ si ha un solo 'rettangolone', successivamente si provano 'tutte' le possibili suddivisioni e si sceglie quella che abbassa maggiormente la devianza, provando per tutte le variabili esplicative.
+Approccio passo passo. Allo step iniziale $$J=1,R_j=\mathbb{R}^p,D=\sum_i (y_i-M(y))^2$$ si ha un solo 'rettangolone', successivamente si provano 'tutte' le possibili suddivisioni e si sceglie quella che abbassa maggiormente la devianza, provando per tutte le variabili esplicative.  
+
+#### Potatura
+Penalizzazione della funzione di perdita  
+$$C_\alpha (J)=\sum_{j=1}^J D_j+\alpha J$$  
+L'indice di complessità $$\alpha$$ è il numero di nodi dell'albero. Al crescere di $$\alpha$$ si riduce l'albero e si dimostra che facendo crescere $$\alpha$$ gli alberi ottimi si trovano tramite una sequenza di operazioni di potatura. Per ogni $$\alpha$$ esiste un unico albero più piccolo che minimizza $$C_\alpha$$.  
+Si seleziona la foglia la cui eliminazione comporta il minore incremento di $$\sum_j D_j$$.  
+
+##### Scelta di $$\alpha$$ e livello di potatura
+Con un criterio simile ad AIC fissando $$\alpha=2\hat{\sigma}^2$$, tendendo a sovra-adattarsi ai dati.  
+Se $$n$$ è elevato, si suddivide in stima-verifica usando la parte di stima per la crescita e la verifica per la potatura, evitando di usare $$C_\alpha (J)$$, usando la devianza sull'insieme di verifica.  
+Se $$n$$ non è elevato, si può usare la CV.  
+
+I CART sono caratterizzati dalla potatura post crescita. Il CHAID ad esempio si ferma ad un certo livello della potatura. Breiman stesso suggerisce di potare anziché fermarsi prima in quanto buoni 'split' possono avvenire dopo una ipotetica interruzione della crescita.
+
+
+
 
 
 ## Metodi di classificazione non parametrici
