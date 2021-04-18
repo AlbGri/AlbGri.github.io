@@ -645,11 +645,37 @@ Si minimizza una funzione di funzione
 $$D=\sum_{i=1}^N\vert\vert y_i-\hat{f}(x_i)\vert\vert ^2=\sum_{i=1}^N \sum_{k=1}^K \left ( {}_{k}y_{i}-{}_{k}\hat{f}(x_i)\right )^2$$  
 dove  
 $$\hat{f}(x)=f_1\left \{ \sum_{j\rightarrow k} \beta_{jk} f_0 \left ( \sum_{h\rightarrow j} \alpha_{hj} x_h \right ) \right \}=f_1\left \{ \beta^T f_0 \left ( \alpha ^T x_h \right ) \right \}$$  
-con osservazione $$i$$, variabile esplicativa $$h$$, variabile dello strato latente $$j$$ e risposta $$k$$.
+con osservazione $$i$$, variabile esplicativa $$h$$, variabile dello strato latente $$j$$ e risposta $$k$$.  
+Si calcola la derivata (il gradiente) di una funzione di una funzione si ottiene con le derivate a catena, successivamente si cercano i minimi con un passaggio di andata e ritorno dalle $$x$$ alle $$y$$, così tenendo traccia delle zone locali delle $$x$$.  
 
+Il gradiente coniugato è un metodo alternativo per la minimizzazione, che evita il calcolo dell'Hessiano della devianza.  
 
+Si inizializzano i coefficienti iniziali partendo da un modello lineare.  
+
+Le variabili vengono standardizzate (media sd) o normalizzate (min max) prima della stima.  
+
+Un numero ideale di unità per lo strato latente è tra le 5 e 100 unità. La scelta del numero di unità e di quali connessioni può essere determinata da una conoscenza di dominio. Ad esempio dati di immagini, si può assumere che l'unità latente dipende solo dalle zone vicine.  
+
+Teorema (cfr Ripley): una qualsiasi rete con qualsiasi numero di strati latenti può essere riscritta con un solo strato latente e un numero sufficienti di unità nello strato latente. Però utilizzare diversi strati rende più agevole la stima.  
+
+#### Overfitting
+Per limitare sovra-adattamento si possono usare metodi come early stopping e penalizzazioni
+
+##### Early stopping
+Fermata anticipata
+
+##### penalizzazione della devianza
+Si penalizza la devianza con
+$$D_0=D+\lambda J(\alpha, \beta)$$  
+dove $$\lambda$$ di regolazione e $$J$$ funzione di penalizzazione.  
+Scelte comuni per $$J$$ sono
+- penalizzazione rispetto derivata seconda (si trova nelle splines), penalizza rispetto quanto liscia è la funzione
+- weight decay $$J(\alpha ,\beta)=\vert\vert\alpha\vert\vert ^2 + \vert\vert\beta\vert\vert ^2$$ (come Ridge e Lasso) con $$\lambda\in (10^{-4},10^{-2})$$ suggerito da Ripley
+- altre
+
+<!--- 
 ## Metodi di classificazione non parametrici
-
+--->
 
 <!--- 
 ## Esercizi
