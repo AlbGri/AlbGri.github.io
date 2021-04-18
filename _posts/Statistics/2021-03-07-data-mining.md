@@ -575,12 +575,14 @@ Il modello lineare non è un approssimatore universale, approssima solo iperpian
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) L'algoritmo si compone di una parte della stima degli $$a$$ (sono di numerosità $$p$$) con Gauss-Newton (per ottenere l'ottimo), successivamente si itera fino a convergenza per ottenere le $$z$$, si identificano passo passo le $$M$$ direzioni e in fine si migliorano attraverso il backfitting.
 
 ### MARS
-Spline di regressione multivariate adattive.  
+Spline di regressione multivariate adattive. Difficili da interpretare perché tengono conto delle interazioni.  
 $$\eta=\beta_0+\sum_{m=1}^M \beta_m b_m (X)$$  
 Costruire una spline di regressione multivariata.  
 Nelle splines prodotto tensoriale richiedono che il modello è combinazione lineare di funzioni di base $$b$$ (che vanno da $$\mathbb{R}^p$$ a $$\mathbb{R}$$) come prodotti tensoriali di basi univariate in modo da costruire una base multivariata. Con $$p$$ grande conviene considerare funzioni di base univariate semplici, le curve lineari a tratti, invece di considere le splines cubiche. Se le splines cubiche sono giustapposizioni di polinomio di grado 3 con vincoli di continuità e delle derivate fino al grado-1, le splines lineari non possono avere la continuità delle derivate. Nelle splines lineari l'unico vincolo è la continuità della funzione, ottenendo degli angoli. Le splines così costruite soffrono della maledizione. Le splines di regressione non sono metodi non parametrici in quanto usando le funzioni di base si stimano dei beta, quindi sono metodi parametrici, ma ne risentono della maledizione in quanto non sono effettivamente parametriche perché il numero di funzioni di base è molto grande e quindi anche il numero di parametri (dipende dai nodi) e quindi si ricade nel problema della stima con un numero elevato di parametri. Si definisce regressione semi-parametrica. Il numero di parametri da stimare dipende dal numero di funzioni di base.  
 Il MARS è una splines di regressione prodotto tensoriale in cui si scelgono opportunamente le funzioni di base così da limitare il problema della maledizione. Per ogni variabile si ha un numero di funzioni di base che dipende dal numero di nodi (es per una funzione abbastanza flessibile servono almeno 4-5-10 o più nodi), con il prodotto tensoriale si arrivano a considerare tutti i livelli di interazione. Approccio stepwise forward a coppie di basi, aggiungendo funzioni di base (un 'pezzo' di una variabile) alla volta, moltiplicata per una funzione già esistente ricostruendo la logica del prodotto tensoriale modellando le interazioni. Criterio di convergenza: inserisco quante funzioni si può e poi si eliminano (potare) con un altro metodo.  
-Per la potatura si può usare il metodo della stima-verifica oppure dalla CV, in cui si usano k-1 porzioni per far crescere e 1 per potatura, poi si gira e si replica k volte, ma è molto oneroso. Non si può usare la proprietà per fare la LOO in quanto le funzioni vengono scelte in modo ricorsivo e si perde la linearità, ma viene in auto la convalida incrociata generalizzata.
+Per la potatura si può usare il metodo della stima-verifica oppure dalla CV, in cui si usano k-1 porzioni per far crescere e 1 per potatura, poi si gira e si replica k volte, ma è molto oneroso. Non si può usare la proprietà per fare la LOO in quanto le funzioni vengono scelte in modo ricorsivo e si perde la linearità, ma viene in auto la convalida incrociata generalizzata.  
+Si può imporre la rimozione dell'effetto principale (nodi genitori) unicamente dopo aver rimosso l'effetto di interazione.  
+Un modello MARS con variabili qualitative è analogo ad un modello lineare con variabili qualitative.  
 
 ### GCV
 Convalida incrociata generalizzata - Generalized Cross Validation.  
@@ -590,6 +592,15 @@ con
 - $$\lambda$$ numero di termini nel modello
 - $$M$$ complessità del modello (es gdl equivalenti), nel MARS è il numero di basi del modello $$+c\cdot\{\mbox{num. nodi}\}$$ con $$c=2\mbox{ o }3$$ definito in modo euristico.
 
+### CART
+Classification and Regression Trees. Alberi di regressione.  
+Approssimazione a gradini di una funzione. Più gradini dove è più ripida, meno dove è meno ripida. Dove effettuare il taglio e la sua intensità. Quale variabile preferire da approssimare. Si usa l'albero come rappresentazione.  
+$$\hat{f}(x)=\sum_{j=1}^J c_j I(x\in R_j)$$  
+Si sceglie il $$c_j$$ che minimizza la devianza $$D$$, ed è la media aritmetica.  
+$$R_j$$ gli intervalli sono dei rettangoli, la loro scelta è difficile, si usa una procedura passo-passo miopico in avanti. Si costruisce un albero binario con $$J$$ nodi terminali (foglie) fino ad un massimo di $$J=n$$. Si usa un ulteriore criterio per potare. 
+Crescita:  
+$$D=\sum_{i=1}^n \{ y_i -\hat{f}(x_i)\}^2=\sum_{j=1}^J \left \{ \sum_{i\in R_j} (y_i-\hat{c}_j)^2 \right \}=\sum_{j=1}^J D_j$$  
+allo step iniziale $$J=1,R_j=\mathbb{R}^p,D=\sum_i (y_i-M(y))^2$$ si ha un solo 'rettangolone', successivamente si provano 'tutte' le possibili suddivisioni e si sceglie quella che abbassa maggiormente la devianza, provando per tutte le variabili esplicative.
 
 
 ## Metodi di classificazione non parametrici
