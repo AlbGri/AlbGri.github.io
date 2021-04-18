@@ -620,8 +620,23 @@ Se $$n$$ non è elevato, si può usare la CV.
 
 I CART sono caratterizzati dalla potatura post crescita. Il CHAID ad esempio si ferma ad un certo livello della potatura. Breiman stesso suggerisce di potare anziché fermarsi prima in quanto buoni 'split' possono avvenire dopo una ipotetica interruzione della crescita.
 
+La parte di stima nulla può essere generata dalla estrapolazione nelle zone senza osservazioni, quindi i risultati per quelle parti possono essere poco affidabili.  
+
+Gli alberi non sono metodi di lisciamento, non si cercano funzioni lisce.  
+
+Sono facili da interpretare se piccoli, semplici da calcolare e parallelizzare. Sono instabili: con piccole variazioni dei dati si possono ottenere alberi totalmente diversi sebbene abbiano valori simili di devianza. Non esiste un algoritmo ricorsivo per aggiornarli. Non sono adatti ad approssimare funzioni rette ripide. L'albero percepisce le interazioni, sovra-enfatizza le interazioni in quanto si condiziona ad ogni passo ai valori soglia precedenti. Non è corretto definire l'importanza delle variabili in funzione dello split, perché è valido solo il primo e gli altri sono condizionati ai precedenti.  
 
 
+### Neural Network
+Reti Neurali.  
+Struttura:
+- variabili di input $$x_i$$
+- strato invisibile (connette tutte le variabili di input e output) $$z_j$$
+- variabili di output $$y_k$$
+- variabile aggiuntiva per definire il livello (come l'intercetta nel modello di regressione)
+
+$$z_j=f_0\left ( \sum_{i\rightarrow j}w_{ij}x_i\right ), \quad y_k=f_1 \left ( \sum_{j\rightarrow k} w_{jk}z_j \right )$$  
+con $$w$$ pesi che definiscono quanto le variabili influen
 
 
 ## Metodi di classificazione non parametrici
