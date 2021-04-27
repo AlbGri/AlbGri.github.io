@@ -756,13 +756,13 @@ https://www.codecogs.com/latex/eqneditor.php
 
 ## R
 
-##### 001
+##### Confronto 3 stimatori della media
 <iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
 
-##### 002
+##### (no train/test) Modello Lineare Multiplo, Best Subset Regression, Modello Lineare Multivariato
 <iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/8c84ff64777181e850066974cc292d49.js"></script></body></html>'></iframe> 
 
-##### 003
+#####  (no train/test) Modello Lineare Multiplo: stima con matrici, scomposizione QR, minimi quadrati ricorsivi
 <iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/73e8ac678942dbefd3efe4ea46ae7c08.js"></script></body></html>'></iframe> 
 
 
