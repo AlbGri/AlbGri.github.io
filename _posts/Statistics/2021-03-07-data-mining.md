@@ -683,9 +683,18 @@ Scelte comuni per $$J$$ sono
 - weight decay $$J(\alpha ,\beta)=\vert\vert\alpha\vert\vert ^2 + \vert\vert\beta\vert\vert ^2$$ (come Ridge e Lasso) con $$\lambda\in (10^{-4},10^{-2})$$ suggerito da Ripley
 - altre
 
-<!--- 
-## Metodi di classificazione non parametrici
+## Metodi di classificazione
+Classificare un'unità statistica tra i $$K$$ gruppi della variabile dipendente. Ragionando in forma matriciale, in cui si considerano le $$K$$ modalità osservate e le $$K$$ previste, la diagonale è la corretta classificazione formata da $$K$$ elementi, gli elementi fuori la diagonale $$K(K-1)$$ sono i possibili modi con cui si può sbagliare, a cui si possono associare costi differenti a combinazioni di errori differenti.
+
+### Classificazione con regressione lineare
+Modello lineare su target dicotomico $${0,1}$$, la previsione viene classificata in un modo se il valore è inferiore o superiore ad una soglia (es $$0.5$$).  
+I residui non saranno distribuiti normalmente, ma lo stimatore OLS sarà comunque BLUE (best linear unbiased estimator) purché gli errori abbiano media nulla, incorrelati e omoschedastici. Però non sarà possibile valutare tutto l'aspetto inferenziale, dagli intervalli di confidenza al p-value.
+
+<!---
+54.48 L14
 --->
+
+
 
 <!--- 
 ## Esercizi
