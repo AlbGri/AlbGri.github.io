@@ -664,10 +664,9 @@ Pro:
 
 Contro:
 - tanti parametri da stimare
-- instabilità di stime partendo da differenti valori inziali dei parametri
+- instabilità di stime partendo da differenti valori inziali dei parametri (simile agli alberi)
 - difficoltà interpretativa
 - assenza procedure inferenziali per la significatività dei risultati
-
 
 #### Overfitting
 Per limitare sovra-adattamento si possono usare metodi come early stopping e penalizzazioni
@@ -761,11 +760,65 @@ Q: slide 170, su modello scientifico e big data. Quel Rho 0.00084 è 1/sqrt(N)? 
 https://www.codecogs.com/latex/eqneditor.php
 
 
+
+
+
+
+
+
+
+
+
 --->
 
 
 
 ## R
+
+#### library
+
+```R
+# Best subset regression 
+    leaps::
+# Stepwise regression
+    MASS::stepAIC
+    stats::step
+# LARS
+    lars::
+    biglars::
+# LASSO pathwise
+    glmnet::
+# Local regression
+    sm::sm.regression
+    KernSmooth::locpoly
+# LOESS
+    stats::loess
+    stats::loess.smooth
+    stats::scatter.smooth
+# Regression splines
+    splines::
+# Smoothing splines
+    smooth.splines::
+# MARS
+    polspline::polymars
+    mda::mars
+    earth::earth
+# GAM
+    gam::gam
+    mgcv::gam
+# PPR
+    stats::ppr
+# CART
+    tree::
+    rpart::
+# NN
+    nnet:: 
+    neuralnet::
+    AMORE::
+# DeepLearning: 
+    Keras::
+    h2o::
+```
 
 ##### Confronto 3 stimatori della media
 <iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
