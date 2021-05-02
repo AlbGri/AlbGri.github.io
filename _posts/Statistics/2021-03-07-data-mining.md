@@ -658,6 +658,17 @@ Un numero ideale di unità per lo strato latente è tra le 5 e 100 unità. La sc
 
 Teorema (cfr Ripley): una qualsiasi rete con qualsiasi numero di strati latenti può essere riscritta con un solo strato latente e un numero sufficienti di unità nello strato latente. Però utilizzare diversi strati rende più agevole la stima.  
 
+Pro:
+- elevata flessibilità di variazioni
+- aggiornamento sequenziale  
+
+Contro:
+- tanti parametri da stimare
+- instabilità di stime partendo da differenti valori inziali dei parametri
+- difficoltà interpretativa
+- assenza procedure inferenziali per la significatività dei risultati
+
+
 #### Overfitting
 Per limitare sovra-adattamento si possono usare metodi come early stopping e penalizzazioni
 
