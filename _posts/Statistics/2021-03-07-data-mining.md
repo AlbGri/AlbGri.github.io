@@ -761,6 +761,8 @@ complessivamente il modello quante volte sbaglia?
 complessivamente il modello quante volte classifica correttamente?  
 
 
+Se la soglia tende a 0, il numero di previsti negativi ($$n_{11}+n_{12}$$) tende a 0.  
+Al crescere della soglia, il numero di previsti negativi ($$n_{11}+n_{12}$$) tende a $$n$$.  
 
 
 
@@ -819,11 +821,46 @@ quando il modello prevede positivo, quante volte la risposta è negativa?
 
 **$$F_1$$** (F-score, media armonica tra Recupero e Precisione):   $$\frac{2}{1/\mbox{Recupero}+1/\mbox{Precisione}}=\frac{2n_{22}}{2n_{22}+n_{21}+n_{12}}$$  
 
-
 ### ROC Curve
 Receiver Operating Characteristic.  
 Al variare della soglia della probabilità di classificazione, si può rappresentare l'andamento di due misure di performance.  
-In ascissa $$1-$$Specificità (o False Positive Rate) e in ordinata Sensibilità. $$(\hat{\alpha},1-\hat{\beta})$$
+In ascissa $$1-$$Specificità (o False Positive Rate) e in ordinata Sensibilità. $$(\hat{\alpha},1-\hat{\beta})$$.  
+AUC: Area Under the ROC Curve, è una buona misura di sintesi generica, ma per un determinato valore soglia si può potenzialmente preferire un modello con l'AUC inferiore.
+
+### Lift Curve
+Fattore di miglioramento (lift): $$\frac{n_{22}}{(n_{21}+n_{22})}/\frac{(n_{12}+n_{22})}{n}=\mbox{Precisione}/\mbox{% Positivi}$$  
+di quante volte migliora il modello scelto rispetto la classificazione casuale ad un dato valore specifico della soglia?  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Perché la selezione casuale corrisponde alla proporzione di positivi della popolazione?  
+La Lift curve contiene in ordinata il fattore di miglioramento, mentre in ascissa si ha la frazione i soggetti previsti positivi ordinati in modo decrescente rispetto la probabilità di classificazione come positivo. Quindi il primo 10% di questa frazione, contiene il 10% dei dati che hanno un fattore di miglioramento più elevato rispetto la classificazione casuale. Le osservazioni sono ordinate per i valori di probabilità, se si fissa un valore soglia si può determinare il corrispettivo fattore di miglioramento e quanta popolazione si andrà a considerare.  
+La curva raggiunge l'1 al 100% della frazione, ma non è necessariamente monotona non crescente.  
+La curva è utile nel confronto di più modelli per capire, in funzione di una determinata % di frazione della popolazione, quale modello restituisce dei fattori di miglioramento più elevati.  
+
+
+### Analisi Discriminante
+Si confrontano le densità dei gruppi per identificare delle soglie (un valore se si ha solo una esplicativa e una target dicotomica quindi con due soli gruppi, iperspazi se si lavora a più dimensioni) che li discriminano bene.  
+La densità complessiva di un insieme di variabili esplicative può essere vista come una media pesata delle densità dei singoli gruppi. Il peso è dato dalle probabilità a priori (non necessariamente in senso bayesiano), che può essere stimato con la proporzione di osservazioni per ogni gruppo (o più in senso bayesiano con dei valori soggettivi scelti dal ricercatore in funzione di cosa si aspetta nel futuro).  
+$$p(x)=\sum_{k=1}^K \pi_k p_k (x)$$  
+Per ottenere la separazione più grande in termini di densità, si calcola la probabilità a posteriori
+$$\mathbb{P}\{G=k\vert X=x\}=\frac{\pi_k p_k (x)}{p(x)}$$
+definisce la probabilità posteriori che una nuova unità statistica con $$X=x$$ appartiene al gruppo $$k$$, verrà classificata se la probabilità di un gruppo sarà maggiore dell'altra.  
+$$\log{\frac{\mathbb{P}\{G=k\vert X=x\}}{\mathbb{P}\{G=m\vert X=x\}}}=\log{\frac{\pi_k}{\pi_m}}+\log{\frac{p_k(x)}{p_m(x)}}$$  
+il log del rapporto è la differenza dei logaritmi, considero solo un gruppo e identifico la funzione discriminante:  
+$$\delta_k(x)=\log{\pi_k}+\log{p_k(x)}$$  
+
+Per stimare la densità $$p_k(x)$$ si può procedere con metodi parametrici e non. Può essere vista come una funzione di regressione con il vincolo di integrazione ad 1.
+
+Metodi di analisi discriminante: scegliere il gruppo che ha la funzione discriminante più elevata
+
+#### Stima della densità
+
+##### Approccio parametrico
+
+###### Analisi discriminante lineare 
+Linear Discriminant Analysis LDA.  
+Ciascuna $$p_k$$ è una normale, quindi $$\mathcal{N}(\mu_k, \Sigma_k)$$ per $$k=1,...,K$$, si può ipotizzare omoschedasticità.  
+$$\delta_k(x)=\log{\pi_k}-\frac{1}{2}\mu_k^T\Sigma^{-1} \mu_k+x^T\Sigma^{-1}\mu_k$$  
+Stimati $$\mu_k$$ e $$\Sigma$$ usando le $$X$$ (con il metodo dei momenti, media campionaria per ogni gruppo e la varianza campionaria non distorta), la funzione discriminante è lineare nelle $$X$$.
+
 
 
 
