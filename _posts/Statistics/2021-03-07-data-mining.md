@@ -901,6 +901,8 @@ $$\hat{p}(x)=\sum_{j=1}^J P_j I(x\in R_j)$$
 con $$P_j \in (0,1)$$ probabilità che $$Y=1$$ per la regione $$R_j$$, stimati da:  
 $$\hat{P}_j=M(y_i : x_i \in R_j)=\frac{1}{n_j}\sum_{i\in R_j}I(y_i=1)$$ frequenza relativa degli $$1$$ nella regione, cioè la media delle $$Y$$ dentro il rettangolo (la frequenza relativa è la media perché la variabile è 0 1).  
 
+Gli alberi hanno diversi aspetti positivi, tra cui la velocità, ignorano variabili ridondanti, considarano i missing come categoria a parte e piccoli alberi sono facili da interpretare. Però spesso hanno capacità predittive povere principalmente perché le curve approssimate sono parallele agli assi.  
+
 #### Crescita
 La creazione dei rettangoli (crescità) verranno definiti in modo analogo agli alberi di regressione, a step successivi si divide il rettangolo, in modo miopico, scegliendo lo split che porta il maggiore decremento della Deviance (per un modello logistico, con la log verosimiglianza bernoulliana - spesso il termine Deviance indica la misura di discrepanza per qualsiasi distribuzione mentre la devianza è il numeratore della varianza):  
 $$D=-2\sum_{i=1}^n y_i \log{\hat{p}_i}+(1-y_i)\log{(1-\hat{p}_i)}$$ si può riscrivere nella forma  
@@ -916,10 +918,13 @@ Ulteriori misure di impurità:
 - Indice $$X^2$$ di Pearson (Alberi CHAID)
 
 
-Se si usa l'indice 
-
 #### Potatura
 Negli alberi di regressione si usa l'insieme di stima per la crescita e quello di verifica per la potatura. Qui per la potatura si usano i casi erroneamente classificati.
+
+#### Frontiera decisionale di Bayes
+Bayes Decision Boundary.  
+
+
 
 
 
