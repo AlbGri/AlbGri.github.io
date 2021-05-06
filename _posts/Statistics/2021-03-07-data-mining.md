@@ -640,6 +640,10 @@ con $$f_0(u)=\frac{e^u}{1+e^u}$$ funzione logistica o sigmoide e $$f_1(u)=u$$ id
 Tecnicamente parametrico, ma ciascuna $$w$$ ha una numerosità tale da renderlo semi-parametrico o parametrico.  
 Si minimizza la funzione di perdita (es. devianza) con algoritmi come il back propagation.
 
+La Neural Network è un approssimatore universale, come la Regressione Projection Pursuit. I due metodi sono molto simili, nella NN le $$f$$ sono funzioni parametriche note, nella PPR vengono stimate con un lisciatore.  
+
+
+
 #### Backpropagation
 Si minimizza una funzione di funzione  
 $$D=\sum_{i=1}^N\vert\vert y_i-\hat{f}(x_i)\vert\vert ^2=\sum_{i=1}^N \sum_{k=1}^K \left ( {}_{k}y_{i}-{}_{k}\hat{f}(x_i)\right )^2$$  
@@ -887,8 +891,17 @@ $$f_{1k}=\frac{\exp{(T_k)}}{\sum_{r=1}^K \exp{(T_r)}},\quad k=1,...,K$$
 con $$T_r=\sum_{j\rightarrow r}w_{jr} z_j$$
 
 
-
-
+### CART per la classificazione
+Alberi di classificazione.  
+Non si cerca di costruire un albero con una variabile quantitativa che assume solo due modalità, ma di usare l'albero con una variabile risposta considerata come qualitativa.  
+I CART consentono di modellare con una funzione a gradini la probabilità di essere in una classe date le $$X$$ 
+$$p(x)=\mathbb{P}\left \{ Y=1 \vert X=x \right \}$$  
+Si approssima la funzione nel seguente modo:  
+$$\hat{p}(x)=\sum_{j=1}^J P_j I(x\in R_j)$$  
+con $$P_j \in (0,1)$$ probabilità che $$Y=1$$ per la regione $$R_j$$, stimati da:  
+$$\hat{P}_j=M(y_i : x_i \in R_j)=\frac{1}{n_j}\sum_{i\in R_j}I(y_i=1)$$ frequenza relativa degli $$1$$ nella regione, cioè la media delle $$Y$$ dentro il rettangolo (la frequenza è la media perché la variabile è 0 1).  
+I rettangoli verranno definiti in modo analogo agli alberi di regressione, a step successivi si divide il rettangolo, in modo miopico, scegliendo lo split che porta il maggiore decremento della Deviance (per un modello logistico, con la log verosimiglianza bernoulliana - spesso il termine Deviance indica la misura di discrepanza per qualsiasi distribuzione mentre la devianza è il numeratore della varianza)  
+$$D=-2\sum_{i=1}^n y_i \log{\hat{p}_i}+(1-y_i)\log{(1-\hat{p}_i)}=\sum_{j=1}^J D_j$$ come somma delle Deviance dei $$J$$ rettangoli.
 
 
 
