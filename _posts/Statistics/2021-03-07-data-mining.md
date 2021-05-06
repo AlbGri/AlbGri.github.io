@@ -733,31 +733,38 @@ https://html-online.com/editor/
 <tr>
 <td style="width: 84px;" rowspan="2" align="center"><strong>Previsione</strong></td>
 <td style="width: 65px;" align="center">Negativo</td>
-<td style="width: 72px;" align="center">n_11</td>
-<td style="width: 65px;" align="center">n_12</td>
-<td style="width: 45px;" align="center">n_1.</td>
+<td style="width: 72px;" align="center">$$n_{11}$$</td>
+<td style="width: 65px;" align="center">$$n_{12}$$</td>
+<td style="width: 45px;" align="center">$$n_{1.}$$</td>
 </tr>
 <tr>
 <td style="width: 65px;" align="center">Positivo</td>
-<td style="width: 72px;" align="center">n_21</td>
-<td style="width: 65px;" align="center">n_22</td>
-<td style="width: 45px;" align="center">n_2.</td>
+<td style="width: 72px;" align="center">$$n_{21}$$</td>
+<td style="width: 65px;" align="center">$$n_{22}$$</td>
+<td style="width: 45px;" align="center">$$n_{2.}$$</td>
 </tr>
 <tr>
 <td style="width: 84px;">&nbsp;</td>
 <td style="width: 65px;" align="center">Totale</td>
-<td style="width: 72px;" align="center">n_.1</td>
-<td style="width: 65px;" align="center">n_.2</td>
-<td style="width: 45px;" align="center">n</td>
+<td style="width: 72px;" align="center">$$n_{.1}$$</td>
+<td style="width: 65px;" align="center">$$n_{.2}$$</td>
+<td style="width: 45px;" align="center">$$n$$</td>
 </tr>
 </tbody>
 </table>
 
 #### Indicatori utili  
-Tasso di errata classificazione (Misclassification Rate/Error Rate): complessivamente il modello quante volte sbaglia?  
-$$\frac{n_{12}+n_{21}}{n}$$  
-Accuratezza (Misclassification Rate/Error Rate): complessivamente il modello quante volte classifica correttamente?  
-$$\frac{n_{12}+n_{21}}{n}$$  
+Tasso di errata classificazione (Misclassification Rate/Error Rate): $$\frac{n_{12}+n_{21}}{n}$$  
+complessivamente il modello quante volte sbaglia?  
+
+Accuratezza (Misclassification Rate/Error Rate): $$\frac{n_{12}+n_{21}}{n}$$  
+complessivamente il modello quante volte classifica correttamente?  
+
+
+
+
+
+
 
 
 #### Probabilità di errore
@@ -774,7 +781,6 @@ $$\frac{n_{12}+n_{21}}{n}$$
 <td style="width: 65px;" align="center">&nbsp;</td>
 <td style="width: 72px;" align="center">Negativo</td>
 <td style="width: 65px;" align="center">Positivo</td>
-<td style="width: 45px;" align="center">Totale</td>
 </tr>
 <tr>
 <td style="width: 84px;" rowspan="2" align="center"><strong>Previsione</strong></td>
