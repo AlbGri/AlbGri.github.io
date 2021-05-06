@@ -899,12 +899,13 @@ $$p(x)=\mathbb{P}\left \{ Y=1 \vert X=x \right \}$$
 Si approssima la funzione nel seguente modo:  
 $$\hat{p}(x)=\sum_{j=1}^J P_j I(x\in R_j)$$  
 con $$P_j \in (0,1)$$ probabilità che $$Y=1$$ per la regione $$R_j$$, stimati da:  
-$$\hat{P}_j=M(y_i : x_i \in R_j)=\frac{1}{n_j}\sum_{i\in R_j}I(y_i=1)$$ frequenza relativa degli $$1$$ nella regione, cioè la media delle $$Y$$ dentro il rettangolo (la frequenza è la media perché la variabile è 0 1).  
+$$\hat{P}_j=M(y_i : x_i \in R_j)=\frac{1}{n_j}\sum_{i\in R_j}I(y_i=1)$$ frequenza relativa degli $$1$$ nella regione, cioè la media delle $$Y$$ dentro il rettangolo (la frequenza relativa è la media perché la variabile è 0 1).  
 
 #### Crescita
-La creazione dei rettangoli (crescità) verranno definiti in modo analogo agli alberi di regressione, a step successivi si divide il rettangolo, in modo miopico, scegliendo lo split che porta il maggiore decremento della Deviance (per un modello logistico, con la log verosimiglianza bernoulliana - spesso il termine Deviance indica la misura di discrepanza per qualsiasi distribuzione mentre la devianza è il numeratore della varianza)  
+La creazione dei rettangoli (crescità) verranno definiti in modo analogo agli alberi di regressione, a step successivi si divide il rettangolo, in modo miopico, scegliendo lo split che porta il maggiore decremento della Deviance (per un modello logistico, con la log verosimiglianza bernoulliana - spesso il termine Deviance indica la misura di discrepanza per qualsiasi distribuzione mentre la devianza è il numeratore della varianza):  
 $$D=-2\sum_{i=1}^n y_i \log{\hat{p}_i}+(1-y_i)\log{(1-\hat{p}_i)}$$ si può riscrivere nella forma  
-$$D=\sum_{j=1}^J -2n_j \left [\hat{P}_j \log{\hat{P}_j}+(1-\hat{P}_j)\log{(1-\hat{P}_j)}\right ]=\sum_{j=1}^J D_j$$ come somma delle Deviance dei $$J$$ rettangoli.  
+$$D=\sum_{j=1}^J -2n_j \left [\hat{P}_j \log{\hat{P}_j}+(1-\hat{P}_j)\log{(1-\hat{P}_j)}\right ]=\sum_{j=1}^J D_j$$  
+somma delle Deviance dei $$J$$ rettangoli.  
 
 Per facilitare la generalizzazione a $$k>2$$ classi si può riscrivere la Deviance nel seguente modo  
 $$D=-2n \sum_{j=1}^J \frac{n_j}{n} \sum_{k=0,1} \hat{P}_{jk} \log{\hat{P}_{jk}}=2n \sum_{j=1}^J \frac{n_j}{n} Q(\hat{P}_j)$$  
