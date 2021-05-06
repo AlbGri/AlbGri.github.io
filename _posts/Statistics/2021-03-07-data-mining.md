@@ -712,19 +712,52 @@ Si possono anche stimare $$K$$ modelli non vincolando la somma delle probabilit√
 ### Confusion Matrix
 Tabella di errata classificazione o matrice di confusione
 
-$$
-\begin{tabular}{l|l|c|c|c}
-\multicolumn{2}{c}{}&\multicolumn{2}{c}{True diagnosis}&\\
-\cline{3-4}
-\multicolumn{2}{c|}{}&Positive&Negative&\multicolumn{1}{c}{Total}\\
-\cline{2-4}
-\multirow{2}{*}{Screening test}& Positive & $a$ & $b$ & $a+b$\\
-\cline{2-4}
-& Negative & $c$ & $d$ & $c+d$\\
-\cline{2-4}
-\multicolumn{1}{c}{} & \multicolumn{1}{c}{Total} & \multicolumn{1}{c}{$a+c$} & \multicolumn{    1}{c}{$b+d$} & \multicolumn{1}{c}{$N$}\\
-\end{tabular}
-$$
+<table>
+<tbody>
+<tr class="odd">
+<td align="right"></td>
+<td align="right">smoker</td>
+<td align="right">Yes</td>
+<td align="right">No</td>
+<td align="right">Total</td>
+</tr>
+<tr class="even">
+<td align="right">gender</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr class="odd">
+<td align="right">F</td>
+<td align="right"></td>
+<td align="right">147 (30.1%)</td>
+<td align="right">342 (69.9%)</td>
+<td align="right">489 (100.0%)</td>
+</tr>
+<tr class="even">
+<td align="right">M</td>
+<td align="right"></td>
+<td align="right">143 (29.2%)</td>
+<td align="right">346 (70.8%)</td>
+<td align="right">489 (100.0%)</td>
+</tr>
+<tr class="odd">
+<td align="right">(Missing)</td>
+<td align="right"></td>
+<td align="right">8 (36.4%)</td>
+<td align="right">14 (63.6%)</td>
+<td align="right">22 (100.0%)</td>
+</tr>
+<tr class="even">
+<td align="right">Total</td>
+<td align="right"></td>
+<td align="right">298 (29.8%)</td>
+<td align="right">702 (70.2%)</td>
+<td align="right">1000 (100.0%)</td>
+</tr>
+</tbody>
+</table>
 
 
 
