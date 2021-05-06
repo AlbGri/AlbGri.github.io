@@ -753,15 +753,12 @@ https://html-online.com/editor/
 </tbody>
 </table>
 
-#### Indicatori utili  
-Tasso di errata classificazione (Misclassification Rate/Error Rate): $$\frac{n_{12}+n_{21}}{n}$$  
+
+**Tasso di errata classificazione** (Misclassification Rate/Error Rate): $$\frac{n_{12}+n_{21}}{n}$$  
 complessivamente il modello quante volte sbaglia?  
 
-Accuratezza (Misclassification Rate/Error Rate): $$\frac{n_{11}+n_{22}}{n}$$  
+**Accuratezza** (Misclassification Rate/Error Rate): $$\frac{n_{11}+n_{22}}{n}$$  
 complessivamente il modello quante volte classifica correttamente?  
-
-
-
 
 
 
@@ -802,7 +799,22 @@ complessivamente il modello quante volte classifica correttamente?
 </tbody>
 </table>
 
+$$\alpha$$ probabilità di previsione positiva con risposta negativa, errore di primo tipo (nei test statistici si fissa $$\alpha$$ e si minimizza la probabilità di rifiutare l'ipotesi nulla quando è vera)  
+$$\beta$$ probabilità di previsione negativa con risposta positiva  
 
+**Sensibilità** (Sensitivity, True Positive Rate, Recall, Recupero): $$1-\hat{\beta}=\frac{n_{22}}{n_{12}+n_{22}}$$  
+quando la risposta è positiva, quante volte il modello prevede positivo?
+
+**Specificità** (True Negative Rate): $$1-\hat{\alpha}=\frac{n_{11}}{n_{11}+n_{21}}$$  
+quando la risposta è negativa, quante volte il modello prevede negativo?  
+
+**False Discovery Rate** (False Positive Rate): $$\frac{n_{21}}{n_{21}+n_{22}}$$  
+quando la risposta è negativa, quante volte il modello prevede positivo?  
+
+**Precisione** (Precision): $$\frac{n_{22}}{n_{21}+n_{22}}$$  
+quando il modello prevede positivo, quante volte effettivamente la risposta è positiva?  
+
+**$$F_1$$** (F-score, media armonica tra Recupero e Precisione): $$\frac{2}{1/\mbox{Recupero}+1/\mbox{Precisione}}=\frac{2n_{22}}{2n_{22}+n_{21}+n_{12}}$$
 
 
 
