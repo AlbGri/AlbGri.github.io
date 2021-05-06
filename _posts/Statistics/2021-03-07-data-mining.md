@@ -901,7 +901,7 @@ $$\hat{p}(x)=\sum_{j=1}^J P_j I(x\in R_j)$$
 con $$P_j \in (0,1)$$ probabilità che $$Y=1$$ per la regione $$R_j$$, stimati da:  
 $$\hat{P}_j=M(y_i : x_i \in R_j)=\frac{1}{n_j}\sum_{i\in R_j}I(y_i=1)$$ frequenza relativa degli $$1$$ nella regione, cioè la media delle $$Y$$ dentro il rettangolo (la frequenza relativa è la media perché la variabile è 0 1).  
 
-Gli alberi hanno diversi aspetti positivi, tra cui la velocità, ignorano variabili ridondanti, considarano i missing come categoria a parte e piccoli alberi sono facili da interpretare. Però spesso hanno capacità predittive povere principalmente perché le curve approssimate sono parallele agli assi.  
+Gli alberi hanno diversi aspetti positivi, tra cui la velocità, ignorano variabili ridondanti, considarano i missing come categoria a parte e piccoli alberi sono facili da interpretare. Però spesso hanno capacità predittive povere principalmente perché le curve di separazione sono parallele agli assi. Se idealmente il gruppo si divide perfettamente da una funzione a cerchio, utilizzare dei rettangoli comporta una perdita sempre più grande all'aumentare delle dimensioni.  
 
 #### Crescita
 La creazione dei rettangoli (crescità) verranno definiti in modo analogo agli alberi di regressione, a step successivi si divide il rettangolo, in modo miopico, scegliendo lo split che porta il maggiore decremento della Deviance (per un modello logistico, con la log verosimiglianza bernoulliana - spesso il termine Deviance indica la misura di discrepanza per qualsiasi distribuzione mentre la devianza è il numeratore della varianza):  
@@ -921,9 +921,38 @@ Ulteriori misure di impurità:
 #### Potatura
 Negli alberi di regressione si usa l'insieme di stima per la crescita e quello di verifica per la potatura. Qui per la potatura si usano i casi erroneamente classificati.
 
-#### Frontiera decisionale di Bayes
-Bayes Decision Boundary.  
+### Bayes Classifier
+Lo scopo dei modelli di classificazione è quello di approssimare la frontiera decisionale di Bayes (Bayes Decision Boundary).  
+Il classificatore di Bayes è il modello con il minore tasso di errata classificazione.  
 
+<!---
+http://bias.csr.unibo.it/maltoni/ml/
+http://bias.csr.unibo.it/maltoni/ml/DispensePDF/3_ML_Classificazione.pdf
+Pagina 47 ISLR
+--->
+
+### Ensemble methods
+Combinazione di modelli.  
+
+#### Stacking
+Si costruisce la previsione usando la media della previsione dei $$M$$ modelli differenti, pesando maggiormente i modelli che hanno un errore più basso nel dataset di stima.  
+$$f_{\mbox{comb}}(x,y)=\sum_{m=1}^M w_m f_m (x,y)$$  
+Non tiene conto della complessità del modello, quindi rischia il sovra adattamento.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Si può usare la CV-LOO per risolvere: si fa la regressione di ciascuna $$y_i$$ sulle previsioni degli $$M$$ modelli senza la i-esima osservazione, ottenendo così il valore d'errore da utilizzare come peso nella media.  
+
+
+#### Bagging
+Breiman, 1996
+
+#### Random Forest
+Breiman, 1999
+
+#### Boosting
+Freund & Shapire, 1996
+
+<!---
+1:08:00 L16
+--->
 
 
 
