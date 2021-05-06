@@ -757,7 +757,7 @@ https://html-online.com/editor/
 Tasso di errata classificazione (Misclassification Rate/Error Rate): $$\frac{n_{12}+n_{21}}{n}$$  
 complessivamente il modello quante volte sbaglia?  
 
-Accuratezza (Misclassification Rate/Error Rate): $$\frac{n_{12}+n_{21}}{n}$$  
+Accuratezza (Misclassification Rate/Error Rate): $$\frac{n_{11}+n_{22}}{n}$$  
 complessivamente il modello quante volte classifica correttamente?  
 
 
