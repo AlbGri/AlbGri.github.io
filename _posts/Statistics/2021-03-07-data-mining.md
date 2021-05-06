@@ -910,8 +910,13 @@ somma delle Deviance dei $$J$$ rettangoli.
 Per facilitare la generalizzazione a $$k>2$$ classi si può riscrivere la Deviance nel seguente modo  
 $$D=-2n \sum_{j=1}^J \frac{n_j}{n} \sum_{k=0,1} \hat{P}_{jk} \log{\hat{P}_{jk}}=2n \sum_{j=1}^J \frac{n_j}{n} Q(\hat{P}_j)$$  
 con $$Q(P_j)=-\sum_{k=0,1} P_{jk} \log{P_{jk}}$$ entropia di Shannon (indice di impurità di una variabile qualitativa), quindi la devianza complessiva è una media pesata delle impurità dentro i nodi - entropia e log verosimiglianza binomiale sono fortemente legate.  
-In alternativa si può usare l'indice di Gini come misura di impurità (Gini e Impurità si dimostra sono approssimabili mediante serie di Taylor - Mc Laurin)  
-$$Q(P_j)=\sum_{k=0,1} P_{jk}(1-P_{jk})$$  
+
+Ulteriori misure di impurità:  
+- Indice di Gini (≈ Entropia via serie di Taylor/Mc Laurin): $$Q(P_j)=\sum_{k=0,1} P_{jk}(1-P_{jk})$$  
+- Indice $$X^2$$ di Pearson (Alberi CHAID)
+
+
+Se si usa l'indice 
 
 #### Potatura
 Negli alberi di regressione si usa l'insieme di stima per la crescita e quello di verifica per la potatura. Qui per la potatura si usano i casi erroneamente classificati.
