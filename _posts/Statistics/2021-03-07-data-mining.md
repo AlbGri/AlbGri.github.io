@@ -735,19 +735,19 @@ https://html-online.com/editor/
 <td style="width: 65px;" align="center">Negativo</td>
 <td style="width: 72px;" align="center">$$n_{11}$$</td>
 <td style="width: 65px;" align="center">$$n_{12}$$</td>
-<td style="width: 45px;" align="center">$$n_{1.}$$</td>
+<td style="width: 45px;" align="center">$$n_{1\cdot}$$</td>
 </tr>
 <tr>
 <td style="width: 65px;" align="center">Positivo</td>
 <td style="width: 72px;" align="center">$$n_{21}$$</td>
 <td style="width: 65px;" align="center">$$n_{22}$$</td>
-<td style="width: 45px;" align="center">$$n_{2.}$$</td>
+<td style="width: 45px;" align="center">$$n_{2\cdot}$$</td>
 </tr>
 <tr>
 <td style="width: 84px;">&nbsp;</td>
 <td style="width: 65px;" align="center">Totale</td>
-<td style="width: 72px;" align="center">$$n_{.1}$$</td>
-<td style="width: 65px;" align="center">$$n_{.2}$$</td>
+<td style="width: 72px;" align="center">$$n_{\cdot 1}$$</td>
+<td style="width: 65px;" align="center">$$n_{\cdot 2}$$</td>
 <td style="width: 45px;" align="center">$$n$$</td>
 </tr>
 </tbody>
