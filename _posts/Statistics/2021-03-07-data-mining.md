@@ -686,13 +686,47 @@ Scelte comuni per $$J$$ sono
 ## Metodi di classificazione
 Classificare un'unità statistica tra i $$K$$ gruppi della variabile dipendente. Ragionando in forma matriciale, in cui si considerano le $$K$$ modalità osservate e le $$K$$ previste, la diagonale è la corretta classificazione formata da $$K$$ elementi, gli elementi fuori la diagonale $$K(K-1)$$ sono i possibili modi con cui si può sbagliare, a cui si possono associare costi differenti a combinazioni di errori differenti.
 
-### Classificazione con regressione lineare
+### Classificazione con la regressione lineare
 Modello lineare su target dicotomico $${0,1}$$, la previsione viene classificata in un modo se il valore è inferiore o superiore ad una soglia (es $$0.5$$).  
-I residui non saranno distribuiti normalmente, ma lo stimatore OLS sarà comunque BLUE (best linear unbiased estimator) purché gli errori abbiano media nulla, incorrelati e omoschedastici. Però non sarà possibile valutare tutto l'aspetto inferenziale, dagli intervalli di confidenza al p-value.
+I residui non saranno distribuiti normalmente, ma lo stimatore OLS sarà comunque BLUE (best linear unbiased estimator) purché gli errori abbiano media nulla, incorrelati e omoschedastici. Però non sarà possibile valutare tutto l'aspetto inferenziale, dagli intervalli di confidenza al p-value. 
 
-<!---
-54.48 L14
---->
+#### Multivariato
+Nel caso di target a più classi, si creano $$K$$ dummy quante sono le classi (non ci sono problemi se la matrice $$Y$$ non è a rango pieno), si fa una regressione multivariata, praticamente un modello lineare per ogni classe. Per la selezione, scelgo la classe con la stima più elevata (è assimilabile al concetto di probabilità). Per $$K=2$$ con due dummy prendere il massimo il risultato è analogo ad una sola target dicotomica $${0,1}$$, in quanto se è superiore alla soglia di $$0.5$$ e se si assume che la somma delle due variabili faccia uno, allora il massimo coincide con la previsione maggiore della soglia.
+
+#### Mascheratura
+Con delle separazioni di tipo lineare le curve di probabilità troppo rigide.  
+In più dimensioni, una classe intermedia può non essere prevista a causa della copertura che creano le stime delle variabili adiacenti. In quanto una classe intermedia sarà approssimata da un unico iperpiano piatto le cui previsioni sono meno elevate di quelle delle variabili adiacenti.
+
+### Classificazione con la regressione logistica
+$$g(\pi)=\eta=\beta_0+\beta_1 x, \qquad \pi=g^{-1}(\eta)=g^{-1}(\beta_0+\beta_1 x)$$  
+Scelta della funzione legame $$g$$ (monotona regolare)  
+$$g(\pi)=\log{\frac{\pi}{1-\pi}}, \qquad \pi=\frac{e^\eta}{1+e^\eta}=\frac{\exp{(\beta_0+\beta_1 x)}}{1+\exp{(\beta_0+\beta_1 x)}}$$  
+rispettivamente funzione logit e logistica (inverso del logit).  
+La stima dei $$\beta$$ avviene tramite massima verosimiglianza, senza forma esplicita e si risolve numericamente ([minimi quadrati iterati pesati](https://en.wikipedia.org/wiki/Iteratively_reweighted_least_squares)).  
+
+#### Multilogit
+Per $$K>2$$ regressione logistica multivariata o modello multilogit.  
+Si creano $$K-1$$ modelli di regressione logistica con il vincolo che la somma di tutte le probabilità sia uno. Tale vincolo si può ottenere facendo il logaritmo delle probabilità dei vari gruppi diviso la probabilità di un gruppo base (concetto analogo alla logistica dividendo per $$1-\pi$$ che è la probabilità di essere nell'altra classe). Si può anche parametrizzare dividendo la somma di tutte le probabilità. Si otterranno $$K-1$$ possibili scelte, gradi di libertà perché $$1$$ è vincolato.    
+Si possono anche stimare $$K$$ modelli non vincolando la somma delle probabilità ad $$1$$.  
+
+### Confusion Matrix
+Tabella di errata classificazione o matrice di confusione
+
+$$
+\begin{tabular}{l|l|c|c|c}
+\multicolumn{2}{c}{}&\multicolumn{2}{c}{True diagnosis}&\\
+\cline{3-4}
+\multicolumn{2}{c|}{}&Positive&Negative&\multicolumn{1}{c}{Total}\\
+\cline{2-4}
+\multirow{2}{*}{Screening test}& Positive & $a$ & $b$ & $a+b$\\
+\cline{2-4}
+& Negative & $c$ & $d$ & $c+d$\\
+\cline{2-4}
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{Total} & \multicolumn{1}{c}{$a+c$} & \multicolumn{    1}{c}{$b+d$} & \multicolumn{1}{c}{$N$}\\
+\end{tabular}
+$$
+
+
 
 
 
