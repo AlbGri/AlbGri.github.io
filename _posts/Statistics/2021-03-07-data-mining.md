@@ -712,7 +712,7 @@ Si possono anche stimare $$K$$ modelli non vincolando la somma delle probabilit√
 ### Confusion Matrix
 Tabella di errata classificazione o matrice di confusione
 
-<table>
+<table style="margin-left: auto; margin-right: auto;">
 <tbody>
 <tr>
 <th style="width: 84px;">&nbsp;</th>
