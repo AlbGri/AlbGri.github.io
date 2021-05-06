@@ -702,7 +702,7 @@ $$g(\pi)=\eta=\beta_0+\beta_1 x, \qquad \pi=g^{-1}(\eta)=g^{-1}(\beta_0+\beta_1 
 Scelta della funzione legame $$g$$ (monotona regolare)  
 $$g(\pi)=\log{\frac{\pi}{1-\pi}}, \qquad \pi=\frac{e^\eta}{1+e^\eta}=\frac{\exp{(\beta_0+\beta_1 x)}}{1+\exp{(\beta_0+\beta_1 x)}}$$  
 rispettivamente funzione logit e logistica (inverso del logit).  
-La stima dei $$\beta$$ avviene tramite massima verosimiglianza, senza forma esplicita e si risolve numericamente ([minimi quadrati iterati pesati](https://en.wikipedia.org/wiki/Iteratively_reweighted_least_squares)).  
+La stima dei $$\beta$$ avviene tramite massima verosimiglianza, senza forma esplicita e si risolve numericamente (minimi quadrati iterati pesati [IRLS](https://en.wikipedia.org/wiki/Iteratively_reweighted_least_squares)).  
 
 #### Multilogit
 Per $$K>2$$ regressione logistica multivariata o modello multilogit.  
@@ -832,7 +832,7 @@ Fattore di miglioramento (lift): $$\frac{n_{22}}{(n_{21}+n_{22})}/\frac{(n_{12}+
 di quante volte migliora il modello scelto rispetto la classificazione casuale ad un dato valore specifico della soglia?  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Perché la selezione casuale corrisponde alla proporzione di positivi della popolazione?  
 La Lift curve contiene in ordinata il fattore di miglioramento, mentre in ascissa si ha la frazione i soggetti previsti positivi ordinati in modo decrescente rispetto la probabilità di classificazione come positivo. Quindi il primo 10% di questa frazione, contiene il 10% dei dati che hanno un fattore di miglioramento più elevato rispetto la classificazione casuale. Le osservazioni sono ordinate per i valori di probabilità, se si fissa un valore soglia si può determinare il corrispettivo fattore di miglioramento e quanta popolazione si andrà a considerare.  
-La curva raggiunge l'1 al 100% della frazione, ma non è necessariamente monotona non crescente.  
+La curva raggiunge l'1 al 100% della frazione, ma non è necessariamente monotona non crescente (se ad esempio viene fatta sull'insieme di verifica).  
 La curva è utile nel confronto di più modelli per capire, in funzione di una determinata % di frazione della popolazione, quale modello restituisce dei fattori di miglioramento più elevati.  
 
 
@@ -865,6 +865,28 @@ Quadratic Discriminant Analysis - QDA.
 Come la lineare senza l'assunzione di omoschedasticità, però è necessaria l'assunzione di normalità.  
 Con $$p$$ osservazioni e $$k$$ gruppi, si avranno $$k$$ matrici $$p \times p(p+1)/2$$ da stimare, ritorna il problema del tradeoff tra varianza e distorsione.  
 Non si ha un metodo automatizzabile per la selezione delle variabili.  
+
+
+### GAM per la classificazione
+Data una risposta qualitativa, si può scegliere la funzione logit come funzione legame (multilogit se qualitativa a più classi).  
+$$\mbox{logit}(\pi)=\alpha+\sum_{j=1}^p f_j (x_j)$$  
+con $$\pi$$ probabilità di appartenere ad una delle due classi.  
+Per stimare $$f_j (x_j)$$ si usa l'algoritmo del punteggio locale (local scoring, che mette assieme backfitting con minimi quadrati iterati pesati IRLS).  
+Si può alternativamente usare una strada quantitativa con una variabile dummy e selezionare una soglia come la regressione lineare.
+
+### MARS per classificazione
+Come il MARS si può replicare la regressione con approccio quantitativo, come il modello lineare per la classificazione (e il GAM)
+In alternativa, si può scegliere una log verosimiglianza multinomiale (come nei modelli parametrici), ma usando un'approssimazione quadratica per la stima (non si ottimizza la log verosimiglianza multinomiale perché bisogna iterare ed è oneroso).  
+Si può usare la GCV (convalida incrociata generalizzata) per ridurre il modello.
+
+### Neural Network per classificazione
+Reti neurali per la classificazione.  
+Approccio analogo alla regressione, però la funzione di trasferimento $$f_1$$ sarà un'altra trasformata logit.
+Per una classificazione multiclasse si può usare la funzione logistica multidimensionale (softmax), simile alla multilogit (non è una sola classe al denominatore ma tutte le classi):  
+$$f_{1k}=\frac{\exp{(T_k)}}{\sum_{r=1}^K \exp{(T_r)}},\quad k=1,...,K$$  
+con $$T_r=\sum_{j\rightarrow r}w_{jr} z_j$$
+
+
 
 
 
