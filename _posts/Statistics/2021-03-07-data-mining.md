@@ -819,13 +819,7 @@ quando il modello prevede positivo, quante volte effettivamente la risposta è p
 **False Discovery Rate**: $$\frac{n_{21}}{n_{21}+n_{22}}$$  
 quando il modello prevede positivo, quante volte la risposta è negativa?  
 
-**$$F_1$$** (F-score, media armonica tra Recupero e Precisione):   $$\frac{2}{1/\mbox{Recupero}+1/\mbox{Precisione}}=\frac{2n_{22}}{2n_{22}+n_{21}+n_{12}}$$  
 
-### ROC Curve
-Receiver Operating Characteristic.  
-Al variare della soglia della probabilità di classificazione, si può rappresentare l'andamento di due misure di performance.  
-In ascissa $$1-$$Specificità (o False Positive Rate) e in ordinata Sensibilità. $$(\hat{\alpha},1-\hat{\beta})$$.  
-AUC: Area Under the ROC Curve, è una buona misura di sintesi generica, ma per un determinato valore soglia si può potenzialmente preferire un modello con l'AUC inferiore.
 
 ### Lift Curve
 Fattore di miglioramento (lift): $$\frac{n_{22}}{(n_{21}+n_{22})}/\frac{(n_{12}+n_{22})}{n}=\mbox{Precisione}/\mbox{% Positivi}$$  
@@ -855,7 +849,7 @@ Metodi di analisi discriminante: scegliere il gruppo che ha la funzione discrimi
 Linear Discriminant Analysis - LDA.  
 Ciascuna $$p_k$$ si ipotizzi normale, quindi $$\mathcal{N}(\mu_k, \Sigma_k)$$ per $$k=1,...,K$$, si può ipotizzare omoschedasticità.  
 $$\delta_k(x)=\log{\pi_k}-\frac{1}{2}\mu_k^T\Sigma^{-1} \mu_k+x^T\Sigma^{-1}\mu_k$$  
-Stimati $$\mu_k$$ e $$\Sigma$$ usando le $$X$$ (con il metodo dei momenti, media campionaria per ogni gruppo e la varianza campionaria non distorta), la funzione discriminante è lineare nelle $$X$$.  
+Stimati $$\mu_k$$ e $$\Sigma$$ usando le $$X$$ (con il metodo dei momenti - le cui stime non sono robuste agli outliers: media campionaria per ogni gruppo e la varianza campionaria non distorta), la funzione discriminante è lineare nelle $$X$$.  
 Rispetto la regressione logistica, che richiede un algoritmo iterativo, è molto più semplice computazionalmente. Anche rispetto la regressione lineare che richiede l'inversione della matrice, l'analisi discriminante lineare richiede meno calcoli ed è facilmente parallellizzabile dato che sono tutte somme.  
 Se le variabili esplicative sono quantitative è un approccio facilmente utilizzabile.  
 L'approccio funziona anche non ipotizzando l'assunzione di normalità, con assunzione di secondo ordine (solo medie e varianze).
