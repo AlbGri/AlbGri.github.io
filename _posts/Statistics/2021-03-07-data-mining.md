@@ -851,15 +851,21 @@ Per stimare la densità $$p_k(x)$$ si può procedere con metodi parametrici e no
 
 Metodi di analisi discriminante: scegliere il gruppo che ha la funzione discriminante più elevata
 
-#### Stima della densità
-
-##### Approccio parametrico
-
-###### Analisi discriminante lineare 
-Linear Discriminant Analysis LDA.  
-Ciascuna $$p_k$$ è una normale, quindi $$\mathcal{N}(\mu_k, \Sigma_k)$$ per $$k=1,...,K$$, si può ipotizzare omoschedasticità.  
+#### Analisi discriminante lineare 
+Linear Discriminant Analysis - LDA.  
+Ciascuna $$p_k$$ si ipotizzi normale, quindi $$\mathcal{N}(\mu_k, \Sigma_k)$$ per $$k=1,...,K$$, si può ipotizzare omoschedasticità.  
 $$\delta_k(x)=\log{\pi_k}-\frac{1}{2}\mu_k^T\Sigma^{-1} \mu_k+x^T\Sigma^{-1}\mu_k$$  
-Stimati $$\mu_k$$ e $$\Sigma$$ usando le $$X$$ (con il metodo dei momenti, media campionaria per ogni gruppo e la varianza campionaria non distorta), la funzione discriminante è lineare nelle $$X$$.
+Stimati $$\mu_k$$ e $$\Sigma$$ usando le $$X$$ (con il metodo dei momenti, media campionaria per ogni gruppo e la varianza campionaria non distorta), la funzione discriminante è lineare nelle $$X$$.  
+Rispetto la regressione logistica, che richiede un algoritmo iterativo, è molto più semplice computazionalmente. Anche rispetto la regressione lineare che richiede l'inversione della matrice, l'analisi discriminante lineare richiede meno calcoli ed è facilmente parallellizzabile dato che sono tutte somme.  
+Se le variabili esplicative sono quantitative è un approccio facilmente utilizzabile.  
+L'approccio funziona anche non ipotizzando l'assunzione di normalità, con assunzione di secondo ordine (solo medie e varianze).
+
+#### Analisi discriminante quadratica
+Quadratic Discriminant Analysis - QDA.  
+Come la lineare senza l'assunzione di omoschedasticità, però è necessaria l'assunzione di normalità.  
+Con $$p$$ osservazioni e $$k$$ gruppi, si avranno $$k$$ matrici $$p \times p(p+1)/2$$ da stimare, ritorna il problema del tradeoff tra varianza e distorsione.  
+
+
 
 
 
