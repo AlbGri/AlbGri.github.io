@@ -819,10 +819,16 @@ quando il modello prevede positivo, quante volte effettivamente la risposta è p
 **False Discovery Rate**: $$\frac{n_{21}}{n_{21}+n_{22}}$$  
 quando il modello prevede positivo, quante volte la risposta è negativa?  
 
+**$$F_1$$** (F-score, media armonica tra Recupero e Precisione):   $$\frac{2}{1/\mbox{Recupero}+1/\mbox{Precisione}}=\frac{2n_{22}}{2n_{22}+n_{21}+n_{12}}$$  
 
+### ROC Curve
+Receiver Operating Characteristic.  
+Al variare della soglia della probabilità di classificazione, si può rappresentare l'andamento di due misure di performance.  
+In ascissa $$1-$$Specificità (o False Positive Rate) e in ordinata Sensibilità. $$(\hat{\alpha},1-\hat{\beta})$$.  
+AUC: Area Under the ROC Curve, è una buona misura di sintesi generica, ma per un determinato valore soglia si può potenzialmente preferire un modello con l'AUC inferiore.
 
 ### Lift Curve
-Fattore di miglioramento (lift): $$\frac{n_{22}}{(n_{21}+n_{22})}/\frac{(n_{12}+n_{22})}{n}=\mbox{Precisione}/\mbox{% Positivi}$$  
+Fattore di miglioramento (lift): $$\frac{n_{22}}{(n_{21}+n_{22})}/\frac{(n_{12}+n_{22})}{n}=\mbox{Precisione}/\mbox{\% Positivi}$$  
 di quante volte migliora il modello scelto rispetto la classificazione casuale ad un dato valore specifico della soglia?  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Perché la selezione casuale corrisponde alla proporzione di positivi della popolazione?  
 La Lift curve contiene in ordinata il fattore di miglioramento, mentre in ascissa si ha la frazione i soggetti previsti positivi ordinati in modo decrescente rispetto la probabilità di classificazione come positivo. Quindi il primo 10% di questa frazione, contiene il 10% dei dati che hanno un fattore di miglioramento più elevato rispetto la classificazione casuale. Le osservazioni sono ordinate per i valori di probabilità, se si fissa un valore soglia si può determinare il corrispettivo fattore di miglioramento e quanta popolazione si andrà a considerare.  
