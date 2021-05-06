@@ -864,7 +864,7 @@ L'approccio funziona anche non ipotizzando l'assunzione di normalità, con assun
 Quadratic Discriminant Analysis - QDA.  
 Come la lineare senza l'assunzione di omoschedasticità, però è necessaria l'assunzione di normalità.  
 Con $$p$$ osservazioni e $$k$$ gruppi, si avranno $$k$$ matrici $$p \times p(p+1)/2$$ da stimare, ritorna il problema del tradeoff tra varianza e distorsione.  
-
+Non si ha un metodo automatizzabile per la selezione delle variabili.  
 
 
 
