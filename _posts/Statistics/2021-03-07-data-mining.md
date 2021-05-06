@@ -712,6 +712,10 @@ Si possono anche stimare $$K$$ modelli non vincolando la somma delle probabilit√
 ### Confusion Matrix
 Tabella di errata classificazione o matrice di confusione
 
+<!---
+https://html-online.com/editor/
+--->
+
 <table style="margin-left: auto; margin-right: auto;">
 <tbody>
 <tr>
@@ -745,6 +749,49 @@ Tabella di errata classificazione o matrice di confusione
 <td style="width: 72px;" align="center">n_.1</td>
 <td style="width: 65px;" align="center">n_.2</td>
 <td style="width: 45px;" align="center">n</td>
+</tr>
+</tbody>
+</table>
+
+#### Indicatori utili  
+Tasso di errata classificazione (Misclassification Rate/Error Rate): complessivamente il modello quante volte sbaglia?  
+$$\frac{n_{12}+n_{21}}{n}$$  
+Accuratezza (Misclassification Rate/Error Rate): complessivamente il modello quante volte classifica correttamente?  
+$$\frac{n_{12}+n_{21}}{n}$$  
+
+
+#### Probabilit√† di errore
+
+<table style="margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<th style="width: 84px;">&nbsp;</th>
+<th style="width: 65px;">&nbsp;</th>
+<td style="width: 143px;" colspan="2" align="center"><strong>Risposta effettiva</strong></td>
+</tr>
+<tr>
+<td style="width: 84px;" align="center">&nbsp;</td>
+<td style="width: 65px;" align="center">&nbsp;</td>
+<td style="width: 72px;" align="center">Negativo</td>
+<td style="width: 65px;" align="center">Positivo</td>
+<td style="width: 45px;" align="center">Totale</td>
+</tr>
+<tr>
+<td style="width: 84px;" rowspan="2" align="center"><strong>Previsione</strong></td>
+<td style="width: 65px;" align="center">Negativo</td>
+<td style="width: 72px;" align="center">$$1-\alpha$$</td>
+<td style="width: 65px;" align="center">$$\beta$$</td>
+</tr>
+<tr>
+<td style="width: 65px;" align="center">Positivo</td>
+<td style="width: 72px;" align="center">$$\alpha$$</td>
+<td style="width: 65px;" align="center">$$1-\beta$$</td>
+</tr>
+<tr>
+<td style="width: 84px;">&nbsp;</td>
+<td style="width: 65px;" align="center">Totale</td>
+<td style="width: 72px;" align="center">1</td>
+<td style="width: 65px;" align="center">1</td>
 </tr>
 </tbody>
 </table>
