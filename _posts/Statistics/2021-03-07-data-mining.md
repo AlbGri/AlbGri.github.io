@@ -713,48 +713,41 @@ Si possono anche stimare $$K$$ modelli non vincolando la somma delle probabilit√
 Tabella di errata classificazione o matrice di confusione
 
 <table>
+<thead>
+<tr>
+<th style="width: 84px;">&nbsp;</th>
+<th style="width: 65px;">&nbsp;</th>
+<td align="center" style="width: 143px;" colspan="2"><strong>Risposta effettiva</strong></th>
+<th style="width: 45px;">&nbsp;</th>
+</tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td align="right"></td>
-<td align="right">smoker</td>
-<td align="right">Yes</td>
-<td align="right">No</td>
-<td align="right">Total</td>
+<tr>
+<td align="center" style="width: 84px;">&nbsp;</td>
+<td align="center" style="width: 65px;">&nbsp;</td>
+<td align="center" style="width: 72px;">Negativo</td>
+<td align="center" style="width: 65px;">Positivo</td>
+<td align="center" style="width: 45px;">Totale</td>
 </tr>
-<tr class="even">
-<td align="right">gender</td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
+<tr>
+<td align="center" style="width: 84px;" rowspan="2"><strong>Previsione</strong></td>
+<td align="center"style="width: 65px;">Negativo</td>
+<td align="center" style="width: 72px;">n_11</td>
+<td align="center" style="width: 65px;">n_12</td>
+<td align="center" style="width: 45px;">n_1.</td>
 </tr>
-<tr class="odd">
-<td align="right">F</td>
-<td align="right"></td>
-<td align="right">147 (30.1%)</td>
-<td align="right">342 (69.9%)</td>
-<td align="right">489 (100.0%)</td>
+<tr>
+<td align="center" style="width: 65px;">Positivo</td>
+<td align="center" style="width: 72px;">n_21</td>
+<td align="center" style="width: 65px;">n_22</td>
+<td align="center" style="width: 45px;">n_2.</td>
 </tr>
-<tr class="even">
-<td align="right">M</td>
-<td align="right"></td>
-<td align="right">143 (29.2%)</td>
-<td align="right">346 (70.8%)</td>
-<td align="right">489 (100.0%)</td>
-</tr>
-<tr class="odd">
-<td align="right">(Missing)</td>
-<td align="right"></td>
-<td align="right">8 (36.4%)</td>
-<td align="right">14 (63.6%)</td>
-<td align="right">22 (100.0%)</td>
-</tr>
-<tr class="even">
-<td align="right">Total</td>
-<td align="right"></td>
-<td align="right">298 (29.8%)</td>
-<td align="right">702 (70.2%)</td>
-<td align="right">1000 (100.0%)</td>
+<tr>
+<td style="width: 84px;">&nbsp;</td>
+<td align="center" style="width: 65px;">Totale</td>
+<td align="center" style="width: 72px;">n_.1</td>
+<td align="center" style="width: 65px;">n_.2</td>
+<td align="center" style="width: 45px;">n</td>
 </tr>
 </tbody>
 </table>
