@@ -713,41 +713,38 @@ Si possono anche stimare $$K$$ modelli non vincolando la somma delle probabilit√
 Tabella di errata classificazione o matrice di confusione
 
 <table>
-<thead>
+<tbody>
 <tr>
 <th style="width: 84px;">&nbsp;</th>
 <th style="width: 65px;">&nbsp;</th>
-<td align="center" style="width: 143px;" colspan="2"><strong>Risposta effettiva</strong></th>
-<th style="width: 45px;">&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center" style="width: 84px;">&nbsp;</td>
-<td align="center" style="width: 65px;">&nbsp;</td>
-<td align="center" style="width: 72px;">Negativo</td>
-<td align="center" style="width: 65px;">Positivo</td>
-<td align="center" style="width: 45px;">Totale</td>
+<td style="width: 143px;" colspan="2" align="center"><strong>Risposta effettiva</strong></td>
 </tr>
 <tr>
-<td align="center" style="width: 84px;" rowspan="2"><strong>Previsione</strong></td>
-<td align="center"style="width: 65px;">Negativo</td>
-<td align="center" style="width: 72px;">n_11</td>
-<td align="center" style="width: 65px;">n_12</td>
-<td align="center" style="width: 45px;">n_1.</td>
+<td style="width: 84px;" align="center">&nbsp;</td>
+<td style="width: 65px;" align="center">&nbsp;</td>
+<td style="width: 72px;" align="center">Negativo</td>
+<td style="width: 65px;" align="center">Positivo</td>
+<td style="width: 45px;" align="center">Totale</td>
 </tr>
 <tr>
-<td align="center" style="width: 65px;">Positivo</td>
-<td align="center" style="width: 72px;">n_21</td>
-<td align="center" style="width: 65px;">n_22</td>
-<td align="center" style="width: 45px;">n_2.</td>
+<td style="width: 84px;" rowspan="2" align="center"><strong>Previsione</strong></td>
+<td style="width: 65px;" align="center">Negativo</td>
+<td style="width: 72px;" align="center">n_11</td>
+<td style="width: 65px;" align="center">n_12</td>
+<td style="width: 45px;" align="center">n_1.</td>
+</tr>
+<tr>
+<td style="width: 65px;" align="center">Positivo</td>
+<td style="width: 72px;" align="center">n_21</td>
+<td style="width: 65px;" align="center">n_22</td>
+<td style="width: 45px;" align="center">n_2.</td>
 </tr>
 <tr>
 <td style="width: 84px;">&nbsp;</td>
-<td align="center" style="width: 65px;">Totale</td>
-<td align="center" style="width: 72px;">n_.1</td>
-<td align="center" style="width: 65px;">n_.2</td>
-<td align="center" style="width: 45px;">n</td>
+<td style="width: 65px;" align="center">Totale</td>
+<td style="width: 72px;" align="center">n_.1</td>
+<td style="width: 65px;" align="center">n_.2</td>
+<td style="width: 45px;" align="center">n</td>
 </tr>
 </tbody>
 </table>
