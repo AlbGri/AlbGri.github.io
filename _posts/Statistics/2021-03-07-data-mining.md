@@ -710,7 +710,7 @@ Si creano $$K-1$$ modelli di regressione logistica con il vincolo che la somma d
 Si possono anche stimare $$K$$ modelli non vincolando la somma delle probabilità ad $$1$$.  
 
 ### Confusion Matrix
-Tabella di errata classificazione o matrice di confusione
+Tabella di errata classificazione o matrice di confusione, per un valore specifico della soglia della probabilità.
 
 <!---
 https://html-online.com/editor/
@@ -803,18 +803,28 @@ $$\alpha$$ probabilità di previsione positiva con risposta negativa, errore di 
 $$\beta$$ probabilità di previsione negativa con risposta positiva  
 
 **Sensibilità** (Sensitivity, True Positive Rate, Recall, Recupero): $$1-\hat{\beta}=\frac{n_{22}}{n_{12}+n_{22}}$$  
-quando la risposta è positiva, quante volte il modello prevede positivo?
+quando la risposta è positiva, quante volte il modello prevede positivo?  
 
 **Specificità** (True Negative Rate): $$1-\hat{\alpha}=\frac{n_{11}}{n_{11}+n_{21}}$$  
 quando la risposta è negativa, quante volte il modello prevede negativo?  
 
-**False Discovery Rate** (False Positive Rate): $$\frac{n_{21}}{n_{21}+n_{22}}$$  
+**False Positive Rate** (1-Specificità): $$\frac{n_{21}}{n_{11}+n_{21}}$$  
 quando la risposta è negativa, quante volte il modello prevede positivo?  
 
 **Precisione** (Precision): $$\frac{n_{22}}{n_{21}+n_{22}}$$  
 quando il modello prevede positivo, quante volte effettivamente la risposta è positiva?  
 
-**$$F_1$$** (F-score, media armonica tra Recupero e Precisione): $$\frac{2}{1/\mbox{Recupero}+1/\mbox{Precisione}}=\frac{2n_{22}}{2n_{22}+n_{21}+n_{12}}$$
+**False Discovery Rate**: $$\frac{n_{21}}{n_{21}+n_{22}}$$  
+quando il modello prevede positivo, quante volte la risposta è negativa?  
+
+**$$F_1$$** (F-score, media armonica tra Recupero e Precisione):   $$\frac{2}{1/\mbox{Recupero}+1/\mbox{Precisione}}=\frac{2n_{22}}{2n_{22}+n_{21}+n_{12}}$$  
+
+
+### ROC Curve
+Receiver Operating Characteristic.  
+Al variare della soglia della probabilità di classificazione, si può rappresentare l'andamento di due misure di performance.  
+In ascissa $$1-$$Specificità (o False Positive Rate) e in ordinata Sensibilità. $$(\hat{\alpha},1-\hat{\beta})$$
+
 
 
 
