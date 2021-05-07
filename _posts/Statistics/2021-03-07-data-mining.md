@@ -35,6 +35,10 @@ identificato dai coefficienti $$a\mathbb{R}$$ e $$b\mathbb{R}$$, si ha che:
 - $$b^*=b/{\vert\vert b \vert\vert}$$ vettore di norma unitaria
 - la distanza....
 
+<!---
+15:15 L18
+--->
+
 ## Richiami di statistica
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Teorema di Gauss Markov  
 
@@ -1162,7 +1166,9 @@ https://www.codecogs.com/latex/eqneditor.php
 
 ### Risorse
 - [Data analysis and data mining](http://azzalini.stat.unipd.it/Book-DM/index.html)
-- [The Elements of Statistical Learing](https://web.stanford.edu/~hastie/ElemStatLearn/printings/ESLII_print12_toc.pdf)
+- The Elements of Statistical Learing [ESLII](https://web.stanford.edu/~hastie/ElemStatLearn/printings/ESLII_print12_toc.pdf)
+- An Introduction to Statistical Learning [ISLR](https://www.statlearning.com/)
+- [Richiami di Algebra](https://uz.sns.it/~antonino/DispenseDCS.pdf)
 
 
 
