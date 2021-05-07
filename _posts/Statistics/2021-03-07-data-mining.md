@@ -954,17 +954,33 @@ Una stima per ogni campione bootstrap e si sceglie di aggregare in modo diverso 
 Non ha la qualità del Bagging perché perde la capacità di riduzione della varianza.  
 
 #### Out-of-bag
-Utilizzando i campioni bootstrap, ogni estrazione comporta l'esclusione di un insieme di osservazioni, definito out-of-bag, questo può essere usato come insieme di verifica.
+OBB. Utilizzando i campioni bootstrap sull'insieme di stima, ogni estrazione comporta l'esclusione di un insieme di osservazioni, definito out-of-bag, questo può essere usato come insieme di verifica.
 
 #### Random Forest
 Breiman, 1999.  
+Come il Bagging ma si campionano anche le variabili. Diventa più veloce il processo di stima. Ad ogni split degli albero si seleziona un numero casuale $$F$$ di variabili (solitamente un numero costante), quindi l'albero dovrà scegliere tra un sottoinsieme di variabili. La scelta di $$F$$ può essere fatta affinché si minimizzi l'errore sull'insieme di verifica o anche l'errore su OOB.  
+Un altro parametro di regolazione da definire è il numero di alberi $$B$$, l'errore decresce al numero di alberi, quindi sarà un numero sufficientemente alto.  
+Ciascun albero ha senso farlo crescere e poi la media farà diminuire la varianza.  
+La scelta di campionare anche le variabili, comporta una maggiore vicinanza all'indipendenza, riducendo la correlazione tra le variabili e quindi la riduzione della varianza è maggiore del Bagging.  
+
+##### Variable Importance
+Importanza delle variabili.  
+Si fanno crescere tutti i $$B$$ alberi e si valuta l'errore su OBB. Successivamente si calcolano $$J$$ (numero di variabili) errori sull'OOB, permutando di volta in volta la j-esima variabile. Successivamente si calcola la media standardizzata delle differenze tra errori di previsione tra l'insieme non permutato e quello permutato, così ottenendo una misura di quanto una variabile influenza le previsioni.  
+
+Ristimare il modello, escludendo una variabile alla volta per valutarne l'impatto con una misura di errore, non è un buon approccio per valutare l'importanza delle variabili. Non si misura il vero effetto sulla previsione togliendo una specifica variabile, perché se si ristima il modello senza quella variabile, le altre variabili (correlate con quella che si toglie), potrebbero entrare nel modello e sostituire l'informazione della variabile tolta, non consentendo di definire quanto è importante la variabile. Quindi è importante che si tiene la previsione ottenuta con la stima su tutti i dati e solo in fase di previsione si utilizza una permutazione delle osservazioni.  
+
+Il livello di importanza di una variabile esplicativa non ha una relazione monotona con la previsione della target, una variabile importante può essere un potente predittore di casi positivi a determinati livelli delle altre variabili esplicative, ed essere un potente predittore di casi negativi ad altri livelli delle altre variabili esplicative.
+
+
+
 
 #### Boosting
 Come il bagging ma i campioni bootstrap non sono estratti casualmente ma si ha più probabilità di riestrarre osservazioni mal classificate.  
 Inizialmente ogni osservazione ha probabilità di estrazione pari a $$p_i=1/N$$. All'iterazione $$t$$, si ha un tasso di errore $$e_t$$ e il parametro $$\beta_t=e_t/(1-e_t)$$ servirà per aggiornare i pesi da utilizzare nell'iterazione successiva $$p_i\leftarrow p_i \cdot \beta_t$$.  
 Al momento di aggregarli, non sarà una semplice media aritmetica perché bisogna dare maggiore influenza ai modelli (alberi in questo caso) che sbagliano di meno, pertanto le classificazioni hanno un peso pari a $$\log{(1/\beta_t)}$$.  
 La caratteristica del boosting di concentrarsi sugli errori è un approccio vincente anche se si utilizzano modelli differenti e non solo alberi.  
-Funziona bene con alberi piccoli ([stump](https://en.wikipedia.org/wiki/Decision_stump) è un weak learner), bisognerà fare più passi ma l'operazione di aggiornamento porta una buona previsione. Alberi ad un solo livello potrebbero potrebbero portare l'esclusione della valutazione delle interazioni, a due livelli può risultare migliore.
+Funziona bene con alberi piccoli ([stump](https://en.wikipedia.org/wiki/Decision_stump) è un weak learner, albero con due nodi-foglia), bisognerà fare più passi ma l'operazione di aggiornamento porta una buona previsione. Alberi ad un solo livello potrebbero potrebbero portare l'esclusione della valutazione delle interazioni, a due livelli può risultare migliore.  
+Il grafico dell'andamento dell'errore contro il numero di iterazioni permette di capire qual è il numero ideale di iterazione a cui fermarsi.  
 
 ##### AdaBoost
 Freund & Shapire, 1997.  
@@ -1040,6 +1056,10 @@ Q: nella regressione ridge, il livello di variabilità dei beta al variare dei l
 R:no perché se è lontano da 0 e non varia, non per questo è da considerare come robusto
 
 Q: slide 170, su modello scientifico e big data. Quel Rho 0.00084 è 1/sqrt(N)? perché mi viene differente. come è stato determinato quel n=400?
+
+
+Q: Nell'importanza delle variabili della random forest, perché escludere una variabile alla volta e valutarne l'impatto su una misura di errore, non è un buon approccio per valutare l'importanza delle variabili? Non è uguale al concetto del modello parametrico di rendere nullo un coefficiente e valutare l'impatto? La stepwise non si basa su questo fondamento? Ha senso costruire la feature importance per un modello parametrico lineare?
+
 
 
 
