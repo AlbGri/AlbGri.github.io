@@ -906,7 +906,7 @@ con $$T_r=\sum_{j\rightarrow r}w_{jr} z_j$$
 
 ### CART per la classificazione
 Alberi di classificazione.  
-Non si cerca di costruire un albero con una variabile quantitativa che assume solo due modalità, ma di usare l'albero con una variabile risposta considerata come qualitativa.  
+Non si cerca di costruire un albero con una variabile quantitativa che assume solo due valori numerici 0 e 1, ma con una variabile risposta considerandola come qualitativa.  
 I CART consentono di modellare con una funzione a gradini la probabilità di essere in una classe date le $$X$$ 
 $$p(x)=\mathbb{P}\left \{ Y=1 \vert X=x \right \}$$  
 Si approssima la funzione nel seguente modo:  
