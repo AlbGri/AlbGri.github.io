@@ -11,7 +11,7 @@ mathjax: "true"
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Da approfondire.`
 
 
-## Accenni di Algebra
+## Richiami di algebra
 - $$(A^T)^T$$ $$=A$$
 - $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
     1. $$A^{-1}A$$ $$=I$$
@@ -26,7 +26,16 @@ mathjax: "true"
 - Se $$Q$$ ortogonale, allora $$Q^TQ=I$$
 - $$(AB)^{-1}$$ $$=A^{-1}B^{-1}$$
 
-## Accenni di Statistica
+## Richiami di geometria
+Generico iperpiano in $$\mathbb{R}^p$$ di equazione $$a+b^T x=0$$ con $$x\in \mathbb{R}^p$$  
+identificato dai coefficienti $$a\mathbb{R}$$ e $$b\mathbb{R}$$, si ha che:  
+- per ogni punto $$x'$$ che giace sull'iperpiano $$\Rightarrow b^T x'=-a$$
+- se $$x'$$ e $$x''$$ sono punti che giacciono sull'iperpiano $$\Rightarrow b^T (x'-x'')=0$$
+- il vettore $$b$$ è quindi ortogonale all'iperpiano
+- $$b^*=b/{\vert\vert b \vert\vert}$$ vettore di norma unitaria
+- la distanza....
+
+## Richiami di statistica
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Teorema di Gauss Markov  
 
 Proprietà stimatore LS: non distorto, tra i non distorti è quello a minima varianza...  
@@ -972,8 +981,6 @@ Ristimare il modello, escludendo una variabile alla volta per valutarne l'impatt
 Il livello di importanza di una variabile esplicativa non ha una relazione monotona con la previsione della target, una variabile importante può essere un potente predittore di casi positivi a determinati livelli delle altre variabili esplicative, ed essere un potente predittore di casi negativi ad altri livelli delle altre variabili esplicative.
 
 
-
-
 #### Boosting
 Come il bagging ma i campioni bootstrap non sono estratti casualmente ma si ha più probabilità di riestrarre osservazioni mal classificate.  
 Inizialmente ogni osservazione ha probabilità di estrazione pari a $$p_i=1/N$$. All'iterazione $$t$$, si ha un tasso di errore $$e_t$$ e il parametro $$\beta_t=e_t/(1-e_t)$$ servirà per aggiornare i pesi da utilizzare nell'iterazione successiva $$p_i\leftarrow p_i \cdot \beta_t$$.  
@@ -981,10 +988,24 @@ Al momento di aggregarli, non sarà una semplice media aritmetica perché bisogn
 La caratteristica del boosting di concentrarsi sugli errori è un approccio vincente anche se si utilizzano modelli differenti e non solo alberi.  
 Funziona bene con alberi piccoli ([stump](https://en.wikipedia.org/wiki/Decision_stump) è un weak learner, albero con due nodi-foglia), bisognerà fare più passi ma l'operazione di aggiornamento porta una buona previsione. Alberi ad un solo livello potrebbero potrebbero portare l'esclusione della valutazione delle interazioni, a due livelli può risultare migliore.  
 Il grafico dell'andamento dell'errore contro il numero di iterazioni permette di capire qual è il numero ideale di iterazione a cui fermarsi.  
+Diversamente dagli altri metodi di combinazioni di modelli, il Boosting non è semplice da utilizzare nel contesto di regressione perché non è facile definire una previsione giusta da una sbagliata.  
 
 ##### AdaBoost
 Freund & Shapire, 1997.  
 Algoritmo originale di boosting, non campiona casualmente le osservazioni ad ogni passo, ma pesa diversamente le osservazioni.
+
+### Support Vector Machine
+SVM. Macchine basate sui vettori di supporto.  
+La target dicotomica è più facile modellarla $$+1$$ e $$-1$$ con le SVM.  
+Si cerca un iperpiano nello spazio delle $$X$$ che riesca a separare in modo ottimale i vari gruppi (nel caso $$p=2$$ dividere i più dai meno).  
+
+**Caso perfettamente separato**  
+La retta migliore è quella che rende massima la distanza tra i punti più vicini dei due gruppi distinti.  
+Per identificare la retta, si costruiscono le due rette frontiere parallele (utilizzando 3 punti: con i 2 punti di un gruppo più vicini all'altro gruppo si costruisce la prima frontiera e poi la seconda è tangente al punto più vicino dell'altro gruppo; il gruppo da cui scegliere i 2 punti è quello che genera la banda più grande), la retta migliore è quella a cui viene associata una banda più grande possibile.
+
+**L**
+
+
 
 
 
