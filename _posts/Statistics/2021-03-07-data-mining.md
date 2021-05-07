@@ -943,7 +943,7 @@ Funziona bene se i modelli hanno caratteristiche differenti.
 
 #### Bagging
 Breiman, 1996. Bagging o bootstrap aggregation.  
-Effettua delle medie sulle previsione, o voto di maggioranza, ottenute sui campioni bootstrap (campionamento con reinserimento).  
+Effettua delle medie sulle previsioni, o voto di maggioranza, ottenute sui campioni [bootstrap](https://en.wikipedia.org/wiki/Bootstrapping_(statistics) (campionamento con reinserimento).  
 Consente di rendere più stabile metodi come gli alberi, perdendo la capacità interpretativo.  
 La varianza della media aritmetica è inversamente proporzionale alla numerosità, quindi comporta una riduzione della varianza.  
 Con alberi profondi si ha poca distorsione ed elevata varianza, ma la media del Bagging di modelli indipendenti (il ricampionamento produce indipendenza ma i dati sono sempre quelli quindi i modelli non sono completamente indipendenti) riduce la varianza per la legge dei grandi numeri mantenendo la distorsione.  
@@ -953,15 +953,22 @@ Ricerca del modello stocastica.
 Una stima per ogni campione bootstrap e si sceglie di aggregare in modo diverso dalla media. Si può ad esempio prendere l'albero che prevede meglio, risultando così interpretabile.  
 Non ha la qualità del Bagging perché perde la capacità di riduzione della varianza.  
 
-
 #### Out-of-bag
 Utilizzando i campioni bootstrap, ogni estrazione comporta l'esclusione di un insieme di osservazioni, definito out-of-bag, questo può essere usato come insieme di verifica.
 
 #### Random Forest
-Breiman, 1999
+Breiman, 1999.  
 
 #### Boosting
-Freund & Shapire, 1996
+Come il bagging ma i campioni bootstrap non sono estratti casualmente ma si ha più probabilità di riestrarre osservazioni mal classificate.  
+Inizialmente ogni osservazione ha probabilità di estrazione pari a $$p_i=1/N$$. All'iterazione $$t$$, si ha un tasso di errore $$e_t$$ e il parametro $$\beta_t=e_t/(1-e_t)$$ servirà per aggiornare i pesi da utilizzare nell'iterazione successiva $$p_i\leftarrow p_i \cdot \beta_t$$.  
+Al momento di aggregarli, non sarà una semplice media aritmetica perché bisogna dare maggiore influenza ai modelli (alberi in questo caso) che sbagliano di meno, pertanto le classificazioni hanno un peso pari a $$\log{(1/\beta_t)}$$.  
+La caratteristica del boosting di concentrarsi sugli errori è un approccio vincente anche se si utilizzano modelli differenti e non solo alberi.  
+Funziona bene con alberi piccoli ([stump](https://en.wikipedia.org/wiki/Decision_stump) è un weak learner), bisognerà fare più passi ma l'operazione di aggiornamento porta una buona previsione. Alberi ad un solo livello potrebbero potrebbero portare l'esclusione della valutazione delle interazioni, a due livelli può risultare migliore.
+
+##### AdaBoost
+Freund & Shapire, 1997.  
+Algoritmo originale di boosting, non campiona casualmente le osservazioni ad ogni passo, ma pesa diversamente le osservazioni.
 
 
 
