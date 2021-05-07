@@ -33,11 +33,8 @@ identificato dai coefficienti $$a\mathbb{R}$$ e $$b\mathbb{R}$$, si ha che:
 - se $$x'$$ e $$x''$$ sono punti che giacciono sull'iperpiano $$\Rightarrow b^T (x'-x'')=0$$
 - il vettore $$b$$ è quindi ortogonale all'iperpiano
 - $$b^*=b/{\vert\vert b \vert\vert}$$ vettore di norma unitaria
-- la distanza....
-
-<!---
-15:15 L18
---->
+- la distanza da un generico punto $$X\in R^p$$ dall'iperpiano, cioè la distanza tra $$X$$ e $$x_0$$, con $$x_0$$ proiezione ortogonale di $$X$$ che giace sull'iperpiano (quindi $$b^T x_0=-a$$), è data da:  
+$$\vert\vert A - x_0 \vert\vert = b^*^T(A-x_0)=\frac{1}{\vert\vert b \vert\vert} (a+b^T X)$$
 
 ## Richiami di statistica
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Teorema di Gauss Markov  
@@ -1007,7 +1004,17 @@ Si cerca un iperpiano nello spazio delle $$X$$ che riesca a separare in modo ott
 La retta migliore è quella che rende massima la distanza tra i punti più vicini dei due gruppi distinti.  
 Per identificare la retta, si costruiscono le due rette frontiere parallele (utilizzando 3 punti: con i 2 punti di un gruppo più vicini all'altro gruppo si costruisce la prima frontiera e poi la seconda è tangente al punto più vicino dell'altro gruppo; il gruppo da cui scegliere i 2 punti è quello che genera la banda più grande), la retta migliore è quella a cui viene associata una banda più grande possibile.
 
+Sia $$\beta_0+x^T\beta=0$$ con $$x\in\mathbb{R}^p$$ l'equazione che individua un generico iperpiano candidato a separare le due classi, con $$\beta$$ a norma unitaria.  
+L'iperpiano moltiplicato per $$y$$ valutato
+
+<!---
+18.56 L18
+
 **L**
+--->
+
+
+
 
 
 
