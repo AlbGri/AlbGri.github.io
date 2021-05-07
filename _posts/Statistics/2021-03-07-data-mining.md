@@ -939,20 +939,29 @@ Si costruisce la previsione usando la media della previsione dei $$M$$ modelli d
 $$f_{\mbox{comb}}(x,y)=\sum_{m=1}^M w_m f_m (x,y)$$  
 Non tiene conto della complessità del modello, quindi rischia il sovra adattamento.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Si può usare la CV-LOO per risolvere: si fa la regressione di ciascuna $$y_i$$ sulle previsioni degli $$M$$ modelli senza la i-esima osservazione, ottenendo così il valore d'errore da utilizzare come peso nella media.  
-
+Funziona bene se i modelli hanno caratteristiche differenti.
 
 #### Bagging
-Breiman, 1996
+Breiman, 1996. Bagging o bootstrap aggregation.  
+Effettua delle medie sulle previsione, o voto di maggioranza, ottenute sui campioni bootstrap (campionamento con reinserimento).  
+Consente di rendere più stabile metodi come gli alberi, perdendo la capacità interpretativo.  
+La varianza della media aritmetica è inversamente proporzionale alla numerosità, quindi comporta una riduzione della varianza.  
+Con alberi profondi si ha poca distorsione ed elevata varianza, ma la media del Bagging di modelli indipendenti (il ricampionamento produce indipendenza ma i dati sono sempre quelli quindi i modelli non sono completamente indipendenti) riduce la varianza per la legge dei grandi numeri mantenendo la distorsione.  
+
+##### Bumping
+Ricerca del modello stocastica. 
+Una stima per ogni campione bootstrap e si sceglie di aggregare in modo diverso dalla media. Si può ad esempio prendere l'albero che prevede meglio, risultando così interpretabile.  
+Non ha la qualità del Bagging perché perde la capacità di riduzione della varianza.  
+
+
+#### Out-of-bag
+Utilizzando i campioni bootstrap, ogni estrazione comporta l'esclusione di un insieme di osservazioni, definito out-of-bag, questo può essere usato come insieme di verifica.
 
 #### Random Forest
 Breiman, 1999
 
 #### Boosting
 Freund & Shapire, 1996
-
-<!---
-1:08:00 L16
---->
 
 
 
