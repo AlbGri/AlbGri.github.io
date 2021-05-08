@@ -986,12 +986,11 @@ $$y(\beta_0+\tilde{x}^T\beta)>1/2$$ con $$y\in\{0,1\}$$
 nel caso $$\{-1,1\}$$ quindi l'osservazione è classificata bene se di segno concorde con l'iperpiano.
 
 L'obiettivo è quindi  
-$$\max_{\beta_0, \beta}{M}$$ con i vincoli 
+$$\max\limits_{\beta_0, \beta}{M}$$ con i vincoli 
 $$\begin{cases} 
 \vert\vert \beta \vert\vert = 1, \\ 
 y_i (\beta_0+\tilde{x}_i^T \beta) \ge M
 \end{cases}$$ con $$i=1,...,n$$
-
 
 
 Il problema ha una struttura analoga a molti altri contesti. Se si è interessati a due quantità, di cui una è la più importante (classificare bene) e l'altra meno (trovare la distanza massima), la parte più importante viene vincolata e l'altra massimizzata. Ad esempio, nei test statistici, l'errore di primo tipo si fissa (vincola) (es. $$\alpha=0.5$$), e si massimizza la potenza.
