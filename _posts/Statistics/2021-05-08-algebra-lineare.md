@@ -35,8 +35,8 @@ x_n + y_n
 Il prodotto scalare tra due vettori è uno scalare (un numero).  
 $$\vec{x}\cdot \vec{y}=\left \langle \vec{x}, \vec{y} \right \rangle = \sum_{i=1}^n x_i y_i$$  
 Il prodotto scalare tra vettori è nullo se e solo se i due vettori sono perpendicolari.  
-Se i vettori sono identificati come riga di matrice, si può esprimere come prodotto matriciale: $$[x]_{1\times n} [y^T]_{n \times 1}$$  
-Se i vettori sono identificati come colonna di matrice, si può esprimere come prodotto matriciale: $$[x^T]_{1\times n} [y]_{n\times 1}$$  
+Se i vettori sono identificati come riga di matrice, si può esprimere come prodotto matriciale: $$\big[x\big]_{(1\times n)}\big[y^T\big]_{(n\times1)}$$  
+Se i vettori sono identificati come colonna di matrice, si può esprimere come prodotto matriciale: $$\big[x^T\big]_{(1\times n)}\big[y]_{(n\times1)}$$  
 
 Esempio prodotto due vettori in forma matriciale (≡ prodotto matriciale Riga × Colonna)  
 $$\begin{pmatrix} 
