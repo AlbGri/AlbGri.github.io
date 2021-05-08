@@ -1156,9 +1156,6 @@ https://www.codecogs.com/latex/eqneditor.php
 - [Data analysis and data mining](http://azzalini.stat.unipd.it/Book-DM/index.html)
 - The Elements of Statistical Learing [ESLII](https://web.stanford.edu/~hastie/ElemStatLearn/printings/ESLII_print12_toc.pdf)
 - An Introduction to Statistical Learning [ISLR](https://www.statlearning.com/)
-- [Richiami di Algebra](https://uz.sns.it/~antonino/DispenseDCS.pdf)
-
-
 
 
 <!---

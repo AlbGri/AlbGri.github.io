@@ -8,6 +8,28 @@ mathjax: "true"
 
 *in costruzione*
 
+## Concetti di base
+
+### Prodotto scalare
+$$\begin{pmatrix} 
+a_1 \\ 
+b_1 \\
+c_1
+\end{pmatrix} \cdot
+\begin{pmatrix} 
+a_2 & b_2 & c_2
+\end{pmatrix} = a_1a_2+b_1b_2+c_1c_2$$
+
+### Somma di matrici
+$$[A+B]_{ij}=[A]_{ij}+[B]_{ij}$$
+
+### Prodotto di matrici
+$$[AB]_{ik}=\sum_{j=1}^n [A]_{ij} [B]_{jk}$$ con $$i=1,...,l$$ e $$k=1,...,m$$  
+Riga × Colonna  
+$$\colorbox{green}{a}\times b$$
+
+
+
 ## Operazioni tra matrici
 - $$(A^T)^T$$ $$=A$$
 - $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
@@ -22,6 +44,9 @@ mathjax: "true"
 - Se $$Q$$ ortogonale, allora $$Q^TQ=I$$
 - $$(AB)^{-1}$$ $$=A^{-1}B^{-1}$$
 
+
+
+
 ## Distanza tra punti e iperpiani
 Generico iperpiano in $$\mathbb{R}^p$$ di equazione $$a+b^T x=0$$ con $$x\in \mathbb{R}^p$$  
 identificato dai coefficienti $$a\in \mathbb{R}$$ e $$b\in \mathbb{R}$$, si ha che:  
@@ -32,4 +57,9 @@ identificato dai coefficienti $$a\in \mathbb{R}$$ e $$b\in \mathbb{R}$$, si ha c
 - la distanza da un generico punto $$X\in R^p$$ dall'iperpiano, cioè la distanza tra $$X$$ e $$x_0$$, con $$x_0$$ proiezione ortogonale di $$X$$ che giace sull'iperpiano (quindi $$b^T x_0=-a$$), è data da:  
 $$\vert\vert A - x_0 \vert\vert = b^*^T(A-x_0)=\frac{1}{\vert\vert b \vert\vert} (a+b^T X)$$
 
+
+## Utili
+
+### Risorse
+- [Distanze da una retta (Scuola Normale Superiore di Pisa)](https://uz.sns.it/~antonino/DispenseDCS.pdf)
 
