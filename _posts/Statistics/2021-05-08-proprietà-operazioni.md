@@ -30,7 +30,7 @@ La somma di due o più addendi non cambia se a uno di essi si sostituiscono altr
 $$a+b=a+c+d$$ con $$b=c+d$$
 
 ### Dissociativa (moltiplicazione)
-Il prodotto di due o più fattori non cambia se a uno di essi si sostituiscono altri numeri il cui prodotto è uguale al fattore sostituito
+Il prodotto di due o più fattori non cambia se a uno di essi si sostituiscono altri numeri il cui prodotto è uguale al fattore sostituito  
 $$a\cdot b=a\cdot c\cdot d$$ con $$b=c\cdot d$$
 
 ### Invariantiva (sottrazione)
