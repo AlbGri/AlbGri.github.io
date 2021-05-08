@@ -26,7 +26,11 @@ $$[A+B]_{ij}=[A]_{ij}+[B]_{ij}$$
 ### Prodotto di matrici
 $$[AB]_{ik}=\sum_{j=1}^n [A]_{ij} [B]_{jk}$$ con $$i=1,...,l$$ e $$k=1,...,m$$  
 Riga × Colonna  
-$$\colorbox{green}{a}\times b$$
+$$\colorbox{green}{a}\times b$$  
+
+$$\color{green!50}{a}\times b$$  
+$$\color{red}{a}\times b$$  
+
 
 
 
