@@ -975,24 +975,24 @@ SVM. Macchine basate sui vettori di supporto.
 La target dicotomica è più facile modellarla $$+1$$ e $$-1$$ con le SVM.  
 Si cerca un iperpiano nello spazio delle $$X$$ che riesca a separare in modo ottimale i vari gruppi (nel caso $$p=2$$ dividere i più dai meno).  
 
-**Caso perfettamente separato**  
-La retta migliore è quella che rende massima la distanza tra i punti più vicini dei due gruppi distinti.  
+#### Caso perfettamente separato
+La retta migliore è quella che rende massima la distanza tra i punti più vicini dei due gruppi distinti (Optimal Separating Hyperplanes, Vapnik, 1996).  
 Per identificare la retta, si costruiscono le due rette frontiere parallele (utilizzando 3 punti: con i 2 punti di un gruppo più vicini all'altro gruppo si costruisce la prima frontiera e poi la seconda è tangente al punto più vicino dell'altro gruppo; il gruppo da cui scegliere i 2 punti è quello che genera la banda più grande), la retta migliore è quella a cui viene associata una banda più grande possibile.
 
-Sia $$\beta_0+\vec{x}^{\,T}\vec{\beta}=0$$ con $$\vec{x}\in\mathbb{R}^p$$ l'equazione che individua un generico iperpiano candidato a separare le due classi, con $$\beta$$ a norma unitaria.  
+Sia $$\beta_0+\vec{x}^{\,T}\vec{\beta}=0$$ con $$\vec{x}\in\mathbb{R}^p$$ l'equazione che individua un generico iperpiano candidato a separare le due classi, con $$\vec{\beta}$$ a norma unitaria.  
 Un'osservazione $$(\tilde{x},y)$$ sarà classificata correttamente se  
-$$y(\beta_0+\tilde{x}^T\beta)>0$$ con $$y\in{-1,1}$$  
-$$y(\beta_0+\tilde{x}^T\beta)>1/2$$ con $$y\in{0,1}$$  
+$$y(\beta_0+\tilde{x}^T\beta)>0$$ con $$y\in\{-1,1\}$$  
+$$y(\beta_0+\tilde{x}^T\beta)>1/2$$ con $$y\in\{0,1\}$$  
+nel caso $$\{-1,1\}$$ quindi l'osservazione è classificata bene se di segno concorde con l'iperpiano.
 
-Quindi si ce
+L'obiettivo è quindi  
+$$\max_{\beta_0, \beta}{M}$$ con i vincoli 
+
+
+Il problema ha una struttura analoga a molti altri contesti. Se si è interessati a due quantità, di cui una è la più importante (classificare bene) e l'altra meno (trovare la distanza massima), la parte più importante viene vincolata e l'altra massimizzata. Ad esempio, nei test statistici, l'errore di primo tipo si fissa (vincola) (es. $$\alpha=0.5$$), e si massimizza la potenza.
 
 
 
-<!---
-18.56 L18
-
-**L**
---->
 
 
 
