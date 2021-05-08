@@ -112,9 +112,9 @@ I valori singolari sono ordinati, in alto a sinistra si trova l'elemento di $$D$
 
 
 
-## Punti e piani
+## Geometria analitica
 
-### Distanza tra punti e iperpiani
+### Distanza da un punto dall'iperpiano
 Generico iperpiano in $$\mathbb{R}^p$$ di equazione $$a+b^T x=0$$ con $$x\in \mathbb{R}^p$$  
 identificato dai coefficienti $$a\in \mathbb{R}$$ e $$b\in \mathbb{R}$$, si ha che:  
 - per ogni punto $$x_i$$ che giace sull'iperpiano $$\Rightarrow b^T x_i=-a$$
