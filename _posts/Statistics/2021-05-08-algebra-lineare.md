@@ -30,6 +30,9 @@ $$\colorbox{green}{a}\times b$$
 
 $$\color{green!50}{a}\times b$$  
 $$\color{red}{a}\times b$$  
+$${\rm\color[rgb]{1,0,0}Some~red~math}$$  
+
+$$\require{color}\newcommand{\textwithColor}[2]{\color{#1}{\text{#2}}} \textwithColor{red}{halleo}$$
 
 
 
