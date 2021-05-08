@@ -115,14 +115,15 @@ I valori singolari sono ordinati, in alto a sinistra si trova l'elemento di $$D$
 ## Punti e piani
 
 ### Distanza tra punti e iperpiani
-Generico iperpiano in $$\mathbb{R}^p$$ di equazione $$\beta_0+\beta^T x=0$$ con $$x\in \mathbb{R}^p$$  
-identificato dai coefficienti $$\beta_0\in \mathbb{R}$$ e $$\beta\in \mathbb{R}$$, si ha che:  
-- per ogni punto $$x_i$$ che giace sull'iperpiano $$\Rightarrow \beta^T x_i=-\beta_0$$
-- per ogni coppia di punti $$x_1$$ e $$x_2$$ che giacciono sull'iperpiano $$\Rightarrow \beta^T (x_1-x_2)=0$$
-- quindi il vettore $$\beta$$ è ortogonale all'iperpiano
-- $$\beta^*=\beta/{\vert\vert \beta \vert\vert}$$ vettore di norma unitaria
-- la distanza da un generico punto $$X\in \mathbb{R}^p$$ dall'iperpiano, cioè la distanza tra $$X$$ e $$x_0$$, con $$x_0$$ proiezione ortogonale di $$X$$ che giace sull'iperpiano (quindi $$\beta^T x_0=-\beta_0$$), è data da:  
-$$\vert\vert X - x_0 \vert\vert = {\beta^*}^T(X-x_0)=\frac{1}{\vert\vert \beta \vert\vert} (\beta^T X+\beta_0)$$
+Generico iperpiano in $$\mathbb{R}^p$$ di equazione $$a+b^T x=0$$ con $$x\in \mathbb{R}^p$$  
+identificato dai coefficienti $$a\in \mathbb{R}$$ e $$b\in \mathbb{R}$$, si ha che:  
+- per ogni punto $$x_i$$ che giace sull'iperpiano $$\Rightarrow b^T x_i=-a$$
+- per ogni coppia di punti $$x_1$$ e $$x_2$$ che giacciono sull'iperpiano $$\Rightarrow b^T (x_1-x_2)=0$$
+- quindi il vettore $$b$$ è ortogonale all'iperpiano
+- $$b^*=b/{\vert\vert b \vert\vert}$$ vettore di norma unitaria
+- la distanza da un generico punto $$X\in \mathbb{R}^p$$ dall'iperpiano, cioè la distanza tra $$X$$ e $$x_0$$, con $$x_0$$ proiezione ortogonale di $$X$$ che giace sull'iperpiano (quindi $$b^T x_0=-a$$), è data da:  
+$$\vert\vert X - x_0 \vert\vert = {b^*}^T(X-x_0)=\frac{1}{\vert\vert b \vert\vert} (b^T X+a)$$
+
 
 
 
