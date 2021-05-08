@@ -621,7 +621,7 @@ $$f(\mu\vert y)=\frac{f(y\vert \mu)\cdot f(\mu)}{\int_\mu f(y\vert \mu)\cdot f(\
 
 si dimostra che la distribuzione a posteriori è la seguente
 
-$$\mu\vert y\sim\mathcal{N}\Bigg(\frac{\tau^2_0\bar{y}+\frac{\sigma^2_0}{n}\mu_0}{\tau^2_0+\frac{\sigma^2_0}{n}},\frac{\sigma^2_0\tau^2_0}{\frac{\sigma^2_0}{n}+\tau^2_0}\Bigg)$$
+$$\mu\vert y\sim\mathcal{N}\left (\frac{\tau^2_0\bar{y}+\frac{\sigma^2_0}{n}\mu_0}{\tau^2_0+\frac{\sigma^2_0}{n}},\frac{\sigma^2_0\tau^2_0}{\frac{\sigma^2_0}{n}+\tau^2_0}\right )$$
 
 Il modello gerarchico è un compromesso tra il modello pooling e no-pooling, la stima Bayesiana empirica è un compromesso tra la media totale e la media specifica del gruppo $$j$$.  
 Il modello multilevel effettua un 'borrowing' dell'informazione prendendo anche da altri gruppi.  
