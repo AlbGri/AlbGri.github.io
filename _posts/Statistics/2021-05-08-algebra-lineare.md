@@ -104,8 +104,9 @@ $$A=\sum_{i=1}^n \lambda_i v_i v_i^T = V \Lambda V^T = V \Lambda V^{-1}$$
 con $$\lambda_i$$ è l'autovalore dell'autovettore $$v_i$$, $$V$$ matrice ortogonale degli autovettori e $$\Lambda$$ la corrispondente matrice diagonale degli autovalori di $$A$$.
 
 ### Decomposizione a valori singolari
-Data una matrice $$A\kern 0em_{\small (n\times p)}$$ allora $$A=U\kern 0em_{\small (n\times n)}D\kern 0em_{\small (n\times p)}V^T\kern 0em_{\small (p\times n)}$$  
-con $$U^TU=V^T V=I_n$$ matrici unitarie e $$D$$ è diagonale non-negativa.  
+Data una matrice $$A\kern 0em_{\small (n\times p)}$$, si può esprimere come  
+$$A=U\kern 0em_{\small (n\times n)}D\kern 0em_{\small (n\times p)}V^T\kern 0em_{\small (p\times n)}$$  
+con $$U^TU=V^T V=I_n$$ matrici unitarie e $$D$$ diagonale non-negativa.  
 I valori singolari sono ordinati, in alto a sinistra si trova l'elemento di $$D$$ che contiene il più grande valore singolare.
 
 
