@@ -34,7 +34,7 @@ Il prodotto di due o più fattori non cambia se a uno di essi si sostituiscono a
 $$a\cdot b=a\cdot c\cdot d$$ con $$b=c\cdot d$$
 
 ### Invariantiva (sottrazione)
-Addizionando o sottraendo sia al minuendo che al sottraendo uno stesso numero, il risultato della sottrazione non cambia  
+Addizionando o sottraendo sia al minuendo (elemento a sinistra) che al sottraendo (elemento a destra) uno stesso numero, il risultato della sottrazione non cambia  
 $$a-b=(a\pm c)-(b\pm c)$$  
 
 ### Invariantiva (divisione)
