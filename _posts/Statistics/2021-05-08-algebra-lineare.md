@@ -122,17 +122,8 @@ identificato dai coefficienti $$a\in \mathbb{R}$$ e $$b\in \mathbb{R}$$, si ha c
 - il vettore $$b$$ è quindi ortogonale all'iperpiano
 - $$b^*=b/{\vert\vert b \vert\vert}$$ vettore di norma unitaria
 - la distanza da un generico punto $$X\in \mathbb{R}^p$$ dall'iperpiano, cioè la distanza tra $$X$$ e $$x_0$$, con $$x_0$$ proiezione ortogonale di $$X$$ che giace sull'iperpiano (quindi $$b^T x_0=-a$$), è data da:  
-$$\vert\vert A - x_0 \vert\vert = b^T(A-x_0)=\frac{1}{\vert\vert b \vert\vert} (a+b^T X)$$
+$$\vert\vert X - x_0 \vert\vert = {b^*}^T(X-x_0)=\frac{1}{\vert\vert b \vert\vert} (a+b^T X)$$
 
-asd
-
-$$b^*^T$$  
-
-$${b^*}^T$$  
-
-$$b*^T$$  
-
-$$b^*\kern 0em^T$$  
 
 
 
