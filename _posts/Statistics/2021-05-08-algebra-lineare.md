@@ -87,11 +87,24 @@ a_{31} & a_{32} & a_{33}
     6. $$(A^T)^{-1}A^T(A^{-1})^T$$ $$=(A^T)^{-1}I$$
     7. $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
 - $$[(X^TX)^{-1}X^T]^T=X[(X^TX)^{-1}]^T=X[(X^TX)^T]^{-1}=X[(X)^T(X^T)^T]^{-1}$$ $$=X(X^TX)^{-1}$$  
-- Se $$Q$$ ortogonale, allora $$Q^TQ=I$$
-- $$(AB)^{-1}$$ $$=A^{-1}B^{-1}$$
+- Se $$Q$$ matrice ortogonale, allora $$Q^TQ=I$$ quindi $$Q^T=Q^{-1}$$
+- $$(AB)^{-1}$$ $$=B^{-1}A^{-1}$$
 - $$\mbox{det}(A^T)$$ $$=\mbox{det}(A)$$
 - $$\mbox{det}(AB)$$ $$\mbox{det}(A)\mbox{det}(B)$$
 - $$\mbox{det}(I)=1\Rightarrow \mbox{det}(A^{-1})$$ $$=\frac{1}{\mbox{det}(A)}$$
+- [Pseudo-inversa](https://it.wikipedia.org/wiki/Pseudo-inversa) di una matrice non quadrata: $$A^+=A^T(AA^T)^{-1}$$
+- Traccia di una matrice: $$\mbox{tr}(A)=\sum_i A_{ii}=\sum_i \lambda_i$$ con $$\lambda_i$$ i-esimo autovalore
+
+## Decomposizioni
+[Elenco](https://it.wikipedia.org/wiki/Decomposizione_di_una_matrice) delle più diffuse
+
+## Decomposizione spettrale
+Data una matrice reale simmetrica $$n \times n$$, si può esprimere come  
+$$A=\sum_{i=1}^n \lambda_i e_i e_i^T = V \Lambda V^T$$  
+Dove $$\lambda_i$$ è l'autovalore dell'autovettore $$e_i$$, $$V$$ matrice ortogonale degli autovettori e $$\Lambda$$ la corrispondente matrice diagonale degli autovalori di $$A$$.
+
+
+
 
 
 ## Punti e piani
