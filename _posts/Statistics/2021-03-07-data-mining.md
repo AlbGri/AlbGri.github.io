@@ -22,7 +22,6 @@ mathjax: "true"
     6. $$(A^T)^{-1}A^T(A^{-1})^T$$ $$=(A^T)^{-1}I$$
     7. $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
 - $$[(X^TX)^{-1}X^T]^T=X[(X^TX)^{-1}]^T=X[(X^TX)^T]^{-1}=X[(X)^T(X^T)^T]^{-1}$$ $$=X(X^TX)^{-1}$$  
-- Proprietà dissociativa dell'addizione $$10=4+6=...$$
 - Se $$Q$$ ortogonale, allora $$Q^TQ=I$$
 - $$(AB)^{-1}$$ $$=A^{-1}B^{-1}$$
 
@@ -1004,8 +1003,14 @@ Si cerca un iperpiano nello spazio delle $$X$$ che riesca a separare in modo ott
 La retta migliore è quella che rende massima la distanza tra i punti più vicini dei due gruppi distinti.  
 Per identificare la retta, si costruiscono le due rette frontiere parallele (utilizzando 3 punti: con i 2 punti di un gruppo più vicini all'altro gruppo si costruisce la prima frontiera e poi la seconda è tangente al punto più vicino dell'altro gruppo; il gruppo da cui scegliere i 2 punti è quello che genera la banda più grande), la retta migliore è quella a cui viene associata una banda più grande possibile.
 
-Sia $$\beta_0+x^T\beta=0$$ con $$x\in\mathbb{R}^p$$ l'equazione che individua un generico iperpiano candidato a separare le due classi, con $$\beta$$ a norma unitaria.  
-L'iperpiano moltiplicato per $$y$$ valutato
+Sia $$\beta_0+\vec{x}^{\,T}\vec{\beta}=0$$ con $$\vec{x}\in\mathbb{R}^p$$ l'equazione che individua un generico iperpiano candidato a separare le due classi, con $$\beta$$ a norma unitaria.  
+Un'osservazione $$(\tilde{x},y)$$ sarà classificata correttamente se  
+$$y(\beta_0+\tilde{x}^T\beta)>0$$ con $$y\in{-1,1}$$  
+$$y(\beta_0+\tilde{x}^T\beta)>1/2$$ con $$y\in{0,1}$$  
+
+Quindi si ce
+
+
 
 <!---
 18.56 L18
