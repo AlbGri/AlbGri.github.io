@@ -10,20 +10,37 @@ mathjax: "true"
 
 ## Concetti di base
 
+
+### Somma vettoriale
+$$\vec{x}+\vec{y}=
+\begin{pmatrix} 
+x_1 + y_1 \\ 
+x_2 + y_2 \\
+... \\
+x_n + y_n
+\end{pmatrix}$$
+
 ### Prodotto scalare
+$$\vec{x}\cdot \vec{y}=\left \langle \vec{x}, \vec{y} \right \rangle = \sum_{i=1}^n x_i y_i$$  
+Il prodotto scalare tra vettori è nullo se e solo se i due vettori sono perpendicolari.  
+
 $$\begin{pmatrix} 
-a_1 \\ 
-b_1 \\
-c_1
+x_1 \\ 
+x_2 \\
+x_3
 \end{pmatrix} \cdot
 \begin{pmatrix} 
-a_2 & b_2 & c_2
-\end{pmatrix} = a_1a_2+b_1b_2+c_1c_2$$
+y_1 & y_2 & y_3
+\end{pmatrix} = x_1 y_1 + x_2 y_2 + x_3 y_3$$
 
-### Somma di matrici
+
+
+
+
+### Somma matriciale
 $$[A+B]_{ij}=[A]_{ij}+[B]_{ij}$$
 
-### Prodotto di matrici
+### Prodotto matriciale
 $$[AB]_{ik}=\sum_{j=1}^n [A]_{ij} [B]_{jk}$$ con $$i=1,...,l$$ e $$k=1,...,m$$  
 Riga × Colonna  
 
@@ -44,25 +61,6 @@ a_{31} & a_{32} & a_{33}
 \end{pmatrix}$$
 
 
-aaa
-
-
-
-$$\begin{pmatrix} 
-\boldmath{\color{ForestGreen}{a_{11}}} & \boldmath{\color{ForestGreen}{a_{12}}} & \boldmath{\color{ForestGreen}{a_{13}}} \\ 
-a_{21} & a_{22} & a_{23} \\ 
-a_{31} & a_{32} & a_{33}
-\end{pmatrix} \cdot
-\begin{pmatrix} 
-\boldmath{\color{ForestGreen}{b_{11}}} & b_{12} \\ 
-\boldmath{\color{ForestGreen}{b_{21}}} & b_{22} \\ 
-\boldmath{\color{ForestGreen}{b_{31}}} & b_{32}
-\end{pmatrix} =
-\begin{pmatrix} 
-\boldmath{\color{ForestGreen}{a_{11}b_{11}+a_{12}b_{21}+a_{13}b_{31}}} & ... \\ 
-... & ... \\ 
-... & ...
-\end{pmatrix}$$
 
 
 
@@ -71,6 +69,7 @@ a_{31} & a_{32} & a_{33}
 
 ## Operazioni tra matrici
 - $$(A^T)^T$$ $$=A$$
+- $$(AB)^T$$ $$=A^T B^T$$
 - $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
     1. $$A^{-1}A$$ $$=I$$
     2. $$(A^{-1}A)^T=I^T$$ $$=I$$
@@ -100,5 +99,5 @@ $$\vert\vert A - x_0 \vert\vert = b^*^T(A-x_0)=\frac{1}{\vert\vert b \vert\vert}
 ## Utili
 
 ### Risorse
-- [Distanze da una retta (Scuola Normale Superiore di Pisa)](https://uz.sns.it/~antonino/DispenseDCS.pdf)
-
+- [Distanze da una retta](https://uz.sns.it/~antonino/DispenseDCS.pdf) (Scuola Normale Superiore di Pisa)
+- [Identità trigonometriche](https://trigids.com/)
