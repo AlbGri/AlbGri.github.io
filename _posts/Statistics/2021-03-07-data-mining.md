@@ -11,30 +11,6 @@ mathjax: "true"
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Da approfondire.`
 
 
-## Richiami di algebra
-- $$(A^T)^T$$ $$=A$$
-- $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
-    1. $$A^{-1}A$$ $$=I$$
-    2. $$(A^{-1}A)^T=I^T$$ $$=I$$
-    3. dato che $$(AB)^T=B^TA^T$$
-    4. $$A^T(A^{-1})^T$$ $$=I$$
-    5. dato che $$A$$ è invertibile allora anche $$A^T$$ lo è
-    6. $$(A^T)^{-1}A^T(A^{-1})^T$$ $$=(A^T)^{-1}I$$
-    7. $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
-- $$[(X^TX)^{-1}X^T]^T=X[(X^TX)^{-1}]^T=X[(X^TX)^T]^{-1}=X[(X)^T(X^T)^T]^{-1}$$ $$=X(X^TX)^{-1}$$  
-- Se $$Q$$ ortogonale, allora $$Q^TQ=I$$
-- $$(AB)^{-1}$$ $$=A^{-1}B^{-1}$$
-
-## Richiami di geometria
-Generico iperpiano in $$\mathbb{R}^p$$ di equazione $$a+b^T x=0$$ con $$x\in \mathbb{R}^p$$  
-identificato dai coefficienti $$a\mathbb{R}$$ e $$b\mathbb{R}$$, si ha che:  
-- per ogni punto $$x'$$ che giace sull'iperpiano $$\Rightarrow b^T x'=-a$$
-- se $$x'$$ e $$x''$$ sono punti che giacciono sull'iperpiano $$\Rightarrow b^T (x'-x'')=0$$
-- il vettore $$b$$ è quindi ortogonale all'iperpiano
-- $$b^*=b/{\vert\vert b \vert\vert}$$ vettore di norma unitaria
-- la distanza da un generico punto $$X\in R^p$$ dall'iperpiano, cioè la distanza tra $$X$$ e $$x_0$$, con $$x_0$$ proiezione ortogonale di $$X$$ che giace sull'iperpiano (quindi $$b^T x_0=-a$$), è data da:  
-$$\vert\vert A - x_0 \vert\vert = b^*^T(A-x_0)=\frac{1}{\vert\vert b \vert\vert} (a+b^T X)$$
-
 ## Richiami di statistica
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Teorema di Gauss Markov  
 
