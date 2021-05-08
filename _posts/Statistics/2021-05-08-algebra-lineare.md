@@ -10,6 +10,17 @@ mathjax: "true"
 
 ## Concetti di base
 
+### Norma
+Norma nello [spazio $$L^p$$](https://it.wikipedia.org/wiki/Spazio_Lp) di ordine $$p$$  
+$$\parallel \vec{x} \parallel _p := \left ( \sum_{i=1}^n \vert x_i \vert ^p \right ) ^{\frac{1}{p}}$$  
+
+Norma euclidea ($$\ell ^2$$) di ordine $$p=2$$  
+$$\parallel \vec{x} \parallel := \sqrt{\left \langle \vec{x}, \vec{x} \right \rangle }$$  
+
+
+
+### Versore
+Un [versore](https://it.wikipedia.org/wiki/Versore) è un vettore in uno [spazio normato](https://it.wikipedia.org/wiki/Spazio_normato) di [modulo](https://it.wikipedia.org/wiki/Norma_(matematica)) unitario, utilizzato per indicare una particolare direzione e verso. Dato un qualunque vettore $$\mathbf{v}$$ (diverso dal vettore nullo che è l'unico ad avere modulo pari a zero) è possibile formarne un versore moltiplicandolo per il reciproco del suo modulo
 
 ### Somma vettoriale
 $$\vec{x}+\vec{y}=
@@ -21,20 +32,25 @@ x_n + y_n
 \end{pmatrix}$$
 
 ### Prodotto scalare
+Il prodotto scalare tra due vettori è uno scalare (un numero).  
 $$\vec{x}\cdot \vec{y}=\left \langle \vec{x}, \vec{y} \right \rangle = \sum_{i=1}^n x_i y_i$$  
 Il prodotto scalare tra vettori è nullo se e solo se i due vettori sono perpendicolari.  
+Se i vettori sono identificati come riga di matrice, si può esprimere come prodotto matriciale: $$x_{1\times n} (y^T)_{n \times 1}$$  
+Se i vettori sono identificati come colonna di matrice, si può esprimere come prodotto matriciale: $$(x^T)_{1\times n} y_{n\times 1}$$  
 
+Due vettori esempio in forma matriciale (prodotto matriciale Riga × Colonna)  
 $$\begin{pmatrix} 
+y_1 & y_2 & y_3
+\end{pmatrix} 
+\begin{pmatrix} 
 x_1 \\ 
 x_2 \\
 x_3
-\end{pmatrix} \cdot
-\begin{pmatrix} 
-y_1 & y_2 & y_3
 \end{pmatrix} = x_1 y_1 + x_2 y_2 + x_3 y_3$$
 
-
-
+### Prodotto vettoriale
+Il [prodotto vettoriale](https://it.wikipedia.org/wiki/Prodotto_vettoriale) tra due vettori è un vettore.  
+$$\vec{x} \times \vec{y}=\vec{z}$$
 
 
 ### Somma matriciale
