@@ -8,7 +8,7 @@ mathjax: "true"
 
 *in costruzione*
 
-## Concetti di base
+## Vettori e matrici
 
 ### Norma
 Norma nello [spazio $$L^p$$](https://it.wikipedia.org/wiki/Spazio_Lp) di ordine $$p$$  
@@ -16,8 +16,6 @@ $$\parallel \vec{x} \parallel _p := \left ( \sum_{i=1}^n \vert x_i \vert ^p \rig
 
 Norma euclidea ($$\ell ^2$$) di ordine $$p=2$$  
 $$\parallel \vec{x} \parallel := \sqrt{\left \langle \vec{x}, \vec{x} \right \rangle }$$  
-
-
 
 ### Versore
 Un [versore](https://it.wikipedia.org/wiki/Versore) è un vettore in uno [spazio normato](https://it.wikipedia.org/wiki/Spazio_normato) di [modulo](https://it.wikipedia.org/wiki/Norma_(matematica)) unitario, utilizzato per indicare una particolare direzione e verso. Dato un qualunque vettore $$\mathbf{v}$$ (diverso dal vettore nullo che è l'unico ad avere modulo pari a zero) è possibile formarne un versore moltiplicandolo per il reciproco del suo modulo
@@ -32,11 +30,13 @@ x_n + y_n
 \end{pmatrix}$$
 
 ### Prodotto scalare
-Il prodotto scalare tra due vettori è uno scalare (un numero).  
+Il prodotto scalare tra due vettori è uno scalare (un numero)  
 $$\vec{x}\cdot \vec{y}=\left \langle \vec{x}, \vec{y} \right \rangle = \sum_{i=1}^n x_i y_i$$  
+
+Per vettori riga vale il prodotto matriciale: $$\big[x\big]_{(1\times n)}\big[y^T\big]_{(n\times1)}$$  
+Per vettori colonna vale il prodotto matriciale: $$\big[x^T\big]_{(1\times n)}\big[y]_{(n\times1)}$$  
+
 Il prodotto scalare tra vettori è nullo se e solo se i due vettori sono perpendicolari.  
-Se i vettori sono identificati come riga di matrice, si può esprimere come prodotto matriciale: $$\big[x\big]_{(1\times n)}\big[y^T\big]_{(n\times1)}$$  
-Se i vettori sono identificati come colonna di matrice, si può esprimere come prodotto matriciale: $$\big[x^T\big]_{(1\times n)}\big[y]_{(n\times1)}$$  
 
 Esempio prodotto due vettori in forma matriciale (≡ prodotto matriciale Riga × Colonna)  
 $$\begin{pmatrix} 
@@ -52,7 +52,6 @@ x_3
 Il [prodotto vettoriale](https://it.wikipedia.org/wiki/Prodotto_vettoriale) tra due vettori è un vettore.  
 $$\vec{x} \times \vec{y}=\vec{z}$$
 
-
 ### Somma matriciale
 $$[A+B]_{ij}=[A]_{ij}+[B]_{ij}$$
 
@@ -64,7 +63,7 @@ $$\begin{pmatrix}
 \mathbf{\color{ForestGreen}{a_{11}}} & \mathbf{\color{ForestGreen}{a_{12}}} & \mathbf{\color{ForestGreen}{a_{13}}} \\ 
 a_{21} & a_{22} & a_{23} \\ 
 a_{31} & a_{32} & a_{33}
-\end{pmatrix} \cdot
+\end{pmatrix} 
 \begin{pmatrix} 
 \mathbf{\color{ForestGreen}{b_{11}}} & b_{12} \\ 
 \mathbf{\color{ForestGreen}{b_{21}}} & b_{22} \\ 
@@ -76,14 +75,7 @@ a_{31} & a_{32} & a_{33}
 ... & ...
 \end{pmatrix}$$
 
-
-
-
-
-
-
-
-## Operazioni tra matrici
+### Operazioni e proprietà utili delle matrici
 - $$(A^T)^T$$ $$=A$$
 - $$(AB)^T$$ $$=A^T B^T$$
 - $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
@@ -97,11 +89,14 @@ a_{31} & a_{32} & a_{33}
 - $$[(X^TX)^{-1}X^T]^T=X[(X^TX)^{-1}]^T=X[(X^TX)^T]^{-1}=X[(X)^T(X^T)^T]^{-1}$$ $$=X(X^TX)^{-1}$$  
 - Se $$Q$$ ortogonale, allora $$Q^TQ=I$$
 - $$(AB)^{-1}$$ $$=A^{-1}B^{-1}$$
+- $$\mbox{det}(A^T)$$ $$=\mbox{det}(A)$$
+- $$\mbox{det}(AB)$$ $$\mbox{det}(A)\mbox{det}(B)$$
+- $$\mbox{det}(I)=1\Rightarrow \mbox{det}(A^{-1})$$ $$=\frac{1}{\mbox{det}(A)}$$
 
 
+## Punti e piani
 
-
-## Distanza tra punti e iperpiani
+### Distanza tra punti e iperpiani
 Generico iperpiano in $$\mathbb{R}^p$$ di equazione $$a+b^T x=0$$ con $$x\in \mathbb{R}^p$$  
 identificato dai coefficienti $$a\in \mathbb{R}$$ e $$b\in \mathbb{R}$$, si ha che:  
 - per ogni punto $$x'$$ che giace sull'iperpiano $$\Rightarrow b^T x'=-a$$
