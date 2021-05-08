@@ -28,11 +28,9 @@ $$[AB]_{ik}=\sum_{j=1}^n [A]_{ij} [B]_{jk}$$ con $$i=1,...,l$$ e $$k=1,...,m$$
 Riga × Colonna  
 $$\colorbox{green}{a}\times b$$  
 
-$$\color{green!50}{a}\times b$$  
+$$\color{green}{a}\times b$$  
 $$\color{red}{a}\times b$$  
-$${\rm\color[rgb]{1,0,0}Some~red~math}$$  
-
-$$\require{color}\newcommand{\textwithColor}[2]{\color{#1}{\text{#2}}} \textwithColor{red}{halleo}$$
+$$\textcolor{red}{\sin} x$$  
 
 
 
