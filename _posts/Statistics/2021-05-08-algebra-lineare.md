@@ -26,11 +26,23 @@ $$[A+B]_{ij}=[A]_{ij}+[B]_{ij}$$
 ### Prodotto di matrici
 $$[AB]_{ik}=\sum_{j=1}^n [A]_{ij} [B]_{jk}$$ con $$i=1,...,l$$ e $$k=1,...,m$$  
 Riga × Colonna  
-$$\colorbox{green}{a}\times b$$  
 
-$$\color{green}{a}\times b$$  
-$$\color{red}{a}\times b$$  
-$$\textcolor{red}{\sin} x$$  
+$$\begin{pmatrix} 
+\mathbf{\color{ForestGreen}{a_{11}}} & \mathbf{\color{ForestGreen}{a_{12}}} & \mathbf{\color{ForestGreen}{a_{13}}} \\ 
+a_{21} & a_{22} & a_{23} \\ 
+a_{31} & a_{32} & a_{33}
+\end{pmatrix} \cdot
+\begin{pmatrix} 
+\mathbf{\color{ForestGreen}{b_{11}}} & b_{12} \\ 
+\mathbf{\color{ForestGreen}{b_{21}}} & b_{22} \\ 
+\mathbf{\color{ForestGreen}{b_{31}}} & b_{32}
+\end{pmatrix} =
+\begin{pmatrix} 
+\mathbf{\color{ForestGreen}{a_{11}b_{11}+a_{12}b_{21}+a_{13}b_{31}}} & ... \\ 
+... & ... \\ 
+... & ...
+\end{pmatrix}$$
+
 
 
 
