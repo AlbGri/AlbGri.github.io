@@ -33,8 +33,8 @@ x_n + y_n
 Il prodotto scalare tra due vettori è uno scalare (un numero)  
 $$\vec{x}\cdot \vec{y}=\left \langle \vec{x}, \vec{y} \right \rangle = \sum_{i=1}^n x_i y_i$$  
 
-Per vettori riga vale il prodotto matriciale: $$x\kern 0em_{\scriptscriptstyle (1\times n)}y^T\kern 0em_{\scriptscriptstyle (n\times1)} $$  
-Per vettori colonna vale il prodotto matriciale: $$x^T\kern 0em_{\scriptscriptstyle (1\times n)}y\kern 0em_{\scriptscriptstyle (n\times1)}$$  
+Per vettori riga vale il prodotto matriciale: $$x\kern 0em_{\scriptstyle (1\times n)}y^T\kern 0em_{\scriptstyle (n\times1)} $$  
+Per vettori colonna vale il prodotto matriciale: $$x^T\kern 0em_{\scriptstyle (1\times n)}y\kern 0em_{\scriptstyle (n\times1)}$$  
 
 Il prodotto scalare tra vettori è nullo se e solo se i due vettori sono perpendicolari.  
 
@@ -95,7 +95,7 @@ a_{31} & a_{32} & a_{33}
 - [Pseudo-inversa](https://it.wikipedia.org/wiki/Pseudo-inversa) di una matrice non quadrata: $$A^+=A^T(AA^T)^{-1}$$
 - Traccia di una matrice: $$\mbox{tr}(A)=\sum_i A_{ii}=\sum_i \lambda_i$$ con $$\lambda_i$$ i-esimo autovalore
 
-## Decomposizioni
+## Decomposizioni matriciali
 [Elenco](https://it.wikipedia.org/wiki/Decomposizione_di_una_matrice) delle più diffuse
 
 ### Decomposizione spettrale
@@ -105,7 +105,7 @@ Dove $$\lambda_i$$ è l'autovalore dell'autovettore $$e_i$$, $$V$$ matrice ortog
 
 ### Decomposizione a valori singolari
 Data la matrice $$X_{n\times p}$$ allora $$X=USV^T$$  
-dove $$
+dove $$X_{\scriptstyle n\times p}=X_{\scriptscriptstyle n\times p}=X_{\tiny n\times p}=X_{\small n\times p}=X_{n\times p}$$
 
 
 
