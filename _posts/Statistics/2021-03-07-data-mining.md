@@ -1027,14 +1027,15 @@ $$\hat{G}(x)=\mbox{sign}\left \{\hat{f}(x)\right \}=
 \end{cases}$$
 
 I coefficienti $$\hat{\beta}$$ che risolvono il problema sono una combinazione lineare dei punti di supporto (support points) $$x_i$$ (punti sulla frontiera). I vettori per cui $$\alpha_i>0$$ sono detti vettori di supporto (support vectors).  
-$$\beta=\sum_{i=1}^n \alpha_i y_i x_i \qquad \hat{\beta}=\sum_{i\in S}^n \alpha_i x_i$$ con $$S$$ insieme di supporto.  
+$$\beta=\sum_{i=1}^n \alpha_i y_i x_i \qquad \hat{\beta}=\sum_{i\in S} \alpha_i x_i$$ con $$S$$ insieme di supporto.  
 
 <img src="/assets/images/Statistics/DM_SVM1.png" width="300">
 
 
 #### Support Vector Classifier
-Estensione del caso precedente ma in una situazione non perfettamente separabile.  
+Estensione del caso precedente ma in una situazione non perfettamente separabile, con la costruzione di soft-margin (margini morbidi).  
 Si introducono le variabili ausiliare $$\xi=(\xi_1,...,\xi_n)$$ che misurano la distanza tra il punto classificato male (perché si trova nell'altra metà) e la frontiera del suo gruppo (quella più lontana), i punti classificati bene hanno $$\xi_i=0$$.  
+Maggiore è $$\sum_{i=1}^n \xi_i$$ più è grande l'errore.  
 
 
 
