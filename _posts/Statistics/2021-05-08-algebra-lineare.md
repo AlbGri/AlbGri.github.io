@@ -90,7 +90,7 @@ a_{31} & a_{32} & a_{33}
 - Se $$Q$$ matrice ortogonale, allora $$Q^TQ=I$$ quindi $$Q^T=Q^{-1}$$
 - $$(AB)^{-1}$$ $$=B^{-1}A^{-1}$$
 - $$\mbox{det}(A^T)$$ $$=\mbox{det}(A)$$
-- $$\mbox{det}(AB)$$ $$\mbox{det}(A)\mbox{det}(B)$$
+- $$\mbox{det}(AB)$$ $$=\mbox{det}(A)\cdot \mbox{det}(B)$$
 - $$\mbox{det}(I)=1\Rightarrow \mbox{det}(A^{-1})$$ $$=\frac{1}{\mbox{det}(A)}$$
 - [Pseudo-inversa](https://it.wikipedia.org/wiki/Pseudo-inversa) di una matrice non quadrata: $$A^+=A^T(AA^T)^{-1}$$
 - Traccia di una matrice: $$\mbox{tr}(A)=\sum_i A_{ii}=\sum_i \lambda_i$$ con $$\lambda_i$$ i-esimo autovalore
