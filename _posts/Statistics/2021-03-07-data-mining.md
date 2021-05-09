@@ -1075,20 +1075,8 @@ $$K(x,x') =
 (1 + x_1 x_1' + x_2 x_2')^2 = $$  
 $$1 + (x_1 x_1')^2 + (x_2 x_2')^2 + 2 x_1 x_1' + 2 x_2 x_2' + 2 x_1 x_1' x_2 x_2'=*$$
 
-Le 6 funzioni $$h(x)$$ il cui prodotto interno restituisce quel kernel sono:  
-$$* =
-\begin{pmatrix} 
-h_1(x) & h_2(x) & h_3(x) & h_4(x) & h_5(x) & h_6(x)
-\end{pmatrix} 
-\begin{pmatrix} 
-h_1(x') \\ 
-h_2(x') \\
-h_3(x') \\
-h_4(x') \\
-h_5(x') \\
-h_6(x')
-\end{pmatrix} =$$  
-$$\begin{pmatrix} 
+Si determina facilmente che le 6 funzioni $$h(x)$$ il cui prodotto interno restituisce quel kernel sono:  
+$$* = \begin{pmatrix} 
 1 & \sqrt{2}x_1 & \sqrt{2}x_2 & x_1^2 & x_2^2 & \sqrt{2}x_1x_2
 \end{pmatrix} 
 \begin{pmatrix} 
