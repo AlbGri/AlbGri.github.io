@@ -1052,6 +1052,8 @@ Il problema duale ha come vincoli $$0\le \alpha_i \le C$$ e $$\sum_{i=1}^n \alph
 $$\hat{\beta}=\sum_{i=1}^n a_i y_i \tilde{x}_i$$  
 le $$a_i$$ sono diverse da $$0$$ solo per i punti che sono nel vettore di supporto (support vector). Prima nel caso di gruppi completamente separati, nell'insieme di supporto era composto solo da punti sulle barriere, qui l'insieme di supporto è composto dai sia dai punti sulle barriere che dai punti per i quali $$\xi_i>0$$.  
 
+<img src="/assets/images/Statistics/DM_SVM2.png" width="300">
+
 I punti (o vettori) di supporto ($$\alpha_i >0$$) sono i punti neri cerchiati ($$\xi_i=0,\alpha_i>0$$), più i punti blu all'interno del rettangolo (porzione di piano) blu e i punti gialli all'interno del rettangolo giallo ($$\xi_i>0,\alpha_i>0$$).  
 <img src="/assets/images/Statistics/DM_SVM3.png" width="300">
 
