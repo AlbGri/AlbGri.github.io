@@ -985,13 +985,19 @@ $$y(\beta_0+\tilde{x}^T\beta)>0$$ con $$y\in\{-1,1\}$$
 $$y(\beta_0+\tilde{x}^T\beta)>1/2$$ con $$y\in\{0,1\}$$  
 nel caso $$\{-1,1\}$$ quindi l'osservazione è classificata bene se di segno concorde con l'iperpiano.
 
-L'obiettivo è quindi  
+L'obiettivo è quindi massimizzare la semi-ampiezza della banda $$M$$ vincolata  
 $$\max\limits_{\beta_0, \beta}{M}$$ con i vincoli 
 $$\begin{cases} 
 \vert\vert \beta \vert\vert = 1, \\ 
 y_i (\beta_0+\tilde{x}_i^T \beta) \ge M
 \end{cases}$$ con $$i=1,...,n$$  
-è analogo a $$y_i (\beta_0+\tilde{x}_i^T \beta) \ge M \vert\vert \beta \vert\vert$$
+
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Il problema si può ridurre a  
+$$y_i (\beta_0+\tilde{x}_i^T \beta) \ge M \vert\vert \beta \vert\vert$$  
+
+Si pone $$\vert\vert \beta \vert\vert=1/M$$ e la funzione obiettivo risulta  
+$$\min\limits_{\beta_0, \beta}{\vert\vert \beta \vert\vert}$$ vincolato a $$y_i (\beta_0+\tilde{x}_i^T \beta) \ge 1$$  
+siccome $$\vert\vert \beta \vert\vert$$ è difficile da minimizzare perché non è convesso, si può elevare al quadrato e moltiplicare per $$1/2$$ mantenendo lo stesso ottimo (il migliore $$\beta$$ da trovare rimane invariato, mentre la funzione obiettivo potrebbe portare a valori differenti) e consentendo di risolvere il problema mediante l'[ottimizzazione quadratica](https://en.wikipedia.org/wiki/Quadratic_programming) vincolata con disequazioni lineari.  
 
 <!---
 L18 27:22
