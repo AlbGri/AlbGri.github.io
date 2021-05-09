@@ -1016,7 +1016,7 @@ Nel problema primale si ha $$\vert\vert \beta \vert\vert^2$$ funzione convessa c
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La soluzione dalla Lagrangiana risulterà che è un punto di sella.  
 
 Grazie a alle [condizioni di Khun-Tucker](https://it.wikipedia.org/wiki/Condizioni_di_Karush-Kuhn-Tucker) (generalizzazione del [metodo dei moltiplicatori di Lagrange](https://it.wikipedia.org/wiki/Metodo_dei_moltiplicatori_di_Lagrange) con vincoli di disuguaglianza), si ottiene il Problema Duale:  
-$$\min\limits_{\alpha}\sum_{i=1}^N \alpha_i-\frac{1}{2} \sum_{i=1}^N \sum_{k=1}^N \alpha_i \alpha_k y_i y_k x_i^T x_k$$ con il vincolo $$\alpha_i \ge 0$$ e $$\sum_{i=1}^N y_i \alpha_i = 0$$  
+$$\min\limits_{\alpha}\sum_{i=1}^n \alpha_i-\frac{1}{2} \sum_{i=1}^n \sum_{k=1}^n \alpha_i \alpha_k y_i y_k x_i^T x_k$$ con il vincolo $$\alpha_i \ge 0$$ e $$\sum_{i=1}^n y_i \alpha_i = 0$$  
 
 L'iperpiano ottimale separatore genera una funzione $$\hat{f}(x)=x^T\hat{\beta}+\hat{\beta}_0$$ per classificare le nuove osservazioni:
 $$\hat{G}(x)=\mbox{sign}\left \{\hat{f}(x)\right \}=
@@ -1027,12 +1027,14 @@ $$\hat{G}(x)=\mbox{sign}\left \{\hat{f}(x)\right \}=
 \end{cases}$$
 
 I coefficienti $$\hat{\beta}$$ che risolvono il problema sono una combinazione lineare dei punti di supporto (support points) $$x_i$$ (punti sulla frontiera). I vettori per cui $$\alpha_i>0$$ sono detti vettori di supporto (support vectors).  
-$$\beta=\sum_{i=1}^N \alpha_i y_i x_i \qquad \hat{\beta}=\sum_{i\in S}^N \alpha_i x_i$$ con $$S$$ insieme di supporto.  
+$$\beta=\sum_{i=1}^n \alpha_i y_i x_i \qquad \hat{\beta}=\sum_{i\in S}^n \alpha_i x_i$$ con $$S$$ insieme di supporto.  
 
 <img src="/assets/images/Statistics/DM_SVM1.png" width="300">
 
 
-
+#### Support Vector Classifier
+Estensione del caso precedente ma in una situazione non perfettamente separabile.  
+Si introducono le variabili ausiliare $$\xi=(\xi_1,...,\xi_n)$$ che misurano la distanza tra il punto classificato male (perché si trova nell'altra metà) e la frontiera del suo gruppo (quella più lontana), i punti classificati bene hanno $$\xi_i=0$$.  
 
 
 
