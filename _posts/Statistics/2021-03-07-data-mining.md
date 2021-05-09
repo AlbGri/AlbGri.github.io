@@ -1087,8 +1087,8 @@ h_3(x') \\
 h_4(x') \\
 h_5(x') \\
 h_6(x')
-\end{pmatrix} =
-\begin{pmatrix} 
+\end{pmatrix} =$$  
+$$\begin{pmatrix} 
 1 & \sqrt{2}x_1 & \sqrt{2}x_2 & x_1^2 & x_2^2 & \sqrt{2}x_1x_2
 \end{pmatrix} 
 \begin{pmatrix} 
