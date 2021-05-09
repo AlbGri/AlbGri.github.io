@@ -262,7 +262,7 @@ Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo 
 La funzione da minimizzare è un paraboloide, il cui centro è la stima di massima verosimiglianza. Nel caso a due variabili, con il Lasso il vincolo è un parallelepipedo a base quadrata, che possiamo visualizzare come quadrato (curve di livello) perché ragioniamo solo con i due coefficienti, e un cerchio nella Ridge. La soluzione con il vincolo è il punto di contatto tra il paraboloide e il vincolo. Nel Lasso, a meno di casi estremi (es 2 variabili in cui il paraboloide è perfettamente nella diagonale), uno dei due coefficienti andrà a 0.  
 
 Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
-![png](/assets/images/Statistics/DM_Shrinkage1.png)
+<img src="/assets/images/Statistics/DM_Shrinkage1.png" width="300">
 
 #### Consistenza del Lasso
 La consistenza della stima MV non è garantita se lo spazio dei parametri $$p$$ cresce al crescere delle osservazioni $$n$$. Il Lasso è capace di identificare il modello corretto anche in questa situazione, purché le variabili esplicative non siano troppo correlate con le variabili di disturbo (altrimenti la condizione di irrepresentabilità, o stabilità dell'intorno, viene meno).  
@@ -1018,17 +1018,21 @@ Nel problema primale si ha $$\vert\vert \beta \vert\vert^2$$ funzione convessa c
 Grazie a alle [condizioni di Khun-Tucker](https://it.wikipedia.org/wiki/Condizioni_di_Karush-Kuhn-Tucker) (generalizzazione del [metodo dei moltiplicatori di Lagrange](https://it.wikipedia.org/wiki/Metodo_dei_moltiplicatori_di_Lagrange) con vincoli di disuguaglianza), si ottiene il Problema Duale:  
 $$\min\limits_{\alpha}\sum_{i=1}^N \alpha_i-\frac{1}{2} \sum_{i=1}^N \sum_{k=1}^N \alpha_i \alpha_k y_i y_k x_i^T x_k$$ con il vincolo $$\alpha_i \ge 0$$ e $$\sum_{i=1}^N y_i \alpha_i = 0$$  
 
-I coefficienti $$\hat{\beta}$$ che risolvono il problema sono una combinazione lineare dei punti di supporto (support points) $$x_i$$ (punti sulla frontiera). I vettori per cui $$\alpha_i>0$$ sono detti vettori di supporto (support vectors).
+L'iperpiano ottimale separatore genera una funzione $$\hat{f}(x)=x^T\hat{\beta}+\hat{\beta}_0$$ per classificare le nuove osservazioni:
+$$\hat{G}(x)=\mbox{sign}\left \{\hat{f}(x)\right \}=
+\begin{cases} 
++1 & \mbox{se }\hat{f}(x) > 0 \\ 
+-1 & \mbox{se }\hat{f}(x) < 0 \\ 
+\mbox{a caso} & \mbox{se }\hat{f}(x) = 0
+\end{cases}$$
+
+I coefficienti $$\hat{\beta}$$ che risolvono il problema sono una combinazione lineare dei punti di supporto (support points) $$x_i$$ (punti sulla frontiera). I vettori per cui $$\alpha_i>0$$ sono detti vettori di supporto (support vectors).  
+$$\beta=\sum_{i=1}^N \alpha_i y_i x_i \qquad \hat{\beta}=\sum_{i\in S}^N \alpha_i x_i$$ con $$S$$ insieme di supporto.  
 
 <img src="/assets/images/Statistics/DM_SVM1.png" width="300">
 
 
-Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
-![png](/assets/images/Statistics/DM_Shrinkage1.png)
 
-
-Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
-<img src="/assets/images/Statistics/DM_Shrinkage1_backup.png" width="300">
 
 
 
