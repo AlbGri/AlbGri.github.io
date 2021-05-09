@@ -548,7 +548,11 @@ L'output del modello additivo senza componenti d'interazione è generalmente com
 Modelli Additivi Generalizzati. Come i GLM si usa una funzione lineare, trasformando la scala del predittore additivo nella scala della variabile risposta.  
 $$g\left ( \mathbb{E}\{y\vert x_1,...,x_p\} \right )=\alpha+\sum_{j=1}^p f_j(x_j)$$  
 Si stima con una modifica (come i minimi quadrati pesati iterati come nei GLM) dell'algoritmo di backfitting, detto punteggio locale - local scoring. Non c'è garanzia di convergenza ma l'evidenza empirica mostra risultati sensati.  
-Si mette insieme l'approssimazione della funzione di legame (quella dei minimi quadrati pesati iterati - IRLS) con l'iterazione del backfitting.
+Si mette insieme l'approssimazione della funzione di legame (quella dei minimi quadrati pesati iterati - IRLS) con l'iterazione del backfitting.  
+
+Il GAM permette di selezionare le variabili in modo adattiva, stimando se serve parametri a 0 (quindi escludendo le variabili inutili).  
+
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) GAM con delle spline come lisciatore.
 
 ### Regressione Projection Pursuit
 La PPR è come un modello additivo ma su variabili rotate (ma è stata inventata prima del modello additivo). L'interpretazione è difficile.  
@@ -568,6 +572,8 @@ Il MARS è una splines di regressione prodotto tensoriale in cui si scelgono opp
 Per la potatura si può usare il metodo della stima-verifica oppure dalla CV, in cui si usano k-1 porzioni per far crescere e 1 per potatura, poi si gira e si replica k volte, ma è molto oneroso. Non si può usare la proprietà per fare la LOO in quanto le funzioni vengono scelte in modo ricorsivo e si perde la linearità, ma viene in auto la convalida incrociata generalizzata.  
 Si può imporre la rimozione dell'effetto principale (nodi genitori) unicamente dopo aver rimosso l'effetto di interazione.  
 Un modello MARS con variabili qualitative è analogo ad un modello lineare con variabili qualitative.  
+
+Il MARS seleziona le funzioni di base che entrano, usando ad esempio GCV così da controllare l'overfitting.  
 
 ### GCV
 Convalida incrociata generalizzata - Generalized Cross Validation.  
@@ -1058,11 +1064,16 @@ L'equazione di stima dipenderà dalle $$x$$ solo dal prodotto vettoriale
 $$\hat{f}(x)=\sum_{i=1}^n a_i y_i h(x)^T h(\tilde{x}_i)+\hat{\beta_0}$$  
 con $$\tilde{x}_i$$ di supporto e $$x$$ su cui fare la previsione.  
 
+Il parametro di regolazione $$C$$ (più è piccolo e più la curva è smooth), può essere ottenuto via CV (es. CV 10 gruppi, con $$C$$ sequenza di 25 valori logaritmicamente equispaziati tra $$10^{-2}$$ e $$10^4$$).  
+
+Le SVM funzionano bene anche quando il numero di variabili è molto superiore al numero di osservazioni e il fatto che l'ottimizzazione si basa solo su alcuni punti è anche computazionalmente vantaggioso. Quindi non dipende dai $$p$$ parametri $$\beta$$ ma dagli $$\vert S \vert \le n$$ parametri $$a_i$$ diversi da zero.  
+
+Le SVM sono sensibili a variabili che confondono la relazione con la target, non avviene una selezione delle variabili.  
+
 #### Kernel
 Si definisce funzione nucleo (kernel)  
 $$K(x,x')=\left \langle h(x), h(x') \right \rangle$$  
 che calcola i prodotti interni nello spazio delle variabili trasformate.  
-Seguono alcune scelte popolari per il kernel.
 
 ##### Kernel Polinomiale
 $$K(x,x_i)=(1+ \left \langle x, x_i \right \rangle)^d$$
@@ -1091,6 +1102,15 @@ x_2'^2 \\
 ##### Kernel Base radiale
 Radial basis kernel, RBF kernel  
 $$K(x,x')=\exp{(-\gamma \vert\vert x-x' \vert\vert ^2)}$$  
+La base implicita $$h(x)$$ per un nucleo radiale è in teoria di dimensione infinita.  
+
+$$f(x)=\sum_{i\in S}a_i y_i K(x,\tilde{x}_i)$$  
+
+<img src="/assets/images/Statistics/DM_SVM4.png" width="300">
+
+I punti neri sono il supporto della frontiera lineare nello spazio trasformato.  
+I margini (curve tratteggiate) e le frontiere di decisione (linee continue) che sono lineari (rette) nello spazio trasformato diventano curve non-lineari nello spazio originale.  
+
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da determinare le $$h(x)$$ con $$\gamma=1$$  
 
 ##### Kernel Sigmoidale
@@ -1099,6 +1119,15 @@ $$K(x,x')=\tanh{(\kappa_1 \left \langle x, x' \right \rangle + \kappa_2)}$$
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da determinare le $$h(x)$$ con $$\kappa_1=1, \kappa_2=0$$  
 
 
+#### SVM come metodo di penalizzazione
+Con $$f(x)=h(x)^T \beta+\beta_0$$  
+si può considerare il seguente problema di ottimizzazione  
+$$\min\limits_{\beta_0, \beta}{\sum_{i=1}^n [1-y_i f(x_i)]_+ + \frac{1}{C} \vert\vert \beta \vert\vert ^2}$$  
+con $$+$$ a pedice indica la parte positiva  
+$$L(y,f)=[1-y_i f(x_i)]_+$$ è la hinge loss e penalizza i margini negativi che rappresentano le errate classificazioni  
+$$\frac{1}{C} \vert\vert \beta \vert\vert ^2}$$ termine di penalizzazione per la hinge loss (che modificato come il LASSO può essere utilizzato per la selezione delle variabili)   
+
+<img src="/assets/images/Statistics/DM_SVM5.png" width="400">
 
 
 
