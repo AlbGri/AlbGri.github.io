@@ -1048,8 +1048,8 @@ y_i (\beta_0+\tilde{x}_i^T \beta) \ge 1-\xi_i, \forall i \\
 \xi_i \ge 0
 \end{cases}$$  
 dove $$C$$ costante positiva (inverso alla costante $$B$$), parametro di regolazione e costo di violazione delle barriere (più $$C$$ è grande, maggiore è l'importanza di non superare i vincoli e le bande saranno più strette).  
-Il problema duale ha come vincoli $$0\le \alpha_i \le C$$ e $$\sum_{i=1}^n \alpha_i y_i =0$$. La soluzione di ottimo è  
-$$\hat{\beta}=\sum_{i=1}^n a_i y_i \tilde{x}_i$$  
+Il problema duale ha come vincoli $$0\le \alpha_i \le C$$ e $$\sum_{i=1}^n \alpha_i y_i =0$$.  
+La soluzione di ottimo è $$\hat{\beta}=\sum_{i=1}^n a_i y_i \tilde{x}_i$$  
 le $$a_i$$ sono diverse da $$0$$ solo per i punti che sono nel vettore di supporto (support vector). Prima nel caso di gruppi completamente separati, nell'insieme di supporto era composto solo da punti sulle barriere, qui l'insieme di supporto è composto dai sia dai punti sulle barriere che dai punti per i quali $$\xi_i>0$$.  
 
 <img src="/assets/images/Statistics/DM_SVM2.png" width="300">
