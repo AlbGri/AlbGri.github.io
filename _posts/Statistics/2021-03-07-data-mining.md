@@ -992,10 +992,12 @@ $$\begin{cases}
 y_i (\beta_0+\tilde{x}_i^T \beta) \ge M
 \end{cases}$$ con $$i=1,...,n$$  
 
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Il problema si può ridurre a  
+Osservazione: il problema ha una struttura analoga a molti altri contesti. Se si è interessati a due quantità, di cui una è la più importante (classificare bene) e l'altra meno (trovare la distanza massima), la parte più importante viene vincolata e l'altra massimizzata. Ad esempio, nei test statistici, l'errore di primo tipo si fissa (vincola) (es. $$\alpha=0.5$$), e si massimizza la potenza.
+
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Il problema (grazie a ????) si può ridurre a  
 $$y_i (\beta_0+\tilde{x}_i^T \beta) \ge M \vert\vert \beta \vert\vert$$  
 
-Si pone $$\vert\vert \beta \vert\vert=1/M$$ e la funzione obiettivo risulta  
+Dunque si pone $$\vert\vert \beta \vert\vert=1/M$$ e la funzione obiettivo risulta  
 $$\min\limits_{\beta_0, \beta}{\vert\vert \beta \vert\vert}$$ vincolato a $$y_i (\beta_0+\tilde{x}_i^T \beta) \ge 1$$  
 siccome $$\vert\vert \beta \vert\vert$$ è difficile da minimizzare perché non è convesso, si può elevare al quadrato e moltiplicare per $$1/2$$ mantenendo lo stesso ottimo (il migliore $$\beta$$ da trovare rimane invariato, mentre la funzione obiettivo potrebbe portare a valori differenti) e consentendo di risolvere il problema mediante l'[ottimizzazione quadratica](https://en.wikipedia.org/wiki/Quadratic_programming) vincolata con disequazioni lineari.  
 
@@ -1005,7 +1007,7 @@ https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote09.html
 https://www.reddit.com/r/learnmachinelearning/comments/n809cx/help_optimal_separating_hyperplanes_mathsvm
 --->
 
-Il problema ha una struttura analoga a molti altri contesti. Se si è interessati a due quantità, di cui una è la più importante (classificare bene) e l'altra meno (trovare la distanza massima), la parte più importante viene vincolata e l'altra massimizzata. Ad esempio, nei test statistici, l'errore di primo tipo si fissa (vincola) (es. $$\alpha=0.5$$), e si massimizza la potenza.
+
 
 
 
