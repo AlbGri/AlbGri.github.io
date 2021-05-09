@@ -1089,7 +1089,7 @@ x_2'^2 \\
 \end{pmatrix} $$  
 
 **Base radiale** (radial basis)  
-$$K(x,x')=\exp{(-\gamma \vert\vert x-x' \vert\vert ^2)}  
+$$K(x,x')=\exp{(-\gamma \vert\vert x-x' \vert\vert ^2)}$$  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da determinare le $$h(x)$$ con $$\gamma=1$$  
 
 **Sigmoidale** (neural network)  
