@@ -1127,9 +1127,9 @@ si può considerare il seguente problema di ottimizzazione
 $$\min\limits_{\beta_0, \beta}{\sum_{i=1}^n [1-y_i f(x_i)]_+ + \frac{1}{C} \vert\vert \beta \vert\vert ^2}$$  
 con $$+$$ a pedice indica la parte positiva  
 $$L(y,f)=[1-y_i f(x_i)]_+$$ è la hinge loss e penalizza i margini negativi che rappresentano le errate classificazioni  
-$$\frac{1}{C} \vert\vert \beta \vert\vert ^2}$$ termine di penalizzazione per la hinge loss (che modificato come il LASSO può essere utilizzato per la selezione delle variabili)   
+$$\frac{1}{C} \vert\vert \beta \vert\vert ^2$$ termine di penalizzazione per la hinge loss (che modificato come il LASSO può essere utilizzato per la selezione delle variabili)   
 
-<img src="/assets/images/Statistics/DM_SVM5.png" width="400">
+<img src="/assets/images/Statistics/DM_SVM5.png" width="500">
 
 
 
