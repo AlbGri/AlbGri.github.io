@@ -1064,7 +1064,7 @@ $$K(x,x')=\left \langle h(x), h(x') \right \rangle$$
 che calcola i prodotti interni nello spazio delle variabili trasformate.  
 Seguono alcune scelte popolari per il kernel.
 
-##### Polinomiale di grado d
+**Polinomiale**  
 $$K(x,x_i)=(1+ \left \langle x, x_i \right \rangle)^d$$
 Se $$p$$ numero di variabili e $$d$$ grado del polinomio crescono, diventa uno spazio enorme ma che non sarà tutto esplorato perché sarà valorizzato solo sui vettori di supporto.  
 $$\hat{f}(x)=\sum_{i=1}^n \hat{a}_i y_i K(x,x_i)+\hat{\beta}_0$$  
@@ -1073,7 +1073,7 @@ Con $$p=2$$ e $$x=(x_1,x_2)$$:
 $$K(x,x') = 
 (1 + \left \langle x, x' \right \rangle)^2 = 
 (1 + x_1 x_1' + x_2 x_2')^2 = $$  
-$$1 + (x_1 x_1')^2 + (x_2 x_2')^2 + 2 x_1 x_1' + 2 x_2 x_2' + 2 x_1 x_1' x_2 x_2'=*$$
+$$1 + (x_1 x_1')^2 + (x_2 x_2')^2 + 2 x_1 x_1' + 2 x_2 x_2' + 2 x_1 x_1' x_2 x_2'=*$$  
 
 Si determina facilmente che le 6 funzioni $$h(x)$$ il cui prodotto interno restituisce quel kernel sono:  
 $$* = \begin{pmatrix} 
@@ -1086,7 +1086,16 @@ $$* = \begin{pmatrix}
 x_1'^2 \\
 x_2'^2 \\
 \sqrt{2}x_1'x_2'
-\end{pmatrix} $$
+\end{pmatrix} $$  
+
+**Base radiale** (radial basis)  
+$$K(x,x')=\exp{(-\gamma \vert\vert x-x' \vert\vert ^2)}  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da determinare le $$h(x)$$ con $$\gamma=1$$  
+
+**Sigmoidale** (neural network)  
+$$K(x,x')=\tanh{(\kappa_1 \left \langle x, x' \right \rangle + \kappa_2)}$$  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da determinare le $$h(x)$$ con $$\kappa_1=1, \kappa_2=0$$  
+
 
 
 
