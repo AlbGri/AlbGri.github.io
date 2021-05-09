@@ -975,8 +975,9 @@ SVM. Macchine basate sui vettori di supporto.
 La target dicotomica è più facile modellarla $$+1$$ e $$-1$$ con le SVM.  
 Si cerca un iperpiano nello spazio delle $$X$$ che riesca a separare in modo ottimale i vari gruppi (nel caso $$p=2$$ dividere i più dai meno).  
 
-#### Caso perfettamente separato
-La retta migliore è quella che rende massima la distanza tra i punti più vicini dei due gruppi distinti (Optimal Separating Hyperplanes, Vapnik, 1996).  
+#### Optimal Separating Hyperplanes
+Caso perfettamente separato. Vapnik, 1996.  
+La retta migliore è quella che rende massima la distanza tra i punti più vicini dei due gruppi distinti.  
 Per identificare la retta, si costruiscono le due rette frontiere parallele (utilizzando 3 punti: con i 2 punti di un gruppo più vicini all'altro gruppo si costruisce la prima frontiera e poi la seconda è tangente al punto più vicino dell'altro gruppo; il gruppo da cui scegliere i 2 punti è quello che genera la banda più grande), la retta migliore è quella a cui viene associata una banda più grande possibile.
 
 Sia $$\beta_0+\vec{x}^{\,T}\vec{\beta}=0$$ con $$\vec{x}\in\mathbb{R}^p$$ l'equazione che individua un generico iperpiano candidato a separare le due classi, con $$\vec{\beta}$$ a norma unitaria.  
@@ -998,8 +999,39 @@ Osservazione: il problema ha una struttura analoga a molti altri contesti. Se si
 $$y_i (\beta_0+\tilde{x}_i^T \beta) \ge M \vert\vert \beta \vert\vert$$  
 
 Dunque si pone $$\vert\vert \beta \vert\vert=1/M$$ e la funzione obiettivo risulta  
-$$\min\limits_{\beta_0, \beta}{\vert\vert \beta \vert\vert}$$ vincolato a $$y_i (\beta_0+\tilde{x}_i^T \beta) \ge 1$$  
-siccome $$\vert\vert \beta \vert\vert$$ è difficile da minimizzare perché non è convesso, si può elevare al quadrato e moltiplicare per $$1/2$$ mantenendo lo stesso ottimo (il migliore $$\beta$$ da trovare rimane invariato, mentre la funzione obiettivo potrebbe portare a valori differenti) e consentendo di risolvere il problema mediante l'[ottimizzazione quadratica](https://en.wikipedia.org/wiki/Quadratic_programming) vincolata con disequazioni lineari.  
+$$\min\limits_{\beta_0, \beta}{\vert\vert \beta \vert\vert}$$ con il vincolo $$y_i (\beta_0+\tilde{x}_i^T \beta) \ge 1$$ con $$i=1,...,n$$  
+siccome $$\vert\vert \beta \vert\vert$$ è difficile da minimizzare perché non è un problema convesso, si può elevare al quadrato e moltiplicare per $$1/2$$ mantenendo lo stesso ottimo (il migliore $$\beta$$ da trovare rimane invariato, mentre la funzione obiettivo potrebbe portare a valori differenti) e consentendo di risolvere il problema mediante metodi di [ottimizzazione quadratica](https://en.wikipedia.org/wiki/Quadratic_programming) vincolata con disequazioni lineari, ad esempio usando i moltiplicatori di Lagrange.  
+
+##### Determinazione dell'ottimo
+$$\min\limits_{\beta_0, \beta}{\frac{1}{2}\vert\vert \beta \vert\vert^2}$$ con il vincolo $$y_i (\beta_0+\tilde{x}_i^T \beta) \ge 1$$  
+
+Questo problema di minimo vincolato è definito Problema Primale, per risolverlo facilmente bisogna passare alla formulazione Duale.  
+
+La teoria dell'ottimizzazione afferma che:
+1. un problema di ottimizzazione possiede una forma duale (più semplice da risolvere) se la funzione di costo e i vincoli sono strettamente convessi
+2. se le condizioni in 1 sono soddisfatte, l'ottimo per il problema duale coincide con l'ottimo del problema primale.  
+
+Nel caso attuale, la funzione di costo $$\frac{1}{2}\vert\vert \beta \vert\vert^2$$ è una parabola (parabole e rette definiscono insiemi convessi), pertanto soddisfa le condizioni del punto 1.  
+Nel problema primale si ha $$\vert\vert \beta \vert\vert^2$$ funzione convessa con un minimo, nel problema duale la funzione si trasforma in concava il cui massimo coincide con il minimo di $$\vert\vert \beta \vert\vert^2$$.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La soluzione dalla Lagrangiana risulterà che è un punto di sella.  
+
+Grazie a alle [condizioni di Khun-Tucker](https://it.wikipedia.org/wiki/Condizioni_di_Karush-Kuhn-Tucker) (generalizzazione del [metodo dei moltiplicatori di Lagrange](https://it.wikipedia.org/wiki/Metodo_dei_moltiplicatori_di_Lagrange) con vincoli di disuguaglianza), si ottiene il Problema Duale:  
+$$$\min\limits_{\alpha}\sum_{i=1}^N \alpha_i-\frac{1}{2} \sum_{i=1}^N \sum_{k=1}^N \alpha_i \alpha_k y_i y_k x_i^T x_k$$ con il vincolo $$\alpha_i \ge 0$$ e $$\sum_{i=1}^N y_i \alpha_i = 0$$  
+
+I coefficienti $$\hat{\beta}$$ che risolvono il problema sono una combinazione lineare dei punti di supporto (support points) $$x_i$$ (punti sulla frontiera). I vettori per cui $$\alpha_i>0$$ sono detti vettori di supporto (support vectors).
+
+<img src="/assets/images/Statistics/DM_SVM1.png" width="400">
+
+
+Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
+![png](/assets/images/Statistics/DM_Shrinkage1.png)
+
+
+Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
+<img src="/assets/images/Statistics/DM_Shrinkage1_backup.png" width="400">
+
+
+
 
 <!---
 L18 27:22
