@@ -1067,15 +1067,39 @@ Seguono alcune scelte popolari per il kernel.
 ##### Polinomiale di grado d
 $$K(x,x_i)=(1+ \left \langle x, x_i \right \rangle)^d$$
 Se $$p$$ numero di variabili e $$d$$ grado del polinomio crescono, diventa uno spazio enorme ma che non sarà tutto esplorato perché sarà valorizzato solo sui vettori di supporto.  
-$$\hat{f}(x)=\sum_{i=1}^n a_i y_i K(x,x_i)+\hat{\beta}_0$$  
+$$\hat{f}(x)=\sum_{i=1}^n \hat{a}_i y_i K(x,x_i)+\hat{\beta}_0$$  
 
 Con $$p=2$$ e $$x=(x_1,x_2)$$:  
 $$K(x,x') = 
 (1 + \left \langle x, x' \right \rangle)^2 = 
-(1 + x_1 x_1' + x_2 x_2')^2 = 
-1 + (x_1 x_1')^2 + (x_2 x_2')^2 + 2 x_1 x_1' + 2 x_2 x_2' + 2 x_1 x_1' x_2 x_2'$$
+(1 + x_1 x_1' + x_2 x_2')^2 = $$  
+$$1 + (x_1 x_1')^2 + (x_2 x_2')^2 + 2 x_1 x_1' + 2 x_2 x_2' + 2 x_1 x_1' x_2 x_2'=*$$
 
-- 
+Le 6 funzioni $$h(x)$$ il cui prodotto interno restituisce quel kernel sono:  
+$$* =
+\begin{pmatrix} 
+h_1(x) & h_2(x) & h_3(x) & h_4(x) & h_5(x) & h_6(x)
+\end{pmatrix} 
+\begin{pmatrix} 
+h_1(x') \\ 
+h_2(x') \\
+h_3(x') \\
+h_4(x') \\
+h_5(x') \\
+h_6(x')
+\end{pmatrix} =
+\begin{pmatrix} 
+1 & \sqrt{2}x_1 & \sqrt{2}x_2 & x_1^2 & x_2^2 & \sqrt{2}x_1x_2
+\end{pmatrix} 
+\begin{pmatrix} 
+1 \\ 
+\sqrt{2}x_1' \\
+\sqrt{2}x_2' \\
+x_1'^2 \\
+x_2'^2 \\
+\sqrt{2}x_1'x_2'
+\end{pmatrix} $$
+
 
 
 
