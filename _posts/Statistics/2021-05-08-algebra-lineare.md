@@ -30,7 +30,7 @@ x_n + y_n
 \end{pmatrix}$$
 
 ### Prodotto scalare
-Il prodotto scalare tra due vettori è uno scalare (un numero)  
+Il prodotto scalare (dot product) tra due vettori è uno scalare (un numero), è un prodotto interno (inner product) nello spazio Euclideo. A livello di notazione solitamente il primo si esprime con un punto tra i due elementi e il secondo tra parentesi angolate.  
 $$\vec{x}\cdot \vec{y}=\left \langle \vec{x}, \vec{y} \right \rangle = \sum_{i=1}^n x_i y_i$$  
 
 Per vettori riga vale il prodotto matriciale: $$x\kern 0em_{\small (1\times n)}y^T\kern 0em_{\small (n\times1)} $$  

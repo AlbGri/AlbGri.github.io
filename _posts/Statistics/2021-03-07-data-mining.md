@@ -970,13 +970,11 @@ Diversamente dagli altri metodi di combinazioni di modelli, il Boosting non è s
 Freund & Shapire, 1997.  
 Algoritmo originale di boosting, non campiona casualmente le osservazioni ad ogni passo, ma pesa diversamente le osservazioni.
 
-### Support Vector Machine
-SVM. Macchine basate sui vettori di supporto.  
-La target dicotomica è più facile modellarla $$+1$$ e $$-1$$ con le SVM.  
+### Optimal Separating Hyperplanes
+Caso perfettamente separato. Vapnik, 1996. 
+Il metodo è alla base della costruzione delle Support Vector Machine (SVM).  
+Per i problemi che seguono la target dicotomica è più facile modellarla con la codifica $$+1$$ e $$-1$$.  
 Si cerca un iperpiano nello spazio delle $$X$$ che riesca a separare in modo ottimale i vari gruppi (nel caso $$p=2$$ dividere i più dai meno).  
-
-#### Optimal Separating Hyperplanes
-Caso perfettamente separato. Vapnik, 1996.  
 La retta migliore è quella che rende massima la distanza tra i punti più vicini dei due gruppi distinti.  
 Per identificare la retta, si costruiscono le due rette frontiere parallele (utilizzando 3 punti: con i 2 punti di un gruppo più vicini all'altro gruppo si costruisce la prima frontiera e poi la seconda è tangente al punto più vicino dell'altro gruppo; il gruppo da cui scegliere i 2 punti è quello che genera la banda più grande), la retta migliore è quella a cui viene associata una banda più grande possibile.
 
@@ -1002,7 +1000,7 @@ Dunque si pone $$\vert\vert \beta \vert\vert=1/M$$ e la funzione obiettivo risul
 $$\min\limits_{\beta_0, \beta}{\vert\vert \beta \vert\vert}$$ con il vincolo $$y_i (\beta_0+\tilde{x}_i^T \beta) \ge 1$$ con $$i=1,...,n$$  
 siccome $$\vert\vert \beta \vert\vert$$ è difficile da minimizzare perché non è un problema convesso, si può elevare al quadrato e moltiplicare per $$1/2$$ mantenendo lo stesso ottimo (il migliore $$\beta$$ da trovare rimane invariato, mentre la funzione obiettivo potrebbe portare a valori differenti) e consentendo di risolvere il problema mediante metodi di [ottimizzazione quadratica](https://en.wikipedia.org/wiki/Quadratic_programming) vincolata con disequazioni lineari, ad esempio usando i moltiplicatori di Lagrange.  
 
-##### Determinazione dell'ottimo
+#### Determinazione dell'ottimo
 $$\min\limits_{\beta_0, \beta}{\frac{1}{2}\vert\vert \beta \vert\vert^2}$$ con il vincolo $$y_i (\beta_0+\tilde{x}_i^T \beta) \ge 1$$  
 
 Questo problema di minimo vincolato è definito Problema Primale, per risolverlo facilmente bisogna passare alla formulazione Duale.  
@@ -1027,12 +1025,12 @@ $$\hat{G}(x)=\mbox{sign}\left \{\hat{f}(x)\right \}=
 \end{cases}$$
 
 I coefficienti $$\hat{\beta}$$ che risolvono il problema sono una combinazione lineare dei punti di supporto (support points) $$x_i$$ (punti sulla frontiera). I vettori per cui $$\alpha_i>0$$ sono detti vettori di supporto (support vectors).  
-$$\beta=\sum_{i=1}^n \alpha_i y_i x_i \qquad \hat{\beta}=\sum_{i\in S} \alpha_i x_i$$ con $$S$$ insieme di supporto.  
+$$\beta=\sum_{i=1}^n \alpha_i y_i x_i \qquad \hat{\beta}=\sum_{i\in S} \alpha_i x_i$$ con $$S$$ insieme dei vettori di supporto.  
 
 <img src="/assets/images/Statistics/DM_SVM1.png" width="300">
 
 
-#### Support Vector Classifier
+### Support Vector Classifier
 Estensione del caso precedente ma in una situazione non perfettamente separabile, con la costruzione di soft-margin (margini morbidi).  
 Si introducono le variabili ausiliarie (slack variable) $$\xi=(\xi_1,...,\xi_n)$$ che misurano la distanza tra il punto classificato male (perché si trova nell'altra metà) e la frontiera del suo gruppo (quella più lontana), i punti classificati bene hanno $$\xi_i=0$$.  
 L'errore totale lo si vorrà inferiore di una costante $$\sum_{i=1}^n \xi_i \le B$$. 
@@ -1050,6 +1048,36 @@ le $$a_i$$ sono diverse da $$0$$ solo per i punti che sono nel vettore di suppor
 
 I punti (o vettori) di supporto ($$\alpha_i >0$$) sono i punti neri cerchiati ($$\xi_i=0,\alpha_i>0$$), più i punti blu all'interno del rettangolo (porzione di piano) blu e i punti gialli all'interno del rettangolo giallo ($$\xi_i>0,\alpha_i>0$$).  
 <img src="/assets/images/Statistics/DM_SVM3.png" width="300">
+
+### Support Vector Machine
+SVM. Macchine basate sui vettori di supporto.  
+L'approccio precedente considera un iperpiano rispetto le $$x$$, ora si considera rispetto $$h(x)$$, trasformazioni delle variabili esplicative, così da generare funzioni separatrici non lineari.  
+$$f(x)=h(x)^T\beta+\beta_0=\sum_{i=1}^n a_i y_i \left \langle h(x), h(x_i) \right \rangle + \beta_0$$  
+
+L'equazione di stima dipenderà dalle $$x$$ solo dal prodotto vettoriale  
+$$\hat{f}(x)=\sum_{i=1}^n a_i y_i h(x)^T h(\tilde{x}_i)+\hat{\beta_0}$$  
+con $$\tilde{x}_i$$ di supporto e $$x$$ su cui fare la previsione.  
+
+#### Kernel
+Si definisce funzione nucleo (kernel)  
+$$K(x,x')=\left \langle h(x), h(x') \right \rangle$$  
+che calcola i prodotti interni nello spazio delle variabili trasformate.  
+Seguono alcune scelte popolari per il kernel.
+
+##### Polinomiale di grado d
+$$K(x,x_i)=(1+ \left \langle x, x_i \right \rangle)^d$$
+Se $$p$$ numero di variabili e $$d$$ grado del polinomio crescono, diventa uno spazio enorme ma che non sarà tutto esplorato perché sarà valorizzato solo sui vettori di supporto.  
+$$\hat{f}(x)=\sum_{i=1}^n a_i y_i K(x,x_i)+\hat{\beta}_0$$  
+
+Con $$p=2$$ e $$x=(x_1,x_2)$$:  
+$$K(x,x') = 
+(1 + \left \langle x, x' \right \rangle)^2 = 
+(1 + x_1 x_1' + x_2 x_2')^2 = 
+1 + (x_1 x_1')^2 + (x_2 x_2')^2 + 2 x_1 x_1' + 2 x_2 x_2' + 2 x_1 x_1' x_2 x_2'$$
+
+- 
+
+
 
 <!---
 L18 27:22
