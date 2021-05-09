@@ -1016,11 +1016,11 @@ Nel problema primale si ha $$\vert\vert \beta \vert\vert^2$$ funzione convessa c
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La soluzione dalla Lagrangiana risulterà che è un punto di sella.  
 
 Grazie a alle [condizioni di Khun-Tucker](https://it.wikipedia.org/wiki/Condizioni_di_Karush-Kuhn-Tucker) (generalizzazione del [metodo dei moltiplicatori di Lagrange](https://it.wikipedia.org/wiki/Metodo_dei_moltiplicatori_di_Lagrange) con vincoli di disuguaglianza), si ottiene il Problema Duale:  
-$$$\min\limits_{\alpha}\sum_{i=1}^N \alpha_i-\frac{1}{2} \sum_{i=1}^N \sum_{k=1}^N \alpha_i \alpha_k y_i y_k x_i^T x_k$$ con il vincolo $$\alpha_i \ge 0$$ e $$\sum_{i=1}^N y_i \alpha_i = 0$$  
+$$\min\limits_{\alpha}\sum_{i=1}^N \alpha_i-\frac{1}{2} \sum_{i=1}^N \sum_{k=1}^N \alpha_i \alpha_k y_i y_k x_i^T x_k$$ con il vincolo $$\alpha_i \ge 0$$ e $$\sum_{i=1}^N y_i \alpha_i = 0$$  
 
 I coefficienti $$\hat{\beta}$$ che risolvono il problema sono una combinazione lineare dei punti di supporto (support points) $$x_i$$ (punti sulla frontiera). I vettori per cui $$\alpha_i>0$$ sono detti vettori di supporto (support vectors).
 
-<img src="/assets/images/Statistics/DM_SVM1.png" width="400">
+<img src="/assets/images/Statistics/DM_SVM1.png" width="300">
 
 
 Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
@@ -1028,7 +1028,7 @@ Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un 
 
 
 Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
-<img src="/assets/images/Statistics/DM_Shrinkage1_backup.png" width="400">
+<img src="/assets/images/Statistics/DM_Shrinkage1_backup.png" width="300">
 
 
 
