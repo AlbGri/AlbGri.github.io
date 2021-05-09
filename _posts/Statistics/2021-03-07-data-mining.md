@@ -1034,11 +1034,22 @@ $$\beta=\sum_{i=1}^n \alpha_i y_i x_i \qquad \hat{\beta}=\sum_{i\in S} \alpha_i 
 
 #### Support Vector Classifier
 Estensione del caso precedente ma in una situazione non perfettamente separabile, con la costruzione di soft-margin (margini morbidi).  
-Si introducono le variabili ausiliare $$\xi=(\xi_1,...,\xi_n)$$ che misurano la distanza tra il punto classificato male (perché si trova nell'altra metà) e la frontiera del suo gruppo (quella più lontana), i punti classificati bene hanno $$\xi_i=0$$.  
-Maggiore è $$\sum_{i=1}^n \xi_i$$ più è grande l'errore.  
+Si introducono le variabili ausiliarie (slack variable) $$\xi=(\xi_1,...,\xi_n)$$ che misurano la distanza tra il punto classificato male (perché si trova nell'altra metà) e la frontiera del suo gruppo (quella più lontana), i punti classificati bene hanno $$\xi_i=0$$.  
+L'errore totale lo si vorrà inferiore di una costante $$\sum_{i=1}^n \xi_i \le B$$. 
 
+Si riscrive il problema precedente di minimo con l'aggiunta delle variabili ausiliarie:  
+$$\max\limits_{\beta_0, \beta}{\frac{1}{2}\vert\vert\beta\vert\vert^2 + \gamma \sum_{i=1}^n\xi_i}$$ con i vincoli 
+$$\begin{cases} 
+y_i (\beta_0+\tilde{x}_i^T \beta) \ge 1-\xi_i, \forall i \\ 
+\xi_i \ge 0
+\end{cases}$$  
+dove $$\gamma$$ costante positiva (inverso alla costante $$B$$), parametro di regolazione e costo di violazione delle barriere (più $$\gamma$$ è grande, maggiore è l'importanza di non superare i vincoli e le bande saranno più strette).  
+La soluzione di ottimo è  
+$$\hat{\beta}=\sum_{i=1}^n a_i y_i \tilde{x}_i$$  
+le $$a_i$$ sono diverse da $$0$$ solo per i punti che sono nel vettore di supporto (support vector). Prima nel caso di gruppi completamente separati, nell'insieme di supporto era composto solo da punti sulle barriere, qui l'insieme di supporto è composto dai sia dai punti sulle barriere che dai punti per i quali $$\xi_i>0$$.  
 
-
+I punti (o vettori) di supporto ($$\alpha_i >0$$) sono i punti neri cerchiati ($$\xi_i=0,\alpha_i>0$$), più i punti blu all'interno del rettangolo (porzione di piano) blu e i punti gialli all'interno del rettangolo giallo ($$\xi_i>0,\alpha_i>0$$).  
+<img src="/assets/images/Statistics/DM_SVM3.png" width="300">
 
 <!---
 L18 27:22
