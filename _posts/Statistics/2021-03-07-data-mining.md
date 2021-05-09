@@ -1036,13 +1036,13 @@ Si introducono le variabili ausiliarie (slack variable) $$\xi=(\xi_1,...,\xi_n)$
 L'errore totale lo si vorrà inferiore di una costante $$\sum_{i=1}^n \xi_i \le B$$. 
 
 Si riscrive il problema precedente di minimo con l'aggiunta delle variabili ausiliarie:  
-$$\max\limits_{\beta_0, \beta}{\frac{1}{2}\vert\vert\beta\vert\vert^2 + \gamma \sum_{i=1}^n\xi_i}$$ con i vincoli 
+$$\max\limits_{\beta_0, \beta}{\frac{1}{2}\vert\vert\beta\vert\vert^2 + C \sum_{i=1}^n\xi_i}$$ con i vincoli 
 $$\begin{cases} 
 y_i (\beta_0+\tilde{x}_i^T \beta) \ge 1-\xi_i, \forall i \\ 
 \xi_i \ge 0
 \end{cases}$$  
-dove $$\gamma$$ costante positiva (inverso alla costante $$B$$), parametro di regolazione e costo di violazione delle barriere (più $$\gamma$$ è grande, maggiore è l'importanza di non superare i vincoli e le bande saranno più strette).  
-La soluzione di ottimo è  
+dove $$C$$ costante positiva (inverso alla costante $$B$$), parametro di regolazione e costo di violazione delle barriere (più $$C$$ è grande, maggiore è l'importanza di non superare i vincoli e le bande saranno più strette).  
+Il problema duale ha come vincoli $$0\le \alpha_i \le C$$ e $$\sum_{i=1}^n \alpha_i y_i =0$$. La soluzione di ottimo è  
 $$\hat{\beta}=\sum_{i=1}^n a_i y_i \tilde{x}_i$$  
 le $$a_i$$ sono diverse da $$0$$ solo per i punti che sono nel vettore di supporto (support vector). Prima nel caso di gruppi completamente separati, nell'insieme di supporto era composto solo da punti sulle barriere, qui l'insieme di supporto è composto dai sia dai punti sulle barriere che dai punti per i quali $$\xi_i>0$$.  
 
@@ -1064,7 +1064,7 @@ $$K(x,x')=\left \langle h(x), h(x') \right \rangle$$
 che calcola i prodotti interni nello spazio delle variabili trasformate.  
 Seguono alcune scelte popolari per il kernel.
 
-**Polinomiale**  
+##### Kernel Polinomiale
 $$K(x,x_i)=(1+ \left \langle x, x_i \right \rangle)^d$$
 Se $$p$$ numero di variabili e $$d$$ grado del polinomio crescono, diventa uno spazio enorme ma che non sarà tutto esplorato perché sarà valorizzato solo sui vettori di supporto.  
 $$\hat{f}(x)=\sum_{i=1}^n \hat{a}_i y_i K(x,x_i)+\hat{\beta}_0$$  
@@ -1088,11 +1088,13 @@ x_2'^2 \\
 \sqrt{2}x_1'x_2'
 \end{pmatrix} $$  
 
-**Base radiale** (radial basis)  
+##### Kernel Base radiale
+Radial basis kernel, RBF kernel  
 $$K(x,x')=\exp{(-\gamma \vert\vert x-x' \vert\vert ^2)}$$  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da determinare le $$h(x)$$ con $$\gamma=1$$  
 
-**Sigmoidale** (neural network)  
+##### Kernel Sigmoidale
+Neural network kernel  
 $$K(x,x')=\tanh{(\kappa_1 \left \langle x, x' \right \rangle + \kappa_2)}$$  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da determinare le $$h(x)$$ con $$\kappa_1=1, \kappa_2=0$$  
 
