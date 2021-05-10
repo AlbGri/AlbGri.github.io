@@ -111,7 +111,7 @@ $$\hat{\beta}_{(j)}=W^{-1}_{(j)}u_{(j)}$$
 
 Per la stima di $$s^2$$  
 $$s^2_{(j)}=\frac{1}{n-p}\left [ q_{(j)} - u^T_{(j)} W^T_{(j)} u_{(j)} \right ]$$  
-con $$q_{(j)}=Y^T_{(j)} Y_{(j)}=\sum_{i=1}^j y_i^2=q_{(j-1)}+y_1^2$$  
+con $$q_{(j)}=Y^T_{(j)} Y_{(j)}=\sum_{i=1}^j y_i^2=q_{(j-1)}+y_j^2$$  
 
 Il metodo consente di invertire solo due matrici $$p \times p$$ per la stima dei beta ad ogni $$j$$, evitando di salvare in memoria la matrice $$X$$.  
 Se si ha un numero elevato di variabili diventa oneroso, ma si estende il metodo al fine di attenuare questo problema.  
@@ -149,6 +149,9 @@ $$ MSE\left (\hat{y}\right )
 = \ldots$$  
 $$= \mathbb{E}\left \{\left [ \hat{y}-\mathbb{E}\left \{\hat{y}\right \} \right ] ^2\right \} + \left [ \mathbb{E}\left \{\hat{y}\right \}-f(x') \right ] ^2 
 $$ $$= Var(\hat{y})+Bias(\hat{y},f(x'))^2 $$  
+
+La decomposizione dell'MSE permette di analizzare il trade off tra varianza e distorsione in funzione della complessità del modello.  
+Quando la complessità del modello, identiticata con $$p$$, è bassa, la distorsione è alta ma la varianza bassa; quando $$p$$ aumenta, la distorsione diminuisce ma la varianza aumenta. Se $$p$$ cresce, il modello si adatterà meglio ai dati, ma quando $$p$$ diventa troppo grande comincerà a seguire le fluttuazioni dei dati. In tal caso la varianza aumenterà senza un significativo guadagno in distorsione, provocando così il sovradattamento nei dati e comportando un eccesso di ottimismo nel valutare l'errore di previsione.
 
 ### Iperparametri
 - Grado del polinomio
@@ -281,16 +284,22 @@ Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo 
 
 La funzione da minimizzare è un paraboloide, il cui centro è la stima di massima verosimiglianza. Nel caso a due variabili, con il Lasso il vincolo è un parallelepipedo a base quadrata, che possiamo visualizzare come quadrato (curve di livello) perché ragioniamo solo con i due coefficienti, e un cerchio nella Ridge. La soluzione con il vincolo è il punto di contatto tra il paraboloide e il vincolo. Nel Lasso, a meno di casi estremi (es 2 variabili in cui il paraboloide è perfettamente nella diagonale), uno dei due coefficienti andrà a 0.  
 
-Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti per un valore inferiore ad 1, il lasso li trasla verso lo zero.  
+Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti ai minimi quadrati per un valore inferiore ad 1 (ruotandoli), il lasso li trasla di una costante verso lo zero.  
 <img src="/assets/images/Statistics/DM_Shrinkage1.png" width="300">
 
 #### Consistenza del Lasso
-La consistenza della stima MV non è garantita se lo spazio dei parametri $$p$$ cresce al crescere delle osservazioni $$n$$. Il Lasso è capace di identificare il modello corretto anche in questa situazione, purché le variabili esplicative non siano troppo correlate con le variabili di disturbo (altrimenti la condizione di irrepresentabilità, o stabilità dell'intorno, viene meno).  
+La consistenza della stima MV non è garantita se lo spazio dei parametri $$p$$ cresce al crescere delle osservazioni $$n$$. Il Lasso è capace di identificare il modello corretto anche in questa situazione, purché le variabili esplicative veramente utili non siano troppo correlate con le variabili di disturbo altrimenti la condizione di irrepresentabilità (irrepresentable condition) o stabilità dell'intorno (neighborhod stability), viene meno. Inoltre, si assume che i coefficienti non nulli siano sufficientemente grandi.  
+
+La condizione di stabilità dell'intorno definisce che la correlazione tra le $$X$$ che sono davvero uguali a zero sia molto piccola ($$1-\epsilon$$) rispetto a quella con le $$X$$ che sono davvero diverse da zero.  
 
 ##### Lasso Adattivo
 Il Lasso adattivo permette di trovare una soluzione per svincolarsi dalla condizione di irrepresentabilità.  
-$$\hat{\beta}_{\tiny \mbox{adp}}(\lambda)=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)+\lambda \sum_{j=1}^p\frac{\vert \beta_j \vert}{\vert \hat{\beta}_{\tiny{\mbox{iniz}},j} \vert}$$  
-Con $$\hat{\beta}_{\tiny{\mbox{iniz}},j}$$ è uno stimatore iniziale come OLS, un suggerimento a quale parametro dare più importante. Procedura a due step.
+$$\hat{\beta}_{\mbox{adp}}(\lambda)=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)+\lambda \sum_{j=1}^p\frac{\vert \beta_j \vert}{\vert \hat{\beta}_{\mbox{iniz},j} \vert}$$  
+La modifica della penalizzazione con lo stimatore iniziale  
+$$\hat{\beta}_{\mbox{iniz},j}$$  
+consente di dare maggiore peso ai parametri più importanti.  
+Una scelta per lo stimatore iniziale può essere la stima ai minimi quadrati orinari.  
+Procedura a due step (prima si stima OLS e poi Lasso Adattivo).
 
 #### Interpretazione Bayesiana
 Come per il Ridge, se consideriamo i beta (a priori) distribuiti secondo una Laplace, si ottiene lo stimatore Lasso (la densità a Posteriori ha come nucleo la forma di Lagrange dello stimatore Lasso).  
@@ -306,6 +315,7 @@ Se $$q\le 1$$ si ha la selezione delle variabili.
 - Grouped Lasso
 
 ### Least Angle Regression
+LAR - Regressione con minimo angolo.  
 Serve a risolvere i minimi quadrati in un modo diverso ed è utile per stimare il modello Lasso.  
 Si inizializza il vettore dei coefficienti pari a 0, iterativamente si incrementano le stime inserendo ad una ad una le variabili più correlate con i residui che si ottengono ad ogni passo, ci si ferma fino a quando si ha correlazione minima.  
 
