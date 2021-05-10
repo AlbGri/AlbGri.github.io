@@ -287,6 +287,11 @@ La funzione da minimizzare è un paraboloide, il cui centro è la stima di massi
 Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti ai minimi quadrati per un valore inferiore ad 1 (ruotandoli), il lasso li trasla di una costante verso lo zero.  
 <img src="/assets/images/Statistics/DM_Shrinkage1.png" width="300">
 
+
+<!---
+https://www.ias.ac.in/public/Volumes/reso/023/04/0439-0464.pdf
+--->
+
 #### Consistenza del Lasso
 La consistenza della stima MV non è garantita se lo spazio dei parametri $$p$$ cresce al crescere delle osservazioni $$n$$. Il Lasso è capace di identificare il modello corretto anche in questa situazione, purché le variabili esplicative veramente utili non siano troppo correlate con le variabili di disturbo altrimenti la condizione di irrepresentabilità (irrepresentable condition) o stabilità dell'intorno (neighborhod stability), viene meno. Inoltre, si assume che i coefficienti non nulli siano sufficientemente grandi.  
 
