@@ -38,7 +38,8 @@ Varianza dello stimatore
 $$\sigma^2(\hat{\beta})
 =\mathbb{E}\big[ (\hat{\beta}-\mathbb{E}[\hat{\beta}])^2 \big]=\sigma^2(X^TX)^{-1}$$  
 Stima non distorta della varianza dello stimatore  
-$$\widehat{\mbox{var}}(\hat{\beta})=\frac{D(\hat{\beta})}{n-p}(X^TX)^{-1}=s^2(X^TX)^{-1}$$
+$$\widehat{\mbox{var}}(\hat{\beta})=\frac{D(\hat{\beta})}{n-p}(X^TX)^{-1}=s^2(X^TX)^{-1}$$  
+$$s^2=\frac{1}{n-p}Y^T (I-P)Y=\frac{1}{n-p}\left [ Y^TY-Y^TX(X^TX)^{-1} X^T y\right ]$$  
 
 
 Nota: se si applica OLS con le esplicative trasformate con il logaritmo si mantiene lineare nei parametri, ma se il logaritmo si applica alla risposta non è più lineare nei parametri. La stima non è OLS e non è la migliore in termini di minimizzazione della devianza, ma mantiene la sua validità. Anche l'$$R^2$$ non risulterebbe confrontabile.  
@@ -107,6 +108,10 @@ $$W_{(j)}=W_{(j-1)}+\tilde{x}_j \tilde{x}_j^T$$ e $$u_{(j)}=u_{(j-1)}+\tilde{x}_
 
 Quindi la stima dei beta risulta  
 $$\hat{\beta}_{(j)}=W^{-1}_{(j)}u_{(j)}$$  
+
+Per la stima di $$s^2$$  
+$$s^2_{(j)}=\frac{1}{n-p}\left [ q_{(j)} - u^T_{(j)} W^T_{(j)} u_{(j)} \right ]$$  
+con $$q_{(j)}=Y^T_{(j)} Y_{(j)}=\sum_{i=1}^j y_i^2=q_{(j-1)}+y_1^2$$  
 
 Il metodo consente di invertire solo due matrici $$p \times p$$ per la stima dei beta ad ogni $$j$$, evitando di salvare in memoria la matrice $$X$$.  
 Se si ha un numero elevato di variabili diventa oneroso, ma si estende il metodo al fine di attenuare questo problema.  
