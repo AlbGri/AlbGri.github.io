@@ -298,8 +298,14 @@ $$\hat{\beta}_{\mbox{adp}}(\lambda)=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^
 La modifica della penalizzazione con lo stimatore iniziale  
 $$\hat{\beta}_{\mbox{iniz},j}$$  
 consente di dare maggiore peso ai parametri più importanti.  
-Una scelta per lo stimatore iniziale può essere la stima ai minimi quadrati orinari.  
-Procedura a due step (prima si stima OLS e poi Lasso Adattivo).
+Una scelta per lo stimatore iniziale può essere la stima ai minimi quadrati orinari (o la Ridge, o i coefficienti di regressione univariata se $$p>n$$, o altro).  
+Procedura a due step (prima si stima OLS e poi Lasso Adattivo).  
+
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Il lasso adattivo fornisce stime consistenti e mantiene la proprietà convessità propria del Lasso.  
+
+**Generalizzazione del lasso adattivo**  
+Pesando la penalizzazione $$\sum_{j=1}^p w_j \vert \beta_j \vert$$  
+dove $$w_j=\frac{1}{\vert \hat{\beta}_{\mbox{iniz},j} \vert^v}$$ con $$v>0$$
 
 #### Interpretazione Bayesiana
 Come per il Ridge, se consideriamo i beta (a priori) distribuiti secondo una Laplace, si ottiene lo stimatore Lasso (la densità a Posteriori ha come nucleo la forma di Lagrange dello stimatore Lasso).  
@@ -1253,7 +1259,7 @@ Q: slide 170, su modello scientifico e big data. Quel Rho 0.00084 è 1/sqrt(N)? 
 
 Q: Nell'importanza delle variabili della random forest, perché escludere una variabile alla volta e valutarne l'impatto su una misura di errore, non è un buon approccio per valutare l'importanza delle variabili? Non è uguale al concetto del modello parametrico di rendere nullo un coefficiente e valutare l'impatto? La stepwise non si basa su questo fondamento? Ha senso costruire la feature importance per un modello parametrico lineare?
 
-
+Q: cosa si intende con proprietà di convessità del lasso?
 
 
 https://www.codecogs.com/latex/eqneditor.php
