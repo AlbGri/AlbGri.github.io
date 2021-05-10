@@ -94,10 +94,20 @@ Con due variabili esplicative $$x_1$$ e $$x_2$$ e la variabile risposta $$y$$, l
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Il coefficiente di correlazione parziale utilizza lo stesso concetto della regressione di $$x_2$$ su $$x_1$$.
 
 ### Stima LS con $$n$$ grande
+Si cerca un metodo per aggiornare le quantità base  
+$$W=X^T X,\qquad u=X^T y$$  
+e poi si inverte $$W$$ mediante algoritmi per matrici simmetriche (es. Cholesky, QR).  
+
 Data una matrice di dati con $$j$$ righe, si voglio stimare i coefficienti beta con i minimi quadrati.  
-Sia $$_{(j)}$$ il riferimento di una matrice alle prime $$j$$ su $$n$$ osservazioni. La matrice $$(X^TX)_{(j)}$$ può essere vista come la stessa matrice con $$_{(j-1)}$$ righe più l'ultima. Analogamente la stima dei coefficienti beta risulta:  
+Sia $$_{(j)}$$ il riferimento di una matrice alle prime $$j$$ su $$n$$ osservazioni. La matrice $$(X^TX)_{(j)}$$ può essere vista come la stessa matrice con $$_{(j-1)}$$ righe più l'ultima.  
+
+$W=\sum_{i=1}^n \tilde{x}_i \tilde{x}_i^T,\qquad u=\sum_{i=1}^n \tilde{x}_i y_i$$  
+si possono scomporre in  
+$$W_{(j)}=W_{(j-1)}+\tilde{x}_j \tilde{x}_j^T$$ e $$u_{(j)}=u_{(j-1)}+\tilde{x}_j \tilde{y}_j$$ con $$j=2,...,n$$  
+
+Quindi la stima dei beta risulta:  
 $$\hat{\beta}_{(j)}=W^{-1}_{(j)}u_{(j)}$$  
-con $$W=X^TX=\sum_{i=1}^n \tilde{x}_i \tilde{x}_i^T$$ e $$u=X^Ty=\sum_{i=1}^n \tilde{x}_i y_i$$  
+
 Il metodo consente di invertire solo due matrici $$p \times p$$ per la stima dei beta ad ogni $$j$$, evitando di salvare in memoria la matrice $$X$$.  
 Se si ha un numero elevato di variabili diventa oneroso, ma si estende il metodo al fine di attenuare questo problema.  
 
