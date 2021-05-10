@@ -479,7 +479,7 @@ Si parla dunque di 'smoothing splines' o spline di lisciamento.
 
 Si tratta di una tecnica che usa le splines, ma è uno strumento diverso dalle splines di regressione.
 
-#### Thin-plate splines
+#### Thin plate splines
 Un modo di generalizzare le smoothing splines a più dimensioni si ottiene sostituendo $$f''$$ della funzione di perdita con il laplaciano (somma di tutti degli elementi dell'hessiano al quadrato).  
 La soluzione di ottimo risulta (non è una spline ma qualcosa di simile):  
 $$f(x)=\hat{\beta}_0+\hat{\beta}^T x+\sum_{j=1}^n \hat{\alpha}_j h_j(x)$$  
