@@ -101,11 +101,11 @@ e poi si inverte $$W$$ mediante algoritmi per matrici simmetriche (es. Cholesky,
 Data una matrice di dati con $$j$$ righe, si voglio stimare i coefficienti beta con i minimi quadrati.  
 Sia $$_{(j)}$$ il riferimento di una matrice alle prime $$j$$ su $$n$$ osservazioni. La matrice $$(X^TX)_{(j)}$$ può essere vista come la stessa matrice con $$_{(j-1)}$$ righe più l'ultima.  
 
-$W=\sum_{i=1}^n \tilde{x}_i \tilde{x}_i^T,\qquad u=\sum_{i=1}^n \tilde{x}_i y_i$$  
+$$W=\sum_{i=1}^n \tilde{x}_i \tilde{x}_i^T,\qquad u=\sum_{i=1}^n \tilde{x}_i y_i$$  
 si possono scomporre in  
 $$W_{(j)}=W_{(j-1)}+\tilde{x}_j \tilde{x}_j^T$$ e $$u_{(j)}=u_{(j-1)}+\tilde{x}_j \tilde{y}_j$$ con $$j=2,...,n$$  
 
-Quindi la stima dei beta risulta:  
+Quindi la stima dei beta risulta  
 $$\hat{\beta}_{(j)}=W^{-1}_{(j)}u_{(j)}$$  
 
 Il metodo consente di invertire solo due matrici $$p \times p$$ per la stima dei beta ad ogni $$j$$, evitando di salvare in memoria la matrice $$X$$.  
