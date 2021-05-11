@@ -1187,21 +1187,29 @@ $$A(x)$$ è ignota e la si stima dai dati $$A(x,D=(x_i,y_i)_{i=1}^n)$$, quindi
 $$\mathbb{P}(y_{n+1}\in A(x;D)\vert x_{n+1}=x)$$ in media sarà $$\ge 1-\alpha$$ con $$\alpha \in (0,1)$$  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La probabilità non è più soltanto rispetto alla $$y_{n+1}$$, ma rispetto a tutti i possibili valori ottenuti campionando la regione (analogia con gli intervalli di confidenza).  
 
-Scenario con $$P$$ nota: 
-la funzione di ripartizione è un buon candidato per la stima intervallare  
+### Distribuzione nota
+Con $$P$$ nota la funzione di ripartizione è un buon candidato per la stima intervallare  
 $$F(y\vert x)=\mathbb{P}(y_{n+1}\vert x_{n+1}=x)\Rightarrow q_\alpha (x)=\mbox{inf}\{y\in\mathbb{R}:F(y\vert x)\ge \alpha$$  
 allora $$A(x)=[q_{\alpha/2}(x),q_{1-\alpha/2}(x)]$$ e per costruzione la probabilità è pari a $$1-\alpha$$  
 
-Scenario di regressione lineare (con distribuzione dell'errore normale nota):  
+### Modello lineare nei parametri
+
+#### Distribuzione normale e parametri noti
 $$y_i=x_i^T\beta+\epsilon_i \Rightarrow y_{n+1}\vert x_{n+1}=x \overset{\text{iid}}{\sim}\mathcal{N}(x^T\beta_{\small{noto}},\sigma^2_{\small{noto}})$$  
 allora l'intervallo di previsione è $$A(x)=x^T\beta\pm\sigma^2 z_{1-\alpha/2}$$ con $$z_\alpha$$ quantile di un anormale,  
 ed è facile verificare che la probabilità è $$1-\alpha$$.  
 Non si cerca di quantificare l'incertezza solo rispetto la distribuzione (che in questo caso ha parametri noti), ma anche rispetto a $$y_{n+1}$$ il nuovo valore di $$y$$ che non è stato osservato.  
 
-Scenario di regressione lineare (con distribuzione dell'errore normale con parametri stimati):  
-se si sostituisce la stima dei parametri, si ottiene un'intervallo approsimativamente $$1-\alpha$$  
+#### Distribuzione normale e parametri stimati
+Sia $$\hat{\beta}$$ la stima ai minimi quadrati e $$s^2$$ stima non distorta di $$\sigma^2$$, entrambe basate sui dati $$D=(x_i,y_i)_{i=1}^n  
+allora $$A(x)=x^T\hat{\beta}\pm s^2 z_{1-\alpha/2}$$, ma l'intervallo sarà approssimativamente $$1-\alpha$$  
 
-...
+##### Intervallo esatto
+Sia $$\mbox{var}(y_{n+1}-x^T\hat{\beta})=\mbox{var}(y_{n+1})+\mbox{var}(x^T\hat{\beta})=\sigma^2+\sigma^2x^T(X^TX)^{-1}x$$  
+(nota: $$y_{n+1}$$ e $$\hat{\beta}$$ sono indipendenti perché quest'ultimo dipende dai primi $$n$$ dati)  
+Si dimostra che $$\frac{y_{n+1}-x^T\hat{\beta}}{s(x)}\sim t_{n-p}$$ e $$s^2(x)=s^2+s^2x^T(X^TX)^{-1}x$$  
+allora $$A(x;D)=x^T\hat{\beta}\pm s^2 (x) t_{1-\alpha/2,n-p}$$ ha esattamente probabilità $$1-\alpha$$ (intesa anche con i valori $$D$$ che ha usato per effettuare la stima ai minimi quadrati)  
+Qui si tiene conto della variabilità dei parametri, ottenendo un'ampiezza più ampia.  
 
 Le assunzioni di normalità, omoschedasticità e del modello di regressione se non valide comportano un livello di copertura sui dati di verifica più ampio.
 
