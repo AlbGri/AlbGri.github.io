@@ -1194,20 +1194,20 @@ allora $$A(x)=[q_{\alpha/2}(x),q_{1-\alpha/2}(x)]$$ e per costruzione la probabi
 
 ### Modello lineare nei parametri
 
-#### Distribuzione normale e parametri noti
+#### Intervallo esatto: normale con parametri noti
 $$y_i=x_i^T\beta+\epsilon_i \Rightarrow y_{n+1}\vert x_{n+1}=x \overset{\text{iid}}{\sim}\mathcal{N}(x^T\beta_{\small{noto}},\sigma^2_{\small{noto}})$$  
 allora l'intervallo di previsione è $$A(x)=x^T\beta\pm\sigma^2 z_{1-\alpha/2}$$ con $$z_\alpha$$ quantile di un anormale,  
 ed è facile verificare che la probabilità è $$1-\alpha$$.  
 Non si cerca di quantificare l'incertezza solo rispetto la distribuzione (che in questo caso ha parametri noti), ma anche rispetto a $$y_{n+1}$$ il nuovo valore di $$y$$ che non è stato osservato.  
 
-#### Distribuzione normale e parametri stimati
-Sia $$\hat{\beta}$$ la stima ai minimi quadrati e $$s^2$$ stima non distorta di $$\sigma^2$$, entrambe basate sui dati $$D=(x_i,y_i)_{i=1}^n  
+#### Intervallo approssimato: normale con parametri stimati
+Sia $$\hat{\beta}$$ la stima ai minimi quadrati e $$s^2$$ stima non distorta di $$\sigma^2$$, ottenute sui dati $$D=(x_i,y_i)_{i=1}^n$$  
 allora $$A(x)=x^T\hat{\beta}\pm s^2 z_{1-\alpha/2}$$, ma l'intervallo sarà approssimativamente $$1-\alpha$$  
 
-##### Intervallo esatto
+#### Intervallo esatto: normale con parametri stimati
 Sia $$\mbox{var}(y_{n+1}-x^T\hat{\beta})=\mbox{var}(y_{n+1})+\mbox{var}(x^T\hat{\beta})=\sigma^2+\sigma^2x^T(X^TX)^{-1}x$$  
 (nota: $$y_{n+1}$$ e $$\hat{\beta}$$ sono indipendenti perché quest'ultimo dipende dai primi $$n$$ dati)  
-Si dimostra che $$\frac{y_{n+1}-x^T\hat{\beta}}{s(x)}\sim t_{n-p}$$ e $$s^2(x)=s^2+s^2x^T(X^TX)^{-1}x$$  
+Si dimostra che $$\frac{y_{n+1}-x^T\hat{\beta}}{s(x)}\sim t_{n-p} \qquad s^2(x)=s^2+s^2x^T(X^TX)^{-1}x$$  
 allora $$A(x;D)=x^T\hat{\beta}\pm s^2 (x) t_{1-\alpha/2,n-p}$$ ha esattamente probabilità $$1-\alpha$$ (intesa anche con i valori $$D$$ che ha usato per effettuare la stima ai minimi quadrati)  
 Qui si tiene conto della variabilità dei parametri, ottenendo un'ampiezza più ampia.  
 
