@@ -1172,6 +1172,20 @@ $$\frac{1}{C} \vert\vert \beta \vert\vert ^2$$ termine di penalizzazione per la 
 
 <img src="/assets/images/Statistics/DM_SVM5.png" width="500">
 
+## Stima intervallare per modelli di regressione
+
+La previsione intervallare è una misura di variabilità della singola stima.  
+Si cercano delle bande di previsione valide anche per i dati di verifica.  
+
+Sia $$(x_i,y_i)\overset{\text{iid}}{\sim}$$ l'insieme di dati, dta una nuova osservazione $$x_{n+1}$$ si cerca una regione $$A(x)\subseteq \mathbb{R}$$ per una futura risposta $$y_{n+1}$$ tale che  
+$$\mathbb{P}(y_{n+1}\in A(x)\vet x_{n+1}=x)\ge 1-\alpha$$ con $$\alpha \in (0,1)$$  
+ovvero un insieme di valori altamente probabili condizionatamente a quel valore di $$x_{n+1}$$.  
+(nota: come il p-value, è più agevole considerare la disuguaglianza come un'uguaglianza)  
+
+$$A(x)$$ è ignota e si stima dai dati $$A(x,D=(x_i,y_i)_{i=1}^n)$$, quindi  
+$$\mathbb{P}(y_{n+1}\in A(x;D)\vet x_{n+1}=x)$$ in media sarà\ge 1-\alpha$$ con $$\alpha \in (0,1)$$  
+
+
 
 
 <!---
