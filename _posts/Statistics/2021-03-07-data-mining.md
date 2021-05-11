@@ -1187,6 +1187,9 @@ $$A(x)$$ è ignota e la si stima dai dati $$A(x,D=(x_i,y_i)_{i=1}^n)$$, quindi
 $$\mathbb{P}(y_{n+1}\in A(x;D)\vert x_{n+1}=x)$$ in media sarà $$\ge 1-\alpha$$ con $$\alpha \in (0,1)$$  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La probabilità non è più soltanto rispetto alla $$y_{n+1}$$, ma rispetto a tutti i possibili valori ottenuti campionando la regione (analogia con gli intervalli di confidenza).  
 
+Un intervallo di confidenza quantifica la variabilità della stima $$\hat{f}(x)$$, che sotto valide assunzioni va a coincidere con il vero valore di $$f(x)$$.  
+Un intervallo di previsione quantifica la variabilità associata ad una futura osservazione $$y_{n+1}$$, anche con infiniti dati si avra sempre un po' di variabilità causata dal processo generatore dei dati, variabilità del termine d'errore, quindi sono generalmente più grandi, ma godono di caratteristiche teoriche simili agli intervalli di confidenza.  
+
 ### Distribuzione nota
 Con $$P$$ nota la funzione di ripartizione è un buon candidato per la stima intervallare  
 $$F(y\vert x)=\mathbb{P}(y_{n+1}\vert x_{n+1}=x)\Rightarrow q_\alpha (x)=\mbox{inf}\{y\in\mathbb{R}:F(y\vert x)\ge \alpha\}$$  
@@ -1218,18 +1221,22 @@ Le assunzioni di normalità, omoschedasticità e la scelta del modello di regres
 #### Intervallo approssimato: normale con parametri stimati
 Sia $$y_i=f(x_i)+\epsilon_i \quad$$ con $$\epsilon_i\overset{\text{iid}}{\sim}\mathcal{N}(0,\sigma^2)$$  
 Si assume (sperando nel tlc) che $$\frac{y_{n+1}-\hat{f}(x)-b(x)}{s(x)}\overset{\text{approx}}{\sim}\mathcal{N}(0,1) \qquad s^2(x)=var\left \{ y_{n+1} - \hat{f}(x)-b(x) \right \}=\sigma^2+\mbox{var}\left \{ \hat{f}(x) \right \}$$  
-con $$b(x)=\mathbb\left \{ \hat{f}(x) - f(x) \right \}$$ è la distorsione,  
+dove $$b(x)=\mathbb{E}\left \{ \hat{f}(x) - f(x) \right \}$$ è la distorsione,  
 $$sigma^2$$ varianza residuale ineliminabile del modello e $$\mbox{var}\left \{ \hat{f}(x) \right \}$$ varianza dello stimatore  
 (nota: per costruire gli intervalli di previsione si segue una logica analoga agli intervalli di confidenza in cui si cerca una quantità pivotale con distribuzione nota)  
 Ipotizzando che la distorsione sia nulla,  
 allora $$A(x;D)=\hat{f}(x)\pm s^2(x) z_{1-\alpha/2}$$  
 inoltre, bisogna ottenere una stima per $$\sigma^2$$ (dentro $$s^2$$) e la varianza dello stimatore (es. con bootstrap o ipotizzarla nulla se si ha $$n$$ grande).  
 
+### Lisciatori lineari
+
+<!---
+L19 39:06
+--->
 
 
 
 <!---
-L18 27:22
 https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote09.html
 https://www.reddit.com/r/learnmachinelearning/comments/n809cx/help_optimal_separating_hyperplanes_mathsvm
 --->
