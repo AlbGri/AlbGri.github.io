@@ -1181,17 +1181,31 @@ Sia $$(x_i,y_i)\overset{\text{iid}}{\sim}P$$ l'insieme di dati, data una nuova o
 $$\mathbb{P}(y_{n+1}\in A(x)\vert x_{n+1}=x)\ge 1-\alpha$$ con $$\alpha \in (0,1)$$  
 ovvero un insieme di valori altamente probabili condizionatamente a quel valore di $$x_{n+1}$$.  
 (nota: come il p-value, è più agevole considerare la disuguaglianza come un'uguaglianza)  
+La probabilità che l'intervallo contenga $$y_{n+1}$$ è $$1-\alpha$$  
 
 $$A(x)$$ è ignota e la si stima dai dati $$A(x,D=(x_i,y_i)_{i=1}^n)$$, quindi  
 $$\mathbb{P}(y_{n+1}\in A(x;D)\vert x_{n+1}=x)$$ in media sarà $$\ge 1-\alpha$$ con $$\alpha \in (0,1)$$  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La probabilità non è più soltanto rispetto alla $$y_{n+1}$$, ma rispetto a tutti i possibili valori ottenuti campionando la regione (analogia con gli intervalli di confidenza).  
 
-Se $$P$$ fosse nota, la funzione di ripartizione è un buon candidato per la stima intervallare  
+Scenario con $$P$$ nota: 
+la funzione di ripartizione è un buon candidato per la stima intervallare  
 $$F(y\vert x)=\mathbb{P}(y_{n+1}\vert x_{n+1}=x)\Rightarrow q_\alpha (x)=\mbox{inf}\{y\in\mathbb{R}:F(y\vert x)\ge \alpha$$  
-allora $$A(x)=[q_{\alpha/2}(x),q_{1-\alpha/2}(x)] e per costruzione la probabilità è pari a $$1-\alpha$$  
+allora $$A(x)=[q_{\alpha/2}(x),q_{1-\alpha/2}(x)]$$ e per costruzione la probabilità è pari a $$1-\alpha$$  
 
-Se $$y_i=x_i^T\beta+\epsilon_i$$ con $$\epsilon_i\overset{\text{iid}}{\sim}\mathcal{N}(x^T\beta_{\tiny{noto}},\sigma^2_{\tiny{noto}}$$  
-allora $$A(x)=x^T\beta\pm\sigma^2 z_{1-\alpha/2}$$
+Scenario di regressione lineare (con distribuzione dell'errore normale nota):  
+$$y_i=x_i^T\beta+\epsilon_i \Rightarrow y_{n+1}\vert x_{n+1}=x \overset{\text{iid}}{\sim}\mathcal{N}(x^T\beta_{\small{noto}},\sigma^2_{\small{noto}})$$  
+allora l'intervallo di previsione è $$A(x)=x^T\beta\pm\sigma^2 z_{1-\alpha/2}$$ con $$z_\alpha$$ quantile di un anormale,  
+ed è facile verificare che la probabilità è $$1-\alpha$$.  
+Non si cerca di quantificare l'incertezza solo rispetto la distribuzione (che in questo caso ha parametri noti), ma anche rispetto a $$y_{n+1}$$ il nuovo valore di $$y$$ che non è stato osservato.  
+
+Scenario di regressione lineare (con distribuzione dell'errore normale con parametri stimati):  
+se si sostituisce la stima dei parametri, si ottiene un'intervallo approsimativamente $$1-\alpha$$  
+
+...
+
+Le assunzioni di normalità, omoschedasticità e del modello di regressione se non valide comportano un livello di copertura sui dati di verifica più ampio.
+
+
 
 
 
