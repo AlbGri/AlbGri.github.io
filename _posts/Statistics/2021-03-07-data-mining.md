@@ -1217,18 +1217,19 @@ Qui si tiene conto della variabilità dei parametri, ottenendo un'ampiezza più 
 Le assunzioni di normalità, omoschedasticità e la scelta del modello di regressione, se non valide/ben specificate comportano un livello di copertura epirico sui dati di verifica più ampio del livello dichiarato.  
 
 ### Modello parametrico
+Per costruire gli intervalli di previsione si segue una logica analoga agli intervalli di confidenza in cui si cerca una quantità pivotale con distribuzione nota  
 
 #### Intervallo approssimato: normale con parametri stimati
 Sia $$y_i=f(x_i)+\epsilon_i \quad$$ con $$\epsilon_i\overset{\text{iid}}{\sim}\mathcal{N}(0,\sigma^2)$$  
 Si assume (sperando nel tlc) che $$\frac{y_{n+1}-\hat{f}(x)-b(x)}{s(x)}\overset{\text{approx}}{\sim}\mathcal{N}(0,1) \qquad s^2(x)=var\left \{ y_{n+1} - \hat{f}(x)-b(x) \right \}=\sigma^2+\mbox{var}\left \{ \hat{f}(x) \right \}$$  
-dove $$b(x)=\mathbb{E}\left \{ \hat{f}(x) - f(x) \right \}$$ è la distorsione,  
-$$sigma^2$$ varianza residuale ineliminabile del modello e $$\mbox{var}\left \{ \hat{f}(x) \right \}$$ varianza dello stimatore  
-(nota: per costruire gli intervalli di previsione si segue una logica analoga agli intervalli di confidenza in cui si cerca una quantità pivotale con distribuzione nota)  
+dove $$b(x)=\mathbb{E}\left \{ \hat{f}(x) - f(x) \right \}$$ è la distorsione, $$\sigma^2$$ varianza residuale ineliminabile del modello e $$\mbox{var}\left \{ \hat{f}(x) \right \}$$ varianza dello stimatore  
 Ipotizzando che la distorsione sia nulla,  
 allora $$A(x;D)=\hat{f}(x)\pm s^2(x) z_{1-\alpha/2}$$  
 inoltre, bisogna ottenere una stima per $$\sigma^2$$ (dentro $$s^2$$) e la varianza dello stimatore (es. con bootstrap o ipotizzarla nulla se si ha $$n$$ grande).  
 
 ### Lisciatori lineari
+...  
+
 
 <!---
 L19 39:06
