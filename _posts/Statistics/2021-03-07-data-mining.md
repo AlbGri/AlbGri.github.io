@@ -35,14 +35,14 @@ Le componenti del vettore $$(X_1, X_2, X_3)^T$$ non sono né indipenenti, né sc
 #### Scambiabili
 $$\begin{pmatrix}
 Y_1 \\ Y_2 \\ Y_3
-\end{pmatrix} \sim \mathrm{N}\left(
+\end{pmatrix} \sim \mathcal{N}\left(
 \begin{pmatrix}
 0 \\ 0 \\ 0
 \end{pmatrix},
 \begin{pmatrix}
 1 &0.1 & 0.1 \\ 0.1&1&0.1 \\ 0.1&0.1&1
-\end{pmatrix} \right)$$
-Le componenti del vettore $$(Y_1, Y_2, Y_3)^T$$ non sono indipenenti ma sono scambiabili e le distribuzioni marginali sono identicamente distribuite $$X_i\sim \mathcal{Y}(0,1)$$ per $$i=1,2,3$$
+\end{pmatrix} \right)$$  
+Le componenti del vettore $$(Y_1, Y_2, Y_3)^T$$ non sono indipenenti ma sono scambiabili e le distribuzioni marginali sono identicamente distribuite $$Y_i\sim \mathcal{N}(0,1)$$ per $$i=1,2,3$$
 
 
 ## Modelli Lineari e Minimi Quadrati (LS)
@@ -1269,7 +1269,7 @@ Sebbene non ci siano assunzioni sulla $$f(x)$$ l'intervallo di previsione potreb
 Si cerca quindi un approccio che permetta di annullare le assunzioni e consenta di gestire stimatori più complessi. Questo non è possibile a meno di intervalli degenere a dimensione infinita (Lei and Wasserman, 2014). Una soluzione è passare da una copertura condizionale (per ogni $$x$$) ad una marginale (marginalmente rispetto a $$x$$).  
 
 ### Regione di previsione marginale
-$$A(x;D)$$ garantisce una copertura marginale di livello $$1-\alpha$$ se per tutte le distribuzioni di $$P$$ e per ogni $$x\in\mathbb{R}$$, assumendo unicamente che i dati siano _scambiabili_ (o iid per semplicità)  
+$$A(x;D)$$ garantisce una copertura marginale di livello $$1-\alpha$$ se per tutte le distribuzioni di $$P$$ e per ogni $$x\in\mathbb{R}$$, assumendo unicamente che i dati siano scambiabili (o iid per semplicità)  
 allora $$\mathbb{P}(y_{n+1}\in A(x_{n+1};D))\ge 1-\alpha$$  
 la probabilità intesa rispetto a $$(x_i,y_i)_{i=1}^n$$ e la coppia $$(x_{n+1},y_{n+1})$$.  
 
