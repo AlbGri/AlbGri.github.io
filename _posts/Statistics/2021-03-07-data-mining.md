@@ -1190,6 +1190,8 @@ $$\mathbb{P}(y_{n+1}\in A(x;D)\vert x_{n+1}=x)$$ in media sarà $$\ge 1-\alpha$$
 Un intervallo di confidenza quantifica la variabilità della stima $$\hat{f}(x)$$, che sotto valide assunzioni va a coincidere con il vero valore di $$f(x)$$.  
 Un intervallo di previsione quantifica la variabilità associata ad una futura osservazione $$y_{n+1}$$, anche con infiniti dati si avra sempre un po' di variabilità causata dal processo generatore dei dati, variabilità del termine d'errore, quindi sono generalmente più grandi, ma godono di caratteristiche teoriche simili agli intervalli di confidenza.  
 
+Per costruire gli intervalli di previsione si segue una logica analoga agli intervalli di confidenza in cui si cerca una quantità pivotale con distribuzione nota.  
+
 ### Distribuzione nota
 Con $$P$$ nota la funzione di ripartizione è un buon candidato per la stima intervallare  
 $$F(y\vert x)=\mathbb{P}(y_{n+1}\vert x_{n+1}=x)\Rightarrow q_\alpha (x)=\mbox{inf}\{y\in\mathbb{R}:F(y\vert x)\ge \alpha\}$$  
@@ -1216,8 +1218,7 @@ Qui si tiene conto della variabilità dei parametri, ottenendo un'ampiezza più 
 
 Le assunzioni di normalità, omoschedasticità e la scelta del modello di regressione, se non valide/ben specificate comportano un livello di copertura epirico sui dati di verifica più ampio del livello dichiarato.  
 
-### Modello parametrico
-Per costruire gli intervalli di previsione si segue una logica analoga agli intervalli di confidenza in cui si cerca una quantità pivotale con distribuzione nota  
+### Approccio non parametrico
 
 #### Intervallo approssimato: normale con parametri stimati
 Sia $$y_i=f(x_i)+\epsilon_i \quad$$ con $$\epsilon_i\overset{\text{iid}}{\sim}\mathcal{N}(0,\sigma^2)$$  
@@ -1225,10 +1226,17 @@ Si assume (sperando nel tlc) che $$\frac{y_{n+1}-\hat{f}(x)-b(x)}{s(x)}\overset{
 dove $$b(x)=\mathbb{E}\left \{ \hat{f}(x) - f(x) \right \}$$ è la distorsione, $$\sigma^2$$ varianza residuale ineliminabile del modello e $$\mbox{var}\left \{ \hat{f}(x) \right \}$$ varianza dello stimatore  
 Ipotizzando che la distorsione sia nulla,  
 allora $$A(x;D)=\hat{f}(x)\pm s^2(x) z_{1-\alpha/2}$$  
-inoltre, bisogna ottenere una stima per $$\sigma^2$$ (dentro $$s^2$$) e la varianza dello stimatore (es. con bootstrap o ipotizzarla nulla se si ha $$n$$ grande).  
+inoltre, bisogna ottenere una stima della varianza residuale $$\sigma^2$$ (dentro $$s^2$$) e la varianza dello stimatore (es. con bootstrap o ipotizzarla nulla se si ha $$n$$ grande).  
 
-### Lisciatori lineari
-...  
+#### Lisciatori lineari
+Stimatore non parametrico lisciatore lineare  
+$$\hat{f}(x)=\sum_{i=1}^n \ell_i (x) y_i$$  
+si ha che 
+$$\mbox{var}\left \{ \hat{f}(x) \right \}=\sum_{i=1}^n \ell_i^2(x) \mbox{var}(y_i)=\sigma^2 \sum_{i=1}^n \ell_i^2(x)$$  
+per stimare la varianza residuale $$\sigma^2$$, si può calcolare la varianza residuale nell'insieme di verifica o fare una stima corretta sull'insieme di stima:  
+$$\sigma^2=\frac{1}{n-p^*} \sum_{i=1}^n \left \{ y_i - \hat{f}(x_i) \right \} ^2$$  
+con $$p^*=2 \mbox{tr}(L)-\mbox{tr}(L^T L)\approx p$$ gradi di libertà equivalenti e $$L$$ matrice di lisciamento associata a $$\hat{f}(x)$$  
+L'intervallo di previsione potrebbe avere una copertura empirica più grande di quella prefissata se l'assunzione di normalità degli errori, sebbene non ci siano assunzioni sulla $$f(x)$$.
 
 
 <!---
