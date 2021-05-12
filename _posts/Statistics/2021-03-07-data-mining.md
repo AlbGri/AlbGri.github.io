@@ -1300,8 +1300,6 @@ Si ripetono gli step iniziali dello split conformal e successivamente si stima u
 Sull'insieme di verifica si ottengono i residui standardizzati $$\vert e_i^* \vert = \vert e_i \vert / \hat{p}(x_i)$$  
 Si pone $$\Delta=$$ il k-esimo più piccolo elemento tra i residui standardizzati e $$\Delta (x)=\hat{p}(x) \Delta$$  
 
-
-
 #### Varianti
 - Full Conformal: non usa divisione stima verifica, ma stima il modello $$n$$ volte, non produce intervalli ma regioni anche sconnesse
 - Variante divisione datati in $$K$$ parti (analogo a CV)
@@ -1310,7 +1308,7 @@ Si pone $$\Delta=$$ il k-esimo più piccolo elemento tra i residui standardizzat
 
 
 <!---
-L19 50:04
+L19 1:15:33
 --->
 
 
