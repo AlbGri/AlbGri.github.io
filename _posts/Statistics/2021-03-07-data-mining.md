@@ -1229,7 +1229,7 @@ allora $$A(x)=[q_{\alpha/2}(x),q_{1-\alpha/2}(x)]$$ e per costruzione la probabi
 
 #### Intervallo esatto: normale con parametri noti
 $$y_i=x_i^T\beta+\epsilon_i \Rightarrow y_{n+1}\vert x_{n+1}=x \overset{\text{iid}}{\sim}\mathcal{N}(x^T\beta_{\small{noto}},\sigma^2_{\small{noto}})$$  
-allora l'intervallo di previsione è $$A(x)=x^T\beta\pm\sigma^2 z_{1-\alpha/2}$$ con $$z_\alpha$$ quantile di un anormale,  
+allora l'intervallo di previsione è $$A(x)=x^T\beta\pm\sigma^2 z_{1-\alpha/2}$$ con $$z_\alpha$$ quantile di una normale,  
 ed è facile verificare che la probabilità è $$1-\alpha$$.  
 Non si cerca di quantificare l'incertezza solo rispetto la distribuzione (che in questo caso ha parametri noti), ma anche rispetto a $$y_{n+1}$$ il nuovo valore di $$y$$ che non è stato osservato.  
 
@@ -1268,10 +1268,44 @@ Sebbene non ci siano assunzioni sulla $$f(x)$$ l'intervallo di previsione potreb
 
 Si cerca quindi un approccio che permetta di annullare le assunzioni e consenta di gestire stimatori più complessi. Questo non è possibile a meno di intervalli degenere a dimensione infinita (Lei and Wasserman, 2014). Una soluzione è passare da una copertura condizionale (per ogni $$x$$) ad una marginale (marginalmente rispetto a $$x$$).  
 
-### Regione di previsione marginale
+### Regione di previsione marginale - Conformal Inference
 $$A(x;D)$$ garantisce una copertura marginale di livello $$1-\alpha$$ se per tutte le distribuzioni di $$P$$ e per ogni $$x\in\mathbb{R}$$, assumendo unicamente che i dati siano scambiabili (o iid per semplicità)  
 allora $$\mathbb{P}(y_{n+1}\in A(x_{n+1};D))\ge 1-\alpha$$  
-la probabilità intesa rispetto a $$(x_i,y_i)_{i=1}^n$$ e la coppia $$(x_{n+1},y_{n+1})$$.  
+la probabilità intesa rispetto a $$(x_i,y_i)_{i=1}^n$$ e la coppia $$(x_{n+1},y_{n+1})$$  
+(nota: la probabilità a $$1-\alpha$$ non è solo di $$y_{n+1}$$ che appartiene alla regione ma è anche legata alla generazione di quest'ultima).  
+
+Si impone che gli intervalli siano centrati sulla previsione $$\hat{f}(x)$$ per migliorare l'interpretazione.  
+Quindi si cercano intervalli $$A(x;D)=\hat{f}(x)\pm \Delta \quad \mbox{t.c.} \quad \mathbb{P}(y_{n+1}\in A(x_{n+1};D))\ge 1-\alpha$$,  
+con $$\Delta$$ più piccolo possibile mantenendo la validità
+
+#### Split conformal
+Si dividono in due parti i dati $$n_{\small\mbox{stima}}$$ e $$n_{\small\mbox{verifica}}$$,  
+dall'insieme di stima si ottiene $$\hat{f}(x)$$ e dall'insieme di verifica i residui $$\vert e_i \vert=\vert y_i - \hat{f}(x_i) \vert $$ per $$i=1,...,n_{\small\mbox{verifica}}$$.  
+Sia $$k=(n_{\small\mbox{verifica}}+1)(1-\alpha)$$  
+si pone $$\Delta=$$ il k-esimo più piccolo elemento tra i residui, cioè quantità molto simile al quantile empirico dei residui dell'insieme di verifica (evitando così l'overfitting).  
+Quindi $$A_{\mbox{split}}(x;D)=\hat{f}(x)\pm \Delta$$  
+allora $$\mathbb{P}(y_{n+1}\in A_{\mbox{split}}(x_{n+1};D))\ge 1-\alpha$$  
+inoltre $$\mathbb{P}(y_{n+1}\in A_{\mbox{split}}(x_{n+1};D))\le 1-\alpha+\frac{1}{n_{\small\mbox{verifica}}+1}$$  
+Funziona bene anche con $$n$$ piccoli, non ci sono approssimazioni né assunzioni.  
+
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) I quantili empirici sono uno stimatore non parametrico di una parte della distribuzione ??  
+
+Se viene utilizzato in questo modo l'insieme di verifica non può essere usato per l'identificazione di iperparametri o altri scopi.  
+
+Anche se il modello è impreciso, la probabilità di copertura empirica rimane valida.  
+
+#### Locally weighted split conformal
+Per modellare meglio la variabilità delle bande (soprattutto in caso di eteroschedasticità), si può agire a livello condizionale, mantenendo la cupertura marginale valida. 
+Si ripetono gli step iniziali dello split conformal e successivamente si stima un secondo modello sull'insieme di stima per calcolare la previsone dei residui in valore assoluto $$\hat{p}(x)=\vert y-\hat{f}(x) \vert$$  
+Sull'insieme di verifica si ottengono i residui standardizzati $$\vert e_i^* \vert = \vert e_i \vert / \hat{p}(x_i)$$  
+Si pone $$\Delta=$$ il k-esimo più piccolo elemento tra i residui standardizzati e $$\Delta (x)=\hat{p}(x) \Delta$$  
+
+
+
+#### Varianti
+- Full Conformal: non usa divisione stima verifica, ma stima il modello $$n$$ volte, non produce intervalli ma regioni anche sconnesse
+- Variante divisione datati in $$K$$ parti (analogo a CV)
+- Jacknife+: divisione analoga alla CV-LOO
 
 
 
@@ -1368,9 +1402,12 @@ R:no perché se è lontano da 0 e non varia, non per questo è da considerare co
 Q: slide 170, su modello scientifico e big data. Quel Rho 0.00084 è 1/sqrt(N)? perché mi viene differente. come è stato determinato quel n=400?
 
 
-Q: Nell'importanza delle variabili della random forest, perché escludere una variabile alla volta e valutarne l'impatto su una misura di errore, non è un buon approccio per valutare l'importanza delle variabili? Non è uguale al concetto del modello parametrico di rendere nullo un coefficiente e valutare l'impatto? La stepwise non si basa su questo fondamento? Ha senso costruire la feature importance per un modello parametrico lineare?
+Q: Nell'importanza delle variabili della random forest, ok che per come è costruita è un ottimo approccio per valutare l'importanza, ma perché escludere una variabile alla volta e valutarne l'impatto su una misura di errore, non è un buon approccio per valutare l'importanza delle variabili? La stepwise non si basa su questo fondamento? Ha più senso quindi costruire la feature importance per un modello parametrico lineare rispetto una stepwise?
 
 Q: cosa si intende con proprietà di convessità del lasso?
+
+
+Q: slide 19/29 conformal inference, definisce che l'algoritmo di previsione non deve dipendere dall'ordine delle osservazioni. Ma se prima si assume iid, come è possibile in un campione iid ci può essere una dipendenza dell'ordine delle osservazioni?
 
 
 https://www.codecogs.com/latex/eqneditor.php
