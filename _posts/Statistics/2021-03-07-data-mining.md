@@ -1231,12 +1231,16 @@ inoltre, bisogna ottenere una stima della varianza residuale $$\sigma^2$$ (dentr
 #### Lisciatori lineari
 Stimatore non parametrico lisciatore lineare  
 $$\hat{f}(x)=\sum_{i=1}^n \ell_i (x) y_i$$  
-si ha che 
-$$\mbox{var}\left \{ \hat{f}(x) \right \}=\sum_{i=1}^n \ell_i^2(x) \mbox{var}(y_i)=\sigma^2 \sum_{i=1}^n \ell_i^2(x)$$  
+si ha che $$\mbox{var}\left \{ \hat{f}(x) \right \}=\sum_{i=1}^n \ell_i^2(x) \mbox{var}(y_i)=\sigma^2 \sum_{i=1}^n \ell_i^2(x)$$  
 per stimare la varianza residuale $$\sigma^2$$, si può calcolare la varianza residuale nell'insieme di verifica o fare una stima corretta sull'insieme di stima:  
 $$\sigma^2=\frac{1}{n-p^*} \sum_{i=1}^n \left \{ y_i - \hat{f}(x_i) \right \} ^2$$  
 con $$p^*=2 \mbox{tr}(L)-\mbox{tr}(L^T L)\approx p$$ gradi di libertà equivalenti e $$L$$ matrice di lisciamento associata a $$\hat{f}(x)$$  
-L'intervallo di previsione potrebbe avere una copertura empirica più grande di quella prefissata se l'assunzione di normalità degli errori, sebbene non ci siano assunzioni sulla $$f(x)$$.
+
+Sebbene non ci siano assunzioni sulla $$f(x)$$ l'intervallo di previsione potrebbe avere una copertura empirica più grande di quella prefissata causato da una non validità della normalità degli errori, l'omoschedasticità e/o la relazione additiva degli errori alla funzione.  
+
+Si cerca quindi un approccio che permetta di annullare le assunzioni e consenta di gestire stimatori più complessi. Questo non è possibile a meno di intervalli degenere a dimensione infinita (Lei and Wasserman, 2014). Una soluzione è passare da una copertura condizionale (per ogni $$x$$) ad una marginale (marginalmente rispetto a $$x$$).  
+
+
 
 
 <!---
