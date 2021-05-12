@@ -1240,11 +1240,14 @@ Sebbene non ci siano assunzioni sulla $$f(x)$$ l'intervallo di previsione potreb
 
 Si cerca quindi un approccio che permetta di annullare le assunzioni e consenta di gestire stimatori più complessi. Questo non è possibile a meno di intervalli degenere a dimensione infinita (Lei and Wasserman, 2014). Una soluzione è passare da una copertura condizionale (per ogni $$x$$) ad una marginale (marginalmente rispetto a $$x$$).  
 
-
+### Regione di previsione marginale
+$$A(x;D)$$ garantisce una copertura marginale di livello $$1-\alpha$$ se per tutte le distribuzioni di $$P$$ e per ogni $$x\in\mathbb{R}$$, assumendo unicamente che i dati sia indipendenti e identicamente distribuiti  
+allora $$\mathbb{P}(y_{n+1}\in A(x_{n+1};D))\ge 1-\alpha$$  
+la probabilità intesa rispetto a $$(x_i,y_i)_{i=1}^n$$ e la coppia $$(x_{n+1},y_{n+1})$$
 
 
 <!---
-L19 39:06
+L19 50:04
 --->
 
 
