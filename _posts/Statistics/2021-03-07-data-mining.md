@@ -16,9 +16,9 @@ mathjax: "true"
 
 Proprietà stimatore LS: non distorto, tra i non distorti è quello a minima varianza...  
 
-### Indipendenti e identicamente distribuite
+### Indipendenti e identicamente distribuiti
 
-i.i.d $$\Rightarrow$$ scambiabilità $$\Rightarrow$$ marginali identiche
+i.i.d. $$\Rightarrow$$ scambiabilità $$\Rightarrow$$ marginali identiche
 
 #### Identicamente distribuiti
 $$\begin{pmatrix}
@@ -328,9 +328,7 @@ La condizione di stabilità dell'intorno definisce che la correlazione tra le $$
 ##### Lasso Adattivo
 Il Lasso adattivo permette di trovare una soluzione per svincolarsi dalla condizione di irrepresentabilità.  
 $$\hat{\beta}_{\mbox{adp}}(\lambda)=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)+\lambda \sum_{j=1}^p\frac{\vert \beta_j \vert}{\vert \hat{\beta}_{\mbox{iniz},j} \vert}$$  
-La modifica della penalizzazione con lo stimatore iniziale  
-$$\hat{\beta}_{\mbox{iniz},j}$$  
-consente di dare maggiore peso ai parametri più importanti.  
+La modifica della penalizzazione con lo stimatore iniziale $$\hat{\beta}_{\mbox{iniz},j}$$ consente di dare maggiore peso ai parametri più importanti.  
 Una scelta per lo stimatore iniziale può essere la stima ai minimi quadrati orinari (o la Ridge, o i coefficienti di regressione univariata se $$p>n$$, o altro).  
 Procedura a due step (prima si stima OLS e poi Lasso Adattivo).  
 
