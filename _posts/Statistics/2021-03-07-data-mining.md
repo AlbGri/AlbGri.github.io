@@ -609,7 +609,7 @@ Per evitare un eccesso di parametrizzazione dell'intercetta ogni funziona deve e
 
 #### Output (su R)
 L'output del modello additivo senza componenti d'interazione è generalmente composto da una parte di significatività delle variabili con il test F approssimato e una parte di grafici bidimenzionali di ciascuna variabile rispetto la target, con l'andamento delle bande di variabilità. Bisogna osservare la stima della funzione di regressione condizionata perché non vi è un solo parametro che esprime la relazione. La forma della relazione tra la target e una $$x$$ è la stessa qualsiasi sia il valore delle altre $$x$$. Il grafico congiunto è ottenibile dai singoli solo se si ha un modello additivo senza interazioni, un modello con interazioni è più evoluto ma non consente di commentare facilmente i singoli grafici.  
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Differenza tra banda di variabilità e bande di confidenza.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Differenza tra bande di variabilità e bande di confidenza.  
 
 #### GAM
 Modelli Additivi Generalizzati. Come i GLM si usa una funzione lineare, trasformando la scala del predittore additivo nella scala della variabile risposta.  
@@ -1203,6 +1203,8 @@ $$\frac{1}{C} \vert\vert \beta \vert\vert ^2$$ termine di penalizzazione per la 
 La previsione intervallare è una misura di variabilità della singola stima.  
 Si cercano delle bande di previsione valide anche per i dati di verifica.  
 
+La parte di rappresentazione grafica delle bande viene meno per un numero elevato di variabili, ma consente comunque di avere informazioni utili sulla variabilità della previsione con un limite inferiore e superiore.  
+
 Sia $$(x_i,y_i)\overset{\text{iid}}{\sim}P$$ l'insieme di dati, data una nuova osservazione $$x_{n+1}$$ si cerca una regione (intervallo) $$A(x)\subseteq \mathbb{R}$$ che contenga il dato nuovo $$y_{n+1}$$ con una certa probabilità fissata  
 $$\mathbb{P}(y_{n+1}\in A(x)\vert x_{n+1}=x)\ge 1-\alpha$$ con $$\alpha \in (0,1)$$  
 ovvero un insieme di valori altamente probabili condizionatamente a quel valore di $$x_{n+1}$$.  
@@ -1219,7 +1221,7 @@ Un intervallo di previsione quantifica la variabilità associata ad una futura o
 Per costruire gli intervalli di previsione si segue una logica analoga agli intervalli di confidenza in cui si cerca una quantità pivotale con distribuzione nota.  
 
 ### Distribuzione nota
-Con $$P$$ nota la funzione di ripartizione è un buon candidato per la stima intervallare  
+Con $$P$$ nota la funzione di ripartizione è nota e la funzione quantile condizionata di livello $$\alpha$$ è un buon candidato per la stima intervallare  
 $$F(y\vert x)=\mathbb{P}(y_{n+1}\vert x_{n+1}=x)\Rightarrow q_\alpha (x)=\mbox{inf}\{y\in\mathbb{R}:F(y\vert x)\ge \alpha\}$$  
 allora $$A(x)=[q_{\alpha/2}(x),q_{1-\alpha/2}(x)]$$ e per costruzione la probabilità è pari a $$1-\alpha$$  
 
@@ -1284,6 +1286,7 @@ si pone $$\Delta=$$ il k-esimo più piccolo elemento tra i residui, cioè quanti
 Quindi $$A_{\mbox{split}}(x;D)=\hat{f}(x)\pm \Delta$$  
 allora $$\mathbb{P}(y_{n+1}\in A_{\mbox{split}}(x_{n+1};D))\ge 1-\alpha$$  
 inoltre $$\mathbb{P}(y_{n+1}\in A_{\mbox{split}}(x_{n+1};D))\le 1-\alpha+\frac{1}{n_{\small\mbox{verifica}}+1}$$  
+
 Funziona bene anche con $$n$$ piccoli, non ci sono approssimazioni né assunzioni.  
 
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) I quantili empirici sono uno stimatore non parametrico di una parte della distribuzione ??  
@@ -1304,10 +1307,24 @@ Si pone $$\Delta=$$ il k-esimo più piccolo elemento tra i residui standardizzat
 - Jacknife+: divisione analoga alla CV-LOO
 
 
+### Regressione quantile
+Come accennato un buon modo per costruire regioni di previsione consiste basarsi sui quantili condizionati  
+$$A(x)=[q_{\alpha/2}(x),q_{1-\alpha/2}(x)]$$  
+si cercano di stimare direttamente i due quantili con la regressione quantile, per $$n$$ elevato, se la stima è affidabile, la copertura è $$1-\alpha$$  
 
-<!---
-L19 1:15:33
---->
+$$\hat{f}(x)$$ è una stima per la media condizionata, si cerca di stimare la funzione di perdita quadratica, minimizzata per $$n$$ grande dalla media condizionata. La funzione che minimizza la funzione di perdita degli scarti in valore assoluto è la mediana, estendibile ai quantili condizionati.  
+
+La funzione di perdità per stimare i quantili sarà  
+$$\sum_{i_1}^n m_{\alpha} \{ y_i , f(x_i) \}$$  
+dove $$m_{\alpha}(y,\hat{y})=\begin{cases} 
+\alpha (y-\hat{y}) & \mbox{se } y>\hat{y} \\ 
+(1-\alpha)(y-\hat{y}) & \mbox{altrimenti}
+\end{cases}$$  
+con $$f(x_i)$$ funzione più o meno complessa come il modello lineare, quindi stimando i quantili condizionati sotto l'ipotesi che seguano un modello lineare, ma va risolto il problema di ottimizzazione in modo numerico.  
+
+Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo valido solo con la condizione per $$n\leftarrow \infty$$. Ma diversamente dallo split conformal in cui si ha il un metodo di previsione e lo si modifica per ottenere gli intervalli di previsione, questo approccio necessita di algoritmi numerici appositi.  
+
+
 
 
 
@@ -1395,6 +1412,11 @@ R: paradossalmente acquisisce più senso, anche se cambia il segno del coefficie
 Q: nella regressione ridge, il livello di variabilità dei beta al variare dei lambda ci da qualche informazione in più? la bassa variabilità potrebbe essere vicina al concetto di significatività statistica?
 R:no perché se è lontano da 0 e non varia, non per questo è da considerare come robusto
 
+
+
+#### DA RISOLVERE
+
+
 Q: slide 170, su modello scientifico e big data. Quel Rho 0.00084 è 1/sqrt(N)? perché mi viene differente. come è stato determinato quel n=400?
 
 
@@ -1402,8 +1424,9 @@ Q: Nell'importanza delle variabili della random forest, ok che per come è costr
 
 Q: cosa si intende con proprietà di convessità del lasso?
 
-
 Q: slide 19/29 conformal inference, definisce che l'algoritmo di previsione non deve dipendere dall'ordine delle osservazioni. Ma se prima si assume iid, come è possibile in un campione iid ci può essere una dipendenza dell'ordine delle osservazioni?
+
+Q: bande di variabilità e bande di previsione sono sinonimi?
 
 
 https://www.codecogs.com/latex/eqneditor.php
