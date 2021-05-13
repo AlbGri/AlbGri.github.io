@@ -316,6 +316,11 @@ Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti ai mini
 <img src="/assets/images/Statistics/DM_Shrinkage1.png" width="300">
 
 
+
+Convessità del lasso: si riferisce alla convessità della funzione di perdita quadratica.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Anche nella Ridge si ha la convessità ma è più lontana, mentre nel lasso è più vicina ad una 'v'.
+
+
 <!---
 https://www.ias.ac.in/public/Volumes/reso/023/04/0439-0464.pdf
 --->
@@ -434,7 +439,6 @@ alcune scelte possibili del nucleo:
 - tricubico $$(1-\vert t \vert ^3)^3$$ se $$\vert t \vert < 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
 - rettangolare, dominio $$(-1,1)$$
 - epanechnikov, dominio $$(-1,1)$$
-<!--- --->
 
 Il nucleo a supporto limitato riduce il costo computazionale.
 
@@ -486,7 +490,9 @@ Qualsiasi polinomiale a tratti con vincolo di continuità può essere riscritta 
 Per interpolare non esattamente $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente. Con $$K$$ nodi, la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$. La stima risulta:  
 $$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$ per opportuni $$\theta_j$$ si minimizza la devianza residua e si ottiene una spline di regressione.  
 
-Si stima una funzione parametrica con molti parametri, le splines le pensiamo come combinazione lineare di funzioni di base. Si possono pensare altre forme di funzione di base, come serie di fourier, seni e coseni, o le Wavelet.
+Si stima una funzione parametrica con molti parametri, le splines le pensiamo come combinazione lineare di funzioni di base. Si possono pensare altre forme di funzione di base, come serie di fourier, seni e coseni, o le Wavelet.  
+
+Rendono complessa l'interpretazione rispetto LOESS e la regressione locale, ma le stime sono più stabili.  
 
 #### Multidimensionale
 Generalizzazione delle splines di regressione a più dimensione.  
@@ -609,7 +615,12 @@ Per evitare un eccesso di parametrizzazione dell'intercetta ogni funziona deve e
 
 #### Output (su R)
 L'output del modello additivo senza componenti d'interazione è generalmente composto da una parte di significatività delle variabili con il test F approssimato e una parte di grafici bidimenzionali di ciascuna variabile rispetto la target, con l'andamento delle bande di variabilità. Bisogna osservare la stima della funzione di regressione condizionata perché non vi è un solo parametro che esprime la relazione. La forma della relazione tra la target e una $$x$$ è la stessa qualsiasi sia il valore delle altre $$x$$. Il grafico congiunto è ottenibile dai singoli solo se si ha un modello additivo senza interazioni, un modello con interazioni è più evoluto ma non consente di commentare facilmente i singoli grafici.  
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Differenza tra bande di variabilità e bande di confidenza.  
+
+Bande di confidenza: tengono conto della distorsione  
+Bande di variabilità: non tengono conto della distorsione  
+Nella pratica la distorsione è difficile da stimare e per semplicità spesso la ignoriamo quindi nella pratica le due bande coincidono.
+
+
 
 #### GAM
 Modelli Additivi Generalizzati. Come i GLM si usa una funzione lineare, trasformando la scala del predittore additivo nella scala della variabile risposta.  
@@ -699,6 +710,8 @@ Tecnicamente parametrico, ma ciascuna $$w$$ ha una numerosità tale da renderlo 
 Si minimizza la funzione di perdita (es. devianza) con algoritmi come il back propagation.
 
 La Neural Network è un approssimatore universale, come la Regressione Projection Pursuit. I due metodi sono molto simili, nella NN le $$f$$ sono funzioni parametriche note, nella PPR vengono stimate con un lisciatore.  
+
+Il numero di nodi nello strato latente conviene fissarlo, la CV già la si usa per l'identificazione di altri parametri.  
 
 
 
@@ -1144,6 +1157,8 @@ Si definisce funzione nucleo (kernel)
 $$K(x,x')=\left \langle h(x), h(x') \right \rangle$$  
 che calcola i prodotti interni nello spazio delle variabili trasformate.  
 
+I parametri dei kernel conviene fissarli, dipende dalla variabilità del nucleo, la CV già la si usa per l'identificazione di altri parametri.  
+
 ##### Kernel Polinomiale
 $$K(x,x_i)=(1+ \left \langle x, x_i \right \rangle)^d$$
 Se $$p$$ numero di variabili e $$d$$ grado del polinomio crescono, diventa uno spazio enorme ma che non sarà tutto esplorato perché sarà valorizzato solo sui vettori di supporto.  
@@ -1408,30 +1423,30 @@ R: sul modello lineare l'errore di previsione e le y, la differenza è +1 perch�
 Q: nella regressione ridge, può accadere che alcuni coefficienti cambiano anche il segno al variare dei lambda? questo non fa perdere la credibilità interpretativa dei coefficienti?
 R: paradossalmente acquisisce più senso, anche se cambia il segno del coefficiente è perché stiamo modificando la relazione con le variabili correlate
 
-
 Q: nella regressione ridge, il livello di variabilità dei beta al variare dei lambda ci da qualche informazione in più? la bassa variabilità potrebbe essere vicina al concetto di significatività statistica?
 R:no perché se è lontano da 0 e non varia, non per questo è da considerare come robusto
+
+Q: slide 170, su modello scientifico e big data. Quel Rho 0.00084 è 1/sqrt(N)? perché mi viene differente. come è stato determinato quel n=400?
+R: paradisi e paradossi vedere slides
+
+Q: Nell'importanza delle variabili con la random forest, ok che per come è costruita è un ottimo approccio per valutare l'importanza, ma perché escludere una variabile alla volta e valutarne l'impatto su una misura di errore, non è un buon approccio per valutare l'importanza delle variabili? La stepwise non si basa su questo fondamento? Ha più senso quindi costruire la feature importance per un modello parametrico lineare rispetto una stepwise?
+R: quando stimo i parametri sono al netto dell'effeto delle altre variabili nel modello lineare, le RF se tolgo la variabile non è una stima di questo, è diverso
+
+Q: bande di variabilità e bande di previsione sono sinonimi? 
+R: No, al più bande di variabilità vs confidenza, la confidenza tengono conto della distorsione, la variabilità sono le confidenza senza le distorsione, la distorsione è difficile da stimare e ce ne freghiamo
+
+Q: cosa si intende con proprietà di convessità del lasso?
+la funzione di perdita è comunque convessa, la ridge è convessa ma è più lontana , mentre il lasso è vicina perché ad una V
 
 
 
 #### DA RISOLVERE
 
+Q: perché la ridge è più lontana dal lasso nella convessità? cosa si intende per lontano dalla convessità?
 
-Q: slide 170, su modello scientifico e big data. Quel Rho 0.00084 è 1/sqrt(N)? perché mi viene differente. come è stato determinato quel n=400?
-
-
-Q: Nell'importanza delle variabili della random forest, ok che per come è costruita è un ottimo approccio per valutare l'importanza, ma perché escludere una variabile alla volta e valutarne l'impatto su una misura di errore, non è un buon approccio per valutare l'importanza delle variabili? La stepwise non si basa su questo fondamento? Ha più senso quindi costruire la feature importance per un modello parametrico lineare rispetto una stepwise?
-
-Q: cosa si intende con proprietà di convessità del lasso?
-
-Q: slide 19/29 conformal inference, definisce che l'algoritmo di previsione non deve dipendere dall'ordine delle osservazioni. Ma se prima si assume iid, come è possibile in un campione iid ci può essere una dipendenza dell'ordine delle osservazioni?
-
-Q: bande di variabilità e bande di previsione sono sinonimi?
 
 
 https://www.codecogs.com/latex/eqneditor.php
-
-
 
 
 
