@@ -412,7 +412,7 @@ $$f(x_0)=\mbox{Media}(y\vert x=x_0)$$
 Si stima $$f(x_0)$$ attraverso la media aritmetica delle $$y_i$$ le cui $$x_i$$ sono in una finestra di $$x_0$$. Si determina $$\hat{f}(x_0)$$ con $$k$$ numero di vicini. 
 
 ### Regressione Lineare Locale
-Come il k-NN ma non effettua una media aritmetica ma una regressione lineare.  
+Come il k-NN ma non effettua una media aritmetica ma una regressione lineare (regressione locale).  
 Sul punto generico $$x_0$$ espando con Taylor:  
 $$f(x)=f(x_0)+f'(x_0)(x-x_0)+\mbox{resto}$$  
 Stimo con il metodo dei minimi quadrati pesati mediante la distanza tra $$x_i$$ e $$x_0$$:  
