@@ -284,14 +284,14 @@ Tipicamente non si penalizza l'intercetta.
 Il metodo consente di ottenere stime anche con variabili collineari.
 
 **Calcolo del minimo**  
-$$D_{\small{\mbox{ridge}}}(\beta)=(y-X\beta)^T(y-X\beta)+\lambda \beta^T\beta \\
-=(y^T-\beta^T X^T)(y-X\beta)+\beta^T\lambda I \beta \\
+$$D_{\small{\mbox{ridge}}}(\beta)=(y-X\beta)^T(y-X\beta)+\lambda \beta^T\beta= \\
+=(y^T-\beta^T X^T)(y-X\beta)+\beta^T\lambda I \beta= \\
 =y^Ty-\beta^T X^T y-y^T X \beta+\beta^T X^T X \beta+\beta^T\lambda I \beta=*$$
-dato che $$(y^T_{\small{(1\times n)}} X_{\small{(n\times n)}} \beta_{\small{(n\times 1)}})=(\beta^T X^T y)$$ coincide con la trasposta poiché è uno scalare  
-$$*=y^Ty-\beta^T X^T y-y^T X \beta+\beta^T X^T X \beta+\beta^T\lambda I \beta$$
-
-
-$$\frac{\partial D_{\small{\mbox{ridge}}}(\beta)}{\partial \beta}$$
+nota: $$(y^T_{\small{(1\times n)}} X_{\small{(n\times n)}} \beta_{\small{(n\times 1)}})=(\beta^T X^T y)$$ coincide con la trasposta perché scalare  
+$$*=y^Ty-\beta^T X^T y-y^T X \beta+\beta^T X^T X \beta+\beta^T\lambda I \beta= \\
+=y^T y -2\beta^T X^T y + \beta^T (X^T X+\lambda I)\beta$$
+Posto $$\frac{\partial D_{\small{\mbox{ridge}}}(\beta)}{\partial \beta}=0$$ si ha  
+$$-2X^T y+2(X^T X+\lambda I) \beta=0\Rightarrow \hat{\beta}_{\small{\mbox{ridge}}}=(X^TX+\lambda I)^{-1} X^T y$$
 
 
 #### Regressione ridge generalizzata
