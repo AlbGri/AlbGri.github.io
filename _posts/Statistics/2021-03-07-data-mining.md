@@ -613,6 +613,10 @@ $$\lambda$$ parametro di lisciamento stabilisce quanto è importante la penalizz
 
 Si tratta di una tecnica che usa le splines, ma è uno strumento diverso dalle splines di regressione.
 
+<!---
+https://statisticaloddsandends.wordpress.com/tag/smoothing-splines/
+--->
+
 #### Thin plate splines
 Un modo di generalizzare le smoothing splines a più dimensioni si ottiene sostituendo $$f''$$ della funzione di perdita con il laplaciano (somma di tutti degli elementi dell'hessiano al quadrato).  
 La soluzione di ottimo risulta (non è una spline ma qualcosa di simile):  
