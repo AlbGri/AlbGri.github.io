@@ -514,7 +514,9 @@ $$F(s)=\int_0^\infty e^{-st}\cdot 1dt=\left[-\frac{1}{s}e^{-st}\right]_0^\infty=
 $$\big(f*g\big)(t)=\int_0^t{f(t-\tau)g(\tau)d\tau}\equiv L^{-1}\Big\{L\big[f(t)\big]L\big[g(t)\big]\Big\}$$  
 
 
+## Altro
 
+Law of the unconscious statistician [LOTUS](https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician)
 
 
 ...
