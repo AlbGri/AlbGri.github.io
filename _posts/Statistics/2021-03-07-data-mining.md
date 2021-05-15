@@ -273,7 +273,7 @@ Regolarizzare l'equazione di stima, penalizzando la funzione di ottimizzazione d
 
 Funzionano bene anche quando $$p>n$$.  
 
-### Regressione Ridge
+### Regressione ridge
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \beta_j^2 \le s$$ (norma in [spazio L2](https://it.wikipedia.org/wiki/Spazio_l2))  
 in forma di Lagrange:  
 $$\hat{\beta}_\lambda=\text{arg}\,\min\limits_{\beta}\left \{ \left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta \right \}=\left (X^TX+\lambda I \right )^{-1} X^T y$$  
@@ -283,7 +283,7 @@ se $$\lambda\rightarrow 0 \Rightarrow \hat{\beta}_\lambda\rightarrow \hat{\beta}
 Tipicamente non si penalizza l'intercetta.  
 Il metodo consente di ottenere stime anche con variabili collineari.
 
-**Calcolo del minimo**  
+#### Calcolo stimatore ridge
 $$D_{\small{\mbox{ridge}}}(\beta)=(y-X\beta)^T(y-X\beta)+\lambda \beta^T\beta= \\
 =(y^T-\beta^T X^T)(y-X\beta)+\beta^T\lambda I \beta= \\
 =y^Ty-\beta^T X^T y-y^T X \beta+\beta^T X^T X \beta+\beta^T\lambda I \beta=*$$
@@ -292,7 +292,6 @@ $$*=y^Ty-\beta^T X^T y-y^T X \beta+\beta^T X^T X \beta+\beta^T\lambda I \beta= \
 =y^T y -2\beta^T X^T y + \beta^T (X^T X+\lambda I)\beta$$
 Posto $$\frac{\partial D_{\small{\mbox{ridge}}}(\beta)}{\partial \beta}=0$$ si ha  
 $$-2X^T y+2(X^T X+\lambda I) \beta=0\Rightarrow \hat{\beta}_{\small{\mbox{ridge}}}=(X^TX+\lambda I)^{-1} X^T y$$
-
 
 #### Regressione ridge generalizzata
 $$\hat{\beta}_\Omega=\text{arg}\,\min\limits_{\beta}\left \{ \left ( y-X\beta \right )^T W \left ( y-X\beta \right ) + \beta^T \Omega \beta \right \}=\left (X^T W X+\Omega \right )^{-1} X^T W y$$  
