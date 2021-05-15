@@ -467,29 +467,31 @@ Dati $$n$$ punti estratti una distribuzione uniforme $$p$$-variata, $$x\sim U^p(
 L'intorno (ipercubo) contenente una frazione $$d$$ di punti ha lati di lunghezze $$e_p(d)=d^{\frac{1}{p}}$$. $$e_p(d)$$ esprime la percentuale di copertura del campo di variazione di ciascuna variabile esplicativa che si dovrebbe avere per ottenere una media 'locale' con $$p$$ dimensioni e $$d$$ percentuale di utilizzo dei dati.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Così gli 'intorni' non sono più locali.  
 
-##### Distanza mediana
-Caso mododimensionale:  
+##### Distanza mediana dall’origine al punto più vicino
+Caso unidimensionale:  
 sia $$X\sim U[-1,1]$$ con $$f(x)=\frac{1}{b-a}=\frac{1}{2}$$ si ha che  
 $$F_X(m)=\mathbb{P}(X\le m)=\int_{-\infty}^m f(u)\, du=\int_1^m \frac{1}{2}\, du=\frac{m+1}{2}$$ quindi  
-la probabilità che un punto abbia distanza dall'origine inferiore a $$m$$ sarà  
+la probabilità che un punto abbia distanza dall'origine inferiore a $$m$$ risulta  
 $$\mathbb{P}(\vert X \vert \le m)=\mathbb{P}(-m\le X \le m)=\mathbb{P}(X\le m)-P(X\le -m)=m$$  
 questa probabilità si può anche ottenere come lo spazio favorevole $$2m$$ sull'intero spazio possibile $$2$$ lunghezza del segmento.  
 Quindi la probabilità che il punto non sia contenuto in questa distanza è $$1-m$$.  
-Nel caso di $$N$$ punti, la probabilità $$p$$ che tutti hanno una distanza dall'origine maggiore di $$m$$ è $$p=(1-m)^N$$. 
-Si definisca $$m$$ come la distanza mediana dall'origine al punto più vicino tra gli $$N$$, quindi  
-$$p=\frac{1}{2}\Rightarrow m=1-\left ( \frac{1}{2} \right ) ^{\frac{1}{N}}$$  
+Nel caso di $$n$$ punti, la probabilità $$Q$$ che tutti hanno una distanza dall'origine maggiore di $$m$$ è $$Q=(1-m)^n$$.  
+Si definisca $$m$$ come la distanza mediana dall'origine al punto più vicino tra gli $$n$$, quindi  
+$$Q=\frac{1}{2}\Rightarrow m=1-\left ( \frac{1}{2} \right ) ^{\frac{1}{n}}$$  
 
 Caso bidimensionale:  
-sia $$X\sim U[-1,1]$$ e $$Y\sim U[-1,1]$$ con $$0\le x^2+y^2 \le 1$$ distribuzione uniforme su un cerchio unitario con area $$\pi$$ quindi con densità congiunta $$f(x,y)=\frac{1}{\pi}$$.  
-la probabilità che un punto bidimensionale abbia distanza dall'origine $$R=\sqrt{x^2+y^2}$$ inferiore a $$m$$ sarà  
-$$\mathbb{P}(R \le m)$$  
+sia $$X\sim U[-1,1]$$ e $$Y\sim U[-1,1]$$ con $$0\le X^2+X^2 \le 1$$ distribuzione uniforme su un cerchio unitario con area $$\pi$$ quindi con densità congiunta $$f(X,Y)=\frac{1}{\pi}$$.  
+la probabilità che un punto abbia distanza dall'origine inferiore a $$m$$ risulta  
+$$\mathbb{P}(R \le m)$$ con $$R=\sqrt{X^2+Y^2}$$  
 si può determinare integrando la funzione densità sulla [corona circolare](https://www.albgri.com/probability/#integrazione-con-coordinate-polari) di raggio $$m$$ oppure ragionando in modo più semplice:  
 $$\mathbb{R}(R \le m)=\frac{\mbox{Area del cerchio di raggio }m}{\mbox{Area del cerchio di raggio unitario}}=\frac{\pi \cdot m^2}{\pi \cdot 1^2}=m^2$$  
-analogamente a prima, dati $$N$$ punti, la probabilità $$p$$ che tutti hanno una distanza dall'origine maggiore di $$m$$ è $$p=(1-m^2)^N$$, ponendo $$m$$ distanza mediana quindi $$p=\frac{1}{2}$$ si ottiene  
-$$m=1-\left ( \left ( \frac{1}{2} \right ) ^{\frac{1}{N}} \right ) ^{\frac{1}{2}}$$  
+analogamente al caso unidimensionale, dati $$n$$ punti, la probabilità $$Q$$ che tutti hanno una distanza dall'origine maggiore di $$m$$ è $$Q=(1-m^2)^n$$. 
+Posto $$m$$ distanza mediana dall'origine al punto più vicino tra gli $$n$$ si ottiene  
+$$Q=\frac{1}{2}\Rightarrow m=1-\left ( \left ( \frac{1}{2} \right ) ^{\frac{1}{n}} \right ) ^{\frac{1}{2}}$$  
 
+Caso $$p$$-dimensionale:  
+$$m=r(p,n)=\left ( 1-0.5^{\frac{1}{n}} \right )^{\frac{1}{p}}$$
 
-si può ottenere mediante l'integrale doppio
 
 
 
