@@ -580,27 +580,23 @@ Il livello di complessità è dato dal numero di nodi ($$K_1, K_2$$).
 
 Le funzioni hanno anche le interazioni, è difficile distinguere l'effetto di ogni variabile.
 
-### Splines di lisciamento
+### Spline di lisciamento
 Smoothing splines - modello parametrico.  
 Dato il criterio dei minimi quadrati penalizzati (nella funzione, non nei parametri come la regressione Ridge e LASSO):  
 $$D(f,\lambda)=\sum_{i=1}^n [y_i-f(x_i)]^2+\lambda \int_{-\infty}^{\infty}\left \{ f''(t) \right \}^2 dt$$  
 con $$\lambda>0$$ parametro di lisciamento (più è grande più è liscia) moltiplicato per il grado di irregolarità della curva.  
 Si cerca $$\hat{f}_\lambda=\text{arg}\,\min\limits_{f}\,D(f,\lambda)$$.  
-
 La $$f$$ che minimizza la funzione di perdita risulta una spline cubica naturale:  
 $$f(x)=\sum_{j=1}^{n_0} N_j(x)\theta_j=N\theta$$  
 con $$n_0$$ numero di $$x_i$$ distinti e $$N_j(x)$$ basi delle spline naturali (tanti nodi quante sono le osservazioni, che non è un problema grazie alla penalizzazione).  
-$$N$$ matrice in cui la $$j-$$ma colonna contiene i valori di $$N_j$$ in corrispondenza agli $$n_0$$ valori distinti di $$x_i$$  
-$$N$$ matrice con elemento generico $$N_{ij}=N_j(x_i)$$  
-$$\Omega$$ matrice con elemento generico $$\Omega_{ij}=\int N_i''(t)N_j''(t)dt$$  
+$$N$$ matrice in cui la $$j$$-ma colonna contiene i valori di $$N_j$$ in corrispondenza agli $$n_0$$ valori distinti di $$x_i$$, $$N_{ij}=N_j(x_i)$$ generico elemento della matrice.  
 
 Il problema si può riscrivere come  
-$$D(f,\lambda)=(y-N\theta)^T (y-N\theta)+\lambda \theta^T \Omega \theta$$  
-Si cerca $$\hat{\theta}_\lambda=\text{arg}\,\min\limits_{\theta\in\mathbb{R}^n}\,D(f,\lambda)$$.  
+$$\hat{\theta}_\lambda=\text{arg}\,\min\limits_{\theta\in\mathbb{R}^n}\,(y-N\theta)^T (y-N\theta)+\lambda \theta^T \Omega \theta=(N^TN+\lambda\Omega)^{-1}N^Ty$$,  
+con $$\Omega$$ matrice con elemento generico $$\Omega_{ij}=\int N_i''(t)N_j''(t)dt$$.  
+La soluzione di ottimo è analoga alla regressione ridge generalizzata.
 
-Il $$\theta$$ che minimizza la funzione di perdita risulta:  
-$$\hat{\theta}=(N^TN+\lambda\Omega)^{-1}N^Ty$$  
-sostituendo in $$f(x)$$ si ottiene $$\hat{y}=S_\lambda y$$ quindi è un lisciatore lineare.  
+Sostituendo $$\hat{\theta}_\lambda$$ in $$f(x)$$ si ottiene $$\hat{y}=S_\lambda y$$ quindi è un lisciatore lineare.  
 Si parla dunque di 'smoothing splines' o spline di lisciamento.  
 
 Si tratta di una tecnica che usa le splines, ma è uno strumento diverso dalle splines di regressione.
