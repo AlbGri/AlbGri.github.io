@@ -53,6 +53,27 @@ $$e^{f(x)}+c=\int{e^{f(x)}\cdot f'(x)dx}$$
 ##### Integrazione per parti  
 $$\int_a^b k dx=kx|_a^b-\int_a^b xdx$$  
 
+##### Coordinate polari
+Esempio integrale su cerchio di raggio $$m$$ (calcolo dell'area $$\pi \cdot m^2$$ integrale).  
+Sia $$S=\left \{ \left \{ (x,y)\in\mathbb{R}^2:0\le x^2+y^2 \le m^2 \right \} \right \}$$ la corona circolare, dominio su cui integrare, e $$f(x)=1$$ la funzione su cui integrare.  
+Dato il sistema per la conversione di coordinate cartesiane in coordinate polari  
+$$\begin{cases} 
+x=\rho \cdot \cos{\theta} \\ 
+y=\rho \cdot \sin{\theta}
+\end{cases}$$
+con l'angolo $$\theta\in [0,\pi]$$ e il raggio $$\rho\ge 0$$ (e $$x^2+y^2=\rho^2$$ Pitagora).  
+Il dominio può essere quindi riscritto  
+$$\begin{cases} 
+x^2+y^2\ge 0 \\ 
+x^2+y^2\le m^2
+\end{cases} \equiv
+\begin{cases} 
+\rho ^2 \ge 0 & \rightarrow \rho \ge 0 \small{\mbox{ dato che } \rho \ge 0} \\ 
+x^2+y^2\le m^2 & \rightarrow 0 \le \rho \le m \small{\mbox{ dato che } \rho \ge 0}
+\end{cases} \Rightarrow
+0 \le \rho \le m
+$$
+
 ### Misura di insiemi
 Sia $$A$$ sottoinsieme di $$\Re$$, la sua misura risulta  
 $$|A|=\int_A dx$$  
