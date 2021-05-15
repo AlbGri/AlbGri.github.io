@@ -284,7 +284,7 @@ nota: se $$\lambda\rightarrow\infty \Rightarrow \hat{\beta}\rightarrow 0$$ e se 
 Tipicamente non si penalizza l'intercetta. Il metodo consente di ottenere stime anche con variabili collineari.
 
 #### Interpretazione Bayesiana
-Data la verosimiglianza $$y_i\sim\mathcal{N}(\beta_0+x_i^T \beta , \sigma^2)$$, consideriamo che $$\beta_j\sim \mathcal{N}(0,\tau^2),j=1,...,p$$ è una v.a.,  
+Data la verosimiglianza $$y_i\sim\mathcal{N}(\beta_0+x_i^T \beta , \sigma^2)$$ e la v.a. $$\beta_j\sim \mathcal{N}(0,\tau^2),j=1,...,p$$,  
 quindi la distribuzione a priori è  
 $$\beta\sim \mathcal{N}(0,\tau^2 I)$$  
 e si dimostra che la distribuzione a posteriori è  
@@ -293,7 +293,7 @@ la stima ridge è la [moda](https://it.wikipedia.org/wiki/Stima_del_massimo_a_po
 $$\beta \vert y \sim \mathcal{N} \left \{ \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} X^Ty, \sigma^2 \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} \right \}$$  
 
 #### Relazione con PCA
-Nella PCA rotiamo le $$X$$, e dopo scegliamo le prime direzioni (le più variabili), per fare la regressione su $$y$$. La ridge si può formulare in modo che prenda le direzioni delle componenti principali (utilizzando la SVD $$X=UDV^T$$).  
+Nella PCA si ruotano le $$X$$, e dopo si scelgono le prime direzioni (le più variabili), per fare la regressione su $$y$$. La ridge si può formulare in modo che prenda le direzioni delle componenti principali (utilizzando la SVD $$X=UDV^T$$).  
 $$X\hat{\beta}^{\tiny \mbox{ridge}}=X\left ( X^TX+\lambda I \right )^{-1} X^T y =M_{\lambda}y=\sum_{j=1}^p u_j k_j u_j^T y$$  
 con $$k_j=\frac{d_j^2}{d^2_j+\lambda}$$  
 $$u_j$$ vettori ortogonali della $$U$$  
@@ -310,7 +310,7 @@ Non c'è una forma esplicita per risolvere il problema, perché il valore assolu
 
 Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili. $$s$$, parametro di compressione, è da considerare come iperparametro, da scegliere ottimizzando il trade-off varianza distorsione.  
 
-La funzione da minimizzare è un paraboloide, il cui centro è la stima di massima verosimiglianza. Nel caso a due variabili, con il Lasso il vincolo è un parallelepipedo a base quadrata, che possiamo visualizzare come quadrato (curve di livello) perché ragioniamo solo con i due coefficienti, e un cerchio nella Ridge. La soluzione con il vincolo è il punto di contatto tra il paraboloide e il vincolo. Nel Lasso, a meno di casi estremi (es 2 variabili in cui il paraboloide è perfettamente nella diagonale), uno dei due coefficienti andrà a 0.  
+La funzione da minimizzare è un paraboloide, il cui centro è la stima di massima verosimiglianza. Nel caso a due variabili, con il Lasso il vincolo è un parallelepipedo a base quadrata, che si può visualizzare come quadrato (curve di livello) perché si ragiona solo con i due coefficienti, e un cerchio nella Ridge. La soluzione con il vincolo è il punto di contatto tra il paraboloide e il vincolo. Nel Lasso, a meno di casi estremi (es 2 variabili in cui il paraboloide è perfettamente nella diagonale), uno dei due coefficienti andrà a 0.  
 
 Con variabili esplicative ortogonali, il ridge moltiplica i coefficienti ai minimi quadrati per un valore inferiore ad 1 (ruotandoli), il lasso li trasla di una costante verso lo zero.  
 <img src="/assets/images/Statistics/DM_Shrinkage1.png" width="300">
@@ -344,7 +344,7 @@ Pesando la penalizzazione $$\sum_{j=1}^p w_j \vert \beta_j \vert$$
 dove $$w_j=\frac{1}{\vert \hat{\beta}_{\mbox{iniz},j} \vert^v}$$ con $$v>0$$
 
 #### Interpretazione Bayesiana
-Come per il Ridge, se consideriamo i beta (a priori) distribuiti secondo una Laplace, si ottiene lo stimatore Lasso (la densità a Posteriori ha come nucleo la forma di Lagrange dello stimatore Lasso).  
+Come per il Ridge, se si considerano i beta (a priori) distribuiti secondo una Laplace, si ottiene lo stimatore Lasso (la densità a Posteriori ha come nucleo la forma di Lagrange dello stimatore Lasso).  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da dimostrare
 
 ### Famiglia shrinkage
@@ -520,7 +520,7 @@ Splines cubiche naturali: una proposta diffusa per la definizione degli ultimi 2
 $$f''(\xi_1)=f''(\xi_K)=0$$  
 
 Una spline di ordine $$M$$ è un polinomio a tratti di grado $$M-1$$ con $$M-2$$ derivate continue sui nodi. 
-La spline cubica è una spline di ordine 4 (3 grado del polinomio più l'intercetta).  
+La spline cubica è una spline di ordine 4 (3 grado del polinomio più l'intercetta), è la spline di ordine più basso per il quale la discontinuità non è visibile all'occhio umano.  
 
 Quindi le spline, in condizioni di continuità sono funzioni polinomiali a tratti.  
 Una funzione di tipo splines si può scrivere come combinazione lineare di opportuni funzioni di base (o base di funzioni) note:  
@@ -528,19 +528,30 @@ $$f(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$
 
 Qualsiasi polinomiale a tratti con vincolo di continuità può essere riscritta come combinazione lineare di funzione di base.  
 
-### Splines di regressione (parametrica)
-Per interpolare non esattamente $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente.  
-Stima di una spline cubica con $$K$$ nodi
+L'insieme di funzioni di base è dato da:  
+$$h_j(X)=X^{j-1},\quad j=1,...,M$$  
+$$h_{M+\ell}(X)=(X-\xi_\ell)^{M-1}_+, \quad \ell = 1,...,K$$  
+con $$(a)_+=\max{(a,0)}$$  
+
+Nel caso di spline cubice con 2 nodi:  
+$$h_1(x)=1,\quad h_2(x)=x,\quad h_3(x)=x^2,\quad h_4(x)=x^3,\quad h_5(x)=(x-\xi_1)^3_+,\quad h_6(x)=(x-\xi_2)^3_+$$  
+quindi la _truncated power series representation_ è  
+$$f(x)=\beta_0+\beta_1 x+\beta_2 x^2+\beta_3 x^3 +\theta_1 (x-\xi_1)^3_+ + \theta_2 (x-\xi_2)^3_+$$  
+per definizione è una splines in quanto polinomiale a tratti, continua, con derivata I e II continua nei due nodi.  
+
+
+### Splines di regressione
+Regressione parametrica mediante splines.  
+Per costruire una funzione di regressione su $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente.  
+Stima di una spline cubica con $$K$$ nodi  
 $$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$  
 la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$.  
 Per opportuni $$\theta_j$$ si minimizza la devianza residua e si ottiene una spline di regressione.  
 
-L'insieme di funzioni di base è dato da  
-$$h_j(X)=X^{j-1},\quad j=1,...,M$$  
-$h_{M+\ell}(X)=(X-\xi_\ell)^{M-1}_+, \quad \ell = 1,...,K$  
-con $$(a)_+=\max{(a,0)}$$
+Si stima una funzione parametrica con molti parametri, le splines considerabili come combinazione lineare di funzioni di base. Si possono pensare altre forme di funzione di base, come serie di fourier, seni e coseni, o le Wavelet.  
 
-Si stima una funzione parametrica con molti parametri, le splines le pensiamo come combinazione lineare di funzioni di base. Si possono pensare altre forme di funzione di base, come serie di fourier, seni e coseni, o le Wavelet.  
+La posizione dei nodi ha un'importanza minore (simile alla scelta del nucleo nella regressione locale) può essere scelta in funzione dei quantili, o equispaziati, comunque collocati dove sono presenti i dati.  
+La scelta del numero di nodi è impattante, da un estremo più semplice che genera un singolo polinomio al caso di $$K+1$$ polinomi in cui si interpolano i dati e si genera overfitting. Va scelto con i metodi classici per identificare gli iperparametri ottimi.  
 
 Rendono complessa l'interpretazione rispetto LOESS e la regressione locale, ma le stime sono più stabili.  
 
@@ -559,7 +570,7 @@ Si può usare per rappresentare la funzione bidimensionale
 $$g(x)=\sum_{j=1}^{K_1} \sum_{k=1}^{K_2} \theta_{jk}g_{jk}(x)$$  
 la stima dei $$\theta_{jk}$$ viene effettuata attraverso i minimi quadrati.  
 
-Una polinomiale a tratti in $$\mathbb{R}^2$$ è difficile, quindi costruiamo delle basi per costruire una funzione che sia combinazione lineare di funzioni di base.  
+Una polinomiale a tratti in $$\mathbb{R}^2$$ è difficile, si costruiscono delle basi per definire una funzione che sia combinazione lineare di funzioni di base.  
 
 Si rischiano di ottenere un numero molto elevato di funzioni (4+1 per ogni nodo, e moltiplicarle per 4+1 per ogni nodo per l'altro asse), quindi si considerano le funzioni di base lineari a tratti e non cubiche. Il prodotto tensoriale di base lineari a tratti è comoda perché è nulla tranne in piccole porzioni.  
 
@@ -600,7 +611,7 @@ Il livello di complessità è dato da $$\lambda$$.
 Data la teoria dei modelli lineari  
 $$\hat{y}=Py,\qquad \hat{\epsilon}=(I-P)y$$  
 con l'ipotesi che $$P=X(X^TX)^{-1}X^T$$ matrice simmetrica idempotente di rango $$p$$ e con $$\mbox{rank}(P)=\mbox{tr}(P)=p$$  
-sappiamo che $$\mathbb{E}(\vert\vert\hat{\epsilon}\vert\vert ^2)=\sigma^2 (n-p)$$ e  
+è noto che $$\mathbb{E}(\vert\vert\hat{\epsilon}\vert\vert ^2)=\sigma^2 (n-p)$$ e  
 con l'ipotesi di normalità:  
 $$\vert\vert\hat{\epsilon}\vert\vert ^2\sim\sigma^2\mathcal{X}^2_{n-p}, \qquad \vert\vert\hat{y}\vert\vert ^2=\hat{y}^T\hat{y}\sim\sigma^2\mathcal{X}^2_p(\delta)$$  
 e $$\delta$$ parametro di non centralità.  
@@ -653,7 +664,7 @@ $$f(x_1,...,x_p)=\alpha+\sum_{j=1}^p f_j(x_j)+\sum_{k<j} f_{kj}(x_k,x_j)+...$$
 si può usare per approssimare qualsiasi funzione.  
 Può essere una buona scelta fermarsi al termine di primo grado:  
 $$y=f(x_1,...,x_p)+\epsilon=\alpha+\sum_{j=1}^p f_j(x_j)+\epsilon$$  
-consentiamo una maggiore libertà di forma delle variabili rispetto il modello lineare.  
+consente una maggiore libertà di forma delle variabili rispetto il modello lineare.  
 In un contesto geografico si potrebbe aggiungere come elemento di interazione le coordinate e il resto tutte in maniera additiva.  
 Le $$p$$ funzioni $$f_j(x_j)$$ sono stimate mediante l'algoritmo 'backfitting'.  
 
@@ -670,7 +681,7 @@ L'output del modello additivo senza componenti d'interazione è generalmente com
 
 Bande di confidenza: tengono conto della distorsione  
 Bande di variabilità: non tengono conto della distorsione  
-Nella pratica la distorsione è difficile da stimare e per semplicità spesso la ignoriamo quindi nella pratica le due bande coincidono.
+Nella pratica la distorsione è difficile da stimare e per semplicità spesso la si ignora quindi nella pratica le due bande coincidono.
 
 
 
