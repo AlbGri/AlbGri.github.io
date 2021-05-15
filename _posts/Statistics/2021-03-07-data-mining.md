@@ -462,11 +462,20 @@ Se si vuole l'MSE uguale a $$\delta$$ si impone $$\mbox{MSE}=\delta$$ e si risol
 
 #### Distribuzione verso la frontiera
 Dati $$n$$ punti estratti una distribuzione uniforme $$p$$-variata, $$x\sim U^p(0,1)$$, si ha che la distanza mediana dall'origine al punto più vicino, $$r(p,n)=\left ( 1-0.5^{\frac{1}{n}} \right )^{\frac{1}{p}}$$, cresce molto di pù all'aumentare della dimensione che della numerosità campionaria, pertanto la maggior parte dei punti è più vicina al bordo dello spazio campionario che ad ogni altro punto.  
+
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La previsione è molto più difficile vicino ai bordi (estrapolazione contro interpolazione).  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La maggior parte dei punti è vicina all'involucro convesso del campione..  
+
 L'intorno (ipercubo) contenente una frazione $$d$$ di punti ha lati di lunghezze $$e_p(d)=d^{\frac{1}{p}}$$. 
-Con $$p$$ dimensioni, per usare il $$d%$$ dei dati per ottenere una media 'locale', si dovrebbe coprire il $$e_p(d)%$$ del campo di variazione di ciascuna variabile esplicativa.  
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Così gli 'intorni' non sono più locali.  
+Con $$p$$ dimensioni, per usare il $$d\%$$ dei dati per ottenere una media 'locale', si dovrebbe coprire il $$e_p(d)\%$$ del campo di variazione di ciascuna variabile esplicativa.  
+
+Nel caso $$p=1$$, se si vuole il 10% dei dati (d=0.1 frazione di punti), si prende un segmento pari al 10% della lunghezza della variabile.  
+Nel caso $$p=10$$, se si vuole il 10% dei dati, non si prende più il 10% di ciascuna variabile, ma l'80% ($$e_{10}(0.1)=0.80$$) di ciascuna variabile, questo perché i dati sono sparsi.  
+
+Se si vuole lo stesso ammontare di dati bisogna avere insiemi grandi, ma con insiemi grandi, gli intorni non saranno più locali ma estesi. Considerando un numero sufficiente di dati per calcolare una stima sensibile, si perde la possibilità di fare statistica non parametrica perché si considerano insiemi troppo grandi. Invece, se si considerano insiemi troppo piccoli, si avranno troppi pochi dati per stimare la statistica di riferimento.
+
+
+
 
 ##### Distanza mediana dall’origine al punto più vicino
 Caso unidimensionale:  
