@@ -506,14 +506,18 @@ $$m=r(p,n)=\left ( 1-0.5^{\frac{1}{n}} \right )^{\frac{1}{p}}$$
 ### Spline di interpolazione
 Per interpolare esattamente $$K$$ punti $$(\xi_k,y_k)$$ per $$k=1,...,K$$ detti nodi.  
 Interpolare funzioni lisce come polinomi, imponendo la continuità (di grado $$d-1$$) ai nodi.  
-Si richiede continuità della derivata prima e della seconda  
-$$f(\xi_k)=y_k$$ per $$k=1,...,K$$  
+Si richiede continuità della derivata prima (no cuspidi) e della seconda  
+$$f(\xi_k)=y_k$$ per $$k=1,...,K$$ (condizione che la funzioni passi dai nodi)  
 $$f(\xi_k^{-})=f(\xi_k^{+}), \quad f'(\xi_k^{-})=f'(\xi_k^{+}), \quad f''(\xi_k^{-})=f''(\xi_k^{+}), \quad$$ per $$k=2,...,K-1$$.  
+
 Per $$d=3$$ , $$K$$ nodi comportano:
-- $$4(K-1)$$ parametri
-- $$K$$ vincoli per interpolare i punti
-- $$3(K-2)$$ vincoli di continuità
-- se $$f''(\xi_1)=f''(\xi_K)=0$$ splines cubiche naturali  
+- $$4(K-1)$$ parametri ($$4$$ coefficienti del polinomio per $$K-1$$ intervalli)
+- $$K$$ vincoli per interpolare i punti (deve passare dai nodi)
+- $$3(K-2)$$ vincoli di continuità (continuità di $$f,f',f''$$ per $$K-2$$ nodi interni)
+- Il numero di parametri meno i vincoli precedenti rimangono 2 parametri da definire
+
+Splines cubiche naturali: una proposta diffusa per la definizione degli ultimi 2 parametri è che la derivata seconda nei due punti estremi è nulla (andamento lineare):
+$$f''(\xi_1)=f''(\xi_K)=0$$  
 
 Quindi le spline, in condizioni di continuità sono funzioni polinomiali a tratti.  
 Una funzione di tipo splines si può scrivere come combinazione lineare di opportuni funzioni di base (o base di funzioni):  
@@ -528,6 +532,8 @@ $$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$ per opportuni $$\theta_j$$ s
 Si stima una funzione parametrica con molti parametri, le splines le pensiamo come combinazione lineare di funzioni di base. Si possono pensare altre forme di funzione di base, come serie di fourier, seni e coseni, o le Wavelet.  
 
 Rendono complessa l'interpretazione rispetto LOESS e la regressione locale, ma le stime sono più stabili.  
+
+Le Splines, come la Regressione Locale, soffre molto della maledizione della dimensionalità.  
 
 #### Multidimensionale
 Generalizzazione delle splines di regressione a più dimensione.  
