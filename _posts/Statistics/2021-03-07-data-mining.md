@@ -513,7 +513,7 @@ $$m=r(p,n)=\left ( 1-0.5^{\frac{1}{n}} \right )^{\frac{1}{p}}$$
 
 
 
-### Spline di interpolazione
+### Splines di interpolazione
 Per interpolare esattamente $$K$$ punti $$(\xi_k,y_k)$$ per $$k=1,...,K$$ detti nodi (parametro di lisciamento).  
 Interpolare funzioni lisce come polinomi, imponendo la continuità (di grado $$d-1$$) ai nodi.  
 Si richiede continuità della derivata prima (no cuspidi) e della seconda  
@@ -553,12 +553,12 @@ Anche le splines naturali a si possono scomporre in modo analogo ma si hanno $$K
 
 
 ### Splines di regressione
-Regressione parametrica mediante splines - modello semi parametrico.  
+Regressione parametrica mediante splines - modello semi parametrico (opinione: perché si ha un numero finito di parametri e non cresce in funzione del numero delle osservazioni).  
 Per costruire una funzione di regressione su $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente.  
 Stima di una spline cubica con $$K$$ nodi  
 $$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$  
 la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$ e parametri.  
-Per opportuni $$\theta_j$$ si minimizza la devianza residua e si ottiene una spline di regressione.  
+Per opportuni $$\theta_j$$ si minimizza la devianza residua (con i minimi quadrati tradizonali) e si ottiene una spline di regressione.  
 
 Si stima una funzione parametrica con molti parametri, le splines considerabili come combinazione lineare di funzioni di base. Si possono pensare altre forme di funzione di base, come serie di fourier, seni e coseni, o le Wavelet.  
 
@@ -590,7 +590,7 @@ Il livello di complessità è dato dal numero di nodi ($$K_1, K_2$$).
 
 Le funzioni hanno anche le interazioni, è difficile distinguere l'effetto di ogni variabile.
 
-### Spline di lisciamento
+### Splines di lisciamento
 Smoothing splines - modello parametrico.  
 Dato il criterio dei minimi quadrati penalizzati (nella funzione, non nei parametri come la regressione Ridge e LASSO):  
 $$D(f,\lambda)=\sum_{i=1}^n [y_i-f(x_i)]^2+\lambda \int_{-\infty}^{\infty}\left \{ f''(t) \right \}^2 dt$$  
@@ -609,6 +609,8 @@ La soluzione di ottimo è analoga alla regressione ridge generalizzata.
 Sostituendo $$\hat{\theta}_\lambda$$ in $$f(x)$$ si ottiene $$\hat{y}=S_\lambda y$$ quindi è un lisciatore lineare.  
 Si parla dunque di 'smoothing splines' o spline di lisciamento.  
 
+$$\lambda$$ parametro di lisciamento stabilisce quanto è importante la penalizzazione rispetto l'aderenza ai dati. Per $$\lambda = 0$$ si ottiene minimi quadrati su una funzione generica quindi genera overfitting, per $$\lambda \rightarrow \infty$$ si collassa a modello di regressione lineare.  
+
 Si tratta di una tecnica che usa le splines, ma è uno strumento diverso dalle splines di regressione.
 
 #### Thin plate splines
@@ -620,7 +622,7 @@ e $$\hat{\alpha}_j$$, $$\hat{\beta}_0$$ e $$\hat{\beta}$$ determinati sostituend
 
 Sono stime non parametriche, usa i dati vicini più dei dati lontani, quindi l'operazione di estrapolazione è pericolosa, perché non si ipotizza alcuna relazione tra le $$x$$ e la $$y$$.  
 
-Il livello di complessità è dato da $$\lambda$$.
+Il livello di complessità è dato da $$\lambda$$.  
 
 
 ### Gradi di libertà equivalenti
@@ -1425,6 +1427,10 @@ Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo 
 <!---
 https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote09.html
 https://www.reddit.com/r/learnmachinelearning/comments/n809cx/help_optimal_separating_hyperplanes_mathsvm
+
+Soluzioni ESLII
+https://www.uio.no/studier/emner/matnat/math/nedlagte-emner/STK4030/h15/exercises/exer5_4.pdf
+
 --->
 
 
