@@ -53,8 +53,8 @@ $$e^{f(x)}+c=\int{e^{f(x)}\cdot f'(x)dx}$$
 ##### Integrazione per parti  
 $$\int_a^b k dx=kx|_a^b-\int_a^b xdx$$  
 
-##### Coordinate polari
-Esempio integrale su cerchio di raggio $$r$$ (calcolo dell'area $$\pi \cdot r^2$$).  
+##### Integrazione con coordinate polari
+Esempio integrale su cerchio di raggio $$r$$ (calcolo dell'area $$A=\pi \cdot r^2$$).  
 Sia $$S=\left \{ \left \{ (x,y)\in\mathbb{R}^2:0\le x^2+y^2 \le r^2 \right \} \right \}$$ la corona circolare, dominio su cui integrare, e $$f(x)=1$$ la funzione su cui integrare.  
 Dato il sistema per la conversione di coordinate cartesiane in coordinate polari  
 $$\begin{cases} 
@@ -72,9 +72,9 @@ x^2+y^2\le r^2
 x^2+y^2\le r^2 & \rightarrow 0 \le \rho \le r \small{\mbox{ dato che } \rho \ge 0}
 \end{cases} \Rightarrow
 0 \le \rho \le r
-$$ 
-quindi si avrà l'integrale doppio  
-$$\int_{\rho=0}^r \left ( \int_{\theta=0}^{2\pi} 1\cdot \rho \, d\theta \right ) d \rho = \pi \cdot r^2$$
+$$  
+quindi l'area sarà pari a  
+$$A=\int\int_{x^2+y^2\le m^2} 1\, dxdy= \int_{\rho=0}^r \left ( \int_{\theta=0}^{2\pi} 1\cdot \rho \, d\theta \right ) d \rho = \pi \cdot r^2$$
 
 ##### Integrale per sostituzione
 Posto $$t=f(x)\Rightarrow dt=f'(x)dx\Rightarrow dx=dt/f'(x)$$
