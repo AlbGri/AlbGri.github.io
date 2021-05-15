@@ -78,6 +78,7 @@ a_{31} & a_{32} & a_{33}
 ### Operazioni e proprietà utili delle matrici
 - $$(A^T)^T$$ $$=A$$
 - $$(AB)^T$$ $$=A^T B^T$$
+- $$(A+B)^T$$ $$=A^T+B^T$$
 - $$(A^{-1})^T$$ $$=(A^T)^{-1}$$
     1. $$A^{-1}A$$ $$=I$$
     2. $$(A^{-1}A)^T=I^T$$ $$=I$$
