@@ -539,13 +539,15 @@ quindi la _truncated power series representation_ è
 $$f(x)=\beta_0+\beta_1 x+\beta_2 x^2+\beta_3 x^3 +\theta_1 (x-\xi_1)^3_+ + \theta_2 (x-\xi_2)^3_+$$  
 per definizione è una splines in quanto polinomiale a tratti, continua, con derivata I e II continua nei due nodi.  
 
+Anche le splines naturali a si possono scomporre in modo analogo ma si hanno $$K$$ parametri e non più $$K+4$$ (cubiche).
+
 
 ### Splines di regressione
-Regressione parametrica mediante splines.  
+Regressione parametrica mediante splines - modello semi parametrico.  
 Per costruire una funzione di regressione su $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente.  
 Stima di una spline cubica con $$K$$ nodi  
 $$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$  
-la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$.  
+la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$ e parametri.  
 Per opportuni $$\theta_j$$ si minimizza la devianza residua e si ottiene una spline di regressione.  
 
 Si stima una funzione parametrica con molti parametri, le splines considerabili come combinazione lineare di funzioni di base. Si possono pensare altre forme di funzione di base, come serie di fourier, seni e coseni, o le Wavelet.  
@@ -558,7 +560,7 @@ Rendono complessa l'interpretazione rispetto LOESS e la regressione locale, ma l
 Le Splines, come la Regressione Locale, soffre molto della maledizione della dimensionalità.  
 
 #### Multidimensionale
-Generalizzazione delle splines di regressione a più dimensione.  
+Generalizzazione delle splines di regressione a più dimensioni.  
 Si ha una funzione di base per ogni $$x$$, che si andranno a combinare mediante il loro prodotto tensoriale.  
 Nel caso bidimensionale $$x=(x_1,x_2)^T\in \mathbb{R}$$ si hanno le seguenti basi di funzioni  
 $$h_{1k}(x_1)$$, con $$k=1,...,K_1$$ relativa alla $$x_1$$,  
@@ -578,7 +580,8 @@ Il livello di complessità è dato dal numero di nodi ($$K_1, K_2$$).
 
 Le funzioni hanno anche le interazioni, è difficile distinguere l'effetto di ogni variabile.
 
-### Smoothing splines
+### Splines di lisciamento
+Smoothing splines - modello parametrico.  
 Dato il criterio dei minimi quadrati penalizzati (regressioni Ridge, LASSO):  
 $$D(f,\lambda)=\sum_{i=1}^n [y_i-f(x_i)]^2+\lambda \int_{-\infty}^{\infty}\left \{ f''(t) \right \}^2 dt$$  
 con $$\lambda>0$$ parametro di lisciamento moltiplicato per il grado di irregolarità della curva.  
