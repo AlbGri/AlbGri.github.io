@@ -276,7 +276,7 @@ Funzionano bene anche quando $$p>n$$.
 ### Regressione Ridge
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \beta_j^2 \le s$$ (norma in [spazio L2](https://it.wikipedia.org/wiki/Spazio_l2))  
 in forma di Lagrange:  
-$$\min\limits_{\beta}\left \{ \left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta \right \}$$  
+$$\hat{\beta}_\lambda=\text{arg}\,\min\limits_{\beta}\left \{ \left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta \right \}$$  
 nota: $$s\uparrow\Leftrightarrow \lambda \downarrow$$  
 Si ottiene quindi:  
 $$\hat{\beta}_\lambda=\left (X^TX+\lambda I \right )^{-1} X^T y$$  
@@ -582,15 +582,22 @@ Le funzioni hanno anche le interazioni, è difficile distinguere l'effetto di og
 
 ### Splines di lisciamento
 Smoothing splines - modello parametrico.  
-Dato il criterio dei minimi quadrati penalizzati (regressioni Ridge, LASSO):  
+Dato il criterio dei minimi quadrati penalizzati (nella funzione, non nei parametri come la regressione Ridge e LASSO):  
 $$D(f,\lambda)=\sum_{i=1}^n [y_i-f(x_i)]^2+\lambda \int_{-\infty}^{\infty}\left \{ f''(t) \right \}^2 dt$$  
-con $$\lambda>0$$ parametro di lisciamento moltiplicato per il grado di irregolarità della curva.  
-La $$f$$ che minimizza la funzione di perdita risulta (una spline):  
+con $$\lambda>0$$ parametro di lisciamento (più è grande più è liscia) moltiplicato per il grado di irregolarità della curva.  
+Si cerca $$\hat{f}_\lambda=\text{arg}\,\min\limits_{f}\,D(f,\lambda)$$.  
+
+La $$f$$ che minimizza la funzione di perdita risulta una spline cubica naturale:  
 $$f(x)=\sum_{j=1}^{n_0} N_j(x)\theta_j=N\theta$$  
-con $$n_0$$ numero di $$x_i$$ distinti e $$N_j(x)$$ basi delle spline naturali. $$N$$ matrice in cui la $$j-$$ma colonna contiene i valori di $$N_j$$ in corrispondenza agli $$n_0$$ valori distinti di $$x_i$$.  
-Il problema si può riscrivere con  
+con $$n_0$$ numero di $$x_i$$ distinti e $$N_j(x)$$ basi delle spline naturali (tanti nodi quante sono le osservazioni, che non è un problema grazie alla penalizzazione).  
+$$N$$ matrice in cui la $$j-$$ma colonna contiene i valori di $$N_j$$ in corrispondenza agli $$n_0$$ valori distinti di $$x_i$$  
+$$N$$ matrice con elemento generico $$N_{ij}=N_j(x_i)$$  
+$$\Omega$$ matrice con elemento generico $$\Omega_{ij}=\int N_i''(t)N_j''(t)dt$$  
+
+Il problema si può riscrivere come  
 $$D(f,\lambda)=(y-N\theta)^T (y-N\theta)+\lambda \theta^T \Omega \theta$$  
-con $$\Omega$$ matrice il cui generico elemento è $$\int N_j''(t)N_k''(t)dt$$  
+Si cerca $$\hat{\theta}_\lambda=\text{arg}\,\min\limits_{\theta\in\mathbb{R}^n}\,D(f,\lambda)$$.  
+
 Il $$\theta$$ che minimizza la funzione di perdita risulta:  
 $$\hat{\theta}=(N^TN+\lambda\Omega)^{-1}N^Ty$$  
 sostituendo in $$f(x)$$ si ottiene $$\hat{y}=S_\lambda y$$ quindi è un lisciatore lineare.  
