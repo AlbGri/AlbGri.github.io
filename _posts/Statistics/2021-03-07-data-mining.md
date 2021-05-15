@@ -519,7 +519,8 @@ Per $$d=3$$ (splines cubiche) con $$K$$ nodi:
 Splines cubiche naturali: una proposta diffusa per la definizione degli ultimi 2 parametri è che la derivata seconda nei due punti estremi è nulla (andamento lineare):
 $$f''(\xi_1)=f''(\xi_K)=0$$  
 
-Una spline di ordine $$M$$ è un polinomio a tratti di grado $$M-1$$ con $$M-2$$ derivate continue sui nodi.  
+Una spline di ordine $$M$$ è un polinomio a tratti di grado $$M-1$$ con $$M-2$$ derivate continue sui nodi. 
+La spline cubica è una spline di ordine 4 (3 grado del polinomio più l'intercetta).  
 
 Quindi le spline, in condizioni di continuità sono funzioni polinomiali a tratti.  
 Una funzione di tipo splines si può scrivere come combinazione lineare di opportuni funzioni di base (o base di funzioni) note:  
@@ -528,8 +529,16 @@ $$f(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$
 Qualsiasi polinomiale a tratti con vincolo di continuità può essere riscritta come combinazione lineare di funzione di base.  
 
 ### Splines di regressione (parametrica)
-Per interpolare non esattamente $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente. Con $$K$$ nodi, la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$. La stima risulta:  
-$$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$ per opportuni $$\theta_j$$ si minimizza la devianza residua e si ottiene una spline di regressione.  
+Per interpolare non esattamente $$n$$ punti, si divide l'asse $$x$$ in $$K$$ nodi e si individua una curva di tipo 'spline cubico' che li interpoli adeguatamente.  
+Stima di una spline cubica con $$K$$ nodi
+$$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$  
+la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$.  
+Per opportuni $$\theta_j$$ si minimizza la devianza residua e si ottiene una spline di regressione.  
+
+L'insieme di funzioni di base è dato da  
+$$h_j(X)=X^{j-1},\quad j=1,...,M$$  
+$h_{M+\ell}(X)=(X-\xi_\ell)^{M-1}_+, \quad \ell = 1,...,K$  
+con $$(a)_+=\max{(a,0)}$$
 
 Si stima una funzione parametrica con molti parametri, le splines le pensiamo come combinazione lineare di funzioni di base. Si possono pensare altre forme di funzione di base, come serie di fourier, seni e coseni, o le Wavelet.  
 
