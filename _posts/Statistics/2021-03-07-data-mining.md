@@ -464,7 +464,8 @@ Se si vuole l'MSE uguale a $$\delta$$ si impone $$\mbox{MSE}=\delta$$ e si risol
 Dati $$n$$ punti estratti una distribuzione uniforme $$p$$-variata, $$x\sim U^p(0,1)$$, si ha che la distanza mediana dall'origine al punto più vicino, $$r(p,n)=\left ( 1-0.5^{\frac{1}{n}} \right )^{\frac{1}{p}}$$, cresce molto di pù all'aumentare della dimensione che della numerosità campionaria, pertanto la maggior parte dei punti è più vicina al bordo dello spazio campionario che ad ogni altro punto.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La previsione è molto più difficile vicino ai bordi (estrapolazione contro interpolazione).  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) La maggior parte dei punti è vicina all'involucro convesso del campione..  
-L'intorno (ipercubo) contenente una frazione $$d$$ di punti ha lati di lunghezze $$e_p(d)=d^{\frac{1}{p}}$$. $$e_p(d)$$ esprime la percentuale di copertura del campo di variazione di ciascuna variabile esplicativa che si dovrebbe avere per ottenere una media 'locale' con $$p$$ dimensioni e $$d$$ percentuale di utilizzo dei dati.  
+L'intorno (ipercubo) contenente una frazione $$d$$ di punti ha lati di lunghezze $$e_p(d)=d^{\frac{1}{p}}$$. 
+Con $$p$$ dimensioni, per usare il $$d%$$ dei dati per ottenere una media 'locale', si dovrebbe coprire il $$e_p(d)%$$ del campo di variazione di ciascuna variabile esplicativa.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Così gli 'intorni' non sono più locali.  
 
 ##### Distanza mediana dall’origine al punto più vicino
@@ -479,7 +480,7 @@ Nel caso di $$n$$ punti, la probabilità $$Q$$ che tutti hanno una distanza dall
 Si definisca $$m$$ come la distanza mediana dall'origine al punto più vicino tra gli $$n$$, quindi  
 $$Q=\frac{1}{2}\Rightarrow m=1-\left ( \frac{1}{2} \right ) ^{\frac{1}{n}}$$  
 
-Caso bidimensionale:  
+Caso bidimensionale (cerchio):  
 sia $$X\sim U[-1,1]$$ e $$Y\sim U[-1,1]$$ con $$0\le X^2+X^2 \le 1$$ distribuzione uniforme su un cerchio unitario con area $$\pi$$ quindi con densità congiunta $$f(X,Y)=\frac{1}{\pi}$$.  
 la probabilità che un punto abbia distanza dall'origine inferiore a $$m$$ risulta  
 $$\mathbb{P}(R \le m)$$ con $$R=\sqrt{X^2+Y^2}$$  
@@ -489,7 +490,7 @@ analogamente al caso unidimensionale, dati $$n$$ punti, la probabilità $$Q$$ ch
 Posto $$m$$ distanza mediana dall'origine al punto più vicino tra gli $$n$$ si ottiene  
 $$Q=\frac{1}{2}\Rightarrow m=1-\left ( \left ( \frac{1}{2} \right ) ^{\frac{1}{n}} \right ) ^{\frac{1}{2}}$$  
 
-Caso $$p$$-dimensionale:  
+Caso $$p$$-dimensionale (ipersfera):  
 $$m=r(p,n)=\left ( 1-0.5^{\frac{1}{n}} \right )^{\frac{1}{p}}$$
 
 
