@@ -283,6 +283,17 @@ se $$\lambda\rightarrow 0 \Rightarrow \hat{\beta}_\lambda\rightarrow \hat{\beta}
 Tipicamente non si penalizza l'intercetta.  
 Il metodo consente di ottenere stime anche con variabili collineari.
 
+**Calcolo del minimo**  
+$$D_{\small{\mbox{ridge}}}(\beta)=(y-X\beta)^T(y-X\beta)+\lambda \beta^T\beta \\
+=(y^T-\beta^T X^T)(y-X\beta)+\beta^T\lambda I \beta \\
+=y^Ty-\beta^T X^T y-y^T X \beta+\beta^T X^T X \beta+\beta^T\lambda I \beta=*$$
+dato che $$(y^T_{\small{(1\times n)}} X_{\small{(n\times n)}} \beta_{\small{(n\times 1)}})=(\beta^T X^T y)$$ coincide con la trasposta poiché è uno scalare  
+$$*=y^Ty-\beta^T X^T y-y^T X \beta+\beta^T X^T X \beta+\beta^T\lambda I \beta$$
+
+
+$$\frac{\partial D_{\small{\mbox{ridge}}}(\beta)}{\partial \beta}$$
+
+
 #### Regressione ridge generalizzata
 $$\hat{\beta}_\Omega=\text{arg}\,\min\limits_{\beta}\left \{ \left ( y-X\beta \right )^T W \left ( y-X\beta \right ) + \beta^T \Omega \beta \right \}=\left (X^T W X+\Omega \right )^{-1} X^T W y$$  
 con $$W$$ matrice dei pesi che da pesi diversi a differenti osservazioni e $$\Omega$$ matrice di penalizzazione.  
