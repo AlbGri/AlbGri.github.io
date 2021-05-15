@@ -261,12 +261,6 @@ La prima componente è la più informativa ma non necessariamente è quella che 
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Esistono metodi, come la Correlazione Canonica in cui si determinano le componenti anche in funzione della risposta. Altri metodi: Minimi Quadrati Parziali (Partially Square), Independent Component Analysis, Principal Curves, etc.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da costruire su R un metodo che restituisca i coefficienti delle variabili usando la regressione sulle componenti principali scelte. Introducendo anche la CV per la scelta del numero di componenti.
 
-#### Decomposizione Spettrale
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Per una matrice quadrata (sulla matrice di varianze e covarianze).
-
-#### Decomposizione a valori singolari (SVD)
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Della matrice $$X$$  
-$$X=UDV^T$$  
 
 ## Metodi di shrinkage
 Regolarizzare l'equazione di stima, penalizzando la funzione di ottimizzazione dei minimi quadrati introducendo una distorsione ma riducendo la varianza. Se tutto traslato verso lo 0 l'errore quadratico medio (e assoluto) sarà più basso.  
@@ -296,6 +290,8 @@ $$-2X^T y+2(X^T X+\lambda I) \beta=0\Rightarrow \hat{\beta}_{\small{\mbox{ridge}
 #### Regressione ridge generalizzata
 $$\hat{\beta}_\Omega=\text{arg}\,\min\limits_{\beta}\left \{ \left ( y-X\beta \right )^T W \left ( y-X\beta \right ) + \beta^T \Omega \beta \right \}=\left (X^T W X+\Omega \right )^{-1} X^T W y$$  
 con $$W$$ matrice dei pesi che da pesi diversi a differenti osservazioni e $$\Omega$$ matrice di penalizzazione.  
+
+Spesso la regressione ridge generalizzata si trova con $$W=I_{(n\times n)}$$ e $$\Omega= V \Lambda V^T$$ (decomposizione spettrale).  
 
 #### Interpretazione Bayesiana
 Data la verosimiglianza $$y_i\sim\mathcal{N}(\beta_0+x_i^T \beta , \sigma^2)$$ e la v.a. $$\beta_j\sim \mathcal{N}(0,\tau^2),j=1,...,p$$,  
