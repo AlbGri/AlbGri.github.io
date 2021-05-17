@@ -1422,7 +1422,7 @@ dove $$m_{\alpha}(y,\hat{y})=\begin{cases}
 \end{cases}$$  
 con $$f(x_i)$$ funzione più o meno complessa come il modello lineare, quindi stimando i quantili condizionati sotto l'ipotesi che seguano un modello lineare, ma va risolto il problema di ottimizzazione in modo numerico.  
 
-Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo valido solo con la condizione per $$n\leftarrow \infty$$. Ma diversamente dallo split conformal in cui si ha il un metodo di previsione e lo si modifica per ottenere gli intervalli di previsione, questo approccio necessita di algoritmi numerici appositi.  
+Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo valido solo con la condizione per $$n\rightarrow \infty$$. Ma diversamente dallo split conformal in cui si ha il un metodo di previsione e lo si modifica per ottenere gli intervalli di previsione, questo approccio necessita di algoritmi numerici appositi.  
 
 
 
