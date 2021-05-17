@@ -1472,9 +1472,10 @@ Cross-entropia: $$-\sum_{i=1}^n \sum_{k=1}^K y_{ik} \log{f_k (x_i; W)}$$
 Backward propagation of errors.  
 Algoritmo per risolvere il problema di minimo.  
 
-Epoca (epoch): iterazione dell'algoritmo  
-Passo in avanti (forward pass): si ottiene $$\hat{f}(x_i;W)$$ (si calcolano tutti i nodi intermedi e output) tenendo fisso $$W$$  
-Passo in dietro (backwards pass): si tengono fissi tutti i nodi e si aggiorna $$W$$ (diviso in propagazione e aggiornamento)  
+Epoca (epoch): singola iterazione dell'algoritmo (del gradient descent per risolvere il problema di ottimo), in cui tutto il dataset è passato avanti e dietro la rete una volta.  
+
+Passo in avanti (forward pass): si ottiene $$\hat{f}(x_i;W)$$ (si calcolano tutti i nodi intermedi e output) tenendo fisso $$W$$.  
+Passo in dietro (backwards pass): si tengono fissi tutti i nodi e si aggiorna $$W$$ (diviso in propagazione e aggiornamento).  
 
 #### Propagazione
 Fase in cui si calcolano tutte le derivate prime della funzione di perdita rispetto i parametri.  
@@ -1493,7 +1494,7 @@ La parte di propagazione (step derivate) viene effettuata su tutte le osservazio
 Questo modo di procedere è lento perché l'aggiornamento avviene soltanto dopo aver analizzato l'intero dataset. Il "mini-batch" o stochastic gradient consente di superare questo problema.
 
 
-#### Stochastic Gradient Descent
+#### Stochastic Gradient Descent (SGD)
 Per ogni epoca (permutata casualmente)  
 si divide il dataset in $$K$$ batch (sottoinsiemi del dataset, generalmente di numerosità 32/64/.. record) e per ogni batch
 1. calcolo del gradiente per le osservazioni all'interno del batch
@@ -1507,10 +1508,12 @@ Vantaggi:
 - Caricando i dati a blocchi si hanno meno problemi di memoria
 - Maggiore variabilità delle stime con meno osservazioni e più aggiornamenti, consente di esplorare maggiormente lo spazio parametrico e ridurre la probabilità di fermarsi in minimi locali 
 
-##### Alternative
-Ottimizzatori adattivi (es Adam): utilizzano learning rate adattivi in funzione del parametro  
-Stochastic gradient descent con learning rate scheduling: si predefinisce un percorso (es scheduling ciclico) di aggiornamento del learning rate nel corso delle epoche per ridurre la probabiltà di rimanere in minimi locali
+##### Adaptive Learning Rate
+Utilizzano learning rate adattivi in base ai parametri scelti.  
+Esempi: Adagrad, Adadelta, RMSprop, Adam
 
+##### Learning Rate Schedules
+Si predefinisce un percorso (es scheduling ciclico) di aggiornamento del learning rate nel corso delle epoche per ridurre la probabiltà di rimanere in minimi locali.
 
 ### Funzioni d'attivazione per gli strati intermedi
 
@@ -1536,7 +1539,7 @@ Vantaggi:
 - computazionalmente semplice
 - introduce una sparsità dei nodi: nel caso in cui si hanno un numero di nodi più alto di quello che si ha bisogno, è probabile che assegni $$0$$ alle relazioni ridondanti. Con le funzioni precedenti tutti i nodi devono essere diversi da zero, andando in contro a ridondanza.  
 
-È analoga alla funzione 'parte positiva' vista nelle splines (come funzione di base) e nei MARS.  
+È analoga alla funzione 'parte positiva' delle splines (come funzione di base) e MARS.  
 
 ### Limitare l'overfitting
 Per la scelta del modello ottimale bisogna trovare il giusto compromesso tra varianza e distorsione.  
@@ -1560,12 +1563,13 @@ $$J(W)=\frac{1}{2} \vert \vert W  \vert  \vert ^2_2 = \frac{1}{2} \sum_{l=1}^{L-
 
 Si può applicare una correzione al gradient descent consentendo di ottenere facilmente un risultato analogo all penalità $$L_2$$.  
 
-##### Dropout
-Ad ogni epoca (iterazione), si pone casualmente una parte dei nodi pari a 0. 
+#### Dropout
+Ad ogni epoca (iterazione), si ha probabilità $$p$$ (iperparametro) di conservare o escludere un nodo dal processo di training.  
+Si ottiene un risultato simile agli Ensemble methods che combinano classificatori deboli.  
+Funziona bene con un numero elevato di osservazioni.  
 
 
-
-
+## Convolutional Neural Network
 
 
 
