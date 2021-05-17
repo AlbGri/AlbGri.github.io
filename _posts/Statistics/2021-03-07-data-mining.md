@@ -165,7 +165,7 @@ si determinano facilmente $$s^2_{n+1}$$ e lo standard error di $$\hat{\beta}_{(n
 Errore Quadratico Medio  
 $$\mathbb{E}\big\{[\hat{y}-f(x')]^2\big\}$$  
 $$\hat{y}$$ l'elemento casuale perché dipende dall $$y$$  
-Si cerca il valore degli iperparametri (es. grado polinomio) che minimizza l'MSE.  
+Si cerca il valore dei parametri di regolazione (es. grado polinomio) che minimizza l'MSE.  
 $$ MSE\left (\hat{\theta}\right )
 = \mathbb{E}\left \{\left (\hat{\theta}-\theta \right)^2\right \}
 = \mathbb{E}\left \{\left (\hat{\theta} \pm \mathbb{E}\left \{\hat{\theta}\right \}+\theta \right)^2\right \}= \ldots$$  
@@ -181,7 +181,7 @@ $$ $$= Var(\hat{y})+Bias(\hat{y},f(x'))^2 $$
 La decomposizione dell'MSE permette di analizzare il trade off tra varianza e distorsione in funzione della complessità del modello.  
 Quando la complessità del modello, identiticata con $$p$$, è bassa, la distorsione è alta ma la varianza bassa; quando $$p$$ aumenta, la distorsione diminuisce ma la varianza aumenta. Se $$p$$ cresce, il modello si adatterà meglio ai dati, ma quando $$p$$ diventa troppo grande comincerà a seguire le fluttuazioni dei dati. In tal caso la varianza aumenterà senza un significativo guadagno in distorsione, provocando così il sovradattamento nei dati e comportando un eccesso di ottimismo nel valutare l'errore di previsione.
 
-### Iperparametri
+### Parametri di regolazione
 - Grado del polinomio
 - Dimensione del sottoinsieme
 - Posizione della stepwise
@@ -200,7 +200,7 @@ $$p=\text{arg}\,\min\limits_{p}\,D^*(p)=\text{arg}\,\min\limits_{p}\,\left [ \su
 Consente di avere anche una stima approssimativa della variabilità degli stimatori, ad esempio facendone il boxplot perché si ottengono $$k$$ stime per ogni parametro. Non sarebbe possibile nella suddivisione stima-verifica.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Da implementare su R.  
 
-Metodo parsimonioso per scegliere il miglior parametro di regolazione: costurisco il grafico dell'andamento dell'iperparametro vs errore di convalida incrociata, poi identifico l'iperparametro che minimizza, aggiungo una volta lo standard error, traccio una linea orizzontale da quel punto e scelgo come iperparametro quello corrispondente al primo che si ritrova sotto la linea (metodo 1 SE).  
+Metodo parsimonioso per scegliere il miglior parametro di regolazione: costurisco il grafico dell'andamento dell'parametro di regolazione vs errore di convalida incrociata, poi identifico il parametro di regolazione che minimizza, aggiungo una volta lo standard error, traccio una linea orizzontale da quel punto e scelgo come parametro di regolazione quello corrispondente al primo che si ritrova sotto la linea (metodo 1 SE).  
 
 In fine, se si vuole ottenere un modello unico dalla CV, nel caso dei modelli parametrici, si può fare una media tra i parametri.
 
@@ -318,7 +318,7 @@ in forma di Lagrange:
 $$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )+\lambda 1^T \vert \beta \vert$$  
 Non c'è una forma esplicita per risolvere il problema, perché il valore assoluto comporta la discontinuità della derivata prima. Bisogna usare metodi di programmazione quadratica.  
 
-Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili. $$s$$, parametro di compressione, è da considerare come iperparametro, da scegliere ottimizzando il trade-off varianza distorsione.  
+Per $$s$$ piccolo alcuni parametri vengono stimati a 0, quindi è anche un modo per selezionare le variabili. $$s$$, parametro di compressione, è da considerare come parametro di regolazione, da scegliere ottimizzando il trade-off varianza distorsione.  
 
 La funzione da minimizzare è un paraboloide, il cui centro è la stima di massima verosimiglianza. Nel caso a due variabili, con il Lasso il vincolo è un parallelepipedo a base quadrata, che si può visualizzare come quadrato (curve di livello) perché si ragiona solo con i due coefficienti, e un cerchio nella Ridge. La soluzione con il vincolo è il punto di contatto tra il paraboloide e il vincolo. Nel Lasso, a meno di casi estremi (es 2 variabili in cui il paraboloide è perfettamente nella diagonale), uno dei due coefficienti andrà a 0.  
 
@@ -563,7 +563,7 @@ Per opportuni $$\theta_j$$ si minimizza la devianza residua (con i minimi quadra
 Si stima una funzione parametrica con molti parametri, le splines considerabili come combinazione lineare di funzioni di base. Si possono pensare altre forme di funzione di base, come serie di fourier, seni e coseni, o le Wavelet.  
 
 La posizione dei nodi ha un'importanza minore (simile alla scelta del nucleo nella regressione locale) può essere scelta in funzione dei quantili, o equispaziati, comunque collocati dove sono presenti i dati.  
-La scelta del numero di nodi è impattante, da un estremo più semplice che genera un singolo polinomio al caso di $$K+1$$ polinomi in cui si interpolano i dati e si genera overfitting. Va scelto con i metodi classici per identificare gli iperparametri ottimi.  
+La scelta del numero di nodi è impattante, da un estremo più semplice che genera un singolo polinomio al caso di $$K+1$$ polinomi in cui si interpolano i dati e si genera overfitting. Va scelto con i metodi classici per identificare i parametri di regolazione ottimi.  
 
 Rendono complessa l'interpretazione rispetto LOESS e la regressione locale, ma le stime sono più stabili.  
 
@@ -794,10 +794,11 @@ con $$f_0(u)=\frac{e^u}{1+e^u}$$ funzione logistica o sigmoide e $$f_1(u)=u$$ id
 Tecnicamente parametrico, ma ciascuna $$w$$ ha una numerosità tale da renderlo semi-parametrico o parametrico.  
 Si minimizza la funzione di perdita (es. devianza) con algoritmi come il back propagation.
 
-La Neural Network è un approssimatore universale, come la Regressione Projection Pursuit. I due metodi sono molto simili, nella NN le $$f$$ sono funzioni parametriche note, nella PPR vengono stimate con un lisciatore.  
+La Neural Network è un approssimatore universale (con un solo strato latente ed un numero elevato di nodi si può approssimare qualsiasi funzione), come la Regressione Projection Pursuit. I due metodi sono molto simili, nella NN le $$f$$ sono funzioni parametriche note, nella PPR vengono stimate con un lisciatore.  
 
 Il numero di nodi nello strato latente conviene fissarlo, la CV già la si usa per l'identificazione di altri parametri.  
 
+La giusta combinazione tra strati latenti e nodi, permette di approssimare una funzione con un numero di parametri inferiore ad una rete con un solo strato latente e molti nodi (relazione quadratica tra il numero di parametri).  
 
 
 #### Backpropagation
@@ -1392,7 +1393,7 @@ Funziona bene anche con $$n$$ piccoli, non ci sono approssimazioni né assunzion
 
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) I quantili empirici sono uno stimatore non parametrico di una parte della distribuzione ??  
 
-Se viene utilizzato in questo modo l'insieme di verifica non può essere usato per l'identificazione di iperparametri o altri scopi.  
+Se viene utilizzato in questo modo l'insieme di verifica non può essere usato per l'identificazione di parametri di regolazione o altri scopi.  
 
 Anche se il modello è impreciso, la probabilità di copertura empirica rimane valida.  
 
@@ -1491,8 +1492,11 @@ $$W_{i+1}^{(l)}=W_t^{(l)}-\eta \cdot \Delta D (W_t^{(l)})$$
 dove $$\Delta D\left ( W^{(l)} \right ) = \frac{1}{n} \sum_{i=1}^n \delta_i^{(l)} (W)$$  
 
 La parte di propagazione (step derivate) viene effettuata su tutte le osservazioni, successivamente viene fatta la media dei gradienti ottenendo $$\Delta D$$ da inserire nel gradient descent. Dopo di che si può effettuare lo step di aggiornamento.  
-Questo modo di procedere è lento perché l'aggiornamento avviene soltanto dopo aver analizzato l'intero dataset. Il "mini-batch" o stochastic gradient consente di superare questo problema.
+Questo modo di procedere è lento perché l'aggiornamento avviene soltanto dopo aver analizzato l'intero dataset. Il "mini-batch" o stochastic gradient consente di superare questo problema.  
 
+Un approccio per velocizzare l'identificazione del parametro di regolazione $$\eta$$ learning rate, può essere quello di valutarlo solo sulla prima epoca così da velocizzare l'identificazione dei parametri di regolazione.  
+
+Una tecnica per esplorare velocemente lo spazio dei parametri di regolazione è la Bayesian Hyper-Parameter Optimization, che funziona molto meglio rispetto la semplice Grid Search.  
 
 #### Stochastic Gradient Descent (SGD)
 Per ogni epoca (permutata casualmente)  
@@ -1506,7 +1510,8 @@ Si ottengono così $$K$$ aggiornamenti. La permutazione dei dati ad ogni epoca p
 Vantaggi:  
 - Tempi di training più veloci (**perché?**)
 - Caricando i dati a blocchi si hanno meno problemi di memoria
-- Maggiore variabilità delle stime con meno osservazioni e più aggiornamenti, consente di esplorare maggiormente lo spazio parametrico e ridurre la probabilità di fermarsi in minimi locali 
+- Maggiore variabilità delle stime con meno osservazioni e più aggiornamenti, consente di esplorare maggiormente lo spazio parametrico e ridurre la probabilità di fermarsi in minimi locali
+
 
 ##### Adaptive Learning Rate
 Utilizzano learning rate adattivi in base ai parametri scelti.  
@@ -1544,7 +1549,7 @@ Vantaggi:
 ### Limitare l'overfitting
 Per la scelta del modello ottimale bisogna trovare il giusto compromesso tra varianza e distorsione.  
 
-#### Tuning
+#### Tuning architettura
 Si regola la complessità del modello (nodi e strati latenti) in funzione della minimizzazione dell'errore di CV.
 
 #### Early Stopping
@@ -1564,13 +1569,20 @@ $$J(W)=\frac{1}{2} \vert \vert W  \vert  \vert ^2_2 = \frac{1}{2} \sum_{l=1}^{L-
 Si può applicare una correzione al gradient descent consentendo di ottenere facilmente un risultato analogo all penalità $$L_2$$.  
 
 #### Dropout
-Ad ogni epoca (iterazione), si ha probabilità $$p$$ (iperparametro) di conservare o escludere un nodo dal processo di training.  
+Ad ogni epoca (iterazione) cambia la configurazione della rete.  
+Sia $$p$$ (parametro di regolazione) la probabilità di conservare (o escludere) un nodo dal processo di training per quella determinata epoca.  
 Si ottiene un risultato simile agli Ensemble methods che combinano classificatori deboli.  
 Funziona bene con un numero elevato di osservazioni.  
 
 
 ## Convolutional Neural Network
+Generalmente applicata ad immagini.  
+<!---
+1:14:30
+--->
 
+
+## Recurrent Neural Network
 
 
 
