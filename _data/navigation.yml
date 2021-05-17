@@ -1,8 +1,8 @@
 # main links
 main:
-  - title: "About"
+  - title: "me"
     url: /About/
-  - title: "free cookie"
+  - title: "you"
     url: https://youtu.be/dQw4w9WgXcQ
   # - title: "Sample Posts"
   #   url: /year-archive/
