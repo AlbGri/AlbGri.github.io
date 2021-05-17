@@ -1426,7 +1426,33 @@ Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo 
 
 
 
-aaaa
+# Deep Learning
+
+## Deep Neural Network
+Hanno più strati latenti. La struttura classica è la feed-forward neural network (FFNN) con nodi (parametri, peso) e archi.
+
+$$a^{(I)}$$ vettore di nodi corrispondenti allo strato $$I$$-esimo  
+$$W^{(I)}$$ matrice di parametri associati agli archi che collegano lo strato $$I$$ al successivo  
+$$w_0^{(I)}$$ vettore di parametri associato allo strato $$I$$-esimo (analogia con l'intercetta)  
+
+Legame tra lo strato $$I$$ e il suo precedente  
+$$z^{(I)}=w_0^{(I-1)}+W^{(I-1)}a^{(I-1)}$$  
+con $$a^{(I)}=g^{(I)}\left ( z^{(I)} \right )$$  
+e $$g^{(I)}(\cdot )$$ funzione d'attivazione
+
+
+
+
+<!---
+entailment: due frasi capire se sono in accordo disaccordo neutrali
+
+detect anomalies: considera ogni carta di credito come una sequenza temporale
+--->
+
+
+
+
+
 
 <!---
 https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote09.html
