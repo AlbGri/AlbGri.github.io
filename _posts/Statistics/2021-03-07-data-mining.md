@@ -1429,16 +1429,45 @@ Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo 
 # Deep Learning
 
 ## Deep Neural Network
-Hanno più strati latenti. La struttura classica è la feed-forward neural network (FFNN) con nodi (parametri, peso) e archi.
+Hanno più strati latenti.  
+La struttura classica è la feed-forward neural network (FFNN) con nodi (parametri, peso) e archi.  
+Il numero di nodi in output definisce la risposta.  
 
+
+### Modellazione
 $$a^{(I)}$$ vettore di nodi corrispondenti allo strato $$I$$-esimo  
 $$W^{(I)}$$ matrice di parametri associati agli archi che collegano lo strato $$I$$ al successivo  
 $$w_0^{(I)}$$ vettore di parametri associato allo strato $$I$$-esimo (analogia con l'intercetta)  
 
 Legame tra lo strato $$I$$ e il suo precedente  
-$$z^{(I)}=w_0^{(I-1)}+W^{(I-1)}a^{(I-1)}$$  
-con $$a^{(I)}=g^{(I)}\left ( z^{(I)} \right )$$  
-e $$g^{(I)}(\cdot )$$ funzione d'attivazione
+$$a^{(I)}=g^{(I)}\left ( z^{(I)} \right )$$  
+con $$z^{(I)}=w_0^{(I-1)}+W^{(I-1)}a^{(I-1)}$$ e $$g^{(I)}(\cdot )$$ funzione d'attivazione  
+
+### Funzione d'attivazione
+Le più utilizzate
+
+#### Identità
+$$g^{(I)}\left ( z^{(I)} \right )=z^{(I)}$$  
+per un problema di regressione univariata ($$1$$ nodo output)  
+
+#### Sigmoide
+Funzione logistica  
+$$g^{(I)}\left ( z^{(I)} \right )=\frac{1}{1+e^{-z^{(I)}}}$$  
+per un problema di classificazione dicotomico ($$1$$ nodo output)  
+
+#### Softmax
+Funzione logistica multinomiale  
+$$g^{(I)}\left ( z^{(I)} \right )=\frac{e^{z^{I}}}{\sum_{j=1}^K e^{z^{(I)}}}$$  
+per un problema di classificazione multiclasse ($$K$$ nodi output)  
+
+### Ottimizzazione
+
+$$\hat{W}=\text{arg}\,\min\limits_{?} \left \{ \frac{1}{n} \sum_{i=1}^n L \left [ y_i, f(x_i;W) \right ] \right \}$$  
+
+<!---
+20:41
+--->
+
 
 
 
