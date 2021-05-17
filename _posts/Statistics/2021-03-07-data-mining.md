@@ -1068,6 +1068,7 @@ somma delle Deviance dei $$J$$ rettangoli.
 Per facilitare la generalizzazione a $$k>2$$ classi si può riscrivere la Deviance nel seguente modo  
 $$D=-2n \sum_{j=1}^J \frac{n_j}{n} \sum_{k=0,1} \hat{P}_{jk} \log{\hat{P}_{jk}}=2n \sum_{j=1}^J \frac{n_j}{n} Q(\hat{P}_j)$$  
 con $$Q(P_j)=-\sum_{k=0,1} P_{jk} \log{P_{jk}}$$ entropia di Shannon (indice di impurità di una variabile qualitativa), quindi la devianza complessiva è una media pesata delle impurità dentro i nodi - entropia e log verosimiglianza binomiale sono fortemente legate.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Cross-entropia: opposto della log verosimiglianza binomiale  
 
 Ulteriori misure di impurità:  
 - Indice di Gini (≈ Entropia via serie di Taylor/Mc Laurin): $$Q(P_j)=\sum_{k=0,1} P_{jk}(1-P_{jk})$$  
@@ -1461,11 +1462,37 @@ $$g^{(I)}\left ( z^{(I)} \right )=\frac{e^{z^{I}}}{\sum_{j=1}^K e^{z^{(I)}}}$$
 per un problema di classificazione multiclasse ($$K$$ nodi output)  
 
 ### Ottimizzazione
-
 $$\hat{W}=\text{arg}\,\min\limits_{?} \left \{ \frac{1}{n} \sum_{i=1}^n L \left [ y_i, f(x_i;W) \right ] \right \}$$  
 
+#### Funzioni di perdita
+Errore quadratico medio: $$\frac{1}{n}\sum_{i=1}^n \left ( y_i - f(x_i; W) \right )^2$$  
+Cross-entropia: $$-\sum_{i=1}^n \sum_{k=1}^K y_{ik} \log{f_k (x_i; W)}$$
+
+### Backpropagation
+Backward propagation of errors.  
+Algoritmo per risolvere il problema di minimo.  
+
+Epoca (epoch): iterazione dell'algoritmo  
+Passo in avanti (forward pass): si ottiene $$\hat{f}(x_i;W)$$ (si calcolano tutti i nodi intermedi e output) tenendo fisso $$W$$  
+Passo in dietro (backwards pass): si tengono fissi tutti i nodi e si aggiorna $$W$$ (diviso in propagazione e aggiornamento)  
+
+#### Propagazione
+Calcolare tutte le derivate prime della funzione di perdita rispetto i parametri.  
+
+1. Si calcolano tutte le derivate prime rispetto a $$z$$ rispetto all'ultimo strato
+2. Equazione di back-propagation: consente di ottenere la derivata dello strato $$I-1$$ utilizzando la derivata dello strato $$I$$ (quindi utilizzando più volte l'equazione, dall'ultima derivata si ottengono tutte quelle precedenti)
+3. Calcolate tutte le derivate rispetto a $$z$$, si applica una trasformazione lineare e si ottengono le derivate rispetto i parametri
+
+#### Aggiornamento
+Aggiornamento dei parametri con le derivate calcolate nella propagazione.  
+Per calcolare le derivate è comune usare il gradient descent (metodo numerico iterativo), simile a Newton Raphson (senza la derivata seconda e l'intensità della derivata prima è regolata dal parametro $$\eta$$ learning rate).  
+$$W_{i+1}^{(I)}=W_t^{(I)}-\eta \cdot \Delta L (W_t^{(I)})$$
+
+
+
+
 <!---
-20:41
+
 --->
 
 
