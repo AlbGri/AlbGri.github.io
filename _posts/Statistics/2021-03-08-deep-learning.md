@@ -162,12 +162,21 @@ Generalmente applicata ad immagini.
 Tensore: è una struttura spesso considerata come la generalizzazione a $$d$$ dimensioni delle matrici. La dimensione del tensore è definito rango. Non è soltanto una matrice più ampia, ma gode di alcune proprietà che rendono le dimensioni interdipendenti.  
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Nell'algebra multilineare e nel calcolo tensoriale, si definisce covariante il cambio effettuato ad un nodo (dimensione) che rende i pesi un 'tensore controvariante'.  
 
-Un'osservazione, nel caso delle immagini, si converte in un tensore a 3 dimensioni: le prime due legate alle coordinate dei pixel 
+Un'osservazione, nel caso delle immagini, si converte in un tensore a 3 dimensioni: le prime due legate alle coordinate dei pixel, se l'immagine è in bianco e nero si ha solo una dimensione in profondità e quindi la struttura è una matrice con i valori che rappresentano le tonalità di grigio, se è a colori la terza dimensione è un vettore di 3 elementi RGB (tensore tridimensionale, come se fossero tre matrici).  
+
+### Parte convoluzionale
+Alternanza tra convoluzione e pooling.
+
+#### Strato convoluzionale
+Elaborazione dell'immagin
+
+### Parte fully connected
+Come una feed-forward neural network
 
 
 
 <!---
-1:14:30
+1:16:04
 --->
 
 
