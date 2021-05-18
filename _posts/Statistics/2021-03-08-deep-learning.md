@@ -89,7 +89,7 @@ si divide il dataset in $$K$$ batch (sottoinsiemi del dataset, generalmente di n
 Si ottengono così $$K$$ aggiornamenti. La permutazione dei dati ad ogni epoca prima della creazione dei batch consente di avere batch differenti in ogni epoca.  
 
 Vantaggi:  
-- Tempi di training più veloci (**perché?**)
+- Tempi di training più veloci
 - Caricando i dati a blocchi si hanno meno problemi di memoria
 - Maggiore variabilità delle stime con meno osservazioni e più aggiornamenti, consente di esplorare maggiormente lo spazio parametrico e ridurre la probabilità di fermarsi in minimi locali
 
@@ -121,7 +121,7 @@ ReLU: $$g(z)=z_+=max(0,z)$$
 
 Vantaggi:  
 - non è una funzione di attivazione limitata nel codominio ed è quindi più sensibile
-- la derivata è $$1$$ per $$z>0$$ e $$0$$ altrimenti, quindi per circa la metà dei nodi della rete (**perché la metà?**) l'aggiornamento dei parametri avviene sempre e gli altri no. Assicura che il gradiente si propagherà sempre.
+- la derivata è $$1$$ per $$z>0$$ e $$0$$ altrimenti, quindi per circa la metà dei nodi della rete l'aggiornamento dei parametri avviene sempre e gli altri no. Assicura che il gradiente si propagherà sempre.
 - computazionalmente semplice
 - introduce una sparsità dei nodi: nel caso in cui si hanno un numero di nodi più alto di quello che si ha bisogno, è probabile che assegni $$0$$ alle relazioni ridondanti. Con le funzioni precedenti tutti i nodi devono essere diversi da zero, andando in contro a ridondanza.  
 
@@ -158,6 +158,14 @@ Funziona bene con un numero elevato di osservazioni.
 
 ## Convolutional Neural Network
 Generalmente applicata ad immagini.  
+
+Tensore: è una struttura spesso considerata come la generalizzazione a $$d$$ dimensioni delle matrici. La dimensione del tensore è definito rango. Non è soltanto una matrice più ampia, ma gode di alcune proprietà che rendono le dimensioni interdipendenti.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Nell'algebra multilineare e nel calcolo tensoriale, si definisce covariante il cambio effettuato ad un nodo (dimensione) che rende i pesi un 'tensore controvariante'.  
+
+Un'osservazione, nel caso delle immagini, si converte in un tensore a 3 dimensioni: le prime due legate alle coordinate dei pixel 
+
+
+
 <!---
 1:14:30
 --->
