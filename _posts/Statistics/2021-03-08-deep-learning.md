@@ -168,19 +168,43 @@ Un'osservazione, nel caso delle immagini, si converte in un tensore a 3 dimensio
 Alternanza tra convoluzione e pooling.
 
 #### Strato convoluzionale
-Elaborazione dell'immagin
+Lo strato è composto da $$p$$ trasformazioni dell'immagine tramite l'operazione di convoluzione che applica dei filtri (che contengono i parametri).
+
+
+##### Convoluzione
+Input tensore $$k\times k \times 3$$ rappresentante l'immagine.  
+Il tensore viene trasformato da un filtro (kernel) $$q\times q$$ generando un output $$k\times k \times 1$$, come se il filtro fosse una lente d'ingrandimento e si esplorano tutte le porzioni del tensore (es. 3x3 o 5x5 pixel alla volta), sintetizzandole in un solo pixel (con un prodotto interno tra il filtro e la porzione di riferimento).  
+L'operazione viene ripetuta per tutti e $$p$$ filtri, generando un tensore $$k\times k \times p$$.  
+Parametri di regolazione: numero e dimensione dei filtri.  
+
+
+#### Strato di pooling
+L'output dello strato convoluzionale è l'input dello strato di pooling.  
+L'immagine viene divisa in una griglia (spesso a celle da 4 pixel) di piccole tante immagini e viene preso il valore massimo per ciascuna cella. Così riducendo il numero di parametri.  
+
+I primi strati di pooling consentiranno di concentrarsi su dettagli grafici più specifici, all'aumentare del numero di pooling l'immagine sarà meno dettagliata e la rete si concentrerà sugli aspetti generici dell'immagine.  
+
 
 ### Parte fully connected
 Come una feed-forward neural network
 
 
-
-<!---
-1:16:04
---->
-
-
 ## Recurrent Neural Network
+FFNN con strati ricorrenti.  
+
+Strato ricorrente:  
+prende le osservazioni in input e genera degli output (hidden state) applicando una trasformazione.  
+La caratteristica è che ciascun output è di input per lo strato successivo ma dipende sequenzialmente dal precedente output dello stesso strato, permettendo così di modellare una dipendenza tra le osservazioni.  
+$$h_t = \tanh{(W\cdot x_t + U \cdot h_{h-1} + b)}$$  
+
+Per una dipendenza temporale più lunga (e non markoviana), la propagazione della dipendenza non avviene facilmente. Per ovviare ciò si è sviluppato il layer Long-Short Term Memory (LSTM).  
+
+### LSTM
+La connessione tra gli output dello stesso strato verrà influenzato sia dall'hidden state che dal cell state.  
+Il cell state permette di propagare la dipendenza.  
+
+### NLP
+Per l'analisi del testo viene inserito uno strato di embedding.  
 
 
 
