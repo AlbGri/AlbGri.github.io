@@ -206,7 +206,7 @@ Il cell state permette di propagare la dipendenza.
 ### NLP
 Nell'analisi testuale, un insieme di documenti (corpus) può essere reso in forma matriciale, dove ciascun record è un documento e le colonne sono tutte le parole presenti nel corpus. La parola se presente nel documento sarà codificata 1 o 0 altrimenti (dummy, one-hot encoding). La matrice sarà altamente sparsa e ad alta dimensione.  
 
-Per l'analisi del testo con le RNN viene inserito uno strato di embedding come primo strato che consente di rendere densa la matrice one-hot encoded.  
+Per l'analisi del testo con le RNN viene inserito uno strato di embedding come primo strato che consente di rendere densa la matrice one-hot encoded. La trasformazione avviene e si migliora durante il fase di training. Esistono modelli già stimati di World embeding che permettono di codificare quantitativamente delle variabili qualitative mantenendo la coerenza semantica (es. parole sinonime hanno una distanza molto ridotta).  
 
 
 
