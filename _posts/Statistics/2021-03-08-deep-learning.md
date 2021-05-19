@@ -108,7 +108,7 @@ Funzione logistica
 $$f(z)=\frac{1}{1+e^{-z}}$$  
 
 #### Tangente iperbolica
-$$tanh(z)=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}=2 \cdot f(2z) - 1$$  
+$$\tanh{(z)}=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}=2 \cdot f(2z) - 1$$  
 
 Problema 1: il codominio delle precedenti funzioni d'attivazione è vincolato a $$[0,1]$$. I lunghi asintoti creano poca sensibilità di variazione per valori del dominio lontani da $$0$$.  
 Problema 2: "scomparsa del gradiente" in fase di stima. Quando i valori di $$z$$ si avvicinano agli assintoti orizzintali della funzione di attivazione il gradiente tende a 0. Questo accade spesso con più strati latenti.  
