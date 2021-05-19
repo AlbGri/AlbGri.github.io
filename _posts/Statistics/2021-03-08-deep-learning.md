@@ -204,7 +204,9 @@ La connessione tra gli output dello stesso strato verrà influenzato sia dall'hi
 Il cell state permette di propagare la dipendenza.  
 
 ### NLP
-Per l'analisi del testo viene inserito uno strato di embedding.  
+Nell'analisi testuale, un insieme di documenti (corpus) può essere reso in forma matriciale, dove ciascun record è un documento e le colonne sono tutte le parole presenti nel corpus. La parola se presente nel documento sarà codificata 1 o 0 altrimenti (dummy, one-hot encoding). La matrice sarà altamente sparsa e ad alta dimensione.  
+
+Per l'analisi del testo con le RNN viene inserito uno strato di embedding come primo strato che consente di rendere densa la matrice one-hot encoded.  
 
 
 
