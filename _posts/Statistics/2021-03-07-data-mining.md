@@ -459,7 +459,11 @@ $$\mathbb{E}\left \{ \hat{f}(x) \right \}$$ $$\approx f(x) + \frac{h^2}{2}\sigma
 $$\mbox{var}\left \{ \hat{f}(x) \right \}$$ $$\approx \frac{\sigma^2}{nh} \frac{\alpha(\omega)}{g(x)}$$  
 Per un $$h$$ piccolo la distorsione diventa nulla, ma la varianza esplode.  
 Si sceglie $$h$$ che minimizza l'errore quadratico medio.  
+
 Analiticamente si può esplicitare $$h$$ ottimo ma questo dipende da $$f''(x)$$ che a sua volta dipende da $$h$$.  
+$$h_{\mbox{opt}}=\left ( \frac{\alpha(\omega)}{\sigma^2_\omega f''(x)^2 g(x) n} \right ) ^{1/5}$$  
+con $$\sigma^2_\omega=\int z^2 \omega (z) dz$$, $$\alpha(\omega)=\int \omega (z)^2 dx$$ e $$g(x)$$ la densità da cui $$x_i$$ è stato campionato. $$f''(x)$$ e $$g(x)$$ sono sconosciute.
+
 L'MSE tende a $$0$$ più lentamente $$O(n^{-4/5})$$ dello stimatore MV $$O(n^{-1})$$, la convergenza al valore vero è più lenta senza assunzioni.
 
 #### LOESS
