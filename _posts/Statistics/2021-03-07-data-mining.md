@@ -437,18 +437,19 @@ $$\hat{f}(x)$$ è distorto e il suo valore atteso non decresce all'aumentare di 
 
 Per il caso multidimensionale la stima dei coefficienti sarà data da  
 $$\hat{\beta}=(X^T WX)^{-1} X^T Wy$$  
-con matrice $$X_{(n\times p+1)}=\left \{1, (x_{1i}-x_{01}), (x_{2i}-x_{02}), (...), (x_{pi}-x_{0p})\right \}$$ e $$W_{(n\times n)}$$ matrice di pesi.
+con $$X_{(n\times p+1)}=\left \{1, (x_{1i}-x_{01}), (x_{2i}-x_{02}), (...), (x_{pi}-x_{0p})\right \}$$  
+e $$W_{(n\times n)}$$ matrice di pesi.
 
 #### Scelta del nucleo
 La scelta del nucleo è meno importande dell'ampiezza di banda.  
 Posto  
 $$\omega_i=\frac{1}{h} \omega \left ( \frac{x_i - x_0}{h} \right )$$  
 alcune scelte possibili del nucleo $$\omega (z)$$:  
-- normale $$\frac{1}{\sqrt{2\pi}}\exp{\left ( -\frac{1}{2} z^2 \right )}$$, dominio $$\mathbb{R}$$
-- rettangolare $$\frac{1}{2}$$, dominio $$(-1,1)$$
-- epanechnikov $$\frac{3}{4}(1-z^2)$$ se $$\vert z \vert \le 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
-- biquadratico $$\frac{15}{16}(1-z^2)^2$$ se $$\vert z \vert \le 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
-- tricubico $$\frac{70}{81}(1-\vert z \vert ^3)^3$$ se $$\vert z \vert \le 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
+- Normale $$\frac{1}{\sqrt{2\pi}}\exp{\left ( -\frac{1}{2} z^2 \right )}$$, dominio $$\mathbb{R}$$
+- Rettangolare $$\frac{1}{2}$$, dominio $$(-1,1)$$
+- Epanechnikov $$\frac{3}{4}(1-z^2)$$ se $$\vert z \vert \le 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
+- Biquadratico $$\frac{15}{16}(1-z^2)^2$$ se $$\vert z \vert \le 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
+- Tricubico $$\frac{70}{81}(1-\vert z \vert ^3)^3$$ se $$\vert z \vert \le 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
 
 
 Il nucleo a supporto limitato riduce il costo computazionale.
@@ -457,7 +458,8 @@ Il nucleo a supporto limitato riduce il costo computazionale.
 $$\mathbb{E}\left \{ \hat{f}(x) \right \}$$ $$\approx f(x) + \frac{h^2}{2}\sigma^2_{\omega} f''(x)$$  
 $$\mbox{var}\left \{ \hat{f}(x) \right \}$$ $$\approx \frac{\sigma^2}{nh} \frac{\alpha(\omega)}{g(x)}$$  
 Per un $$h$$ piccolo la distorsione diventa nulla, ma la varianza esplode.  
-Si sceglie $$h$$ che minimizza l'errore quadratico medio. Analiticamente si può esplicitare $$h$$ ottimo ma questo dipende da $$f''(x)$$ che a sua volta dipende da $$h$$.  
+Si sceglie $$h$$ che minimizza l'errore quadratico medio.  
+Analiticamente si può esplicitare $$h$$ ottimo ma questo dipende da $$f''(x)$$ che a sua volta dipende da $$h$$.  
 L'MSE tende a $$0$$ più lentamente $$O(n^{-4/5})$$ dello stimatore MV $$O(n^{-1})$$, la convergenza al valore vero è più lenta senza assunzioni.
 
 #### LOESS
