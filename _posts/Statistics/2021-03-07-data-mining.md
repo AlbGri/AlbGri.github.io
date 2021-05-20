@@ -1530,7 +1530,7 @@ Q: bande di variabilità e bande di previsione sono sinonimi?
 R: No, al più bande di variabilità vs confidenza, la confidenza tengono conto della distorsione, la variabilità sono le confidenza senza le distorsione, la distorsione è difficile da stimare e ce ne freghiamo
 
 Q: cosa si intende con proprietà di convessità del lasso?
-la funzione di perdita è comunque convessa, la ridge è convessa ma è più lontana , mentre il lasso è vicina perché ad una V
+R: la funzione di perdita è comunque convessa, la ridge è convessa ma è più lontana , mentre il lasso è vicina perché ad una V
 
 
 
@@ -1542,7 +1542,6 @@ Q: perché il metodo del mini batch gradient descent dovrebbe diminuire i tempi 
 
 Q: perché la funzione d'attivazione ReLU dovrebbe portare a 0 e quindi non aggiornare, circa la metà dei nodi?
 
-Q: Alessandro ha parlato dell'insieme di convalida, differenza con verifica?
 
 
 
