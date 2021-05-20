@@ -426,9 +426,9 @@ Come il k-NN ma non effettua una media aritmetica ma una regressione lineare (re
 Sul punto generico $$x_0$$ espando con Taylor:  
 $$f(x)=f(x_0)+f'(x_0)(x-x_0)+\mbox{resto}$$  
 Stimo con il metodo dei minimi quadrati pesati mediante la distanza tra $$x_i$$ e $$x_0$$ (si ha una forma chiusa ottenibile analiticamente):  
-$$\hat{\alpha},\hat{\beta}=\text{arg}\,\min\limits_{\alpha , \beta} \sum_{i=1}^n \left \{ y_i -\alpha - \beta (x_i - x_0)\right \} ^2 \omega (x_i-x_0; h)$$  
+$$\hat{\alpha},\hat{\beta}=\text{arg}\,\min\limits_{\alpha , \beta} \sum_{i=1}^n \left \{ y_i -\alpha - \beta (x_i - x_0)\right \} ^2 \omega_i$$  
 - $$h$$ ampiezza di banda o parametro di lisciamento
-- $$\omega (\cdot ;h)$$ densità simmetrica attorno a $$0$$, detta nucleo
+- $$\omega (x_i-x_0 ;h)$$ densità simmetrica attorno a $$0$$, detta nucleo
 
 Quindi si ottiene, stima esplicita e lineare nelle $$y_i$$:  
 $$\hat{f}(x)=s_h^T y=s_{1h}y_i+ \cdots +s_{nh}y_{n}$$  
@@ -436,19 +436,20 @@ $$\hat{f}(x)=s_h^T y=s_{1h}y_i+ \cdots +s_{nh}y_{n}$$
 $$\hat{f}(x)$$ è distorto e il suo valore atteso non decresce all'aumentare di $$n$$. 
 
 Per il caso multidimensionale la stima dei coefficienti sarà data da  
-$$(X^T WX)^{-1} X^T Wy$$  
+$$\hat{\beta}=(X^T WX)^{-1} X^T Wy$$  
 con matrice $$X_{(n\times p+1)}=\left \{1, (x_{1i}-x_{01}), (x_{2i}-x_{02}), (...), (x_{pi}-x_{0p})\right \}$$ e $$W_{(n\times n)}$$ matrice di pesi.
 
 #### Scelta del nucleo
 La scelta del nucleo è meno importande dell'ampiezza di banda.  
 Posto  
-$$\omega(t;h)=\frac{1}{h} \omega_0 \left ( \frac{t}{h} \right )$$ con $$t=\vert x-x_0 \vert$$  
-alcune scelte possibili del nucleo:  
-- normale $$\omega_0 \sim\mathcal{N}(0,h^2)$$, dominio $$\mathbb{R}$$
-- biquadratico $$(1-t^2)^2$$ se $$\vert t \vert < 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
-- tricubico $$(1-\vert t \vert ^3)^3$$ se $$\vert t \vert < 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
-- rettangolare, dominio $$(-1,1)$$
-- epanechnikov, dominio $$(-1,1)$$
+$$\omega_i=\frac{1}{h} \omega \left ( \frac{x_i - x_0}{h} \right )$$  
+alcune scelte possibili del nucleo $$\omega (z)$$:  
+- normale $$\frac{1}{\sqrt{2\pi}}\exp{\left ( -\frac{1}{2} z^2 \right )}$$, dominio $$\mathbb{R}$$
+- rettangolare $$\frac{1}{2}$$, dominio $$(-1,1)$$
+- epanechnikov $$\frac{3}{4}(1-z^2)$$ se $$\vert z \vert \le 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
+- biquadratico $$\frac{15}{16}(1-z^2)^2$$ se $$\vert z \vert \le 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
+- tricubico $$\frac{70}{81}(1-\vert z \vert ^3)^3$$ se $$\vert z \vert \le 1$$ altrimenti $$0$$, dominio $$(-1,1)$$
+
 
 Il nucleo a supporto limitato riduce il costo computazionale.
 
