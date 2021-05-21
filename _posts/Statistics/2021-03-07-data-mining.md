@@ -1434,7 +1434,51 @@ con $$f(x_i)$$ funzione più o meno complessa come il modello lineare, quindi st
 Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo valido solo con la condizione per $$n\rightarrow \infty$$. Ma diversamente dallo split conformal in cui si ha il un metodo di previsione e lo si modifica per ottenere gli intervalli di previsione, questo approccio necessita di algoritmi numerici appositi.  
 
 
+<!---
+## Network Analysis
+Una rete è un grafo composto da nodi e archi.  
+Teoria dei [sei gradi di separazione](https://it.wikipedia.org/wiki/Sei_gradi_di_separazione).  
+La teoria del mondo piccolo dimostra che una rete (es. rete sociale del mondo)
 
+
+Proprietà di irriducibilità
+
+
+
+#### Indicatori per coppia
+Lunghezza minima di path: matrice del numero di archi per raggiungere due nodi
+
+#### Indicatori di rete
+Densità di Y
+
+Diametro di Y
+
+Lunghezza media di shortest path
+$$L=\frac{1}{V(V-1)}\sum s_{ij}$$
+
+Altri
+...
+
+
+Omofilia
+L'omofilia massima si ha quando ci sono gruppi molto connessi internamente e non connessi tra i gruppi.
+
+$$e_{ij}=$$ (numero di archi che hanno inizio nel gruppo i e fine nel gruppo j)/(numero totale di archi nella rete)  
+
+$$a_i=$$ (numero di archi che hanno inizio (o fine) nel gruppo i)/(numero totale di archi nella rete)  
+
+Indice di omofilia Modularità
+k-esimo gruppo
+$$Q=\sum_k^K e_{kk} - \sum_k^K a_k^2$$
+analogia con chi quadro per una tabella di contingenza
+
+Assortatività: modularità normalizzata
+$$R=\frac{\sum_k^K e_{kk} - \sum_k^K a_k^2}{1-\sum_k^K a_k^2}$$
+
+diviso il suo massimo che dipende dal numero di nodi della rete e dalla distribuzione marginale dei gruppi
+
+
+--->
 
 
 
