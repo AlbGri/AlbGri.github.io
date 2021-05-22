@@ -181,7 +181,7 @@ Una proposta di posizione ottimale dei nodi.
 Nodi come particelle di un sistema fisico con forze repulsive (maggiore energia per nodi vicini) e attrattive (maggiore nergia per nodi lontani).  
 La posizione ottimale minimizza l'energia totale.  
 
-## Comunnity Detection
+## Community Detection
 Per raggruppare i nodi e identificare comunità.  
 
 - Algoritmo di Girvan-Newman: f(betweenness di arco)
@@ -249,8 +249,8 @@ $$T(y)=(1/6)\sum_{i,j,k} y_{ij} y_{ik} y_{jk}$$ numero di triangoli
 
 ##### Miglioramenti
 Le strutture precedenti possono portare una sottostima della dipendenza tra nodi. 
-- $$k$$-stelle alternate: le stelle entrano in un solo termine con pesi esponenziali alternati $$\theta_{\mbox{AKS}}$$
-- $$k$$-triangoli alternati: $$\theta_{\mbox{AKT}}$$
+- $$k$$-stelle alternate: le stelle entrano in un solo termine con pesi esponenziali alternati $$\theta_{\small{\mbox{AKS}}}$$
+- $$k$$-triangoli alternati: $$\theta_{\small{\mbox{AKT}}}$$
 
 #### Variabili esplicative
 Si include nel predittore lineare dell'ERGM il termine $$\beta^T h(x,y)$$ con $$h(\cdot)$$ vettore di statistiche dipendenti sia dalla rete che dalle informazioni di nodo. Tra le scelte più comuni per $$h$$  
