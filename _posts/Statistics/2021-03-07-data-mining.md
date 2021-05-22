@@ -1435,6 +1435,7 @@ Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo 
 
 
 ## Network Analysis
+Network Science.  
 Una rete è un grafo composto da nodi e archi.  
 Teoria dei [sei gradi di separazione](https://it.wikipedia.org/wiki/Sei_gradi_di_separazione).  
 
@@ -1584,12 +1585,45 @@ $$R=\frac{\sum_k^K e_{kk} - \sum_k^K a_k^2}{1-\sum_k^K a_k^2}$$
 diviso il suo massimo che dipende dal numero di nodi della rete e dalla distribuzione marginale dei gruppi.  
 Una assortatività bassa indica che non c'è discriminazione tra i livelli della variabile gruppo.  
 
-**Grafici**  
+**Distribuzioni**  
 Distribuzione di frequenza del grado dei nodi di una rete (numero di connessioni).  
 Distribuzione di frequenza del livello di betweenness (numero di connessioni importanti).  
 Se è presente l'andamento esponenziale negativo si tratta di Small World.  
 
 Grafico tra grado e betweenness per valutare se i nodi che hanno un elevato numero di connessioni sono gli stessi che sono i più importanti.  
+
+### Rappresentazione grafica
+Dimensione dei nodi proporzionale al grado o betweenness (hub).  
+Forma e colore dei nodi in funzione dei gruppi.  
+Posizione dei nodi: nodi connessi e/o con comportamenti simili collocati più vicini (comunità) 
+
+#### Force-Directed Placements
+Una proposta di posizione ottimale dei nodi.  
+Nodi come particelle di un sistema fisico con forze repulsive (maggiore energia per nodi vicini) e attrattive (maggiore nergia per nodi lontani).  
+La posizione ottimale minimizza l'energia totale.  
+
+### Comunnity Detection
+Per raggruppare i nodi e identificare comunità.  
+
+- Algoritmo di Girvan-Newman: f(betweenness di arco)
+- Metodo di Louvain: f(modularità)
+- Modelli a blocchi stocastici: cluster bayesiano
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) altri
+
+#### Metodo di Louvain
+Algoritmo iterativo.  
+Si sceglie inizialmente il numero di comunità a cui si vuole arrivare.  
+Inizialmente ogni nodo è un gruppo diverso, si sposta iterativamente un nodo raggruppandolo ad un altro (se connesso) misurando la variazione di modularità generata dallo spostamento di un nodo da una comunità ad un'altra.  
+Allo step $$i$$ un nodo che è stato raggruppato viene rappresentato dalla sua comunità, che verrà valutata allo step $$i+1$$ per essere eventualmente accorpata ad un'altra comunità.  
+Si cerca di raggruppare nodi il cui aumento di modularità è maggiore.  
+
+### Inferenza
+
+
+
+
+
+
 
 
 
