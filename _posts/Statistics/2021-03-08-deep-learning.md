@@ -2,7 +2,7 @@
 title: "Statistics: Deep Learning"
 excerpt: "note"
 date: 2021-03-08
-tags: [statistics, math, theory, university, R]
+tags: [statistics, math, theory, university]
 mathjax: "true"
 ---
 
