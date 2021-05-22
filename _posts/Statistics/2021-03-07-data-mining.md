@@ -1506,8 +1506,12 @@ Hub: nodi con molte connessioni, spesso cruciali per la formazione del piccolo m
 
 ### Indicatori
 
+#### Indicatori di nodo
 Shortest path della coppia di nodi $$(i,j)$$  
-numero di nodi (escluso il nodo di partenza) minimo dal nodo $$i$$ al nodo $$j$$  
+numero di nodi minimi dal nodo $$i$$ al nodo $$j$$  
+
+Lunghezza dello shortest path $$s_{ij}$$  
+numero di archi di cui si compone lo shortest path tra due nodi  
 
 Grado del nodo $$i$$  
 numero di nodi a cui è connesso il nodo $$i$$-esimo  
@@ -1516,8 +1520,10 @@ con $$V$$ nodi e $$Y_{ij}=1$$ se il nodo $$i$$ è connesso con il nodo $$j$$, 0 
 
 Livello di betweenness del nodo $$i$$  
 è la somma, per tutte le coppie di nodi $$(u,v)$$ diverse da $$i$$, del rapporto tra il numero di shortest path della coppia $$(u,v)$$ che passano per $$i$$ e il numero degli shortest paths totali della coppia $$(u,v)$$.  
+<!---
 $$g_i=\sum_{u\ne i \ne v} \frac{n_{uv}(i)}{n_{uv}}$$  
-analogamente  
+analogamente
+--->  
 $$g_i = \sum_{k \in S(i)} \frac{n_{k \vert i}}{n_{k}}$$  
 con  
 $$S(i)=$$ insieme composto da tutte coppie di nodi con shortest path passanti dal nodo $$i$$  
@@ -1525,31 +1531,49 @@ $$k=$$ k-esimo elemento (coppia di nodi) dell'insieme $$S(i)$$
 $$n_{k}=$$ numero di shortest path del $$k$$-esimo elemento  
 $$n_{k \vert i}=$$ numero di shortest path del $$k$$-esimo elemento passanti dal nodo $$i$$  
 
+Transitività locale  
+...  
+
+Vicinanza  
+...  
+
+Centralità di autovettore  
+...  
+
+
+#### Indicatori di coppie di nodi
+Lunghezza minima di path  
+matrice con il numero di archi di cui si compongono gli shortest path (lunghezza $$s_{ij}$$) di tutti i nodi  
+
+#### Indicatori di rete
+Densità di $$Y$$  
+frequenza relativa del numero totale di archi osservati (considerando il verso della relazione) sul totale di archi possibili  
+$$D=\frac{1}{V\cdot (V-1)} \sum Y_{ij}$$  
+
+Diametro di $$Y$$  
+Lunghezza massima degli shortest path  
+$$\max{(s_{ij})}$$  
+
+Lunghezza media degli shortest path  
+$$L=\frac{1}{V\cdot (V-1)}\sum s_{ij}$$  
+
+Omofilia  
+L'omofilia è massima quando i gruppi sono connessi internamente e non ci sono connessioni tra gruppi distinti.  
+$$e_{ij}=$$ (numero di archi che hanno inizio nel gruppo $$kkkk$$ e fine nel gruppo $$j$$)/(numero totale di archi nella rete)  
+$$a_i=$$ (numero di archi che hanno inizio (o fine) nel gruppo $$i$$)/(numero totale di archi nella rete)  
+
+
+
+
 
 
 <!---
 
-#### Indicatori per coppia
-Lunghezza minima di path: matrice del numero di archi per raggiungere due nodi
-
-#### Indicatori di rete
-Densità di Y
-
-Diametro di Y
-
-Lunghezza media di shortest path
-$$L=\frac{1}{V(V-1)}\sum s_{ij}$$
-
-Altri
-...
 
 
-Omofilia
-L'omofilia massima si ha quando ci sono gruppi molto connessi internamente e non connessi tra i gruppi.
 
-$$e_{ij}=$$ (numero di archi che hanno inizio nel gruppo i e fine nel gruppo j)/(numero totale di archi nella rete)  
 
-$$a_i=$$ (numero di archi che hanno inizio (o fine) nel gruppo i)/(numero totale di archi nella rete)  
+ 
 
 Indice di omofilia Modularità
 k-esimo gruppo
@@ -1757,6 +1781,10 @@ https://www.codecogs.com/latex/eqneditor.php
     h2o::
 ```
 
+
+
+<!---
+
 ##### Confronto 3 stimatori della media
 <iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/26abf77e0a6d65e5c0a4d1a36afcdceb.js"></script></body></html>'></iframe> 
 
@@ -1766,7 +1794,7 @@ https://www.codecogs.com/latex/eqneditor.php
 #####  (no train/test) Modello Lineare Multiplo: stima con matrici, scomposizione QR, minimi quadrati ricorsivi
 <iframe frameborder=0 style="width: 100%; height: 250px;" scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 200px; }</style><script src="https://gist.github.com/AlbGri/73e8ac678942dbefd3efe4ea46ae7c08.js"></script></body></html>'></iframe> 
 
-
+--->
 
 ## Utili
 
