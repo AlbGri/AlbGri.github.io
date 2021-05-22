@@ -1437,7 +1437,6 @@ Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo 
 ## Network Analysis
 Una rete è un grafo composto da nodi e archi.  
 Teoria dei [sei gradi di separazione](https://it.wikipedia.org/wiki/Sei_gradi_di_separazione).  
-La teoria del mondo piccolo dimostra che una rete (es. rete sociale del mondo) non ha necessariamente tanti collegamenti di primo grado ma che consente di collegare tutti facilmente con più gradi.  
 
 Variabili di nodo: misurate sui nodi  
 Variabili diadiche: misurate su coppie di nodi (diadi)  
@@ -1445,7 +1444,6 @@ Variabili diadiche: misurate su coppie di nodi (diadi)
 Gli attributi (variabili di nodo) definiscono le caratteristiche delle singole entità (nodi). Si può rappresentarli con una matrice $$X_{(n\time q)}$$ con $$n$$ numero di nodi e $$q$$ numero di variabili di nodo.  
 
 Le variabili diadiche (esistono anche triadiche), che definiscono le relazioni, possono essere rappresentate dalle socio matrici.  
-
 
 ### Relazioni
 Le relazioni $$y_{i,j}$$ tra nodo $$i$$ e $$j$$ possono essere influenzate, ma non determinate, dagli attributi delle singole entità.
@@ -1455,14 +1453,6 @@ Relazione diretta: $$y_{i,j}$$ uguale o diverso da $$y_{j,i}$$. Nodi e archi ori
 
 Relazioni binarie (dicotomica): solo due valori presenza o assenza  
 Relazioni pesate: ordinale se i valori hanno un ordine; qualitativa (o categoriale) se i valori non hanno un ordine  
-
-#### Socio matrice
-Rappresentazione matriciale.  
-Caratterizza la presenza o assenza (1 o 0 se binaria) della relazione tra coppie di nodi.  
-Se le relazioni sono dirette binarie allora la matrice sarà simmetrica binaria, si possono caratterizzare con tutte le precedenti tipologie di relazioni.  
-Può contenere anche dati mancanti.  
-
-Sparsità della matrice: la dimensione della matrice cresce in maniera quadratica con il numero di osservazioni $$n$$, ma il numero di presenze di relazioni (es. 1) cresce linearmente con $$n$$.
 
 ### Grafi
 Il grafo $$G(N,E)$$ con $$N$$ insieme di vertici (nodi) e $$E$$ insieme di connessione di archi (linee o connessioni).  
@@ -1479,6 +1469,17 @@ Un grafo $$G_S=(N_S,E_S)$$ è sottografo (indotto) di $$G=(N,E)$$ se
 $$N_S$$ è un sottoinsieme di $$N$$  
 $$E_S$$ è un sottoinsieme di $$E$$ e tutti gli archi in $$E_S$$ sono tra i nodi in $$N_S$$  
 
+### Rappresentazioni
+
+#### Socio matrice
+Rappresentazione matriciale.  
+Caratterizza la presenza o assenza (1 o 0 se binaria) della relazione tra coppie di nodi.  
+Se le relazioni sono dirette binarie allora la matrice sarà simmetrica binaria, si possono caratterizzare con tutte le precedenti tipologie di relazioni.  
+Può contenere anche dati mancanti.  
+
+Sparsità della matrice: la dimensione della matrice cresce in maniera quadratica con il numero di osservazioni $$n$$, ma il numero di presenze di relazioni (es. 1) cresce linearmente con $$n$$.
+
+
 #### Matrice di adiacenza
 Caso specifico della socio matrice, in cui si identificano solo relazioni binarie (dirette o indirette), senza dati mancanti.  
 Matrice sparsa, per rappresentare una rete in maniera efficente si possono usare la lista di archi (insieme degli archi).  
@@ -1491,6 +1492,15 @@ La lista di archi è una rappresentazione compatta e il suo vantaggio aumenta al
 Due nodi $$i$$ e $$j$$ sono adiacenti se esiste l'arco $$(i,j)$$ o $$(j,i)$$.  
 Una lista (orientata) che definisce per ogni nodo quali sono i suoi adiacenti (orientati).  
 
+
+### Proprietà
+Mondo piccolo (Small Word): si ha quando una rete (es. rete sociale del mondo) ha la maggior parte dei nodi non connessi direttamente, ma quasi ogni nodo può essere raggiunto con un numero piccolo di collegamenti.  
+
+Invarianza di scala (Scale Free): un nuovo nodo ha più probabilità di connettersi con nodi con tante connessioni. Si hanno pochi nodi con tante connessioni e tanti nodi con poche connessioni. La relazione tra numero di nodi $$n$$ e numero di connessioni $$c$$ è esponenziale negativa $$n\approx e^{\gamma \codt c}$$  
+
+Omofilia (Homophily): un nuovo nodo ha più probabilità di connettersi a nodi simili per alcune caratteristiche.  
+
+Strutture di comunità (Community structure): i nodi tendono a formare gruppi con un elevato numero di connessioni interne e poche tra gruppi.  
 
 
 
