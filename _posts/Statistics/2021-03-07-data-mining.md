@@ -1463,6 +1463,12 @@ Sparsità della matrice: la dimensione della matrice cresce in maniera quadratic
 Il grafo $$G(N,E)$$ con $$N$$ insieme di vertici (nodi) e $$E$$ insieme di connessione di archi (linee o connessioni).  
 Il grafo orientato contiene relazioni dirette in cui si tiene conto del verso della connessione.  
 
+#### Attributi
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Le proprietà dipendono dalla struttura del resto del grafo (es. misure di centralità)  
+
+Esempi di attributi  
+- rete di comunicazioni: $$y_{i,j}$$ numero di messaggi spediti da $$i$$ a $$j$$, $$y_{i,j}=0,1,2,...$$ 
+- rete di conflitti: $$y_{i,j}$$ relazioni militari tra $$i$$ e $$j$$, $$y_{i,j}=-1,0,1$$
 
 #### Sottografo
 Un grafo $$G_S=(N_S,E_S)$$ è sottografo (indotto) di $$G=(N,E)$$ se  
