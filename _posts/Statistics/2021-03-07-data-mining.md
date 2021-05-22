@@ -1494,99 +1494,92 @@ Una lista (orientata) che definisce per ogni nodo quali sono i suoi adiacenti (o
 
 
 ### Proprietà delle reti
-Mondo piccolo (Small Word): si ha quando una rete (es. rete sociale del mondo) ha la maggior parte dei nodi non connessi direttamente, ma quasi ogni nodo può essere raggiunto con un numero piccolo di collegamenti.  
 
-Invarianza di scala (Scale Free): un nuovo nodo ha più probabilità di connettersi con nodi con tante connessioni. Si hanno pochi nodi con tante connessioni e tanti nodi con poche connessioni. La relazione tra numero di nodi $$n$$ e numero di connessioni $$c$$ è esponenziale negativa $$n\approx e^{\gamma \codt c}$$  
+#### Mondo piccolo (Small World)
+si ha quando una rete (es. rete sociale del mondo) ha la maggior parte dei nodi non connessi direttamente, ma quasi ogni nodo può essere raggiunto con un numero piccolo di collegamenti.  
 
-Omofilia (Homophily): un nuovo nodo ha più probabilità di connettersi a nodi simili per alcune caratteristiche.  
+#### Invarianza di scala (Scale Free)
+un nuovo nodo ha più probabilità di connettersi con nodi con tante connessioni. Si hanno pochi nodi con tante connessioni (grado e betweenness elevato) e tanti nodi con poche connessioni. Se la relazione tra numero di nodi $$n$$ e numero di connessioni $$L$$ è esponenziale negativa $$n\approx e^{\gamma \cdot L}$$ allora vale l'invarianza di scala e si ha una rete Small World.  
 
+#### Omofilia (Homophily)
+un nuovo nodo ha più probabilità di connettersi a nodi simili per alcune caratteristiche.  
+
+#### Altre proprietà
 Strutture di comunità (Community structure): i nodi tendono a formare gruppi con un elevato numero di connessioni interne e poche tra gruppi.  
 
 Hub: nodi con molte connessioni, spesso cruciali per la formazione del piccolo mondo.  
 
-### Indicatori
+### Misure di sintesi
 
 #### Indicatori di nodo
-Shortest path della coppia di nodi $$(i,j)$$  
+**Shortest path della coppia di nodi $$(i,j)$$**  
 numero di nodi minimi dal nodo $$i$$ al nodo $$j$$  
 
-Lunghezza dello shortest path $$s_{ij}$$  
+**Lunghezza dello shortest path $$s_{ij}$$**  
 numero di archi di cui si compone lo shortest path tra due nodi  
 
-Grado del nodo $$i$$  
+**Grado del nodo $$i$$**  
 numero di nodi a cui è connesso il nodo $$i$$-esimo  
 $$d_i=\sum_{i=1}^V Y_{ij}$$  
 con $$V$$ nodi e $$Y_{ij}=1$$ se il nodo $$i$$ è connesso con il nodo $$j$$, 0 altrimenti.  
 
-Livello di betweenness del nodo $$i$$  
-è la somma, per tutte le coppie di nodi $$(u,v)$$ diverse da $$i$$, del rapporto tra il numero di shortest path della coppia $$(u,v)$$ che passano per $$i$$ e il numero degli shortest paths totali della coppia $$(u,v)$$.  
-<!---
-$$g_i=\sum_{u\ne i \ne v} \frac{n_{uv}(i)}{n_{uv}}$$  
-analogamente
---->  
-$$g_i = \sum_{k \in S(i)} \frac{n_{k \vert i}}{n_{k}}$$  
+**Livello di betweenness del nodo $$i$$**  
+è la somma, per tutte le coppie di nodi diverse da $$i$$, del rapporto tra il numero di shortest path della coppia $$c$$ che passano per $$i$$ e il numero degli shortest paths totali della coppia $$c$$.  
+$$g_i = \sum_{c \in S(i)} \frac{n_{c \vert i}}{n_{c}}$$  
 con  
 $$S(i)=$$ insieme composto da tutte coppie di nodi con shortest path passanti dal nodo $$i$$  
-$$k=$$ k-esimo elemento (coppia di nodi) dell'insieme $$S(i)$$  
-$$n_{k}=$$ numero di shortest path del $$k$$-esimo elemento  
-$$n_{k \vert i}=$$ numero di shortest path del $$k$$-esimo elemento passanti dal nodo $$i$$  
+$$c=$$ c-esimo elemento (coppia di nodi) dell'insieme $$S(i)$$  
+$$n_{c \vert i}=$$ numero di shortest path del $$c$$-esimo elemento passanti dal nodo $$i$$  
+$$n_{c}=$$ numero di shortest path del $$c$$-esimo elemento  
 
-Transitività locale  
+**Transitività locale**  
 ...  
 
-Vicinanza  
+**Vicinanza**  
 ...  
 
-Centralità di autovettore  
+**Centralità di autovettore**  
 ...  
 
 
 #### Indicatori di coppie di nodi
-Lunghezza minima di path  
+**Lunghezza minima di path**  
 matrice con il numero di archi di cui si compongono gli shortest path (lunghezza $$s_{ij}$$) di tutti i nodi  
 
 #### Indicatori di rete
-Densità di $$Y$$  
+**Densità di $$Y$$**  
 frequenza relativa del numero totale di archi osservati (considerando il verso della relazione) sul totale di archi possibili  
 $$D=\frac{1}{V\cdot (V-1)} \sum Y_{ij}$$  
 
-Diametro di $$Y$$  
+**Diametro di $$Y$$**  
 Lunghezza massima degli shortest path  
 $$\max{(s_{ij})}$$  
 
-Lunghezza media degli shortest path  
+**Lunghezza media degli shortest path**  
 $$L=\frac{1}{V\cdot (V-1)}\sum s_{ij}$$  
 
-Omofilia  
-L'omofilia è massima quando i $$k_1,k_2,...,K$$ gruppi sono connessi internamente e non ci sono connessioni tra gruppi distinti.  
-$$e_{ij}=$$ (numero di archi che hanno inizio nel gruppo $$kkkk$$ e fine nel gruppo $$j$$)/(numero totale di archi nella rete)  
-$$a_i=$$ (numero di archi che hanno inizio (o fine) nel gruppo $$i$$)/(numero totale di archi nella rete)  
+**Omofilia**  
+L'omofilia è massima quando i $$K$$ gruppi sono connessi internamente e non ci sono connessioni tra gruppi distinti.  
+$$e_{k_1,k_2}=$$ (numero di archi che hanno inizio nel gruppo $$k_1$$ e fine nel gruppo $$k_2$$)/(numero totale di archi nella rete): omofilia del gruppo $$k_1$$ con il gruppo $$k_2$$  
+$$a_{k_1}=$$ (numero di archi che hanno inizio (o fine) nel gruppo $$k_1$$)/(numero totale di archi nella rete): omofilia marginale del gruppo $$k_1$$  
+
+**Modularità**  
+Indice di omofilia. Frazione di archi che connette nodi dello stesso tipo meno il valore atteso della stessa quantità in una rete con connessioni casuali (analogia con il test $$\chi^2$$ per tabelle di contingenza).  
+Sia $$k$$ il $$k$$-esimo gruppo  
+$$Q=\sum_k^K e_{kk} - \sum_k^K a_k^2$$  
+Utile per confrontare due rete, ma se si vuole assoluto bisogna normalizzarlo.  
+
+**Assortatività**  
+Modularità normalizzata.  
+$$R=\frac{\sum_k^K e_{kk} - \sum_k^K a_k^2}{1-\sum_k^K a_k^2}$$  
+diviso il suo massimo che dipende dal numero di nodi della rete e dalla distribuzione marginale dei gruppi.  
+
+**Grafici**  
+Distribuzione di frequenza del grado dei nodi di una rete (numero di connessioni).  
+Distribuzione di frequenza del livello di betweenness (numero di connessioni importanti).  
+Se è presente l'andamento esponenziale negativo si tratta di Small World.
 
 
-
-
-
-
-<!---
-
-
-
-
-
- 
-
-Indice di omofilia Modularità
-k-esimo gruppo
-$$Q=\sum_k^K e_{kk} - \sum_k^K a_k^2$$
-analogia con chi quadro per una tabella di contingenza
-
-Assortatività: modularità normalizzata
-$$R=\frac{\sum_k^K e_{kk} - \sum_k^K a_k^2}{1-\sum_k^K a_k^2}$$
-
-diviso il suo massimo che dipende dal numero di nodi della rete e dalla distribuzione marginale dei gruppi
-
-
---->
 
 
 
