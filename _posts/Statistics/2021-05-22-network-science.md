@@ -269,7 +269,7 @@ Si può ottenere la stima di MV via simulazione (simulated maximum likelihood).
 dato un modello ERGM con log-verosimiglianza  
 $$l(\theta)=\theta^T g(Y)-\log{\kappa(\theta)}$$  
 se $$Y=(Y_{ij},Y_{(-ij)})$$ e $$y=(y_{ij}, y_{(-ij)})$$ si ha  
-$$\mathbb{P}(Y_{ij}=1\vert Y_{(-ij)=y_{(-ij);\theta$$ esplicita,  
+$$\mathbb{P}(Y_{ij}=1\vert Y_{(-ij)}=y_{(-ij)};\theta)$$ esplicita,  
 quindi si massimizza la pseudo-verosimgilianza  
 $$\mbox{ps-}L(\theta)=\prod_{i>j} \mathbb{P}(Y_{ij}=y_{ij} \vert Y_{-(ij)}=y_{-(ij)};\theta)$$  
 che equivale alla stima di un modello di regressione logistica con risposta  
