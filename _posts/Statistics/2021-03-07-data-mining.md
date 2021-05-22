@@ -1505,7 +1505,8 @@ Si ha uno Small World se
 - vale la transitività
 
 #### Invarianza di scala (Scale Free)
-un nuovo nodo ha più probabilità di connettersi con nodi con tante connessioni. Si hanno pochi nodi con tante connessioni (grado e betweenness elevato) e tanti nodi con poche connessioni. Se la relazione tra numero di nodi $$n$$ e numero di connessioni $$L$$ è esponenziale negativa $$n\approx e^{\gamma \cdot L}$$ allora vale l'invarianza di scala.  
+un nuovo nodo ha più probabilità di connettersi con nodi con tante connessioni. Si hanno pochi nodi con tante connessioni e tanti nodi con poche connessioni.  
+Se la relazione tra numero di nodi $$n$$ e numero di connessioni (gradi o betweenness) $$L$$ è esponenziale negativa $$n\approx e^{\gamma \cdot L}$$ allora vale l'invarianza di scala.  
 
 #### Omofilia (Homophily)
 un nuovo nodo ha più probabilità di connettersi a nodi simili per alcune caratteristiche.  
@@ -1565,7 +1566,7 @@ $$\max{(s_{ij})}$$
 Per connettere due nodi servono mediamente $$L$$ archi, cioè $$L-1$$ nodi intermedi.  
 $$L=\frac{1}{V\cdot (V-1)}\sum s_{ij}$$  
 
-**Omofilia**  
+**Omofilia dei gruppi**  
 L'omofilia è massima quando i $$K$$ gruppi sono connessi internamente e non ci sono connessioni tra gruppi distinti.  
 $$e_{k_1,k_2}=$$ (numero di archi che hanno inizio nel gruppo $$k_1$$ e fine nel gruppo $$k_2$$)/(numero totale di archi nella rete): omofilia del gruppo $$k_1$$ con il gruppo $$k_2$$  
 $$a_{k_1}=$$ (numero di archi che hanno inizio (o fine) nel gruppo $$k_1$$)/(numero totale di archi nella rete): omofilia marginale del gruppo $$k_1$$  
@@ -1575,11 +1576,13 @@ Indice di omofilia. Frazione di archi che connette nodi dello stesso tipo meno i
 Sia $$k$$ il $$k$$-esimo gruppo  
 $$Q=\sum_k^K e_{kk} - \sum_k^K a_k^2$$  
 Utile per confrontare due rete, ma se si vuole assoluto bisogna normalizzarlo.  
+Una modularità bassa indica che non c'è discriminazione tra i livelli della variabile gruppo.  
 
 **Assortatività**  
 Modularità normalizzata.  
 $$R=\frac{\sum_k^K e_{kk} - \sum_k^K a_k^2}{1-\sum_k^K a_k^2}$$  
 diviso il suo massimo che dipende dal numero di nodi della rete e dalla distribuzione marginale dei gruppi.  
+Una assortatività bassa indica che non c'è discriminazione tra i livelli della variabile gruppo.  
 
 **Grafici**  
 Distribuzione di frequenza del grado dei nodi di una rete (numero di connessioni).  
@@ -1717,6 +1720,7 @@ Q: reti2021a3.pdf perché disegna la relazione (3,4) se non è presente, non man
 
 Q: reti2021a4.pdf slide 3, con Y=[] e E=[] come si rappresenta?
 
+Q: l'assortatività varia tra -1 e 1? Nell'esempio reti2021b1.pdf non viene -0.67?
 
 
 
