@@ -1567,7 +1567,7 @@ $$\max{(s_{ij})}$$
 Per connettere due nodi servono mediamente $$L$$ archi, cioè $$L-1$$ nodi intermedi.  
 $$L=\frac{1}{V\cdot (V-1)}\sum s_{ij}$$  
 
-**Omofilia dei gruppi**  
+**Omofilia tra gruppi**  
 L'omofilia è massima quando i $$K$$ gruppi sono connessi internamente e non ci sono connessioni tra gruppi distinti.  
 $$e_{k_1,k_2}=$$ (numero di archi che hanno inizio nel gruppo $$k_1$$ e fine nel gruppo $$k_2$$)/(numero totale di archi nella rete): omofilia del gruppo $$k_1$$ con il gruppo $$k_2$$  
 $$a_{k_1}=$$ (numero di archi che hanno inizio (o fine) nel gruppo $$k_1$$)/(numero totale di archi nella rete): omofilia marginale del gruppo $$k_1$$  
@@ -1634,17 +1634,66 @@ $$\mathbb{P}(Y=y;\theta)=\frac{\exp{\left \{ \theta ^T g(y) \right \}}}{\kappa(\
 dove  
 $$\theta \in \Theta \subset \mathfrak{R}^p$$ vettore di $$p$$ parametri  
 $$g(y)\in\mathfrak{R}^p$$ vettore di $$p$$ staitstiche di rete  
-$$\kappa(\theta)=\sum_{Z\in \mathcal{Y}} \exp{\{ \theta ^T g(Z) \}}$$ costante di normalizzazione indipendente da $$y$$ ma difficile da calcolare  
+$$\kappa(\theta)=\sum_{Z\in \mathcal{Y}} \exp{\{ \theta ^T g(Z) \}}$$ costante di normalizzazione indipendente da $$y$$ ma molto difficile da calcolare  
 
-##### Modello iid
+##### Indipendenza degli archi
 Il modello più semplice si ottiene assumendo che gli archi $$Y_{ij}\overset{\text{iid}}{\sim}\mbox{Bern}(\pi_{ij})$$  
 $$\mathbb{P}(Y=y;\pi_{ij})=\prod_{i>j} \mathbb{P}(Y_{ij}=y_{ij};\pi)=\prod_{i>j} \pi_{ij}^{y_{ij}} (1-\pi_{ij})^{1-y_{ij}}=\exp{ \left \{ \sum_{i>j} \theta_{ij} y_{ij} \right \} }/\kappa(\theta)$$  
-dove $$\mbox{logit}(\pi_{ij})=\theta_{ij}$$ 
+dove $$\mbox{logit}(\pi_{ij})=\theta_{ij}$$   
 
-**Modello di Erdos-Renyi**  
+Si perde la possibilità di modellare gli effetti di eterogeneità degli attori, omofilia, transitività e clustering.  
+
+**Modello (inutile) di Erdos-Rényi**  
 se l'effetto di presenza assenza di ciascun nodo è costante  
 $$\theta_{ij}=\theta$$, $$\quad\forall \{i,j\}$$ con $$i>j$$  
-$$\mathbb{P}(Y=y;\pi)=\exp{ \left \{ \theta \sum_{i>j} y_{ij} \right \} }/\log{(1+e^\theta)^{V(V-1)/2}}$$
+$$\mathbb{P}(Y=y;\theta)=\exp{ \left \{ \theta \sum_{i>j} y_{ij} \right \} }/\log{(1+e^\theta)^{V(V-1)/2}}$$  
+
+**Modello (poco meno inutile) $$p_1$$**  
+$$\theta_{ij}=p+\alpha_i+\alpha_j$$, $$\quad\forall \{i,j\}$$ con $$i>j$$  
+$$\mathbb{P}(Y=y;\theta_{ij})=\exp{ \left \{ p \sum_{i>j} y_{ij} +\sum_i \alpha_i d_i \right \} }/\kappa (p, \alpha_1,...,\alpha_V)$$  
+La probabilità di un arco tra $$i$$ e $$j$$ è data dalla propensione globale $$p$$ a formare connessioni nella rete e dalla propensione individuale dei due nodi a connettersi ad altri $$\alpha_i$$ e $$\alpha_j$$ senza interazioni.  
+La costante di normalizzazione è difficile da calcolare.
+
+##### Modelli Markoviani
+Due archi sono indipendenti se non hanno neanche un nodo in comune.  
+Si costruisce una dipendenza locale.  
+$$\mathbb{P}(Y=y;\theta)=\exp{\left \{ \sum_{k=1}^{V-1} \theta_k S_k(y) +\theta_\tau T(y) \right \}}/\kappa(\theta)$$  
+dove  
+$$\theta_k$$ ora tengono conto delle interazioni  
+$$S_k(y)$$ e $$T(y)$$ sono statistiche locali della rete vicino al nodo d'interesse  
+$$S_1(y)=\sum_{i>j} y_{ij}$$ numero di archi  
+$$S_k(y)=\sum_{i=1}^V {d_i\choose k}$$ numero di $$k$$-stelle ($$k\ge 2$$)  
+$$T(y)=(1/6)\sum_{i,j,k} y_{ij} y_{ik} y_{jk}$$ numero di triangoli  
+
+**Miglioramenti**  
+Le strutture precedenti possono portare una sottostima della dipendenza tra nodi. 
+- $$k$$-stelle alternate: le stelle entrano in un solo termine con pesi esponenziali alternati $$\theta_{\mbox{AKS}}$$
+- $$k$$-triangoli alternati: $$\theta_{\mbox{AKT}}$$
+
+##### Variabili esplicative
+Si include nel predittore lineare dell'ERGM il termine $$\beta^T h(x,y)$$ con $$h(\cdot)$$ vettore di statistiche dipendenti sia dalla rete che dalle informazioni di nodo. Tra le scelte più comuni per $$h$$  
+- Popolarità del nodo: $$\beta \sum_i x_i d_i $$
+- Similarità tra nodi: $$\beta \sum_{i>j} y_{ij} (x_i+x_j) $$
+- Omofilia tra gruppi: $$\beta \sum_{i>j} I(x_i=x_j) $$
+
+
+##### Stima
+La stima MV dei ERGM non è possibile calcolarla per la costante di normalizzazione.  
+
+**MCMC**  
+Si può ottenere la stima di MV via simulazione (simulated maximum likelihood).  
+
+**Pseudoverosimiglianza**  
+dato un modello ERGM con log-verosimiglianza  
+$$l(\theta)=\theta^T g(Y)-\log{\kappa(\theta)}$$  
+se $$Y=(Y_{ij},Y_{(-ij)})$$ e $$y=(y_{ij}, y_{(-ij)})$$ si ha  
+$$\mathbb{P}(Y_{ij}=1\vert Y_{(-ij)=y_{(-ij);\theta$$ esplicita,  
+quindi si massimizza la pseudo-verosimgilianza  
+$$\mbox{ps-}L(\theta)=\prod_{i>j} \mathbb{P}(Y_{ij}=y_{ij} \vert Y_{-(ij)}=y_{-(ij)};\theta)$$  
+che equivale alla stima di un modello di regressione logistica con risposta  
+$$y=\left \{ y_{21},...,y_{V1},...,y_{ij},...,y_{V,V-1} \right \}$$ e  
+matrice delle esplicative $$\Delta=\left \{ g(1,y_{-(ij)}) - g(0,y_{-(ij)}) \right \}_{i>j}$$  
+Lo stimatore è consistente per $$V\rightarrow \infty$$.  
 
 
 #### Stochastic Block Model (SBMs)
