@@ -18,7 +18,7 @@ Teoria dei [sei gradi di separazione](https://it.wikipedia.org/wiki/Sei_gradi_di
 Variabili di nodo: misurate sui nodi  
 Variabili diadiche: misurate su coppie di nodi (diadi)  
 
-Gli attributi (variabili di nodo) definiscono le caratteristiche delle singole entità (nodi). Si può rappresentarli con una matrice $$X_{(n\time q)}$$ con $$n$$ numero di nodi e $$q$$ numero di variabili di nodo.  
+Gli attributi (variabili di nodo) definiscono le caratteristiche delle singole entità (nodi). Si può rappresentarli con una matrice $$X_{(n\times q)}$$ con $$n$$ numero di nodi e $$q$$ numero di variabili di nodo.  
 
 Le variabili diadiche (esistono anche triadiche), che definiscono le relazioni, possono essere rappresentate dalle socio matrici.  
 
