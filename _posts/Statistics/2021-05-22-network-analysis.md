@@ -1,7 +1,7 @@
 ---
 title: "Statistics: Network Analysis"
 excerpt: "note"
-date: 2021-03-09
+date: 2021-05-22
 tags: [statistics, math, theory, university]
 mathjax: "true"
 ---
