@@ -1434,16 +1434,59 @@ con $$f(x_i)$$ funzione più o meno complessa come il modello lineare, quindi st
 Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo valido solo con la condizione per $$n\rightarrow \infty$$. Ma diversamente dallo split conformal in cui si ha il un metodo di previsione e lo si modifica per ottenere gli intervalli di previsione, questo approccio necessita di algoritmi numerici appositi.  
 
 
-<!---
 ## Network Analysis
 Una rete è un grafo composto da nodi e archi.  
 Teoria dei [sei gradi di separazione](https://it.wikipedia.org/wiki/Sei_gradi_di_separazione).  
-La teoria del mondo piccolo dimostra che una rete (es. rete sociale del mondo)
+La teoria del mondo piccolo dimostra che una rete (es. rete sociale del mondo) non ha necessariamente tanti collegamenti di primo grado ma che consente di collegare tutti facilmente con più gradi.  
+
+Variabili di nodo: misurate sui nodi  
+Variabili diadiche/triadiche: misurate su coppie di nodi (diadi)  
+
+### Relazioni
+Le relazioni $$y_{i,j}$$ tra nodo $$i$$ e $$j$$ possono essere influenzate, ma non determinate, dagli attributi delle singole entità.
+
+Relazione indiretta (o simmetrica): $$y_{i,j}=y_{j,i}$$ stessa relazione per entrambi i versi. Nodi e archi non orientati.  
+Relazione diretta: $$y_{i,j}$$ uguale o diverso da $$y_{j,i}$$. Nodi e archi orientati.  
+
+Relazioni binarie (dicotomica): solo due valori  
+Relazioni pesate: ordinale se i valori hanno un ordine; qualitativa (o categoriale) se i valori non hanno un ordine  
+
+#### Socio matrice
+Rappresentazione matriciale.  
+Caratterizza la presenza o assenza (1 o 0 se binaria) della relazione tra coppie di nodi.  
+Se le relazioni sono dirette binarie allora la matrice sarà simmetrica binaria, si possono caratterizzare con tutte le precedenti tipologie di relazioni.  
+Può contenere anche dati mancanti.  
+
+Sparsità della matrice: la dimensione della matrice cresce in maniera quadratica con il numero di osservazioni $$n$$, ma il numero di presenze di relazioni (es. 1) cresce linearmente con $$n$$.
+
+### Grafi
+Il grafo $$G(N,E)$$ con $$N$$ insieme di vertici (nodi) e $$E$$ insieme di connessione di archi (linee o connessioni).  
+Il grafo orientato contiene relazioni dirette in cui si tiene conto del verso della connessione.  
 
 
-Proprietà di irriducibilità
+#### Sottografo
+Un grafo $$G_S=(N_S,E_S)$$ è sottografo (indotto) di $$G=(N,E)$$ se  
+$$N_S$$ è un sottoinsieme di $$N$$  
+$$E_S$$ è un sottoinsieme di $$E$$ e tutti gli archi in $$E_S$$ sono tra i nodi in $$N_S$$  
+
+#### Matrice di adiacenza
+Caso specifico della socio matrice, in cui si identificano solo relazioni binarie (dirette o indirette), senza dati mancanti.  
+Matrice sparsa, per rappresentare una rete in maniera efficente si possono usare la lista di archi (insieme degli archi).  
+
+#### Lista di archi
+Nel caso di nodi isolati (un nodo senza archi), è necessario rappresentare sia la lista degli archi che i nodi isolati.  
+La lista di archi è una rappresentazione compatta e il suo vantaggio aumenta al crescere di $$n$$ con una percentuale $$p$$ di relazioni presenti su tutte.  
+
+#### Lista di adiacenza
+Due nodi $$i$$ e $$j$$ sono adiacenti se esiste l'arco $$(i,j)$$ o $$(j,i)$$.  
+Una lista (orientata) che definisce per ogni nodo quali sono i suoi adiacenti (orientati).  
 
 
+
+
+
+
+<!---
 
 #### Indicatori per coppia
 Lunghezza minima di path: matrice del numero di archi per raggiungere due nodi
@@ -1593,6 +1636,7 @@ Q: perché il metodo del mini batch gradient descent dovrebbe diminuire i tempi 
 
 Q: perché la funzione d'attivazione ReLU dovrebbe portare a 0 e quindi non aggiornare, circa la metà dei nodi?
 
+Q: reti2021a3.pdf perché disegna la relazione (3,4) se non è presente, non manca la relazione (5,4)?
 
 
 
