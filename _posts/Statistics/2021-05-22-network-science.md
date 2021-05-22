@@ -50,7 +50,7 @@ Un grafo $$G_S=(N_S,E_S)$$ è sottografo (indotto) di $$G=(N,E)$$ se
 $$N_S$$ è un sottoinsieme di $$N$$  
 $$E_S$$ è un sottoinsieme di $$E$$ e tutti gli archi in $$E_S$$ sono tra i nodi in $$N_S$$  
 
-## Rappresentazioni matematiche
+## Rappresentazioni
 
 ### Socio matrice
 Rappresentazione matriciale delle relazioni.  
