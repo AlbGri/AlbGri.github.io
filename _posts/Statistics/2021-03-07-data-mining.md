@@ -1618,13 +1618,42 @@ Allo step $$i$$ un nodo che è stato raggruppato viene rappresentato dalla sua c
 Si cerca di raggruppare nodi il cui aumento di modularità è maggiore.  
 
 ### Inferenza
+Modellare la rete, obiettivo di modellare le connessioni. Da un problema non supervisionato a supervisionato, cercando una risposta fittizia: gli archi. Un modello che prevede il vettore delle connessioni (arco).  
+Si vettorizza la socio matrice la cui lunghezza nel caso di matrice diretta sarà pari al numero di elementi della matrice meno la diagonale, nel caso di rete indiretta è pari alla lunghezza degli elementi della matrice triangolare superiore o inferiore.  
+
+Nel caso di rete indiretta con relazioni binarie, si ha un vettore  
+$$Y=\left \{ Y_{21},...,Y_{V1},...,Y_{ij},...,Y_{V,V-1} \right \}$$  
+di lunghezza $$V\cdot (V-1) /2$$.  
+Si può considerare come un vettore di v.a. bernoulliane, quindi modellabile con un modello logistico la cui risposta identifica la presenza o assenza di un arco. Però non può valere l'indipendenza tra gli archi.  
+
+#### Exponential Random Graph Models (ERGM)
+$$\mathbb{P}(Y=y)$$ densità di una famiglia esponenziale in funzione di indicatori della rete.  
+
+La probabilità di osservare una certa rete $$y=\left \{ y_{21},...,y_{V1},...,y_{ij},...,y_{V,V-1} \right \}\in \mathcal{Y}$$ è  
+$$\mathbb{P}(Y=y;\theta)=\frac{\exp{\left \{ \theta ^T g(y) \right \}}}{\kappa(\theta)}=\exp{\left \{ \theta^T g(y) - log_\kappa (\theta) \right \} }$$  
+dove  
+$$\theta \in \Theta \subset \mathfrak{R}^p$$ vettore di $$p$$ parametri  
+$$g(y)\in\mathfrak{R}^p$$ vettore di $$p$$ staitstiche di rete  
+$$\kappa(\theta)=\sum_{Z\in \mathcal{Y}} \exp{\{ \theta ^T g(Z) \}}$$ costante di normalizzazione indipendente da $$y$$ ma difficile da calcolare  
+
+##### Modello iid
+Il modello più semplice si ottiene assumendo che gli archi $$Y_{ij}\overset{\text{iid}}{\sim}\mbox{Bern}(\pi_{ij})$$  
+$$\mathbb{P}(Y=y;\pi_{ij})=\prod_{i>j} \mathbb{P}(Y_{ij}=y_{ij};\pi)=\prod_{i>j} \pi_{ij}^{y_{ij}} (1-\pi_{ij})^{1-y_{ij}}=\exp{ \left \{ \sum_{i>j} \theta_{ij} y_{ij} \right \} }/\kappa(\theta)$$  
+dove $$\mbox{logit}(\pi_{ij})=\theta_{ij}$$ 
+
+**Modello di Erdos-Renyi**  
+se l'effetto di presenza assenza di ciascun nodo è costante  
+$$\theta_{ij}=\theta$$, $$\quad\forall \{i,j\}$$ con $$i>j$$  
+$$\mathbb{P}(Y=y;\pi)=\exp{ \left \{ \theta \sum_{i>j} y_{ij} \right \} }/\log{(1+e^\theta)^{V(V-1)/2}}$$
 
 
+#### Stochastic Block Model (SBMs)
+Modelli a blocchi stocastici o blocchi stocastici a comunità mista.  
+$$\mathbb{P}(Y=y)$$ funzione della probabilità di appartenenza alle comunità per ogni nodo e della probabilità di connessioni tra nodi in diverse comunità.
 
-
-
-
-
+#### Latent Position Models
+Modelli a spazi latenti.  
+$$\mathbb{P}(Y=y)$$ funzione della posizione di ciascun nodo in uno spazio latente.
 
 
 
