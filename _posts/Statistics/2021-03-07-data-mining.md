@@ -1558,7 +1558,7 @@ Lunghezza media degli shortest path
 $$L=\frac{1}{V\cdot (V-1)}\sum s_{ij}$$  
 
 Omofilia  
-L'omofilia è massima quando i gruppi sono connessi internamente e non ci sono connessioni tra gruppi distinti.  
+L'omofilia è massima quando i $$k_1,k_2,...,K$$ gruppi sono connessi internamente e non ci sono connessioni tra gruppi distinti.  
 $$e_{ij}=$$ (numero di archi che hanno inizio nel gruppo $$kkkk$$ e fine nel gruppo $$j$$)/(numero totale di archi nella rete)  
 $$a_i=$$ (numero di archi che hanno inizio (o fine) nel gruppo $$i$$)/(numero totale di archi nella rete)  
 
