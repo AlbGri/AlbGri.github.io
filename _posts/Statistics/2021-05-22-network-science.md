@@ -1,5 +1,5 @@
 ---
-title: "Statistics: Network Analysis"
+title: "Statistics: Network Science"
 excerpt: "note"
 date: 2021-05-22
 tags: [statistics, math, theory, university]
@@ -10,8 +10,7 @@ mathjax: "true"
 
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Da approfondire.`
 
-## Network Analysis
-Network Science.  
+## Struttura della rete
 Una rete è un grafo composto da nodi e archi.  
 Teoria dei [sei gradi di separazione](https://it.wikipedia.org/wiki/Sei_gradi_di_separazione).  
 
@@ -20,18 +19,23 @@ Variabili diadiche: misurate su coppie di nodi (diadi)
 
 Gli attributi (variabili di nodo) definiscono le caratteristiche delle singole entità (nodi). Si può rappresentarli con una matrice $$X_{(n\times q)}$$ con $$n$$ numero di nodi e $$q$$ numero di variabili di nodo.  
 
-Le variabili diadiche (esistono anche triadiche), che definiscono le relazioni, possono essere rappresentate dalle socio matrici.  
+Le variabili diadiche (esistono anche le triadiche), che definiscono le relazioni, possono essere rappresentate dalle socio matrici.  
 
-### Relazioni
+## Relazioni
 Le relazioni $$y_{i,j}$$ tra nodo $$i$$ e $$j$$ possono essere influenzate, ma non determinate, dagli attributi delle singole entità.
 
-Relazione indiretta (o simmetrica): $$y_{i,j}=y_{j,i}$$ stessa relazione per entrambi i versi. Nodi e archi non orientati.  
-Relazione diretta: $$y_{i,j}$$ uguale o diverso da $$y_{j,i}$$. Nodi e archi orientati.  
+**Relazione indiretta (o simmetrica)**  
+$$y_{i,j}=y_{j,i}$$ stessa relazione per entrambi i versi. Nodi e archi non orientati.  
+**Relazione diretta**  
+$$y_{i,j}$$ uguale o diverso da $$y_{j,i}$$. Nodi e archi orientati.  
 
-Relazioni binarie (dicotomica): solo due valori presenza o assenza  
-Relazioni pesate: ordinale se i valori hanno un ordine; qualitativa (o categoriale) se i valori non hanno un ordine  
+**Relazioni binarie (dicotomica)** 
+si hanno solo due possibili valori: presenza o assenza  
+**Relazioni pesate**  
+ordinale se i valori hanno un ordine;  
+qualitativa (o categoriale) se i valori non hanno un ordine  
 
-### Grafi
+## Grafo
 Il grafo $$G(N,E)$$ con $$N$$ insieme di vertici (nodi) e $$E$$ insieme di connessione di archi (linee o connessioni).  
 Il grafo orientato contiene relazioni dirette in cui si tiene conto del verso della connessione.  
 
@@ -41,38 +45,37 @@ Il grafo orientato contiene relazioni dirette in cui si tiene conto del verso de
 - rete di comunicazioni: $$y_{i,j}$$ numero di messaggi spediti da $$i$$ a $$j$$, $$y_{i,j}=0,1,2,...$$ 
 - rete di conflitti: $$y_{i,j}$$ relazioni militari tra $$i$$ e $$j$$, $$y_{i,j}=-1,0,1$$
 
-#### Sottografo
+### Sottografo
 Un grafo $$G_S=(N_S,E_S)$$ è sottografo (indotto) di $$G=(N,E)$$ se  
 $$N_S$$ è un sottoinsieme di $$N$$  
 $$E_S$$ è un sottoinsieme di $$E$$ e tutti gli archi in $$E_S$$ sono tra i nodi in $$N_S$$  
 
-### Rappresentazioni
+## Rappresentazioni matematiche
 
-#### Socio matrice
-Rappresentazione matriciale.  
+### Socio matrice
+Rappresentazione matriciale delle relazioni.  
 Caratterizza la presenza o assenza (1 o 0 se binaria) della relazione tra coppie di nodi.  
 Se le relazioni sono dirette binarie allora la matrice sarà simmetrica binaria, si possono caratterizzare con tutte le precedenti tipologie di relazioni.  
 Può contenere anche dati mancanti.  
 
 Sparsità della matrice: la dimensione della matrice cresce in maniera quadratica con il numero di osservazioni $$n$$, ma il numero di presenze di relazioni (es. 1) cresce linearmente con $$n$$.
 
-
-#### Matrice di adiacenza
+### Matrice di adiacenza
 Caso specifico della socio matrice, in cui si identificano solo relazioni binarie (dirette o indirette), senza dati mancanti.  
 Matrice sparsa, per rappresentare una rete in maniera efficente si possono usare la lista di archi (insieme degli archi).  
 
-#### Lista di archi
+### Lista di archi
 Nel caso di nodi isolati (un nodo senza archi), è necessario rappresentare sia la lista degli archi che i nodi isolati.  
 La lista di archi è una rappresentazione compatta e il suo vantaggio aumenta al crescere di $$n$$ con una percentuale $$p$$ di relazioni presenti su tutte.  
 
-#### Lista di adiacenza
+### Lista di adiacenza
 Due nodi $$i$$ e $$j$$ sono adiacenti se esiste l'arco $$(i,j)$$ o $$(j,i)$$.  
 Una lista (orientata) che definisce per ogni nodo quali sono i suoi adiacenti (orientati).  
 
 
-### Proprietà delle reti
+## Proprietà delle reti
 
-#### Mondo piccolo (Small World)
+### Mondo piccolo (Small World)
 si ha quando una rete (es. rete sociale del mondo) ha la maggior parte dei nodi non connessi direttamente, ma quasi ogni nodo può essere raggiunto con un numero piccolo di collegamenti.  
 
 Si ha uno Small World se  
@@ -81,21 +84,21 @@ Si ha uno Small World se
 - per connettere due nodi servono mediamente pochi archi (lunghezza media di shortest path è bassa)
 - vale la transitività
 
-#### Invarianza di scala (Scale Free)
+### Invarianza di scala (Scale Free)
 un nuovo nodo ha più probabilità di connettersi con nodi con tante connessioni. Si hanno pochi nodi con tante connessioni e tanti nodi con poche connessioni.  
 Se la relazione tra numero di nodi $$n$$ e numero di connessioni (gradi o betweenness) $$L$$ è esponenziale negativa $$n\approx e^{\gamma \cdot L}$$ allora vale l'invarianza di scala.  
 
-#### Omofilia (Homophily)
+### Omofilia (Homophily)
 un nuovo nodo ha più probabilità di connettersi a nodi simili per alcune caratteristiche.  
 
-#### Altre proprietà
+### Altre proprietà
 Strutture di comunità (Community structure): i nodi tendono a formare gruppi con un elevato numero di connessioni interne e poche tra gruppi.  
 
 Hub: nodi con molte connessioni, spesso cruciali per la formazione del piccolo mondo.  
 
-### Misure di sintesi
+## Misure di sintesi
 
-#### Indicatori di nodo
+### Indicatori di nodo
 **Shortest path della coppia di nodi $$(i,j)$$**  
 numero di nodi minimi dal nodo $$i$$ al nodo $$j$$  
 
@@ -126,11 +129,11 @@ $$n_{c}=$$ numero di shortest path del $$c$$-esimo elemento
 ...  
 
 
-#### Indicatori di coppie di nodi
+### Indicatori di coppie di nodi
 **Lunghezza minima di path**  
 matrice con il numero di archi di cui si compongono gli shortest path (lunghezza $$s_{ij}$$) di tutti i nodi  
 
-#### Indicatori di rete
+### Indicatori di rete
 **Densità di $$Y$$**  
 frequenza relativa del numero totale di archi osservati (considerando il verso della relazione) sul totale di archi possibili  
 $$D=\frac{1}{V\cdot (V-1)} \sum Y_{ij}$$  
@@ -168,17 +171,17 @@ Se è presente l'andamento esponenziale negativo si tratta di Small World.
 
 Grafico tra grado e betweenness per valutare se i nodi che hanno un elevato numero di connessioni sono gli stessi che sono i più importanti.  
 
-### Rappresentazione grafica
+## Rappresentazione grafica
 Dimensione dei nodi proporzionale al grado o betweenness (hub).  
 Forma e colore dei nodi in funzione dei gruppi.  
 Posizione dei nodi: nodi connessi e/o con comportamenti simili collocati più vicini (comunità) 
 
-#### Force-Directed Placements
+### Force-Directed Placements
 Una proposta di posizione ottimale dei nodi.  
 Nodi come particelle di un sistema fisico con forze repulsive (maggiore energia per nodi vicini) e attrattive (maggiore nergia per nodi lontani).  
 La posizione ottimale minimizza l'energia totale.  
 
-### Comunnity Detection
+## Comunnity Detection
 Per raggruppare i nodi e identificare comunità.  
 
 - Algoritmo di Girvan-Newman: f(betweenness di arco)
@@ -186,15 +189,16 @@ Per raggruppare i nodi e identificare comunità.
 - Modelli a blocchi stocastici: cluster bayesiano
 - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) altri
 
-#### Metodo di Louvain
+### Metodo di Louvain
 Algoritmo iterativo.  
 Si sceglie inizialmente il numero di comunità a cui si vuole arrivare.  
 Inizialmente ogni nodo è un gruppo diverso, si sposta iterativamente un nodo raggruppandolo ad un altro (se connesso) misurando la variazione di modularità generata dallo spostamento di un nodo da una comunità ad un'altra.  
 Allo step $$i$$ un nodo che è stato raggruppato viene rappresentato dalla sua comunità, che verrà valutata allo step $$i+1$$ per essere eventualmente accorpata ad un'altra comunità.  
 Si cerca di raggruppare nodi il cui aumento di modularità è maggiore.  
 
-### Inferenza
-Modellare la rete, obiettivo di modellare le connessioni. Da un problema non supervisionato a supervisionato, cercando una risposta fittizia: gli archi. Un modello che prevede il vettore delle connessioni (arco).  
+## Modelli di rete
+Da un problema non supervisionato a supervisionato, la target sono gli archi.  
+Un modello che prevede il vettore delle connessioni (arco).  
 Si vettorizza la socio matrice la cui lunghezza nel caso di matrice diretta sarà pari al numero di elementi della matrice meno la diagonale, nel caso di rete indiretta è pari alla lunghezza degli elementi della matrice triangolare superiore o inferiore.  
 
 Nel caso di rete indiretta con relazioni binarie, si ha un vettore  
@@ -202,7 +206,7 @@ $$Y=\left \{ Y_{21},...,Y_{V1},...,Y_{ij},...,Y_{V,V-1} \right \}$$
 di lunghezza $$V\cdot (V-1) /2$$.  
 Si può considerare come un vettore di v.a. bernoulliane, quindi modellabile con un modello logistico la cui risposta identifica la presenza o assenza di un arco. Però non può valere l'indipendenza tra gli archi.  
 
-#### Exponential Random Graph Models (ERGM)
+### Exponential Random Graph Models (ERGM)
 $$\mathbb{P}(Y=y)$$ densità di una famiglia esponenziale in funzione di indicatori della rete.  
 
 La probabilità di osservare una certa rete $$y=\left \{ y_{21},...,y_{V1},...,y_{ij},...,y_{V,V-1} \right \}\in \mathcal{Y}$$ è  
@@ -212,25 +216,27 @@ $$\theta \in \Theta \subset \mathfrak{R}^p$$ vettore di $$p$$ parametri
 $$g(y)\in\mathfrak{R}^p$$ vettore di $$p$$ staitstiche di rete  
 $$\kappa(\theta)=\sum_{Z\in \mathcal{Y}} \exp{\{ \theta ^T g(Z) \}}$$ costante di normalizzazione indipendente da $$y$$ ma molto difficile da calcolare  
 
-##### Indipendenza degli archi
+#### Indipendenza degli archi
 Il modello più semplice si ottiene assumendo che gli archi $$Y_{ij}\overset{\text{iid}}{\sim}\mbox{Bern}(\pi_{ij})$$  
 $$\mathbb{P}(Y=y;\pi_{ij})=\prod_{i>j} \mathbb{P}(Y_{ij}=y_{ij};\pi)=\prod_{i>j} \pi_{ij}^{y_{ij}} (1-\pi_{ij})^{1-y_{ij}}=\exp{ \left \{ \sum_{i>j} \theta_{ij} y_{ij} \right \} }/\kappa(\theta)$$  
 dove $$\mbox{logit}(\pi_{ij})=\theta_{ij}$$   
 
 Si perde la possibilità di modellare gli effetti di eterogeneità degli attori, omofilia, transitività e clustering.  
 
-**Modello (inutile) di Erdos-Rényi**  
-se l'effetto di presenza assenza di ciascun nodo è costante  
+##### Modello di Erdos-Rényi
+non è un modello utile.  
+Si ipotizza che l'effetto di presenza assenza di ciascun nodo è costante  
 $$\theta_{ij}=\theta$$, $$\quad\forall \{i,j\}$$ con $$i>j$$  
 $$\mathbb{P}(Y=y;\theta)=\exp{ \left \{ \theta \sum_{i>j} y_{ij} \right \} }/\log{(1+e^\theta)^{V(V-1)/2}}$$  
 
-**Modello (poco meno inutile) $$p_1$$**  
+##### Modello $$p_1$$
+è un modello poco utile.  
 $$\theta_{ij}=p+\alpha_i+\alpha_j$$, $$\quad\forall \{i,j\}$$ con $$i>j$$  
 $$\mathbb{P}(Y=y;\theta_{ij})=\exp{ \left \{ p \sum_{i>j} y_{ij} +\sum_i \alpha_i d_i \right \} }/\kappa (p, \alpha_1,...,\alpha_V)$$  
 La probabilità di un arco tra $$i$$ e $$j$$ è data dalla propensione globale $$p$$ a formare connessioni nella rete e dalla propensione individuale dei due nodi a connettersi ad altri $$\alpha_i$$ e $$\alpha_j$$ senza interazioni.  
 La costante di normalizzazione è difficile da calcolare.
 
-##### Modelli Markoviani
+#### Modelli Markoviani
 Due archi sono indipendenti se non hanno neanche un nodo in comune.  
 Si costruisce una dipendenza locale.  
 $$\mathbb{P}(Y=y;\theta)=\exp{\left \{ \sum_{k=1}^{V-1} \theta_k S_k(y) +\theta_\tau T(y) \right \}}/\kappa(\theta)$$  
@@ -241,25 +247,25 @@ $$S_1(y)=\sum_{i>j} y_{ij}$$ numero di archi
 $$S_k(y)=\sum_{i=1}^V {d_i\choose k}$$ numero di $$k$$-stelle ($$k\ge 2$$)  
 $$T(y)=(1/6)\sum_{i,j,k} y_{ij} y_{ik} y_{jk}$$ numero di triangoli  
 
-**Miglioramenti**  
+##### Miglioramenti
 Le strutture precedenti possono portare una sottostima della dipendenza tra nodi. 
 - $$k$$-stelle alternate: le stelle entrano in un solo termine con pesi esponenziali alternati $$\theta_{\mbox{AKS}}$$
 - $$k$$-triangoli alternati: $$\theta_{\mbox{AKT}}$$
 
-##### Variabili esplicative
+#### Variabili esplicative
 Si include nel predittore lineare dell'ERGM il termine $$\beta^T h(x,y)$$ con $$h(\cdot)$$ vettore di statistiche dipendenti sia dalla rete che dalle informazioni di nodo. Tra le scelte più comuni per $$h$$  
 - Popolarità del nodo: $$\beta \sum_i x_i d_i $$
 - Similarità tra nodi: $$\beta \sum_{i>j} y_{ij} (x_i+x_j) $$
 - Omofilia tra gruppi: $$\beta \sum_{i>j} I(x_i=x_j) $$
 
 
-##### Stima
+#### Stima
 La stima MV dei ERGM non è possibile calcolarla per la costante di normalizzazione.  
 
-**MCMC**  
+##### MCMC
 Si può ottenere la stima di MV via simulazione (simulated maximum likelihood).  
 
-**Pseudoverosimiglianza**  
+##### Pseudoverosimiglianza
 dato un modello ERGM con log-verosimiglianza  
 $$l(\theta)=\theta^T g(Y)-\log{\kappa(\theta)}$$  
 se $$Y=(Y_{ij},Y_{(-ij)})$$ e $$y=(y_{ij}, y_{(-ij)})$$ si ha  
@@ -272,11 +278,11 @@ matrice delle esplicative $$\Delta=\left \{ g(1,y_{-(ij)}) - g(0,y_{-(ij)}) \rig
 Lo stimatore è consistente per $$V\rightarrow \infty$$.  
 
 
-#### Stochastic Block Model (SBMs)
+### Stochastic Block Model (SBMs)
 Modelli a blocchi stocastici o blocchi stocastici a comunità mista.  
 $$\mathbb{P}(Y=y)$$ funzione della probabilità di appartenenza alle comunità per ogni nodo e della probabilità di connessioni tra nodi in diverse comunità.
 
-#### Latent Position Models
+### Latent Position Models
 Modelli a spazi latenti.  
 $$\mathbb{P}(Y=y)$$ funzione della posizione di ciascun nodo in uno spazio latente.
 
