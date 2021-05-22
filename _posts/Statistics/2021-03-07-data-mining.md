@@ -1440,7 +1440,12 @@ Teoria dei [sei gradi di separazione](https://it.wikipedia.org/wiki/Sei_gradi_di
 La teoria del mondo piccolo dimostra che una rete (es. rete sociale del mondo) non ha necessariamente tanti collegamenti di primo grado ma che consente di collegare tutti facilmente con più gradi.  
 
 Variabili di nodo: misurate sui nodi  
-Variabili diadiche/triadiche: misurate su coppie di nodi (diadi)  
+Variabili diadiche: misurate su coppie di nodi (diadi)  
+
+Gli attributi (variabili di nodo) definiscono le caratteristiche delle singole entità (nodi). Si può rappresentarli con una matrice $$X_{(n\time q)}$$ con $$n$$ numero di nodi e $$q$$ numero di variabili di nodo.  
+
+Le variabili diadiche (esistono anche triadiche), che definiscono le relazioni, possono essere rappresentate dalle socio matrici.  
+
 
 ### Relazioni
 Le relazioni $$y_{i,j}$$ tra nodo $$i$$ e $$j$$ possono essere influenzate, ma non determinate, dagli attributi delle singole entità.
@@ -1448,7 +1453,7 @@ Le relazioni $$y_{i,j}$$ tra nodo $$i$$ e $$j$$ possono essere influenzate, ma n
 Relazione indiretta (o simmetrica): $$y_{i,j}=y_{j,i}$$ stessa relazione per entrambi i versi. Nodi e archi non orientati.  
 Relazione diretta: $$y_{i,j}$$ uguale o diverso da $$y_{j,i}$$. Nodi e archi orientati.  
 
-Relazioni binarie (dicotomica): solo due valori  
+Relazioni binarie (dicotomica): solo due valori presenza o assenza  
 Relazioni pesate: ordinale se i valori hanno un ordine; qualitativa (o categoriale) se i valori non hanno un ordine  
 
 #### Socio matrice
@@ -1463,10 +1468,9 @@ Sparsità della matrice: la dimensione della matrice cresce in maniera quadratic
 Il grafo $$G(N,E)$$ con $$N$$ insieme di vertici (nodi) e $$E$$ insieme di connessione di archi (linee o connessioni).  
 Il grafo orientato contiene relazioni dirette in cui si tiene conto del verso della connessione.  
 
-#### Attributi
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Le proprietà dipendono dalla struttura del resto del grafo (es. misure di centralità)  
 
-Esempi di attributi  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Esempi di relazioni  
 - rete di comunicazioni: $$y_{i,j}$$ numero di messaggi spediti da $$i$$ a $$j$$, $$y_{i,j}=0,1,2,...$$ 
 - rete di conflitti: $$y_{i,j}$$ relazioni militari tra $$i$$ e $$j$$, $$y_{i,j}=-1,0,1$$
 
@@ -1541,6 +1545,17 @@ Soluzioni ESLII
 https://www.uio.no/studier/emner/matnat/math/nedlagte-emner/STK4030/h15/exercises/exer5_4.pdf
 
 --->
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1643,6 +1658,10 @@ Q: perché il metodo del mini batch gradient descent dovrebbe diminuire i tempi 
 Q: perché la funzione d'attivazione ReLU dovrebbe portare a 0 e quindi non aggiornare, circa la metà dei nodi?
 
 Q: reti2021a3.pdf perché disegna la relazione (3,4) se non è presente, non manca la relazione (5,4)?
+
+Q: reti2021a4.pdf slide 3, con Y=[] e E=[] come si rappresenta?
+
+
 
 
 
