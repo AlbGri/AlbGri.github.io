@@ -1493,7 +1493,7 @@ Due nodi $$i$$ e $$j$$ sono adiacenti se esiste l'arco $$(i,j)$$ o $$(j,i)$$.
 Una lista (orientata) che definisce per ogni nodo quali sono i suoi adiacenti (orientati).  
 
 
-### Proprietà
+### Proprietà delle reti
 Mondo piccolo (Small Word): si ha quando una rete (es. rete sociale del mondo) ha la maggior parte dei nodi non connessi direttamente, ma quasi ogni nodo può essere raggiunto con un numero piccolo di collegamenti.  
 
 Invarianza di scala (Scale Free): un nuovo nodo ha più probabilità di connettersi con nodi con tante connessioni. Si hanno pochi nodi con tante connessioni e tanti nodi con poche connessioni. La relazione tra numero di nodi $$n$$ e numero di connessioni $$c$$ è esponenziale negativa $$n\approx e^{\gamma \codt c}$$  
@@ -1502,7 +1502,28 @@ Omofilia (Homophily): un nuovo nodo ha più probabilità di connettersi a nodi s
 
 Strutture di comunità (Community structure): i nodi tendono a formare gruppi con un elevato numero di connessioni interne e poche tra gruppi.  
 
+Hub: nodi con molte connessioni, spesso cruciali per la formazione del piccolo mondo.  
 
+### Indicatori
+
+Shortest path della coppia di nodi $$(i,j)$$  
+numero di nodi (escluso il nodo di partenza) minimo dal nodo $$i$$ al nodo $$j$$  
+
+Grado del nodo $$i$$  
+numero di nodi a cui è connesso il nodo $$i$$-esimo  
+$$d_i=\sum_{i=1}^V Y_{ij}$$  
+con $$V$$ nodi e $$Y_{ij}=1$$ se il nodo $$i$$ è connesso con il nodo $$j$$, 0 altrimenti.  
+
+Livello di betweenness del nodo $$i$$  
+è la somma, per tutte le coppie di nodi $$(u,v)$$ diverse da $$i$$, del rapporto tra il numero di shortest path della coppia $$(u,v)$$ che passano per $$i$$ e il numero degli shortest paths totali della coppia $$(u,v)$$.  
+$$g_i=\sum_{u\ne i \ne v} \frac{n_{uv}(i)}{n_{uv}}$$  
+analogamente  
+$$g_i = \sum_{k \in S(i)} \frac{n_{k \vert i}}{n_{k}}$$  
+con  
+$$S(i)=$$ insieme composto da tutte coppie di nodi con shortest path passanti dal nodo $$i$$  
+$$k=$$ k-esimo elemento (coppia di nodi) dell'insieme $$S(i)$$  
+$$n_{k}=$$ numero di shortest path del $$k$$-esimo elemento  
+$$n_{k \vert i}=$$ numero di shortest path del $$k$$-esimo elemento passanti dal nodo $$i$$  
 
 
 
