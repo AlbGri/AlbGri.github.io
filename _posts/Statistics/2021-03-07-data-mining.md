@@ -1498,8 +1498,14 @@ Una lista (orientata) che definisce per ogni nodo quali sono i suoi adiacenti (o
 #### Mondo piccolo (Small World)
 si ha quando una rete (es. rete sociale del mondo) ha la maggior parte dei nodi non connessi direttamente, ma quasi ogni nodo può essere raggiunto con un numero piccolo di collegamenti.  
 
+Si ha uno Small World se  
+- vale la proprietà di invarianza di scala (l'andamento della distribuzione dei gradi e del livello di betweenness è esponenziale negativa)
+- si ha una bassa densità
+- per connettere due nodi servono mediamente pochi archi (lunghezza media di shortest path è bassa)
+- vale la transitività
+
 #### Invarianza di scala (Scale Free)
-un nuovo nodo ha più probabilità di connettersi con nodi con tante connessioni. Si hanno pochi nodi con tante connessioni (grado e betweenness elevato) e tanti nodi con poche connessioni. Se la relazione tra numero di nodi $$n$$ e numero di connessioni $$L$$ è esponenziale negativa $$n\approx e^{\gamma \cdot L}$$ allora vale l'invarianza di scala e si ha una rete Small World.  
+un nuovo nodo ha più probabilità di connettersi con nodi con tante connessioni. Si hanno pochi nodi con tante connessioni (grado e betweenness elevato) e tanti nodi con poche connessioni. Se la relazione tra numero di nodi $$n$$ e numero di connessioni $$L$$ è esponenziale negativa $$n\approx e^{\gamma \cdot L}$$ allora vale l'invarianza di scala.  
 
 #### Omofilia (Homophily)
 un nuovo nodo ha più probabilità di connettersi a nodi simili per alcune caratteristiche.  
@@ -1556,6 +1562,7 @@ Lunghezza massima degli shortest path
 $$\max{(s_{ij})}$$  
 
 **Lunghezza media degli shortest path**  
+Per connettere due nodi servono mediamente $$L$$ archi, cioè $$L-1$$ nodi intermedi.  
 $$L=\frac{1}{V\cdot (V-1)}\sum s_{ij}$$  
 
 **Omofilia**  
@@ -1577,8 +1584,9 @@ diviso il suo massimo che dipende dal numero di nodi della rete e dalla distribu
 **Grafici**  
 Distribuzione di frequenza del grado dei nodi di una rete (numero di connessioni).  
 Distribuzione di frequenza del livello di betweenness (numero di connessioni importanti).  
-Se è presente l'andamento esponenziale negativo si tratta di Small World.
+Se è presente l'andamento esponenziale negativo si tratta di Small World.  
 
+Grafico tra grado e betweenness per valutare se i nodi che hanno un elevato numero di connessioni sono gli stessi che sono i più importanti.  
 
 
 
