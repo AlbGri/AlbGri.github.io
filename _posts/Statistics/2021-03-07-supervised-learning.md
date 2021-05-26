@@ -682,7 +682,7 @@ La traccia di $$S$$ è paragonabile alla penalizzazione $$p$$ dell'AIC.
 #### ANOVA approssimato
 Consente di costruire statistiche tipo $$F$$ per valutare bontà del modello.  
 Test $$F$$ come varianza spiegata su residua pesata per i gradi di libertà equivalenti:  
-$$F=\frac{\vert\vert\hat{y}-\hat{y}_0\vert\vert^2}{\hat{\sigma}^2}\frac{n-p}{nq}\sim\mathcal{S}_{\mbox{tr}(S)-\mbox{tr}(S_0),n-\mbox{tr}(S)}$$  
+$$F=\frac{\vert\vert\hat{y}-\hat{y}_0\vert\vert^2}{\hat{\sigma}^2}\frac{n-p}{nq}\sim\mathcal{F}_{\mbox{tr}(S)-\mbox{tr}(S_0),n-\mbox{tr}(S)}$$  
 con $$\hat{y}_0=S_0 y$$ vettore dei valori adattati sotto il modello ridotto
 
 
@@ -690,7 +690,7 @@ con $$\hat{y}_0=S_0 y$$ vettore dei valori adattati sotto il modello ridotto
 Un modo per gestire la maledizione della dimensionalità sono i modelli additivi  
 $$f(x_1,...,x_p)=\alpha+\sum_{j=1}^p f_j(x_j)+\sum_{k<j} f_{kj}(x_k,x_j)+...$$  
 <!--- --->
-si può usare per approssimare qualsiasi funzione.  
+se si utilizzano tutti gli ordini di interazione si può usare per approssimare qualsiasi funzione.  
 Può essere una buona scelta fermarsi al termine di primo grado:  
 $$y=f(x_1,...,x_p)+\epsilon=\alpha+\sum_{j=1}^p f_j(x_j)+\epsilon$$  
 consente una maggiore libertà di forma delle variabili rispetto il modello lineare.  
@@ -700,7 +700,7 @@ Le $$p$$ funzioni $$f_j(x_j)$$ sono stimate mediante l'algoritmo 'backfitting'.
 #### Backfitting
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) È una variante dell'algoritmo di Gauss-Seidel.  
 Iterativamente ogni funzione si può scrivere come residui parziali, fissando tutte le altre funzioni e quindi diventando univariata:  
-$$f_j(x_j)=y-\left ( \alpha+\sum_{k\ne j} f_k(x_k)+\epsilon \right )$$  
+$$f_j(x_j)=y-\left ( \alpha+\sum_{k\ne j} f_k(x_k)+\epsilon \right )$$ con $$j=1,...,p$$  
 a questo punto si può usare un lisciatore a scelta sui residui parziali (si può usare anche uno parametrico, nel caso si usi una retta si ottengono i minimi quadrati, anche metodi diversi per variabili diverse con i corrispettivi parametri di regolazione).  
 Criterio di convergenza: si itera fintanto che la differenza tra la funzione nella stessa $$x$$ in due step adiacenti è pressocché nulla.  
 Per evitare un eccesso di parametrizzazione dell'intercetta ogni funziona deve essere a media zero.  
