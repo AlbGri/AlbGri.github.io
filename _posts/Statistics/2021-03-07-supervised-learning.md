@@ -69,9 +69,12 @@ Stima non distorta della varianza dello stimatore
 $$\widehat{\mbox{var}}(\hat{\beta})=\frac{D(\hat{\beta})}{n-p}(X^TX)^{-1}=s^2(X^TX)^{-1}$$  
 $$s^2=\frac{1}{n-p}Y^T (I-P)Y=\frac{1}{n-p}\left [ Y^TY-Y^TX(X^TX)^{-1} X^T y\right ]$$  
 
-
 Nota: se si applica OLS con le esplicative trasformate con il logaritmo si mantiene lineare nei parametri, ma se il logaritmo si applica alla risposta non è più lineare nei parametri. La stima non è OLS e non è la migliore in termini di minimizzazione della devianza, ma mantiene la sua validità. Anche l'$$R^2$$ non risulterebbe confrontabile.  
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Ricalcolare l'$$R^2$$ retrotrasformando la previsione per il log Y, ovvero retrotrasformarla con l'esponenziale per ottenere Y.
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Ricalcolare l'$$R^2$$ retrotrasformando la previsione per il log Y, ovvero retrotrasformarla con l'esponenziale per ottenere Y.  
+
+Vantaggi disegno bilanciato: coefficienti stimabili separatamente e possibili interpretazioni dei coefficienti come variazione della risposta alla variazione unitaria di una esplicativa tenendo le altre variabili fisse.  
+Variabili esplicative correlate tra loro: la variabilità dei coefficienti tende a crescere e le interpretazioni diventano difficili in quanto al variare di una esplicativa varia un'altra esplicativa.  
+
 
 #### Projection Matrix
 $$P$$ è la matrice cappello o di proiezione $$P=X(X^TX)^{-1}X^T$$.
@@ -1550,6 +1553,8 @@ R: la funzione di perdita è comunque convessa, la ridge è convessa ma è più 
 
 
 #### DA RISOLVERE
+
+Q: Nel grafico del percorso del lasso con l'algoritmo LAR, mi aspetto che se un coefficiente arriva a 0, la variabile viene esclusa, ma dal grafico sembra che questa variabile ritorni, a parte un momentaneo valore 0 poi ritorna a crescere
 
 Q: perché la ridge è più lontana dal lasso nella convessità? cosa si intende per lontano dalla convessità?
 
