@@ -343,6 +343,12 @@ La consistenza della stima MV non è garantita se lo spazio dei parametri $$p$$ 
 
 La condizione di stabilità dell'intorno definisce che la correlazione tra le $$X$$ che sono davvero uguali a zero sia molto piccola ($$1-\epsilon$$) rispetto a quella con le $$X$$ che sono davvero diverse da zero.  
 
+Una procedura gode della proprietà dell'oracolo se:  
+- Consistenza nella selezione delle variabili: identifica le variabili veramente utili del (vero) modello
+- Normalità asintotica: il tasso di stima ottimale tende a normale a media zero e covarianza del vero modello
+
+Si dimostra che il lasso non è una procedura oracolo, invece il lasso adattivo sì.
+
 ##### Lasso Adattivo
 Il Lasso adattivo permette di trovare una soluzione per svincolarsi dalla condizione di irrepresentabilità.  
 $$\hat{\beta}_{\mbox{adp}}(\lambda)=\text{arg}\,\min\limits_{\beta}\,(y-X\beta)^T(y-X\beta)+\lambda \sum_{j=1}^p\frac{\vert \beta_j \vert}{\vert \hat{\beta}_{\mbox{iniz},j} \vert}$$  
@@ -1543,6 +1549,8 @@ R: paradisi e paradossi vedere slides
 
 Q: Nell'importanza delle variabili con la random forest, ok che per come è costruita è un ottimo approccio per valutare l'importanza, ma perché escludere una variabile alla volta e valutarne l'impatto su una misura di errore, non è un buon approccio per valutare l'importanza delle variabili? La stepwise non si basa su questo fondamento? Ha più senso quindi costruire la feature importance per un modello parametrico lineare rispetto una stepwise?
 R: quando stimo i parametri sono al netto dell'effeto delle altre variabili nel modello lineare, le RF se tolgo la variabile non è una stima di questo, è diverso
+DUBBIO: https://www.google.com/search?q=feature+importance+and+stepwise+removing+single+variable non mi convince
+
 
 Q: bande di variabilità e bande di previsione sono sinonimi? 
 R: No, al più bande di variabilità vs confidenza, la confidenza tengono conto della distorsione, la variabilità sono le confidenza senza le distorsione, la distorsione è difficile da stimare e ce ne freghiamo
