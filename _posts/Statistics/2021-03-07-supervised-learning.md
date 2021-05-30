@@ -297,12 +297,11 @@ con $$W$$ matrice dei pesi che da pesi diversi a differenti osservazioni e $$\Om
 Spesso la regressione ridge generalizzata si trova con $$W=I_{(n\times n)}$$ e $$\Omega= V \Lambda V^T$$ (decomposizione spettrale).  
 
 #### Interpretazione Bayesiana
-Data la verosimiglianza $$y_i\sim\mathcal{N}(\beta_0+x_i^T \beta , \sigma^2)$$ e la v.a. $$\beta_j\sim \mathcal{N}(0,\tau^2),j=1,...,p$$,  
-quindi la distribuzione a priori è  
-$$\beta\sim \mathcal{N}(0,\tau^2 I)$$  
-e si dimostra che la distribuzione a posteriori è  
-$$\left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta$$  
-la stima ridge è la [moda](https://it.wikipedia.org/wiki/Stima_del_massimo_a_posteriori) (e media) a posteriori con $$\lambda=\frac{\sigma^2}{\tau^2}$$  
+Data la verosimiglianza $$y_i\sim\mathcal{N}(\beta_0+x_i^T \beta , \sigma^2)$$, 
+se si ipotizza che i $$\beta$$ siano tutti distribuiti (a priori) $$\beta_j\sim \mathcal{N}(0,\tau^2),j=1,...,p$$ quindi $$\beta\sim \mathcal{N}(0,\tau^2 I)$$  
+si dimostra che la distribuzione a posteriori è  
+$$\left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta$$.  
+La stima ridge è la [moda](https://it.wikipedia.org/wiki/Stima_del_massimo_a_posteriori) (e media) a posteriori con $$\lambda=\frac{\sigma^2}{\tau^2}$$  
 $$\beta \vert y \sim \mathcal{N} \left \{ \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} X^Ty, \sigma^2 \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} \right \}$$  
 
 #### Relazione con PCA
