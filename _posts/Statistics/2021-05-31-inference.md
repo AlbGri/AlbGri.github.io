@@ -117,9 +117,12 @@ $$l(\mu,\Sigma;\vec{x})=-\frac{1}{2}\log{(\vert \Sigma \vert )} -\frac{1}{2}(\ve
 
 Dato un insieme $$\vec{X}$$ di $$n$$ vettori i.i.d, risulta:
 
-$$l(\mu,\Sigma;\vec{X})=-\frac{n}{2}\log{(\vert \Sigma \vert )} -\frac{1}{2}\sum_{i=1}^n (x-\mu)^T \Sigma^{-1} (x-\mu) + \mbox{c}$$
+$$l(\mu,\Sigma;\vec{X})=-\frac{n}{2}\log{(\vert \Sigma \vert )} -\frac{1}{2}\sum_{i=1}^n (\vec{x}_i-\mu)^T \Sigma^{-1} (\vec{x}_i-\mu) + \mbox{c}$$
 
+Le stime MV risultano
 
+$$\hat{\mu}_{small{\mbox{ML}}}=\frac{1}{n}\sum_{i=1}^n \vec{x}_i$$
+$$\hat{\Sigma}_{small{\mbox{ML}}}=\frac{1}{n}\sum_{i=1}^n (\vec{x}_i-\mu)(\vec{x}_i-\mu)^T$$
 
 
 
