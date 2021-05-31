@@ -23,7 +23,7 @@ https://home.ttic.edu/~shubhendu/Slides/Estimation.pdf
 - Funzione di ripartizione - Cumulative Distribution Function - CDF
 
 #### “|'' e “;''
-[L'operatore di Sheffer](https://it.wikipedia.org/wiki/Operatore_di_Sheffer) $$\vert$$ si legge “dato che'' o “condizionato da''. Quindi $$p(x\vert y)$$ rappresenta la densità di probabilità di $$x$$ dato che è avvenuto qualche evento $$y$$. Simbolo tipicamente legato alla probabilità e statistica.
+[L'operatore di Sheffer](https://it.wikipedia.org/wiki/Operatore_di_Sheffer) $$\vert$$ si legge “dato che'' o “condizionato a''. Quindi $$p(x\vert y)$$ rappresenta la densità di probabilità di $$x$$ dato che è avvenuto qualche evento $$y$$. Simbolo tipicamente legato alla probabilità e statistica.
 
 Il punto è virgola $$;$$ è leggermente differente e non è necessariamente legato alla probabilità e statistica. $$f(x;y)$$ è una funzione di una variabile $$x$$, definibile $$g(x)=f(x;y)$$. Indica che vi è un valore implicito o scelto di $$y$$ quando si esamina $$g(x)$$ ma non è parte della funzione. Il valore di $$y$$ è un parametro fisso, non avrebbe senso ad esempio farne la derivata.
 
