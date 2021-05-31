@@ -70,8 +70,13 @@ $$p(x_1,...,x_n;\theta)=\prod_{i=1}^n p(x_i;\theta)$$
 Data una sequenza di $$n$$ eventi $$x_1,...,x_n\in \{0, 1\}^n$$ si vuole stimare $$\theta$$. Si può considerare $$p(x;\theta)$$ non più come funzione di $$x$$, ma di $$\theta$$ con un certo campione $$x$$ osservato.
 
 Sia $$\vec{x}=[x_1,...,x_n]$$ sequenza i.i.d.
-
 $$L(\theta)=p(\vec{x};\theta)=\prod_{i=1}^n p(x_i;\theta)$$
+
+
+Sia $$\vec{x}=[x_1,...,x_n]$$ sequenza i.i.d.  
+$$L(\theta)=p(\vec{x};\theta)=\prod_{i=1}^n p(x_i;\theta)$$
+
+
 
 #### Log verosimiglianza
 Il logaritmo è una funzione monotona crescente, pertanto l'argomento che massimizza la log verosimiglianza è il medesimo della verosimiglianza. In fase di ottimizzazione, è computazionalmente più oneroso gestire la produttoria invece della sommatoria. Inoltre, il logaritmo consente di assicurare la convessità della funzione e un dominio più stretto su cui cercare i parametri da ottimizzare. 
