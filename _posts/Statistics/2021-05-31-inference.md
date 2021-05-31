@@ -37,7 +37,7 @@ Sia $$Y$$ v.a. discreta
 $$p_Y(y)=\mathbb{P}(Y=y)$$ è la funzione di massa di probabilità 
 
 Sia $$Y$$ v.a. continua  
-$$f_Y(y)=\mathbb{P}(Y\in A)$$ è la funzione di densità di probabilità
+$$p_Y(y)=\mathbb{P}(Y\in A)$$ è la funzione di densità di probabilità
 
 
 
@@ -82,9 +82,9 @@ $$l(\theta)=\log{p(\theta;\vec{y})}=\sum_{i=1}^n \log{p(\theta;y_i)}$$
 ### Stimatore
 
 #### Stima di Massima Verosimiglianza
-Maximum Likelihood estimation  
+Maximum Likelihood estimation (moda della distribuzione a posteriori)  
 
-$$\hat{\theta}_{\small{\mbox{ML}}} (y) = \text{arg}\,\max\limits_{\theta} f(y ; \theta)$$
+$$\hat{\theta}_{\small{\mbox{ML}}} (y) = \text{arg}\,\max\limits_{\theta} p(y ; \theta)$$
 
 ##### Moltiplicatori di Lagrange
 
@@ -95,11 +95,11 @@ Maximum a posteriori estimation
 
 Utilizzando il teorema di Bayes
 
-$$f(\theta \vert y)=\frac{f(y\vert \theta)f(\theta)}{f(y)}$$
+$$p(\theta \vert y)=\frac{p(y\vert \theta)p(\theta)}{p(y)}$$
 
 Risulta
 
-$$\hat{\theta}_{\small{\mbox{MAP}}} (y) = \text{arg}\,\max\limits_{\theta} \frac{f(y ; \theta) f(\theta)}{\int_{\theta}f(y ; \theta) f(\theta)\,d\theta}=\text{arg}\,\max\limits_{\theta} f(y ; \theta) f(\theta)$$
+$$\hat{\theta}_{\small{\mbox{MAP}}} (y) = \text{arg}\,\max\limits_{\theta} \frac{p(y ; \theta) p(\theta)}{\int_{\theta}p(y ; \theta) p(\theta)\,d\theta}=\text{arg}\,\max\limits_{\theta} p(y ; \theta) p(\theta)$$
 
 
 ### Matrix Notation
@@ -110,7 +110,7 @@ Sia $$\vec{y}=\{y_1,...,y_d\}$$ vettore aleatorio in $$\mathbb{R}^d$$
 
 PDF:
 
-$$f(\vec{y};\mu,\Sigma)=\frac{1}{(2\pi)^{d/2} \vert \Sigma \vert ^{1/2}} \exp{\left \{ -\frac{1}{2} ( \vec{y}-\mu ) ^T \Sigma ^{-1} (\vec{y}-\mu) \right \}}$$
+$$p(\vec{y};\mu,\Sigma)=\frac{1}{(2\pi)^{d/2} \vert \Sigma \vert ^{1/2}} \exp{\left \{ -\frac{1}{2} ( \vec{y}-\mu ) ^T \Sigma ^{-1} (\vec{y}-\mu) \right \}}$$
 
 Log-Likelihood:
 

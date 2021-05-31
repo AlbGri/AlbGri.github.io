@@ -271,7 +271,9 @@ Regolarizzare l'equazione di stima, penalizzando la funzione di ottimizzazione d
 Funzionano bene anche quando $$p>n$$.  
 
 ### Regressione ridge
-$$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum \beta_j^2 \le s$$ (norma in [spazio L2](https://it.wikipedia.org/wiki/Spazio_l2))  
+Sia $$y\in\mathbb{R}^n$$ vettore risposta e $$X\in\mathbb{R}^{n\times p}$$ la matrice disegno.  
+Il problema che risolve la regressione ridge è il seguente  
+$$\min\limits_{\beta}\left ( y-X\beta \right )^T \left ( y-X\beta \right )$$ soggetta al vincolo $$\sum_{j=1}^p \beta_j^2 \le s$$ (norma in [spazio L2](https://it.wikipedia.org/wiki/Spazio_l2))  
 in forma di Lagrange:  
 $$\hat{\beta}_\lambda=\text{arg}\,\min\limits_{\beta}\left \{ \left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta \right \}=\left (X^TX+\lambda I \right )^{-1} X^T y$$  
 se $$s\uparrow\Leftrightarrow \lambda \downarrow$$  
@@ -297,11 +299,17 @@ con $$W$$ matrice dei pesi che da pesi diversi a differenti osservazioni e $$\Om
 Spesso la regressione ridge generalizzata si trova con $$W=I_{(n\times n)}$$ e $$\Omega= V \Lambda V^T$$ (decomposizione spettrale).  
 
 #### Interpretazione Bayesiana
-Data la verosimiglianza $$y_i\sim\mathcal{N}(\beta_0+x_i^T \beta , \sigma^2)$$, 
-se si ipotizza che i $$\beta$$ siano tutti distribuiti (a priori) $$\beta_j\sim \mathcal{N}(0,\tau^2),j=1,...,p$$ quindi $$\beta\sim \mathcal{N}(0,\tau^2 I)$$  
-si dimostra che la distribuzione a posteriori è  
-$$\left ( y-X\beta \right )^T \left ( y-X\beta \right ) + \lambda\beta^T \beta$$.  
-La stima ridge è la [moda](https://it.wikipedia.org/wiki/Stima_del_massimo_a_posteriori) (e media) a posteriori con $$\lambda=\frac{\sigma^2}{\tau^2}$$  
+Nell'approccio frequentista $$\beta$$ è un vettore fisso di parametri sconosciuti che si vogliono stimare, mentre nella statistica Bayesiana si può imporre una distribuzione e ottenere una qualsiasi stima usando la distribuzione a posteriori di $$\beta$$.
+
+Si assume che la matrice del disegno $$X$$ sia fissata.  
+La stima OLS assume che la risposta $$y$$ sia $$y \vert (X,\beta)\sim\mathcal{N}(X\beta, \sigma^2 I)$$ con $$\sigma > 0$$ costante.  
+Si può ipotizzare che tutti i $$\beta_j$$ siano normali indipendenti con stessa varianza $$\beta\sim \mathcal{N}(0,\tau^2 I)$$.  
+La distribuzione a posteriori di $$\beta$$ risulta  
+$$p(\beta \vert y, X)\propto p(\beta) \cdot p(y \vert X, \beta)=$$  
+$$=\exp{\left \{ -\frac{1}{2\sigma^2} (y-X\beta)^T (y-X\beta)-\frac{1}{2\tau^2} \beta^T \beta \right \}}$$  
+il cui beta che massimizza l'a posteriori è la regressione ridge con $$\lambda=\frac{\sigma^2}{\tau^2}$$.
+
+La stima ridge è la [moda](https://it.wikipedia.org/wiki/Stima_del_massimo_a_posteriori) (e media) a posteriori  
 $$\beta \vert y \sim \mathcal{N} \left \{ \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} X^Ty, \sigma^2 \left ( X^TX+\frac{\sigma^2}{\tau^2}I \right )^{-1} \right \}$$  
 
 #### Relazione con PCA
