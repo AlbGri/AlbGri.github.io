@@ -15,6 +15,25 @@ mathjax: "true"
 https://home.ttic.edu/~shubhendu/Slides/Estimation.pdf
 --->
 
+
+### Notazioni
+
+#### Sigle
+- Funzione di Densità di Probabilità - Probability Density Function - PDF
+- Funzione di ripartizione - Cumulative Distribution Function - CDF
+
+#### Differenza tra “|'' e “;''.
+[L'operatore di Sheffer](https://it.wikipedia.org/wiki/Operatore_di_Sheffer) $$\vert$$ si legge “dato che'' o “condizionato da''. Quindi $$p(x\vert y)$$ rappresenta la densità di probabilità di $$x$$ dato che è avvenuto qualche evento $$y$$. Simbolo tipicamente legato alla probabilità e statistica.
+
+Il punto è virgola $$;$$ è leggermente differente e non è necessariamente legato alla probabilità e statistica. $$f(x;y)$$ è una funzione di una variabile $$x$$, definibile $$g(x)=f(x;y)$$. Indica che vi è un valore implicito o scelto di $$y$$ quando si esamina $$g(x)$$ ma non è parte della funzione. Il valore di $$y$$ è un parametro fisso, non avrebbe senso ad esempio farne la derivata.
+
+Generalmente il condizionante è una v.a. osservata per uno specifico valore, mentre l'argomento dopo il punto e virgola è un parametro.
+
+#### Discreto e continuo
+PDF
+- $$p(x)$$ nel discreto
+- $$f(x)$$ nel continuo
+
 ### Funzione di densità di probabilità
 Dato un determinato evento, lo si può caratterizzare con un'ipotesi distributiva  
 
@@ -26,10 +45,10 @@ La funzione di massa di probabilità $$p:\mathcal{X}\rightarrow [0,1]$$ soddisfa
 
 $$\sum_{x\in\mathcal{X}}p(X=x)=1$$
 
-Dati due eventi $$\left \langle X_1, X_2 \right \rangle$$  
-- distribuzione congiunta: $$p(X_1,X_2)$$  
-- distribuzione condizionata: $$p(X_1 \vert X_2), p(X_2 \vert X_1)$$  
-- distribuzione marginale: $$p(X_1),p(X_2)$$  
+Dati due eventi $$\left \langle X_1, X_2 \right \rangle$$
+- distribuzione congiunta: $$p(X_1,X_2)$$
+- distribuzione condizionata: $$p(X_1 \vert X_2), p(X_2 \vert X_1)$$
+- distribuzione marginale: $$p(X_1),p(X_2)$$
 
 
 Regola della probabilità a catena
@@ -57,12 +76,18 @@ $$l(\theta)=\log{p(\vec{x};\theta)}=\sum_{i=1}^n \log{p(x_i;\theta)}$$
 #### Stima di Massima Verosimiglianza
 Maximum Likelihood estimation  
 
-$$\hat{\theta}_{\small{\mbox{ML}}} (x) = \text{arg}\,\max\limits_{\theta} f(x \vert \theta)$$
+$$\hat{\theta}_{\small{\mbox{ML}}} (x) = \text{arg}\,\max\limits_{\theta} f(x ; \theta)$$
 
 #### Stima del massimo a posteriori
 Maximum a posteriori estimation  
 
-$$\hat{\theta}_{\small{\mbox{MAP}}} (x) = \text{arg}\,\max\limits_{\theta} \frac{f(x \vert \theta) g(\theta)}{\int_{\theta}f(x \vert \theta) g(\theta)\,d\theta}=\text{arg}\,\max\limits_{\theta} f(x \vert \theta) g(\theta)$$
+Utilizzando il teorema di Bayes
+
+$$f(\theta \vert x)=\frac{f(x\vert \theta)}f(\theta){f(x)}$$
+
+
+
+$$\hat{\theta}_{\small{\mbox{MAP}}} (x) = \text{arg}\,\max\limits_{\theta} \frac{f(x ; \theta) f(\theta)}{\int_{\theta}f(x ; \theta) f(\theta)\,d\theta}=\text{arg}\,\max\limits_{\theta} f(x ; \theta) f(\theta)$$
 
 
 
