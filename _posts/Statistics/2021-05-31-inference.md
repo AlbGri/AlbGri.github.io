@@ -22,7 +22,7 @@ https://home.ttic.edu/~shubhendu/Slides/Estimation.pdf
 - Funzione di Densità di Probabilità - Probability Density Function - PDF
 - Funzione di ripartizione - Cumulative Distribution Function - CDF
 
-#### Differenza tra “|'' e “;''.
+#### “|'' e “;''
 [L'operatore di Sheffer](https://it.wikipedia.org/wiki/Operatore_di_Sheffer) $$\vert$$ si legge “dato che'' o “condizionato da''. Quindi $$p(x\vert y)$$ rappresenta la densità di probabilità di $$x$$ dato che è avvenuto qualche evento $$y$$. Simbolo tipicamente legato alla probabilità e statistica.
 
 Il punto è virgola $$;$$ è leggermente differente e non è necessariamente legato alla probabilità e statistica. $$f(x;y)$$ è una funzione di una variabile $$x$$, definibile $$g(x)=f(x;y)$$. Indica che vi è un valore implicito o scelto di $$y$$ quando si esamina $$g(x)$$ ma non è parte della funzione. Il valore di $$y$$ è un parametro fisso, non avrebbe senso ad esempio farne la derivata.
@@ -30,16 +30,23 @@ Il punto è virgola $$;$$ è leggermente differente e non è necessariamente leg
 Generalmente il condizionante è una v.a. osservata per uno specifico valore, mentre l'argomento dopo il punto e virgola è un parametro.
 
 #### Discreto e continuo
-PDF
-- $$p(x)$$ nel discreto
-- $$f(x)$$ nel continuo
+Le seguenti notazioni sono puramente soggettive  
 
-### Funzione di densità di probabilità
+Sia $$X$$ v.a. discreta  
+$$p_X(x)=\mathbb{P}(X=x)$$ è la funzione di massa di probabilità 
+
+Sia $$X$$ v.a. continua  
+$$f_X(x)=\mathbb{P}(X\in A)$$ è la funzione di densità di probabilità
+
+
+
+
+### Funzione di probabilità
 Dato un determinato evento, lo si può caratterizzare con un'ipotesi distributiva  
 
 Sia $$X\in \{0,1\}$$ v.a. discreta con possibili valori $$\mathcal{X}=\{x_1,x_2,...,\}$$  
 
-$$p(x)=\mbox{Pr}(X=x;\theta)$$
+$$p(x)=\mathbb{P}(X=x;\theta)$$
 
 La funzione di massa di probabilità $$p:\mathcal{X}\rightarrow [0,1]$$ soddisfa la legge delle probabilità totali  
 
@@ -78,16 +85,29 @@ Maximum Likelihood estimation
 
 $$\hat{\theta}_{\small{\mbox{ML}}} (x) = \text{arg}\,\max\limits_{\theta} f(x ; \theta)$$
 
+##### Moltiplicatori di Lagrange
+
+
+
 #### Stima del massimo a posteriori
 Maximum a posteriori estimation  
 
 Utilizzando il teorema di Bayes
 
-$$f(\theta \vert x)=\frac{f(x\vert \theta)}f(\theta){f(x)}$$
+$$f(\theta \vert x)=\frac{f(x\vert \theta)f(\theta)}{f(x)}$$
 
-
+Risulta
 
 $$\hat{\theta}_{\small{\mbox{MAP}}} (x) = \text{arg}\,\max\limits_{\theta} \frac{f(x ; \theta) f(\theta)}{\int_{\theta}f(x ; \theta) f(\theta)\,d\theta}=\text{arg}\,\max\limits_{\theta} f(x ; \theta) f(\theta)$$
+
+
+### Matrix Notation
+
+#### Gaussian PDF
+
+Sia $$\vec{x}$$ vettore aleatorio in $$\mathbb{R}^d$$
+
+$$f(\vec{x};\mu,\Sigma)=\frac{1}{(2\pi)^{d/2} \vert \Sigma \vert ^{1/2}} \exp{\left \{ -\frac{1}{2} ( x-\mu ) ^T \Sigma ^{-1} (x-\mu) \right \}}$$
 
 
 
