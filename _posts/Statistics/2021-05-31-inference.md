@@ -70,18 +70,13 @@ $$p(x_1,...,x_n;\theta)=\prod_{i=1}^n p(x_i;\theta)$$
 Data una sequenza di $$n$$ eventi $$x_1,...,x_n\in \{0, 1\}^n$$ si vuole stimare $$\theta$$. Si può considerare $$p(x;\theta)$$ non più come funzione di $$x$$, ma di $$\theta$$ con un certo campione $$x$$ osservato.
 
 Sia $$\vec{x}=[x_1,...,x_n]$$ sequenza i.i.d.
-$$L(\theta)=p(\vec{x};\theta)=\prod_{i=1}^n p(x_i;\theta)$$
 
-
-Sia $$\vec{x}=[x_1,...,x_n]$$ sequenza i.i.d.  
-$$L(\theta)=p(\vec{x};\theta)=\prod_{i=1}^n p(x_i;\theta)$$
-
-
+$$L(\theta)=p(\theta;\vec{x})=\prod_{i=1}^n p(\theta;x_i)$$
 
 #### Log verosimiglianza
 Il logaritmo è una funzione monotona crescente, pertanto l'argomento che massimizza la log verosimiglianza è il medesimo della verosimiglianza. In fase di ottimizzazione, è computazionalmente più oneroso gestire la produttoria invece della sommatoria. Inoltre, il logaritmo consente di assicurare la convessità della funzione e un dominio più stretto su cui cercare i parametri da ottimizzare. 
 
-$$l(\theta)=\log{p(\vec{x};\theta)}=\sum_{i=1}^n \log{p(x_i;\theta)}$$
+$$l(\theta)=\log{p(\theta;\vec{x})}=\sum_{i=1}^n \log{p(\theta;x_i)}$$
 
 ### Stimatore
 
@@ -126,8 +121,7 @@ $$l(\mu,\Sigma;\vec{X})=-\frac{n}{2}\log{(\vert \Sigma \vert )} -\frac{1}{2}\sum
 
 Le stime MV risultano
 
-$$\hat{\mu}_{small{\mbox{ML}}}=\frac{1}{n}\sum_{i=1}^n \vec{x}_i$$
-$$\hat{\Sigma}_{small{\mbox{ML}}}=\frac{1}{n}\sum_{i=1}^n (\vec{x}_i-\mu)(\vec{x}_i-\mu)^T$$
+$$\hat{\mu}_{\small{\mbox{ML}}}=\frac{1}{n}\sum_{i=1}^n \vec{x}_i, \qquad \hat{\Sigma}_{\small{\mbox{ML}}}=\frac{1}{n}\sum_{i=1}^n (\vec{x}_i-\mu)(\vec{x}_i-\mu)^T$$
 
 
 
