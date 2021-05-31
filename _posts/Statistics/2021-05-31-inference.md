@@ -103,14 +103,21 @@ $$\hat{\theta}_{\small{\mbox{MAP}}} (x) = \text{arg}\,\max\limits_{\theta} \frac
 
 ### Matrix Notation
 
-#### Gaussian PDF
+#### Distribuzione Normale
 
-Sia $$\vec{x}$$ vettore aleatorio in $$\mathbb{R}^d$$
+Sia $$\vec{x}=\{x_1,...,x_d\}$$ vettore aleatorio in $$\mathbb{R}^d$$
 
-$$f(\vec{x};\mu,\Sigma)=\frac{1}{(2\pi)^{d/2} \vert \Sigma \vert ^{1/2}} \exp{\left \{ -\frac{1}{2} ( x-\mu ) ^T \Sigma ^{-1} (x-\mu) \right \}}$$
+PDF:
 
+$$f(\vec{x};\mu,\Sigma)=\frac{1}{(2\pi)^{d/2} \vert \Sigma \vert ^{1/2}} \exp{\left \{ -\frac{1}{2} ( \vec{x}-\mu ) ^T \Sigma ^{-1} (\vec{x}-\mu) \right \}}$$
 
+Log-Likelihood:
 
+$$l(\mu,\Sigma;\vec{x})=-\frac{1}{2}\log{(\vert \Sigma \vert )} -\frac{1}{2}(\vec{x}-\mu)^T \Sigma^{-1} (\vec{x}-\mu) -\frac{d}{2} \log{(2\pi)}$$
+
+Dato un insieme $$\vec{X}$$ di $$n$$ vettori i.i.d, risulta:
+
+$$l(\mu,\Sigma;\vec{X})=-\frac{n}{2}\log{(\vert \Sigma \vert )} -\frac{1}{2}\sum_{i=1}^n (x-\mu)^T \Sigma^{-1} (x-\mu) + \mbox{c}$$
 
 
 
