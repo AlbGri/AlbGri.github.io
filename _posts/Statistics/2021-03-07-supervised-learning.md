@@ -1565,7 +1565,17 @@ R: No, al più bande di variabilità vs confidenza, la confidenza tengono conto 
 Q: cosa si intende con proprietà di convessità del lasso?
 R: la funzione di perdita è comunque convessa, la ridge è convessa ma è più lontana , mentre il lasso è vicina perché ad una V
 
+Q: perché il metodo del mini batch gradient descent dovrebbe diminuire i tempi di calcolo? se alla fine il gradiente bisogna comunque calcolarlo per tutte le osservazioni all'interno del batch e per tutti i batch (quindi l'intero dataset), aumentando il numero di step di aggiornamento? perché è più facile parallelizzarlo?
+R: sì è solo per un principio di parallellizzazione
 
+Q: perché la funzione d'attivazione ReLU dovrebbe portare a 0 e quindi non aggiornare, circa la metà dei nodi?
+R: in media la metà sono nulli, per approfondimenti il libro di benjo
+
+Q: reti2021a3.pdf perché disegna la relazione (3,4) se non è presente, non manca la relazione (5,4)?
+R: si errore slide
+
+Q: l'assortatività varia tra -1 e 1? Nell'esempio reti2021b1.pdf non viene -0.67?
+R: non è solo positiva
 
 #### DA RISOLVERE
 
@@ -1573,20 +1583,13 @@ Q: Nel grafico del percorso del lasso con l'algoritmo LAR, mi aspetto che se un 
 
 Q: perché la ridge è più lontana dal lasso nella convessità? cosa si intende per lontano dalla convessità?
 
-Q: perché il metodo del mini batch gradient descent dovrebbe diminuire i tempi di calcolo? se alla fine il gradiente bisogna comunque calcolarlo per tutte le osservazioni all'interno del batch e per tutti i batch (quindi l'intero dataset), aumentando il numero di step di aggiornamento? perché è più facile parallelizzarlo?
-
-Q: perché la funzione d'attivazione ReLU dovrebbe portare a 0 e quindi non aggiornare, circa la metà dei nodi?
-
-Q: reti2021a3.pdf perché disegna la relazione (3,4) se non è presente, non manca la relazione (5,4)?
-
 Q: reti2021a4.pdf slide 3, con Y=[] e E=[] come si rappresenta?
-
-Q: l'assortatività varia tra -1 e 1? Nell'esempio reti2021b1.pdf non viene -0.67?
-
 
 
 
 https://www.codecogs.com/latex/eqneditor.php
+
+
 
 
 
