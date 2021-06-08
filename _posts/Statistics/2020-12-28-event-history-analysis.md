@@ -83,10 +83,13 @@ La data dell'intervista serve per ricostruire la durata degli episodi censurati:
 ##### Funzioni base con tempo continuo
 - Condizioni
 - Densità, Ripartizione, Sopravvivenza  
-La distribuzione di $$T$$ è impropria o difettosa in quanto la sopravvivenza può non raggiungere 0 ('long-term survivors')
-- Funzione di rischio  
-Non è una probabilità ma lo è se si moltiplica il suo valore per l'intervallo di tempo in cui la si stima
-- Rischio integrato
+$$S(t)=1-F(t)=1-\int_0^t f(t)dt=\int_t^{\infty} f(t) dt$$  
+La distribuzione di $$T$$ è impropria o difettosa in quanto la sopravvivenza può non raggiungere 0. $$S(+\infty)=g$$ con $$g$$ probabilità di essere immune all'evento ('long-term survivors')  
+- Funzione di rischio (propensione al cambiamento)  
+$$h(t)=\lim_{t'\rightarrow t}\frac{\mathbb{P}(t\le T \le t' \vert T \ge t)}{t'-t}\equiv\frac{f(t)}{S(t)}$$  
+Come la densità, non è una probabilità ma lo è se si moltiplica il suo valore per l'intervallo di tempo in cui la si stima.  
+- Rischio integrato (utile per informazioni sul rischio quando non si può determinare)  
+$$H(t)=\int_0^t h(t)dt=-\log{S(t)}$$  
 - Relazioni tra le funzioni
 
 ##### Funzioni base con tempo discreto
