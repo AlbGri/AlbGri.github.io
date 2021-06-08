@@ -18,32 +18,65 @@ mathjax: "true"
 ##### Ambiti ed esempi
 
 ##### Definizioni base
-- Dominio, evento, episodio, popolazione a rischio
+- Dominio (es variabile qualitativa d'interesse) e spazio degli stati (modalità della variabile qualitativa)
+- Evento: failure, comporta una transizione dello stato
+- Episodio: episode, spell length, survival time, duration, il tempo tra l'esposizione al rischio e il failure
+- Evento origine: evento che porta l'esposizione al rischio
+- Popolazione a rischio
+
+##### Processi
 - Caso semplice: 1 episodio, 1 stato destinazione
 - Multistato o rischi competitivi: 1 episodio, 2+ stati destinazione
 - Multi-episodio: 2+ episodi, 1 stato destinazione
 - Multistato e multi-episodio
 
-##### Modellazione specifica
-- Limiti modello lineare
-- Censure 
-    - Tipo I (generati dalla fine del periodo di analisi) 
-    - Tipo II (osservazione termina dopo che si è verificato un certo numero di eventi)
-    - Random-non informative (non dipendono dal rischio) 
-    - Random-informative (dipendono dal rischio)
-- Covariate (variabili o costanti rispetto il tempo)
+##### Limiti modello lineare
+Il tempo è sempre positivo, non è normale e sono presenti le censure, inoltre le esplicative possono essere tempo dipendenti (cambiano stato durante l'episodio).
+
+##### Censure
+Scegliere sono episodi non censurati comporta dei bias di selezione. Il tempo dell'episodio si caratterizza da una variabile dummy che definisce la eventuale censura.
+
+Censure in ambito bio-statistico  
+- a destra: l'evento avviene dopo la fine del periodo di osservazione
+- a sinistra: l'evento avviene prima dell'inizio del periodo di osservazione
+
+Censure in ambito sociale  
+- a destra: l'evento avviene dopo la fine del periodo di osservazione
+- a sinistra: l'evento origine avviene prima dell'inizio del periodo di osservazione
+
+Tipi di censure  
+- Tipo I (generati dalla fine del periodo di analisi) 
+- Tipo II (osservazione termina dopo che si è verificato un certo numero di eventi)
+- Random-non informative (non dipendono dal rischio) 
+- Random-informative (dipendono dal rischio, sono problematiche)
 
 #### Disegni di indagine
 
 ##### Trasversali
-
-##### Longitudinali retrospettivi
-- Indagini retrospettive
+Rilevano stati in un preciso istante di tempo. Esempi: censimento ISTAT
 
 ##### Longitudinali prospettivi
-- Panel (con waves)
-- Studi di follow-up (studi coorte)
-- Record-Linkage
+Rilevano stati nel corso del tempo.
+
+Panel puro o con ricostruzione retrospettiva (tra waves)  
+Pro: non si perdono individui per emigrazioni, no problemi di memoria, consente la rilevazione di dati non fattuali (opinioni).  
+Contro: costi, troncamento a sinistra (puro), difficile per fenomeni rari o emergenti, possibili incoerenze tra waves, rischio selezione (attrito), re-test effect (ridondanza di risposte).  
+Esempi: EU-SILC panel puro; SHARE panel con retrospettiva. 
+
+Studi di follow-up  
+Sono panel molto lunghi, si seguono specifiche coorti e si ricostruiscono gli eventi più importanti tra i follow-up.  
+Pro: tempi di osservazioni lunghi, valutazioni degli effetti a lungo termine, legami intergenerazionali.  
+Contro: attrito, costi, vuoti informativi, tempi di sopravvivenza troncati (non si supera una certa età).  
+Esempi: Millennium Cohort Study UK; National Longitudinal Survey USA; paesi nord europei. 
+
+Record-Linkage  
+collegano informazioni di eventi e/o stati da fonti amministrative o statistiche. Linkage deterministico o probabilistico.  
+Esempi: Linkage danese; analisi ISTAT  
+
+##### Longitudinali retrospettivi
+Si rilevano cross-section ma si ricostruisce la storia degli stati avvenuti in passato (es. Famiglie e Soggetti Sociali FSS ISTAT; Gender & Generation Survey).  
+Pro: ricostruzione tratti lunghi, bassi costi, rilevazione continua, tempi brevi. Contro: memoria, selezione, non adatto per dati non fattuali.  
+La data dell'intervista serve per ricostruire la durata degli episodi censurati: se non c'è l'evento (si ha quindi censura), la differenza tra l'intervista e l'evento di origine definisce la durata dell'episodio, se non è censurato è la differenza tra l'intervista e la data dell'evento.  
 
 #### Funzioni base nel continuo e nel discreto
 
