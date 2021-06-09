@@ -85,7 +85,7 @@ La data dell'intervista serve per ricostruire la durata degli episodi censurati:
 - Densità, Ripartizione, Sopravvivenza  
 $$S(t)=1-F(t)=1-\int_0^t f(t)dt=\int_t^{\infty} f(t) dt$$  
 La distribuzione di $$T$$ è impropria o difettosa in quanto la sopravvivenza può non raggiungere 0. $$S(+\infty)=g$$ con $$g$$ probabilità di essere immune all'evento ('long-term survivors')  
-- Funzione di rischio (propensione al cambiamento)  
+- Funzione di rischio Hazard (propensione al cambiamento)  
 $$h(t)=\lim_{t'\rightarrow t}\frac{\mathbb{P}(t\le T \le t' \vert T \ge t)}{t'-t}\equiv\frac{f(t)}{S(t)}$$  
 Come la densità, non è una probabilità ma lo è se si moltiplica il suo valore per l'intervallo di tempo in cui la si stima.  
 - Rischio integrato (utile per informazioni sul rischio quando non si può determinare)  
@@ -96,11 +96,20 @@ $$H(t)=\int_0^t h(t)dt=-\log{S(t)}$$
 - Discreto
 - Continuo discretizzato
 
+Probabilità nel punto $$\mathbb{P}(T=t_i)=f(t_i)$$  
+Sopravvivenza $$\mathbb{P}(T\ge t_i )=\sum f_s$$  
+Hazard $$\mathbb{P}(T\ge t_i \vert T \ge t_i)=f(t_i)/S_i$$  
+
+
 #### Tipologie di metodi
+Metodi non parametrici e modelli di regressione.  
+I modelli di regressione possono essere parametrici (assumendo forma della baseline e del link tra covariate e baseline - tutti i modelli AFT) o semiparametrici (assumendo solo il link tra covariate e baseline - solo modelli di Cox)
 
 ##### Metodi per tempo continuo
 - Metodi non parametrici: Kaplan-Meier (Product-Limit)
-- Modelli di regressione: PH, AFT
+- Modelli di regressione (le covariate influenzano):
+    - Rischi proporzionali PH $$h(t)=h_0(t) \cdot \exp{(\beta X)}$$
+    - Tempi accelerati AFT $$T=T_0 \cdot \exp{(\beta X)}$$
 
 ##### Metodi per tempo discreto
 - Metodi non parametrici: Life Table (Actuarial Method)
