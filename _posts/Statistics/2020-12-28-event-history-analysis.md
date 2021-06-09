@@ -75,7 +75,8 @@ Esempi: Linkage danese; analisi ISTAT
 
 ##### Longitudinali retrospettivi
 Si rilevano cross-section ma si ricostruisce la storia degli stati avvenuti in passato (es. Famiglie e Soggetti Sociali FSS ISTAT; Gender & Generation Survey).  
-Pro: ricostruzione tratti lunghi, bassi costi, rilevazione continua, tempi brevi. Contro: memoria, selezione, non adatto per dati non fattuali.  
+Pro: ricostruzione tratti lunghi, bassi costi, rilevazione continua, tempi brevi.  
+Contro: memoria, selezione, non adatto per dati non fattuali.  
 La data dell'intervista serve per ricostruire la durata degli episodi censurati: se non c'è l'evento (si ha quindi censura), la differenza tra l'intervista e l'evento di origine definisce la durata dell'episodio, se non è censurato è la differenza tra l'intervista e la data dell'evento.  
 
 #### Funzioni base nel continuo e nel discreto
@@ -141,10 +142,11 @@ I modelli di regressione possono essere parametrici (assumendo forma della basel
 
 ####  Life Table (o Attuariale)
 - Tavola di eliminazione: stima rischio, probabilità e sopravvivenza  
-$$N_j=N_{j-1}-(E_j+C_j)$$  
+$$N_j=N_{j-1}-(E_{j-1}+C_{j-1})$$  
 $$R_j=N_{j}-0.5\cdot C_j$$  
 $$\hat{p}_j=1-\frac{E_j}{R_j}$$  
-$$\hat{S}_j^*=\hat{p}_{j-1}\cdot S_{j-1}$$
+$$\hat{S}_j^*=\hat{p}_{j-1}\cdot S_{j-1}$$  
+Formula di Greenwood $$\mbox{SE}(\hat{S}_j)\approx \hat{S}_j^* \left [ \sum_{k=1}^{j-1} \frac{\hat{q}_k}{(1-\hat{q}_k)R_k} \right ]^{1/2}$$
 - Altre funzioni (es. rischio integrato)
 - Intervalli di confidenza
 
