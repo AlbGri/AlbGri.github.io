@@ -134,6 +134,9 @@ I modelli di regressione possono essere parametrici (assumendo forma della basel
     ![png](/assets/images/Statistics/EHA_KM3.png)
     6. Si rappresenta la sopravvivenza
 - Esplorazione forma del rischio
+- Metodi per la stima del rischio integrato
+    1. $$\hat{H}(t)=\hat{H}_j=-\log{\hat{S}_j}$$
+    2. Stimatore Nelson-Aalen
 - Funzione di sopravvivenza
 	- Analisi quantili
 	- Confronto tra gruppi
@@ -146,9 +149,9 @@ $$N_j=N_{j-1}-(E_{j-1}+C_{j-1})$$
 $$R_j=N_{j}-0.5\cdot C_j$$  
 $$\hat{p}_j=1-\frac{E_j}{R_j}$$  
 $$\hat{S}_j^*=\hat{p}_{j-1}\cdot S_{j-1}$$  
-- Altre funzioni
+- Altre funzioni  
 Formula di Greenwood $$\mbox{SE}(\hat{S}_j)\approx \hat{S}_j^* \cdot \left [ \sum_{k=1}^{j-1} \frac{\hat{q}_k}{(1-\hat{q}_k)R_k} \right ]^{1/2}$$  
-Sopravvivenza nell'intervallo $$I_j$$ $$\overset{\approx}{S}(t)=\hat{S}_j+(\hat{S}_{j+1}-\hat{S}_j)\frac{t-t_j}{t_{j+1}-t_j}$$  
+Sopravvivenza nell'intervallo $$\overset{\approx}{S}(t)=\hat{S}_j+(\hat{S}_{j+1}-\hat{S}_j)\frac{t-t_j}{t_{j+1}-t_j}$$  
 Sopravvivenza a metà intervallo $$\bar{S}_j=0.5\cdot (S_j+S_{j+1})$$  
 Ripartizione $$\hat{F}_j=1-\hat{S}_j$$  
 Densità di probabilità $$\hat{f}_j=\frac{\hat{F}_{j+1}-\hat{F}_j}{t_{j+1}-t_j}=\frac{S_{j+1}-S_j}{t_{j+1}-t_j}$$  
