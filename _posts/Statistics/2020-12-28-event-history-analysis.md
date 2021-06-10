@@ -137,18 +137,9 @@ I modelli di regressione possono essere parametrici (assumendo forma della basel
     1. $$\hat{H}(t)=\hat{H}_j=-\log{\hat{S}_j}$$ (prima si stima $$S_{\mbox{KM}}$$ e poi $$H$$)
     2. Stimatore Nelson-Aalen: somma di prodotti tra stime del rischio in punti medi (si può stimare anche $$S_{\mbox{NA}}$$ e solitamente è sovrastimata)
 - Esplorazione forma del rischio: esame grafico di $$H$$ se cresce linearmente $$h$$ è costante, oppure differenziando numericamente $$H(t)$$ previa lisciatura
-- Funzioni di pseudo-sopravvivenza per rischi competitivi (con ipotesi di indipendenza, l'eliminazione di un rischio non modifica la sopravvivenza rispetto agli altri)
 
-#### Confronti e omogeneità
-Per analizzare le differenze tra funzioni di sopravvivenza appartenenti a gruppi differenti si possono confrontare i quantili, le funzioni di sopravvivenza mediante i grafici (se gli intervalli di sopravvivenza si sovrappongono) o effettuare test di omogeneità.
-
-I test di omogeneità saggiano se le distribuzioni degli episodi tra i gruppi sono significativamente diverse.  
-I dati censurati non consentono metodi standard come il Kruskal-Wallis, in questo contesto si utilizzano test simili al chi quadro  
-- Log-rank test (Mantel-Cox; generalized savage test): somma quadratica degli scarti tra il numero di eventi nel gruppo e il suo corrispettivo valore atteso (ipotesi distribuzione delle durate uguale per tutti) diviso la varianza dello scarto. Più utile per i punti finali della curva.
-- Wilcoxon test (Wilcoxon Breslow Gehan), come il Log-rank ma pesa le differenze tra gli scarti con il numero di individui a rischio. Più utile per i punti iniziali della curva.
-- Tarone-Ware
-- Peto-Prentice
-
+Pro: la stima $$S$$ è MV; non è influenzato dalla scelta degli intervalli; usa tutta l'informazione  
+Contro: difficile da tabulare con molti episodi; non utilizzabile se il tempo non è misurato esatto; non consente stima diretta del rischio
 
 ####  Life Table (o Attuariale)
 - Tavola di eliminazione: stima rischio, probabilità e sopravvivenza  
@@ -169,13 +160,48 @@ Tasso di transizione a metà intervallo $$\bar{h}_j=\frac{\hat{f}_j}{\bar{S}_j}$
 Intervallo di sopravvivenza $$\hat{S}(t)\pm z_{\frac{\alpha}{2}} \cdot \mbox{SE}(\hat{S}(t))$$
 - Esplorazione forma del rischio: esame grafico di $$H$$ se cresce linearmente $$h$$ è costante, oppure differenziando numericamente $$H(t)$$ previa lisciatura
 
+Pro: semplice; veloce; consente la stima anche con tempo impreciso; stima diretta di $$h(t)$$ e $$f(t)$$  
+Contro: l'ampiezza degli intervalli è soggettiva, non adatto per piccoli campioni; approssimare ad un intervallo significa non usare tutta l'informazione disponibile
+
+
+#### Confronti e omogeneità
+Per analizzare le differenze tra funzioni di sopravvivenza appartenenti a gruppi differenti si possono confrontare i quantili, le funzioni di sopravvivenza mediante i grafici (se gli intervalli di sopravvivenza si sovrappongono) o effettuare test di omogeneità.
+
+I test di omogeneità saggiano se le distribuzioni degli episodi tra i gruppi sono significativamente diverse.  
+I dati censurati non consentono metodi standard come il Kruskal-Wallis, in questo contesto si utilizzano test simili al chi quadro  
+- Log-rank test (Mantel-Cox; generalized savage test): somma quadratica degli scarti tra il numero di eventi nel gruppo e il suo corrispettivo valore atteso (ipotesi distribuzione delle durate uguale per tutti) diviso la varianza dello scarto. Più utile per i punti finali della curva.
+- Wilcoxon test (Wilcoxon Breslow Gehan), come il Log-rank ma pesa le differenze tra gli scarti con il numero di individui a rischio. Più utile per i punti iniziali della curva.
+- Tarone-Ware
+- Peto-Prentice
+
+#### Rischi competitivi
+Quando si ha un episodio e più stati di destinazione, si può stimare la pseudo-sopravvivenza.  
+La procedura è gestibile sia con stime KM che LT.  
+Come nel caso della transizione singola, ma gli episodi che non terminano nella destinazione k-esima si trattano come censurati (se vale l'ipotesi di indipendenza).  
+Ipotesi di indipendenza: l'eliminazione di un rischio non modifica la sopravvivenza rispetto agli altri.
+
+
 ### Modelli a tempo continuo
 
 #### Modelli semi-parametrici
+Se il numero di gruppi aumenta e la dimensione campionaria è piccola, l'approccio parametrico non è adeguato e si usano i modelli di regressione.
 
 ##### Modello base
-- Caratteristiche modello di Cox
-- Significato PH (Proportional Hazard)
+Si vuole stimare la propensione per i soggetti di sperimentare un certo evento.  
+Il rischio è dato dal rischio base (non parametrico) con tutte covariate nulle e un fattore (parametrico) legato alle covariate  
+$$h_i(t,X)=h_0(t)\cdot \exp{(\beta x_i)}$$  
+: 
+Per covariate continue, alla variazione unitaria della variabile d'interesse, il logaritmo del rischio varia di $$\beta$$.  
+Per covariate dicotomiche, il cambio di classe fa variare il logaritmo del rischio di $$\beta$$ rispetto la classe base.  
+Proportional Hazard: il rapporto tra i rischi di due individui con differenti covariate è costante nel tempo.  
+
+<!---
+1:09:33
+--->
+
+Pro: robusto (i coefficienti approssimano bene in modo parametrico); con poche assunzioni fornisce informazioni sulla sopravvivenza; flessibile (estensioni tempo dipendenti e con effetti non proporzionali).  
+
+
 
 ##### Parametri e risk score
 - Interpretazione parametri
@@ -3459,9 +3485,16 @@ Dipende da $$n$$ e $$p$$ se
 
 ## Utili
 ### Century Months
+Data in C.M. : numero di mesi da inizio secolo 01/01/1900  
+
 $$\mbox{C.M.}=\mbox{YY}\times 12+\mbox{MM}$$  
+es. Marzo 1946: $$\mbox{C.M.}=46\cdot 12+3=555$$  
+
 $$\mbox{YY}=(\mbox{C.M.}-1)/12+1900$$  
-$$\mbox{MM}=\mbox{C.M.}-(\mbox{intero(YY)}\times 12)$$
+$$\mbox{MM}=\mbox{C.M.}-(\mbox{intero(YY)}\times 12)$$  
+es. $$555 \rightarrow \mbox{Anno}=(555-1)/12=46.16,\quad \mbox{Mese}=555-(46\cdot 12)=555-552=3$$
+
+
 
 ### Risorse
 - [Andrew Gelman](http://www.stat.columbia.edu/~gelman/)
