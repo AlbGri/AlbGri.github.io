@@ -186,7 +186,7 @@ Ipotesi di indipendenza: l'eliminazione di un rischio non modifica la sopravvive
 #### Modelli semi-parametrici
 Se il numero di gruppi aumenta e la dimensione campionaria è piccola, l'approccio parametrico non è adeguato e si usano i modelli di regressione.
 
-##### Modello base
+##### Modello di Cox
 Si vuole stimare la propensione per i soggetti di sperimentare un certo evento.  
 Il rischio è dato dal rischio base (non parametrico) con tutte covariate nulle e un fattore (parametrico) legato alle covariate  
 $$h_i(t,X)=h_0(t)\cdot \exp{(\beta x_i)}$$  
@@ -195,53 +195,58 @@ Per covariate continue, alla variazione unitaria della variabile d'interesse, il
 Per covariate dicotomiche, il cambio di classe fa variare il logaritmo del rischio di $$\beta$$ rispetto la classe base.  
 Proportional Hazard: il rapporto tra i rischi di due individui con differenti covariate è costante nel tempo.  
 
-Pro: robusto (i coefficienti approssimano bene in modo parametrico); con poche assunzioni fornisce informazioni sulla sopravvivenza; flessibile (estensioni tempo dipendenti e con effetti non proporzionali).  
+Pro: robusto (i coefficienti approssimano bene in modo parametrico); con poche assunzioni fornisce informazioni sulla sopravvivenza; flessibile (estensioni tempo dipendenti e con effetti non proporzionali); non richiede una stima del rischio di base.  
 
 Si sceglie la baseline soggettivamente per dare senso all'interpretazione.  
 
-Cosa si intende con Risk score?
 
-##### Significatività e adattamento
+##### Significatività
 Per valutare se i parametri sono significativamente diversi da 0, si usa la statistica di Wald (chi-quadro o z).  
 Gli intervalli di confidenza  
 coefficienti: $$\beta=\pm 1.96 \cdot \mbox{SE}(\beta)$$  
 hazard ratio: $$\exp{\beta}$$  
 
+
+##### Risk Score
+Dato $$i$$-esimo individuo con $$X_1,...,X_k$$ caratteristiche, il risk score risulta  
+$$\mbox{RS}=\exp{\left ( \sum_{i=1}^k \beta_i X_i \right ) }$$  
+è una misura relativa rispetto la baseline ed è utile quando si stimano modelli con numerosi predittori
+
+
+##### Bontà di adattamento
 Per modelli nidificati: test rapporto di verosimiglianza (verosimiglianza parziale) LR che saggia l'ipotesi nulla tutte le covariate nulle  
 $$\mbox{LR}=-2\log{L_{\small{Reduced}}} - (-2\log{L_{\small{Unreduced}}})\sim \mathcal{X}^2_g$$  
 $$g=p_{\small{Unreduced}}-p_{\small{Reduced}}$$ con $$p$$ numero di parametri  
 
 Per modelli non nidificati: AIC, BIC  
 
-##### Modello a rischi competitivi
-
 ##### Stima di massima verosimiglianza 
 Full Likelihood - “Qual è la probabilità che l'individuo i-mo sperimenti un evento nel $$t_j$$ osservato?''  
 la verosimiglianza in situazioni di censura si decompone nel seguente modo  
 $$L(\alpha, t_1,...,t_N)=\prod_{i\in E} f(t_i,\alpha) \cdot \prod_{i\in C} S(t_i,\alpha)=\prod_{i\in E} h(t_i,\alpha) \cdot \prod_{i\in N} S(t_i,\alpha)$$  
 con $$\alpha$$ parametro generico, $$E=N-C$$ casi non censurati, $$C$$ casi censurati, $$f=S\cdot h$$  
-successivamente si applica il logaritmo e si massimizza, ma il rischio di base non è specificato (non si conosce a distribuzione dei tempi di sopravvivenza e non si può trovare un unico set di parametri che massimizza la verosimiglianza). Soluzione: Partial Likelihood.
+successivamente si applica il logaritmo e si massimizza, ma il rischio di base non è specificato (non si conosce a distribuzione dei tempi di sopravvivenza e non si può trovare un unico set di parametri che massimizza la verosimiglianza). Soluzione: Partial Likelihood.  
 
 Partial Likelihood - “Dato che qualcuno sperimenta un evento al tempo $$t_j$$ qual è la probabilità che si tratti dell'individuo i-mo?''  
-Si ordinano tutti i tempi (censurati e non) e si calcola il contributo al rischio di ciascun soggetto alla PL ($$t^*_{ij}$$ probabilità condizionata che l'unità $$i$$ sperimenti l'evento al tempo $$t_j$$).  
-$$\frac{h(t^*_{ij})}{\sum h(t^*_{ij})}$$  
+Si ordinano tutti i tempi (censurati e non) in modo crescente e si calcola il contributo al rischio di ciascun soggetto alla PL ($$t^*_{ij}$$ probabilità condizionata che l'unità $$i$$ sperimenti l'evento al tempo $$t_j$$).  
+$$\mbox{PL}=\prod_E \frac{h(t^*_{ij})}{\sum_R h(t^*_{ij})}$$  
+con $$R$$ insieme a rischio di eventi avvenuti al tempo $$t^*_{ij}$$ e successivi (sia censurati che no, ma il numeratore è solo per gli eventi).  
+Divido num. e den. per rischio di base, ne faccio la trasformata logaritmica e massimizzo con metodi numerici iterativi.  
 
-Basato sui rank dei tempi
-Pro: stime PML asintoticamente normali e non distorte
+Pro: stime PML asintoticamente normali e non distorte.  
 
-<!---
-16:33 13 ott 2020
---->
+Note: sulla stima FL entrano tutti i casi, mentre nella PL solo al denominatore i censurati. Basato sui rank dei tempi non sono rilevanti i tempi ma l'ordinamento e l'aggiunta di una costante (parte non parametrica) non influisce sulle stime dei parametri.
 
-- Massimizzazione PL con metodi numerici iterativi
 
 ##### Ties
+Il metodo PL assume che non ci sono episodi coincidenti, bisogna correggere la PL.
 - Exact (tutti i possibili ordinamenti)
 - Breslow (come Exact ma shrinkage to 0 se ci sono molti ties)
 - Efron (come Breslow ma più vicino all'Exact)
 - Discrete (eventi effettivamente doppioni)
 
 ##### Stima e utilizzo delle funzioni base
+
 
 ##### Variabili tempo-dipendenti
 - Caratteristiche VTD
