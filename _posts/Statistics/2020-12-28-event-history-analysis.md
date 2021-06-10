@@ -133,15 +133,22 @@ I modelli di regressione possono essere parametrici (assumendo forma della basel
     5. Si sintetizzano le informazioni  
     ![png](/assets/images/Statistics/EHA_KM3.png)
     6. Si rappresenta la sopravvivenza
-- Esplorazione forma del rischio
-- Metodi per la stima del rischio integrato
-    1. $$\hat{H}(t)=\hat{H}_j=-\log{\hat{S}_j}$$
-    2. Stimatore Nelson-Aalen
-- Funzione di sopravvivenza
-	- Analisi quantili
-	- Confronto tra gruppi
-	- Test di omogeneità (grafico, log-rank rest, wilcoxon test)
+- Metodi per la stima del rischio integrato (le stime dirette sono errate, come $$f$$, perché dipendono dalla variabilità delle ampiezze degli intervalli e il numero di eventi in ogni intervallo è teoricamente sempre 1)
+    1. $$\hat{H}(t)=\hat{H}_j=-\log{\hat{S}_j}$$ (prima si stima $$S_{\mbox{KM}}$$ e poi $$H$$)
+    2. Stimatore Nelson-Aalen: somma di prodotti tra stime del rischio in punti medi (si può stimare anche $$S_{\mbox{NA}}$$ e solitamente è sovrastimata)
+- Esplorazione forma del rischio: esame grafico di $$H$$ se cresce linearmente $$h$$ è costante, oppure differenziando numericamente $$H(t)$$ previa lisciatura
 - Funzioni di pseudo-sopravvivenza per rischi competitivi (con ipotesi di indipendenza, l'eliminazione di un rischio non modifica la sopravvivenza rispetto agli altri)
+
+#### Confronti e omogeneità
+Per analizzare le differenze tra funzioni di sopravvivenza appartenenti a gruppi differenti si possono confrontare i quantili, le funzioni di sopravvivenza mediante i grafici (se gli intervalli di sopravvivenza si sovrappongono) o effettuare test di omogeneità.
+
+I test di omogeneità saggiano se le distribuzioni degli episodi tra i gruppi sono significativamente diverse.  
+I dati censurati non consentono metodi standard come il Kruskal-Wallis, in questo contesto si utilizzano test simili al chi quadro  
+- Log-rank test (Mantel-Cox; generalized savage test): somma quadratica degli scarti tra il numero di eventi nel gruppo e il suo corrispettivo valore atteso (ipotesi distribuzione delle durate uguale per tutti) diviso la varianza dello scarto. Più utile per i punti finali della curva.
+- Wilcoxon test (Wilcoxon Breslow Gehan), come il Log-rank ma pesa le differenze tra gli scarti con il numero di individui a rischio. Più utile per i punti iniziali della curva.
+- Tarone-Ware
+- Peto-Prentice
+
 
 ####  Life Table (o Attuariale)
 - Tavola di eliminazione: stima rischio, probabilità e sopravvivenza  
@@ -160,7 +167,7 @@ Tasso di transizione $$\hat{h}_j=\frac{\hat{f}_j}{\overset{\approx}{S}_j}$$ non 
 Standard Error approssimato $$\mbox{SE}(\hat{h}_j)\approx \frac{\hat{h}_j}{\sqrt{\hat{q}_j\hat{R}_j}} \cdot \sqrt{1-\left ( \frac{\hat{h}_j(t_{j+1}-t_j)}{2} \right )^2}$$  
 Tasso di transizione a metà intervallo $$\bar{h}_j=\frac{\hat{f}_j}{\bar{S}_j}$$  
 Intervallo di sopravvivenza $$\hat{S}(t)\pm z_{\frac{\alpha}{2}} \cdot \mbox{SE}(\hat{S}(t))$$
-
+- Esplorazione forma del rischio: esame grafico di $$H$$ se cresce linearmente $$h$$ è costante, oppure differenziando numericamente $$H(t)$$ previa lisciatura
 
 ### Modelli a tempo continuo
 
