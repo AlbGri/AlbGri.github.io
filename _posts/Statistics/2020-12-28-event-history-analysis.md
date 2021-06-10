@@ -257,24 +257,29 @@ Inoltre, $$S(t,X)=\exp{(-H(t,X))}$$ quindi si può stimare dall'una l'altra
 ##### Variabili tempo-dipendenti
 - Processi: micro (dettagli su individui), meso (vite, gruppi piccoli), intermedio (contesti aziendali), macro (processi storici)
 - Caratteristiche VTD
-- Modello con VTD
-- Come tenere sotto controllo variabili TD
-    - Episode splitting
+- Modello con VTD (esempio con due covariate di cui una tempo dipendente)  
+$$h_i(t,X)=h_0(t)\cdot \exp{(\beta_1 X_{i1}+\beta_2 X_{i2}(t))}$$
+- Episode splitting per tenere sotto controllo le VTD:
+    1. Trasformazione della tabella dati in person-perriod (si splittano gli gli episodi con variazione della VTD in sotto episodi censurati e non): le unità con un cambiamento della esplicativa al tempo $$t_1$$ dentro l'episodio $$[t_0,t_2]$$, si splittano in due eventi, il primo censurato di lunghezza $$t_1-t_0$$, il secondo $$t_2-t_0$$ con l'evento (censurato o no), con le altre covariate fisse.
+    2. Applicazione dei modelli di durata alla nuova tabella dati
 - Spazio stati TD
     - Dicotomizzazione non reversibile
-    - Dicotomizzazione reversibile
+    - Dicotomizzazione reversibile (stati ricorrenti)
     - Strutture complesse
 - Effetti immediati o differiti nel tempo
 
 ##### Effetti non proporzionali
 - Violazione assunzione proporzionalità
 - Verifica proporzionalità 
-	- Analisi grafica del logaritmo del rischio cumulato  
-	$$\log{(H)}=\log{(-\log{(S)})}$$
-	- Residui di Schoenfeld (l'andamento dello scarto tra la covariata dell'i-esimo individuo e la sua media nel tempo è casuale)
-	- Modello con interazione tra tempo e covariate (se il coeff. dell'interazione è significativamente diverso da zero)
+	- Analisi grafica del logaritmo del rischio cumulato (se non sono parallele)  
+	$$\log{(H)}=\log{(-\log{(S)})}$$  
+	Se il rapporto tra i rischi di due soggetti è costante (PH), anche la differenza tra $$\log{H}$$ dei due soggetti differisce per una costante al variare di $$t$$  
+	- Residui di Schoenfeld (se l'andamento dello scarto tra la covariata dell'i-esimo individuo e la sua media nel tempo non è casuale) 
+	- Modello con interazione tra tempo e covariate (se il coeff. dell'interazione è significativamente diverso da zero)  
+	$$h_i(t,X)=h_0(t) \cdot \exp{(\beta_1 X_i + \beta_2 X_i \cdot g(t))}$$  
 - Superamento ipotesi proporzionalità
-	- Modello stratificato ($$n$$ rischi di base quanti gli strati)
+	- Modello stratificato ($$n$$ rischi di base quanti gli strati)  
+	$$h_{ig}(t,X)=H_{0g}(t) \cdot \exp{\left ( \sum_{i=1}^k \beta_i X_i \right ) }$$  
 	- Modelli separati in strati ($$n$$ modelli quanti gli strati, con $$\mathcal{X}^2$$ saggio se gli $$n$$ modelli sono uguali a quello compatto)  
 	$$\mathcal{X}^2_{(k-1)p}=\bigg[-2LL_{\mbox{stra}}-\Big[\sum_{i=1}^n(-2LL_{\mbox{sep}_i})\Big]\bigg]$$  
 	con $$k=\mbox{n.strati}$$ e $$p=\mbox{n.predittori}$$
@@ -287,7 +292,9 @@ Inoltre, $$S(t,X)=\exp{(-H(t,X))}$$ quindi si può stimare dall'una l'altra
 	        - Main effect: effetto principale + parte lineare con dummy dell'intervallo (consente di capire se un tratto è significativamente diverso dall'altro) 
 	        - Effetto a gradini: lineare con $$k$$ dummy pari al numero di intervalli senza effetto principale (l'effetto potrebbe essere significativamente diverso da quello di base ma non è strettamente non proporzionale perché non è detto che i coefficienti che si stimano siano significativamente diversi da quelli stimati nel tratto precedente)
 
-
+<!---
+20201027 to do
+--->
 
 #### Modelli parametrici
 
