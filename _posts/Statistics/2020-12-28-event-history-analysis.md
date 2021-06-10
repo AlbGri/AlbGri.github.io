@@ -229,6 +229,10 @@ $$\frac{h(t^*_{ij})}{\sum h(t^*_{ij})}$$
 Basato sui rank dei tempi
 Pro: stime PML asintoticamente normali e non distorte
 
+<!---
+16:33 13 ott 2020
+--->
+
 - Massimizzazione PL con metodi numerici iterativi
 
 ##### Ties
