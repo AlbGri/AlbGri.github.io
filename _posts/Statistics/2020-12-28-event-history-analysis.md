@@ -190,34 +190,45 @@ Se il numero di gruppi aumenta e la dimensione campionaria è piccola, l'approcc
 Si vuole stimare la propensione per i soggetti di sperimentare un certo evento.  
 Il rischio è dato dal rischio base (non parametrico) con tutte covariate nulle e un fattore (parametrico) legato alle covariate  
 $$h_i(t,X)=h_0(t)\cdot \exp{(\beta x_i)}$$  
-: 
+
 Per covariate continue, alla variazione unitaria della variabile d'interesse, il logaritmo del rischio varia di $$\beta$$.  
 Per covariate dicotomiche, il cambio di classe fa variare il logaritmo del rischio di $$\beta$$ rispetto la classe base.  
 Proportional Hazard: il rapporto tra i rischi di due individui con differenti covariate è costante nel tempo.  
 
-<!---
-1:09:33
---->
-
 Pro: robusto (i coefficienti approssimano bene in modo parametrico); con poche assunzioni fornisce informazioni sulla sopravvivenza; flessibile (estensioni tempo dipendenti e con effetti non proporzionali).  
 
+Si sceglie la baseline soggettivamente per dare senso all'interpretazione.  
 
+Cosa si intende con Risk score?
 
-##### Parametri e risk score
-- Interpretazione parametri
-- Significatività statistica dei parametri
-- Risk score
+##### Significatività e adattamento
+Per valutare se i parametri sono significativamente diversi da 0, si usa la statistica di Wald (chi-quadro o z).  
+Gli intervalli di confidenza  
+coefficienti: $$\beta=\pm 1.96 \cdot \mbox{SE}(\beta)$$  
+hazard ratio: $$\exp{\beta}$$  
 
-##### Bontà adattamento modello
-- Rapporto di verosimiglianza
-- AIC e BIC
+Per modelli nidificati: test rapporto di verosimiglianza (verosimiglianza parziale) LR che saggia l'ipotesi nulla tutte le covariate nulle  
+$$\mbox{LR}=-2\log{L_{\small{Reduced}}} - (-2\log{L_{\small{Unreduced}}})\sim \mathcal{X}^2_g$$  
+$$g=p_{\small{Unreduced}}-p_{\small{Reduced}}$$ con $$p$$ numero di parametri  
+
+Per modelli non nidificati: AIC, BIC  
 
 ##### Modello a rischi competitivi
 
 ##### Stima di massima verosimiglianza 
-- Metodo FL (Full Likelihood - “Qual è la probabilità che l'individuo i-mo sperimenti un evento nel $$t_j$$ osservato?'')
-- Complicazioni: censure e rischio base
-- Metodo PL (Partial Likelihood - “Dato che qualcuno sperimenta un evento al tempo $$t_j$$ qual è la probabilità che si tratti dell'individuo i-mo?'') basato sui rank dei tempi
+Full Likelihood - “Qual è la probabilità che l'individuo i-mo sperimenti un evento nel $$t_j$$ osservato?''  
+la verosimiglianza in situazioni di censura si decompone nel seguente modo  
+$$L(\alpha, t_1,...,t_N)=\prod_{i\in E} f(t_i,\alpha) \cdot \prod_{i\in C} S(t_i,\alpha)=\prod_{i\in E} h(t_i,\alpha) \cdot \prod_{i\in N} S(t_i,\alpha)$$  
+con $$\alpha$$ parametro generico, $$E=N-C$$ casi non censurati, $$C$$ casi censurati, $$f=S\cdot h$$  
+successivamente si applica il logaritmo e si massimizza, ma il rischio di base non è specificato (non si conosce a distribuzione dei tempi di sopravvivenza e non si può trovare un unico set di parametri che massimizza la verosimiglianza). Soluzione: Partial Likelihood.
+
+Partial Likelihood - “Dato che qualcuno sperimenta un evento al tempo $$t_j$$ qual è la probabilità che si tratti dell'individuo i-mo?''  
+Si ordinano tutti i tempi (censurati e non) e si calcola il contributo al rischio di ciascun soggetto alla PL ($$t^*_{ij}$$ probabilità condizionata che l'unità $$i$$ sperimenti l'evento al tempo $$t_j$$).  
+$$\frac{h(t^*_{ij})}{\sum h(t^*_{ij})}$$  
+
+Basato sui rank dei tempi
+Pro: stime PML asintoticamente normali e non distorte
+
 - Massimizzazione PL con metodi numerici iterativi
 
 ##### Ties
