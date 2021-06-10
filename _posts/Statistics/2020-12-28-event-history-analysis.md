@@ -246,9 +246,16 @@ Il metodo PL assume che non ci sono episodi coincidenti, bisogna correggere la P
 - Discrete (eventi effettivamente doppioni)
 
 ##### Stima e utilizzo delle funzioni base
+Il modello di Cox stima i rischi relativi, e non consente di capire l'entità del rischio in termini assoluti, in quanto non si ha una stima del rischio di base $$H_0(t)$$.  
+Senza variabili tempo dipendenti, si può stimare il rischio di base con metodi non parametrici (es. KM, Nelson-Aelen), oppure usando le seguenti relazioni  
+$$S(t,X)=S_0(t)^{\exp{\left ( \sum_{i=1}^k \beta_i X_i \right ) }}$$  
+con $$S_0$$ non parametrico, la parte esponenziale (risk score) stimata con Cox e si possono combinare le componenti per stimare la funzione di sopravvivenza per qualsiasi gruppo diverso dal base.  
+$$H(t,X)=H_0(t) \cdot \exp{\left ( \sum_{i=1}^k \beta_i X_i \right ) }$$  
+Inoltre, $$S(t,X)=\exp{(-H(t,X))}$$ quindi si può stimare dall'una l'altra
 
 
 ##### Variabili tempo-dipendenti
+- Processi: micro (dettagli su individui), meso (vite, gruppi piccoli), intermedio (contesti aziendali), macro (processi storici)
 - Caratteristiche VTD
 - Modello con VTD
 - Come tenere sotto controllo variabili TD
