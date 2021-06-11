@@ -134,8 +134,8 @@ I modelli di regressione possono essere parametrici (assumendo forma della basel
     ![png](/assets/images/Statistics/EHA_KM3.png)
     6. Si rappresenta la sopravvivenza
 - Metodi per la stima del rischio integrato (le stime dirette sono errate, come $$f$$, perché dipendono dalla variabilità delle ampiezze degli intervalli e il numero di eventi in ogni intervallo è teoricamente sempre 1)
-    1. $$\hat{H}(t)=\hat{H}_j=-\log{\hat{S}_j}$$ (prima si stima $$S_{\mbox{KM}}$$ e poi $$H$$)
-    2. Stimatore Nelson-Aalen: somma di prodotti tra stime del rischio in punti medi (si può stimare anche $$S_{\mbox{NA}}$$ e solitamente è sovrastimata)
+    1. $$\hat{H}(t)=\hat{H}_j=-\log{\hat{S}_j}$$ (prima si stima $$S_{\small{\mbox{KM}}}$$ e poi $$H$$)
+    2. Stimatore Nelson-Aalen: somma di prodotti tra stime del rischio in punti medi (si può stimare anche $$S_{\small{\mbox{NA}}}$$ e solitamente è sovrastimata)
 - Esplorazione forma del rischio: esame grafico di $$H$$ se cresce linearmente $$h$$ è costante, oppure differenziando numericamente $$H(t)$$ previa lisciatura
 
 Pro: la stima $$S$$ è MV; non è influenzato dalla scelta degli intervalli; usa tutta l'informazione  
@@ -260,7 +260,7 @@ Inoltre, $$S(t,X)=\exp{(-H(t,X))}$$ quindi si può stimare dall'una l'altra
 - Modello con VTD (esempio con due covariate di cui una tempo dipendente)  
 $$h_i(t,X)=h_0(t)\cdot \exp{(\beta_1 X_{i1}+\beta_2 X_{i2}(t))}$$
 - Episode splitting per tenere sotto controllo le VTD:
-    1. Trasformazione della tabella dati in person-perriod (si splittano gli gli episodi con variazione della VTD in sotto episodi censurati e non): le unità con un cambiamento della esplicativa al tempo $$t_1$$ dentro l'episodio $$[t_0,t_2]$$, si splittano in due eventi, il primo censurato di lunghezza $$t_1-t_0$$, il secondo $$t_2-t_0$$ con l'evento (censurato o no), con le altre covariate fisse.
+    1. Trasformazione della tabella dati in person-period (si splittano gli gli episodi con variazione della VTD in sotto episodi censurati e non): le unità con un cambiamento della esplicativa al tempo $$t_1$$ dentro l'episodio $$[t_0,t_2]$$, si splittano in due eventi, il primo censurato di lunghezza $$t_1-t_0$$, il secondo $$t_2-t_0$$ con l'evento (censurato o no), con le altre covariate fisse.
     2. Applicazione dei modelli di durata alla nuova tabella dati
 - Spazio stati TD
     - Dicotomizzazione non reversibile
@@ -283,7 +283,7 @@ $$h_i(t,X)=h_0(t)\cdot \exp{(\beta_1 X_{i1}+\beta_2 X_{i2}(t))}$$
 	- Modelli separati in strati ($$n$$ modelli quanti gli strati, con $$\mathcal{X}^2$$ saggio se gli $$n$$ modelli sono uguali a quello compatto)  
 	$$\mathcal{X}^2_{(k-1)p}=\bigg[-2LL_{\mbox{stra}}-\Big[\sum_{i=1}^n(-2LL_{\mbox{sep}_i})\Big]\bigg]$$  
 	con $$k=\mbox{n.strati}$$ e $$p=\mbox{n.predittori}$$
-	- Modello con interazione tra il tempo e le covariate. 
+	- Modello con interazione tra il tempo e le covariate (non solo per valutare la proporzionalità ma anche per superarla). Bisogna scegliere $$g(t)$$
 	    - Tempo continuo
 	        - Effetto lineare
 	        - Effetto lineare traslato
@@ -292,9 +292,7 @@ $$h_i(t,X)=h_0(t)\cdot \exp{(\beta_1 X_{i1}+\beta_2 X_{i2}(t))}$$
 	        - Main effect: effetto principale + parte lineare con dummy dell'intervallo (consente di capire se un tratto è significativamente diverso dall'altro) 
 	        - Effetto a gradini: lineare con $$k$$ dummy pari al numero di intervalli senza effetto principale (l'effetto potrebbe essere significativamente diverso da quello di base ma non è strettamente non proporzionale perché non è detto che i coefficienti che si stimano siano significativamente diversi da quelli stimati nel tratto precedente)
 
-<!---
-20201027 to do
---->
+
 
 #### Modelli parametrici
 
