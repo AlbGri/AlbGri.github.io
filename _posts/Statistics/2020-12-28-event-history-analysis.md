@@ -402,12 +402,12 @@ Frailty models o Mixed Proportional Hazard models (misti si intende con effetti 
 
 #### Problema
 Limitare il problema della mal specificazione del modello e distorsione delle stime, aggiungendo un effetto casuale sui modelli di regressione sul rischio.  
-Anche con covariate indipendenti tra loro, se una delle due è omesse andrà ad impattare le stime _selezionando_ la popolazione e rendendo le stime dipendenti dal tempo.  
+Anche con covariate indipendenti tra loro, se una delle due è omesse andrà ad impattare le stime _selezionando_ la popolazione e rendendo le stime dipendenti dal tempo (rischio ad U, individui fragili escono prima e si selezionano i più resistenti nel tempo).  
 La presenza di una _fragilità_ differente tra i gruppi - eterogeneità non osservata - comporta una variazione del rischio; i modelli tradizionali di Survival Analysis considerano le popolazioni omogenee, cioè che tutti gli individui hanno lo stesso rischio.  
 - Funzione di sopravvivenza marginale per due popolazioni esponenziali $$(\lambda_i)$$  
-$$S(t)=p\exp{(-\lambda_1 t)}+(1-p)\exp{(-\lambda_2 t)}$$ è una mistura
+$$S(t)=p\exp{(-\lambda_1 t)}+(1-p)\exp{(-\lambda_2 t)}$$ è una mistura e se si calcola il rischio (derivando $$\log{S}$$) non è più costante.
 
-#### Variabile Frailty
+#### Modello Frailty
 Sia $$U>0$$ v.a. indipendente dal tempo, la cui varianza $$\sigma^2_U$$ misura l'eterogeneità non osservata della popolazione. Siano $$\mathbf{X}=(X_1,...,X_k)$$ matrice delle covariate e $$\mathbf{\beta}=(\beta_1,...,\beta_k)$$ parametri di regressione.
 - Funzione di rischio  
 $$h(t\vert U)=h_0(t)\cdot U$$  
@@ -415,9 +415,9 @@ $$h(t\vert X, U)=h_0(t)\exp{(\beta 'X)}\cdot U$$
 - Rischio marginale  
 $$E_U\{h(t\vert U)\}=h_0(t)\cdot E_U\{U\}=h_0(t)$$  
 - Funzione di sopravvivenza  
-$$S(t\vert X,U)=\exp{\big\{-\int_0^t h(s\vert X,U)ds\big\}}$$
+$$S(t\vert X,U)=\exp{\big\{-\int_0^t h(s\vert X,U)ds\big\}}=\exp{\left \{ -U \exp{(\beta'X)}H_0(t) \right \}}$$
 - Sopravvivenza marginale  
-$$S(t)=E\big[S(t\vert U)\big]=E\big[\exp{\{-UH_0(t)\}}\big]=\mathbf{L}\big\{H_0(t)\big\}$$  
+$$S(t)=E\big[S(t\vert U)\big]=E\big[\exp{\left \{ -U \exp{(\beta'X)}H_0(t) \right \}}]=\mathbf{L}\big\{H_0(t)\big\}$$  
 - Trasformata di Laplace  
 $$\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 - La varianza della frailty può avere un valore contenuto e influenzare significativamente sia le covariate (sia come significatività che il valore) che la forma del rischio
