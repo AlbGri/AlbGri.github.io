@@ -413,11 +413,11 @@ Sia $$U>0$$ v.a. indipendente dal tempo, la cui varianza $$\sigma^2_U$$ misura l
 $$h(t\vert U)=h_0(t)\cdot U$$  
 $$h(t\vert X, U)=h_0(t)\exp{(\beta 'X)}\cdot U$$  
 - Rischio marginale  
-$$E_U\{h(t\vert U)\}=h_0(t)\cdot E_U\{U\}=h_0(t)$$  
+$$\mathbb{E}_U\{h(t\vert U)\}=h_0(t)\cdot \mathbb{E}_U\{U\}=h_0(t)$$  
 - Funzione di sopravvivenza  
 $$S(t\vert X,U)=\exp{\big\{-\int_0^t h(s\vert X,U)ds\big\}}=\exp{\left \{ -U \exp{(\beta'X)}H_0(t) \right \}}$$
 - Sopravvivenza marginale  
-$$S(t)=E\left \{ S(t\vert U)\right \}=E\left \{\exp{\left \[ -U \exp{(\beta'X)}H_0(t) \right \]} \right \}=\mathbf{L}\left\{ \exp{(\beta'X)} H_0(t)\right\}$$  
+$$S(t)=\mathbb{E}\left \{ S(t\vert U)\right \}=\mathbb{E}\left \{\exp{\left \[ -U \exp{(\beta'X)}H_0(t) \right \]} \right \}=\mathbf{L}\left\{ \exp{(\beta'X)} H_0(t)\right\}$$  
 - Trasformata di Laplace  
 $$\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 - La varianza della frailty può avere un valore contenuto e influenzare significativamente sia le covariate (sia come significatività che il valore) che la forma del rischio
@@ -427,18 +427,22 @@ $$\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 ##### Gamma
 - Caratteristiche  
 	- Facile da standardizzare  
-	- La vera distribuzione della frailty tra i sopravviventi tende a Gamma  
-- Funzioni  
+	per ottenere $$\mathbb{E}(U)=1$$ si impone $$U\sim\Gamma(k=\lambda, \lambda)$$ con $$\sigma^2=1/\lambda$$  
+	- La vera distribuzione della frailty tra i sopravviventi tende a Gamma per $$t\rightarrow \infty$$  
 - Laplace esplicita  
-$$\mathbf{L}=\big(1+\frac{z}{\gamma}\big)^{-k}$$  
+$$\mathbf{L}=\int e^{-zu} f(u)du=\big(1+\frac{z}{\gamma}\big)^{-k}$$  
 - Sopravvivenza marginale  
+$$S(t)=1/\left [ 1+\sigma^2 H_0(t) \right ]^{1/\sigma^2}$$  
 - Rischio marginale  
+$$h(t)=h_0(t)/\left [ 1+\sigma^2 H_0(t) \right ]$$
+
 
 ##### Log-normale
 - Caratteristiche  
+$$X\sim\mathcal{N}(m,s^2)\rightarrow U=e^X \sim \log{N}\left (e^{\left ( m+\frac{s^2}{2}\right )},e^{\left ( 2m+s^2 \right )}(e^{s^2}-1) \right )$$  
+$$f(u)=\frac{1}{\sqrt{2\pi}su}\exp{\left ( - \frac{\log{(u)}^2}{2s^2} \right )}$$
 	- Forte legame con modello lineare ad effetti casuali  
 	- Più semplice la generalizzazione al caso multivariato  
-- Funzioni  
 - Laplace non-esplicita
 
 #### Modello Gamma-Gompertz
