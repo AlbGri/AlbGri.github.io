@@ -210,7 +210,8 @@ hazard ratio: $$\exp{\beta}$$
 ##### Risk Score
 Dato $$i$$-esimo individuo con $$X_1,...,X_k$$ caratteristiche, il risk score risulta  
 $$\mbox{RS}=\exp{\left ( \sum_{i=1}^k \beta_i X_i \right ) }$$  
-è una misura relativa rispetto la baseline ed è utile quando si stimano modelli con numerosi predittori
+è una misura relativa rispetto la baseline ed è utile quando si stimano modelli con numerosi predittori.  
+Rischio Relativo $$\exp{\beta_i}$$ di una variabile dummy $$X_1$$  
 
 
 ##### Bontà di adattamento
@@ -287,14 +288,11 @@ $$h_i(t,X)=h_0(t)\cdot \exp{(\beta_1 X_{i1}+\beta_2 X_{i2}(t))}$$
 	    - Tempo continuo
 	        - Effetto lineare
 	        - Effetto lineare traslato
-	        - Effetto logaritmico (il parametro rappresenta la variazione del log rischio a raddoppi della durata, se il logaritmo è in base 2)
+	        - Effetto logaritmico (il parametro rappresenta la variazione del log rischio a raddoppi della durata, se il logaritmo è in base 2; pro-tip incrementare di 1 il tempo evita valori negativi)
 	    - Tempo discreto
-	        - Main effect: effetto principale + parte lineare con dummy dell'intervallo (consente di capire se un tratto è significativamente diverso dall'altro) 
+	        - Main effect: effetto principale (variabile senza dummy) + parte lineare con dummy (della stessa variabile) dell'intervallo (consente di capire se un tratto è significativamente diverso dall'altro) 
 	        - Effetto a gradini: lineare con $$k$$ dummy pari al numero di intervalli senza effetto principale (l'effetto potrebbe essere significativamente diverso da quello di base ma non è strettamente non proporzionale perché non è detto che i coefficienti che si stimano siano significativamente diversi da quelli stimati nel tratto precedente)
 
-<!---
-20201027
---->
 
 #### Modelli parametrici
 
@@ -311,12 +309,12 @@ $$\mu=\int_0^\infty S(t)d(t)$$
     $$S(t)=\exp{(-at)}=\exp{\big\{-H(t)\big\}}$$  
     $$h(t)=a$$ Rischio costante, memorylessness distribution  
     $$H(t)=-\log{S(t)}=at$$ (area sottostante '$$a$$' fino a $$t$$)  
-    Test grafico su Esponenziale: se l'andamento $$H(t)$$ vs $$t$$ è una linea retta che parte dall'origine allora i dati approssimano bene una durata esponenziale (quindi $$b=1$$).  
+    Test grafico su Esponenziale: se l'andamento $$H(t)$$ vs $$t$$ è una linea retta che parte dall'origine allora i dati approssimano bene una durata esponenziale (quindi Weibull con $$b=1$$).  
     $$F(t)=1-\exp{(-at)}$$  
     $$\log{S(t)}=-at$$  
     - Weibull  
     $$f(t)=abt^{b-1}\exp{(-at^b)}$$ con  
-    $$a$$ (livello o scala), $$b>0$$ (forma), se $$b=1$$ Esponenziale  
+    $$a$$ (livello o scala), $$b>0$$ (forma), se $$b=1$$ Exp (test $$H_0:b=1\rightarrow\mathcal{X}^2_1$$)  
     $$S(t)=\exp{(-at^b)}$$  
     $$h(t)=abt^{b-1}$$ Rischio costante se $$b=1$$, monotono crescente se $$b>1$$, monotono decrescente se $$b<{1}$$  
     $$H(t)=-\log{S(t)}=at^b$$  
@@ -365,6 +363,7 @@ $$\mu=\int_0^\infty S(t)d(t)$$
     - AFT (stimo la durata media)  
     $$T=\big[\exp{(\alpha_0)}\cdot\exp{(\epsilon)}\big]\cdot\exp{(\alpha X)}=T_0\cdot\gamma$$  
     Si dimostra che per l'esponenziale $$\alpha=-\beta$$  
+    L'exp dei singoli coefficienti è il tempo relativo.  
     $$\alpha$$ stimato è il logaritmo della durata relativo alla variabile $$X$$  
     $$\exp{(\alpha_0^{AFT})}=\exp{(-\beta_0^{PH})}=1/\exp{(-\beta_0^{PH})}=1/h_0^{PH}=E(T_0)$$  
 - Weibull  
@@ -376,6 +375,7 @@ $$\mu=\int_0^\infty S(t)d(t)$$
     Si dimostra che $$\beta=\beta_{PH}=-\beta_{AFT}\cdot b=-\alpha\cdot b$$  
     NB. SAS stima modello Weibull solo AFT con $$\sigma=1/b\Rightarrow\beta_{PH}=-\beta_{AFT}\cdot (1/\sigma)$$  
     Inoltre, con $$a=\exp{(-\beta_{AFT}\cdot b)}$$ si ricava facilmente $$h(t)=\exp{(-\beta_{AFT}\cdot 1/\sigma)}\cdot 1/\sigma\cdot t^{(1/\sigma -1)}$$, così da ottenere il rischio dopo $$t$$ durate  
+    $$\alpha=(1/\sigma -1)$$ incremento di rischio all'aumento dello $$0.01$$ del tempo.
 - Esponenziale a tratti (Piecewise exponential model)  
 Per $$L$$ sotto-intervalli del tempo si specificano diverse distribuzioni parametriche del rischio.
     - Funzioni utili  
