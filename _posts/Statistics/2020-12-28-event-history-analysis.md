@@ -561,8 +561,7 @@ system.time(
        user  system elapsed 
       3.229   0.000   3.231 
 
-<!---
---->
+<!--- --->
 
 
 
@@ -602,10 +601,12 @@ Modelli Shared:
 
 
 #### Funzioni
-- Funzione di rischio
-- Sopravvivenza congiunta
-- Sopravvivenza marginale per le unità appartenenti al $i-$esimo gruppo
-- Legami con frailty e la trasformata di Laplace
+- Funzione di rischio  
+$$h(t_{ij}\vert X_{ij}, U_i)=h_0(t_{ij}) U_i e^{\beta ' X_{ij}}$$ con $$i$$ gruppo e $$j$$ unità dentro il gruppo
+- Sopravvivenza congiunta  
+$$S(t_{i1,...,t_{in_i}}\vert X_{ij}, U_i)=\prod_{j=1}^{n_i} S(\cdot)=\exp{\left ( -U_i \sum_{j=1}^{n_i} H_0 (t_{ij}) e^{\beta' X_{ij}} \right ) }$$
+- Sopravvivenza marginale per le unità appartenenti al $i-$esimo gruppo  
+$$S(t_{i1,...,t_{in_i}}\vert X_{ij})=\mathbf{L} \left \{ \sum_{j=1}^{n_i} H_0 (t_{ij}) e^{\beta' X_{ij}} \right \}$$, bisognerà tanti integrali quanti gruppi, non più quanti gli individui quindi è più veloce
 - Inferenza analoga ai modelli univariati
 
 ### Modelli Frailty a tempi Discreti
@@ -647,7 +648,7 @@ Se ci fosse un raggruppamento, si utilizza un modello logistico gerarchico con u
 ## Modelli Multilivello o Gerarchici
 
 #### Modelli Multilivello
-Per i dati che sono raggruppati in modo tale da ipotizzare più intercette e/o pendenze differenti  
+Dati raggruppati in modo tale da ipotizzare più intercette e/o pendenze differenti  
 - Modelli ad intercetta variabile ($$n$$ rette parallele)
 - Modelli a pendenza variabile (effetti random)
 - Modelli a intercetta e pendenza variabili
@@ -669,8 +670,9 @@ La costruzione che segue è specifica per i modelli lineari classici (e non GLM)
 ##### ANOVA ad una via con effetti casuali
 Dato il modello con intercetta casuale e senza variabili indipendenti  
 Sia $$i$$ unità di I livello e $$j$$ di II livello  
-$$y_{ij}=\beta_{0j}+\epsilon_{ij}$$ con $$\epsilon_{ij}\sim\mathcal{N}\big(0,\sigma^2_\epsilon\big)$$  
-Ipotizzando che $$\beta_{0j}=\gamma_{00}+U_{0j}$$ con $$U_{0j}\sim\mathcal{N}\big(0,\sigma^2_{U_0}\big)$$  
+$$y_{ij}=\beta_{0j}+\epsilon_{ij}$$ con $$\epsilon_{ij}\sim\mathcal{N}\left(0,\sigma^2_\epsilon\right)$$  
+Ipotizzando che $$\beta_{0j}=\gamma_{00}+U_{0j}$$ con $$U_{0j}\sim\mathcal{N}\left(0,\sigma^2_{U_0}\right)$$  
+($$\rightarrow\beta_{0j}\sum\mathcal{N}\left(\gamma_{00},\sigma^2_\epsilon\right)$$  
 La varianza dell'effetto casuale $$U_{0j}$$ è la covarianza tra individui  
 appartenenti allo stesso gruppo  
 $$cov(y_{ij},y_{i'j})=E(y_{ij}y_{i'j})-E(y_{ij})E(y_{i'j})=var(U_{0j})=\sigma^2_{U_0}$$  
