@@ -226,7 +226,7 @@ Full Likelihood - “Qual è la probabilità che l'individuo i-mo sperimenti un 
 la verosimiglianza in situazioni di censura si decompone nel seguente modo  
 $$L(\alpha, t_1,...,t_N)=\prod_{i\in E} f(t_i,\alpha) \cdot \prod_{i\in C} S(t_i,\alpha)=\prod_{i\in E} h(t_i,\alpha) \cdot \prod_{i\in N} S(t_i,\alpha)$$  
 con $$\alpha$$ parametro generico, $$E=N-C$$ casi non censurati, $$C$$ casi censurati, $$f=S\cdot h$$  
-successivamente si applica il logaritmo e si massimizza, ma il rischio di base non è specificato (non si conosce a distribuzione dei tempi di sopravvivenza e non si può trovare un unico set di parametri che massimizza la verosimiglianza). Soluzione: Partial Likelihood.  
+successivamente si applica il logaritmo e si massimizza rispetto $$\alpha$$, ma il rischio di base non è specificato (non si conosce a distribuzione dei tempi di sopravvivenza e non si può trovare un unico set di parametri che massimizza la verosimiglianza). Soluzione: Partial Likelihood.  
 
 Partial Likelihood - “Dato che qualcuno sperimenta un evento al tempo $$t_j$$ qual è la probabilità che si tratti dell'individuo i-mo?''  
 Si ordinano tutti i tempi (censurati e non) in modo crescente e si calcola il contributo al rischio di ciascun soggetto alla PL ($$t^*_{ij}$$ probabilità condizionata che l'unità $$i$$ sperimenti l'evento al tempo $$t_j$$).  
@@ -366,6 +366,8 @@ $$\mu=\int_0^\infty S(t)d(t)$$
     L'exp dei singoli coefficienti è il tempo relativo.  
     $$\alpha$$ stimato è il logaritmo della durata relativo alla variabile $$X$$  
     $$\exp{(\alpha_0^{AFT})}=\exp{(-\beta_0^{PH})}=1/\exp{(-\beta_0^{PH})}=1/h_0^{PH}=E(T_0)$$  
+    $$\hat{a}_{\small{\mbox{MV}}}=\frac{E}{\sum_{i\in N}t_i}=$$ rapporto tra numero di eventi (casi non censurati) e totale dei tempi $$t_i$$ dell'intero campione (sia censurati che non)  
+    $$\hat{E}(t)=\frac{1}{\hat{a}_{\small{\mbox{MV}}}}=$$ durata media intervallo  
 - Weibull  
     - PH  
     $$h(t\vert X)=\big[\exp{(\beta_0)}\cdot bt^{b-1}\big]\cdot\exp{(\beta X)}=h_0(t)\cdot\exp{(\beta X)}$$
@@ -383,15 +385,6 @@ Per $$L$$ sotto-intervalli del tempo si specificano diverse distribuzioni parame
     $$h(t_j,X)=a_j=\exp{(\beta_{0j}+\beta_j X)}\mbox{ con }j=1,...,L$$ è un modello a rischi non proporzionali, varia ad ogni intervallo. Se $$\beta_j=\beta$$ è a rischi proporzionali.  
     NB. in SAS la significatività di J è con Wald, in cui si saggia se il rischio è costante  
     NB. in SAS exp(-coeff.) è il valore del rischio relativo rispetto al $$j-$$esimo tratto  
-
-##### Stima di massima verosimiglianza (da gestire le censure)  
-- durate censurate senza covariate, siano $$C$$ i casi non censurati e $$E=N-C$$ i casi censurati:  
-$$L(a,t_1,t_2,...,t_N)=\prod_{i\in E}f(t_i,a)\cdot \prod_{i\in C}S(t_i,a)$$  
-poiché $$f=S\cdot h\rightarrow L(a,t_1,t_2,...,t_N)=\prod_{i\in E}h(t_i,a)\cdot \prod_{i\in N}S(t_i,a)$$  
-Ottengo la log-verosimiglianza, derivo rispetto ad $$a$$, pongo uguale a $$0$$ e ottengo le stime.  
-Nel caso di esponenziale:  
-$$\hat{a}=\frac{E}{\sum_{i\in N}t_i}=$$ rapporto tra numero di eventi (casi non censurati) e totale dei tempi $$t_i$$ dell'intero campione (sia censurati che non)  
-$$\hat{E}(t)=\frac{1}{\hat{a}}=$$ durata media intervallo
 
 
 
@@ -423,13 +416,6 @@ $$\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 - La varianza della frailty può avere un valore contenuto e influenzare significativamente sia le covariate (sia come significatività che il valore) che la forma del rischio
 
 
-$$=\mathbb{E}$$  
-$$\left \{ A \right \}=$$  
-$$\exp{\left [ B \right ]}$$  
-$$-U \exp{(\beta'X)}H_0(t)$$  
-
-
-
 #### Distribuzione della Frailty
 
 ##### Gamma
@@ -454,37 +440,46 @@ $$f(u)=\frac{1}{\sqrt{2\pi}su}\exp{\left ( - \frac{\log{(u)}^2}{2s^2} \right )}$
 - Laplace non-esplicita
 
 #### Modello Gompertz
-Modello parametrico con distribuzione Gamma-Gompertz o modello Gompertz con frailty Gamma. La distribuzione esponenziale è un caso specifico.  
+Il modello esponenziale è un caso specifico.  
 $$f(t)=\lambda e^{\phi t} e^{-\frac{\lambda}{\phi} \left [\exp{(\phi t)}-1 \right ]}$$ con $$\lambda > 0$$  
 $$S(t)=e^{-\frac{\lambda}{\phi} \left [\exp{(\phi t)}-1 \right ]}$$  
 $$h(t)=\lambda e^{\phi t}$$  
-$$h(t_i\vert X_i)=e^{\phi t} e^{\beta_0 +X_i' \beta}$$ con $$\lambda=e^{\beta_0}$$  
+$$h(t_i\vert X_i)=e^{\phi t_i} e^{\beta_0 +X_i' \beta}$$ con $$\lambda=e^{\beta_0}$$  
 $$H(t)=\frac{\lambda}{\phi} \left [e^{\phi t}-1 \right ]$$  
 Se $$\phi=0$$ allora è esponenziale  
 Se $$\phi<0$$ rischio decrescente con il tempo (non applicabile alla mortalità)  
 <!--- --->
 
-- Funzione di rischio con frailty Gamma (avrà forma logistica con un plateau finale)  
-- Rischio marginale  
-
-#### Modello Gomperz-Makeham
+##### Modello Gomperz-Makeham
 $$h(t)=\lambda e^{\phi t}+c$$ con $$c$$ componente indipendente dal tempo dominante con l'avanzare del tempo.  
 Il modello distribuzione descrive bene i tassi di mortalità (principalmente 30-80 anni), successivamente il tasso di mortalità cresce più lentamente (late-life mortality deceleration), portando il rischio ad essere costante (plateau).  
 
 #### Modello Gamma-Gompertz
 La late-life mortality decelation è come una selezione (all'aumentare del tempo, sopravvivono gli individui più resistenti), quindi si introducono modelli con frailty per limitarne l'effetto (Mixed Proportional Hazard Model).  
-$$h(t_i\vert X_i)=e^{\phi t} e^{\beta_0 +X_i' \beta}\cdot Z_i$$ con frailty $$Z\sim \mbox{Ga}$$
+$$h(t_i\vert X_i)=e^{\phi t_i} e^{\beta_0 +X_i' \beta}\cdot Z_i$$ con frailty Gamma $$Z$$  
+quindi risulterà  
+$$h(t_i\vert X_i)=\frac{\exp{(\phi t_i)} \exp{(\beta_0 +X_i' \beta)}}{1+\sigma \frac{\exp{(\beta_0 +X_i' \beta)}}{\phi} \left [\exp{(\phi t)}-1 \right ]}$$  
+con $$\sigma$$ varianza della distribuzione gamma. Il rischio marginale ha forma di logistica con asintoto (plateau) che dipende dai parametri $$\phi$$ e $$\sigma^2$$ (se $$\sigma^2=0$$ si ritorna a Gompertz).  
+Quindi con la frailty si ottiene la decelerazione della crescita del rischio.  
+Con $$\sigma^2$$ bassa comunque la frailty può essere molto utile, bisogna valutare se variano gli effetti delle covariate rispetto al modello senza frailty e il livello di bontà di adattamento.  
+
+Duplice interpretazione   
+- Modello parametrico con distribuzione Gamma-Gompertz: la distribuzione dei tassi di mortalità per età non ha una forma Gompertz ma Gamma-Gompertz, cioè non cresce esponenzialmente ma ad un certo tempo comincia a decellerare
+- Modello Gompertz con frailty Gamma: per i singoli individui la distribuzione del tasso di mortalità ha una forma Gompertz (forma esponenziale), ma a livello di popolazione con fragilità diverse all'interno, si crea una selezione e a livello di popolazione si osserva la decelerazione del rischio.  
 
 
 
 ### Modelli Frailty Univariati
 
 #### Modello parametrico
-- Verosimiglianza (non si può massimizzare perché non si conosce la frailty)
-- Verosimiglianza marginale (è una pseudo verosimiglianza, utile per ottenere le stime MV, 'liberandosi' dell'influenza della frailty)
+Per fare inferenza con i modelli di frailty  
+- Verosimiglianza condizionata alle frailty non si può massimizzare perché non si conosce la frailty  
+$$L(\beta,\theta \vert U_1,...,U_n)=\prod_{i=1}^n h(t_i \vert \beta, \theta, U_i)^{\delta _i} S(t_i \vert \beta, \theta, U_i)$$ con $$\delta _i=0$$ se la durata $$t_i$$ è censurata, $$\theta$$ parametri relativi alla forma del rischio (es. nel caso dell'esponenziale $$\theta$$ è costante il valore di base del rischio), $$\theta$$ parametro delle covariate  
+- Verosimiglianza marginale come valore atteso della condizionata (è una pseudo verosimiglianza, utile per ottenere le stime MV, 'liberandosi' dell'influenza della frailty)  
+$$L(\beta,\theta,s^2)=\int L(\beta,\theta \vert U_1,...,U_n) d\Phi(U_i)$$ con $$\Phi(U_i)$$ distribuzione scelta delle frailty  
 - Integrazione della verosimiglianza marginale
     - Trasformazione di Laplace non-esplicita: integrazione numerica (approssimazione di Laplace, quadratura Gaussiana)
-    - Trasformazione di Laplace esplicita
+    - Trasformazione di Laplace esplicita: non richiede integrazione perché si ha forma esplicita
 
 ##### Esempio su R
 Con le librerie [survival](https://cran.r-project.org/web/packages/survival//survival.pdf) e [parfm](https://cran.r-project.org/web/packages/parfm/parfm.pdf).
@@ -572,19 +567,23 @@ system.time(
 
 
 #### Modello semi parametrico
-- Rischio base non specificato
-- Fattorizzazione della verosimiglianza
+I parametri disturbo non so solo le frailty ma anche il rischio di base.  
+
+Fattorizzazione della verosimiglianza:  
+$$L(\beta,\sigma^2,U)=\prod_{i=1}^n f(t_i , \delta_i, U_i \vert h_0(\cdot), \beta,\sigma^2)=L_1 (h_0(\cdot ),\beta)\cdot L_2(\sigma^2)$$  
 
 ##### Failty note
-- Verosimiglianza parziale (utile per ottenere le stime MV, 'liberandosi' dell'influenza della frailty)
+Se le $$U_i$$ fossero note, in $$L_1$$ si sostituisce $$U_i=e^{\log{(U_i)}}$$ e si stima usando il metodo della verosimiglianza parziale di Cox (le frailty diventano un offset, valore noto come l'ampiezza di osservazione degli eventi di una distribuzione di Poisson).  
+$$L_2$$ con frailty note, sarebbe la verosimiglianza della distribuzione della frailty.  
 
 ##### Frailty non-note
 Due alternative per ottenere le stime  
-1. Algoritmo EM (Expectation-Maximization) con la verosimiglianza parziale, considerando come se le frailty fossero i dati mancanti (cfr EM)
+1. Algoritmo EM (Expectation-Maximization) con la verosimiglianza parziale, considerando come se le frailty fossero i dati mancanti (cfr EM, si ipotizzano valori casuali delle frailty si stimano le verosimiglianze parziali, si calcolano i valori attesi e si ripete fino a convergenza).  
     - Frailty Gamma
-    - Stima di Nelson-Aalen del rischio cumulato di base (equivalente alla stima KM)
-    - Valore atteso di $$\log{U}$$ con distribuzione log-Gamma
-2. Verosimiglianza penalizzata (utile per restringere una verosimiglianza piatta, pesando maggiormente alcuni valori del dominio del parametro da stimare)
+    - Il rischio cumulato di base si steima con Nelson-Aalen (equivalente alla stima KM)
+    - Valore atteso di $$\log{U}$$ con distribuzione log-Gamma è noto
+2. Verosimiglianza penalizzata (utile per restringere una verosimiglianza piatta, pesando maggiormente alcuni valori del dominio del parametro da stimare)  
+$$h(t\vert X,U)=h_0(t)e^{\beta ' X + W}$$ con $$W=\log{U}$$ se $$U\sim\log{\mathcal{N}}\rightarrow W\sim\mathcal{N}$$  
     - Frailty log-normale
     - Frailty Gamma (stessi risultati di EM)
     - Funzione di rischio
