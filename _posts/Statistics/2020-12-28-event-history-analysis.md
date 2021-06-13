@@ -673,15 +673,16 @@ Sia $$i$$ unità di I livello e $$j$$ di II livello
 $$y_{ij}=\beta_{0j}+\epsilon_{ij}$$ con $$\epsilon_{ij}\sim\mathcal{N}\left(0,\sigma^2_\epsilon\right)$$  
 Ipotizzando che $$\beta_{0j}=\gamma_{00}+U_{0j}$$ con $$U_{0j}\sim\mathcal{N}\left(0,\sigma^2_{U_0}\right)$$  
 ($$\rightarrow\beta_{0j}\sum\mathcal{N}\left(\gamma_{00},\sigma^2_\epsilon\right)$$  
+e $$U_{0j}\perp \epsilon_{ij}$$ sono mutuamente indipendenti (non vale sempre, ma i modelli ad effetti fissi non hanno $$U_{0j}$$ quindi non richiedono questa assunzione.   
 La varianza dell'effetto casuale $$U_{0j}$$ è la covarianza tra individui  
 appartenenti allo stesso gruppo  
 $$cov(y_{ij},y_{i'j})=E(y_{ij}y_{i'j})-E(y_{ij})E(y_{i'j})=var(U_{0j})=\sigma^2_{U_0}$$  
-Se la $$cov$$ è molto diversa da 0 allora le osservazioni in uno stesso  
-gruppo (o classe) sono correlate.  
-Si decide di fare il pooling se la correlazione intraclasse  
-non è significativamente diversa da 0  
+La covarianza tra individui appartenenti allo stesso gruppo è la varianza dell'effetto casuale.  
+Si decide di fare il pooling (non serve modello multilevel) se la correlazione intraclasse è nulla (non è significativamente diversa da 0).  
+
+Coefficiente di correlazione traclasse:  
 $$\rho^{IC} (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}}{\sigma^2_{U_0}+\sigma^2_{\epsilon}}$$ con $$\rho\in [0,1]$$  
-Se si può fare il pooling non serve un modello multilevel.  
+Se è presente correlazione viene meno la condizione iid per fare inferenza classica. Si genera una distorsione sulla varianza dei parametri e non sui parametri. Però con stime robuste (sandwitch) si potrebbe ottenere comunque una stima corretta della varianza.  
 
 ##### Varianza between-group
 Esprime la variabilità tra le unità di secondo livello, se la dimensione dei gruppi non è omogenea occorre modificare opportunamente la varianza.  
