@@ -619,7 +619,6 @@ la funzione di rischio nel discreto è una probabilità (condizionata) e varia t
 $$S(t_{j})=\Bigg[1-\bigg(S(t_{0})-\frac{S(t_{1})}{S(t_{0})}\bigg)\Bigg]\cdot \Bigg[1-\bigg(\frac{S(t_{1})-S(t_{2})}{S(t_{1})}\bigg)\Bigg]\cdots \Bigg[1-\bigg(\frac{S(t_{j-1})-S(t_{j})}{S(t_{j-1})}\bigg)\Bigg]=\prod_{i=1}^j\big(1-h(t_i)\big)$$  
 La funzione di densità è la probabilità di subire l'evento all'intervallo $$j-$$esimo.  
 Si riesce a formulare tutto in funzione del rischio.
-
 <!--- --->
 
 #### Modello a odds proporzionali
@@ -824,9 +823,13 @@ Un altro caso: tasso di mortalità prematura. Si possono ipotizzare distribuzion
 ### Stima dei parametri
 I parametri con OLS sono Best Linear Unbiased Estimator (BLUE) se vale l'omoschedasticità.
 
-Con un modello gerarchico, se si vuole fare una stima basata sulla MV, l'inferenza sarebbe legata a meno due volte la log-verosimiglianza. Il problema è che bisogna conoscere la matrice delle varianze degli effetti casuali, che è sconosciuta e si otterrebbero stime distorte. 
+Con un modello gerarchico, se si vuole fare una stima basata sulla MV, l'inferenza sarebbe legata a meno due volte la log-verosimiglianza.  
+Il problema è che bisogna conoscere la matrice delle varianze degli effetti casuali, che è sconosciuta e si otterrebbero stime distorte (perché non si tiene conto della perdita dei g.d.l. per le stime degli altri parametri). 
 
-Il modello logistico lo sistima con la verosimiglianza marginale.
+Il modello lineare si può stimare con REML (stime non distorte di $$\sigma^2$$, non consente test TRV) o ML (stime distorte di $$\sigma^2$$ ma consente test TRV).  
+Il modello logistico lo si stima con la verosimiglianza marginale.
+
+L'intercetta casuale e/o effetti casuali si stimano con la stima bayesiana empirica.
 
 #### Restricted (o Residual) Maximum Likelihood
 La REML, si basa su una combinazione lineare dei dati affinché la distribuzione non dipenda da $$\beta$$, si stimano i parametri che definiscono la matrice di varianze e covarianze con il metodo MV, e dopo si procede ad una stima anche dei parametri $$\beta$$.
