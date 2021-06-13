@@ -764,6 +764,8 @@ Prevede il valore di $$\beta_{0j}$$ per un gruppo $$j$$, si prova che la previsi
 Stima bayesiana empirica del modello ad intercetta casuale senza predittori 
 Stima bayesiana empirica di $$\hat{\beta_{0j}}$$ (modello ad intercetta casuale senza predittori) di Snijder & Boskers (analoga a Gelman & Hill): media pesata della media specifica del gruppo $$j$$ (no-pooling) e della media totale (pooling)
 
+$$\hat{\beta}_{0j}=\frac{\sigma^2_{\beta_0}\bar{y}._j +\frac{\sigma^2_\epsilon}{n_j}\bar{y}..}{\sigma^2_{\beta_0}+\sigma^2_{\epsilon}/n_j}$$  
+
 #### Teoria Bayesiana
 Elicitazione: rappresentazione della conoscenza a priori in una distribuzione (a priori).
 
@@ -774,13 +776,13 @@ $$\mu\sim\mathcal{N}(\mu_0,\tau^2_0)$$ con $$\mu_0$$ e $$\tau^2_0$$ iperparametr
 Si dimostra che la “stima'' Bayesiana empirica è analoga alla media a posteriori $$E(\mu\vert y)$$
 
 Tramite il teorema di Bayes (e algoritmi iterativi quali Metropolis-Hastings, Gibbs sampling o
-Hamiltonian Monte Carlo per risolvere l'integrale, o si usano le distribuzioni coniugate come questo caso)
+Hamiltonian Monte Carlo per risolvere l'integrale, o si usano le distribuzioni coniugate come questo caso) la distribuzione a posteriori:
 
 $$f(\mu\vert y)=\frac{f(y\vert \mu)\cdot f(\mu)}{\int_\mu f(y\vert \mu)\cdot f(\mu)d\mu}$$
 
 si dimostra che la distribuzione a posteriori è la seguente
 
-$$\mu\vert y\sim\mathcal{N}\left (\frac{\tau^2_0\bar{y}+\frac{\sigma^2_0}{n}\mu_0}{\tau^2_0+\frac{\sigma^2_0}{n}},\frac{\sigma^2_0\tau^2_0}{\frac{\sigma^2_0}{n}+\tau^2_0}\right )$$
+$$\mu\vert y\sim\mathcal{N}\left (\frac{\tau^2_0\bar{y}+\frac{\sigma^2_0}{n}\mu_0}{\tau^2_0+\frac{\sigma^2_0}{n}},\frac{\sigma^2_0\tau^2_0}{\sigma^2_0+n\tau^2_0}\right )$$
 
 Il modello gerarchico è un compromesso tra il modello pooling e no-pooling, la stima Bayesiana empirica è un compromesso tra la media totale e la media specifica del gruppo $$j$$.  
 Il modello multilevel effettua un 'borrowing' dell'informazione prendendo anche da altri gruppi.  
