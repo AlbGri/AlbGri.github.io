@@ -423,9 +423,11 @@ $$\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 - La varianza della frailty può avere un valore contenuto e influenzare significativamente sia le covariate (sia come significatività che il valore) che la forma del rischio
 
 
-$$S(t)=\mathbb{E}\left \{ S(t\vert U)\right \}$$   
-$$=\mathbb{E}\left \{\exp{\left \[ -U \exp{(\beta'X)}H_0(t) \right \]} \right \}=$$  
-$$\mathbf{L}\left\{ \exp{(\beta'X)} H_0(t)\right\}$$  
+$$=\mathbb{E}$$  
+$$\left \{ A \right \}=$$  
+$$\exp{\left \[ B \right \]}$$  
+$$-U \exp{(\beta'X)}H_0(t)$$  
+
 
 
 #### Distribuzione della Frailty
