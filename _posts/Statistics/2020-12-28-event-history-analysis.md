@@ -399,6 +399,9 @@ Anche con covariate indipendenti tra loro, se una delle due è omesse andrà ad 
 La presenza di una _fragilità_ differente tra i gruppi - eterogeneità non osservata - comporta una variazione del rischio; i modelli tradizionali di Survival Analysis considerano le popolazioni omogenee, cioè che tutti gli individui hanno lo stesso rischio.  
 - Funzione di sopravvivenza marginale per due popolazioni esponenziali $$(\lambda_i)$$  
 $$S(t)=p\exp{(-\lambda_1 t)}+(1-p)\exp{(-\lambda_2 t)}$$ è una mistura e se si calcola il rischio (derivando $$\log{S}$$) non è più costante.
+- Funzione di rischio marginale per due popolazioni esponenziali  
+$$h(t)=-\frac{\partial \log{S(t)}}{\partial t}=\frac{p\lambda_1\exp{(-\lambda_1 t)}+(1-p)\lambda_2\exp{(-\lambda_2 t)}}{p\exp{(-\lambda_1 t)}+(1-p)\exp{(-\lambda_2 t)}}$$
+
 
 #### Modello Frailty
 Sia $$U>0$$ v.a. indipendente dal tempo, la cui varianza $$\sigma^2_U$$ misura l'eterogeneità non osservata della popolazione. Siano $$\mathbf{X}=(X_1,...,X_k)$$ matrice delle covariate e $$\mathbf{\beta}=(\beta_1,...,\beta_k)$$ parametri di regressione.
