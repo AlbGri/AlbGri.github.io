@@ -422,6 +422,12 @@ $$S(t)=\mathbb{E}\left \{ S(t\vert U)\right \}=\mathbb{E}\left \{\exp{\left \[ -
 $$\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 - La varianza della frailty può avere un valore contenuto e influenzare significativamente sia le covariate (sia come significatività che il valore) che la forma del rischio
 
+
+$$S(t)=\mathbb{E}\left \{ S(t\vert U)\right \}$$   
+$$=\mathbb{E}\left \{\exp{\left \[ -U \exp{(\beta'X)}H_0(t) \right \]} \right \}=$$  
+$$\mathbf{L}\left\{ \exp{(\beta'X)} H_0(t)\right\}$$  
+
+
 #### Distribuzione della Frailty
 
 ##### Gamma
@@ -445,12 +451,28 @@ $$f(u)=\frac{1}{\sqrt{2\pi}su}\exp{\left ( - \frac{\log{(u)}^2}{2s^2} \right )}$
 	- Più semplice la generalizzazione al caso multivariato  
 - Laplace non-esplicita
 
-#### Modello Gamma-Gompertz
-Modello parametrico con distribuzione Gamma-Gompertz o modello Gompertz con frailty Gamma. La distribuzione esponenziale è un caso specifico. La distribuzione descrive bene i tassi di mortalità (principalmente 30-80 anni).
-- Caratteristiche  
-- Funzione di rischio  
+#### Modello Gompertz
+Modello parametrico con distribuzione Gamma-Gompertz o modello Gompertz con frailty Gamma. La distribuzione esponenziale è un caso specifico.  
+$$f(t)=\lambda e^{\phi t} e^{-\frac{\lambda}{\phi} \left [\exp{(\phi t)}-1 \right ]}$$ con $$\lambda > 0$$  
+$$S(t)=e^{-\frac{\lambda}{\phi} \left [\exp{(\phi t)}-1 \right ]}$$  
+$$h(t)=\lambda e^{\phi t}$$  
+$$h(t_i\vert X_i)=e^{\phi t} e^{\beta_0 +X_i' \beta}$$ con $$\lambda=e^{\beta_0}$$  
+$$H(t)=\frac{\lambda}{\phi} \left [e^{\phi t}-1 \right ]$$  
+Se $$\phi=0$$ allora è esponenziale  
+Se $$\phi<0$$ rischio decrescente con il tempo (non applicabile alla mortalità)  
+<!--- --->
+
 - Funzione di rischio con frailty Gamma (avrà forma logistica con un plateau finale)  
 - Rischio marginale  
+
+#### Modello Gomperz-Makeham
+$$h(t)=\lambda e^{\phi t}+c$$ con $$c$$ componente indipendente dal tempo dominante con l'avanzare del tempo.  
+Il modello distribuzione descrive bene i tassi di mortalità (principalmente 30-80 anni), successivamente il tasso di mortalità cresce più lentamente (late-life mortality deceleration), portando il rischio ad essere costante (plateau).  
+
+#### Modello Gamma-Gompertz
+La late-life mortality decelation è come una selezione (all'aumentare del tempo, sopravvivono gli individui più resistenti), quindi si introducono modelli con frailty per limitarne l'effetto (Mixed Proportional Hazard Model).  
+$$h(t_i\vert X_i)=e^{\phi t} e^{\beta_0 +X_i' \beta}\cdot Z_i$$ con frailty $$Z\sim \mbox{Ga}$$
+
 
 
 ### Modelli Frailty Univariati
@@ -542,6 +564,8 @@ system.time(
        user  system elapsed 
       3.229   0.000   3.231 
 
+<!---
+--->
 
 
 
@@ -596,6 +620,9 @@ la funzione di rischio nel discreto è una probabilità (condizionata) e varia t
 $$S(t_{j})=\Bigg[1-\bigg(S(t_{0})-\frac{S(t_{1})}{S(t_{0})}\bigg)\Bigg]\cdot \Bigg[1-\bigg(\frac{S(t_{1})-S(t_{2})}{S(t_{1})}\bigg)\Bigg]\cdots \Bigg[1-\bigg(\frac{S(t_{j-1})-S(t_{j})}{S(t_{j-1})}\bigg)\Bigg]=\prod_{i=1}^j\big(1-h(t_i)\big)$$  
 La funzione di densità è la probabilità di subire l'evento all'intervallo $$j-$$esimo.  
 Si riesce a formulare tutto in funzione del rischio.
+
+<!---
+--->
 
 #### Modello a odds proporzionali
 
