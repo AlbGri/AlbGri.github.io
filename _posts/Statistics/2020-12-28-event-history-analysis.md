@@ -590,17 +590,16 @@ $$h(t\vert X,U)=h_0(t)e^{\beta ' X + W}$$ con $$W=\log{U}$$ se $$U\sim\log{\math
     - Verosimiglianza parziale penalizzata
 
 ### Shared Frailty Models
-Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel con gli individui (unità di primo livello) all'interno di gruppi (unità di secondo livello).
+Applicazione dei modelli multilevel in contesto di dati di durata, con gli individui (unità di primo livello) all'interno di gruppi (unità di secondo livello).
 
-#### Univariati vs Shared
-
-##### Mod. univariati
+Modelli univariati:  
 - Assegnano ad ogni individuo un livello di "fragilità"
 - Mirano a tenere sotto controllo l'eterogeneità non osservata
 
-##### Mod. shared
+Modelli Shared:  
 - Assegnano un livello di fragilità comune a un gruppo di unità statistiche
 - Mirano a tenere sotto controllo la correlazione intraclasse, cioè la correlazione tra gli individui che appartengono agli stessi gruppi
+
 
 #### Funzioni
 - Funzione di rischio
@@ -608,8 +607,6 @@ Sono l'equivalente, nell'ambito dei modelli di durata, dei modelli multilevel co
 - Sopravvivenza marginale per le unità appartenenti al $i-$esimo gruppo
 - Legami con frailty e la trasformata di Laplace
 - Inferenza analoga ai modelli univariati
-
-
 
 ### Modelli Frailty a tempi Discreti
 Problame dei ties. Nel modello di Cox ad esempio si creano problemi.  
@@ -622,8 +619,7 @@ $$S(t_{j})=\Bigg[1-\bigg(S(t_{0})-\frac{S(t_{1})}{S(t_{0})}\bigg)\Bigg]\cdot \Bi
 La funzione di densità è la probabilità di subire l'evento all'intervallo $$j-$$esimo.  
 Si riesce a formulare tutto in funzione del rischio.
 
-<!---
---->
+<!--- --->
 
 #### Modello a odds proporzionali
 
