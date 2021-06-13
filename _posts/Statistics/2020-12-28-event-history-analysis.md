@@ -71,7 +71,7 @@ Esempi: Millennium Cohort Study UK; National Longitudinal Survey USA; paesi nord
 
 Record-Linkage  
 collegano informazioni di eventi e/o stati da fonti amministrative o statistiche. Linkage deterministico o probabilistico.  
-Esempi: Linkage danese; analisi ISTAT  
+Esempi: Linkage danese; analisi ISTAT; tradizione nordica  
 
 ##### Longitudinali retrospettivi
 Si rilevano cross-section ma si ricostruisce la storia degli stati avvenuti in passato (es. Famiglie e Soggetti Sociali FSS ISTAT; Gender & Generation Survey).  
