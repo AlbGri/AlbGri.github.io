@@ -685,17 +685,18 @@ $$\rho^{IC} (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}}{\sigma^2_{U_0}+\sigma^2_{\eps
 Se è presente correlazione viene meno la condizione iid per fare inferenza classica. Si genera una distorsione sulla varianza dei parametri e non sui parametri. Però con stime robuste (sandwitch) si potrebbe ottenere comunque una stima corretta della varianza.  
 
 ##### Varianza between-group
-Esprime la variabilità tra le unità di secondo livello, se la dimensione dei gruppi non è omogenea occorre modificare opportunamente la varianza.  
+Esprime la variabilità tra le unità di secondo livello, se la dimensione dei gruppi non è omogenea occorre modificare opportunamente la varianza  
+$$\sigma^2_{\small{\mbox{between}}}=\frac{1}{N-1}\sum_{j=1}^N (\bar{y}._{j}-\bar{y}..)^2$$  
 Il valore atteso è dato dal suo vero valore più la varianza introdotta dall'errore di campionamento:  
-$$E\big(\sigma^2_b\big)=\sigma^2_{U_0}+\frac{\sigma^2_\epsilon}{\hat{n}}$$ con $$\hat{n}=$$ dimensione media delle unità di secondo livello. 
+$$E\big(\sigma^2{\small{\mbox{between}}}\big)=\sigma^2_{U_0}+\frac{\sigma^2_\epsilon}{\hat{n}}$$ con $$\hat{n}=$$ dimensione media delle unità di secondo livello. 
 
 ##### Varianza within-group
 È una media pesata delle varianze all'interno delle unità di secondo livello.
 
 ##### Coefficiente di correlazione con varianza between e within
 In un modello senza predittori, si ha  
-$$\hat{\sigma}^2_\epsilon=\sigma^2_w$$  
-$$\hat{\sigma}^2_{U_0}=\sigma^2_b-\frac{\sigma^2_w}{\hat{n}}$$  
+$$\hat{\sigma}^2_\epsilon=\sigma^2_{\small{\mbox{within}}}$$  
+$$\hat{\sigma}^2_{U_0}=\sigma^2{\small{\mbox{bet}}}-\frac{\sigma^2_{\small{\mbox{between}}}{\hat{n}}$$  
 Potrebbe accadere che stimando un modello senza predittori, si ottenga un coeff. elevato che suggerisca un modello con effetto casuale specifico per i gruppi, ma potrebbe accadere che con qualche predittore il coeff. diminuisca e che l'intercetta casuale non sia più necessaria.  
 
 
@@ -709,7 +710,10 @@ Con alcune trasformazioni, si può costruire un modello ad effetti fissi, che no
 
 ##### Trasformata within-group
 $$y_{it}-\bar{y_i}$$  
-Elimino la variabilità between (generalmente più elevata nei panel), stimando $$\beta$$ solo con la variabilità within.
+Elimino la variabilità between (generalmente più elevata nei panel), stimando $$\beta$$ solo con la variabilità within.  
+Utile per avere solo una stima non distorta di $$\beta$$, ma usando unicamente la variabilità within.  
+Nei dati panel è più la varibilità tra individui (between) che la variabilità dello stesso individuo in anni diversi (within), quindi si perde informazione.  
+
 
 ##### Trasformata first difference
 $$y_{it}-y_{it-1}$$
@@ -740,7 +744,7 @@ in ottica bayesiana è come se fosse una priori non informativa quindi si utiliz
 
 #### Modelli ad effetti casuali o ad effetti misti
 Modellazione con pendenza casuale  
-$$y_{ij}=\beta_{0j}+\beta_{1j}X_{ij}+\epsilon_{ij}$$ con $$\begin{pmatrix} \beta_{0j} \\ \beta_{1j} \end{pmatrix}\sim\mathcal{N}\Bigg(\begin{pmatrix} \gamma_{00} \\ \gamma_{10} \end{pmatrix}, \begin{pmatrix} \sigma^2_{\beta_0} & \rho\sigma_{\beta_0}\sigma_{\beta_1} \\ \rho\sigma^2_{\beta_1} & \sigma_{\beta_0}\sigma_{\beta_1} \end{pmatrix}\Bigg)$$
+$$y_{ij}=\beta_{0j}+\beta_{1j}X_{ij}+\epsilon_{ij}$$ con $$\begin{pmatrix} \beta_{0j} \\ \beta_{1j} \end{pmatrix}\sim\mathcal{N}\left(\begin{pmatrix} \gamma_{00} \\ \gamma_{10} \end{pmatrix}, \begin{pmatrix} \sigma^2_{\beta_0} & \rho\sigma_{\beta_0}\sigma_{\beta_1} \\ \rho\sigma^2_{\beta_1} & \sigma_{\beta_0}\sigma_{\beta_1} \end{pmatrix}\right)$$
 
 #### Modelli non nidificati
 I gruppi presi non sono conteninuti l'uno nell'altro.  
