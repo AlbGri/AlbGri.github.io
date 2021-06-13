@@ -804,7 +804,7 @@ $$\theta_j=\frac{\sum_{l\in j} N_l \theta_l}{\sum_{l\in j} N_j}$$
 
 Questo però nel caso di più variabili discrete a diversi livelli, il campione necessario deve essere enorme per soddisfare tutte le combinazioni. Per evitare di riempire tutte le informazioni, si possono usare i modelli gerarchici per fare 'borrowing' dell'informazione laddove è presente (rischio: shrinkage to mean).
 
-Modello a gerarchie imperfette: alcune sono gerarchiche altre sono dello stesso livello.
+Modello a gerarchie imperfette: alcune gerarchiche sono dello stesso livello.
 
 #### GLMM Logit
 $$\mbox{Logit}\big\{Pr(y_{ij(k,l)}=1)\big\}$$  
