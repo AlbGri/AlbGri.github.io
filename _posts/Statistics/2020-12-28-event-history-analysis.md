@@ -417,7 +417,7 @@ $$\mathbb{E}_U\{h(t\vert U)\}=h_0(t)\cdot \mathbb{E}_U\{U\}=h_0(t)$$
 - Funzione di sopravvivenza  
 $$S(t\vert X,U)=\exp{\big\{-\int_0^t h(s\vert X,U)ds\big\}}=\exp{\left \{ -U \exp{(\beta'X)}H_0(t) \right \}}$$
 - Sopravvivenza marginale  
-$$S(t)=\mathbb{E}\left \{ S(t\vert U)\right \}=\mathbb{E}\left \{\exp{\left \[ -U \exp{(\beta'X)}H_0(t) \right \]} \right \}=\mathbf{L}\left\{ \exp{(\beta'X)} H_0(t)\right\}$$  
+$$S(t)=\mathbb{E}\left \{ S(t\vert U)\right \}=\mathbb{E}\left \{\exp{\left [ -U \exp{(\beta'X)}H_0(t) \right ]} \right \}=\mathbf{L}\left\{ \exp{(\beta'X)} H_0(t)\right\}$$  
 - Trasformata di Laplace  
 $$\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 - La varianza della frailty può avere un valore contenuto e influenzare significativamente sia le covariate (sia come significatività che il valore) che la forma del rischio
@@ -425,7 +425,7 @@ $$\mathbf{L}=\int e^{-zu}\cdot f(u)du$$
 
 $$=\mathbb{E}$$  
 $$\left \{ A \right \}=$$  
-$$\exp{\left \[ B \right \]}$$  
+$$\exp{\left [ B \right ]}$$  
 $$-U \exp{(\beta'X)}H_0(t)$$  
 
 
