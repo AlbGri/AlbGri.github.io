@@ -628,7 +628,7 @@ $$\log{\left(\frac{h(t_i;X)}{1-h(t_i;X)}\right)}=\log{\left(\frac{h(t_i)}{1-h(t_
 La funzione di rischio ora è una probabilità, quindi l'odds è una quantità sensata, non lo era in ambito continuo (poteva essere anche negativo).  
 Ricavata la funzione di verosimiglianza (costruita come contributi individuali divisi per censurati e non), si dimostra che è analoga alla verosimiglianza di un modello logistico (di una variabile $$y_{ik}$$ relativa non solo all'individuo ma anche all'intervallo).
 
-$$\log{\bigg(\frac{P(y_i=1)}{1-P(y_i=1)}\bigg)}=\beta_0+ \beta' X$$
+$$\log{\left(\frac{P(y_i=1)}{1-P(y_i=1)}\right)}=\beta_0+ \beta' X$$
 
 Quindi per stimare il modello a odds proporzionali:  
 1. Si riorganizzano i dati nel formato 'person-period' (se era in formato 'person data'), con un record per ogni intervallo di tempo
@@ -636,11 +636,16 @@ Quindi per stimare il modello a odds proporzionali:
 3. Si stima il modello con una regressione logistica, i cui coefficienti sono i medesimi del modello a odds proporzionali
 
 #### Frailty univariato
-Si inserisce un'intercetta casuale al corrispondente modello logistico. Per stimare un modello frailty univariato si fa ricorso ad un modello logistico gerarchico (ad intercetta casuale): l'effetto casuale è condiviso dagli intervalli di tempo dello stesso individuo. Log della frailty fissa nel tempo ma è diversa per ogni individuo.
+Si inserisce un'intercetta casuale al corrispondente modello logistico.  
 
-Se ci fosse un raggruppamento, si utilizza un modello logistico gerarchico con unità di terzo livello, sarebbe un modello Frailty Shared, perché la frailty fa riferimento al gruppo a cui appartiene l'individuo.
+Per stimare un modello frailty univariato si fa ricorso ad un modello logistico gerarchico (ad intercetta casuale): l'effetto casuale è condiviso dagli intervalli di tempo dello stesso individuo. Log della frailty fissa nel tempo ma è diversa per ogni individuo.  
 
+$$\log{\left(\frac{P(y_{ik}=1)}{1-P(y_{ik}=1)}\right)}=\beta_0+ \beta' X_{ik}+\alpha_i$$
 
+Modello logistico gerarchico con unità di secondo livello l'individuo e di primo è l'intervallo. È un modello frailty univariato, non è Frailty Shared, perché la frailty è specifica per ogni individuo.  
+Se ci fosse un raggruppamento, si utilizzerebbe un modello logistico gerarchico con unità di terzo livello, sarebbe un modello Frailty Shared, perché la frailty fa riferimento al gruppo a cui appartiene l'individuo.
+
+La distribuzione della log frailty tipicamente si sceglie normale (quindi frailty log normale) rispetto all'odds. Rispetto al rischio è la trasformata logit di una normale, quindi non è una distribuzione nota.
 
 
 
