@@ -710,7 +710,6 @@ $$\sigma^2_{\small{\mbox{total}}}=\frac{1}{M-1}\sum_{j=1}^N \sum_{i=1}^{n_j}(y_{
 In un modello senza predittori, si ha  
 $$\hat{\sigma}^2_\epsilon=\sigma^2_{\small{\mbox{within}}}$$  
 $$\hat{\sigma}^2_{U_0}=\sigma^2_{\small{\mbox{between}}}+\frac{\sigma^2_\epsilon}{\hat{n}}$$  
-$$
 Potrebbe accadere che stimando un modello senza predittori, si ottenga un coeff. elevato che suggerisca un modello con effetto casuale specifico per i gruppi, ma potrebbe accadere che con qualche predittore il coeff. diminuisca e che l'intercetta casuale non sia più necessaria.  
 
 
