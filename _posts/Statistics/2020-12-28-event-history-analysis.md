@@ -695,15 +695,22 @@ Se è presente correlazione viene meno la condizione iid per fare inferenza clas
 Esprime la variabilità tra le unità di secondo livello, se la dimensione dei gruppi non è omogenea occorre modificare opportunamente la varianza  
 $$\sigma^2_{\small{\mbox{between}}}=\frac{1}{N-1}\sum_{j=1}^N (\bar{y}._{j}-\bar{y}..)^2$$  
 Il valore atteso è dato dal suo vero valore più la varianza introdotta dall'errore di campionamento:  
-$$E\big(\sigma^2{\small{\mbox{between}}}\big)=\sigma^2_{U_0}+\frac{\sigma^2_\epsilon}{\hat{n}}$$ con $$\hat{n}=$$ dimensione media delle unità di secondo livello. 
+$$E\big(\sigma^2_{\small{\mbox{between}}}\big)=\sigma^2_{U_0}+\frac{\sigma^2_\epsilon}{\hat{n}}$$  
+e $$\hat{n}=\frac{1}{N-1}\left \{ M - \frac{\sum_j n_j^2}{M} \right \}=\bar{n}-\frac{s^2(n_j)}{N\bar{n}}=$$ dimensione media delle unità di secondo livello, con $$M$$ numerosità unità primo livello, $$N$$ numerosità secondo livello, $$\bar{n}=M/N$$ e $$s^2(n_j)=\frac{1}{N-1}\sum_{j=1}^N (n_j - \bar{n})^2$$
+
+Con gruppi non omogenei:  
+$$\sigma^2_{\small{\mbox{between}}}=\frac{1}{\hat{n}(N-1)}\sum_{j=1}^N n_j(\bar{y}._{j}-\bar{y}..)^2$$  
 
 ##### Varianza within-group
-È una media pesata delle varianze all'interno delle unità di secondo livello.
+È una media pesata delle varianze all'interno delle unità di secondo livello.  
+$$\sigma^2_{\small{\mbox{within}}}=\frac{1}{M-N}\sum_{j=1}^N \sum_{i=1}^{n_j}(y_{ij}-\bar{y}._j)^2$$  
+$$\sigma^2_{\small{\mbox{total}}}=\frac{1}{M-1}\sum_{j=1}^N \sum_{i=1}^{n_j}(y_{ij}-\bar{y}..)^2=\frac{M-N}{M-1}\sigma^2_{\small{\mbox{within}}}+\frac{\hat{n}(N-1)}}{M-1}\sigma^2_{\small{\mbox{between}}}$$  
 
 ##### Coefficiente di correlazione con varianza between e within
 In un modello senza predittori, si ha  
 $$\hat{\sigma}^2_\epsilon=\sigma^2_{\small{\mbox{within}}}$$  
-$$\hat{\sigma}^2_{U_0}=\sigma^2{\small{\mbox{bet}}}-\frac{\sigma^2_{\small{\mbox{between}}}{\hat{n}}$$  
+$$\hat{\sigma}^2_{U_0}=\sigma^2_{\small{\mbox{between}}}+\frac{\sigma^2_\epsilon}{\hat{n}}$$  
+$$
 Potrebbe accadere che stimando un modello senza predittori, si ottenga un coeff. elevato che suggerisca un modello con effetto casuale specifico per i gruppi, ma potrebbe accadere che con qualche predittore il coeff. diminuisca e che l'intercetta casuale non sia più necessaria.  
 
 
