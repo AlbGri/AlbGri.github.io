@@ -704,10 +704,7 @@ $$\sigma^2_{\small{\mbox{between}}}=\frac{1}{\hat{n}(N-1)}\sum_{j=1}^N n_j(\bar{
 ##### Varianza within-group
 È una media pesata delle varianze all'interno delle unità di secondo livello.  
 $$\sigma^2_{\small{\mbox{within}}}=\frac{1}{M-N}\sum_{j=1}^N \sum_{i=1}^{n_j}(y_{ij}-\bar{y}._j)^2$$  
-$$\sigma^2_{\small{\mbox{total}}}$$  
-$$=\frac{1}{M-1}\sum_{j=1}^N \sum_{i=1}^{n_j}(y_{ij}-\bar{y}..)^2$$  
-$$=\frac{M-N}{M-1}\sigma^2_{\small{\mbox{within}}}$$  
-$$+\frac{\hat{n}(N-1)}}{M-1}\sigma^2_{\small{\mbox{between}}}$$  
+$$\sigma^2_{\small{\mbox{total}}}=\frac{1}{M-1}\sum_{j=1}^N \sum_{i=1}^{n_j}(y_{ij}-\bar{y}..)^2=\frac{M-N}{M-1}\sigma^2_{\small{\mbox{within}}}+\frac{\hat{n}(N-1)}{M-1}\sigma^2_{\small{\mbox{between}}}$$  
 
 ##### Coefficiente di correlazione con varianza between e within
 In un modello senza predittori, si ha  
