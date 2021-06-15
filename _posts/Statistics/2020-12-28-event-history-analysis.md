@@ -660,6 +660,8 @@ Dati raggruppati in modo tale da ipotizzare più intercette e/o pendenze differe
 - Modelli a pendenza variabile (effetti random)
 - Modelli a intercetta e pendenza variabili
 
+Il modello Multilevel come pooling parziale dei dati.
+
 #### Modelli Gerarchici
 La gerarchia si può intendere in due modi
 1. Gerarchia Bayesiana, dove i dati si distribuiscono secondo una famiglia di parametro $$\theta_1$$ e a sua volta il $$\theta_1$$ si assume sia la realizzazione di una variabile casuale la cui distribuzione (a-priori) appartiene ad una famiglia di parametro $$\theta_2$$ (si può continuare con $$\theta_3$$, con distribuzione iper-a-priori, etc.)
@@ -887,18 +889,6 @@ Dipende da $$n$$ e $$p$$ se
 <!---
 
 
-## Modelli Multilevel
-### Il modello Multilevel come pooling parziale dei dati
-### Modelli a risposta continua
-#### Modelli a intercetta casuale
-#### Modelli a effetti casuali
-#### Inferenza per effetti fissi e per effetti casuali
-### Modelli a risposta discreta
-#### Modelli logistici a effetti casuali
-#### Modelli a tempo discreto con effetti casuali
-#### Inferenza per effetti fissi ed effetti casuali.
-
---->
 
 
 ## SAS Labs - Parte 1
@@ -3546,6 +3536,7 @@ Dipende da $$n$$ e $$p$$ se
 
 
 
+--->
 
 
 
