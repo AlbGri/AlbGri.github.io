@@ -261,13 +261,15 @@ Inoltre, $$S(t,X)=\exp{(-H(t,X))}$$ quindi si può stimare dall'una l'altra
 - Modello con VTD (esempio con due covariate di cui una tempo dipendente)  
 $$h_i(t,X)=h_0(t)\cdot \exp{(\beta_1 X_{i1}+\beta_2 X_{i2}(t))}$$
 - Episode splitting per tenere sotto controllo le VTD:
-    1. Trasformazione della tabella dati in person-period (si splittano gli gli episodi con variazione della VTD in sotto episodi censurati e non): le unità con un cambiamento della esplicativa al tempo $$t_1$$ dentro l'episodio $$[t_0,t_2]$$, si splittano in due eventi, il primo censurato di lunghezza $$t_1-t_0$$, il secondo $$t_2-t_0$$ con l'evento (censurato o no), con le altre covariate fisse.
+    1. Trasformazione della tabella dati in person-period (si splittano gli gli episodi con variazione della VTD in sotto episodi censurati e non): le unità con un cambiamento della esplicativa al tempo $$t_1$$ dentro l'episodio $$[t_0,t_2]$$, si splittano in due eventi, il primo censurato di lunghezza $$t_1-t_0$$, il secondo $$t_2-t_1$$ con l'evento (censurato o no), con le altre covariate fisse.
     2. Applicazione dei modelli di durata alla nuova tabella dati
 - Spazio stati TD
     - Dicotomizzazione non reversibile
     - Dicotomizzazione reversibile (stati ricorrenti)
     - Strutture complesse
 - Effetti immediati o differiti nel tempo
+    - Contestuale (l'evento dipende dal valore covariata al tempo $$t$$ precedente
+    - Differito 'lag-time effect' (l'evento dipende dal valore covariata in un tempo $$t^*=(t-L)$$
 
 ##### Effetti non proporzionali
 - Violazione assunzione proporzionalità
@@ -365,7 +367,7 @@ $$\mu=\int_0^\infty S(t)d(t)$$
     Si dimostra che per l'esponenziale $$\alpha=-\beta$$  
     L'exp dei singoli coefficienti è il tempo relativo.  
     $$\alpha$$ stimato è il logaritmo della durata relativo alla variabile $$X$$  
-    $$\exp{(\alpha_0^{AFT})}=\exp{(-\beta_0^{PH})}=1/\exp{(-\beta_0^{PH})}=1/h_0^{PH}=E(T_0)$$  
+    $$\exp{(\alpha_0^{AFT})}=\exp{(-\beta_0^{PH})}=1/\exp{(\beta_0^{PH})}=1/h_0^{PH}=E(T_0)$$  
     $$\hat{a}_{\small{\mbox{MV}}}=\frac{E}{\sum_{i\in N}t_i}=$$ rapporto tra numero di eventi (casi non censurati) e totale dei tempi $$t_i$$ dell'intero campione (sia censurati che non)  
     $$\hat{E}(t)=\frac{1}{\hat{a}_{\small{\mbox{MV}}}}=$$ durata media intervallo  
 - Weibull  
