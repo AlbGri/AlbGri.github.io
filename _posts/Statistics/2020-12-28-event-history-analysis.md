@@ -460,7 +460,7 @@ $$h(t)=\lambda e^{\phi t}+c$$ con $$c$$ componente indipendente dal tempo domina
 Il modello distribuzione descrive bene i tassi di mortalità (principalmente 30-80 anni), successivamente il tasso di mortalità cresce più lentamente (late-life mortality deceleration), portando il rischio ad essere costante (plateau).  
 
 #### Modello Gamma-Gompertz
-La late-life mortality decelation è come una selezione (all'aumentare del tempo, sopravvivono gli individui più resistenti), quindi si introducono modelli con frailty per limitarne l'effetto (Mixed Proportional Hazard Model).  
+La late-life mortality deceleration è come una selezione (all'aumentare del tempo, sopravvivono gli individui più resistenti), quindi si introducono modelli con frailty per limitarne l'effetto (Mixed Proportional Hazard Model).  
 $$h(t_i\vert X_i)=e^{\phi t_i} e^{\beta_0 +X_i' \beta}\cdot Z_i$$ con frailty Gamma $$Z$$  
 quindi risulterà  
 $$h(t_i\vert X_i)=\frac{\exp{(\phi t_i)} \exp{(\beta_0 +X_i' \beta)}}{1+\sigma \frac{\exp{(\beta_0 +X_i' \beta)}}{\phi} \left [\exp{(\phi t)}-1 \right ]}$$  
@@ -584,14 +584,12 @@ $$L_2$$ con frailty note, sarebbe la verosimiglianza della distribuzione della f
 Due alternative per ottenere le stime  
 1. Algoritmo EM (Expectation-Maximization) con la verosimiglianza parziale, considerando come se le frailty fossero i dati mancanti (cfr EM, si ipotizzano valori casuali delle frailty si stimano le verosimiglianze parziali, si calcolano i valori attesi e si ripete fino a convergenza).  
     - Frailty Gamma
-    - Il rischio cumulato di base si steima con Nelson-Aalen (equivalente alla stima KM)
+    - Il rischio cumulato di base si stima con Nelson-Aalen (equivalente alla stima KM)
     - Valore atteso di $$\log{U}$$ con distribuzione log-Gamma è noto
-2. Verosimiglianza penalizzata (utile per restringere una verosimiglianza piatta, pesando maggiormente alcuni valori del dominio del parametro da stimare)  
+2. Verosimiglianza parziale penalizzata (utile per restringere una verosimiglianza piatta, pesando maggiormente alcuni valori del dominio del parametro da stimare)  
 $$h(t\vert X,U)=h_0(t)e^{\beta ' X + W}$$ con $$W=\log{U}$$ se $$U\sim\log{\mathcal{N}}\rightarrow W\sim\mathcal{N}$$  
     - Frailty log-normale
     - Frailty Gamma (stessi risultati di EM)
-    - Funzione di rischio
-    - Verosimiglianza parziale penalizzata
 
 ### Shared Frailty Models
 Applicazione dei modelli multilevel in contesto di dati di durata, con gli individui (unità di primo livello) all'interno di gruppi (unità di secondo livello).
@@ -681,8 +679,8 @@ Dato il modello con intercetta casuale e senza variabili indipendenti
 Sia $$i$$ unità di I livello e $$j$$ di II livello  
 $$y_{ij}=\beta_{0j}+\epsilon_{ij}$$ con $$\epsilon_{ij}\sim\mathcal{N}\left(0,\sigma^2_\epsilon\right)$$  
 Ipotizzando che $$\beta_{0j}=\gamma_{00}+U_{0j}$$ con $$U_{0j}\sim\mathcal{N}\left(0,\sigma^2_{U_0}\right)$$  
-($$\rightarrow\beta_{0j}\sum\mathcal{N}\left(\gamma_{00},\sigma^2_\epsilon\right)$$  
-e $$U_{0j}\perp \epsilon_{ij}$$ sono mutuamente indipendenti (non vale sempre, ma i modelli ad effetti fissi non hanno $$U_{0j}$$ quindi non richiedono questa assunzione.   
+($$\rightarrow\beta_{0j}\sim\mathcal{N}\left(\gamma_{00},\sigma^2_\epsilon\right)$$  
+e $$U_{0j}\perp \epsilon_{ij}$$ sono mutuamente indipendenti (non vale sempre, ma i modelli ad effetti fissi non hanno $$U_{0j}$$ quindi non richiedono questa assunzione).   
 La varianza dell'effetto casuale $$U_{0j}$$ è la covarianza tra individui  
 appartenenti allo stesso gruppo  
 $$cov(y_{ij},y_{i'j})=E(y_{ij}y_{i'j})-E(y_{ij})E(y_{i'j})=var(U_{0j})=\sigma^2_{U_0}$$  
@@ -691,20 +689,23 @@ Si decide di fare il pooling (non serve modello multilevel) se la correlazione i
 
 Coefficiente di correlazione traclasse:  
 $$\rho^{IC} (y_{ij},y_{i'j})=\frac{\sigma^2_{U_0}}{\sigma^2_{U_0}+\sigma^2_{\epsilon}}$$ con $$\rho\in [0,1]$$  
-Se è presente correlazione viene meno la condizione iid per fare inferenza classica. Si genera una distorsione sulla varianza dei parametri e non sui parametri. Però con stime robuste (sandwitch) si potrebbe ottenere comunque una stima corretta della varianza.  
+Se è presente correlazione viene meno la condizione iid per fare inferenza classica. Si genera una distorsione della varianza dei parametri (e non dei parametri). Però con stime robuste (sandwitch) si potrebbe ottenere comunque una stima corretta della varianza.  
 
 ##### Varianza between-group
-Esprime la variabilità tra le unità di secondo livello, se la dimensione dei gruppi non è omogenea occorre modificare opportunamente la varianza  
+Esprime la variabilità tra le unità di II livello.  
+Con gruppi omogenei:  
 $$\sigma^2_{\small{\mbox{between}}}=\frac{1}{N-1}\sum_{j=1}^N (\bar{y}._{j}-\bar{y}..)^2$$  
 Il valore atteso è dato dal suo vero valore più la varianza introdotta dall'errore di campionamento:  
 $$E\big(\sigma^2_{\small{\mbox{between}}}\big)=\sigma^2_{U_0}+\frac{\sigma^2_\epsilon}{\hat{n}}$$  
-e $$\hat{n}=\frac{1}{N-1}\left \{ M - \frac{\sum_j n_j^2}{M} \right \}=\bar{n}-\frac{s^2(n_j)}{N\bar{n}}=$$ dimensione media delle unità di secondo livello, con $$M$$ numerosità unità primo livello, $$N$$ numerosità secondo livello, $$\bar{n}=M/N$$ e $$s^2(n_j)=\frac{1}{N-1}\sum_{j=1}^N (n_j - \bar{n})^2$$
+$$\hat{n}=\frac{1}{N-1}\left \{ M - \frac{\sum_j n_j^2}{M} \right \}=\bar{n}-\frac{s^2(n_j)}{N\bar{n}}=$$ dimensione media delle unità di II livello,  
+con $$M$$ numerosità unità I livello, $$N$$ numerosità II livello,  
+$$\bar{n}=M/N$$ e $$s^2(n_j)=\frac{1}{N-1}\sum_{j=1}^N (n_j - \bar{n})^2$$
 
 Con gruppi non omogenei:  
 $$\sigma^2_{\small{\mbox{between}}}=\frac{1}{\hat{n}(N-1)}\sum_{j=1}^N n_j(\bar{y}._{j}-\bar{y}..)^2$$  
 
 ##### Varianza within-group
-È una media pesata delle varianze all'interno delle unità di secondo livello.  
+È una media pesata delle varianze all'interno delle unità di II livello.  
 $$\sigma^2_{\small{\mbox{within}}}=\frac{1}{M-N}\sum_{j=1}^N \sum_{i=1}^{n_j}(y_{ij}-\bar{y}._j)^2$$  
 $$\sigma^2_{\small{\mbox{total}}}=\frac{1}{M-1}\sum_{j=1}^N \sum_{i=1}^{n_j}(y_{ij}-\bar{y}..)^2=\frac{M-N}{M-1}\sigma^2_{\small{\mbox{within}}}+\frac{\hat{n}(N-1)}{M-1}\sigma^2_{\small{\mbox{between}}}$$  
 
@@ -712,22 +713,22 @@ $$\sigma^2_{\small{\mbox{total}}}=\frac{1}{M-1}\sum_{j=1}^N \sum_{i=1}^{n_j}(y_{
 In un modello senza predittori, si ha  
 $$\hat{\sigma}^2_\epsilon=\sigma^2_{\small{\mbox{within}}}$$  
 $$\hat{\sigma}^2_{U_0}=\sigma^2_{\small{\mbox{between}}}+\frac{\sigma^2_\epsilon}{\hat{n}}$$  
-Potrebbe accadere che stimando un modello senza predittori, si ottenga un coeff. elevato che suggerisca un modello con effetto casuale specifico per i gruppi, ma potrebbe accadere che con qualche predittore il coeff. diminuisca e che l'intercetta casuale non sia più necessaria.  
+Potrebbe accadere che stimando un modello senza predittori, si ottenga un coeff. elevato che suggerisca l'utilizzo di un effetto casuale specifico per i gruppi, ma inserendo qualche predittore il coeff. potrebbe diminuire e quindi l'intercetta casuale potrebbe non essere più necessaria.  
 
 
 ### Analisi multilevel con covariate
-$$y_{ij}=\alpha+\beta x_{it}+\epsilon_{it}$$  
+$$y_{ij}=\alpha+\beta x_{ij}+\epsilon_{ij}$$  
 con eterogeneità non osservata, il vero modello è  
-$$y_it=\gamma_i+\beta x_{it}+\epsilon_{it}$$ con $$\gamma_i$$ eterogeneità non osservata.  
+$$y_{ij}=\gamma_i+\beta x_{ij}+\epsilon_{ij}$$ con $$\gamma_i$$ eterogeneità non osservata.  
 
 #### Rimozione eterogeneità non osservata
 Con alcune trasformazioni, si può costruire un modello ad effetti fissi, che non ha il problema dell'assunzione $$U_{0j}\bot \epsilon_{ij}$$ e garantisce una stima di $$\beta$$ non distorta, ma non posso stimare $$\alpha$$ né $$\gamma_i$$.
 
 ##### Trasformata within-group
 $$y_{it}-\bar{y_i}$$  
-Elimino la variabilità between (generalmente più elevata nei panel), stimando $$\beta$$ solo con la variabilità within.  
+Elimino la variabilità between, stimando $$\beta$$ solo con la variabilità within.  
 Utile per avere solo una stima non distorta di $$\beta$$, ma usando unicamente la variabilità within.  
-Nei dati panel è più la varibilità tra individui (between) che la variabilità dello stesso individuo in anni diversi (within), quindi si perde informazione.  
+Nei dati panel è più la variabilità tra individui (between) che la variabilità dello stesso individuo in anni diversi (within), quindi si perde informazione.  
 
 
 ##### Trasformata first difference
@@ -776,7 +777,7 @@ $$y_{i(j,k)}=\alpha_k+\gamma_{j}+\beta x_{ijk}+\epsilon_{ijk}$$ con $$\gamma_j\s
 ### Stima Bayesiana empirica
 Stima dell'intercetta casuale. Non è una stima perché non è un parametro ma una variabile casuale, il termine giusto sarebbe previsione del valore.  
 Prevede il valore di $$\beta_{0j}$$ per un gruppo $$j$$, si prova che la previsione è un valore atteso.  
-Stima bayesiana empirica del modello ad intercetta casuale senza predittori 
+Stima bayesiana empirica del modello ad intercetta casuale senza predittori.  
 Stima bayesiana empirica di $$\hat{\beta_{0j}}$$ (modello ad intercetta casuale senza predittori) di Snijder & Boskers (analoga a Gelman & Hill): media pesata della media specifica del gruppo $$j$$ (no-pooling) e della media totale (pooling)
 
 $$\hat{\beta}_{0j}=\frac{\sigma^2_{\beta_0}\bar{y}._j +\frac{\sigma^2_\epsilon}{n_j}\bar{y}..}{\sigma^2_{\beta_0}+\sigma^2_{\epsilon}/n_j}$$  
