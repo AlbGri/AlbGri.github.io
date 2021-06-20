@@ -1479,7 +1479,7 @@ con $$(x^{(j)},y^{(j)})$$ sottoporzione $$j$$-esima del dataset, $$j=1,...,k$$
 L'algoritmo contiene operazioni non sequenziali tra loro, separabili in $$k$$ parti, ogni parte viene associata a un diverso core e poi si aggregano (es. CV).
 
 #### Operation parallelism
-Eseguire operazioni algebriche in parallelo. Paralellizzazione implicita.
+Eseguire operazioni algebriche (es. prodotti, inversioni e scomposizione di matrici) in parallelo. Parallelizzazione implicita.
 
 
 
