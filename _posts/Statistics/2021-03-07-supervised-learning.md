@@ -1454,7 +1454,9 @@ Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo 
 ## Calcolo Parallelo
 
 Limiti fisici: CPU, RAM, I/O disco, trasferimento  
+
 Limiti operazionali: algoritmi sequenziali, iterativi (minimi quadrati ricorsivi, newton raphson, backfitting, ...)  
+
 Ostacoli: communication overhead (la complessità di gestire le interazioni tra i cores) e load balance (bilanciamento tra i task nei vari cores)  
 
 Embarrassingly parallel problem: è quando la parallelizzazione può avvenire in modo perfetto  (es. somma delle colonne di una tabella, ogni colonna può essere gestita da un core in modo indipendente)  
@@ -1466,17 +1468,15 @@ Map-Reduce: si divide il dataset in $$k$$ chunk di dimensione $$n_k=n/k$$, ogni 
 
 Minimi Quadrati “parallelizzati'':  
 sia $$y_i=\beta_0 +\beta_1 x_i +\epsilon_i$$  
-bisogna calcolare $$\hat{\beta}_1=\frac{\mbox{Cov}(x,y)}{\mbox{Var}(x)$$ e $$\hat{\beta}_0=\frac{1}{n}\sum_{i=1}^n y_i - \hat{\beta}_1 \frac{1}{n}\sum_{i=1}^n x_i$$  
+bisogna calcolare $$\hat{\beta}_1=\frac{\mbox{Cov}(x,y)}{\mbox{Var}(x)}$$ e $$\hat{\beta}_0=\frac{1}{n}\sum_{i=1}^n y_i - \hat{\beta}_1 \frac{1}{n}\sum_{i=1}^n x_i$$  
 La covarianza (e varianza) si può esprimere come  
 $$\mbox{Cov}(x,y)=\frac{1}{k}\sum_{j=1}^k \left ( \frac{1}{n_j}\sum_{i=1}^{n_j}x_i^{(j)} y_i^{(j)} \right )-
 \left [ \frac{1}{k}\sum_{j=1}^k \left ( \frac{1}{n_j}\sum_{i=1}^{n_j}x_i^{(j)} \right ) \right ] \cdot
 \left [ \frac{1}{k}\sum_{j=1}^k \left ( \frac{1}{n_j}\sum_{i=1}^{n_j}y_i^{(j)} \right ) \right ]$$  
-con $$(x^{(j)},y^{(j)}$$ sottoporzione $$j$$-esima del dataset, $$j=1,...,k$$
-
-
+con $$(x^{(j)},y^{(j)})$$ sottoporzione $$j$$-esima del dataset, $$j=1,...,k$$
 
 #### Model parallelism
-L'algoritmo contiene operazioni non sequenziali tra loro, separabili in $$k$$ parti e ogni parte viene associata a un diverso core
+L'algoritmo contiene operazioni non sequenziali tra loro, separabili in $$k$$ parti, ogni parte viene associata a un diverso core e poi si aggregano (es. CV).
 
 #### Operation parallelism
 Eseguire operazioni algebriche in parallelo. Paralellizzazione implicita.
