@@ -1464,7 +1464,10 @@ Embarrassingly parallel problem: è quando la parallelizzazione può avvenire in
 #### Data parallelism
 Map-Reduce: si divide il dataset in $$k$$ chunk di dimensione $$n_k=n/k$$, ogni parte viene associata ad un diverso core (mapping) e poi un core eseguirà l'operazione di aggregazione (reduce - si può dedicare un core appositamente per questa operazione).
 
-Minimi Quadrati parallelizzati:  
+Minimi Quadrati “parallelizzati'':  
+sia $$y_i=\beta_0 +\beta_1 x_i +\epsilon_i$$  
+bisogna calcolare $$\hat{\beta}_1=\frac{\mbox{Cov}(x,y)}{\mbox{Var}(x)$$ e $$\hat{\beta}_0=\frac{1}{n}\sum_{i=1}^n y_i - \hat{\beta}_1 \frac{1}{n}\sum_{i=1}^n x_i$$  
+La covarianza (e varianza) si può esprimere come  
 $$\mbox{Cov}(x,y)=\frac{1}{k}\sum_{j=1}^k \left ( \frac{1}{n_j}\sum_{i=1}^{n_j}x_i^{(j)} y_i^{(j)} \right )-
 \left [ \frac{1}{k}\sum_{j=1}^k \left ( \frac{1}{n_j}\sum_{i=1}^{n_j}x_i^{(j)} \right ) \right ] \cdot
 \left [ \frac{1}{k}\sum_{j=1}^k \left ( \frac{1}{n_j}\sum_{i=1}^{n_j}y_i^{(j)} \right ) \right ]$$  
