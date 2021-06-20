@@ -1451,6 +1451,35 @@ Sono coperture valide sia a livello marginale che condizionale, ma quest'ultimo 
 
 
 
+## Calcolo Parallelo
+
+Limiti fisici: CPU, RAM, I/O disco, trasferimento  
+Limiti operazionali: algoritmi sequenziali, iterativi (minimi quadrati ricorsivi, newton raphson, backfitting, ...)  
+Ostacoli: communication overhead (la complessità di gestire le interazioni tra i cores) e load balance (bilanciamento tra i task nei vari cores)  
+
+Embarrassingly parallel problem: è quando la parallelizzazione può avvenire in modo perfetto  (es. somma delle colonne di una tabella, ogni colonna può essere gestita da un core in modo indipendente)  
+
+### Approcci alla parallelizzazione
+
+#### Data parallelism
+Map-Reduce: si divide il dataset in $$k$$ chunk di dimensione $$n_k=n/k$$, ogni parte viene associata ad un diverso core (mapping) e poi un core eseguirà l'operazione di aggregazione (reduce - si può dedicare un core appositamente per questa operazione).
+
+Minimi Quadrati parallelizzati:  
+$$\mbox{Cov}(x,y)=\frac{1}{k}\sum_{j=1}^k \left ( \frac{1}{n_j}\sum_{i=1}^{n_j}x_i^{(j)} y_i^{(j)} \right )-
+\left [ \frac{1}{k}\sum_{j=1}^k \left ( \frac{1}{n_j}\sum_{i=1}^{n_j}x_i^{(j)} \right ) \right ] \cdot
+\left [ \frac{1}{k}\sum_{j=1}^k \left ( \frac{1}{n_j}\sum_{i=1}^{n_j}y_i^{(j)} \right ) \right ]$$  
+con $$(x^{(j)},y^{(j)}$$ sottoporzione $$j$$-esima del dataset, $$j=1,...,k$$
+
+
+
+#### Model parallelism
+L'algoritmo contiene operazioni non sequenziali tra loro, separabili in $$k$$ parti e ogni parte viene associata a un diverso core
+
+#### Operation parallelism
+Eseguire operazioni algebriche in parallelo. Paralellizzazione implicita.
+
+
+
 
 
 <!---
