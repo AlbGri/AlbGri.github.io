@@ -1019,6 +1019,10 @@ La Lift curve contiene in ordinata il fattore di miglioramento, mentre in asciss
 La curva raggiunge l'1 al 100% della frazione, ma non è necessariamente monotona non crescente (se ad esempio viene fatta sull'insieme di verifica).  
 La curva è utile nel confronto di più modelli per capire, in funzione di una determinata % di frazione della popolazione, quale modello restituisce dei fattori di miglioramento più elevati.  
 
+### Calibration Plot
+Lift e ROC curve non sono appropriate per un contesto multiclasse. Un modello è utile se le probabilità previste sono ben calibrate.  
+Probabilità previste contro la vera proporzione di eventi, per ciascun evento. Per stimare la vera proporzione di eventi si può usare un lisciatore LOESS (ampiezza adattabile).
+
 
 ### Analisi Discriminante
 Si confrontano le densità dei gruppi per identificare delle soglie (un valore se si ha solo una esplicativa e una target dicotomica quindi con due soli gruppi, iperspazi se si lavora a più dimensioni) che li discriminano bene.  
