@@ -789,7 +789,9 @@ Altri algoritmi:
 
 #### Crescita
 $$D=\sum_{i=1}^n \{ y_i -\hat{f}(x_i)\}^2=\sum_{j=1}^J \left \{ \sum_{i\in R_j} (y_i-\hat{c}_j)^2 \right \}=\sum_{j=1}^J D_j$$  
-Approccio passo passo. Allo step iniziale $$J=1,R_j=\mathbb{R}^p,D=\sum_i (y_i-M(y))^2$$ si ha un solo 'rettangolone', successivamente si provano 'tutte' le possibili suddivisioni e si sceglie quella che abbassa maggiormente la devianza, provando per tutte le variabili esplicative.  
+Approccio passo passo. Allo step iniziale $$J=1,R_j=\mathbb{R}^p,D=\sum_i (y_i-M(y))^2$$ si ha un solo 'rettangolone', successivamente si provano 'tutte' le possibili suddivisioni e si sceglie quella che abbassa maggiormente la devianza (max gain), provando per tutte le variabili esplicative.  
+gain: $$g_j=D_j - D_j^*=D_j-\left [ \sum_{i\in R'_j}(y_i-\hat{c}'_j)+ \sum_{i\in R''_j}(y_i-\hat{c}''_j) \right ]$$
+
 
 #### Potatura
 Penalizzazione della funzione di perdita  
