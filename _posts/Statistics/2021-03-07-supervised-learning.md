@@ -435,7 +435,13 @@ Non conoscendo la vera distribuzione, se ne fa la media delle $$y$$ condizionate
 $$f(x_0)=\mbox{Media}(y\vert x=x_0)$$
 
 ### k-Nearest-Neighbor regression
-Si stima $$f(x_0)$$ attraverso la media aritmetica delle $$y_i$$ le cui $$x_i$$ sono in una finestra di $$x_0$$. Si determina $$\hat{f}(x_0)$$ con $$k$$ numero di vicini. 
+$$\hat{Y}(x)=\frac{1}{k}\sum_{x_i \in N_k(x)} y_i$$ con $$N_k(x)$$ neighborhood o vicinato.  
+Si stima $$f(x_0)$$ attraverso la media aritmetica delle $$y_i$$ le cui $$x_i$$ sono in una finestra di $$x_0$$. Si determina $$\hat{f}(x_0)$$ con $$k$$ numero di vicini.  
+$$k$$ unico parametro regolabile, ma i parametri sono $$N/k$$ generalmente più grande di $$p$$ (se le finestre non si sovrapponessero ci sarebbero $$N/k$$ vicinati, con ciascuno un parametro da stimare).  
+Con $$k=1$$ l'errore di stima è nullo.  
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Il metodo di mediare del k-NN con $$k=1$$ è analogo alla regressione di una variabile quantitativa.  
+Il metodo ha alta varianza e basso bias (il contrario della regressione lineare), quindi adatto per quei contesti poco variabili.  
+
 
 ### Regressione Lineare Locale
 Come il k-NN ma non effettua una media aritmetica ma una regressione lineare (regressione locale).  
@@ -1138,8 +1144,8 @@ Funziona bene se i modelli hanno caratteristiche differenti.
 
 #### Bagging
 Breiman, 1996. Bagging o bootstrap aggregation.  
-Effettua delle medie sulle previsioni, o voto di maggioranza, ottenute sui campioni [bootstrap](https://en.wikipedia.org/wiki/Bootstrapping_(statistics) (campionamento con reinserimento).  
-Consente di rendere più stabile metodi come gli alberi, perdendo la capacità interpretativo.  
+Effettua delle medie sulle previsioni, o voto di maggioranza, ottenute sui campioni [bootstrap](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)) (campionamento con reinserimento).  
+Consente di rendere più stabile metodi come gli alberi, perdendo la capacità interpretativa.  
 La varianza della media aritmetica è inversamente proporzionale alla numerosità, quindi comporta una riduzione della varianza.  
 Con alberi profondi si ha poca distorsione ed elevata varianza, ma la media del Bagging di modelli indipendenti (il ricampionamento produce indipendenza ma i dati sono sempre quelli quindi i modelli non sono completamente indipendenti) riduce la varianza per la legge dei grandi numeri mantenendo la distorsione.  
 
