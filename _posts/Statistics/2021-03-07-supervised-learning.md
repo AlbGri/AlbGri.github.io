@@ -1026,12 +1026,16 @@ Probabilità previste contro la vera proporzione di eventi, per ciascun evento. 
 
 ### Analisi Discriminante
 Si confrontano le densità dei gruppi per identificare delle soglie (un valore se si ha solo una esplicativa e una target dicotomica quindi con due soli gruppi, iperspazi se si lavora a più dimensioni) che li discriminano bene.  
-La densità complessiva di un insieme di variabili esplicative può essere vista come una media pesata delle densità dei singoli gruppi. Il peso è dato dalle probabilità a priori (non necessariamente in senso bayesiano), che può essere stimato con la proporzione di osservazioni per ogni gruppo (o più in senso bayesiano con dei valori soggettivi scelti dal ricercatore in funzione di cosa si aspetta nel futuro).  
+
+La densità marginale (complessiva) di un insieme di variabili esplicative $$p(x)$$ può essere vista come una media pesata delle densità dei singoli $$K$$ gruppi. Il peso è dato dalle probabilità a priori $$\pi_k$$ (non necessariamente in senso bayesiano), che può essere stimato con la proporzione di osservazioni per ogni gruppo $$\hat{\pi}_k=n_k/n$$ (o più in senso bayesiano con dei valori soggettivi scelti dal ricercatore in funzione di cosa si aspetta nel futuro).  
+
+Sia $$X={X_1,...,X_p}$$ v.a. $$p$$ dimensionale e $$Y$$ variabile categoriale che definisce la $$k$$-esima classe. Si hanno $$K$$ diverse funzioni densità e pesi, pertanto la densità marginale della popolazione risulta  
 $$p(x)=\sum_{k=1}^K \pi_k p_k (x)$$  
+
 Per ottenere la separazione più grande in termini di densità, si calcola la probabilità a posteriori
-$$\mathbb{P}\{G=k\vert X=x\}=\frac{\pi_k p_k (x)}{p(x)}$$
+$$\mathbb{P}\{Y=k\vert X=x\}=\frac{\pi_k p_k (x)}{p(x)}$$
 definisce la probabilità posteriori che una nuova unità statistica con $$X=x$$ appartiene al gruppo $$k$$, verrà classificata se la probabilità di un gruppo sarà maggiore dell'altra.  
-$$\log{\frac{\mathbb{P}\{G=k\vert X=x\}}{\mathbb{P}\{G=m\vert X=x\}}}=\log{\frac{\pi_k}{\pi_m}}+\log{\frac{p_k(x)}{p_m(x)}}$$  
+$$\log{\frac{\mathbb{P}\{Y=k\vert X=x\}}{\mathbb{P}\{Y=m\vert X=x\}}}=\log{\frac{\pi_k}{\pi_m}}+\log{\frac{p_k(x)}{p_m(x)}}$$  
 il log del rapporto è la differenza dei logaritmi, considero solo un gruppo e identifico la funzione discriminante:  
 $$\delta_k(x)=\log{\pi_k}+\log{p_k(x)}$$  
 
@@ -1041,17 +1045,23 @@ Metodi di analisi discriminante: scegliere il gruppo che ha la funzione discrimi
 
 #### Analisi discriminante lineare 
 Linear Discriminant Analysis - LDA.  
-Ciascuna $$p_k$$ si ipotizzi normale, quindi $$\mathcal{N}(\mu_k, \Sigma_k)$$ per $$k=1,...,K$$, si può ipotizzare omoschedasticità.  
+Si ipotizza ciascuna $$p_k$$ normale con moschedasticità, quindi $$\mathcal{N}_p(\mu_k, \Sigma)$$ per $$k=1,...,K$$, la funzione discriminante risulta  
 $$\delta_k(x)=\log{\pi_k}-\frac{1}{2}\mu_k^T\Sigma^{-1} \mu_k+x^T\Sigma^{-1}\mu_k$$  
 Stimati $$\mu_k$$ e $$\Sigma$$ usando le $$X$$ (con il metodo dei momenti - le cui stime non sono robuste agli outliers: media campionaria per ogni gruppo e la varianza campionaria non distorta), la funzione discriminante è lineare nelle $$X$$.  
+Numero di parametri da stimare: $$pK+p(p+1)/2$$.
+
 Rispetto la regressione logistica, che richiede un algoritmo iterativo, è molto più semplice computazionalmente. Anche rispetto la regressione lineare che richiede l'inversione della matrice, l'analisi discriminante lineare richiede meno calcoli ed è facilmente parallellizzabile dato che sono tutte somme.  
+
 Se le variabili esplicative sono quantitative è un approccio facilmente utilizzabile.  
-L'approccio funziona anche non ipotizzando l'assunzione di normalità, con assunzione di secondo ordine (solo medie e varianze).
+L'approccio funziona anche non ipotizzando l'assunzione di normalità, con assunzione di secondo ordine (solo medie e varianze), e non sarà necessario che le esplicative siano tutte continue.
+
 
 #### Analisi discriminante quadratica
 Quadratic Discriminant Analysis - QDA.  
-Come la lineare senza l'assunzione di omoschedasticità, però è necessaria l'assunzione di normalità.  
-Con $$p$$ osservazioni e $$k$$ gruppi, si avranno $$k$$ matrici $$p \times p(p+1)/2$$ da stimare, ritorna il problema del tradeoff tra varianza e distorsione.  
+Come la lineare senza l'assunzione di omoschedasticità, è necessaria l'assunzione di normalità (quindi tutte le esplicative necessariamente continue).  
+$$\delta_k(x)=\log{\pi_k}-\frac{1}{2}(x-\mu_k)^T\Sigma^{-1}_k (x-\mu_k)-\frac{1}{2}\log{\vert \Sigma_k \vert}$$  
+
+Con $$p$$ variabili e $$K$$ gruppi, si avranno $$K$$ matrici $$p \times p(p+1)/2$$ da stimare, ritorna il problema del tradeoff tra varianza e distorsione. Inoltre, se $$n_k$$ è piccolo alcune $$\Sigma_k$$ possono non essere identificabili e le stime singolari.  
 Non si ha un metodo automatizzabile per la selezione delle variabili.  
 
 
