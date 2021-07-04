@@ -517,7 +517,7 @@ Se si vuole lo stesso ammontare di dati bisogna avere insiemi grandi, ma con ins
 ##### Distanza mediana dall’origine al punto più vicino
 Caso unidimensionale:  
 sia $$X\sim U[-1,1]$$ con $$f(x)=\frac{1}{b-a}=\frac{1}{2}$$ si ha che  
-$$F_X(m)=\mathbb{P}(X\le m)=\int_{-\infty}^m f(u)\, du=\int_1^m \frac{1}{2}\, du=\frac{m+1}{2}$$ quindi  
+$$F_X(m)=\mathbb{P}(X\le m)=\int_{-\infty}^m f(u)\, du=\int_{-1}^m \frac{1}{2}\, du=\frac{m+1}{2}$$ quindi  
 la probabilità che un punto abbia distanza dall'origine inferiore a $$m$$ risulta  
 $$\mathbb{P}(\vert X \vert \le m)=\mathbb{P}(-m\le X \le m)=\mathbb{P}(X\le m)-P(X\le -m)=m$$  
 questa probabilità si può anche ottenere come lo spazio favorevole $$2m$$ sull'intero spazio possibile $$2$$ lunghezza del segmento.  
@@ -945,9 +945,9 @@ https://html-online.com/editor/
 
 
 **Tasso di errata classificazione** (Misclassification Rate/Error Rate): $$\frac{n_{12}+n_{21}}{n}$$  
-complessivamente il modello quante volte sbaglia?  
+complessivamente il modello quante volte sbaglia? (1-Accuratezza)  
 
-**Accuratezza** (Misclassification Rate/Error Rate): $$\frac{n_{11}+n_{22}}{n}$$  
+**Accuratezza**: $$\frac{n_{11}+n_{22}}{n}$$  
 complessivamente il modello quante volte classifica correttamente?  
 
 
