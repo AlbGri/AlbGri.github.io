@@ -587,7 +587,7 @@ Per costruire una funzione di regressione su $$n$$ punti, si divide l'asse $$x$$
 Stima di una spline cubica con $$K$$ nodi  
 $$\hat{f}(x)=\sum_{j=1}^{K+4}h_j(x)\hat{\theta}_j$$  
 la base di funzioni è composta da $$K+4$$ funzioni $$h_j(x)$$ e parametri.  
-Per opportuni $$\theta_j$$ si minimizza la devianza residua (con i minimi quadrati tradizonali) e si ottiene una spline di regressione.  
+Per opportuni $$\theta_j$$ si minimizza la devianza residua (con i minimi quadrati tradizionali) e si ottiene una spline di regressione.  
 
 Si stima una funzione parametrica con molti parametri, le splines considerabili come combinazione lineare di funzioni di base. Si possono pensare altre forme di funzione di base, come serie di fourier, seni e coseni, o le Wavelet.  
 
@@ -775,12 +775,13 @@ con
 - $$\lambda$$ numero di termini nel modello
 - $$M$$ complessità del modello (es gdl equivalenti), nel MARS è il numero di basi del modello + $$c\cdot\{\mbox{num. nodi}\}$$ con $$c=2\mbox{ o }3$$ definito in modo euristico.
 
-### CART
-Classification and Regression Trees. Alberi di regressione.  
-Approssimazione a gradini di una funzione continua. Più gradini dove è più ripida, meno dove è meno ripida. Dove effettuare il taglio e la sua intensità. Quale variabile preferire da approssimare. Si usa l'albero come rappresentazione.  
+### Alberi di regressione
+Classification and Regression Trees (CART).  
+Approssimazione a gradini di una funzione continua. Si formano più gradini dove è più ripida, meno dove è meno ripida, bisognerà decidere dove effettuare il taglio, la sua intensità e quale variabile preferire da approssimare.  
 $$\hat{f}(x)=\sum_{j=1}^J c_j I(x\in R_j)$$  
-Si sceglie il $$c_j$$ che minimizza la devianza $$D$$, ed è la media aritmetica.  
-$$R_j$$ gli intervalli sono dei rettangoli, la loro scelta è difficile, si usa una procedura passo-passo miopico in avanti. Si costruisce un albero binario con $$J$$ nodi terminali (foglie) fino ad un massimo di $$J=n$$ e dopo generalmente si usa un ulteriore criterio per potare.  
+Si sceglie la costante $$c_j$$ affinché sia minima la devianza $$D$$, quindi $$c_j$$ è la media aritmetica degli $$y_i$$ nell'intervallo.  
+$$R_j$$ gli intervalli sono dei rettangoli con i lati paralleli agli assi.  
+La crescita segue una procedura passo-passo miopico in avanti. Si costruisce un albero binario con $$J$$ nodi terminali (foglie) fino ad un massimo di $$J=n$$ e dopo generalmente si usa un ulteriore criterio per potare.  
 
 Altri algoritmi:
 - AID, CHAID usati per la classificazione
