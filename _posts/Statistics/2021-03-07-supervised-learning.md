@@ -716,8 +716,13 @@ se si utilizzano tutti gli ordini di interazione si può usare per approssimare 
 Può essere una buona scelta fermarsi al termine di primo grado:  
 $$y=f(x_1,...,x_p)+\epsilon=\alpha+\sum_{j=1}^p f_j(x_j)+\epsilon$$  
 consente una maggiore libertà di forma delle variabili rispetto il modello lineare.  
+
+I modelli sono applicabili per qualsiasi numero di $$p$$ rispetto ad $$n$$ ma non si ottengono risultati sensati per $$p>n$$.
+
 In un contesto geografico si potrebbe aggiungere come elemento di interazione le coordinate e il resto tutte in maniera additiva.  
+
 Le $$p$$ funzioni $$f_j(x_j)$$ sono stimate mediante l'algoritmo 'backfitting'.  
+
 
 #### Backfitting
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) È una variante dell'algoritmo di Gauss-Seidel.  
@@ -730,7 +735,7 @@ Per evitare un eccesso di parametrizzazione dell'intercetta ogni funziona deve e
 #### Output (su R)
 L'output del modello additivo senza componenti d'interazione è generalmente composto da una parte di significatività delle variabili con il test F approssimato e una parte di grafici bidimenzionali di ciascuna variabile rispetto la target, con l'andamento delle bande di variabilità. Bisogna osservare la stima della funzione di regressione condizionata perché non vi è un solo parametro che esprime la relazione. La forma della relazione tra la target e una $$x$$ è la stessa qualsiasi sia il valore delle altre $$x$$. Il grafico congiunto è ottenibile dai singoli solo se si ha un modello additivo senza interazioni, un modello con interazioni è più evoluto ma non consente di commentare facilmente i singoli grafici.  
 
-Bande di confidenza: tengono conto della distorsione  
+Bande (intervalli) di confidenza: tengono conto della distorsione  
 Bande di variabilità: non tengono conto della distorsione  
 Nella pratica la distorsione è difficile da stimare e per semplicità spesso la si ignora quindi nella pratica le due bande coincidono.
 
