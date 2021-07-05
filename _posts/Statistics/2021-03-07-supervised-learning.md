@@ -772,6 +772,8 @@ Un modello MARS con variabili qualitative è analogo ad un modello lineare con v
 
 Il MARS seleziona le funzioni di base che entrano, usando ad esempio GCV così da controllare l'overfitting.  
 
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) I modelli MARS selezionano automaticamente le variabili più influenti.  
+
 ### GCV
 Convalida incrociata generalizzata - Generalized Cross Validation.  
 Quando $$\hat{y}$$ ha una forma non lineare non esplicita, invece di usare ogni elemento diagonale di $$S$$ si considera solo la media degli elementi diagonali, la traccia diviso per $$n$$. La traccia di $$S$$ è legata ai gradi di libertà. Generalizzo la CV-LOO utilizzando al numeratore gli errori residui (come sempre) e al denominatore invece della somma al quadrato di 1-elementi della diagonale di $$S$$, uso 1-media degli elementi diagonali di S (cioè i gradi di libertà equivalenti) diviso $$n$$. Non avendo gli elementi della diagonale e i gdl sono una misura di complessità del modello con l'assunzione di linearità, si utilizza una formulazione differente per definire la complessità.  
@@ -820,6 +822,8 @@ Sono facili da interpretare se piccoli, semplici da calcolare e parallelizzare. 
 
 ### Neural Network
 Reti Neurali.  
+Una rete neurale è uno schema di regressione a due stadi, generalmente il tipo non lineare.  
+
 Struttura:
 - variabili di input $$x_i$$
 - strato invisibile (connette tutte le variabili di input e output) $$z_j$$
@@ -1068,6 +1072,8 @@ Rispetto la regressione logistica, che richiede un algoritmo iterativo, è molto
 
 Se le variabili esplicative sono quantitative è un approccio facilmente utilizzabile.  
 L'approccio funziona anche non ipotizzando l'assunzione di normalità, con assunzione di secondo ordine (solo medie e varianze), e non sarà necessario che le esplicative siano tutte continue.
+
+Non si ha possibilità di fare selezione di variabili mediante LDA.
 
 
 #### Analisi discriminante quadratica
