@@ -1397,7 +1397,7 @@ Si dimostra che $$\frac{y_{n+1}-x^T\hat{\beta}}{s(x)}\sim t_{n-p} \qquad s^2(x)=
 allora $$A(x;D)=x^T\hat{\beta}\pm s^2 (x) t_{1-\alpha/2,n-p}$$ ha esattamente probabilità $$1-\alpha$$ (intesa anche con i valori $$D$$ che ha usato per effettuare la stima ai minimi quadrati)  
 Qui si tiene conto della variabilità dei parametri, ottenendo un'ampiezza più ampia.  
 
-Le assunzioni di normalità, omoschedasticità e la scelta del modello di regressione, se non valide/ben specificate comportano un livello di copertura epirico sui dati di verifica più ampio del livello dichiarato.  
+Le assunzioni di normalità, omoschedasticità e la scelta del modello di regressione, se non valide/ben specificate comportano un livello di copertura empirico sui dati di verifica più ampio del livello dichiarato.  
 
 ### Approccio non parametrico
 
