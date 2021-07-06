@@ -1643,6 +1643,36 @@ R: si errore slide
 Q: l'assortatività varia tra -1 e 1? Nell'esempio reti2021b1.pdf non viene -0.67?
 R: non è solo positiva
 
+
+Q: è corretto dire che gli alberi (es di regressione) non è un metodo di lisciamento perché le funzioni si costruiscono a gradini e che quindi non esiste un parametro di lisciamento?
+R: esatto ma ha un parametro di regolazione
+
+
+Q: ESERCITAZIONE 3: lars su r con lasso che algoritmo usa?
+# stima lasso con algoritmo LARS
+las1 <- lars(x[,-1], sss1$y)) # (lars type default lasso)
+glmnet usa pathwise coordinate descent
+lars con lar usa lar per stimare il lasso
+ma lars di default con type 'lasso' come lo stima?
+R: il default stima lasso, il lar stima i minimi quadrati
+
+
+
+Q: ESERCITAZIONE 5: nella creazione delle variabili indicatrici sul numero maggiore di 0, perché non include 'n.danni.0', 'n.danni.9' e 'n.vita.2b' ma poi le rimuove?
+R: non serviva rimuoverle
+
+Q: ESERCITAZIONE 5: è plausibile che in alcuni algoritmi, tipo gli alberi, siano sensibili all'ordine dei levels delle variabili qualitative codificate come factor?
+R: sì
+
+
+Q: ESERCITAZIONE 11: perché la RF (seconda forma con numero di variabili per nodo pari a 80) la stima su stima bilanciata sottoinsieme cb1 e non su tutto l'insieme? Perché con stesso seed si ottengono risultati (leggermente) differenti tra le due specifiche
+R: errore
+
+Q: perché ordina la sequenza casuale che serve a dividere tra stima e verifica?
+R: non serve
+
+
+
 #### DA RISOLVERE
 
 Q: Nel grafico del percorso del lasso con l'algoritmo LAR, mi aspetto che se un coefficiente arriva a 0, la variabile viene esclusa, ma dal grafico sembra che questa variabile ritorni, a parte un momentaneo valore 0 poi ritorna a crescere
@@ -1654,28 +1684,6 @@ Q: reti2021a4.pdf slide 3, con Y=[] e E=[] come si rappresenta?
 
 
 
-Q: è corretto dire che gli alberi (es di regressione) non è un metodo di lisciamento perché le funzioni si costruiscono a gradini e che quindi non esiste un parametro di lisciamento?
-
-
-ESERCITAZIONE 3
-Q: lars su r con lasso che algoritmo usa?
-# stima lasso con algoritmo LARS
-las1 <- lars(x[,-1], sss1$y)) # (lars type default lasso)
-#
-glmnet usa pathwise coordinate descent
-lars con lar usa lar per stimare il lasso
-ma lars di default con type 'lasso' come lo stima?
-
-
-ESERCITAZIONE 5
-Q: nella creazione delle variabili indicatrici sul numero maggiore di 0, perché non include 'n.danni.0', 'n.danni.9' e 'n.vita.2b' ma poi le rimuove?
-Q: è plausibile che in alcuni algoritmi, tipo gli alberi, siano sensibili all'ordine dei levels delle variabili qualitative codificate come factor?
-
-ESERCITAZIONE 11
-Q: perché la RF (seconda forma con numero di variabili per nodo pari a 80) la stima su stima bilanciata sottoinsieme cb1 e non su tutto l'insieme? Perché con stesso seed si ottengono risultati (leggermente) differenti tra le due specifiche
-
-ESERCITAZIONE 12
-Q: perché ordina la sequenza casuale che serve a dividere tra stima e verifica?
 
 
 
