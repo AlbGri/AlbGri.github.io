@@ -53,8 +53,8 @@ $$E_S$$ è un sottoinsieme di $$E$$ e tutti gli archi in $$E_S$$ sono tra i nodi
 ## Rappresentazioni
 
 ### Socio matrice
-Rappresentazione matriciale delle relazioni.  
-Caratterizza la presenza o assenza (1 o 0 se binaria) della relazione tra coppie di nodi.  
+Rappresentazione matriciale delle relazioni (non per forza 0/1 binarie ma anche pesate).  
+Se binaria, caratterizza la presenza o assenza della relazione tra coppie di nodi.  
 Se le relazioni sono dirette binarie allora la matrice sarà simmetrica binaria, si possono caratterizzare con tutte le precedenti tipologie di relazioni.  
 Può contenere anche dati mancanti.  
 
