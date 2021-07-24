@@ -6,7 +6,8 @@ tags: [statistics, math, theory, university, SAS]
 mathjax: "true"
 ---
 
-*in costruzione*
+**La presente pagina è ricca di errori e si sconsiglia il suo utilizzo.**  
+**Se vuoi suggerire qualche modifica, puoi semplicemente proporla [da GitHub](https://github.com/AlbGri/AlbGri.github.io/blob/master/_posts/Statistics/2020-12-28-event-history-analysis.md)**
 
 
 ## Metodi per l'analisi di dati di durata

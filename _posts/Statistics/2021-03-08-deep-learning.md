@@ -6,7 +6,9 @@ tags: [statistics, math, theory, university]
 mathjax: "true"
 ---
 
-*in costruzione*
+**La presente pagina è ricca di errori e si sconsiglia il suo utilizzo.**  
+**Se vuoi suggerire qualche modifica, puoi semplicemente proporla [da GitHub](https://github.com/AlbGri/AlbGri.github.io/blob/master/_posts/Statistics/2021-03-08-deep-learning.md)**
+
 
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Da approfondire.`
 
