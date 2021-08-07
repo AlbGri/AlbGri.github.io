@@ -128,10 +128,12 @@ Con due variabili esplicative $$x_1$$ e $$x_2$$ e la variabile risposta $$y$$, l
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Il coefficiente di correlazione parziale utilizza lo stesso concetto della regressione di $$x_2$$ su $$x_1$$.  
 
 L'algoritmo prevede tre passi:
-1. inizializzazione di $$x_0$$ e $$z_0$$ pari a $$1_n$$, 
-2. step iterativo per $$j=1,...,p-1$$ in cui si stima il coefficiente $$\hat{\gamma}_{kj}$$ regredendo $$x_j$$ contro tutti i residui $$z_k$$ stimati in precedenza $$k=0,...,j-1$$, determinando $$z_j=x_j - \sum_{k=1}^{j-1} \hat{\gamma}_{kj} z_k$$. 3. regressione di $$y$$ sul vettore dei residui $$z_{p-1}$$ per ottenere $$\hat{\beta}_{j-1}$$  
+1. inizializzazione di $$x_0$$ e $$z_0$$ pari a $$1_n$$ 
+2. step iterativo per $$j=1,...,p-1$$ in cui si stima il coefficiente $$\hat{\gamma}_{kj}$$ regredendo $$x_j$$ contro tutti i residui $$z_k$$ stimati in precedenza $$k=0,...,j-1$$, determinando $$z_j=x_j - \sum_{k=1}^{j-1} \hat{\gamma}_{kj} z_k$$ 
+3. regressione di $$y$$ sul vettore dei residui $$z_{p-1}$$ per ottenere $$\hat{\beta}_{p-1}$$  
 
-$$X=Z\Gamma=ZD^{-1}D\Gamma=QR$$ con $$\Gamma$$ matrice triangolare alta composta da $$\hat{\gamma}_{kj}$$ e $$D_{jj}=\vert\vert z_j \vert\vert$$
+$$X=Z\Gamma=ZD^{-1}D\Gamma=QR$$  
+con $$\Gamma$$ matrice triangolare alta composta da $$\hat{\gamma}_{kj}$$ e $$D_{jj}=\vert\vert z_j \vert\vert$$
 
 
 
