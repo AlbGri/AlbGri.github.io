@@ -117,8 +117,8 @@ Complessità computazionale $$p^3+\frac{np^2}{2}$$ e risulta molto lento con tan
 ### Stima LS con $$n$$ non troppo grande
 
 #### Fattorizzazione QR
-Complessità computazionale $$2np^2$$.  
-Si cerca una scomposizione $$X=QR$$ per cui $$Q$$ è una matrice ortogonale (colonne ortogonali l'una con l'altra) $$n\times p$$ e $$R$$ è triangolare superiore $$p\times p$$.  
+Complessità computazionale $$2np^2$$ (circa il doppio per $$n>>p$$ e uguale se $$n=p$$).  
+Si cerca una scomposizione $$X=QR$$ per cui $$Q_{(n\times p)}$$ è una matrice ortogonale (colonne ortogonali l'una con l'altra, solitamente normalizzata per cui $$Q^T Q=I$$) e $$R_{(p\times p)}$$ è triangolare superiore.  
 $$\hat{\beta}=(X^T X)^{-1}X^T y=R^{-1} Q^T y\quad$$ e $$\quad\hat{y}=QQ^T y$$  
 Per ottenere $$Q$$ si può usare l'Algoritmo Gram-Schmidt che ortogonalizza la matrice.
 
