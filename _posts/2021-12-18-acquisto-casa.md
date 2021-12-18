@@ -1,8 +1,8 @@
 ---
 title: "Ricerca e acquisto casa"
 excerpt: "La mia piccola esperienza"
-date: 2020-12-18
-tags: [utils]
+date: 2021-12-18
+tags: [diary]
 ---
 
 
@@ -19,7 +19,7 @@ Seguono le mie esperienze per l'acquisto di un appartamento
 - almeno il 15% liquidità in più: spese tra notaio, agenzia, polizze, commissioni, imposta di registro, etc.
 
 ### Ricerca della casa
-fattori che fanno diminuire il prezzo
+Fattori che fanno diminuire il prezzo
 - piano terra (più alta la probabilità di furto, rumori della strada più forti, eccessiva vicinanza con gli sguardi dei pedoni, più alta probabilità che entrino animali di vario tipo)
 - seminterrato (simile al piano terra, finestre quasi assenti, rischio allagamento)
 - ultimo piano (a meno che non è un attico, l'ultimo tende ad essere più caldo d'estate e più freddo d'inverno)
@@ -31,7 +31,7 @@ fattori che fanno diminuire il prezzo
 - appartamento da ristrutturare
 - proposta vincolata al mutuo
 
-fattori per me essenziali
+Fattori per me essenziali
 - balcone
 - zona centrale fornita da mezzi pubblici e servizi
 
@@ -61,8 +61,8 @@ condizioni base da definire
 - si può procedere con l'assicurazione o la risoluzione della donazione: ho vissuto la seconda, ho ricevuto un rifiuto da parte di una banca nella gestione della pratica, successivamente post verifica notaio esterno e scelta di una banca differente sembra che stia andando bene
 
 ### Date preliminare e rogito
-rigide ma non troppo, nel mio caso sono state spostate tre volte per l'ottenimento della risoluzione della donazione, è importante:
-- data preliminare di compravendita: un tempo a sufficienza per consentire la valutazione dei documenti da parte del notaio e permettere alla banca di fare ottenere una delibera sulla concedibilità del mutuo (essenziale se la proposta non è vincolata al mutuo)
+Nel mio caso sono state spostate tre volte perché l'ottenimento della risoluzione della donazione è stato difficile, è importante:
+- data preliminare di compravendita: un tempo a sufficienza per consentire la valutazione della documentazione completa dell'agenzia da parte del notaio e permettere alla banca di ottenere una delibera sulla concedibilità del mutuo (essenziale se la proposta non è vincolata al mutuo)
 - data rogito: un tempo a sufficienza per consentire alla banca di gestire la pratica di mutuo, l'ideale è mettere a tre mesi dal preliminare, ma se si ottiene il mutuo prima si può procedere se entrambe le parti sono d'accordo
 
 ### Pagamento agenzia
