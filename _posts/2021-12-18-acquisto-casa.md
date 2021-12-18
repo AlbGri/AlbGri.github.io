@@ -29,7 +29,7 @@ Fattori che fanno diminuire il prezzo
 - appartamento inclinato (es. zona San Paolo Roma)
 - zona brutta (isolata e/o povera e/o poco collegata)
 - appartamento da ristrutturare
-- proposta vincolata al mutuo
+- proposta non vincolata al mutuo
 
 Fattori per me essenziali
 - balcone
