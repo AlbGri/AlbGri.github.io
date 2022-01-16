@@ -17,13 +17,13 @@ Seguono le mie esperienze per l'acquisto di un appartamento
 1. Fai il preventivo del mutuo dalla banca e siti online per capire a che cifre puoi arrivare
 2. Trova la casa
 3. Se piace la casa visitala almeno due volte
-4. Discuti del prezzo con l'agenzia e fissate un appuntamento per la *proposta irrevocabile d'acquisto*
+4. Discuti del prezzo con l'agenzia e fissate un appuntamento per la **proposta irrevocabile d'acquisto**
 5. Firma la proposta d'acquisto
 6. Ottieni dalla banca una predelibera del mutuo (es. Voucher Mutuo Unicredit)
-7. Discuti con il notaio della situazione e fissa una data per il *preliminare di compravendita* (o compromesso)
+7. Discuti con il notaio della situazione e fissa una data per il **preliminare di compravendita** (o compromesso)
 8. Firma il preliminare di compravendita
-9. Ottieni la *delibera del mutuo*
-10. Fissa data con notaio e venditore per il *rogito notarile* (o atto di compravendita) e l'*atto di mutuo*
+9. Ottieni la **delibera del mutuo**
+10. Fissa data con notaio e venditore per il **rogito notarile** (o atto di compravendita) e l'**atto di mutuo**
 11. _coming soon_
 
 
