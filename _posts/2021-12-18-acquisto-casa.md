@@ -53,7 +53,7 @@ Fattori per me essenziali:
 
 
 ### Proposta irrevocabile d'acquisto
-La proposta d'acquisto è il primo passaggio importante, si definiscono varie condizioni che dovranno essere seguite nel caso in cui essa venga accettata dalla parte venditrice. Solitamente si da una caparra del 2/3% dell'immobile con un semplice assegno bancario o postale, che verrà incassata nel caso di accettazione.  
+La proposta d'acquisto è il primo passaggio importante, si definiscono le diverse condizioni che dovranno essere seguite nel caso in cui essa venga accettata dalla parte venditrice. Solitamente si da una caparra del 2/3% dell'immobile con un semplice assegno bancario o postale, che verrà incassata nel caso di accettazione.  
 Condizioni base da definire:
 - agibilità
 - documentazione (provenienza, passaggi di proprietà, APE, planimetria)
@@ -68,14 +68,14 @@ Condizioni base da definire:
 
 
 #### Donazione e risoluzione donazione
-- Alcune banche rifiutano di dare il mutuo se nella storia dell'immobile c'è una donazione o una risoluzione della donazione
+- Alcune banche rifiutano di dare il mutuo se tra la storia dell'immobile c'è una donazione o una risoluzione della donazione
 - Si può procedere con l'assicurazione o la risoluzione della donazione: ho vissuto la seconda, ho ricevuto un rifiuto da parte di una banca nella gestione della pratica, successivamente post verifica notaio esterno e scelta di una banca differente sembra che stia andando bene
 - La risoluzione della donazione, se fatta con le giuste condizioni, legalmente svincola l'immobile dalla donazione, ma la banca può comunque decidere di non concedere il mutuo
 
 #### Date preliminare e rogito
-Nel mio caso sono state spostate tre volte perché l'ottenimento della risoluzione della donazione è stato difficile, è importante:
-- Data preliminare di compravendita: un tempo a sufficienza per consentire la valutazione della documentazione completa dell'agenzia da parte del notaio e permettere alla banca di ottenere una delibera sulla concedibilità del mutuo (essenziale se la proposta non è vincolata al mutuo)
-- Data rogito: un tempo a sufficienza per consentire alla banca di gestire la pratica di mutuo, l'ideale è mettere a tre mesi dal preliminare, ma se si ottiene il mutuo prima si può procedere se entrambe le parti sono d'accordo
+Nel mio caso sono state spostate tre volte perché l'ottenimento della risoluzione della donazione è stato lento, è importante fissare bene:
+- la data preliminare di compravendita: un tempo a sufficienza per consentire la valutazione della documentazione completa dell'agenzia da parte del notaio e permettere alla banca di ottenere una delibera sulla concedibilità del mutuo (essenziale se la proposta non è vincolata al mutuo)
+- la data rogito: un tempo a sufficienza per consentire alla banca di gestire la pratica di mutuo, l'ideale è mettere a tre mesi dal preliminare, ma se si ottiene il mutuo prima si può procedere se entrambe le parti sono d'accordo
 
 #### Pagamento agenzia
 Il pagamento solitamente avviene in fase di compromesso, nel mio caso la risoluzione della donazione era condizione necessaria e **sufficiente**, quindi se poi le cose non vanno per il verso giusto, ad esempio che la banca non concede il mutuo o il venditore non vende più l'immobile, si è costretti comunque a dare i soldi all'agenzia.
@@ -88,7 +88,7 @@ Il pagamento solitamente avviene in fase di compromesso, nel mio caso la risoluz
 
 ### Preliminare di compravendita
 Se la proposta d'acquisto è il fidanzamento, il preliminare di compravendita o compromesso è il matrimonio.  
-Si definiscono nuovamente le condizioni e si cede il 15/20% del prezzo dell'immobile come caparra, in questo caso deve essere un assegno circolare (che bisogna fare direttamente in banca e verrà scalato l'importo dal proprio conto in fase di creazione dell'assegno - diventa come una banconota con quel valore).  
+Si definiscono nuovamente le condizioni e si versa il 15/20% del prezzo dell'immobile come caparra, in questo caso deve essere un assegno circolare (che bisogna fare direttamente in banca e l'importo verrà scalato dal proprio conto in fase di creazione dell'assegno - diventa come una banconota con quel valore).  
 Per legge il preliminare bisogna trascriverlo all'agenzia delle entrate, ma si può scegliere di farlo da un notaio esterno (pagando) o direttamente dal notaio dell'agenzia (gratuito).
 
 ### Notaio
