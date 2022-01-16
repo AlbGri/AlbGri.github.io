@@ -29,9 +29,9 @@ Seguono le mie esperienze per l'acquisto di un appartamento
 
 
 ### Valutazione condizione economica
-- lavoro stabile e/o garanzia da parenti/amici/stato/altro
-- rata attorno al 30% dello stipendio netto mensile, la banca può accettare anche poco sotto il 40% se si ha un'alta capacità di risparmio, tredicesima, quattordicesima etc.
-- almeno il 15% liquidità in più: spese tra notaio, agenzia, polizze, commissioni, imposta di registro, etc.
+- Lavoro stabile e/o garanzia da parenti/amici/stato/altro
+- Rata attorno al 30% dello stipendio netto mensile, la banca può accettare anche poco sotto il 40% se si ha un'alta capacità di risparmio, tredicesima, quattordicesima etc.
+- Almeno il 15% liquidità in più: spese tra notaio, agenzia, polizze, commissioni, imposta di registro, etc.
 
 
 ### Ricerca della casa
@@ -68,22 +68,23 @@ Condizioni base da definire:
 
 
 #### Donazione e risoluzione donazione
-- terrore di alcune banche
-- si può procedere con l'assicurazione o la risoluzione della donazione: ho vissuto la seconda, ho ricevuto un rifiuto da parte di una banca nella gestione della pratica, successivamente post verifica notaio esterno e scelta di una banca differente sembra che stia andando bene
+- Alcune banche rifiutano di dare il mutuo se nella storia dell'immobile c'è una donazione o una risoluzione della donazione
+- Si può procedere con l'assicurazione o la risoluzione della donazione: ho vissuto la seconda, ho ricevuto un rifiuto da parte di una banca nella gestione della pratica, successivamente post verifica notaio esterno e scelta di una banca differente sembra che stia andando bene
+- La risoluzione della donazione, se fatta con le giuste condizioni, legalmente svincola l'immobile dalla donazione, ma la banca può comunque decidere di non concedere il mutuo
 
 #### Date preliminare e rogito
 Nel mio caso sono state spostate tre volte perché l'ottenimento della risoluzione della donazione è stato difficile, è importante:
-- data preliminare di compravendita: un tempo a sufficienza per consentire la valutazione della documentazione completa dell'agenzia da parte del notaio e permettere alla banca di ottenere una delibera sulla concedibilità del mutuo (essenziale se la proposta non è vincolata al mutuo)
-- data rogito: un tempo a sufficienza per consentire alla banca di gestire la pratica di mutuo, l'ideale è mettere a tre mesi dal preliminare, ma se si ottiene il mutuo prima si può procedere se entrambe le parti sono d'accordo
+- Data preliminare di compravendita: un tempo a sufficienza per consentire la valutazione della documentazione completa dell'agenzia da parte del notaio e permettere alla banca di ottenere una delibera sulla concedibilità del mutuo (essenziale se la proposta non è vincolata al mutuo)
+- Data rogito: un tempo a sufficienza per consentire alla banca di gestire la pratica di mutuo, l'ideale è mettere a tre mesi dal preliminare, ma se si ottiene il mutuo prima si può procedere se entrambe le parti sono d'accordo
 
 #### Pagamento agenzia
-- Il pagamento solitamente avviene in fase di compromesso, nel mio caso la risoluzione della donazione era condizione necessaria e **sufficiente**, quindi se poi le cose non vanno per il verso giusto, ad esempio che la banca non concede il mutuo o il venditore non vende più l'immobile, si è costretti comunque a dare i soldi all'agenzia
+Il pagamento solitamente avviene in fase di compromesso, nel mio caso la risoluzione della donazione era condizione necessaria e **sufficiente**, quindi se poi le cose non vanno per il verso giusto, ad esempio che la banca non concede il mutuo o il venditore non vende più l'immobile, si è costretti comunque a dare i soldi all'agenzia.
 
 #### Proposta vincolata al mutuo
-- il venditore se accetta questa clausola si espone al rischio che un potenziale acquirente gli fa perdere solo tempo
-- il venditore può scegliere di non accettare la proposta e cercare qualcuno che è disponibile a non mettere la clausola
-- la proposta vincolata è meno convincente nel caso in cui si chieda un prezzo più basso
-- se si decide di non vincolarla, è importante che prima di andare al preliminare si ha una valutazione della banca per la propria condizione, ad esempio banche come Unicredit rilasciano il "voucher mutuo" che serve a certificare che non ci siano problemi lato acquirente
+- Il venditore se accetta questa clausola si espone al rischio che un potenziale acquirente gli fa perdere solo tempo
+- Il venditore può scegliere di non accettare la proposta e cercare qualcuno che è disponibile a non mettere la clausola
+- La proposta vincolata è meno convincente nel caso in cui si chieda un prezzo più basso
+- Se si decide di non vincolarla, è importante che prima di andare al preliminare si ha una valutazione della banca per la propria condizione, ad esempio banche come Unicredit rilasciano il "voucher mutuo" che serve a certificare che non ci siano problemi lato acquirente
 
 ### Preliminare di compravendita
 Se la proposta d'acquisto è il fidanzamento, il preliminare di compravendita o compromesso è il matrimonio.  
@@ -91,7 +92,7 @@ Si definiscono nuovamente le condizioni e si cede il 15/20% del prezzo dell'immo
 Per legge il preliminare bisogna trascriverlo all'agenzia delle entrate, ma si può scegliere di farlo da un notaio esterno (pagando) o direttamente dal notaio dell'agenzia (gratuito).
 
 ### Notaio
-È preferibile scegliere un notaio esterno non legato all'agenzia così si evitano eventuali “conflitti d'interessi"
+È preferibile scegliere un notaio esterno non legato all'agenzia così si evitano eventuali “conflitti d'interessi".  
 Conviene farsi supportare per i 3 atti:
 - trascrizione del preliminare di compravendita
 - atto di mutuo
@@ -106,8 +107,8 @@ Inoltre, il notaio effettua verifiche sull'immobile, ad esempio la corretta stor
 - se il mutuo è al 100% o una parte deve ritornare all'acquirente, la banca produrrà due bonifici
 - attenzione al mobilio, nel mio caso si è rallentato di una settimana perché la banca necessitava di una scrittura privata tra le parti che definiva la concessione a titolo gratuito
 
-### Spese e agevolazioni
-- con il mutuo Consap al 100% i tassi sono calmierati
+### Agevolazioni
+- con il mutuo CONSAP i tassi sono calmierati
 - se ISEE sotto i 40k e sotto i 36 anni si evita l'imposta di registro per l'acquisito della prima casa
 
 ### Termini utili
