@@ -19,7 +19,7 @@ Seguono le mie esperienze per l'acquisto di un appartamento
 3. Se piace la casa visitala almeno due volte
 4. Discuti del prezzo con l'agenzia e fissate un appuntamento per la **proposta irrevocabile d'acquisto**
 5. Firma la proposta d'acquisto
-6. Ottieni dalla banca una predelibera del mutuo (es. Voucher Mutuo Unicredit), soprattutto se l'acquisto non è vincolato alla concessione del mutuo
+6. Ottieni dalla banca una predelibera del mutuo (es. Voucher Mutuo), soprattutto se l'acquisto non è vincolato alla concessione del mutuo
 7. Discuti con il notaio della situazione e fissa una data per il **preliminare di compravendita** (o compromesso)
 8. Firma il preliminare di compravendita
 9. Ottieni la **delibera del mutuo**
@@ -89,7 +89,7 @@ Il pagamento solitamente avviene in fase di compromesso, nel mio caso la risoluz
 - Il venditore se accetta questa clausola si espone al rischio che un potenziale acquirente gli fa perdere solo tempo
 - Il venditore può scegliere di non accettare la proposta e cercare qualcuno che è disponibile a non mettere la clausola
 - La proposta vincolata è meno convincente nel caso in cui si chieda un prezzo più basso
-- Se si decide di non vincolarla, è importante che prima di andare al preliminare si ha una valutazione della banca per la propria condizione, ad esempio banche come Unicredit rilasciano il "voucher mutuo" che serve a certificare che non ci siano problemi lato acquirente
+- Se si decide di non vincolarla, è importante che prima di andare al preliminare si ha una valutazione della banca per la propria condizione, ad esempio una banca rilascia il "voucher mutuo" che serve a certificare che non ci siano problemi lato acquirente
 
 ### Preliminare di compravendita
 Se la proposta d'acquisto è il fidanzamento, il preliminare di compravendita o compromesso è il matrimonio.  
@@ -115,6 +115,8 @@ Per ottenere le agevolazioni sulle imposte, è necessario comunicare al notaio i
 - ottenuta la delibera del mutuo dalla banca si può procedere con il rogito
 - la banca necessita tra i 7 e i 10 giorni di tempo post comunicazione della data di rogito (quindi non si può rogitare il giorno dopo la delibera)
 - almeno 7 giorni prima del rogito serve comunicare le coordinate bancarie del venditore
+- pagamento dell'istruttoria: alcune banche arrivano fino a 2k €; prezzo trattabile.
+- polizza scoppio e incendio: decrescente (costa meno ma il massimo è definito dalla parte di mutuo rimanente da pagare) o costante (costa di più ma copre fino al massimo); è obbligatoria ma non necessariamente con l'ente erogatore del mutuo, però se si è di fretta è meglio farla con la banca; può arrivare fino a 2k€ la costante, ma se la si stipula da terzi si può arrivare anche a 600€.
 
 ### Agevolazioni con decreto sostegni bis (73/2021)
 Se ISEE sotto i 40k e sotto i 36 anni
