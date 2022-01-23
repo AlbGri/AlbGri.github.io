@@ -109,7 +109,7 @@ Per ottenere le agevolazioni sulle imposte, è necessario comunicare al notaio i
 - delibera concedibilità mutuo (predelibera, o voucher mutuo): necessaria se non si fa la proposta vincolata al mutuo
 - documentazione necessaria (atto provenienza immobile, proprietà, eventuali donazioni e risoluzioni)
 - perizia tecnica
-- se il mutuo è al 100% o una parte deve ritornare all'acquirente, la banca produrrà due bonifici
+- se il mutuo è al 100% (a volte anche meno) e una parte deve ritornare all'acquirente la banca produrrà due bonifici per entrambe le parti
 - attenzione al mobilio, nel mio caso si è rallentato di una settimana perché la banca necessitava di una scrittura privata tra le parti che definiva la concessione a titolo gratuito
 - ottenuta la delibera del mutuo dalla banca si può procedere con il rogito
 - la banca necessita tra i 7 e i 10 giorni di tempo post comunicazione della data di rogito (quindi non si può rogitare il giorno dopo la delibera)
