@@ -6,11 +6,10 @@ tags: [diary]
 ---
 
 
-**IL DOCUMENTO CHE SEGUE E' UNA BOZZA**  
-**ULTIMO AGGIORNAMENTO 16/01/2022**
+**ULTIMO AGGIORNAMENTO 23/01/2022**
 
 
-Seguono le mie esperienze per l'acquisto di un appartamento
+La mia piccola esperienza nell'acquisto di un appartamento
 
 
 ### Passaggi
