@@ -122,8 +122,9 @@ Conviene farsi supportare per i 3 atti:
 ### Agevolazioni con decreto sostegni bis (73/2021)
 Se ISEE sotto i 40k e sotto i 36 anni
 - si può fare domanda alla CONSAP per avere garantito l'80% (quindi più facile ottenere il 100% dalla banca) e i tassi sono calmierati
-- vengono rimborsate le imposte di: sostitutiva, registro, ipotecaria, catastale  
-nb. la domanda alla CONSAP si può fare anche se con ISEE superiore, a prescindere del decreto sostegni bis, con benefici che non conosco
+- vengono rimborsate le imposte di: sostitutiva, registro, ipotecaria, catastale
+
+La domanda alla CONSAP si può fare anche se con ISEE superiore, a prescindere del decreto sostegni bis, con benefici che non conosco.
 
 ### Termini utili
 - Voltura: cambio di proprietà, si può intendere sia per le bollette che per i passaggi di proprietà della storia dell'immobile
