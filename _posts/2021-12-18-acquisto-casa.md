@@ -6,7 +6,7 @@ tags: [diary]
 ---
 
 
-**ULTIMO AGGIORNAMENTO 23/01/2022**
+**ULTIMO AGGIORNAMENTO 23/01/2022**  
 
 
 La mia piccola esperienza nell'acquisto di un appartamento
