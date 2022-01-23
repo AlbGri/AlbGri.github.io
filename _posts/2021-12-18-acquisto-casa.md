@@ -19,7 +19,7 @@ Seguono le mie esperienze per l'acquisto di un appartamento
 3. Se piace la casa visitala almeno due volte
 4. Discuti del prezzo con l'agenzia e fissate un appuntamento per la **proposta irrevocabile d'acquisto**
 5. Firma la proposta d'acquisto
-6. Ottieni dalla banca una predelibera del mutuo (es. Voucher Mutuo Unicredit)
+6. Ottieni dalla banca una predelibera del mutuo (es. Voucher Mutuo Unicredit), soprattutto se l'acquisto non è vincolato alla concessione del mutuo
 7. Discuti con il notaio della situazione e fissa una data per il **preliminare di compravendita** (o compromesso)
 8. Firma il preliminare di compravendita
 9. Ottieni la **delibera del mutuo**
@@ -57,6 +57,7 @@ La proposta d'acquisto è il primo passaggio importante, si definiscono le diver
 Condizioni base da definire:
 - agibilità
 - documentazione (provenienza, passaggi di proprietà, APE, planimetria)
+- spese condominiali
 - data preliminare
 - data rogito
 - proposta vincolata al mutuo: non il mio caso
@@ -67,13 +68,17 @@ Condizioni base da definire:
 - eventuale concessione del mobilio: se lo si definisce è importante che venga ceduto a titolo gratuito, altrimenti i legali della banca possono rallentare il processo affinché non venga definito l'eventuale prezzo del mobilio incluso con l'immobile
 
 
+
+#### Spese condominiali
+Il venditore ha l'obbligo (deve essere scritto sia nella proposta che nel compromesso) di sanare tutte le spese condominiali prima della data del rogito (potenzialmente anche un giorno prima). In data di rogito il venditore dovrà dare la delibera dell'amministratore del condominio, affinché provi che tutte le spese siano state sanate. Il notaio consiglia di ottenere una pre-delibera anche informale (anche una chiamata) dall'amministratore del condominio prima del preliminare di compravendita, perché eventuali criticità potrebbero far dipendere la scelta di acquisto dell'immobile.
+
 #### Donazione e risoluzione donazione
 - Alcune banche rifiutano di dare il mutuo se tra la storia dell'immobile c'è una donazione o una risoluzione della donazione
-- Si può procedere con l'assicurazione o la risoluzione della donazione: ho vissuto la seconda, ho ricevuto un rifiuto da parte di una banca nella gestione della pratica, successivamente post verifica notaio esterno e scelta di una banca differente sembra che stia andando bene
+- Si può procedere con l'assicurazione o la risoluzione della donazione: ho vissuto la seconda, ho ricevuto un rifiuto da parte di una banca nella gestione della pratica, successivamente post verifica notaio esterno e scelta di una banca differente il mutuo è andato in delibera
 - La risoluzione della donazione, se fatta con le giuste condizioni, legalmente svincola l'immobile dalla donazione, ma la banca può comunque decidere di non concedere il mutuo
 
 #### Date preliminare e rogito
-Nel mio caso sono state spostate tre volte perché l'ottenimento della risoluzione della donazione è stato lento, è importante fissare bene:
+Nel mio caso sono state spostate tre volte perché è stato lento l'ottenimento della risoluzione della donazione, è importante fissare bene:
 - la data preliminare di compravendita: un tempo a sufficienza per consentire la valutazione della documentazione completa dell'agenzia da parte del notaio e permettere alla banca di ottenere una delibera sulla concedibilità del mutuo (essenziale se la proposta non è vincolata al mutuo)
 - la data rogito: un tempo a sufficienza per consentire alla banca di gestire la pratica di mutuo, l'ideale è mettere a tre mesi dal preliminare, ma se si ottiene il mutuo prima si può procedere se entrambe le parti sono d'accordo
 
@@ -97,7 +102,8 @@ Conviene farsi supportare per i 3 atti:
 - trascrizione del preliminare di compravendita
 - atto di mutuo
 - atto di compravendita
-Inoltre, il notaio effettua verifiche sull'immobile, ad esempio la corretta storia del passaggio delle proprietà. Nel mio caso sono stati fatte tutte le volture di recente in quanto l'immobile anche se degli anni 60, era ancora intestato al costruttore.
+Inoltre, il notaio effettua verifiche sull'immobile, ad esempio la corretta storia del passaggio delle proprietà. Nel mio caso sono stati fatte tutte le volture di recente in quanto l'immobile anche se degli anni 60, era ancora intestato al costruttore.  
+Per ottenere le agevolazioni sulle imposte, è necessario comunicare al notaio il proprio ISEE prima dell'atto di compravendita.
 
 ### Banca
 - richiesta Consap per mutuo al 100% (2 mesi circa tempi di risposta)
@@ -106,10 +112,15 @@ Inoltre, il notaio effettua verifiche sull'immobile, ad esempio la corretta stor
 - perizia tecnica
 - se il mutuo è al 100% o una parte deve ritornare all'acquirente, la banca produrrà due bonifici
 - attenzione al mobilio, nel mio caso si è rallentato di una settimana perché la banca necessitava di una scrittura privata tra le parti che definiva la concessione a titolo gratuito
+- ottenuta la delibera del mutuo dalla banca si può procedere con il rogito
+- la banca necessita tra i 7 e i 10 giorni di tempo post comunicazione della data di rogito (quindi non si può rogitare il giorno dopo la delibera)
+- almeno 7 giorni prima del rogito serve comunicare le coordinate bancarie del venditore
 
-### Agevolazioni
-- con il mutuo CONSAP i tassi sono calmierati
-- se ISEE sotto i 40k e sotto i 36 anni si evita l'imposta di registro per l'acquisito della prima casa
+### Agevolazioni con decreto sostegni bis (73/2021)
+Se ISEE sotto i 40k e sotto i 36 anni
+- si può fare domanda alla CONSAP per avere garantito l'80% (quindi più facile ottenere il 100% dalla banca) e i tassi sono calmierati
+- vengono rimborsate le imposte di: sostitutiva, registro, ipotecaria, catastale  
+nb. la domanda alla CONSAP si può fare anche se con ISEE superiore, a prescindere del decreto sostegni bis, con benefici che non conosco
 
 ### Termini utili
 - Voltura: cambio di proprietà, si può intendere sia per le bollette che per i passaggi di proprietà della storia dell'immobile
