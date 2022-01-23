@@ -97,12 +97,14 @@ Per legge il preliminare bisogna trascriverlo all'agenzia delle entrate, ma si p
 
 ### Notaio
 È preferibile scegliere un notaio esterno non legato all'agenzia così si evitano eventuali “conflitti d'interessi".  
+Il notaio effettua verifiche sull'immobile (es. la corretta storia del passaggio delle proprietà). Nel mio caso sono state fatte tutte le volture di recente in quanto l'immobile anche se degli anni 60, era ancora intestato al costruttore(!).  
+Per ottenere le agevolazioni sulle imposte, è necessario comunicare al notaio il proprio ISEE prima dell'atto di compravendita.  
+
 Conviene farsi supportare per i 3 atti:
 - trascrizione del preliminare di compravendita
 - atto di mutuo
-- atto di compravendita  
-Inoltre, il notaio effettua verifiche sull'immobile, ad esempio la corretta storia del passaggio delle proprietà. Nel mio caso sono stati fatte tutte le volture di recente in quanto l'immobile anche se degli anni 60, era ancora intestato al costruttore.  
-Per ottenere le agevolazioni sulle imposte, è necessario comunicare al notaio il proprio ISEE prima dell'atto di compravendita.
+- atto di compravendita
+
 
 ### Banca
 - richiesta Consap per mutuo al 100% (2 mesi circa tempi di risposta)
