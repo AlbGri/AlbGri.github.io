@@ -23,7 +23,7 @@ La mia piccola esperienza nell'acquisto di un appartamento
 8. Firma il preliminare di compravendita
 9. Ottieni la **delibera del mutuo**
 10. Fissa data con notaio e venditore per il **rogito notarile** (o atto di compravendita) e l'**atto di mutuo**
-11. _coming soon_
+11. Si firma il rogito, mutuo, si ottengono le chiavi dell'immobile e il gioco è fatto
 
 
 
@@ -67,9 +67,10 @@ Condizioni base da definire:
 - eventuale concessione del mobilio: se lo si definisce è importante che venga ceduto a titolo gratuito, altrimenti i legali della banca possono rallentare il processo affinché non venga definito l'eventuale prezzo del mobilio incluso con l'immobile
 
 
-
 #### Spese condominiali
-Il venditore ha l'obbligo (deve essere scritto sia nella proposta che nel compromesso) di sanare tutte le spese condominiali prima della data del rogito (potenzialmente anche un giorno prima). In data di rogito il venditore dovrà dare la delibera dell'amministratore del condominio, affinché provi che tutte le spese siano state sanate. Il notaio consiglia di ottenere una pre-delibera anche informale (anche una chiamata) dall'amministratore del condominio prima del preliminare di compravendita, perché eventuali criticità potrebbero far dipendere la scelta di acquisto dell'immobile.
+Il venditore ha l'obbligo (deve essere scritto sia nella proposta che nel compromesso) di sanare tutte le spese condominiali prima della data del rogito (potenzialmente anche un giorno prima). In data di rogito il venditore dovrà dare la delibera dell'amministratore del condominio, affinché provi che tutte le spese siano state sanate. Il notaio consiglia di ottenere una pre-delibera anche informale (anche una chiamata) dall'amministratore del condominio prima del preliminare di compravendita, perché eventuali criticità potrebbero far dipendere la scelta di acquisto dell'immobile.  
+Nel mio caso ci sono rimasto mezzo fregato: la liberatoria del condominio è arrivata il giorno prima del rogito, le rate tutte pagate ma è presente una causa pendente del condominio contro il comune, non avendo avuto il tempo di gestire la situazione, il notaio ha scritto delle condizioni a mio favore ma se il venditore se sparirà sarò io a dovermene occupare.
+
 
 #### Donazione e risoluzione donazione
 - Alcune banche rifiutano di dare il mutuo se tra la storia dell'immobile c'è una donazione o una risoluzione della donazione
@@ -99,6 +100,7 @@ Per legge il preliminare bisogna trascriverlo all'agenzia delle entrate, ma si p
 È preferibile scegliere un notaio esterno non legato all'agenzia così si evitano eventuali “conflitti d'interessi".  
 Il notaio effettua verifiche sull'immobile (es. la corretta storia del passaggio delle proprietà). Nel mio caso sono state fatte tutte le volture di recente in quanto l'immobile anche se degli anni 60, era ancora intestato al costruttore(!).  
 Per ottenere le agevolazioni sulle imposte, è necessario comunicare al notaio il proprio ISEE prima dell'atto di compravendita.  
+Le spese notarili si potranno trovare all'interno del cassetto fiscale della sezione del sito dell'Agenzia delle Entrate.  
 
 Conviene farsi supportare per i 3 atti:
 - trascrizione del preliminare di compravendita
@@ -110,25 +112,32 @@ Conviene farsi supportare per i 3 atti:
 - richiesta Consap per mutuo al 100% (2 mesi circa tempi di risposta)
 - delibera concedibilità mutuo (predelibera, o voucher mutuo): necessaria se non si fa la proposta vincolata al mutuo
 - documentazione necessaria (atto provenienza immobile, proprietà, eventuali donazioni e risoluzioni)
-- perizia tecnica
 - se il mutuo è al 100% (a volte anche meno) e una parte deve ritornare all'acquirente la banca produrrà due bonifici per entrambe le parti
+- tasso di mora nel caso di non pagamento delle rate (nel mio caso non è stato definito)
 - attenzione al mobilio, nel mio caso si è rallentato di una settimana perché la banca necessitava di una scrittura privata tra le parti che definiva la concessione a titolo gratuito
+- perizia tecnica (ca. 250€)
 - ottenuta la delibera del mutuo dalla banca si può procedere con il rogito
 - la banca necessita tra i 7 e i 10 giorni di tempo post comunicazione della data di rogito (quindi non si può rogitare il giorno dopo la delibera)
 - almeno 7 giorni prima del rogito serve comunicare le coordinate bancarie del venditore
-- pagamento dell'istruttoria: alcune banche arrivano fino a 2k €; prezzo trattabile.
+- preventivo istruttoria: alcune banche arrivano fino a 2k €; prezzo trattabile.
 - polizza scoppio e incendio: decrescente (costa meno ma il massimo è definito dalla parte di mutuo rimanente da pagare) o costante (costa di più ma copre fino al massimo); è obbligatoria ma non necessariamente con l'ente erogatore del mutuo, però se si è di fretta è meglio farla con la banca; può arrivare fino a 2k€ la costante, ma se la si stipula da terzi si può arrivare anche a 600€.
+- pagamento imposta di registro (0.25%) e istruttoria: può avvenire direttamente in fase di mutuo, verrà erogato il 100% meno le due quantità.
+
+### Atto di rogito e mutuo
+Il notaio si occuperà di definire il tutto. Al momento dell'atto il venditore dovrà dare le chiavi e la liberatoria del condominio (se non l'ha già data prima). Inoltre, fa comodo avere le ultime bollette del gas e luce nel caso in cui si debbano fare le volture e non gli allacci (fare gli allacci da zero richiede più tempo, è più comodo fare l volture).  
+A seguito della compravendita, se acquisto prima casa, entro 180 giorni bisogna cambiare la propria residenza.  
+
 
 ### Agevolazioni con decreto sostegni bis (73/2021)
 Se ISEE sotto i 40k e sotto i 36 anni
 - si può fare domanda alla CONSAP per avere garantito l'80% (quindi più facile ottenere il 100% dalla banca) e i tassi sono calmierati
-- vengono rimborsate le imposte di: sostitutiva, registro, ipotecaria, catastale
+- vengono rimborsate (o direttamente azzerate in fase di compravendita dal notaio) le imposte di: registro (2% nel mio caso), ipotecaria (50€) e catastale (50€)
 
 La domanda alla CONSAP si può fare anche se con ISEE superiore, a prescindere del decreto sostegni bis, con benefici che non conosco.
 
 ### Termini utili
 - Voltura: cambio di proprietà, si può intendere sia per le bollette che per i passaggi di proprietà della storia dell'immobile
-- Procura speciale: nel caso in cui il venditore non può direttamente firmare gli atti notarili, può delegare qualcuno con la procura speciale
+- Procura speciale: nel caso in cui il venditore non può direttamente firmare gli atti notarili, può delegare qualcuno con la procura speciale (il procuratore)
 
 
 
