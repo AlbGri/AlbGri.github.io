@@ -67,7 +67,7 @@ Condizioni base da definire:
 
 #### Spese condominiali
 Il venditore ha l'obbligo (deve essere scritto sia nella proposta che nel compromesso) di sanare tutte le spese condominiali prima della data del rogito (potenzialmente anche un giorno prima). In data di rogito il venditore dovrà dare la delibera dell'amministratore del condominio, affinché provi che tutte le spese siano state sanate. Il notaio consiglia di ottenere una pre-delibera anche informale (anche una chiamata) dall'amministratore del condominio prima del preliminare di compravendita, perché eventuali criticità potrebbero far dipendere la scelta di acquisto dell'immobile.  
-Nel mio caso ci sono rimasto mezzo fregato: la liberatoria del condominio è arrivata il giorno prima del rogito, le rate tutte pagate ma è presente una causa pendente del condominio contro il comune, non avendo avuto il tempo di gestire la situazione, il notaio ha scritto delle condizioni a mio favore ma se il venditore se sparirà sarò io a dovermene occupare.
+Nel mio caso **ci sono rimasto mezzo fregato**: la liberatoria del condominio è arrivata il giorno prima del rogito, le rate tutte pagate ma è presente una causa pendente del condominio contro il comune, non avendo avuto il tempo di gestire la situazione, il notaio ha scritto delle condizioni a mio favore ma se il venditore se sparirà sarò io a dovermene occupare.
 
 
 #### Donazione e risoluzione donazione
