@@ -29,6 +29,7 @@ Fine: compravendita il 28 gennaio 2022
 - Lavoro stabile e/o garanzia da parenti/amici/stato/altro
 - Rata attorno al 30% dello stipendio netto mensile, la banca può accettare anche poco sotto il 40% se si ha un'alta capacità di risparmio, tredicesima, quattordicesima etc.
 - Almeno il 15% liquidità in più: spese tra notaio, agenzia, polizze, commissioni, imposta di registro, etc.
+- Personalmente sono contro l'acquisto vincolato alle agevolazioni statali, non avrei cercato casa se non avessi potuto acquistarla con un mutuo all'80% senza CONSAP (soprattutto perché la domanda CONSAP scade dopo un po' e potresti trovarti troppo avanti e con l'agevolazione scaduta)
 
 
 ### Ricerca della casa
