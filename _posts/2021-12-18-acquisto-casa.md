@@ -123,7 +123,7 @@ Conviene farsi supportare per i 3 atti:
 - pagamento imposta di registro (0.25%) e istruttoria: può avvenire direttamente in fase di mutuo, verrà erogato il 100% meno le due quantità.
 
 ### Atto di rogito e mutuo
-Il notaio si occuperà di definire il tutto. Al momento dell'atto il venditore dovrà dare le chiavi e la liberatoria del condominio (se non l'ha già data prima). Inoltre, fa comodo avere le ultime bollette del gas e luce nel caso in cui si debbano fare le volture e non gli allacci (fare gli allacci da zero richiede più tempo, è più comodo fare l volture).  
+Il notaio si occuperà di definire il tutto. Al momento dell'atto il venditore dovrà dare le chiavi e la liberatoria del condominio (se non l'ha già data prima). Inoltre, fa comodo avere le ultime bollette del gas e luce nel caso in cui si debbano fare le volture e non gli allacci (fare gli allacci da zero richiede più tempo, è più comodo fare le volture).  
 A seguito della compravendita, se acquisto prima casa, entro 180 giorni bisogna cambiare la propria residenza.  
 
 
