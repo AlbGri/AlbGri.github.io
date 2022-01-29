@@ -22,7 +22,7 @@ Fine: compravendita il 28 gennaio 2022
 9. Firma il preliminare di compravendita
 10. Ottieni la **delibera del mutuo**
 11. Fissa data con notaio e venditore per il **rogito notarile** (o atto di compravendita) e l'**atto di mutuo**
-12. Firma il rogito (compravendita), mutuo, ricevi le chiavi dell'immobile e il gioco è fatto
+12. Firma il rogito, mutuo, ricevi le chiavi dell'immobile e il gioco è fatto
 
 
 ### Valutazione condizione economica
